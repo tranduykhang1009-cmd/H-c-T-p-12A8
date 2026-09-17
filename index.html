@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -41,13 +42,18 @@
       user-select: none;
     }
 
-    /* Background page có hiệu ứng ánh sáng gradient động lung linh */
+    /* Background page sử dụng hình nền cờ Việt Nam bg.jpg kết hợp lớp phủ mờ sang trọng */
     body {
       background-color: var(--bg-page);
       background-image: 
+        linear-gradient(rgba(10, 13, 31, 0.82), rgba(10, 13, 31, 0.88)),
+        url('bg.jpg'),
         radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.18) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(244, 63, 94, 0.14) 0px, transparent 50%),
-        radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.08) 0px, transparent 60%);
+        radial-gradient(at 100% 100%, rgba(244, 63, 94, 0.14) 0px, transparent 50%);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: var(--text-white);
       min-height: 100vh;
       display: flex;
@@ -1021,10 +1027,6 @@
       </div>
 
       <div class="home-header">
-        <div class="school-tag">
-          <span>🏛️</span>
-          <span>TRƯỜNG THPT NGUYỄN HUỆ</span>
-        </div>
         <div><span class="fire-badge">🔥</span></div>
         <h1 class="home-title">LỊCH SỬ 12</h1>
         <p class="home-sub">Luyện thi trắc nghiệm • Bài 1: Liên Hợp Quốc</p>
