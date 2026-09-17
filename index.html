@@ -159,7 +159,13 @@
         gap: 8px !important;
         margin-bottom: 8px !important;
       }
-      .input-box, .select-box {
+      .input-box::placeholder {
+      color: #64748b;
+      font-style: italic;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+    .input-box, .select-box {
         padding: 8px 10px !important;
         font-size: 0.85rem !important;
       }
@@ -1651,7 +1657,7 @@
             <span>👤</span>
             <span>Tên hiển thị bảng vàng:</span>
           </label>
-          <input type="text" id="inputName" class="input-box" placeholder="VD: Trần Duy Khang" value="" />
+          <input type="text" id="inputName" class="input-box" placeholder="VD: Trần Duy Khang" value="" autocomplete="off" />
         </div>
         <div class="form-group">
           <label class="form-label" for="selectClass">
@@ -2285,7 +2291,12 @@
     // Load LocalStorage User Info
     const savedName = localStorage.getItem('hist12_username') || '';
     const savedClass = localStorage.getItem('hist12_userclass') || '12A1';
-    if (savedName) document.getElementById('inputName').value = savedName;
+    // Chỉ tự điền nếu người dùng đã từng gõ tên thật (khác rỗng và không phải chữ Ẩn danh)
+    if (savedName && savedName.toLowerCase() !== 'ẩn danh' && savedName.toLowerCase() !== 'thí sinh ẩn danh' && savedName.toLowerCase() !== 'thí sinh') {
+      document.getElementById('inputName').value = savedName;
+    } else {
+      document.getElementById('inputName').value = '';
+    }
     if (savedClass) document.getElementById('selectClass').value = savedClass;
     renderTopicCards();
 
@@ -2306,11 +2317,19 @@
     // BẮT ĐẦU THI
     function startExamAction(onlyWrongList = null) {
       sound.playClick();
-      const name = document.getElementById('inputName').value.trim() || 'Thí Sinh Ẩn Danh';
+      const rawName = document.getElementById('inputName').value.trim();
+      const name = rawName || 'Ẩn danh';
       const userClass = document.getElementById('selectClass').value;
       const isShuffle = document.getElementById('toggleShuffle').checked;
 
-      localStorage.setItem('hist12_username', name);
+      // Nếu người dùng nhập tên thật thì lưu để lần sau không phải gõ lại
+      // Nếu không nhập thì xóa để giữ placeholder mờ "VD: Trần Duy Khang"
+      if (rawName && rawName.toLowerCase() !== 'ẩn danh') {
+        localStorage.setItem('hist12_username', rawName);
+      } else {
+        localStorage.removeItem('hist12_username');
+      }
+      localStorage.setItem('hist12_current_name', name);
       localStorage.setItem('hist12_userclass', userClass);
 
       if (onlyWrongList && onlyWrongList.length > 0) {
@@ -2696,7 +2715,7 @@
     // LƯU & HIỂN THỊ BẢNG XẾP HẠNG FIREBASE
     // =========================================================================
     function saveToFirebaseLeaderboard(correctCount, total, timeSec) {
-      const name = localStorage.getItem('hist12_username') || 'Thí Sinh';
+      const name = localStorage.getItem('hist12_current_name') || localStorage.getItem('hist12_username') || 'Ẩn danh';
       const userClass = localStorage.getItem('hist12_userclass') || '12A1';
       const score10 = parseFloat(((correctCount / total) * 10).toFixed(1));
 
@@ -2876,7 +2895,11 @@
 
       const studentMap = {};
       chronologicalList.forEach(item => {
-        const studentKey = (item.name || 'Thí Sinh').trim().toLowerCase() + '___' + (item.userClass || '').trim().toLowerCase();
+        const rawItemName = (item.name || 'Ẩn danh').trim();
+        const isAnon = rawItemName.toLowerCase() === 'ẩn danh' || rawItemName.toLowerCase() === 'thí sinh ẩn danh' || rawItemName.toLowerCase() === 'thí sinh';
+        const studentKey = isAnon 
+          ? 'anon_' + (item.key || (item.timestamp ? item.timestamp + '_' + Math.random() : Math.random()))
+          : rawItemName.toLowerCase() + '___' + (item.userClass || '').trim().toLowerCase();
         if (!studentMap[studentKey]) {
           studentMap[studentKey] = {
             name: item.name,
@@ -2918,7 +2941,11 @@
 
       // Điền ngược lại tổng số lần thi vào từng lượt
       chronologicalList.forEach(item => {
-        const studentKey = (item.name || 'Thí Sinh').trim().toLowerCase() + '___' + (item.userClass || '').trim().toLowerCase();
+        const rawItemName = (item.name || 'Ẩn danh').trim();
+        const isAnon = rawItemName.toLowerCase() === 'ẩn danh' || rawItemName.toLowerCase() === 'thí sinh ẩn danh' || rawItemName.toLowerCase() === 'thí sinh';
+        const studentKey = isAnon 
+          ? 'anon_' + (item.key || (item.timestamp ? item.timestamp + '_' + Math.random() : Math.random()))
+          : rawItemName.toLowerCase() + '___' + (item.userClass || '').trim().toLowerCase();
         item.totalStudentAttempts = studentMap[studentKey] ? studentMap[studentKey].attempts : 1;
       });
 
@@ -2983,7 +3010,7 @@
           const scoreNum = Number(scoreVal !== undefined ? scoreVal : 0);
           const scoreFormatted = isNaN(scoreNum) ? '0.0' : scoreNum.toFixed(1);
 
-          const displayName = escapeHtml(item.name || 'Thí Sinh');
+          const displayName = escapeHtml(item.name || 'Ẩn danh');
           const displayClass = escapeHtml(item.userClass || '12');
 
           // Chuỗi hiển thị số lần làm
