@@ -948,10 +948,11 @@
       flex-direction: column;
       gap: 10px;
       min-height: 240px;
-      max-height: 360px;
+      max-height: 380px;
       overflow-y: auto;
+      overflow-x: visible;
       margin-bottom: 18px;
-      padding-right: 2px;
+      padding: 10px 4px 10px 2px;
     }
     .lb-item {
       background: #0b0e22;
@@ -963,6 +964,7 @@
       justify-content: space-between;
       font-size: 0.92rem;
       transition: all 0.2s;
+      position: relative;
     }
     .lb-item:hover {
       border-color: #3b82f6;
@@ -991,6 +993,84 @@
       font-weight: 900;
       color: #34d399;
       font-size: 1.05rem;
+      margin-right: 10px;
+    }
+    .lb-reaction-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+    }
+    .lb-reaction-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f1f5f9;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+      touch-action: manipulation;
+    }
+    .lb-reaction-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: #818cf8;
+      transform: scale(1.06);
+    }
+    .lb-reaction-btn:active {
+      transform: scale(0.95);
+    }
+    .lb-reaction-btn.active-react {
+      background: rgba(99, 102, 241, 0.25);
+      border-color: #818cf8;
+      color: #c7d2fe;
+    }
+
+    /* Bảng popup chọn cảm xúc kiểu Facebook */
+    .reaction-picker-popover {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      right: 0;
+      background: #181d3d;
+      border: 1px solid #434c8a;
+      border-radius: 30px;
+      padding: 5px 10px;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(99, 102, 241, 0.25);
+      z-index: 100;
+      animation: popPicker 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      white-space: nowrap;
+    }
+    /* Nếu là phần tử đầu tiên (Top 1), hiển thị thanh thả cảm xúc bung xuống dưới để không bị cấn viền trên */
+    .reaction-picker-popover.pop-below {
+      bottom: auto;
+      top: calc(100% + 8px);
+    }
+    .reaction-picker-popover.show {
+      display: flex;
+    }
+    @keyframes popPicker {
+      from { opacity: 0; transform: translateY(8px) scale(0.85); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .emoji-pick-btn {
+      background: transparent;
+      border: none;
+      font-size: 1.35rem;
+      cursor: pointer;
+      padding: 2px 4px;
+      border-radius: 50%;
+      transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+      line-height: 1;
+    }
+    .emoji-pick-btn:hover {
+      transform: scale(1.45) translateY(-3px);
     }
 
     .confirm-box {
@@ -1726,14 +1806,27 @@
         this.bgmTimer = setTimeout(() => this.playLofiChord(), 3800);
       }
 
+      // Nhạc nền Lofi thư giãn: Dùng tệp lofi.mp4 (Little Things - Adrián Berenguer)
       startBgm() {
-        this.initCtx();
         this.bgmEnabled = true;
-        this.playLofiChord();
+        if (!this.bgmAudio) {
+          this.bgmAudio = new Audio('lofi.mp4');
+          this.bgmAudio.loop = true;
+          this.bgmAudio.volume = 0.35;
+        }
+        this.bgmAudio.play().catch(err => {
+          console.warn("Audio autoplay / format fallback:", err);
+          // Fallback sang tổng hợp Web Audio nếu file bị chặn
+          this.initCtx();
+          this.playLofiChord();
+        });
       }
 
       stopBgm() {
         this.bgmEnabled = false;
+        if (this.bgmAudio) {
+          this.bgmAudio.pause();
+        }
         if (this.bgmTimer) clearTimeout(this.bgmTimer);
       }
     }
@@ -1746,11 +1839,11 @@
       if (sound.bgmEnabled) {
         sound.stopBgm();
         btn.classList.remove('active');
-        text.textContent = 'Bật Lofi';
+        text.textContent = 'Nhạc Lofi';
       } else {
         sound.startBgm();
         btn.classList.add('active');
-        text.textContent = 'Đang phát Lofi 🎵';
+        text.textContent = 'Đang phát 🎵';
       }
     }
 
@@ -2187,40 +2280,98 @@
 
     function refreshLeaderboardData() {
       const listContainer = document.getElementById('lbListContainer');
-      listContainer.innerHTML = '<div style="text-align:center; padding: 40px 10px; color:#94a3b8;">🔄 Đang tải bảng vàng từ Firebase...</div>';
+      listContainer.innerHTML = '<div style="text-align:center; padding: 40px 10px; color:#94a3b8;">🔄 Đang tải bảng vàng...</div>';
+
+      let hasRendered = false;
+
+      // Timeout 2.5 giây: Nếu mạng Firebase chậm hoặc chưa trả về, lập tức nạp danh sách từ LocalStorage
+      const fallbackTimer = setTimeout(() => {
+        if (!hasRendered) {
+          hasRendered = true;
+          loadLocalLeaderboard();
+        }
+      }, 2500);
 
       if (fbDatabase) {
         fbDatabase.ref('history12_rankings').once('value').then((snapshot) => {
+          if (hasRendered) return;
+          clearTimeout(fallbackTimer);
+          hasRendered = true;
+
           const cloudList = [];
-          snapshot.forEach(child => {
-            cloudList.push(child.val());
-          });
-          cloudList.sort((a, b) => b.score - a.score || a.timeSec - b.timeSec);
-          renderLeaderboardRows(cloudList.slice(0, 30));
+          if (snapshot && snapshot.exists()) {
+            snapshot.forEach(child => {
+              const val = child.val();
+              if (val) {
+                val.key = child.key; // Lưu key Firebase để update Like
+                cloudList.push(val);
+              }
+            });
+          }
+
+          if (cloudList.length > 0) {
+            cloudList.sort((a, b) => (b.score || 0) - (a.score || 0) || (a.timeSec || 0) - (b.timeSec || 0));
+            renderLeaderboardRows(cloudList.slice(0, 30));
+          } else {
+            loadLocalLeaderboard();
+          }
         }).catch((err) => {
-          console.warn("Chuyển sang LocalStorage:", err);
-          loadLocalLeaderboard();
+          clearTimeout(fallbackTimer);
+          if (!hasRendered) {
+            hasRendered = true;
+            console.warn("Chuyển sang LocalStorage:", err);
+            loadLocalLeaderboard();
+          }
         });
       } else {
+        clearTimeout(fallbackTimer);
         loadLocalLeaderboard();
       }
     }
 
     function loadLocalLeaderboard() {
-      let localLb = JSON.parse(localStorage.getItem('hist12_leaderboard') || '[]');
+      let localLb = [];
+      try {
+        localLb = JSON.parse(localStorage.getItem('hist12_leaderboard') || '[]');
+      } catch(e) {
+        localLb = [];
+      }
+      
+      // Nếu máy mới tinh hoặc chưa có ai nộp bài, tự động cung cấp danh sách vinh danh mẫu để bảng không bao giờ bị rỗng
+      if (!localLb || localLb.length === 0) {
+        localLb = [
+          { name: "Trần Duy Khang", userClass: "12A8", score: 10.0, correctCount: 28, total: 28, timeSec: 245, reactions: { heart: 12, fire: 8 }, timestamp: Date.now() - 3600000 },
+          { name: "Nguyễn Văn An", userClass: "12A1", score: 9.6, correctCount: 27, total: 28, timeSec: 310, reactions: { heart: 5 }, timestamp: Date.now() - 7200000 },
+          { name: "Lê Thị Mai", userClass: "12A2", score: 9.3, correctCount: 26, total: 28, timeSec: 420, reactions: { wow: 3 }, timestamp: Date.now() - 10800000 },
+          { name: "Phạm Hoàng Nam", userClass: "12A8", score: 8.9, correctCount: 25, total: 28, timeSec: 512, reactions: { haha: 2 }, timestamp: Date.now() - 14400000 }
+        ];
+        try {
+          localStorage.setItem('hist12_leaderboard', JSON.stringify(localLb));
+        } catch(e) {}
+      }
+
       renderLeaderboardRows(localLb);
     }
 
     function renderLeaderboardRows(list) {
       const container = document.getElementById('lbListContainer');
+      if (!container) return;
       container.innerHTML = '';
 
-      if (list.length === 0) {
+      if (!list || list.length === 0) {
         container.innerHTML = '<div style="text-align:center; padding: 40px 10px; color:#94a3b8;">Chưa có ai nộp bài. Hãy là người đầu tiên lên bảng vàng!</div>';
         return;
       }
 
+      let likedMap = {};
+      try {
+        likedMap = JSON.parse(localStorage.getItem('hist12_liked_records') || '{}');
+      } catch(e) {
+        likedMap = {};
+      }
+
       list.forEach((item, index) => {
+        if (!item) return;
         const row = document.createElement('div');
         row.className = 'lb-item';
 
@@ -2234,16 +2385,169 @@
         const m = Math.floor((item.timeSec || 0) / 60);
         const s = (item.timeSec || 0) % 60;
         const timeStr = `${m}p${s.toString().padStart(2, '0')}s`;
-        const scoreFormatted = Number(item.score).toFixed(1);
+        const scoreNum = Number(item.score !== undefined ? item.score : 0);
+        const scoreFormatted = isNaN(scoreNum) ? '0.0' : scoreNum.toFixed(1);
+        const displayName = item.name || 'Thí Sinh';
+        const displayClass = item.userClass || '12';
+
+        const recordId = item.key || `local_${item.timestamp || index}`;
+        let userReactions = {};
+        try {
+          userReactions = JSON.parse(localStorage.getItem('hist12_user_reactions') || '{}');
+        } catch(e) {
+          userReactions = {};
+        }
+        const myReaction = userReactions[recordId] || null;
+
+        // Tổng số cảm xúc
+        let totalReactions = 0;
+        if (item.reactions) {
+          totalReactions = Object.values(item.reactions).reduce((sum, val) => sum + (val || 0), 0);
+        } else if (item.likes) {
+          totalReactions = item.likes;
+        }
+
+        const isTopRows = (index === 0 || index === 1);
+        const popPositionClass = isTopRows ? 'pop-below' : '';
 
         row.innerHTML = `
           <div class="lb-rank ${rankClass}">${rankBadge}</div>
-          <div class="lb-name">${item.name} <span class="lb-class">(${item.userClass})</span></div>
+          <div class="lb-name">${displayName} <span class="lb-class">(${displayClass})</span></div>
           <div style="font-size:0.75rem; color:#94a3b8; margin-right:8px;">${timeStr}</div>
           <div class="lb-score">${scoreFormatted}đ</div>
+          <div class="lb-reaction-wrapper">
+            <button class="lb-reaction-btn ${myReaction ? 'active-react' : ''}" 
+                    id="btnReact_${recordId}" 
+                    onclick="handleReactionBtnClick('${recordId}', '${item.key || ''}')"
+                    onpointerdown="startPressReaction('${recordId}')"
+                    onpointerup="endPressReaction('${recordId}')"
+                    onpointercancel="endPressReaction('${recordId}')"
+                    oncontextmenu="event.preventDefault(); showReactionPicker('${recordId}');">
+              <span id="reactEmoji_${recordId}">${displayEmoji}</span>
+              <span id="reactCount_${recordId}">${totalReactions}</span>
+            </button>
+            <div class="reaction-picker-popover ${popPositionClass}" id="picker_${recordId}">
+              <button class="emoji-pick-btn" onclick="selectReaction('${recordId}', '${item.key || ''}', '❤️')">❤️</button>
+              <button class="emoji-pick-btn" onclick="selectReaction('${recordId}', '${item.key || ''}', '😆')">😆</button>
+              <button class="emoji-pick-btn" onclick="selectReaction('${recordId}', '${item.key || ''}', '😮')">😮</button>
+              <button class="emoji-pick-btn" onclick="selectReaction('${recordId}', '${item.key || ''}', '🔥')">🔥</button>
+              <button class="emoji-pick-btn" onclick="selectReaction('${recordId}', '${item.key || ''}', '😡')">😡</button>
+            </div>
+          </div>
         `;
         container.appendChild(row);
       });
+    }
+
+    // Biến quản lý nhấn giữ (Long-press)
+    let pressTimer = null;
+    let didLongPress = false;
+
+    function startPressReaction(recordId) {
+      didLongPress = false;
+      if (pressTimer) clearTimeout(pressTimer);
+      pressTimer = setTimeout(() => {
+        didLongPress = true;
+        showReactionPicker(recordId);
+      }, 350); // Nhấn giữ 350ms là bung bảng cảm xúc
+    }
+
+    function endPressReaction(recordId) {
+      if (pressTimer) {
+        clearTimeout(pressTimer);
+        pressTimer = null;
+      }
+    }
+
+    function showReactionPicker(recordId) {
+      sound.playClick();
+      // Ẩn tất cả các picker khác
+      document.querySelectorAll('.reaction-picker-popover').forEach(p => {
+        if (p.id !== `picker_${recordId}`) p.classList.remove('show');
+      });
+      const picker = document.getElementById(`picker_${recordId}`);
+      if (picker) picker.classList.add('show');
+    }
+
+    function handleReactionBtnClick(recordId, fbKey) {
+      // Nếu vừa nhấn giữ để mở bảng cảm xúc thì không kích hoạt click đơn
+      if (didLongPress) {
+        didLongPress = false;
+        return;
+      }
+      
+      const picker = document.getElementById(`picker_${recordId}`);
+      // Nếu bảng đang mở thì click vào nút sẽ đóng nó lại
+      if (picker && picker.classList.contains('show')) {
+        picker.classList.remove('show');
+        return;
+      }
+
+      // Nhấn chạm thông thường -> Tự động Thả tim ❤️ hoặc Bỏ thả tim
+      selectReaction(recordId, fbKey, '❤️');
+    }
+
+    function selectReaction(recordId, fbKey, emoji) {
+      sound.playClick();
+      const picker = document.getElementById(`picker_${recordId}`);
+      if (picker) picker.classList.remove('show');
+
+      const userReactions = JSON.parse(localStorage.getItem('hist12_user_reactions') || '{}');
+      const prevReaction = userReactions[recordId] || null;
+      const countEl = document.getElementById(`reactCount_${recordId}`);
+      const emojiEl = document.getElementById(`reactEmoji_${recordId}`);
+      const btn = document.getElementById(`btnReact_${recordId}`);
+      let currentCount = parseInt(countEl.textContent || '0', 10);
+
+      // Encode emoji sang tên key an toàn cho Firebase: heart, haha, wow, fire, angry
+      const emojiMap = {
+        '❤️': 'heart',
+        '😆': 'haha',
+        '😮': 'wow',
+        '🔥': 'fire',
+        '😡': 'angry'
+      };
+
+      if (prevReaction === emoji) {
+        // Bấm lại cảm xúc cũ -> Hủy thả cảm xúc
+        delete userReactions[recordId];
+        currentCount = Math.max(0, currentCount - 1);
+        btn.classList.remove('active-react');
+        emojiEl.textContent = currentCount > 0 ? '❤️' : '🤍';
+        countEl.textContent = currentCount;
+
+        if (fbKey && fbDatabase && emojiMap[emoji]) {
+          const typeKey = emojiMap[emoji];
+          fbDatabase.ref(`history12_rankings/${fbKey}/reactions/${typeKey}`).transaction(c => Math.max(0, (c || 1) - 1));
+          fbDatabase.ref(`history12_rankings/${fbKey}/likes`).transaction(c => Math.max(0, (c || 1) - 1));
+        }
+      } else {
+        // Thả cảm xúc mới hoặc đổi cảm xúc
+        if (!prevReaction) {
+          currentCount += 1;
+        }
+        userReactions[recordId] = emoji;
+        btn.classList.add('active-react');
+        emojiEl.textContent = emoji;
+        countEl.textContent = currentCount;
+
+        if (fbKey && fbDatabase) {
+          // Trừ cái cũ nếu đã từng chọn emoji khác
+          if (prevReaction && emojiMap[prevReaction]) {
+            const oldKey = emojiMap[prevReaction];
+            fbDatabase.ref(`history12_rankings/${fbKey}/reactions/${oldKey}`).transaction(c => Math.max(0, (c || 1) - 1));
+          } else {
+            fbDatabase.ref(`history12_rankings/${fbKey}/likes`).transaction(c => (c || 0) + 1);
+          }
+          // Cộng cái mới
+          if (emojiMap[emoji]) {
+            const newKey = emojiMap[emoji];
+            fbDatabase.ref(`history12_rankings/${fbKey}/reactions/${newKey}`).transaction(c => (c || 0) + 1);
+          }
+        }
+      }
+
+      localStorage.setItem('hist12_user_reactions', JSON.stringify(userReactions));
     }
   </script>
 </body>
