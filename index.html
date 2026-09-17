@@ -889,14 +889,16 @@
        ========================================= */
     .modal-backdrop {
       display: none;
-      position: absolute;
+      position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(4px);
-      z-index: 200;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 99999;
       align-items: center;
       justify-content: center;
       padding: 16px;
+      overflow-y: auto;
     }
     .modal-backdrop.active {
       display: flex;
@@ -2279,54 +2281,48 @@
     }
 
     function refreshLeaderboardData() {
-      const listContainer = document.getElementById('lbListContainer');
-      listContainer.innerHTML = '<div style="text-align:center; padding: 40px 10px; color:#94a3b8;">🔄 Đang tải bảng vàng...</div>';
+      // 1. Luôn nạp dữ liệu có sẵn ngay lập tức
+      loadLocalLeaderboard();
 
-      let hasRendered = false;
-
-      // Timeout 2.5 giây: Nếu mạng Firebase chậm hoặc chưa trả về, lập tức nạp danh sách từ LocalStorage
-      const fallbackTimer = setTimeout(() => {
-        if (!hasRendered) {
-          hasRendered = true;
-          loadLocalLeaderboard();
-        }
-      }, 2500);
-
-      if (fbDatabase) {
-        fbDatabase.ref('history12_rankings').once('value').then((snapshot) => {
-          if (hasRendered) return;
-          clearTimeout(fallbackTimer);
-          hasRendered = true;
-
+      // 2. Đọc trực tiếp dữ liệu online từ Firebase REST API (nhanh & ổn định 100% trên mọi trình duyệt)
+      const rtdbUrl = "https://hoctap-90248-default-rtdb.asia-southeast1.firebasedatabase.app/history12_rankings.json";
+      fetch(rtdbUrl)
+        .then(res => res.json())
+        .then(data => {
+          if (!data) return;
           const cloudList = [];
-          if (snapshot && snapshot.exists()) {
-            snapshot.forEach(child => {
-              const val = child.val();
-              if (val) {
-                val.key = child.key; // Lưu key Firebase để update Like
-                cloudList.push(val);
-              }
-            });
-          }
+          Object.keys(data).forEach(key => {
+            const item = data[key];
+            if (item && typeof item === 'object') {
+              item.key = key;
+              cloudList.push(item);
+            }
+          });
 
           if (cloudList.length > 0) {
             cloudList.sort((a, b) => (b.score || 0) - (a.score || 0) || (a.timeSec || 0) - (b.timeSec || 0));
             renderLeaderboardRows(cloudList.slice(0, 30));
-          } else {
-            loadLocalLeaderboard();
           }
-        }).catch((err) => {
-          clearTimeout(fallbackTimer);
-          if (!hasRendered) {
-            hasRendered = true;
-            console.warn("Chuyển sang LocalStorage:", err);
-            loadLocalLeaderboard();
+        })
+        .catch(err => {
+          console.warn("REST fetch fallback to SDK:", err);
+          if (fbDatabase) {
+            fbDatabase.ref('history12_rankings').once('value').then((snapshot) => {
+              const cloudList = [];
+              snapshot.forEach(child => {
+                const val = child.val();
+                if (val) {
+                  val.key = child.key;
+                  cloudList.push(val);
+                }
+              });
+              if (cloudList.length > 0) {
+                cloudList.sort((a, b) => (b.score || 0) - (a.score || 0) || (a.timeSec || 0) - (b.timeSec || 0));
+                renderLeaderboardRows(cloudList.slice(0, 30));
+              }
+            }).catch(e => console.error(e));
           }
         });
-      } else {
-        clearTimeout(fallbackTimer);
-        loadLocalLeaderboard();
-      }
     }
 
     function loadLocalLeaderboard() {
@@ -2353,6 +2349,16 @@
       renderLeaderboardRows(localLb);
     }
 
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
     function renderLeaderboardRows(list) {
       const container = document.getElementById('lbListContainer');
       if (!container) return;
@@ -2363,79 +2369,81 @@
         return;
       }
 
-      let likedMap = {};
+      let userReactions = {};
       try {
-        likedMap = JSON.parse(localStorage.getItem('hist12_liked_records') || '{}');
+        userReactions = JSON.parse(localStorage.getItem('hist12_user_reactions') || '{}');
       } catch(e) {
-        likedMap = {};
+        userReactions = {};
       }
 
       list.forEach((item, index) => {
         if (!item) return;
-        const row = document.createElement('div');
-        row.className = 'lb-item';
-
-        const rank = index + 1;
-        let rankClass = '';
-        let rankBadge = rank;
-        if (rank === 1) { rankClass = 'top1'; rankBadge = '🥇'; }
-        if (rank === 2) { rankClass = 'top2'; rankBadge = '🥈'; }
-        if (rank === 3) { rankClass = 'top3'; rankBadge = '🥉'; }
-
-        const m = Math.floor((item.timeSec || 0) / 60);
-        const s = (item.timeSec || 0) % 60;
-        const timeStr = `${m}p${s.toString().padStart(2, '0')}s`;
-        const scoreNum = Number(item.score !== undefined ? item.score : 0);
-        const scoreFormatted = isNaN(scoreNum) ? '0.0' : scoreNum.toFixed(1);
-        const displayName = item.name || 'Thí Sinh';
-        const displayClass = item.userClass || '12';
-
-        const recordId = item.key || `local_${item.timestamp || index}`;
-        let userReactions = {};
         try {
-          userReactions = JSON.parse(localStorage.getItem('hist12_user_reactions') || '{}');
-        } catch(e) {
-          userReactions = {};
-        }
-        const myReaction = userReactions[recordId] || null;
+          const row = document.createElement('div');
+          row.className = 'lb-item';
 
-        // Tổng số cảm xúc
-        let totalReactions = 0;
-        if (item.reactions) {
-          totalReactions = Object.values(item.reactions).reduce((sum, val) => sum + (val || 0), 0);
-        } else if (item.likes) {
-          totalReactions = item.likes;
-        }
+          const rank = index + 1;
+          let rankClass = '';
+          let rankBadge = rank;
+          if (rank === 1) { rankClass = 'top1'; rankBadge = '🥇'; }
+          if (rank === 2) { rankClass = 'top2'; rankBadge = '🥈'; }
+          if (rank === 3) { rankClass = 'top3'; rankBadge = '🥉'; }
 
-        const isTopRows = (index === 0 || index === 1);
-        const popPositionClass = isTopRows ? 'pop-below' : '';
+          const m = Math.floor((item.timeSec || 0) / 60);
+          const s = (item.timeSec || 0) % 60;
+          const timeStr = `${m}p${s.toString().padStart(2, '0')}s`;
+          const scoreNum = Number(item.score !== undefined ? item.score : 0);
+          const scoreFormatted = isNaN(scoreNum) ? '0.0' : scoreNum.toFixed(1);
+          const displayName = escapeHtml(item.name || 'Thí Sinh');
+          const displayClass = escapeHtml(item.userClass || '12');
 
-        row.innerHTML = `
-          <div class="lb-rank ${rankClass}">${rankBadge}</div>
-          <div class="lb-name">${displayName} <span class="lb-class">(${displayClass})</span></div>
-          <div style="font-size:0.75rem; color:#94a3b8; margin-right:8px;">${timeStr}</div>
-          <div class="lb-score">${scoreFormatted}đ</div>
-          <div class="lb-reaction-wrapper">
-            <button class="lb-reaction-btn ${myReaction ? 'active-react' : ''}" 
-                    id="btnReact_${recordId}" 
-                    onclick="handleReactionBtnClick('${recordId}', '${item.key || ''}')"
-                    onpointerdown="startPressReaction('${recordId}')"
-                    onpointerup="endPressReaction('${recordId}')"
-                    onpointercancel="endPressReaction('${recordId}')"
-                    oncontextmenu="event.preventDefault(); showReactionPicker('${recordId}');">
-              <span id="reactEmoji_${recordId}">${displayEmoji}</span>
-              <span id="reactCount_${recordId}">${totalReactions}</span>
-            </button>
-            <div class="reaction-picker-popover ${popPositionClass}" id="picker_${recordId}">
-              <button class="emoji-pick-btn" onclick="selectReaction('${recordId}', '${item.key || ''}', '❤️')">❤️</button>
-              <button class="emoji-pick-btn" onclick="selectReaction('${recordId}', '${item.key || ''}', '😆')">😆</button>
-              <button class="emoji-pick-btn" onclick="selectReaction('${recordId}', '${item.key || ''}', '😮')">😮</button>
-              <button class="emoji-pick-btn" onclick="selectReaction('${recordId}', '${item.key || ''}', '🔥')">🔥</button>
-              <button class="emoji-pick-btn" onclick="selectReaction('${recordId}', '${item.key || ''}', '😡')">😡</button>
+          const recordId = item.key || `local_${item.timestamp || index}`;
+          const safeId = String(recordId).replace(/[^a-zA-Z0-9_]/g, '_');
+          const myReaction = userReactions[recordId] || null;
+
+          // Tổng số cảm xúc
+          let totalReactions = 0;
+          if (item.reactions && typeof item.reactions === 'object') {
+            totalReactions = Object.values(item.reactions).reduce((sum, val) => sum + (Number(val) || 0), 0);
+          } else if (item.likes) {
+            totalReactions = Number(item.likes) || 0;
+          }
+
+          const isTopRows = (index === 0 || index === 1);
+          const popPositionClass = isTopRows ? 'pop-below' : '';
+          const displayEmoji = myReaction ? myReaction : (totalReactions > 0 ? '❤️' : '🤍');
+          const fbKeyEscaped = item.key ? String(item.key).replace(/'/g, "\\'") : '';
+          const recordIdEscaped = String(recordId).replace(/'/g, "\\'");
+
+          row.innerHTML = `
+            <div class="lb-rank ${rankClass}">${rankBadge}</div>
+            <div class="lb-name">${displayName} <span class="lb-class">(${displayClass})</span></div>
+            <div style="font-size:0.75rem; color:#94a3b8; margin-right:8px;">${timeStr}</div>
+            <div class="lb-score">${scoreFormatted}đ</div>
+            <div class="lb-reaction-wrapper">
+              <button class="lb-reaction-btn ${myReaction ? 'active-react' : ''}" 
+                      id="btnReact_${safeId}" 
+                      onclick="handleReactionBtnClick('${recordIdEscaped}', '${fbKeyEscaped}', '${safeId}')"
+                      onpointerdown="startPressReaction('${safeId}')"
+                      onpointerup="endPressReaction()"
+                      onpointercancel="endPressReaction()"
+                      oncontextmenu="event.preventDefault(); showReactionPicker('${safeId}');">
+                <span id="reactEmoji_${safeId}">${displayEmoji}</span>
+                <span id="reactCount_${safeId}">${totalReactions}</span>
+              </button>
+              <div class="reaction-picker-popover ${popPositionClass}" id="picker_${safeId}">
+                <button class="emoji-pick-btn" onclick="selectReaction('${recordIdEscaped}', '${fbKeyEscaped}', '❤️', '${safeId}')">❤️</button>
+                <button class="emoji-pick-btn" onclick="selectReaction('${recordIdEscaped}', '${fbKeyEscaped}', '😆', '${safeId}')">😆</button>
+                <button class="emoji-pick-btn" onclick="selectReaction('${recordIdEscaped}', '${fbKeyEscaped}', '😮', '${safeId}')">😮</button>
+                <button class="emoji-pick-btn" onclick="selectReaction('${recordIdEscaped}', '${fbKeyEscaped}', '🔥', '${safeId}')">🔥</button>
+                <button class="emoji-pick-btn" onclick="selectReaction('${recordIdEscaped}', '${fbKeyEscaped}', '😡', '${safeId}')">😡</button>
+              </div>
             </div>
-          </div>
-        `;
-        container.appendChild(row);
+          `;
+          container.appendChild(row);
+        } catch(err) {
+          console.error("Error rendering leaderboard row:", err);
+        }
       });
     }
 
@@ -2443,40 +2451,40 @@
     let pressTimer = null;
     let didLongPress = false;
 
-    function startPressReaction(recordId) {
+    function startPressReaction(safeId) {
       didLongPress = false;
       if (pressTimer) clearTimeout(pressTimer);
       pressTimer = setTimeout(() => {
         didLongPress = true;
-        showReactionPicker(recordId);
+        showReactionPicker(safeId);
       }, 350); // Nhấn giữ 350ms là bung bảng cảm xúc
     }
 
-    function endPressReaction(recordId) {
+    function endPressReaction() {
       if (pressTimer) {
         clearTimeout(pressTimer);
         pressTimer = null;
       }
     }
 
-    function showReactionPicker(recordId) {
+    function showReactionPicker(safeId) {
       sound.playClick();
       // Ẩn tất cả các picker khác
       document.querySelectorAll('.reaction-picker-popover').forEach(p => {
-        if (p.id !== `picker_${recordId}`) p.classList.remove('show');
+        if (p.id !== `picker_${safeId}`) p.classList.remove('show');
       });
-      const picker = document.getElementById(`picker_${recordId}`);
+      const picker = document.getElementById(`picker_${safeId}`);
       if (picker) picker.classList.add('show');
     }
 
-    function handleReactionBtnClick(recordId, fbKey) {
+    function handleReactionBtnClick(recordId, fbKey, safeId) {
       // Nếu vừa nhấn giữ để mở bảng cảm xúc thì không kích hoạt click đơn
       if (didLongPress) {
         didLongPress = false;
         return;
       }
       
-      const picker = document.getElementById(`picker_${recordId}`);
+      const picker = document.getElementById(`picker_${safeId}`);
       // Nếu bảng đang mở thì click vào nút sẽ đóng nó lại
       if (picker && picker.classList.contains('show')) {
         picker.classList.remove('show');
@@ -2484,20 +2492,25 @@
       }
 
       // Nhấn chạm thông thường -> Tự động Thả tim ❤️ hoặc Bỏ thả tim
-      selectReaction(recordId, fbKey, '❤️');
+      selectReaction(recordId, fbKey, '❤️', safeId);
     }
 
-    function selectReaction(recordId, fbKey, emoji) {
+    function selectReaction(recordId, fbKey, emoji, safeId) {
       sound.playClick();
-      const picker = document.getElementById(`picker_${recordId}`);
+      const picker = document.getElementById(`picker_${safeId}`);
       if (picker) picker.classList.remove('show');
 
-      const userReactions = JSON.parse(localStorage.getItem('hist12_user_reactions') || '{}');
+      let userReactions = {};
+      try {
+        userReactions = JSON.parse(localStorage.getItem('hist12_user_reactions') || '{}');
+      } catch(e) {
+        userReactions = {};
+      }
       const prevReaction = userReactions[recordId] || null;
-      const countEl = document.getElementById(`reactCount_${recordId}`);
-      const emojiEl = document.getElementById(`reactEmoji_${recordId}`);
-      const btn = document.getElementById(`btnReact_${recordId}`);
-      let currentCount = parseInt(countEl.textContent || '0', 10);
+      const countEl = document.getElementById(`reactCount_${safeId}`);
+      const emojiEl = document.getElementById(`reactEmoji_${safeId}`);
+      const btn = document.getElementById(`btnReact_${safeId}`);
+      let currentCount = parseInt(countEl ? countEl.textContent : '0', 10) || 0;
 
       // Encode emoji sang tên key an toàn cho Firebase: heart, haha, wow, fire, angry
       const emojiMap = {
@@ -2512,9 +2525,9 @@
         // Bấm lại cảm xúc cũ -> Hủy thả cảm xúc
         delete userReactions[recordId];
         currentCount = Math.max(0, currentCount - 1);
-        btn.classList.remove('active-react');
-        emojiEl.textContent = currentCount > 0 ? '❤️' : '🤍';
-        countEl.textContent = currentCount;
+        if (btn) btn.classList.remove('active-react');
+        if (emojiEl) emojiEl.textContent = currentCount > 0 ? '❤️' : '🤍';
+        if (countEl) countEl.textContent = currentCount;
 
         if (fbKey && fbDatabase && emojiMap[emoji]) {
           const typeKey = emojiMap[emoji];
@@ -2527,9 +2540,9 @@
           currentCount += 1;
         }
         userReactions[recordId] = emoji;
-        btn.classList.add('active-react');
-        emojiEl.textContent = emoji;
-        countEl.textContent = currentCount;
+        if (btn) btn.classList.add('active-react');
+        if (emojiEl) emojiEl.textContent = emoji;
+        if (countEl) countEl.textContent = currentCount;
 
         if (fbKey && fbDatabase) {
           // Trừ cái cũ nếu đã từng chọn emoji khác
@@ -2547,8 +2560,17 @@
         }
       }
 
-      localStorage.setItem('hist12_user_reactions', JSON.stringify(userReactions));
+      try {
+        localStorage.setItem('hist12_user_reactions', JSON.stringify(userReactions));
+      } catch(e) {}
     }
+
+    // Tự động đóng picker khi chạm ra ngoài
+    document.addEventListener('pointerdown', (e) => {
+      if (!e.target.closest('.lb-reaction-wrapper')) {
+        document.querySelectorAll('.reaction-picker-popover.show').forEach(p => p.classList.remove('show'));
+      }
+    });
   </script>
 </body>
 </html>
