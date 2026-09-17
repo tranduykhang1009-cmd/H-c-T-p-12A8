@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>LỊCH SỬ 12 - THPT NGUYỄN HUỆ</title>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <!-- Firebase SDK Compat -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
+  <style>
+    :root {
+      --bg-page: #080b1a;
+      --card-bg: rgba(19, 23, 46, 0.92);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --btn-blue: #2563eb;
+      --btn-purple: #5c54e5;
+      --btn-red: #ef4444;
+      --accent-yellow: #facc15;
+      --accent-orange: #f97316;
+      --text-white: #ffffff;
+      --text-gray: #94a3b8;
+      --correct: #10b981;
+      --correct-bg: rgba(16, 185, 129, 0.15);
+      --wrong: #ef4444;
+      --wrong-bg: rgba(239, 68, 68, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    /* Background page có hiệu ứng ánh sáng gradient động lung linh */
+    body {
+      background-color: var(--bg-page);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.18) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(244, 63, 94, 0.14) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.08) 0px, transparent 60%);
+      color: var(--text-white);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 16px 0;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient animated orbs */
+    .glow-orb-1 {
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(92, 84, 229, 0.25) 0%, transparent 70%);
+      top: -100px;
+      left: 10%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+      animation: floatOrb 8s infinite alternate ease-in-out;
+    }
+    .glow-orb-2 {
+      position: fixed;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.18) 0%, transparent 70%);
+      bottom: -80px;
+      right: 10%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+      animation: floatOrb 10s infinite alternate-reverse ease-in-out;
+    }
+    @keyframes floatOrb {
+      from { transform: translateY(0) scale(1); }
+      to { transform: translateY(30px) scale(1.1); }
+    }
+
+    /* KHUNG ỨNG DỤNG - Thừa hưởng chiều cao dọc hoàn hảo */
+    .app-frame {
+      width: 100%;
+      max-width: 490px;
+      min-height: 92vh;
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 26px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 0;
+      }
+      .app-frame {
+        max-width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+        border: none;
+      }
+    }
+
+    .screen {
+      display: none;
+      width: 100%;
+      padding: 22px 20px;
+      flex-direction: column;
+      flex: 1;
+      animation: fadeIn 0.22s ease;
+    }
+    .screen.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Sound Control Bar (Góc trên trang chủ) */
+    .audio-header-bar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .btn-audio-toggle {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #e2e8f0;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s;
+    }
+    .btn-audio-toggle:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .btn-audio-toggle.active {
+      background: rgba(99, 102, 241, 0.25);
+      border-color: #818cf8;
+      color: #c7d2fe;
+    }
+
+    /* =========================================
+       1. TRANG CHỦ (THIẾT KẾ MỚI SANG TRỌNG CÓ TÊN TRƯỜNG)
+       ========================================= */
+    .home-header {
+      text-align: center;
+      margin-top: 4px;
+      margin-bottom: 22px;
+    }
+    .school-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(99, 102, 241, 0.18);
+      border: 1px solid rgba(129, 140, 248, 0.35);
+      color: #c7d2fe;
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 12px;
+    }
+    .fire-badge {
+      font-size: 2.8rem;
+      display: inline-block;
+      margin-bottom: 4px;
+      animation: flame 1.5s infinite alternate;
+    }
+    @keyframes flame {
+      from { transform: scale(1); filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.5)); }
+      to { transform: scale(1.08); filter: drop-shadow(0 0 24px rgba(249, 115, 22, 0.9)); }
+    }
+    .home-title {
+      font-size: 1.85rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff 40%, #c7d2fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 4px;
+    }
+    .home-sub {
+      color: var(--text-gray);
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    .user-info-row {
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .input-box, .select-box {
+      width: 100%;
+      background: #0b0e22;
+      border: 1.5px solid #23284d;
+      border-radius: 12px;
+      padding: 13px 14px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .input-box:focus, .select-box:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 12px rgba(99, 102, 241, 0.3);
+    }
+    .select-box option {
+      background: #0b0e22;
+      color: #fff;
+    }
+
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #0b0e22;
+      border: 1.5px solid #23284d;
+      border-radius: 12px;
+      padding: 13px 16px;
+      margin-bottom: 20px;
+    }
+    .toggle-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #e2e8f0;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 46px;
+      height: 26px;
+    }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      inset: 0;
+      background-color: #334155;
+      transition: .3s;
+      border-radius: 26px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+    }
+    input:checked + .slider { background-color: #3b82f6; }
+    input:checked + .slider:before { transform: translateX(20px); }
+
+    .topic-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .topic-card {
+      background: #0b0e22;
+      border: 1.5px solid #23284d;
+      border-radius: 14px;
+      padding: 15px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .topic-card.selected {
+      border-color: #6366f1;
+      background: rgba(99, 102, 241, 0.14);
+      box-shadow: 0 4px 18px rgba(99, 102, 241, 0.2);
+    }
+    .topic-name {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      flex: 1;
+    }
+    .topic-count {
+      font-size: 0.8rem;
+      color: var(--text-gray);
+      background: rgba(255, 255, 255, 0.08);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .btn-start-all {
+      width: 100%;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: #fff;
+      border: none;
+      padding: 15px;
+      border-radius: 14px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(79, 70, 229, 0.45);
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-start-all:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(79, 70, 229, 0.6);
+    }
+
+    .btn-view-leaderboard {
+      margin-top: 12px;
+      width: 100%;
+      background: transparent;
+      color: #facc15;
+      border: 1.5px solid rgba(250, 204, 21, 0.35);
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-view-leaderboard:hover {
+      background: rgba(250, 204, 21, 0.1);
+      border-color: #facc15;
+    }
+
+    /* =========================================
+       2. MÀN HÌNH LÀM BÀI
+       ========================================= */
+    .quiz-container {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: flex-start;
+    }
+
+    .quiz-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .btn-exit {
+      background: #191e3e;
+      border: 1px solid var(--card-border);
+      color: #cbd5e1;
+      padding: 7px 18px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-exit:hover {
+      background: #252c5c;
+      color: #fff;
+    }
+    .timer-center {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--accent-yellow);
+      letter-spacing: 1.5px;
+    }
+    .btn-submit-red {
+      background: #ef4444;
+      border: none;
+      color: #fff;
+      padding: 7px 20px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4);
+      transition: all 0.2s;
+    }
+    .btn-submit-red:hover {
+      background: #dc2626;
+      transform: translateY(-1px);
+    }
+
+    .q-sub-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .q-badge-blue {
+      background: #1d4ed8;
+      color: #fff;
+      font-size: 0.84rem;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 8px;
+    }
+    .btn-bookmark {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s;
+    }
+    .btn-bookmark.active {
+      color: #f97316;
+    }
+
+    .quiz-question-text {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      margin-bottom: 18px;
+    }
+    .quiz-opt-btn {
+      background: #0b0e22;
+      border: 1.5px solid #23284d;
+      border-radius: 15px;
+      padding: 18px 20px;
+      min-height: 64px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.18s;
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+    }
+    .quiz-opt-btn:hover:not(.locked) {
+      border-color: #4f46e5;
+      background: #151a3a;
+      transform: translateX(4px);
+    }
+    .quiz-opt-btn.correct {
+      background: var(--correct-bg) !important;
+      border-color: var(--correct) !important;
+      color: #34d399 !important;
+      font-weight: 700;
+      box-shadow: 0 0 14px rgba(16, 185, 129, 0.25);
+    }
+    .quiz-opt-btn.wrong {
+      background: var(--wrong-bg) !important;
+      border-color: var(--wrong) !important;
+      color: #f87171 !important;
+      font-weight: 700;
+      box-shadow: 0 0 14px rgba(239, 68, 68, 0.25);
+    }
+    .quiz-opt-btn.locked {
+      cursor: default;
+    }
+    .quiz-opt-btn.locked:not(.correct):not(.wrong) {
+      opacity: 0.45;
+    }
+
+    .quiz-explain-card {
+      display: none;
+      background: #090c1f;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-top: 6px;
+      margin-bottom: 20px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .quiz-explain-card.show {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .quiz-bottom-nav {
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .btn-nav-prev {
+      background: #0b0e22;
+      border: 1.5px solid #23284d;
+      color: #cbd5e1;
+      padding: 13px 22px;
+      border-radius: 14px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-nav-prev:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+    .btn-nav-list {
+      background: #0b0e22;
+      border: 1.5px solid #23284d;
+      color: #cbd5e1;
+      padding: 9px 18px;
+      border-radius: 14px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .btn-nav-next {
+      background: #2563eb;
+      border: none;
+      color: #fff;
+      padding: 13px 24px;
+      border-radius: 14px;
+      font-size: 0.98rem;
+      font-weight: 800;
+      cursor: pointer;
+      flex: 1;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    }
+
+    /* =========================================
+       3. DRAWER BẢNG CÂU HỎI
+       ========================================= */
+    .drawer-overlay {
+      display: none;
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      align-items: flex-end;
+    }
+    .drawer-overlay.active {
+      display: flex;
+    }
+    .drawer-sheet {
+      width: 100%;
+      background: #11142e;
+      border-top: 1px solid var(--card-border);
+      border-radius: 22px 22px 0 0;
+      padding: 20px;
+      max-height: 75vh;
+      overflow-y: auto;
+      animation: slideUp 0.25s ease;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+    .drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .drawer-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .btn-drawer-close {
+      background: #1c2146;
+      border: none;
+      color: #94a3b8;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .drawer-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+    }
+    @media (max-width: 440px) {
+      .drawer-grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+    .drawer-btn {
+      aspect-ratio: 1;
+      background: #0b0e22;
+      border: 1.5px solid #282e5c;
+      border-radius: 9px;
+      color: #cbd5e1;
+      font-weight: 800;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .drawer-btn.current {
+      border: 2px solid #ffffff;
+      color: #fff;
+    }
+    .drawer-btn.done {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: #fff;
+    }
+    .drawer-btn.flagged::after {
+      content: '🚩';
+      position: absolute;
+      top: -4px;
+      right: -3px;
+      font-size: 0.65rem;
+    }
+    .drawer-btn.is-correct {
+      background: #10b981 !important;
+      border-color: #10b981 !important;
+      color: #fff !important;
+    }
+    .drawer-btn.is-wrong {
+      background: #ef4444 !important;
+      border-color: #ef4444 !important;
+      color: #fff !important;
+    }
+
+    /* =========================================
+       4. RESULT SCREEN (GỌN GÀNG, CÓ ACCORDION ẨN/HIỆN)
+       ========================================= */
+    .res-trophy {
+      font-size: 3.2rem;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+    .res-rank-num {
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #3b82f6;
+      margin-bottom: 2px;
+    }
+    .res-time-txt {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-gray);
+      margin-bottom: 18px;
+    }
+
+    .gauge-wrapper {
+      width: 135px;
+      height: 135px;
+      margin: 0 auto 18px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gauge-svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+    .gauge-bg {
+      fill: none;
+      stroke: #1e234a;
+      stroke-width: 9;
+    }
+    .gauge-bar {
+      fill: none;
+      stroke: #3b82f6;
+      stroke-width: 9;
+      stroke-linecap: round;
+      stroke-dasharray: 345;
+      stroke-dashoffset: 345;
+      transition: stroke-dashoffset 1s ease;
+    }
+    .gauge-text {
+      position: absolute;
+      text-align: center;
+    }
+    .gauge-score {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .gauge-percent {
+      font-size: 0.78rem;
+      color: var(--text-gray);
+      font-weight: 700;
+    }
+
+    .res-banner {
+      background: #171b38;
+      border: 1px solid #2d3460;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      line-height: 1.5;
+    }
+
+    .res-btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .btn-res-purple {
+      background: #6366f1;
+      color: #fff;
+      border: none;
+      padding: 13px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .btn-res-red {
+      background: #1c1527;
+      border: 1.5px solid #ef4444;
+      color: #f87171;
+      padding: 13px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* ACCORDION XEM LẠI CÂU SAI (MẶC ĐỊNH ẨN GỌN GÀNG) */
+    .review-accordion-toggle {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1.5px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 12px 16px;
+      color: #cbd5e1;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s;
+      margin-top: 6px;
+    }
+    .review-accordion-toggle:hover {
+      background: rgba(255, 255, 255, 0.09);
+      border-color: #818cf8;
+      color: #fff;
+    }
+    .review-accordion-toggle .arrow-icon {
+      transition: transform 0.25s ease;
+    }
+    .review-accordion-toggle.open .arrow-icon {
+      transform: rotate(180deg);
+    }
+
+    .review-accordion-body {
+      display: none;
+      margin-top: 12px;
+      animation: fadeIn 0.25s ease;
+    }
+    .review-accordion-body.show {
+      display: block;
+    }
+
+    .review-items-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 380px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .review-card {
+      background: #0b0e22;
+      border-radius: 12px;
+      border-left: 4px solid var(--wrong);
+      padding: 14px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    .review-card.correct-item {
+      border-left-color: var(--correct);
+    }
+    .review-q-title {
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 6px;
+    }
+    .review-ans-correct {
+      color: #34d399;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .review-explain {
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+    }
+
+    /* =========================================
+       5. BẢNG XẾP HẠNG MODAL
+       ========================================= */
+    .modal-backdrop {
+      display: none;
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-backdrop.active {
+      display: flex;
+    }
+    .leaderboard-card {
+      background: #12152c;
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      width: 100%;
+      max-width: 440px;
+      padding: 24px 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+      animation: fadeIn 0.2s ease;
+    }
+    .lb-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .lb-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #facc15;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-refresh-lb {
+      background: #1c2146;
+      border: 1px solid var(--card-border);
+      color: #38bdf8;
+      padding: 7px 14px;
+      border-radius: 10px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-refresh-lb:hover {
+      background: #252b58;
+    }
+
+    .lb-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 240px;
+      max-height: 360px;
+      overflow-y: auto;
+      margin-bottom: 18px;
+      padding-right: 2px;
+    }
+    .lb-item {
+      background: #0b0e22;
+      border: 1px solid #1c2146;
+      border-radius: 12px;
+      padding: 13px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.92rem;
+      transition: all 0.2s;
+    }
+    .lb-item:hover {
+      border-color: #3b82f6;
+      background: #101432;
+    }
+    .lb-rank {
+      width: 32px;
+      font-weight: 900;
+      color: #94a3b8;
+    }
+    .lb-rank.top1 { color: #facc15; font-size: 1.25rem; }
+    .lb-rank.top2 { color: #e2e8f0; font-size: 1.15rem; }
+    .lb-rank.top3 { color: #f97316; font-size: 1.15rem; }
+    .lb-name {
+      flex: 1;
+      font-weight: 800;
+      color: #f1f5f9;
+    }
+    .lb-class {
+      color: #818cf8;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-left: 4px;
+    }
+    .lb-score {
+      font-weight: 900;
+      color: #34d399;
+      font-size: 1.05rem;
+    }
+
+    .confirm-box {
+      background: #12152c;
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 22px;
+      text-align: center;
+      max-width: 360px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Ambient floating glow orbs -->
+  <div class="glow-orb-1"></div>
+  <div class="glow-orb-2"></div>
+
+  <!-- KHUNG ỨNG DỤNG -->
+  <div class="app-frame">
+
+    <!-- ==================== 1. TRANG CHỦ ==================== -->
+    <div id="homeScreen" class="screen active">
+      <!-- Thanh điều khiển âm thanh & nhạc nền -->
+      <div class="audio-header-bar">
+        <button id="btnToggleBgm" class="btn-audio-toggle" onclick="toggleBgmMusic()">
+          <span>🎵</span>
+          <span id="bgmText">Nhạc Lofi</span>
+        </button>
+        <button id="btnToggleSfx" class="btn-audio-toggle active" onclick="toggleSfxSound()">
+          <span id="sfxIcon">🔊</span>
+          <span>Hiệu ứng</span>
+        </button>
+      </div>
+
+      <div class="home-header">
+        <div class="school-tag">
+          <span>🏛️</span>
+          <span>TRƯỜNG THPT NGUYỄN HUỆ</span>
+        </div>
+        <div><span class="fire-badge">🔥</span></div>
+        <h1 class="home-title">LỊCH SỬ 12</h1>
+        <p class="home-sub">Luyện thi trắc nghiệm • Bài 1: Liên Hợp Quốc</p>
+      </div>
+
+      <!-- Form Nhập Tên & Sổ dọc chọn Lớp 12A1-12A10 -->
+      <div class="user-info-row">
+        <div class="form-group">
+          <label class="form-label" for="inputName">
+            <span>👤</span>
+            <span>Tên hiển thị bảng vàng:</span>
+          </label>
+          <input type="text" id="inputName" class="input-box" placeholder="VD: Trần Duy Khang" value="" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="selectClass">
+            <span>🏫</span>
+            <span>Lớp:</span>
+          </label>
+          <select id="selectClass" class="select-box">
+            <option value="12A1">12A1</option>
+            <option value="12A2">12A2</option>
+            <option value="12A3">12A3</option>
+            <option value="12A4">12A4</option>
+            <option value="12A5">12A5</option>
+            <option value="12A6">12A6</option>
+            <option value="12A7">12A7</option>
+            <option value="12A8">12A8</option>
+            <option value="12A9">12A9</option>
+            <option value="12A10">12A10</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Trộn ngẫu nhiên câu hỏi -->
+      <div class="toggle-row">
+        <div class="toggle-label">
+          <span>🔀</span>
+          <span>Trộn ngẫu nhiên câu hỏi</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggleShuffle" checked />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <!-- Danh sách bài học -->
+      <div class="topic-list">
+        <div class="topic-card selected">
+          <span style="font-size: 1.2rem;">👑</span>
+          <span class="topic-name">Bài 1: LIÊN HỢP QUỐC (UN)</span>
+          <span class="topic-count">28 câu</span>
+        </div>
+      </div>
+
+      <!-- Nút bắt đầu chiến đề -->
+      <button class="btn-start-all" onclick="startExamAction()">
+        <span>🚀</span>
+        <span>CHIẾN TOÀN BỘ ĐỀ (28 CÂU)</span>
+      </button>
+
+      <!-- Nút xem Bảng Vàng Vinh Danh -->
+      <button class="btn-view-leaderboard" onclick="openLeaderboardModal()">
+        <span>🏆</span>
+        <span>Xem Bảng Vàng Vinh Danh</span>
+      </button>
+    </div>
+
+    <!-- ==================== 2. MÀN HÌNH LÀM BÀI ==================== -->
+    <div id="quizScreen" class="screen">
+      <div class="quiz-container">
+        <!-- Top Bar: Thoát | 00:00 | Nộp bài -->
+        <div class="quiz-top-bar">
+          <button class="btn-exit" onclick="confirmExitToHome()">Thoát</button>
+          <div class="timer-center" id="examTimer">00:00</div>
+          <button class="btn-submit-red" onclick="confirmSubmitExam()">Nộp bài</button>
+        </div>
+
+        <!-- Sub Bar: Câu X/28 | Đánh dấu -->
+        <div class="q-sub-bar">
+          <span class="q-badge-blue" id="qCurrentBadge">Câu 1/28</span>
+          <button class="btn-bookmark" id="btnBookmark" onclick="toggleBookmark()">
+            <span>🚩</span>
+            <span id="bookmarkText">Đánh dấu</span>
+          </button>
+        </div>
+
+        <!-- Nội dung câu hỏi -->
+        <h2 class="quiz-question-text" id="qStemText">Nội dung câu hỏi...</h2>
+
+        <!-- 4 Lựa chọn A, B, C, D -->
+        <div class="quiz-options" id="quizOptionsContainer"></div>
+
+        <!-- Lời giải chi tiết -->
+        <div class="quiz-explain-card" id="quizExplainBox">
+          <div style="color: #34d399; font-weight: 800; margin-bottom: 4px;">💡 Lời giải chi tiết:</div>
+          <div id="quizExplainContent" style="color: #cbd5e1;"></div>
+        </div>
+
+        <!-- Thanh điều hướng đáy: [Trước] [Danh sách] [Tiếp] -->
+        <div class="quiz-bottom-nav">
+          <button class="btn-nav-prev" id="btnPrevQ" onclick="navigateQ(-1)">❮ Trước</button>
+          <button class="btn-nav-list" onclick="openDrawer()">
+            <span>📋</span>
+            <span style="font-size: 0.72rem;">Danh sách</span>
+          </button>
+          <button class="btn-nav-next" id="btnNextQ" onclick="navigateQ(1)">Tiếp ❯</button>
+        </div>
+      </div>
+
+      <!-- Drawer Danh sách câu hỏi -->
+      <div class="drawer-overlay" id="quizDrawer" onclick="closeDrawer(event)">
+        <div class="drawer-sheet" onclick="event.stopPropagation()">
+          <div class="drawer-header">
+            <h3 class="drawer-title">Bảng câu hỏi</h3>
+            <button class="btn-drawer-close" onclick="closeDrawer()">✕</button>
+          </div>
+          <div class="drawer-grid" id="drawerGrid"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 3. MÀN HÌNH KẾT QUẢ ==================== -->
+    <div id="resultScreen" class="screen">
+      <div class="res-trophy">🏆</div>
+      <div class="res-rank-num" id="resRankDisplay">Top 1</div>
+      <div class="res-time-txt">Thời gian làm bài: <span id="resTimeSpent" style="font-weight: 700; color: #fff;">00 phút 13 giây</span></div>
+
+      <!-- Vòng tròn Donut Gauge -->
+      <div class="gauge-wrapper">
+        <svg class="gauge-svg" viewBox="0 0 130 130">
+          <circle class="gauge-bg" cx="65" cy="65" r="55"></circle>
+          <circle class="gauge-bar" id="gaugeBar" cx="65" cy="65" r="55"></circle>
+        </svg>
+        <div class="gauge-text">
+          <div class="gauge-score" id="resRatioScore">0/28</div>
+          <div class="gauge-percent" id="resAccuracyPercent">Chính xác: 0%</div>
+        </div>
+      </div>
+
+      <!-- Banner nhận xét -->
+      <div class="res-banner" id="resBanner">
+        <span>⚠️</span>
+        <span id="resBannerText">Cố lên! Hãy ôn lại các câu sai để nắm chắc 100% kiến thức!</span>
+      </div>
+
+      <!-- Nhóm nút hành động chính -->
+      <div class="res-btn-group">
+        <button class="btn-res-purple" onclick="goToHome()">Về trang chủ thi lại</button>
+        <button class="btn-res-red" id="btnRetryWrong" onclick="retryWrongQuestions()">
+          <span>🔥</span>
+          <span>Phục thù: Chỉ làm lại câu sai</span>
+        </button>
+        <button class="btn-view-leaderboard" onclick="openLeaderboardModal()" style="margin-top:0;">
+          <span>🏆</span>
+          <span>Xem Bảng Vàng Vinh Danh</span>
+        </button>
+      </div>
+
+      <!-- ACCORDION ẨN/HIỆN CHI TIẾT CÂU SAI - MẶC ĐỊNH ẨN GỌN GÀNG -->
+      <button class="review-accordion-toggle" id="reviewAccordionBtn" onclick="toggleReviewAccordion()">
+        <span id="accordionBtnLabel">🔽 Xem chi tiết đáp án & câu sai (0)</span>
+        <span class="arrow-icon">▼</span>
+      </button>
+
+      <div class="review-accordion-body" id="reviewAccordionBody">
+        <div class="review-items-stack" id="reviewListContainer"></div>
+      </div>
+    </div>
+
+    <!-- ==================== 4. BẢNG XẾP HẠNG MODAL ==================== -->
+    <div class="modal-backdrop" id="leaderboardModal" onclick="closeLeaderboardModal(event)">
+      <div class="leaderboard-card" onclick="event.stopPropagation()">
+        <div class="lb-header">
+          <div class="lb-title">
+            <span>🏆</span>
+            <span>BẢNG VÀNG VINH DANH</span>
+          </div>
+          <button class="btn-refresh-lb" onclick="refreshLeaderboardData()">
+            <span>🔄</span>
+            <span>Làm mới</span>
+          </button>
+        </div>
+
+        <div class="lb-list" id="lbListContainer">
+          <!-- Injected via Firebase -->
+        </div>
+
+        <button class="btn-start-all" onclick="closeLeaderboardModal()" style="padding: 12px; font-size: 0.95rem;">Đóng</button>
+      </div>
+    </div>
+
+    <!-- Confirm Exit Modal -->
+    <div class="modal-backdrop" id="confirmExitModal">
+      <div class="confirm-box">
+        <h3 style="font-size: 1.15rem; margin-bottom: 10px;">Thoát về trang chủ?</h3>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 18px;">
+          Tiến trình làm bài hiện tại sẽ không được lưu nếu bạn thoát ngay bây giờ.
+        </p>
+        <div style="display: flex; gap: 10px; justify-content: center;">
+          <button class="btn-exit" onclick="closeExitModal()">Làm tiếp</button>
+          <button class="btn-submit-red" onclick="executeExitToHome()">Về trang chủ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirm Submit Modal -->
+    <div class="modal-backdrop" id="confirmSubmitModal">
+      <div class="confirm-box">
+        <h3 style="font-size: 1.15rem; margin-bottom: 10px;">Xác nhận nộp bài?</h3>
+        <p style="font-size: 0.88rem; color: var(--text-gray); margin-bottom: 18px;" id="submitModalText">
+          Bạn có chắc chắn muốn nộp bài để chấm điểm?
+        </p>
+        <div style="display: flex; gap: 10px; justify-content: center;">
+          <button class="btn-exit" onclick="closeSubmitModal()">Kiểm tra lại</button>
+          <button class="btn-submit-red" onclick="executeSubmitExam()">Nộp bài</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // --- 28 CÂU HỎI LỊCH SỬ 12 BÀI 1 LIÊN HỢP QUỐC ---
+    const FULL_DATABASE = [
+      {
+        id: 1,
+        question: "Đầu năm 1945, một trong những vấn đề cấp bách đặt ra cho các nước Đồng minh chống phát xít là gì?",
+        options: [
+          "A. Phân chia lại thuộc địa của các nước.",
+          "B. Tổ chức lại phe đồng minh sau chiến tranh.",
+          "C. Tiêu diệt Chủ nghĩa phát xít.",
+          "D. Phục hồi và phát triển kinh tế thế giới."
+        ],
+        correct: 2,
+        explain: "Đầu năm 1945, CTTG2 bước vào giai đoạn quyết định. 3 vấn đề cấp bách hàng đầu là: 1. Nhanh chóng tiêu diệt hoàn toàn phát xít; 2. Tổ chức lại thế giới; 3. Phân chia phạm vi ảnh hưởng giữa các nước thắng trận."
+      },
+      {
+        id: 2,
+        question: "Ý nào sau đâu là một trong những mục tiêu quan trọng nhất của tổ chức Liên Hợp quốc?",
+        options: [
+          "A. Cân bằng quyền lực các nước.",
+          "B. Xoá bỏ chế độ thực dân kiểu cũ.",
+          "C. Duy trì hòa bình, an ninh thế giới.",
+          "D. Thực hiện quyền tự do hàng hải."
+        ],
+        correct: 2,
+        explain: "Theo Điều 1 Hiến chương LHQ, mục tiêu quan trọng và bao trùm nhất là duy trì hòa bình và an ninh quốc tế."
+      },
+      {
+        id: 4,
+        question: "Năm 1945, bản Hiến chương Liên hợp quốc được thông qua tại Hội nghị nào sau đây?",
+        options: [
+          "A. hội nghị Tam cường I-an-ta.",
+          "B. hội nghị Xan Phran-xi-xcô.",
+          "C. hội nghị Bàn Môn Điếm.",
+          "D. hội nghị Véc xai - Oasington."
+        ],
+        correct: 1,
+        explain: "Từ 25-4 đến 26-6-1945, đại biểu 50 nước đã họp tại Xan Phran-xi-xcô (Mỹ) và thông qua bản Hiến chương Liên hợp quốc."
+      },
+      {
+        id: 5,
+        question: "Cơ quan nào của Liên hợp quốc giữ vai trò trọng yếu trong việc duy trì hoà bình và an ninh quốc tế?",
+        options: [
+          "A. Đại hội đồng.",
+          "B. Ban thư ký.",
+          "C. Hội đồng bảo an.",
+          "D. Tòa án quốc tế."
+        ],
+        correct: 2,
+        explain: "Hội đồng Bảo an là cơ quan chính trị quan trọng nhất, giữ vai trò trọng yếu trong duy trì hòa bình và an ninh quốc tế."
+      },
+      {
+        id: 6,
+        question: "Cơ quan nào sau đây là cơ quan duy nhất của Liên hợp quốc có đại diện của tất cả các nước thành viên?",
+        options: [
+          "A. Đại hội đồng.",
+          "B. Ban thư ký.",
+          "C. Hội đồng bảo an.",
+          "D. Toà án quốc tế."
+        ],
+        correct: 0,
+        explain: "Đại hội đồng là cơ quan duy nhất có sự tham gia của tất cả các nước thành viên LHQ (mỗi nước có 1 phiếu biểu quyết ngang nhau)."
+      },
+      {
+        id: 7,
+        question: "Nước nào sau đây là một trong những Ủy viên thường trực của Hội đồng Bảo an Liên hợp quốc?",
+        options: [
+          "A. Nhật.",
+          "B. Đức.",
+          "C. Anh.",
+          "D. Bỉ."
+        ],
+        correct: 2,
+        explain: "5 nước Thường trực Hội đồng Bảo an (có quyền phủ quyết Veto) gồm: Nga (Liên Xô), Mỹ, Anh, Pháp, Trung Quốc."
+      },
+      {
+        id: 8,
+        question: "Những quốc gia nào sau đây đóng vai trò quyết định, đồng thời là sáng lập viên của tổ chức Liên hợp quốc?",
+        options: [
+          "A. Liên Xô, Mỹ và Đức.",
+          "B. Liên Xô, Mỹ và Anh.",
+          "C. Mỹ, Anh và Đức.",
+          "D. Liên Xô, Anh và Ba Lan."
+        ],
+        correct: 1,
+        explain: "Tam cường Đồng minh: Liên Xô, Mỹ, Anh là những trụ cột sáng lập quyết định sự ra đời của LHQ."
+      },
+      {
+        id: 9,
+        question: "Vai trò quan trọng nhất của Đại Hội Đồng Liên Hợp Quốc là gì?",
+        options: [
+          "A. Duy trì an ninh quốc tế.",
+          "B. Thảo luận và phê duyệt các quyết sách chung.",
+          "C. Giải quyết các tranh chấp quốc tế.",
+          "D. Điều hành các hoạt động hành chính."
+        ],
+        correct: 1,
+        explain: "Đại hội đồng họp thường niên hàng năm để thảo luận các vấn đề thuộc phạm vi Hiến chương và phê duyệt ngân sách chung."
+      },
+      {
+        id: 10,
+        question: "Tổ chức nào sau đây là tổ chức quốc tế lớn nhất hành tinh hiện nay?",
+        options: [
+          "A. Liên hợp quốc.",
+          "B. Liên minh châu Âu.",
+          "C. Tổ chức thương mại thế giới.",
+          "D. Tổ chức Hiệp ước Bắc Đại Tây Dương."
+        ],
+        correct: 0,
+        explain: "Liên Hợp Quốc (UN) hiện nay có 193 quốc gia thành viên, là tổ chức quốc tế toàn cầu lớn nhất thế giới."
+      },
+      {
+        id: 11,
+        question: "Trụ sở chính của tổ chức Liên hợp quốc đặt tại",
+        options: [
+          "A. Niu Ooc (Mỹ).",
+          "B. Pari (Pháp).",
+          "C. Luân Đôn (Anh).",
+          "D. Ianta (Liên Xô)."
+        ],
+        correct: 0,
+        explain: "Trụ sở chính của Liên Hợp Quốc được đặt tại thành phố Niu Oóc (New York, Mỹ)."
+      },
+      {
+        id: 12,
+        question: "“Duy trì hoà bình và an ninh quốc tế” là mục tiêu quan trọng của tổ chức nào sau đây?",
+        options: [
+          "A. Hiệp hội các quốc gia Đông Nam Á (ASEAN).",
+          "B. Liên minh châu Âu (EU).",
+          "C. Hiệp ước Bắc Đại Tây Dương (NATO).",
+          "D. Liên hợp quốc (UN)."
+        ],
+        correct: 3,
+        explain: "Duy trì hòa bình và an ninh quốc tế là mục tiêu tôn chỉ của Liên hợp quốc (UN)."
+      },
+      {
+        id: 13,
+        question: "Tổ chức nào sau đây không thuộc Liên hợp quốc?",
+        options: [
+          "A. UNICEF.",
+          "B. WTO.",
+          "C. UNESCO.",
+          "D. NATO."
+        ],
+        correct: 3,
+        explain: "NATO là khối quân sự do Mỹ đứng đầu thành lập năm 1949, hoàn toàn không thuộc hệ thống Liên Hợp Quốc."
+      },
+      {
+        id: 14,
+        question: "Mọi quyết định của Hội đồng Bảo an phải được sự nhất trí của 5 nước Ủy viên thường trực là",
+        options: [
+          "A. Liên Xô, Mĩ, Anh, Pháp, Đức.",
+          "B. Liên Xô, Trung Quốc, Mĩ, Anh, Nhật.",
+          "C. Liên Xô, Trung Quốc, Mĩ, Italia, Anh.",
+          "D. Liên Xô, Trung Quốc, Mĩ, Anh, Pháp."
+        ],
+        correct: 3,
+        explain: "Nguyên tắc nhất trí giữa 5 nước lớn: Liên Xô (Nga), Trung Quốc, Mĩ, Anh, Pháp là nguyên tắc then chốt."
+      },
+      {
+        id: 15,
+        question: "Vai trò duy trì hoà binh, an ninh quốc tế của Liên hợp quốc được thể hiện thông qua hoạt động nào sau đây?",
+        options: [
+          "A. Xây dựng chương trình hỗ trợ các nước về vốn, tri thức, kĩ thuật,…",
+          "B. Đề ra mục tiêu phát triển Thiên niên kỉ nhằm xoá bỏ đói nghèo .",
+          "C. Kí điều ước quốc tế về quyền phụ nữ và trẻ em.",
+          "D. Thủ tiêu hệ thống thuộc địa của chủ nghĩa thực dân."
+        ],
+        correct: 3,
+        explain: "LHQ đã thông qua 'Tuyên ngôn về việc trao trả độc lập cho các nước và dân tộc thuộc địa' (1960), góp phần xóa bỏ chủ nghĩa thực dân, bảo vệ hòa bình thế giới."
+      },
+      {
+        id: 16,
+        question: "Trong số các mục tiêu hoạt động của Liên hợp quốc, mục tiêu nào là cơ sở để thực hiện các mục tiêu khác?",
+        options: [
+          "A. duy trì hòa bình và an ninh quốc tế.",
+          "B. là trung tâm điều hòa các nỗ lực quốc tế.",
+          "C. thúc đẩy quan hệ hữu nghị giữa các dân tộc.",
+          "D. thúc đẩy hợp tác quốc tế để giải quyết các vấn đề toàn cầu."
+        ],
+        correct: 0,
+        explain: "Hòa bình và an ninh quốc tế là điều kiện tiên quyết và là nền tảng cốt lõi nhất để tiến hành hợp tác kinh tế, văn hóa và xã hội."
+      },
+      {
+        id: 17,
+        question: "Nội dung nào sau đây là vai trò của Liên hợp quốc trong duy trì hòa bình và an ninh quốc tế?",
+        options: [
+          "A. Góp phần ngăn ngừa không để xảy ra cuộc chiến tranh thế giới mới kể từ năm 1945 đến nay.",
+          "B. Thúc đẩy tăng trưởng kinh tế, tiến bộ xã hội.",
+          "C. Giúp đỡ lẫn nhau về kinh tế, xã hội, văn hoá, khoa học.",
+          "D. Xây dựng và kí kết những văn bản, điều ước quốc tế nhằm đảm bảo các quyền cơ bản của con người"
+        ],
+        correct: 0,
+        explain: "Thành tựu lớn nhất: Trong suốt gần 80 năm qua kể từ 1945, LHQ đã góp phần ngăn ngừa không để bùng nổ cuộc chiến tranh thế giới mới."
+      },
+      {
+        id: 18,
+        question: "Ngày 24-10-1945, tổ chức Liên hợp quốc chính thức được thành lập khi các nước thành viên",
+        options: [
+          "A. phê chuẩn Hiến chương.",
+          "B. tham dự hội nghị Tê-hê-ran (Iran).",
+          "C. ra Bản tuyên bố Luân Đôn.",
+          "D. họp hội nghị Xan Phran-xi- cô (Mĩ)."
+        ],
+        correct: 0,
+        explain: "Ngày 24/10/1945, Hiến chương chính thức có hiệu lực sau khi được quốc hội đa số các nước thành viên phê chuẩn. Ngày này được lấy làm 'Ngày Liên Hợp Quốc'."
+      },
+      {
+        id: 19,
+        question: "Đầu năm 1945, Chiến tranh thế giới thứ hai bước vào giai đoạn kết thúc, nhiều vấn đề quan trọng, cấp bách được đặt ra trước các cường quốc đồng minh, ngoại trừ việc cần phải",
+        options: [
+          "A. nhanh chóng đánh bại hoàn toàn phát xít.",
+          "B. tổ chức lại thế giới sau chiến tranh.",
+          "C. thắt chặt quan hệ trong khối Đồng minh.",
+          "D. phân chia thành quả chiến tranh giữa các nước."
+        ],
+        correct: 2,
+        explain: "Ba vấn đề cấp bách tại Hội nghị Ianta chỉ gồm: Đánh bại hoàn toàn phát xít, tổ chức lại thế giới và phân chia thành quả. 'Thắt chặt quan hệ Đồng minh' không phải vấn đề cấp bách."
+      },
+      {
+        id: 20,
+        question: "Nội dung nào sau đây không phản ánh đúng vai trò của tổ chức Liên hợp quốc từ năm 1945 đến nay?",
+        options: [
+          "A. Duy trì trật tự thế giới đa cực, nhiều trung tâm.",
+          "B. Duy trì hòa bình và an ninh quốc tế.",
+          "C. Thúc đẩy quá trình phi thực dân hóa.",
+          "D. Hỗ trợ các nước về giáo dục, y tế, nhân đạo."
+        ],
+        correct: 0,
+        explain: "LHQ không có vai trò duy trì trật tự đa cực; trật tự thế giới vận động theo tương quan sức mạnh kinh tế - chính trị tự nhiên giữa các cường quốc."
+      },
+      {
+        id: 21,
+        question: "Nội dung nào dưới đây không phải là vai trò của tổ chức Liên Hiệp Quốc?",
+        options: [
+          "A. Ngăn chặn các cuộc xung đột vũ trang.",
+          "B. Thúc đẩy quá trình phi thực dân hóa.",
+          "C. Ngăn chặn phổ biến vũ khí hạt nhân.",
+          "D. Góp phần kết thúc Chiến tranh lạnh."
+        ],
+        correct: 3,
+        explain: "Chiến tranh Lạnh kết thúc (12/1989) là kết quả trực tiếp từ đàm phán và thỏa thuận cấp cao giữa hai siêu cường Liên Xô và Mỹ, không phải vai trò của LHQ."
+      },
+      {
+        id: 22,
+        question: "Từ 1945 đến nay, tổ chức nào sau đây đã trở thành một “diễn đàn quốc tế vừa hợp tác vừa đấu tranh nhằm duy trì hoà bình và an ninh thế giới”?",
+        options: [
+          "A. Liên hợp quốc.",
+          "B. Hiệp hội các quốc gia Đông Nam Á.",
+          "C. Liên minh Châu Âu.",
+          "D. Diễn đàn hợp tác Á – Âu."
+        ],
+        correct: 0,
+        explain: "LHQ là diễn đàn quốc tế lớn nhất quy tụ mọi quốc gia, vừa là nơi đối thoại hợp tác vừa là nơi đấu tranh vì hòa bình."
+      },
+      {
+        id: 23,
+        question: "Sự ra đời của Liên hợp quốc phù hợp với",
+        options: [
+          "A. khát vọng được sống trong hòa bình của nhân dân thế giới.",
+          "B. nhu cầu bảo vệ nền hòa bình của các nước Đồng minh.",
+          "C. sự phát triển tất yếu của tiến trình lịch sử nhân loại.",
+          "D. nhu cầu bức thiết cần giải quyết sau Chiến tranh thế giới."
+        ],
+        correct: 0,
+        explain: "Sau nỗi kinh hoàng của hai cuộc chiến tranh thế giới, khát vọng được sống trong hòa bình là mong ước chung lớn nhất của toàn nhân loại."
+      },
+      {
+        id: 24,
+        question: "Một trong những nguyên tắc hoạt động của Liên hợp quốc là",
+        options: [
+          "A. Không sử dụng vũ lực hoặc đe doạ vũ lực đối với nhau.",
+          "B. Hợp tác, bình đẳng dựa trên cơ sở các bên cùng có lợi.",
+          "C. Đẩy mạnh hợp tác quốc tế giữa các nước.",
+          "D. Không can thiệp vào công việc nội bộ các nước."
+        ],
+        correct: 3,
+        explain: "5 nguyên tắc hoạt động của LHQ: Bình đẳng chủ quyền; Tôn trọng toàn vẹn lãnh thổ; Không can thiệp vào công việc nội bộ; Giải quyết tranh chấp bằng hòa bình; Chung sống hòa bình và sự nhất trí của 5 nước lớn."
+      },
+      {
+        id: 25,
+        question: "Nội dung nào sau đây thể hiện vai trò của Liên hợp quốc trong việc bảo đảm quyền con người, phát triển văn hóa, xã hội?",
+        options: [
+          "A. Tăng cường bình đẳng giới và vị thế, năng lực của phụ nữ.",
+          "B. Giảm lãi suất cho vay ở hầu hết các nước đang phát triển.",
+          "C. Cải thiện năng lực công nghệ thông tin.",
+          "D. Hoàn thành phổ cập giáo dục đại học."
+        ],
+        correct: 0,
+        explain: "LHQ đặc biệt chú trọng bảo vệ quyền con người thông qua việc ban hành các công ước về quyền trẻ em, bình đẳng giới và nâng cao vị thế của phụ nữ."
+      },
+      {
+        id: 26,
+        question: "Nội dung nào sau đây phản ánh không đúng bối cảnh lịch sử thành lập tổ chức Liên hợp quốc?",
+        options: [
+          "A. Nhân dân thế giới có khát vọng được chung sống hòa bình.",
+          "B. Chủ nghĩa phát xít xuất hiện và cầm quyền ở nhiều nước.",
+          "C. Ý thức của các nước Đồng minh về việc tổ chức thế giới.",
+          "D. Nhu cầu thành lập tổ chức quốc tế mới thay thế tổ chức cũ."
+        ],
+        correct: 1,
+        explain: "Chủ nghĩa phát xít xuất hiện và cầm quyền từ thập niên 20, 30 trước CTTG2. Bối cảnh 1945 là khi chủ nghĩa phát xít đã và đang bị tiêu diệt hoàn toàn."
+      },
+      {
+        id: 27,
+        question: "Nhận định nào dưới đây phản ánh đúng và đầy đủ vị trí, vai trò của tổ chức Liên hợp quốc?",
+        options: [
+          "A. Là diễn đàn quốc tế lớn nhất, vừa hợp tác vừa đấu tranh vì hòa bình, an ninh thế giới.",
+          "B. Tổ chức quốc tế phát triển năng động vì sự ổn định, hợp tác của toàn thế giới.",
+          "C. Tổ chức quốc tế tạo dựng quan hệ thân thiện với tất cả các nước trên thế giới.",
+          "D. Một liên kết chính trị - kinh tế lớn nhất hành tinh vì sự ổn định của toàn nhân loại."
+        ],
+        correct: 0,
+        explain: "LHQ là diễn đàn quốc tế lớn nhất, trung tâm điều phối toàn cầu, vừa hợp tác vừa đấu tranh vì hòa bình và an ninh thế giới."
+      },
+      {
+        id: 28,
+        question: "Hiến chương Liên hợp quốc quy định rõ các nguyên tắc hoạt động của tổ chức này nhằm",
+        options: [
+          "A. đảm bảo Liên hợp quốc là một tổ chức thực sự phục vụ mục tiêu chung của cộng đồng quốc tế.",
+          "B. để đảm bảo Liên hợp quốc có thể thực hiện nhiệm vụ duy trì hòa bình và an ninh thế giới.",
+          "C. để đảm bảo Liên hợp quốc có thể thực hiện vai trò là tổ chức quốc tế lớn nhất.",
+          "D. để đảm bảo Liên hợp quốc là một tổ chức quốc tế lớn nhất thế giới."
+        ],
+        correct: 0,
+        explain: "Các nguyên tắc hoạt động là cơ sở pháp lý cao nhất bảo đảm LHQ thực sự hoạt động vì mục tiêu chung của cộng đồng quốc tế."
+      },
+      {
+        id: 29,
+        question: "Toàn bộ các hoạt động của Liên hợp quốc kể từ khi thành lập đến nay được thực hiện dựa trên cơ sở",
+        options: [
+          "A. những mục tiêu và nguyên tắc hoạt động do Hiến chương quy định.",
+          "B. những nguyên tắc hoạt động của Liên hợp quốc.",
+          "C. những mục tiêu được quy định trong Hiến chương Liên hợp quốc.",
+          "D. những thỏa thuận của các cường quốc tại hội nghị thành lập."
+        ],
+        correct: 0,
+        explain: "Hiến chương là văn kiện nền tảng quy định toàn bộ mục tiêu và nguyên tắc chỉ đạo mọi hoạt động của LHQ."
+      }
+    ];
+
+    // =========================================================================
+    // FIREBASE REALTIME DB (HOCTAP-90248)
+    // =========================================================================
+    const firebaseConfig = {
+      apiKey: "AIzaSyC9IcUUPCy2vw2eVH-nKmdyF0LTBTFm3xY",
+      authDomain: "hoctap-90248.firebaseapp.com",
+      databaseURL: "https://hoctap-90248-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "hoctap-90248",
+      storageBucket: "hoctap-90248.firebasestorage.app",
+      messagingSenderId: "741981517084",
+      appId: "1:741981517084:web:4259aa1a19e78c7e4df6d9",
+      measurementId: "G-8LN9ZVQ2H3"
+    };
+
+    let fbDatabase = null;
+    try {
+      firebase.initializeApp(firebaseConfig);
+      fbDatabase = firebase.database();
+    } catch(err) {
+      console.error("Firebase init:", err);
+    }
+
+    // =========================================================================
+    // WEB AUDIO API - HỆ THỐNG ÂM THANH (HIỆU ỨNG ĐÚNG/SAI + NHẠC NỀN LOFI)
+    // =========================================================================
+    class SoundEngine {
+      constructor() {
+        this.ctx = null;
+        this.sfxEnabled = true;
+        this.bgmEnabled = false;
+        this.bgmTimer = null;
+        this.chords = [
+          [261.63, 329.63, 392.00, 493.88], // Cmaj7
+          [220.00, 261.63, 329.63, 392.00], // Am7
+          [174.61, 220.00, 261.63, 329.63], // Fmaj7
+          [196.00, 246.94, 293.66, 392.00]  // G7
+        ];
+        this.chordIdx = 0;
+      }
+
+      initCtx() {
+        if (!this.ctx) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          this.ctx = new AudioContext();
+        }
+        if (this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      }
+
+      playClick() {
+        if (!this.sfxEnabled) return;
+        this.initCtx();
+        const t = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const g = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(600, t);
+        osc.frequency.exponentialRampToValueAtTime(800, t + 0.04);
+        g.gain.setValueAtTime(0.08, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + 0.05);
+        osc.connect(g);
+        g.connect(this.ctx.destination);
+        osc.start(t);
+        osc.stop(t + 0.06);
+      }
+
+      playCorrect() {
+        if (!this.sfxEnabled) return;
+        this.initCtx();
+        const t = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const g = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(523.25, t); // C5
+        osc.frequency.setValueAtTime(659.25, t + 0.08); // E5
+        osc.frequency.setValueAtTime(783.99, t + 0.16); // G5
+        osc.frequency.setValueAtTime(1046.50, t + 0.24); // C6
+        g.gain.setValueAtTime(0.18, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + 0.45);
+        osc.connect(g);
+        g.connect(this.ctx.destination);
+        osc.start(t);
+        osc.stop(t + 0.48);
+      }
+
+      playWrong() {
+        if (!this.sfxEnabled) return;
+        this.initCtx();
+        const t = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const g = this.ctx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(190, t);
+        osc.frequency.linearRampToValueAtTime(110, t + 0.25);
+        g.gain.setValueAtTime(0.2, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + 0.28);
+        osc.connect(g);
+        g.connect(this.ctx.destination);
+        osc.start(t);
+        osc.stop(t + 0.3);
+      }
+
+      // Nhạc nền Lofi thư giãn
+      playLofiChord() {
+        if (!this.bgmEnabled) return;
+        const now = this.ctx.currentTime;
+        const chord = this.chords[this.chordIdx];
+
+        chord.forEach(freq => {
+          const osc = this.ctx.createOscillator();
+          const g = this.ctx.createGain();
+          const filter = this.ctx.createBiquadFilter();
+
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now);
+
+          filter.type = 'lowpass';
+          filter.frequency.setValueAtTime(600, now);
+
+          g.gain.setValueAtTime(0, now);
+          g.gain.linearRampToValueAtTime(0.02, now + 1.2);
+          g.gain.exponentialRampToValueAtTime(0.0001, now + 3.8);
+
+          osc.connect(filter);
+          filter.connect(g);
+          g.connect(this.ctx.destination);
+
+          osc.start(now);
+          osc.stop(now + 4.0);
+        });
+
+        this.chordIdx = (this.chordIdx + 1) % this.chords.length;
+        this.bgmTimer = setTimeout(() => this.playLofiChord(), 3800);
+      }
+
+      startBgm() {
+        this.initCtx();
+        this.bgmEnabled = true;
+        this.playLofiChord();
+      }
+
+      stopBgm() {
+        this.bgmEnabled = false;
+        if (this.bgmTimer) clearTimeout(this.bgmTimer);
+      }
+    }
+
+    const sound = new SoundEngine();
+
+    function toggleBgmMusic() {
+      const btn = document.getElementById('btnToggleBgm');
+      const text = document.getElementById('bgmText');
+      if (sound.bgmEnabled) {
+        sound.stopBgm();
+        btn.classList.remove('active');
+        text.textContent = 'Bật Lofi';
+      } else {
+        sound.startBgm();
+        btn.classList.add('active');
+        text.textContent = 'Đang phát Lofi 🎵';
+      }
+    }
+
+    function toggleSfxSound() {
+      sound.sfxEnabled = !sound.sfxEnabled;
+      const btn = document.getElementById('btnToggleSfx');
+      const icon = document.getElementById('sfxIcon');
+      if (sound.sfxEnabled) {
+        btn.classList.add('active');
+        icon.textContent = '🔊';
+      } else {
+        btn.classList.remove('active');
+        icon.textContent = '🔇';
+      }
+    }
+
+    // --- APP STATE ---
+    let examList = [];
+    let currentQ = 0;
+    let userAnswers = {};
+    let flaggedMap = {};
+    let examStartTime = 0;
+    let examTimerInterval = null;
+    let totalSecondsElapsed = 0;
+
+    // Load LocalStorage User Info
+    const savedName = localStorage.getItem('hist12_username') || '';
+    const savedClass = localStorage.getItem('hist12_userclass') || '12A1';
+    if (savedName) document.getElementById('inputName').value = savedName;
+    if (savedClass) document.getElementById('selectClass').value = savedClass;
+
+    function showScreen(screenId) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(screenId).classList.add('active');
+    }
+
+    function shuffle(array) {
+      const arr = [...array];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    // BẮT ĐẦU THI
+    function startExamAction(onlyWrongList = null) {
+      sound.playClick();
+      const name = document.getElementById('inputName').value.trim() || 'Thí Sinh Ẩn Danh';
+      const userClass = document.getElementById('selectClass').value;
+      const isShuffle = document.getElementById('toggleShuffle').checked;
+
+      localStorage.setItem('hist12_username', name);
+      localStorage.setItem('hist12_userclass', userClass);
+
+      if (onlyWrongList && onlyWrongList.length > 0) {
+        examList = onlyWrongList;
+      } else {
+        examList = isShuffle ? shuffle(FULL_DATABASE) : [...FULL_DATABASE];
+      }
+
+      currentQ = 0;
+      userAnswers = {};
+      flaggedMap = {};
+      totalSecondsElapsed = 0;
+
+      clearInterval(examTimerInterval);
+      updateTimerUI(0);
+      examStartTime = Date.now();
+      examTimerInterval = setInterval(() => {
+        totalSecondsElapsed = Math.floor((Date.now() - examStartTime) / 1000);
+        updateTimerUI(totalSecondsElapsed);
+      }, 1000);
+
+      buildDrawerGrid();
+      renderQuestion(0);
+      showScreen('quizScreen');
+    }
+
+    function updateTimerUI(sec) {
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      document.getElementById('examTimer').textContent = 
+        `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    }
+
+    // RENDER CÂU HỎI
+    function renderQuestion(idx) {
+      currentQ = idx;
+      const q = examList[idx];
+      const total = examList.length;
+
+      document.getElementById('qCurrentBadge').textContent = `Câu ${idx + 1}/${total}`;
+      document.getElementById('qStemText').textContent = `Câu ${q.id}: ${q.question}`;
+
+      const btnBm = document.getElementById('btnBookmark');
+      if (flaggedMap[idx]) {
+        btnBm.classList.add('active');
+        document.getElementById('bookmarkText').textContent = 'Đã đánh dấu 🚩';
+      } else {
+        btnBm.classList.remove('active');
+        document.getElementById('bookmarkText').textContent = 'Đánh dấu';
+      }
+
+      const container = document.getElementById('quizOptionsContainer');
+      container.innerHTML = '';
+      const answered = userAnswers[idx];
+
+      q.options.forEach((optText, optIdx) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-opt-btn';
+        btn.textContent = optText;
+
+        if (answered !== undefined) {
+          btn.classList.add('locked');
+          if (optIdx === q.correct) {
+            btn.classList.add('correct');
+          } else if (optIdx === answered.selected && !answered.isCorrect) {
+            btn.classList.add('wrong');
+          }
+        }
+
+        btn.onclick = () => {
+          if (userAnswers[currentQ] !== undefined) return;
+          handleOptionClick(optIdx);
+        };
+
+        container.appendChild(btn);
+      });
+
+      const explainBox = document.getElementById('quizExplainBox');
+      const explainContent = document.getElementById('quizExplainContent');
+      if (answered !== undefined) {
+        explainContent.textContent = q.explain;
+        explainBox.classList.add('show');
+      } else {
+        explainBox.classList.remove('show');
+      }
+
+      document.getElementById('btnPrevQ').disabled = (idx === 0);
+      document.getElementById('btnNextQ').textContent = (idx === total - 1) ? 'Xem lại / Nộp' : 'Tiếp ❯';
+
+      updateDrawerStates();
+    }
+
+    // BẤM CHỌN ĐÁP ÁN: PHÁT ÂM THANH ĐÚNG/SAI
+    function handleOptionClick(optIdx) {
+      const q = examList[currentQ];
+      const isCorrect = (optIdx === q.correct);
+
+      userAnswers[currentQ] = {
+        selected: optIdx,
+        isCorrect: isCorrect
+      };
+
+      if (isCorrect) {
+        sound.playCorrect();
+      } else {
+        sound.playWrong();
+      }
+
+      renderQuestion(currentQ);
+    }
+
+    function toggleBookmark() {
+      sound.playClick();
+      flaggedMap[currentQ] = !flaggedMap[currentQ];
+      renderQuestion(currentQ);
+    }
+
+    function navigateQ(step) {
+      sound.playClick();
+      const next = currentQ + step;
+      if (next >= examList.length) {
+        openDrawer();
+        return;
+      }
+      if (next >= 0 && next < examList.length) {
+        renderQuestion(next);
+      }
+    }
+
+    // DRAWER GRID
+    function buildDrawerGrid() {
+      const grid = document.getElementById('drawerGrid');
+      grid.innerHTML = '';
+
+      examList.forEach((q, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'drawer-btn';
+        btn.id = `drawer-btn-${idx}`;
+        btn.textContent = idx + 1;
+        btn.onclick = () => {
+          sound.playClick();
+          renderQuestion(idx);
+          closeDrawer();
+        };
+        grid.appendChild(btn);
+      });
+    }
+
+    function updateDrawerStates() {
+      examList.forEach((q, idx) => {
+        const btn = document.getElementById(`drawer-btn-${idx}`);
+        if (!btn) return;
+
+        btn.className = 'drawer-btn';
+        if (idx === currentQ) btn.classList.add('current');
+
+        const ans = userAnswers[idx];
+        if (ans !== undefined) {
+          if (ans.isCorrect) {
+            btn.classList.add('is-correct');
+          } else {
+            btn.classList.add('is-wrong');
+          }
+        }
+        if (flaggedMap[idx]) {
+          btn.classList.add('flagged');
+        }
+      });
+    }
+
+    function openDrawer() {
+      sound.playClick();
+      document.getElementById('quizDrawer').classList.add('active');
+    }
+    function closeDrawer(e) {
+      if (e && e.target !== e.currentTarget) return;
+      document.getElementById('quizDrawer').classList.remove('active');
+    }
+
+    // THOÁT VỀ TRANG CHỦ
+    function confirmExitToHome() {
+      sound.playClick();
+      document.getElementById('confirmExitModal').classList.add('active');
+    }
+    function closeExitModal() {
+      sound.playClick();
+      document.getElementById('confirmExitModal').classList.remove('active');
+    }
+    function executeExitToHome() {
+      sound.playClick();
+      closeExitModal();
+      clearInterval(examTimerInterval);
+      showScreen('homeScreen');
+    }
+
+    // NỘP BÀI
+    function confirmSubmitExam() {
+      sound.playClick();
+      const total = examList.length;
+      const done = Object.keys(userAnswers).length;
+      const remain = total - done;
+
+      let msg = `Bạn đã làm ${done}/${total} câu.`;
+      if (remain > 0) {
+        msg += ` Còn ${remain} câu chưa trả lời. Bạn có chắc chắn muốn nộp bài không?`;
+      } else {
+        msg += ` Bạn đã hoàn thành tất cả câu hỏi! Nộp bài ngay nhé?`;
+      }
+      document.getElementById('submitModalText').textContent = msg;
+      document.getElementById('confirmSubmitModal').classList.add('active');
+    }
+    function closeSubmitModal() {
+      sound.playClick();
+      document.getElementById('confirmSubmitModal').classList.remove('active');
+    }
+    function executeSubmitExam() {
+      sound.playCorrect();
+      closeSubmitModal();
+      clearInterval(examTimerInterval);
+
+      const total = examList.length;
+      const correctCount = Object.values(userAnswers).filter(a => a.isCorrect).length;
+      const accuracy = Math.round((correctCount / total) * 100);
+
+      document.getElementById('resRatioScore').textContent = `${correctCount}/${total}`;
+      document.getElementById('resAccuracyPercent').textContent = `Chính xác: ${accuracy}%`;
+
+      const circleCircumference = 345;
+      const offset = circleCircumference - (accuracy / 100) * circleCircumference;
+      const gaugeBar = document.getElementById('gaugeBar');
+      gaugeBar.style.strokeDasharray = circleCircumference;
+      gaugeBar.style.strokeDashoffset = circleCircumference;
+      setTimeout(() => {
+        gaugeBar.style.strokeDashoffset = offset;
+      }, 80);
+
+      const m = Math.floor(totalSecondsElapsed / 60);
+      const s = totalSecondsElapsed % 60;
+      document.getElementById('resTimeSpent').textContent = `${m} phút ${s.toString().padStart(2, '0')} giây`;
+
+      const banner = document.getElementById('resBanner');
+      const bannerText = document.getElementById('resBannerText');
+      if (accuracy >= 90) {
+        banner.style.borderColor = '#10b981';
+        bannerText.innerHTML = `🎉 <strong>Tuyệt đỉnh!</strong> Kiến thức Lịch sử 12 Bài 1 rất vững vàng. Sẵn sàng bứt phá điểm 10!`;
+        confetti({ particleCount: 90, spread: 80, origin: { y: 0.6 } });
+      } else if (accuracy >= 60) {
+        banner.style.borderColor = '#3b82f6';
+        bannerText.innerHTML = `⭐ <strong>Rất tốt!</strong> Hãy chép lại vài câu sai để tránh bị đánh lừa trong bài thi thật!`;
+      } else {
+        banner.style.borderColor = '#ef4444';
+        bannerText.innerHTML = `⚠️ <strong>Nguy hiểm!</strong> Kiến thức đang hổng khá nhiều. Hãy làm lại các câu sai ngay!`;
+      }
+
+      document.getElementById('btnRetryWrong').style.display = (correctCount < total) ? 'flex' : 'none';
+
+      // Xây dựng danh sách câu sai (mặc định đóng accordion)
+      buildReviewStack();
+
+      // Lưu lên Firebase
+      saveToFirebaseLeaderboard(correctCount, total, totalSecondsElapsed);
+      showScreen('resultScreen');
+    }
+
+    // ACCORDION TOGGLE
+    function toggleReviewAccordion() {
+      sound.playClick();
+      const body = document.getElementById('reviewAccordionBody');
+      const btn = document.getElementById('reviewAccordionBtn');
+      const isOpen = body.classList.contains('show');
+      if (isOpen) {
+        body.classList.remove('show');
+        btn.classList.remove('open');
+      } else {
+        body.classList.add('show');
+        btn.classList.add('open');
+      }
+    }
+
+    function buildReviewStack() {
+      const container = document.getElementById('reviewListContainer');
+      container.innerHTML = '';
+      let reviewCount = 0;
+
+      examList.forEach((q, idx) => {
+        const ans = userAnswers[idx];
+        const isFlagged = !!flaggedMap[idx];
+
+        if (ans && ans.isCorrect && !isFlagged) return;
+
+        reviewCount++;
+        const card = document.createElement('div');
+        card.className = `review-card ${ans && ans.isCorrect ? 'correct-item' : ''}`;
+
+        let statusPrefix = '⚪ Bỏ trống';
+        if (ans && !ans.isCorrect) statusPrefix = '❌ Làm sai';
+        if (ans && ans.isCorrect) statusPrefix = '🚩 Đánh dấu đúng';
+
+        card.innerHTML = `
+          <div class="review-q-title">${statusPrefix} Câu ${q.id}: ${q.question}</div>
+          <div class="review-ans-correct">✔ ${q.options[q.correct]}</div>
+          <div class="review-explain">💡 <strong>Giải thích:</strong> ${q.explain}</div>
+        `;
+        container.appendChild(card);
+      });
+
+      // Cập nhật nhãn nút accordion
+      document.getElementById('accordionBtnLabel').textContent = 
+        `🔽 Xem chi tiết đáp án & câu sai (${reviewCount})`;
+
+      // Mặc định đóng accordion khi vừa vào màn hình kết quả
+      document.getElementById('reviewAccordionBody').classList.remove('show');
+      document.getElementById('reviewAccordionBtn').classList.remove('open');
+    }
+
+    function retryWrongQuestions() {
+      sound.playClick();
+      const wrongList = [];
+      examList.forEach((q, idx) => {
+        const ans = userAnswers[idx];
+        if (!ans || !ans.isCorrect) {
+          wrongList.push(q);
+        }
+      });
+
+      if (wrongList.length > 0) {
+        startExamAction(wrongList);
+      }
+    }
+
+    function goToHome() {
+      sound.playClick();
+      showScreen('homeScreen');
+    }
+
+    // =========================================================================
+    // LƯU & HIỂN THỊ BẢNG XẾP HẠNG FIREBASE
+    // =========================================================================
+    function saveToFirebaseLeaderboard(correctCount, total, timeSec) {
+      const name = localStorage.getItem('hist12_username') || 'Thí Sinh';
+      const userClass = localStorage.getItem('hist12_userclass') || '12A1';
+      const score10 = parseFloat(((correctCount / total) * 10).toFixed(1));
+
+      const record = {
+        name: name,
+        userClass: userClass,
+        score: score10,
+        correctCount: correctCount,
+        total: total,
+        timeSec: timeSec,
+        timestamp: Date.now()
+      };
+
+      if (fbDatabase) {
+        fbDatabase.ref('history12_rankings').push(record)
+          .then(() => console.log("Firebase synced!"))
+          .catch((err) => console.error("Firebase err:", err));
+      }
+
+      let localLb = JSON.parse(localStorage.getItem('hist12_leaderboard') || '[]');
+      localLb.push(record);
+      localLb.sort((a, b) => b.score - a.score || a.timeSec - b.timeSec);
+      localLb = localLb.slice(0, 50);
+      localStorage.setItem('hist12_leaderboard', JSON.stringify(localLb));
+
+      const rankIndex = localLb.findIndex(r => r.timestamp === record.timestamp) + 1;
+      document.getElementById('resRankDisplay').textContent = rankIndex > 0 ? `Top ${rankIndex}` : 'Top 1';
+    }
+
+    function openLeaderboardModal() {
+      sound.playClick();
+      document.getElementById('leaderboardModal').classList.add('active');
+      refreshLeaderboardData();
+    }
+
+    function closeLeaderboardModal(e) {
+      if (e && e.target !== e.currentTarget) return;
+      sound.playClick();
+      document.getElementById('leaderboardModal').classList.remove('active');
+    }
+
+    function refreshLeaderboardData() {
+      const listContainer = document.getElementById('lbListContainer');
+      listContainer.innerHTML = '<div style="text-align:center; padding: 40px 10px; color:#94a3b8;">🔄 Đang tải bảng vàng từ Firebase...</div>';
+
+      if (fbDatabase) {
+        fbDatabase.ref('history12_rankings').once('value').then((snapshot) => {
+          const cloudList = [];
+          snapshot.forEach(child => {
+            cloudList.push(child.val());
+          });
+          cloudList.sort((a, b) => b.score - a.score || a.timeSec - b.timeSec);
+          renderLeaderboardRows(cloudList.slice(0, 30));
+        }).catch((err) => {
+          console.warn("Chuyển sang LocalStorage:", err);
+          loadLocalLeaderboard();
+        });
+      } else {
+        loadLocalLeaderboard();
+      }
+    }
+
+    function loadLocalLeaderboard() {
+      let localLb = JSON.parse(localStorage.getItem('hist12_leaderboard') || '[]');
+      renderLeaderboardRows(localLb);
+    }
+
+    function renderLeaderboardRows(list) {
+      const container = document.getElementById('lbListContainer');
+      container.innerHTML = '';
+
+      if (list.length === 0) {
+        container.innerHTML = '<div style="text-align:center; padding: 40px 10px; color:#94a3b8;">Chưa có ai nộp bài. Hãy là người đầu tiên lên bảng vàng!</div>';
+        return;
+      }
+
+      list.forEach((item, index) => {
+        const row = document.createElement('div');
+        row.className = 'lb-item';
+
+        const rank = index + 1;
+        let rankClass = '';
+        let rankBadge = rank;
+        if (rank === 1) { rankClass = 'top1'; rankBadge = '🥇'; }
+        if (rank === 2) { rankClass = 'top2'; rankBadge = '🥈'; }
+        if (rank === 3) { rankClass = 'top3'; rankBadge = '🥉'; }
+
+        const m = Math.floor((item.timeSec || 0) / 60);
+        const s = (item.timeSec || 0) % 60;
+        const timeStr = `${m}p${s.toString().padStart(2, '0')}s`;
+        const scoreFormatted = Number(item.score).toFixed(1);
+
+        row.innerHTML = `
+          <div class="lb-rank ${rankClass}">${rankBadge}</div>
+          <div class="lb-name">${item.name} <span class="lb-class">(${item.userClass})</span></div>
+          <div style="font-size:0.75rem; color:#94a3b8; margin-right:8px;">${timeStr}</div>
+          <div class="lb-score">${scoreFormatted}đ</div>
+        `;
+        container.appendChild(row);
+      });
+    }
+  </script>
+</body>
+</html>
