@@ -1,0 +1,24 @@
+{
+  "name": "Ôn Thi Tốt Nghiệp THPT - 12A8",
+  "short_name": "Ôn Thi 12",
+  "description": "Ứng dụng ôn thi trắc nghiệm Lịch Sử, Vật Lí, Tiếng Anh lớp 12 chuẩn GDPT 2018",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#080b1a",
+  "theme_color": "#13172e",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "bg.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "bg.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
