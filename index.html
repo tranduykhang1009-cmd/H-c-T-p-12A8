@@ -26,13 +26,22 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 
-  <!-- DỮ LIỆU CÂU HỎI THEO MÔN: Tự động tương thích cả khi file ở thư mục gốc (GitHub) hoặc trong data/ (máy tính) -->
+  <!-- DỮ LIỆU CÂU HỎI THEO MÔN: Tự động tương thích cả khi file ở thư mục gốc (GitHub) hoặc trong data/ -->
   <script src="lichsu.js"></script>
   <script src="tienganh.js"></script>
   <script src="vatli.js"></script>
-  <script src="data/lichsu.js"></script>
-  <script src="data/tienganh.js"></script>
-  <script src="data/vatli.js"></script>
+  <script>
+    // Tự động nạp dự phòng từ data/ nếu mở file offline mà dữ liệu nằm trong thư mục con data/
+    if (typeof ALL_TOPICS_DATABASE === 'undefined' && !window.ALL_TOPICS_DATABASE) {
+      const s1 = document.createElement('script'); s1.src = 'data/lichsu.js'; document.head.appendChild(s1);
+    }
+    if (typeof ENGLISH_TOPICS_DATABASE === 'undefined' && !window.ENGLISH_TOPICS_DATABASE) {
+      const s2 = document.createElement('script'); s2.src = 'data/tienganh.js'; document.head.appendChild(s2);
+    }
+    if (typeof PHYSICS_TOPICS_DATABASE === 'undefined' && !window.PHYSICS_TOPICS_DATABASE) {
+      const s3 = document.createElement('script'); s3.src = 'data/vatli.js'; document.head.appendChild(s3);
+    }
+  </script>
 
   <style>
     :root {
@@ -3152,8 +3161,8 @@ const firebaseConfig = {
         currentTopicTitle = 'Bài 1: Liên Hợp Quốc (28 câu)';
         if (pillBar) pillBar.style.display = 'flex'; // History có 16 bài, cần thanh pill lọc chuyên đề
       } else {
-        currentTopicId = 'eng_pronunciation';
-        currentTopicTitle = 'Task 1: Pronunciation - Ngữ âm';
+        currentTopicId = 'eng_part1';
+        currentTopicTitle = 'Phần I: Từ Vựng & Ngữ Pháp (15 câu)';
         if (pillBar) pillBar.style.display = 'none'; // English ít bài, không cần thanh pill
       }
 
@@ -4522,6 +4531,7 @@ const firebaseConfig = {
       } catch(e) {
         console.warn('Favicon canvas enhance error:', e);
       }
+    });
 </script>
 <!-- Đăng ký Service Worker để ứng dụng lưu Cache và hoạt động Offline không cần mạng -->
 <script>
