@@ -2,6 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>LỊCH SỬ 12 - THPT NGUYỄN HUỆ</title>
   <!-- Cấu hình Progressive Web App (PWA) & Chạy Offline -->
   <link rel="manifest" href="manifest.json" />
@@ -128,7 +129,7 @@
     .app-frame {
       width: 100%;
       max-width: 490px;
-      min-height: 94vh;
+      min-height: auto;
       background: rgba(14, 18, 43, 0.78);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
@@ -138,7 +139,7 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      margin: 0 auto;
+      margin: 16px auto 30px auto;
       overflow-y: auto;
       overflow-x: hidden;
       -webkit-overflow-scrolling: touch;
@@ -765,8 +766,9 @@
     }
 
     .quiz-bottom-nav {
-      margin-top: auto;
-      padding-top: 12px;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      padding-top: 14px;
       border-top: 1px solid var(--card-border);
       display: flex;
       align-items: center;
@@ -2508,13 +2510,25 @@
     }
 
     @media (max-width: 600px) {
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
       .app-frame {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
         border-radius: 0 !important;
         min-height: 100vh !important;
         border: none !important;
+        box-shadow: none !important;
       }
       .screen {
-        padding: 12px 14px 20px 14px !important;
+        padding: 12px 14px 28px 14px !important;
+      }
+      .quiz-bottom-nav {
+        margin-top: 20px !important;
+        margin-bottom: 24px !important;
       }
       .topic-cards-list {
         max-height: 380px !important;

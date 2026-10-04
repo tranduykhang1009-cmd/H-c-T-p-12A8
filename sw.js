@@ -1,13 +1,11 @@
-const CACHE_NAME = 'on-thi-thpt-v1.1';
+const CACHE_NAME = 'on-thi-thpt-v1.2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
+  'index.html',
   './lichsu.js',
   './vatli.js',
   './tienganh.js',
-  './data/lichsu.js',
-  './data/vatli.js',
-  './data/tienganh.js',
   './bg.jpg',
   './manifest.json',
   'https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js'
@@ -19,14 +17,26 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log('[Service Worker] Đang lưu trữ tài nguyên để chạy Offline...');
-      return cache.addAll(ASSETS_TO_CACHE).catch(err => {
-        console.warn('[Service Worker] Một số tài nguyên ngoài có thể chưa nạp vào cache:', err);
-      });
+      // Dùng Promise.all riêng lẻ để nếu có 1 file bị lỗi thì các file còn lại vẫn được lưu vào Cache 100%
+      return Promise.all(
+        ASSETS_TO_CACHE.map((url) => {
+          return fetch(url)
+            .then((res) => {
+              if (res.ok) {
+                return cache.put(url, res);
+              }
+              console.warn('[Service Worker] Bỏ qua tài nguyên không tìm thấy:', url, res.status);
+            })
+            .catch((err) => {
+              console.warn('[Service Worker] Lỗi tải tài nguyên vào cache:', url, err);
+            });
+        })
+      );
     })
   );
 });
 
-// Kích hoạt Service Worker và xóa cache phiên bản cũ
+// Kích hoạt Service Worker và dọn dẹp cache cũ
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keyList) => {
@@ -42,7 +52,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Chiến lược Stale-While-Revalidate: Luôn mở cực nhanh và chạy được 100% khi MẤT MẠNG / OFFLINE
+// Chiến lược phục vụ dữ liệu: Tối ưu 100% khi MẤT MẠNG / TẮT WIFI (Offline)
 self.addEventListener('fetch', (event) => {
   const req = event.request;
   
@@ -51,26 +61,52 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // 1. Khi mở trang web chính (navigation request: mở link, tải lại trang)
+  if (req.mode === 'navigate') {
+    event.respondWith(
+      fetch(req)
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const responseToCache = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(req, responseToCache));
+          }
+          return networkResponse;
+        })
+        .catch(() => {
+          // KHI TẮT MẠNG / KHÔNG CÓ WIFI:
+          // Trả về ngay lập tức trang index.html từ cache để ứng dụng hoạt động bình thường!
+          return caches.match('./index.html')
+            .then((res) => res || caches.match('/index.html'))
+            .then((res) => res || caches.match('index.html'))
+            .then((res) => res || caches.match('./'));
+        })
+    );
+    return;
+  }
+
+  // 2. Với các file tĩnh (js, css, ảnh, fonts, v.v.): Cache First (Ưu tiên đọc cache cực nhanh)
   event.respondWith(
     caches.match(req).then((cachedResponse) => {
-      // 1. Nếu có trong cache, trả về ngay (kể cả khi không có mạng)
-      const fetchPromise = fetch(req).then((networkResponse) => {
-        // Cập nhật lại cache nền nếu lấy mạng thành công
+      if (cachedResponse) {
+        // Có trong cache -> trả về ngay lập tức
+        // Nếu có mạng thì cập nhật ngầm trong nền
+        fetch(req).then((netRes) => {
+          if (netRes && netRes.status === 200) {
+            const resClone = netRes.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(req, resClone));
+          }
+        }).catch(() => {});
+        return cachedResponse;
+      }
+
+      // Chưa có trong cache -> tải từ mạng và tự động lưu vào cache cho lần offline sau
+      return fetch(req).then((networkResponse) => {
         if (networkResponse && networkResponse.status === 200) {
-          const responseToCache = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(req, responseToCache);
-          });
+          const resClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(req, resClone));
         }
         return networkResponse;
-      }).catch((err) => {
-        // Nếu mất mạng và không có trong cache cho trang chính, trả về trang index.html
-        if (req.mode === 'navigate') {
-          return caches.match('./index.html');
-        }
       });
-
-      return cachedResponse || fetchPromise;
     })
   );
 });
