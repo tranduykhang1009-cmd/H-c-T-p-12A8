@@ -207,7 +207,7 @@
         font-size: 0.72rem !important;
       }
       .topic-grid-container {
-        max-height: 145px !important;
+        max-height: 180px !important;
         gap: 6px !important;
         margin-bottom: 10px !important;
       }
@@ -234,10 +234,7 @@
       }
     }
 
-    .screen {
-      display: none;
-      width: 100%;
-      padding: 22px 20px;
+    .screen { display: none; width: 100%; padding: 12px 14px 24px 14px;
       flex-direction: column;
       flex: 1;
       animation: fadeIn 0.22s ease;
@@ -288,8 +285,7 @@
     .home-header {
       text-align: center;
       margin-top: 4px;
-      margin-bottom: 22px;
-    }
+      margin-bottom: 8px; }
     .school-tag {
       display: inline-flex;
       align-items: center;
@@ -306,9 +302,7 @@
       margin-bottom: 12px;
     }
     .fire-badge {
-      font-size: 2.8rem;
-      display: inline-block;
-      margin-bottom: 4px;
+      font-size: 1.8rem; display: inline-block; margin-bottom: 2px;
       animation: flame 1.5s infinite alternate;
     }
     @keyframes flame {
@@ -316,9 +310,7 @@
       to { transform: scale(1.08); filter: drop-shadow(0 0 24px rgba(249, 115, 22, 0.9)); }
     }
     .home-title {
-      font-size: 1.85rem;
-      font-weight: 900;
-      letter-spacing: -0.5px;
+      font-size: 1.45rem; font-weight: 900; letter-spacing: -0.3px;
       background: linear-gradient(135deg, #ffffff 40%, #c7d2fe);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -334,8 +326,7 @@
       display: grid;
       grid-template-columns: 1fr 120px;
       gap: 10px;
-      margin-bottom: 16px;
-    }
+      margin-bottom: 8px; }
     .form-group {
       display: flex;
       flex-direction: column;
@@ -354,9 +345,7 @@
       background: #0b0e22;
       border: 1.5px solid #23284d;
       border-radius: 12px;
-      padding: 13px 14px;
-      color: #fff;
-      font-size: 0.95rem;
+      padding: 8px 12px; color: #fff; font-size: 0.88rem;
       font-weight: 600;
       outline: none;
       transition: all 0.2s;
@@ -1638,30 +1627,30 @@
        ========================================= */
     .subject-switcher-container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      background: rgba(10, 13, 31, 0.65);
-      border: 1.5px solid rgba(255, 255, 255, 0.12);
-      border-radius: 16px;
-      padding: 5px;
-      margin-bottom: 14px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      background: rgba(10, 13, 31, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 4px;
+      margin-bottom: 8px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     }
     .subject-tab-btn {
       background: transparent;
       border: none;
       color: #94a3b8;
-      padding: 9px 12px;
-      border-radius: 12px;
-      font-size: 0.85rem;
+      padding: 7px 6px;
+      border-radius: 10px;
+      font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 7px;
-      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      gap: 5px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .subject-tab-btn:hover {
       color: #fff;
@@ -1671,6 +1660,11 @@
       background: linear-gradient(135deg, #2563eb, #6366f1);
       color: #fff;
       box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
+    }
+    .subject-tab-btn.active.btn-physics {
+      background: linear-gradient(135deg, #0ea5e9, #0284c7) !important;
+      box-shadow: 0 4px 14px rgba(14, 165, 233, 0.45) !important;
+      color: #fff !important;
     }
     .subject-tab-btn.active.btn-english {
       background: linear-gradient(135deg, #059669, #10b981);
@@ -1719,13 +1713,753 @@
       color: #f87171;
       border: 1px solid rgba(239, 68, 68, 0.35);
     }
+    .badge-subj-physics {
+      background: rgba(14, 165, 233, 0.2);
+      color: #38bdf8;
+      border: 1px solid rgba(14, 165, 233, 0.35);
+    }
     .badge-subj-english {
       background: rgba(16, 185, 129, 0.2);
       color: #34d399;
       border: 1px solid rgba(16, 185, 129, 0.35);
     }
 
-  </style>
+  
+    /* =========================================================================
+       THIẾT KẾ MỚI TỐI ƯU MOBILE-FIRST (9 MÔN HỌC, GỌN GÀNG, KHÔNG TRÙNG LẶP)
+       ========================================================================= */
+    .school-brand-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #94a3b8;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    .audio-buttons-wrap {
+      display: flex;
+      gap: 6px;
+    }
+
+    /* Thanh cuộn ngang chọn 9+ Môn Học */
+    .subject-chips-container {
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .subject-chips-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 2px 2px 6px 2px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .subject-chips-bar::-webkit-scrollbar {
+      display: none;
+    }
+    .sub-chip {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #94a3b8;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .sub-chip:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+    .sub-chip.active {
+      background: linear-gradient(135deg, #0284c7, #0ea5e9);
+      border-color: rgba(56, 189, 248, 0.6);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(14, 165, 233, 0.45);
+    }
+    .sub-chip.active.btn-history {
+      background: linear-gradient(135deg, #2563eb, #6366f1);
+      border-color: rgba(99, 102, 241, 0.6);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
+    }
+    .sub-chip.active.btn-english {
+      background: linear-gradient(135deg, #059669, #10b981);
+      border-color: rgba(16, 185, 129, 0.6);
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45);
+    }
+
+    /* Tiêu đề gọn gàng */
+    .home-header {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .home-title-row {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+    .home-subject-badge {
+      font-size: 1.5rem;
+    }
+    .home-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #ffffff 40%, #c7d2fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .home-sub {
+      color: var(--text-gray);
+      font-size: 0.78rem;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    /* Thẻ Người dùng & Shuffle tích hợp */
+    .user-card-box {
+      background: rgba(19, 23, 46, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+    }
+    .user-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 100px;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .input-box-compact, .select-box-compact {
+      width: 100%;
+      background: #090c1f;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 9px;
+      padding: 8px 10px;
+      color: #fff;
+      font-size: 0.84rem;
+      font-weight: 600;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .input-box-compact:focus, .select-box-compact:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+    }
+    .input-box-compact::placeholder {
+      color: #64748b;
+      font-size: 0.8rem;
+    }
+    .shuffle-inline-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .shuffle-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #cbd5e1;
+    }
+    .switch-compact {
+      position: relative;
+      display: inline-block;
+      width: 38px;
+      height: 22px;
+    }
+    .switch-compact input { opacity: 0; width: 0; height: 0; }
+    .slider-compact {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #23284d;
+      transition: .22s;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .slider-compact:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .22s;
+      border-radius: 50%;
+    }
+    input:checked + .slider-compact {
+      background: linear-gradient(135deg, #10b981, #059669);
+    }
+    input:checked + .slider-compact:before {
+      transform: translateX(16px);
+    }
+
+    /* Tiêu đề mục Topic */
+    .topic-section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .tsh-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Container danh sách topic dạng cuộn mượt */
+    .topic-grid-container {
+      max-height: 210px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 12px;
+      padding-right: 3px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.2) transparent;
+    }
+    .topic-grid-container::-webkit-scrollbar {
+      width: 4px;
+    }
+    .topic-grid-container::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+    }
+    .topic-list-card {
+      background: rgba(19, 23, 46, 0.85);
+      border: 1.5px solid rgba(255, 255, 255, 0.09);
+      border-radius: 12px;
+      padding: 10px 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .topic-list-card:hover {
+      background: rgba(30, 36, 74, 0.95);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-1px);
+    }
+    .topic-list-card.selected {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.22), rgba(99, 102, 241, 0.18));
+      border-color: #60a5fa;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.28);
+    }
+    .topic-card-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .topic-card-icon {
+      font-size: 1.35rem;
+      flex-shrink: 0;
+    }
+    .topic-card-info {
+      min-width: 0;
+    }
+    .topic-card-title {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .topic-card-sub {
+      font-size: 0.70rem;
+      color: #94a3b8;
+    }
+    .topic-card-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .topic-count-pill {
+      font-size: 0.70rem;
+      font-weight: 800;
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 2px 7px;
+      border-radius: 6px;
+    }
+    .topic-radio-indicator {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .topic-list-card.selected .topic-radio-indicator {
+      border-color: #38bdf8;
+      background: #0284c7;
+    }
+    .topic-list-card.selected .topic-radio-indicator::after {
+      content: "✓";
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 900;
+    }
+    .topic-special-badge {
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 900;
+      padding: 1px 5px;
+      border-radius: 4px;
+      margin-left: 6px;
+      vertical-align: middle;
+      text-transform: uppercase;
+    }
+    .badge-tag-recommend {
+      background: rgba(245, 158, 11, 0.25);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+    }
+    .badge-tag-all {
+      background: rgba(168, 85, 247, 0.25);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.4);
+    }
+
+    /* Nút CTA chính */
+    .home-cta-group {
+      margin-top: 4px;
+    }
+    .btn-start-hero {
+      width: 100%;
+      background: linear-gradient(135deg, #2563eb, #6366f1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 14px;
+      padding: 12px 16px;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      margin-bottom: 8px;
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .btn-start-hero:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
+    }
+    .bsh-main {
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .bsh-sub {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 90%;
+    }
+    .btn-view-leaderboard {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 9px 14px;
+      color: #cbd5e1;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-view-leaderboard:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border-color: #facc15;
+    }
+
+
+    /* =========================================================================
+       THIẾT KẾ MỚI SIÊU GỌN - CHỌN MÔN DẠNG DROPDOWN SỔ XUỐNG
+       ========================================================================= */
+    .top-nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .school-brand {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #93c5fd;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .audio-toggles-wrap {
+      display: flex;
+      gap: 6px;
+    }
+    .btn-audio-mini {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+    .btn-audio-mini:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+    .btn-audio-mini.active {
+      background: rgba(99, 102, 241, 0.25);
+      border-color: #818cf8;
+      color: #c7d2fe;
+    }
+
+    /* Hộp Cài Đặt (Setup Box) */
+    .exam-setup-box {
+      background: rgba(19, 23, 46, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+    .setup-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 105px;
+      gap: 10px;
+      align-items: center;
+    }
+    .setup-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .setup-label {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .setup-select, .setup-input {
+      width: 100%;
+      background: #090c1f;
+      border: 1.5px solid #23284d;
+      border-radius: 10px;
+      padding: 9px 10px;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .setup-select:focus, .setup-input:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 12px rgba(99, 102, 241, 0.35);
+    }
+    .setup-select-subj {
+      background: linear-gradient(135deg, rgba(30, 41, 82, 0.95), rgba(15, 23, 42, 0.95));
+      border-color: #3b82f6;
+      color: #60a5fa;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .setup-field-shuffle {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .shuffle-switch-wrap {
+      height: 36px;
+      display: flex;
+      align-items: center;
+    }
+    .switch-clean {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+    .switch-clean input { opacity: 0; width: 0; height: 0; }
+    .slider-clean {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #23284d;
+      transition: .22s;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .slider-clean:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .22s;
+      border-radius: 50%;
+    }
+    input:checked + .slider-clean {
+      background: linear-gradient(135deg, #10b981, #059669);
+    }
+    input:checked + .slider-clean:before {
+      transform: translateX(20px);
+    }
+
+    /* Tiêu đề mục chọn đề */
+    .topic-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      padding: 0 2px;
+    }
+    .topic-section-title {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #94a3b8;
+      letter-spacing: 0.5px;
+    }
+
+    /* Danh sách thẻ đề thi / bài học */
+    .topic-cards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+      max-height: 340px;
+      overflow-y: auto;
+      padding-right: 2px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.2) transparent;
+    }
+    .topic-cards-list::-webkit-scrollbar {
+      width: 4px;
+    }
+    .topic-cards-list::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+    }
+    .topic-item-card {
+      background: rgba(19, 23, 46, 0.85);
+      border: 1.5px solid rgba(255, 255, 255, 0.09);
+      border-radius: 14px;
+      padding: 11px 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .topic-item-card:hover {
+      background: rgba(28, 35, 71, 0.95);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-1px);
+    }
+    .topic-item-card.selected {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(99, 102, 241, 0.2));
+      border-color: #60a5fa;
+      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+    }
+    .tic-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .tic-icon {
+      font-size: 1.45rem;
+      flex-shrink: 0;
+    }
+    .tic-info {
+      min-width: 0;
+    }
+    .tic-title {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tic-sub {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+    .tic-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .tic-count-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 3px 8px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    .tic-radio {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .topic-item-card.selected .tic-radio {
+      border-color: #38bdf8;
+      background: #0284c7;
+    }
+    .topic-item-card.selected .tic-radio::after {
+      content: "✓";
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 900;
+    }
+    .badge-recommend {
+      background: rgba(245, 158, 11, 0.25);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.45);
+      font-size: 0.62rem;
+      font-weight: 900;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    /* Nút CTA dưới cùng */
+    .home-bottom-actions {
+      margin-top: 14px;
+      padding-top: 6px;
+    }
+    .btn-start-hero {
+      width: 100%;
+      background: linear-gradient(135deg, #2563eb, #6366f1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 14px;
+      padding: 13px 16px;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      margin-bottom: 8px;
+      box-shadow: 0 6px 22px rgba(37, 99, 235, 0.45);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .btn-start-hero:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(37, 99, 235, 0.6);
+    }
+    .bsh-main {
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .bsh-sub {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 90%;
+    }
+    .btn-view-leaderboard {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 10px 14px;
+      color: #cbd5e1;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-view-leaderboard:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border-color: #facc15;
+    }
+
+    @media (max-width: 600px) {
+      .app-frame {
+        border-radius: 0 !important;
+        min-height: 100vh !important;
+        border: none !important;
+      }
+      .screen {
+        padding: 12px 14px 20px 14px !important;
+      }
+      .topic-cards-list {
+        max-height: 380px !important;
+      }
+    }
+
+</style>
 </head>
 <body>
   <!-- Ambient floating glow orbs -->
@@ -1737,136 +2471,123 @@
 
     <!-- ==================== 1. TRANG CHỦ ==================== -->
     <div id="homeScreen" class="screen active">
-      <!-- Thanh điều khiển âm thanh & nhạc nền -->
-      <div class="audio-header-bar">
-        <button id="btnToggleBgm" class="btn-audio-toggle" onclick="toggleBgmMusic()">
-          <span>🎵</span>
-          <span id="bgmText">Nhạc Lofi</span>
-        </button>
-        <button id="btnToggleSfx" class="btn-audio-toggle active" onclick="toggleSfxSound()">
-          <span id="sfxIcon">🔊</span>
-          <span>Hiệu ứng</span>
-        </button>
-      </div>
-
-      <!-- Thanh Chuyển Đổi Môn Học (Đa Môn: Lịch Sử & Tiếng Anh) -->
-      <div class="subject-switcher-container">
-        <button class="subject-tab-btn active" id="btnSubHistory" onclick="switchSubject('history')">
+      <!-- 1. Thanh điều hướng trên cùng -->
+      <div class="top-nav-bar">
+        <div class="school-brand">
           <span>🏛️</span>
-          <span>LỊCH SỬ 12</span>
-        </button>
-        <button class="subject-tab-btn" id="btnSubEnglish" onclick="switchSubject('english')">
-          <span>🇬🇧</span>
-          <span>TIẾNG ANH 12</span>
-        </button>
-        <button class="subject-tab-btn" id="btnSubPhysics" onclick="switchSubject('physics')">
-          <span>⚛️</span>
-          <span>VẬT LÍ 12</span>
-        </button>
-      </div>
-
-      <div class="home-header">
-        <div><span class="fire-badge" id="homeBadgeIcon">🔥</span></div>
-        <h1 class="home-title" id="homeMainTitle">LỊCH SỬ 12</h1>
-        <p class="home-sub" id="homeSubTitle">Ngân hàng 440 câu hỏi trắc nghiệm chuẩn GDPT 2018</p>
-      </div>
-
-      <!-- Form Nhập Tên & Sổ dọc chọn Lớp 12A1-12A10 -->
-      <div class="user-info-row">
-        <div class="form-group">
-          <label class="form-label" for="inputName">
-            <span>👤</span>
-            <span>Tên hiển thị bảng vàng:</span>
-          </label>
-          <input type="text" id="inputName" class="input-box" placeholder="VD: Trần Duy Khang" value="" autocomplete="off" />
+          <span>THPT NGUYỄN HUỆ</span>
         </div>
-        <div class="form-group">
-          <label class="form-label" for="selectClass">
-            <span>🏫</span>
-            <span>Lớp:</span>
-          </label>
-          <select id="selectClass" class="select-box">
-            <option value="12A1">12A1</option>
-            <option value="12A2">12A2</option>
-            <option value="12A3">12A3</option>
-            <option value="12A4">12A4</option>
-            <option value="12A5">12A5</option>
-            <option value="12A6">12A6</option>
-            <option value="12A7">12A7</option>
-            <option value="12A8">12A8</option>
-            <option value="12A9">12A9</option>
-            <option value="12A10">12A10</option>
-          </select>
+        <div class="audio-toggles-wrap">
+          <button id="btnToggleBgm" class="btn-audio-mini" onclick="toggleBgmMusic()">
+            <span>🎵</span>
+            <span id="bgmText">Nhạc Lofi</span>
+          </button>
+          <button id="btnToggleSfx" class="btn-audio-mini active" onclick="toggleSfxSound()">
+            <span id="sfxIcon">🔊</span>
+            <span>Âm</span>
+          </button>
         </div>
       </div>
 
-      <!-- Trộn ngẫu nhiên câu hỏi -->
-      <div class="toggle-row">
-        <div class="toggle-label">
-          <span>🔀</span>
-          <span>Trộn ngẫu nhiên câu hỏi</span>
-        </div>
-        <label class="switch">
-          <input type="checkbox" id="toggleShuffle" checked />
-          <span class="slider"></span>
-        </label>
-      </div>
-
-      <!-- 1. KHU VỰC CHẾ ĐỘ ĐẶC BIỆT -->
-      <div class="special-modes-grid">
-        <div class="special-card-btn selected" id="cardModeThpt" onclick="selectTopic('thpt_random40')">
-          <span class="special-card-badge badge-amber">🔥 ĐỀ XUẤT</span>
-          <div class="special-card-title">
-            <span>🌟</span>
-            <span>Thi Thử THPT</span>
+      <!-- 2. Hộp cài đặt bài thi (Chọn Môn dạng Sổ Xuống, Lớp, Tên thí sinh, Trộn đề) -->
+      <div class="exam-setup-box">
+        <!-- Hàng 1: Chọn Môn Học & Chọn Lớp -->
+        <div class="setup-grid-2">
+          <div class="setup-field">
+            <label class="setup-label" for="selectSubject">
+              <span>📚</span>
+              <span>Chọn môn học:</span>
+            </label>
+            <select id="selectSubject" class="setup-select setup-select-subj" onchange="onSubjectDropdownChange(this.value)">
+              <option value="physics" selected>⚛️ Vật Lí 12 (106 câu)</option>
+              <option value="history">🏛️ Lịch Sử 12 (440 câu)</option>
+              <option value="english">🇬🇧 Tiếng Anh 12 (32 câu)</option>
+              <option value="math">📐 Toán Học 12 (Sắp có)</option>
+              <option value="chemistry">🧪 Hóa Học 12 (Sắp có)</option>
+              <option value="biology">🧬 Sinh Học 12 (Sắp có)</option>
+              <option value="geography">🌍 Địa Lí 12 (Sắp có)</option>
+              <option value="civics">⚖️ GDCD 12 (Sắp có)</option>
+              <option value="literature">📖 Ngữ Văn 12 (Sắp có)</option>
+            </select>
           </div>
-          <div class="special-card-sub">40 câu chuẩn ma trận Bộ GD</div>
-        </div>
 
-        <div class="special-card-btn" id="cardModeAll" onclick="selectTopic('all')">
-          <span class="special-card-badge badge-purple">🏆 MARATHON</span>
-          <div class="special-card-title">
-            <span>⚡</span>
-            <span>Tất Cả 16 Bài</span>
+          <div class="setup-field col-class">
+            <label class="setup-label" for="selectClass">
+              <span>🏫</span>
+              <span>Lớp học:</span>
+            </label>
+            <select id="selectClass" class="setup-select">
+              <option value="12A1">12A1</option>
+              <option value="12A2">12A2</option>
+              <option value="12A3">12A3</option>
+              <option value="12A4">12A4</option>
+              <option value="12A5">12A5</option>
+              <option value="12A6">12A6</option>
+              <option value="12A7">12A7</option>
+              <option value="12A8" selected>12A8</option>
+              <option value="12A9">12A9</option>
+              <option value="12A10">12A10</option>
+            </select>
           </div>
-          <div class="special-card-sub">440 câu toàn bộ ngân hàng</div>
+        </div>
+
+        <!-- Hàng 2: Tên thí sinh & Trộn ngẫu nhiên câu hỏi -->
+        <div class="setup-grid-2" style="margin-top: 8px;">
+          <div class="setup-field">
+            <label class="setup-label" for="inputName">
+              <span>👤</span>
+              <span>Tên hiển thị:</span>
+            </label>
+            <input type="text" id="inputName" class="setup-input" placeholder="Nhập tên thí sinh..." value="" autocomplete="off" />
+          </div>
+
+          <div class="setup-field setup-field-shuffle">
+            <label class="setup-label" for="toggleShuffle">
+              <span>🔀</span>
+              <span>Trộn đề:</span>
+            </label>
+            <div class="shuffle-switch-wrap">
+              <label class="switch-clean">
+                <input type="checkbox" id="toggleShuffle" checked />
+                <span class="slider-clean"></span>
+              </label>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- 2. ĐƯỜNG PHÂN CÁCH & BỘ LỌC CHỦ ĐỀ -->
-      <div class="section-divider-row">
-        <div class="divider-line"></div>
-        <div class="divider-text">Hoặc chọn từng bài học để ôn</div>
-        <div class="divider-line"></div>
+      <!-- 3. Khu vực chọn bài học / đề thi -->
+      <div class="topic-header-row">
+        <span class="topic-section-title" id="topicSectionTitle">🎯 CHỌN ĐỀ THI / CHUYÊN ĐỀ:</span>
       </div>
 
-      <!-- Thanh chọn lọc chủ đề dạng Pill ngang -->
-      <div class="cat-pill-bar" id="catPillBar">
+      <!-- Thanh chọn lọc chủ đề dạng Pill ngang (chỉ hiện khi có nhiều bài như Lịch Sử) -->
+      <div class="cat-pill-bar" id="catPillBar" style="display: none;">
         <!-- Injected via JavaScript -->
       </div>
 
-      <!-- Lưới 2 cột các bài học mini -->
-      <div class="topic-grid-container" id="topicGridContainer">
+      <!-- Danh sách thẻ chọn đề (Phân bổ tự nhiên, không bị ép nhỏ) -->
+      <div class="topic-cards-list" id="topicGridContainer">
         <!-- Injected via JavaScript -->
       </div>
 
-      <!-- Nút Bắt Đầu Hiện Đại 2 Dòng -->
-      <button class="btn-start-hero" id="btnMainStartHero" onclick="startExamAction()">
-        <div class="bsh-main">
-          <span>🚀</span>
-          <span>BẮT ĐẦU LÀM BÀI</span>
-        </div>
-        <div class="bsh-sub" id="btnMainSubInfo">Đang chọn: Đề thi thử THPT (40 câu ngẫu nhiên)</div>
-      </button>
+      <!-- 4. Nút Bắt Đầu Làm Bài & Xem Bảng Vàng -->
+      <div class="home-bottom-actions">
+        <button class="btn-start-hero" id="btnMainStartHero" onclick="startExamAction()">
+          <div class="bsh-main">
+            <span>🚀</span>
+            <span>BẮT ĐẦU LÀM BÀI</span>
+          </div>
+          <div class="bsh-sub" id="btnMainSubInfo">Đang chọn: Đề thi thử (40 câu ngẫu nhiên)</div>
+        </button>
 
-      <!-- Nút xem Bảng Vàng Vinh Danh -->
-      <button class="btn-view-leaderboard" onclick="openLeaderboardModal()">
-        <span>🏆</span>
-        <span>Xem Bảng Vàng Vinh Danh</span>
-      </button>
+        <button class="btn-view-leaderboard" onclick="openLeaderboardModal()">
+          <span>🏆</span>
+          <span>Xem Bảng Vàng Vinh Danh</span>
+        </button>
+      </div>
     </div>
 
-    <!-- ==================== 2. MÀN HÌNH LÀM BÀI ==================== -->
     <div id="quizScreen" class="screen">
       <div class="quiz-container">
         <!-- Top Bar: Thoát | 00:00 | Nộp bài -->
@@ -2030,6 +2751,9 @@
           </button>
           <button class="lb-sub-btn" id="btnLbSubEnglish" onclick="filterLbBySubject('english')">
             <span>🇬🇧 Tiếng Anh</span>
+          </button>
+          <button class="lb-sub-btn" id="btnLbSubPhysics" onclick="filterLbBySubject('physics')">
+            <span>⚛️ Vật Lí</span>
           </button>
         </div>
 
@@ -2312,62 +3036,70 @@ const firebaseConfig = {
     let currentLbSubjectFilter = 'all'; // 'all', 'history', 'english'
 
     
-function switchSubject(subject) {
+// CHUYỂN ĐỔI MÀN HÌNH (HOME / QUIZ / RESULT / LEADERBOARD)
+    function showScreen(screenId) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      const target = document.getElementById(screenId);
+      if (target) {
+        target.classList.add('active');
+      }
+      window.scrollTo(0, 0);
+    }
+
+    function onSubjectDropdownChange(subjectVal) {
       try { sound.playClick(); } catch(e) {}
+      if (['math', 'chemistry', 'biology', 'geography', 'civics', 'literature'].includes(subjectVal)) {
+        const names = {
+          math: 'Toán Học 12', chemistry: 'Hóa Học 12', biology: 'Sinh Học 12',
+          geography: 'Địa Lí 12', civics: 'GDCD 12', literature: 'Ngữ Văn 12'
+        };
+        alert("📚 Môn " + (names[subjectVal] || subjectVal) + " đang được cập nhật câu hỏi.\n\nHiện tại bạn có thể ôn luyện ngay: Vật Lí 12 (106 câu), Lịch Sử 12 (440 câu) hoặc Tiếng Anh 12 (32 câu) nhé!");
+        // Trả lại môn hiện tại
+        document.getElementById('selectSubject').value = currentSubject;
+        return;
+      }
+      switchSubject(subjectVal);
+    }
+
+    function switchSubject(subject) {
+      localStorage.setItem('hist12_current_subject', subject);
       currentSubject = subject;
+      const selSubj = document.getElementById('selectSubject');
+      if (selSubj && selSubj.value !== subject) {
+        selSubj.value = subject;
+      }
 
-      const btnHist = document.getElementById('btnSubHistory');
-      const btnEng = document.getElementById('btnSubEnglish');
-      const badgeIcon = document.getElementById('homeBadgeIcon');
-      const mainTitle = document.getElementById('homeMainTitle');
-      const subTitle = document.getElementById('homeSubTitle');
+      const pillBar = document.getElementById('catPillBar');
 
-      const btnPhys = document.getElementById('btnSubPhysics');
-
-      if (subject === 'history') {
-        if (btnHist) { btnHist.classList.add('active'); btnHist.classList.remove('btn-english'); }
-        if (btnEng) { btnEng.classList.remove('active'); btnEng.classList.remove('btn-english'); }
-        if (btnPhys) { btnPhys.classList.remove('active'); }
-        if (badgeIcon) badgeIcon.textContent = '🔥';
-        if (mainTitle) mainTitle.textContent = 'LỊCH SỬ 12';
-        if (subTitle) subTitle.textContent = 'Ngân hàng 440 câu hỏi trắc nghiệm chuẩn GDPT 2018';
-
+      if (subject === 'physics') {
+        currentTopicId = 'phys_random40';
+        currentTopicTitle = 'Đề thi thử Vật Lí 12 (40 câu ngẫu nhiên)';
+        if (pillBar) pillBar.style.display = 'none'; // Physics chỉ có 5 mục, không cần thanh pill
+      } else if (subject === 'history') {
         currentTopicId = 'thpt_random40';
         currentTopicTitle = 'Đề thi thử THPT (40 câu ngẫu nhiên)';
-      } else if (subject === 'physics') {
-        if (btnHist) { btnHist.classList.remove('active'); }
-        if (btnEng) { btnEng.classList.remove('active'); btnEng.classList.remove('btn-english'); }
-        if (btnPhys) { btnPhys.classList.add('active'); }
-        if (badgeIcon) badgeIcon.textContent = '⚛️';
-        if (mainTitle) mainTitle.textContent = 'VẬT LÍ 12';
-        if (subTitle) subTitle.textContent = 'Chương 1: Vật Lí Nhiệt (Trọn bộ 106 câu trắc nghiệm & bài tập)';
-
-        currentTopicId = 'phys_all';
-        currentTopicTitle = 'Chương 1: Vật Lí Nhiệt (Trọn Bộ 106 câu)';
+        if (pillBar) pillBar.style.display = 'flex'; // History có 16 bài, cần thanh pill lọc chuyên đề
       } else {
-        if (btnHist) { btnHist.classList.remove('active'); }
-        if (btnEng) { btnEng.classList.add('active'); btnEng.classList.add('btn-english'); }
-        if (btnPhys) { btnPhys.classList.remove('active'); }
-        if (badgeIcon) badgeIcon.textContent = '🇬🇧';
-        if (mainTitle) mainTitle.textContent = 'TIẾNG ANH 12';
-        if (subTitle) subTitle.textContent = 'Global Success • Unit 1: Life Stories We Admire (32 câu trắc nghiệm & đọc hiểu)';
-
-        currentTopicId = 'eng_unit1_all';
-        currentTopicTitle = 'Unit 1: Life Stories We Admire (Trọn Bộ 32 câu)';
+        currentTopicId = 'eng_random20';
+        currentTopicTitle = 'Đề thi thử Tiếng Anh 12 (20 câu ngẫu nhiên)';
+        if (pillBar) pillBar.style.display = 'none'; // English ít bài, không cần thanh pill
       }
 
       currentCatFilter = 'all';
       renderTopicCards();
     }
 
-
-// Render Category Pills
+    // Render Category Pills (Dành riêng cho Lịch Sử 16 bài)
     function renderCategoryPills() {
       const pillBar = document.getElementById('catPillBar');
       if (!pillBar) return;
+      if (currentSubject !== 'history') {
+        pillBar.style.display = 'none';
+        return;
+      }
+      pillBar.style.display = 'flex';
 
-      const cats = (currentSubject === 'history') ? HISTORY_CATEGORIES : (currentSubject === 'physics' ? PHYSICS_CATEGORIES : ENGLISH_CATEGORIES);
-
+      const cats = window.HISTORY_CATEGORIES || TOPIC_CATEGORIES || [];
       let htmlPills = '';
       cats.forEach(cat => {
         const isActive = currentCatFilter === cat.id;
@@ -2387,198 +3119,240 @@ function switchSubject(subject) {
       renderTopicGrid();
     }
 
-    // Render Topic Grid (2 Columns)
+    // Render Topic Grid (Danh sách thẻ đẹp mắt, KHÔNG TRÙNG LẶP)
     function renderTopicGrid() {
       const grid = document.getElementById('topicGridContainer');
       if (!grid) return;
 
-      if (currentSubject === 'history') {
-        let list = ALL_TOPICS_DATABASE;
-        if (currentCatFilter !== 'all') {
-          list = list.filter(t => getTopicCategory(t.id) === currentCatFilter);
-        }
+      let items = [];
 
-        let htmlGrid = '';
-        list.forEach(topic => {
-          const isSel = currentTopicId === topic.id;
-          htmlGrid += `
-            <div class="topic-grid-card ${isSel ? 'selected' : ''}" onclick="selectTopic('${topic.id}')">
-              <div class="tgc-top">
-                <span class="tgc-icon">${topic.icon || '📖'}</span>
-                <span class="tgc-count">${topic.questions.length} câu</span>
-              </div>
-              <div class="tgc-name">${topic.title}</div>
-            </div>
-          `;
+      if (currentSubject === 'physics') {
+        items = [
+          {
+            id: 'phys_random40',
+            title: 'Đề Thi Thử (40 câu ngẫu nhiên)',
+            icon: '🎯',
+            badge: '🔥 ĐỀ XUẤT',
+            sub: 'Trích ngẫu nhiên từ Chương 1 (Chuẩn cấu trúc)',
+            count: 40
+          },
+          {
+            id: 'phys_all',
+            title: 'Trọn Bộ Chương 1: Vật Lí Nhiệt',
+            icon: '🌟',
+            badge: 'TRỌN BỘ',
+            sub: 'Toàn bộ 106 câu trắc nghiệm & bài tập',
+            count: 106
+          },
+          {
+            id: 'phys_chuyen_the',
+            title: 'Chủ đề 1: Sự Chuyển Thể',
+            icon: '💧',
+            sub: '21 câu đơn + 16 đúng/sai + 4 tính toán',
+            count: 41
+          },
+          {
+            id: 'phys_thang_nhiet',
+            title: 'Chủ đề 2: Thang Nhiệt Độ',
+            icon: '🌡️',
+            sub: '19 câu đơn + 11 đúng/sai + 4 tính toán',
+            count: 34
+          },
+          {
+            id: 'phys_noi_nang',
+            title: 'Chủ đề 3: Nội Năng & Định Luật I NĐLH',
+            icon: '⚡',
+            sub: '19 câu đơn + 8 đúng/sai + 4 tính toán',
+            count: 31
+          }
+        ];
+      } else if (currentSubject === 'history') {
+        if (currentCatFilter === 'all') {
+          items.push({
+            id: 'thpt_random40',
+            title: 'Đề Thi Thử THPT (40 câu ngẫu nhiên)',
+            icon: '🎯',
+            badge: '🔥 ĐỀ XUẤT',
+            sub: 'Chuẩn ma trận đề thi tốt nghiệp Bộ GD&ĐT',
+            count: 40
+          });
+          items.push({
+            id: 'all',
+            title: 'Marathon Toàn Bộ Ngân Hàng',
+            icon: '🏆',
+            badge: 'MARATHON',
+            sub: 'Toàn bộ 440 câu hỏi của 16 bài học',
+            count: 440
+          });
+        }
+        const histDb = window.ALL_TOPICS_DATABASE || [];
+        histDb.forEach(t => {
+          const cat = getTopicCategory(t.id);
+          if (currentCatFilter === 'all' || cat === currentCatFilter) {
+            items.push({
+              id: t.id,
+              title: t.title,
+              icon: t.icon || '📖',
+              sub: 'Bài học chương trình Lịch Sử 12',
+              count: t.questions ? t.questions.length : 0
+            });
+          }
         });
-        grid.innerHTML = htmlGrid;
       } else {
         // Tiếng Anh
-        let list = ENGLISH_TOPICS_DATABASE;
-        if (currentCatFilter !== 'all') {
-          list = list.filter(t => t.category === currentCatFilter);
-        }
-
-        let htmlGrid = '';
-        list.forEach(topic => {
-          const isSel = currentTopicId === topic.id;
-          htmlGrid += `
-            <div class="topic-grid-card ${isSel ? 'selected' : ''}" onclick="selectTopic('${topic.id}')">
-              <div class="tgc-top">
-                <span class="tgc-icon">${topic.icon || '🇬🇧'}</span>
-                <span class="tgc-count">${topic.questions.length} câu</span>
-              </div>
-              <div class="tgc-name">${topic.title}</div>
-            </div>
-          `;
+        items = [
+          {
+            id: 'eng_random20',
+            title: 'Đề Thi Thử Tiếng Anh (20 câu ngẫu nhiên)',
+            icon: '🎯',
+            badge: '🔥 ĐỀ XUẤT',
+            sub: 'Trích ngẫu nhiên từ ngân hàng Unit 1',
+            count: 20
+          },
+          {
+            id: 'eng_unit1_all',
+            title: 'Unit 1: Life Stories We Admire',
+            icon: '🌟',
+            badge: 'TRỌN BỘ',
+            sub: 'Toàn bộ 32 câu trọn vẹn 5 Task',
+            count: 32
+          }
+        ];
+        const engDb = window.ENGLISH_TOPICS_DATABASE || [];
+        engDb.forEach(t => {
+          if (t.id === 'eng_unit1_all') return;
+          items.push({
+            id: t.id,
+            title: t.title,
+            icon: t.icon || '🇬🇧',
+            sub: 'Task luyện tập',
+            count: t.questions ? t.questions.length : 0
+          });
         });
-        grid.innerHTML = htmlGrid;
       }
+
+      let htmlGrid = '';
+      items.forEach(item => {
+        const isSel = currentTopicId === item.id;
+        const badgeHtml = item.badge 
+          ? `<span class="badge-recommend">${item.badge}</span>` 
+          : '';
+
+        htmlGrid += `
+          <div class="topic-item-card ${isSel ? 'selected' : ''}" onclick="selectTopic('${item.id}')">
+            <div class="tic-left">
+              <span class="tic-icon">${item.icon}</span>
+              <div class="tic-info">
+                <div class="tic-title">
+                  <span>${item.title}</span>
+                  ${badgeHtml}
+                </div>
+                <div class="tic-sub">${item.sub || ''}</div>
+              </div>
+            </div>
+            <div class="tic-right">
+              <span class="tic-count-badge">${item.count} câu</span>
+              <div class="tic-radio"></div>
+            </div>
+          </div>
+        `;
+      });
+
+      grid.innerHTML = htmlGrid;
     }
 
     function renderTopicCards() {
       renderCategoryPills();
       renderTopicGrid();
-      updateSpecialCardsUI();
       updateStartButtonUI();
-    }
-
-    function updateSpecialCardsUI() {
-      const cardThpt = document.getElementById('cardModeThpt');
-      const cardAll = document.getElementById('cardModeAll');
-
-      if (currentSubject === 'history') {
-        if (cardThpt) {
-          cardThpt.innerHTML = `
-            <span class="special-card-badge badge-amber">🔥 ĐỀ XUẤT</span>
-            <div class="special-card-title">
-              <span>🌟</span>
-              <span>Thi Thử THPT</span>
-            </div>
-            <div class="special-card-sub">40 câu chuẩn ma trận Bộ GD</div>
-          `;
-          cardThpt.setAttribute('onclick', "selectTopic('thpt_random40')");
-          cardThpt.classList.toggle('selected', currentTopicId === 'thpt_random40');
-        }
-        if (cardAll) {
-          cardAll.innerHTML = `
-            <span class="special-card-badge badge-purple">🏆 MARATHON</span>
-            <div class="special-card-title">
-              <span>⚡</span>
-              <span>Tất Cả 16 Bài</span>
-            </div>
-            <div class="special-card-sub">440 câu toàn bộ ngân hàng</div>
-          `;
-          cardAll.setAttribute('onclick', "selectTopic('all')");
-          cardAll.classList.toggle('selected', currentTopicId === 'all');
-        }
-      } else {
-        // Tiếng Anh
-        if (cardThpt) {
-          cardThpt.innerHTML = `
-            <span class="special-card-badge badge-amber">🌟 TRỌN BỘ</span>
-            <div class="special-card-title">
-              <span>⭐</span>
-              <span>Unit 1 Full</span>
-            </div>
-            <div class="special-card-sub">32 câu trọn vẹn cả 5 phần</div>
-          `;
-          cardThpt.setAttribute('onclick', "selectTopic('eng_unit1_all')");
-          cardThpt.classList.toggle('selected', currentTopicId === 'eng_unit1_all');
-        }
-        if (cardAll) {
-          cardAll.innerHTML = `
-            <span class="special-card-badge badge-purple">⚡ THI THỬ</span>
-            <div class="special-card-title">
-              <span>🎯</span>
-              <span>Đề 20 Câu Ngẫu Nhiên</span>
-            </div>
-            <div class="special-card-sub">Trích xuất ngẫu nhiên từ Unit 1</div>
-          `;
-          cardAll.setAttribute('onclick', "selectTopic('eng_random20')");
-          cardAll.classList.toggle('selected', currentTopicId === 'eng_random20');
-        }
-      }
     }
 
     function selectTopic(topicId) {
       try { sound.playClick(); } catch(e) {}
       currentTopicId = topicId;
 
-      if (currentSubject === 'history') {
+      if (currentSubject === 'physics') {
+        if (topicId === 'phys_random40') {
+          currentTopicTitle = 'Đề thi thử Vật Lí 12 (40 câu ngẫu nhiên)';
+        } else if (topicId === 'phys_all') {
+          currentTopicTitle = 'Chương 1: Vật Lí Nhiệt (Trọn bộ 106 câu)';
+        } else {
+          const found = (window.PHYSICS_TOPICS_DATABASE || []).find(t => t.id === topicId);
+          if (found) {
+            currentTopicTitle = found.title;
+            currentTopicQuestions = found.questions;
+          }
+        }
+      } else if (currentSubject === 'history') {
         if (topicId === 'thpt_random40') {
           currentTopicTitle = 'Đề thi thử THPT (40 câu ngẫu nhiên)';
         } else if (topicId === 'all') {
           currentTopicTitle = 'Toàn bộ ngân hàng (440 câu)';
         } else {
-          const found = ALL_TOPICS_DATABASE.find(t => t.id === topicId);
+          const found = (window.ALL_TOPICS_DATABASE || []).find(t => t.id === topicId);
           if (found) {
             currentTopicTitle = found.title;
             currentTopicQuestions = found.questions;
-            const cat = getTopicCategory(topicId);
-            if (currentCatFilter !== 'all' && currentCatFilter !== cat) {
-              currentCatFilter = cat;
-              renderCategoryPills();
-            }
           }
         }
-      } else if (currentSubject === 'physics') {
-        const found = PHYSICS_TOPICS_DATABASE.find(t => t.id === topicId);
-        if (found) {
-          currentTopicTitle = found.title;
-          currentTopicQuestions = found.questions;
-        }
       } else {
-        // Tiếng Anh
-        if (topicId === 'eng_unit1_all') {
-          currentTopicTitle = 'Unit 1: Life Stories We Admire (Trọn Bộ 32 câu)';
-        } else if (topicId === 'eng_random20') {
+        if (topicId === 'eng_random20') {
           currentTopicTitle = 'Đề thi thử Tiếng Anh 12 (20 câu ngẫu nhiên)';
+        } else if (topicId === 'eng_unit1_all') {
+          currentTopicTitle = 'Unit 1: Life Stories We Admire (Trọn Bộ 32 câu)';
         } else {
-          const found = ENGLISH_TOPICS_DATABASE.find(t => t.id === topicId);
+          const found = (window.ENGLISH_TOPICS_DATABASE || []).find(t => t.id === topicId);
           if (found) {
             currentTopicTitle = found.title;
             currentTopicQuestions = found.questions;
-            if (currentCatFilter !== 'all' && currentCatFilter !== found.category) {
-              currentCatFilter = found.category;
-              renderCategoryPills();
-            }
           }
         }
       }
 
-      updateSpecialCardsUI();
       renderTopicGrid();
       updateStartButtonUI();
     }
 
     function updateStartButtonUI() {
-      const subInfo = document.getElementById('btnMainSubInfo');
-      if (!subInfo) return;
+      let text = '';
 
-      if (currentSubject === 'history') {
-        if (currentTopicId === 'thpt_random40') {
-          subInfo.textContent = 'Đang chọn: 🌟 Đề thi thử THPT (40 câu ngẫu nhiên)';
-        } else if (currentTopicId === 'all') {
-          subInfo.textContent = 'Đang chọn: ⚡ Toàn bộ ngân hàng 16 bài (440 câu)';
+      if (currentSubject === 'physics') {
+        if (currentTopicId === 'phys_random40') {
+          text = 'Đang chọn: 🎯 Đề thi thử Vật Lí 12 (40 câu ngẫu nhiên)';
+        } else if (currentTopicId === 'phys_all') {
+          text = 'Đang chọn: 🌟 Chương 1: Vật Lí Nhiệt (Trọn bộ 106 câu)';
         } else {
-          const found = ALL_TOPICS_DATABASE.find(t => t.id === currentTopicId);
+          const found = (window.PHYSICS_TOPICS_DATABASE || []).find(t => t.id === currentTopicId);
           if (found) {
-            subInfo.textContent = `Đang chọn: ${found.icon || '📖'} ${found.title} (${found.questions.length} câu)`;
+            text = 'Đang chọn: ' + (found.icon || '⚛️') + ' ' + found.title;
+          }
+        }
+      } else if (currentSubject === 'history') {
+        if (currentTopicId === 'thpt_random40') {
+          text = 'Đang chọn: 🎯 Đề thi thử THPT (40 câu ngẫu nhiên)';
+        } else if (currentTopicId === 'all') {
+          text = 'Đang chọn: 🏆 Toàn bộ ngân hàng 16 bài (440 câu)';
+        } else {
+          const found = (window.ALL_TOPICS_DATABASE || []).find(t => t.id === currentTopicId);
+          if (found) {
+            text = 'Đang chọn: ' + (found.icon || '📖') + ' ' + found.title;
           }
         }
       } else {
-        if (currentTopicId === 'eng_unit1_all') {
-          subInfo.textContent = 'Đang chọn: 🌟 Unit 1: Life Stories We Admire (32 câu)';
-        } else if (currentTopicId === 'eng_random20') {
-          subInfo.textContent = 'Đang chọn: ⚡ Đề thi thử 20 câu ngẫu nhiên (Unit 1)';
+        if (currentTopicId === 'eng_random20') {
+          text = 'Đang chọn: 🎯 Đề thi thử 20 câu ngẫu nhiên (Unit 1)';
+        } else if (currentTopicId === 'eng_unit1_all') {
+          text = 'Đang chọn: 🌟 Unit 1: Life Stories We Admire (32 câu)';
         } else {
-          const found = ENGLISH_TOPICS_DATABASE.find(t => t.id === currentTopicId);
+          const found = (window.ENGLISH_TOPICS_DATABASE || []).find(t => t.id === currentTopicId);
           if (found) {
-            subInfo.textContent = `Đang chọn: ${found.icon || '🇬🇧'} ${found.title} (${found.questions.length} câu)`;
+            text = 'Đang chọn: ' + (found.icon || '🇬🇧') + ' ' + found.title;
           }
         }
       }
+
+      const el1 = document.getElementById('btnMainSubInfo');
+      if (el1) el1.textContent = text;
     }
 
     // --- APP STATE ---
@@ -2592,37 +3366,35 @@ function switchSubject(subject) {
 
     // Load LocalStorage User Info
     const savedName = localStorage.getItem('hist12_username') || '';
-    const savedClass = localStorage.getItem('hist12_userclass') || '12A1';
-    // Chỉ tự điền nếu người dùng đã từng gõ tên thật (khác rỗng và không phải chữ Ẩn danh)
+    const savedClass = localStorage.getItem('hist12_userclass') || '12A8';
     if (savedName && savedName.toLowerCase() !== 'ẩn danh' && savedName.toLowerCase() !== 'thí sinh ẩn danh' && savedName.toLowerCase() !== 'thí sinh') {
-      document.getElementById('inputName').value = savedName;
-    } else {
-      document.getElementById('inputName').value = '';
+      const inp = document.getElementById('inputName');
+      if (inp) inp.value = savedName;
     }
-    if (savedClass) document.getElementById('selectClass').value = savedClass;
-    renderTopicCards();
+    const sel = document.getElementById('selectClass');
+    if (sel && savedClass) sel.value = savedClass;
 
-    function showScreen(screenId) {
-      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-      document.getElementById(screenId).classList.add('active');
-    }
+    // Khởi chạy môn học mặc định ban đầu trên giao diện (Vật Lí 12)
+    const savedSubject = localStorage.getItem('hist12_current_subject') || 'physics';
+    switchSubject(savedSubject);
 
-    function shuffle(array) {
-      const arr = [...array];
-      for (let i = arr.length - 1; i > 0; i--) {
+    // Fisher-Yates shuffle helper
+    function shuffle(arr) {
+      if (!Array.isArray(arr)) return [];
+      const array = [...arr];
+      for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+        [array[i], array[j]] = [array[j], array[i]];
       }
-      return arr;
+      return array;
     }
 
-    // BẮT ĐẦU THI
     function startExamAction(onlyWrongList = null) {
-      sound.playClick();
-      const rawName = document.getElementById('inputName').value.trim();
+      try { sound.playClick(); } catch(e) {}
+      const rawName = (document.getElementById('inputName') ? document.getElementById('inputName').value.trim() : '');
       const name = rawName || 'Ẩn danh';
-      const userClass = document.getElementById('selectClass').value;
-      const isShuffle = document.getElementById('toggleShuffle').checked;
+      const userClass = document.getElementById('selectClass') ? document.getElementById('selectClass').value : '12A1';
+      const isShuffle = document.getElementById('toggleShuffle') ? document.getElementById('toggleShuffle').checked : false;
 
       if (rawName && rawName.toLowerCase() !== 'ẩn danh') {
         localStorage.setItem('hist12_username', rawName);
@@ -2635,34 +3407,48 @@ function switchSubject(subject) {
       if (onlyWrongList && onlyWrongList.length > 0) {
         examList = onlyWrongList;
       } else if (currentSubject === 'history') {
+        const histDb = window.ALL_TOPICS_DATABASE || [];
         if (currentTopicId === 'thpt_random40') {
           let allPool = [];
-          ALL_TOPICS_DATABASE.forEach(t => allPool.push(...t.questions));
+          histDb.forEach(t => allPool.push(...t.questions));
           allPool = shuffle(allPool);
           examList = allPool.slice(0, 40);
         } else if (currentTopicId === 'all') {
           let allPool = [];
-          ALL_TOPICS_DATABASE.forEach(t => allPool.push(...t.questions));
+          histDb.forEach(t => allPool.push(...t.questions));
           examList = isShuffle ? shuffle(allPool) : allPool;
         } else {
-          const found = ALL_TOPICS_DATABASE.find(t => t.id === currentTopicId);
-          const qSource = found ? found.questions : ALL_TOPICS_DATABASE[0].questions;
+          const found = histDb.find(t => t.id === currentTopicId);
+          const qSource = found ? found.questions : (histDb[0] ? histDb[0].questions : []);
           examList = isShuffle ? shuffle(qSource) : [...qSource];
         }
       } else if (currentSubject === 'physics') {
-        const found = PHYSICS_TOPICS_DATABASE.find(t => t.id === currentTopicId);
-        const qSource = found ? found.questions : PHYSICS_TOPICS_DATABASE[0].questions;
-        examList = isShuffle ? shuffle(qSource) : [...qSource];
+        const physDb = window.PHYSICS_TOPICS_DATABASE || [];
+        const allPhysTopic = physDb.find(t => t.id === 'phys_all') || physDb[0];
+        const allPhysQ = allPhysTopic ? allPhysTopic.questions : [];
+
+        if (currentTopicId === 'phys_all') {
+          examList = isShuffle ? shuffle(allPhysQ) : [...allPhysQ];
+        } else if (currentTopicId === 'phys_random40') {
+          examList = shuffle(allPhysQ).slice(0, 40);
+        } else {
+          const found = physDb.find(t => t.id === currentTopicId);
+          const qSource = found ? found.questions : allPhysQ;
+          examList = isShuffle ? shuffle(qSource) : [...qSource];
+        }
       } else {
         // Tiếng Anh 12
-        const allEngQ = (ENGLISH_TOPICS_DATABASE.find(t => t.id === 'eng_unit1_all') || ENGLISH_TOPICS_DATABASE[0]).questions;
+        const engDb = window.ENGLISH_TOPICS_DATABASE || [];
+        const allEngTopic = engDb.find(t => t.id === 'eng_unit1_all') || engDb[0];
+        const allEngQ = allEngTopic ? allEngTopic.questions : [];
+
         if (currentTopicId === 'eng_unit1_all') {
           examList = isShuffle ? shuffle(allEngQ) : [...allEngQ];
         } else if (currentTopicId === 'eng_random20') {
           const shuffled = shuffle(allEngQ);
           examList = shuffled.slice(0, 20);
         } else {
-          const found = ENGLISH_TOPICS_DATABASE.find(t => t.id === currentTopicId);
+          const found = engDb.find(t => t.id === currentTopicId);
           const qSource = found ? found.questions : allEngQ;
           examList = isShuffle ? shuffle(qSource) : [...qSource];
         }
@@ -3090,6 +3876,7 @@ function switchSubject(subject) {
       try { sound.playClick(); } catch(e) {}
       const modal = document.getElementById('leaderboardModal');
       if (modal) modal.classList.add('active');
+      filterLbBySubject(currentSubject || 'physics');
       refreshLeaderboardData();
     }
 
@@ -3110,9 +3897,11 @@ function switchSubject(subject) {
       const btnAll = document.getElementById('btnLbSubAll');
       const btnHist = document.getElementById('btnLbSubHistory');
       const btnEng = document.getElementById('btnLbSubEnglish');
+      const btnPhys = document.getElementById('btnLbSubPhysics');
       if (btnAll) btnAll.classList.toggle('active', subj === 'all');
       if (btnHist) btnHist.classList.toggle('active', subj === 'history');
       if (btnEng) btnEng.classList.toggle('active', subj === 'english');
+      if (btnPhys) btnPhys.classList.toggle('active', subj === 'physics');
       renderLeaderboard();
     }
 
@@ -3218,7 +4007,7 @@ function switchSubject(subject) {
       let rawList = currentRawLbList || [];
       const list = rawList.filter(item => {
         if (currentLbSubjectFilter === 'all') return true;
-        const subj = item.subject || (item.topicId && item.topicId.startsWith('eng_') ? 'english' : 'history');
+        const subj = item.subject || (item.topicId && item.topicId.startsWith('eng_') ? 'english' : (item.topicId && item.topicId.startsWith('phys_') ? 'physics' : 'history'));
         return subj === currentLbSubjectFilter;
       });
       if (list.length === 0) {
