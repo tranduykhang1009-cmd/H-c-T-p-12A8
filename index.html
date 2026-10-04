@@ -2383,72 +2383,6 @@
       border-radius: 4px;
     }
 
-    /* Hai chế độ thi chính nổi bật ngang 2 cột (Chuẩn như bản gốc) */
-    .featured-modes-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 12px;
-      margin-bottom: 10px;
-    }
-    .featured-mode-card {
-      background: rgba(19, 23, 46, 0.92);
-      border: 1.5px solid rgba(255, 255, 255, 0.12);
-      border-radius: 14px;
-      padding: 11px 10px;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-align: left;
-      position: relative;
-      transition: all 0.2s ease;
-      min-height: 82px;
-    }
-    .featured-mode-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(96, 165, 250, 0.5);
-    }
-    .featured-mode-card.selected {
-      border-color: #f59e0b;
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(99, 102, 241, 0.18));
-      box-shadow: 0 0 16px rgba(245, 158, 11, 0.35);
-    }
-    .fmc-badge {
-      display: inline-block;
-      align-self: flex-start;
-      font-size: 0.62rem;
-      font-weight: 900;
-      letter-spacing: 0.4px;
-      padding: 2px 6px;
-      border-radius: 5px;
-      margin-bottom: 5px;
-    }
-    .fmc-badge-orange {
-      background: rgba(245, 158, 11, 0.25);
-      color: #fbbf24;
-      border: 1px solid rgba(245, 158, 11, 0.45);
-    }
-    .fmc-badge-purple {
-      background: rgba(168, 85, 247, 0.25);
-      color: #c084fc;
-      border: 1px solid rgba(168, 85, 247, 0.45);
-    }
-    .fmc-title {
-      font-size: 0.88rem;
-      font-weight: 800;
-      color: #f1f5f9;
-      line-height: 1.25;
-      margin-bottom: 3px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .fmc-desc {
-      font-size: 0.68rem;
-      color: #94a3b8;
-      line-height: 1.2;
-    }
 
     /* Đường phân cách chọn từng bài lẻ */
     .section-divider-clean {
@@ -2665,21 +2599,27 @@
             </div>
           </div>
         </div>
+
+        <!-- Hàng 3: Chọn Bài Học / Đề Thi (Sổ xuống trực tiếp, rõ ràng, không gây nhầm lẫn) -->
+        <div class="setup-field" style="margin-top: 8px;">
+          <label class="setup-label" for="selectTopicDropdown">
+            <span>🎯</span>
+            <span>Chọn bài học / đề thi:</span>
+          </label>
+          <select id="selectTopicDropdown" class="setup-select" onchange="onTopicDropdownChange(this.value)">
+            <!-- Injected via JavaScript -->
+          </select>
+        </div>
       </div>
 
-      <!-- 3. Hai chế độ thi chính nổi bật ngang 2 cột (Chuẩn như bản gốc: Thi thử & Marathon/Trọn bộ) -->
-      <div class="featured-modes-grid" id="featuredModesGrid">
-        <!-- Injected via JavaScript -->
-      </div>
-
-      <!-- 4. Nút Bắt Đầu Làm Bài & Xem Bảng Vàng (NẰM NGAY TRÊN ĐẦU, HOÀN TOÀN KHÔNG BỊ KHUẤT TRÊN ĐIỆN THOẠI) -->
+      <!-- 4. Nút Bắt Đầu Làm Bài & Xem Bảng Vàng (Nằm ngay đây, rõ ràng bài đang chọn) -->
       <div class="home-bottom-actions">
         <button class="btn-start-hero" id="btnMainStartHero" onclick="startExamAction()">
           <div class="bsh-main">
             <span>🚀</span>
             <span>BẮT ĐẦU LÀM BÀI</span>
           </div>
-          <div class="bsh-sub" id="btnMainSubInfo">Đang chọn: Đề thi thử (40 câu ngẫu nhiên)</div>
+          <div class="bsh-sub" id="btnMainSubInfo">Đang chọn: Bài 1: Liên Hợp Quốc (28 câu)</div>
         </button>
 
         <button class="btn-view-leaderboard" onclick="openLeaderboardModal()">
@@ -2691,7 +2631,7 @@
       <!-- 5. Phân cách chọn từng bài lẻ -->
       <div class="section-divider-clean" id="sectionDividerLessons">
         <span class="sd-line"></span>
-        <span class="sd-text" id="sdLessonsText">HOẶC CHỌN TỪNG BÀI HỌC ĐỂ ÔN TẬP</span>
+        <span class="sd-text" id="sdLessonsText">HOẶC CHỌN TRONG DANH SÁCH CHI TIẾT</span>
         <span class="sd-line"></span>
       </div>
 
@@ -3196,16 +3136,16 @@ const firebaseConfig = {
       const pillBar = document.getElementById('catPillBar');
 
       if (subject === 'physics') {
-        currentTopicId = 'phys_random40';
-        currentTopicTitle = 'Đề thi thử Vật Lí 12 (40 câu ngẫu nhiên)';
+        currentTopicId = 'phys_chuyen_the';
+        currentTopicTitle = 'Chủ đề 1: Sự Chuyển Thể (41 câu)';
         if (pillBar) pillBar.style.display = 'none'; // Physics chỉ có 5 mục, không cần thanh pill
       } else if (subject === 'history') {
-        currentTopicId = 'thpt_random40';
-        currentTopicTitle = 'Đề thi thử THPT (40 câu ngẫu nhiên)';
+        currentTopicId = 'bai1';
+        currentTopicTitle = 'Bài 1: Liên Hợp Quốc (28 câu)';
         if (pillBar) pillBar.style.display = 'flex'; // History có 16 bài, cần thanh pill lọc chuyên đề
       } else {
-        currentTopicId = 'eng_random20';
-        currentTopicTitle = 'Đề thi thử Tiếng Anh 12 (20 câu ngẫu nhiên)';
+        currentTopicId = 'eng_pronunciation';
+        currentTopicTitle = 'Task 1: Pronunciation - Ngữ âm';
         if (pillBar) pillBar.style.display = 'none'; // English ít bài, không cần thanh pill
       }
 
@@ -3254,88 +3194,66 @@ const firebaseConfig = {
       renderTopicGrid();
     }
 
-    // Render 2 chế độ thi chính nổi bật ngang 2 cột
-    function renderFeaturedModes() {
-      const container = document.getElementById('featuredModesGrid');
-      if (!container) return;
-
-      let modes = [];
-      if (currentSubject === 'physics') {
-        modes = [
-          {
-            id: 'phys_random40',
-            badge: '🔥 ĐỀ XUẤT',
-            badgeClass: 'fmc-badge-orange',
-            title: '🎯 Thi Thử Vật Lí',
-            desc: '40 câu ngẫu nhiên Chương 1 (Chuẩn cấu trúc)',
-            count: 40
-          },
-          {
-            id: 'phys_all',
-            badge: '🌟 TRỌN BỘ',
-            badgeClass: 'fmc-badge-purple',
-            title: '⚡ Vật Lí Nhiệt',
-            desc: 'Toàn bộ 106 câu trắc nghiệm & bài tập',
-            count: 106
-          }
-        ];
-      } else if (currentSubject === 'history') {
-        modes = [
-          {
-            id: 'thpt_random40',
-            badge: '🔥 ĐỀ XUẤT',
-            badgeClass: 'fmc-badge-orange',
-            title: '☀️ Thi Thử THPT',
-            desc: '40 câu chuẩn ma trận đề thi Bộ GD&ĐT',
-            count: 40
-          },
-          {
-            id: 'all',
-            badge: '🏆 MARATHON',
-            badgeClass: 'fmc-badge-purple',
-            title: '⚡ Tất Cả 16 Bài',
-            desc: 'Toàn bộ 440 câu ngân hàng 16 bài học',
-            count: 440
-          }
-        ];
-      } else {
-        modes = [
-          {
-            id: 'eng_random20',
-            badge: '🔥 ĐỀ XUẤT',
-            badgeClass: 'fmc-badge-orange',
-            title: '🎯 Thi Thử Unit 1',
-            desc: '20 câu ngẫu nhiên trắc nghiệm & đọc hiểu',
-            count: 20
-          },
-          {
-            id: 'eng_unit1_all',
-            badge: '🌟 TRỌN BỘ',
-            badgeClass: 'fmc-badge-purple',
-            title: '⚡ Trọn Bộ Unit 1',
-            desc: 'Toàn bộ 32 câu Life Stories We Admire',
-            count: 32
-          }
-        ];
-      }
+    // Cập nhật danh sách bài học vào Menu Sổ Xuống (Dropdown)
+    function populateTopicDropdown() {
+      const selectEl = document.getElementById('selectTopicDropdown');
+      if (!selectEl) return;
 
       let html = '';
-      modes.forEach(m => {
-        const isSel = currentTopicId === m.id;
+
+      if (currentSubject === 'physics') {
         html += `
-          <div class="featured-mode-card ${isSel ? 'selected' : ''}" onclick="selectTopic('${m.id}')">
-            <div>
-              <span class="fmc-badge ${m.badgeClass}">${m.badge}</span>
-              <div class="fmc-title">${m.title}</div>
-              <div class="fmc-desc">${m.desc}</div>
-            </div>
-          </div>
+          <optgroup label="-- CÁC CHỦ ĐỀ VẬT LÍ 12 --">
+            <option value="phys_chuyen_the">💧 Chủ đề 1: Sự Chuyển Thể (41 câu)</option>
+            <option value="phys_thang_nhiet">🌡️ Chủ đề 2: Thang Nhiệt Độ (34 câu)</option>
+            <option value="phys_noi_nang">⚡ Chủ đề 3: Nội Năng & Định Luật I (31 câu)</option>
+          </optgroup>
+          <optgroup label="-- ĐỀ THI TỔNG HỢP VẬT LÍ --">
+            <option value="phys_random40">🎯 Đề Thi Thử Vật Lí 12 (40 câu ngẫu nhiên)</option>
+            <option value="phys_all">🌟 Trọn Bộ Chương 1: Vật Lí Nhiệt (106 câu)</option>
+          </optgroup>
         `;
-      });
-      container.innerHTML = html;
+      } else if (currentSubject === 'history') {
+        const histDb = window.ALL_TOPICS_DATABASE || [];
+        html += `<optgroup label="-- 16 BÀI HỌC LỊCH SỬ 12 --">`;
+        histDb.forEach(t => {
+          const count = t.questions ? t.questions.length : 0;
+          html += `<option value="${t.id}">${t.icon || '📖'} ${t.title} (${count} câu)</option>`;
+        });
+        html += `</optgroup>`;
+        html += `
+          <optgroup label="-- ĐỀ THI TỔNG HỢP LỊCH SỬ --">
+            <option value="thpt_random40">🎯 Đề Thi Thử THPT (40 câu chuẩn ma trận)</option>
+            <option value="all">🏆 Marathon Toàn Bộ Ngân Hàng (440 câu)</option>
+          </optgroup>
+        `;
+      } else {
+        const engDb = window.ENGLISH_TOPICS_DATABASE || [];
+        html += `<optgroup label="-- BÀI HỌC TIẾNG ANH 12 (UNIT 1) --">`;
+        engDb.forEach(t => {
+          if (t.id === 'eng_unit1_all') return;
+          const count = t.questions ? t.questions.length : 0;
+          html += `<option value="${t.id}">${t.icon || '🇬🇧'} ${t.title} (${count} câu)</option>`;
+        });
+        html += `</optgroup>`;
+        html += `
+          <optgroup label="-- ĐỀ THI TỔNG HỢP TIẾNG ANH --">
+            <option value="eng_unit1_all">🌟 Trọn Bộ Unit 1: Life Stories We Admire (32 câu)</option>
+            <option value="eng_random20">🎯 Đề Thi Thử 20 câu ngẫu nhiên (Unit 1)</option>
+          </optgroup>
+        `;
+      }
+
+      selectEl.innerHTML = html;
+      selectEl.value = currentTopicId;
     }
 
-    // Render Topic Grid (Chỉ hiển thị các bài học lẻ, không bị trùng lặp với 2 chế độ trên)
+    function onTopicDropdownChange(val) {
+      try { sound.playClick(); } catch(e) {}
+      selectTopic(val);
+    }
+
+    // Render Topic Grid (Danh sách thẻ bài học chi tiết)
     function renderTopicGrid() {
       const grid = document.getElementById('topicGridContainer');
       if (!grid) return;
@@ -3364,6 +3282,20 @@ const firebaseConfig = {
             icon: '⚡',
             sub: '19 câu đơn + 8 đúng/sai + 4 tính toán',
             count: 31
+          },
+          {
+            id: 'phys_random40',
+            title: 'Đề Thi Thử Vật Lí 12 (40 câu ngẫu nhiên)',
+            icon: '🎯',
+            sub: 'Trích ngẫu nhiên từ Chương 1 (Chuẩn cấu trúc)',
+            count: 40
+          },
+          {
+            id: 'phys_all',
+            title: 'Trọn Bộ Chương 1: Vật Lí Nhiệt (106 câu)',
+            icon: '🌟',
+            sub: 'Toàn bộ 106 câu trắc nghiệm & bài tập',
+            count: 106
           }
         ];
       } else if (currentSubject === 'history') {
@@ -3380,6 +3312,22 @@ const firebaseConfig = {
             });
           }
         });
+        if (currentCatFilter === 'all') {
+          items.push({
+            id: 'thpt_random40',
+            title: 'Đề Thi Thử THPT (40 câu ngẫu nhiên)',
+            icon: '🎯',
+            sub: 'Chuẩn ma trận đề thi tốt nghiệp Bộ GD&ĐT',
+            count: 40
+          });
+          items.push({
+            id: 'all',
+            title: 'Marathon Toàn Bộ Ngân Hàng (440 câu)',
+            icon: '🏆',
+            sub: 'Toàn bộ 440 câu hỏi của 16 bài học',
+            count: 440
+          });
+        }
       } else {
         // Tiếng Anh
         const engDb = window.ENGLISH_TOPICS_DATABASE || [];
@@ -3392,6 +3340,20 @@ const firebaseConfig = {
             sub: 'Task luyện tập',
             count: t.questions ? t.questions.length : 0
           });
+        });
+        items.push({
+          id: 'eng_unit1_all',
+          title: 'Trọn Bộ Unit 1: Life Stories We Admire',
+          icon: '🌟',
+          sub: 'Toàn bộ 32 câu trọn vẹn 5 Task',
+          count: 32
+        });
+        items.push({
+          id: 'eng_random20',
+          title: 'Đề Thi Thử Tiếng Anh (20 câu ngẫu nhiên)',
+          icon: '🎯',
+          sub: 'Trích ngẫu nhiên từ ngân hàng Unit 1',
+          count: 20
         });
       }
 
@@ -3426,7 +3388,7 @@ const firebaseConfig = {
     }
 
     function renderTopicCards() {
-      renderFeaturedModes();
+      populateTopicDropdown();
       renderCategoryPills();
       renderTopicGrid();
       updateStartButtonUI();
@@ -3474,7 +3436,11 @@ const firebaseConfig = {
         }
       }
 
-      renderFeaturedModes();
+      const selectEl = document.getElementById('selectTopicDropdown');
+      if (selectEl && selectEl.value !== topicId) {
+        selectEl.value = topicId;
+      }
+
       renderTopicGrid();
       updateStartButtonUI();
     }
