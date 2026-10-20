@@ -1132,8 +1132,8 @@
       border: 1px solid var(--card-border);
       border-radius: 22px;
       width: 100%;
-      max-width: 440px;
-      padding: 24px 20px;
+      max-width: 480px;
+      padding: 20px 14px;
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
       animation: fadeIn 0.2s ease;
     }
@@ -1277,7 +1277,8 @@
       display: flex;
       flex-direction: column;
       gap: 3px;
-      margin: 0 10px;
+      margin: 0 8px;
+      overflow: hidden;
     }
     .lb-name-row {
       display: flex;
@@ -1290,7 +1291,7 @@
     .lb-name {
       font-weight: 800;
       color: #f1f5f9;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -1304,9 +1305,18 @@
     .lb-meta-sub {
       display: flex;
       align-items: center;
-      gap: 6px;
-      font-size: 0.73rem;
+      gap: 5px;
+      flex-wrap: wrap;
+      font-size: 0.72rem;
       color: #94a3b8;
+      line-height: 1.4;
+    }
+    .lb-right-col {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+      margin-left: 6px;
     }
     
     .date-badge {
@@ -1340,7 +1350,9 @@
       font-weight: 900;
       color: #34d399;
       font-size: 1.05rem;
-      margin-right: 10px;
+      margin: 0;
+      white-space: nowrap;
+      text-align: right;
       flex-shrink: 0;
     }
     .lb-reaction-wrapper {
@@ -4862,7 +4874,7 @@ const firebaseConfig = {
           // Chuỗi hiển thị số lần làm
           let attemptBadgeHtml = '';
           if (currentLbViewMode === 'unique') {
-            attemptBadgeHtml = `<span class="attempt-badge">🎯 ${item.attempts} lượt làm</span>`;
+            attemptBadgeHtml = `<span class="attempt-badge">🎯 ${item.attempts} lượt</span>`;
           } else {
             attemptBadgeHtml = `<span class="attempt-badge">🎯 Lần ${item.attemptIndex || 1}/${item.totalStudentAttempts || 1}</span>`;
           }
@@ -4897,24 +4909,26 @@ const firebaseConfig = {
                 ${item.timestamp ? `<span class="date-badge">🕒 ${formatSubmissionDate(item.timestamp)}</span>` : ''}
               </div>
             </div>
-            <div class="lb-score">${scoreFormatted}đ</div>
-            <div class="lb-reaction-wrapper">
-              <button class="lb-reaction-btn ${myReaction ? 'active-react' : ''}" 
-                      id="btnReact_${safeId}" 
-                      onclick="handleReactionBtnClick('${recordIdEscaped}', '${fbKeyEscaped}', '${safeId}')"
-                      onpointerdown="startPressReaction('${safeId}')"
-                      onpointerup="endPressReaction()"
-                      onpointercancel="endPressReaction()"
-                      oncontextmenu="event.preventDefault(); showReactionPicker('${safeId}');">
-                <span id="reactEmoji_${safeId}">${displayEmoji}</span>
-                <span id="reactCount_${safeId}">${totalReactions}</span>
-              </button>
-              <div class="reaction-picker-popover ${popPositionClass}" id="picker_${safeId}">
-                <button class="emoji-pick-btn" onclick="selectReaction('${recordIdEscaped}', '${fbKeyEscaped}', '❤️', '${safeId}')">❤️</button>
-                <button class="emoji-pick-btn" onclick="selectReaction('${recordIdEscaped}', '${fbKeyEscaped}', '😆', '${safeId}')">😆</button>
-                <button class="emoji-pick-btn" onclick="selectReaction('${recordIdEscaped}', '${fbKeyEscaped}', '😮', '${safeId}')">😮</button>
-                <button class="emoji-pick-btn" onclick="selectReaction('${recordIdEscaped}', '${fbKeyEscaped}', '🔥', '${safeId}')">🔥</button>
-                <button class="emoji-pick-btn" onclick="selectReaction('${recordIdEscaped}', '${fbKeyEscaped}', '😡', '${safeId}')">😡</button>
+            <div class="lb-right-col">
+              <div class="lb-score">${scoreFormatted}đ</div>
+              <div class="lb-reaction-wrapper">
+                <button class="lb-reaction-btn ${myReaction ? 'active-react' : ''}" 
+                        id="btnReact_${safeId}" 
+                        onclick="handleReactionBtnClick('${recordIdEscaped}', '${fbKeyEscaped}', '${safeId}')"
+                        onpointerdown="startPressReaction('${safeId}')"
+                        onpointerup="endPressReaction()"
+                        onpointercancel="endPressReaction()"
+                        oncontextmenu="event.preventDefault(); showReactionPicker('${safeId}');">
+                  <span id="reactEmoji_${safeId}">${displayEmoji}</span>
+                  <span id="reactCount_${safeId}">${totalReactions}</span>
+                </button>
+                <div class="reaction-picker-popover ${popPositionClass}" id="picker_${safeId}">
+                  <button class="emoji-pick-btn" onclick="selectReaction('${recordIdEscaped}', '${fbKeyEscaped}', '❤️', '${safeId}')">❤️</button>
+                  <button class="emoji-pick-btn" onclick="selectReaction('${recordIdEscaped}', '${fbKeyEscaped}', '😆', '${safeId}')">😆</button>
+                  <button class="emoji-pick-btn" onclick="selectReaction('${recordIdEscaped}', '${fbKeyEscaped}', '😮', '${safeId}')">😮</button>
+                  <button class="emoji-pick-btn" onclick="selectReaction('${recordIdEscaped}', '${fbKeyEscaped}', '🔥', '${safeId}')">🔥</button>
+                  <button class="emoji-pick-btn" onclick="selectReaction('${recordIdEscaped}', '${fbKeyEscaped}', '😡', '${safeId}')">😡</button>
+                </div>
               </div>
             </div>
           `;
