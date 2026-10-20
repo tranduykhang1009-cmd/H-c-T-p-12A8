@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Ôn Tập All Môn</title>
+  <title>LỊCH SỬ 12 - THPT NGUYỄN HUỆ</title>
   <!-- Cấu hình Progressive Web App (PWA) & Chạy Offline -->
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#13172e" />
@@ -2535,6 +2535,192 @@
       }
     }
 
+
+    /* =========================================================================
+       GIAO DIỆN GHÉP THẺ TỪ (INTERACTIVE WORD CHIPS / DUOLINGO STYLE)
+       ========================================================================= */
+    .chip-exercise-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 6px;
+      width: 100%;
+    }
+    .chip-prompt-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 1.02rem;
+      line-height: 1.6;
+      color: #e2e8f0;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+    .chip-answer-zone {
+      min-height: 72px;
+      background: rgba(15, 23, 42, 0.65);
+      border: 2px dashed rgba(96, 165, 250, 0.5);
+      border-radius: 14px;
+      padding: 12px 14px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .chip-answer-zone.has-chips {
+      border-style: solid;
+      border-color: rgba(96, 165, 250, 0.8);
+      background: rgba(30, 58, 138, 0.22);
+    }
+    .chip-answer-zone.correct-glow {
+      border-style: solid !important;
+      border-color: #10b981 !important;
+      background: rgba(16, 185, 129, 0.16) !important;
+      box-shadow: 0 0 18px rgba(16, 185, 129, 0.4);
+    }
+    .chip-answer-zone.wrong-shake {
+      border-style: solid !important;
+      border-color: #ef4444 !important;
+      background: rgba(239, 68, 68, 0.16) !important;
+      animation: chipShake 0.4s ease;
+    }
+    @keyframes chipShake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-5px); }
+      80% { transform: translateX(5px); }
+    }
+    .chip-placeholder {
+      color: #94a3b8;
+      font-size: 0.92rem;
+      font-style: italic;
+      pointer-events: none;
+      user-select: none;
+      width: 100%;
+      text-align: center;
+      padding: 8px 0;
+    }
+    .chip-word-bank {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      min-height: 70px;
+    }
+    .word-chip {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      color: #f8fafc;
+      border: 1.5px solid rgba(148, 163, 184, 0.45);
+      border-radius: 10px;
+      padding: 9px 15px;
+      font-size: 0.98rem;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .word-chip:hover {
+      transform: translateY(-2px);
+      border-color: #60a5fa;
+      box-shadow: 0 6px 14px rgba(96, 165, 250, 0.35);
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    }
+    .word-chip:active {
+      transform: translateY(1px);
+    }
+    .word-chip.placed {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      border-color: #38bdf8;
+      color: #ffffff;
+    }
+    .word-chip.placed:hover:not(.locked) {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      border-color: #f87171;
+    }
+    .word-chip.bank-used {
+      opacity: 0.22;
+      pointer-events: none;
+      transform: scale(0.94);
+      box-shadow: none;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    .word-chip.locked {
+      cursor: default;
+      pointer-events: none;
+    }
+    .chip-actions-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 6px;
+    }
+    .chip-btn-group-left {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .btn-chip-action {
+      background: rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 9px;
+      padding: 8px 14px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .btn-chip-action:hover {
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+    .btn-chip-check {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      padding: 9px 22px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-chip-check:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(16, 185, 129, 0.5);
+    }
+    .chip-hint-alert {
+      background: rgba(234, 179, 8, 0.15);
+      border: 1px solid rgba(234, 179, 8, 0.4);
+      color: #fef08a;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      display: none;
+    }
+
 </style>
 </head>
 <body>
@@ -3175,9 +3361,9 @@ const firebaseConfig = {
         currentTopicTitle = 'Bài 1: Liên Hợp Quốc (28 câu)';
         if (pillBar) pillBar.style.display = 'flex'; // History có 16 bài, cần thanh pill lọc chuyên đề
       } else {
-        currentTopicId = 'eng_part1';
-        currentTopicTitle = 'Phần I: Từ Vựng & Ngữ Pháp (15 câu)';
-        if (pillBar) pillBar.style.display = 'none'; // English ít bài, không cần thanh pill
+        currentTopicId = 'eng_unit3_all';
+        currentTopicTitle = 'Unit 3: Green Living (Trọn Bộ 31 câu)';
+        if (pillBar) pillBar.style.display = 'flex'; // Hiển thị thanh lọc chuyên đề Unit 1, Unit 3, Viết câu
       }
 
       const sdLessons = document.getElementById('sdLessonsText');
@@ -3199,13 +3385,24 @@ const firebaseConfig = {
     function renderCategoryPills() {
       const pillBar = document.getElementById('catPillBar');
       if (!pillBar) return;
-      if (currentSubject !== 'history') {
+      
+      if (currentSubject === 'physics') {
         pillBar.style.display = 'none';
         return;
       }
       pillBar.style.display = 'flex';
 
-      const cats = window.HISTORY_CATEGORIES || TOPIC_CATEGORIES || [];
+      let cats = [];
+      if (currentSubject === 'history') {
+        cats = window.HISTORY_CATEGORIES || TOPIC_CATEGORIES || [];
+      } else if (currentSubject === 'english') {
+        cats = [
+          { id: 'all', name: 'Tất cả bài học', icon: '🌐' },
+          { id: 'unit1', name: 'Unit 1: Danh Nhân', icon: '⭐' },
+          { id: 'unit3', name: 'Unit 3: Sống Xanh', icon: '🌿' },
+          { id: 'writing', name: '✍️ Viết Câu (Word Chips)', icon: '🧩' }
+        ];
+      }
       let htmlPills = '';
       cats.forEach(cat => {
         const isActive = currentCatFilter === cat.id;
@@ -3260,17 +3457,35 @@ const firebaseConfig = {
         `;
       } else {
         const engDb = window.ENGLISH_TOPICS_DATABASE || [];
-        html += `<optgroup label="-- BÀI HỌC TIẾNG ANH 12 (UNIT 1) --">`;
-        engDb.forEach(t => {
-          if (t.id === 'eng_unit1_all') return;
+        html += `<optgroup label="-- ✍️ BÀI TẬP VIẾT CÂU (WORD CHIPS) --">`;
+        engDb.filter(t => t.category === 'writing').forEach(t => {
           const count = t.questions ? t.questions.length : 0;
-          html += `<option value="${t.id}">${t.icon || '🇬🇧'} ${t.title} (${count} câu)</option>`;
+          html += `<option value="${t.id}">${t.icon || '✍️'} ${t.title} (${count} câu)</option>`;
         });
         html += `</optgroup>`;
+
+        html += `<optgroup label="-- 🌿 UNIT 3: GREEN LIVING (SỐNG XANH) --">`;
+        engDb.filter(t => t.category === 'unit3').forEach(t => {
+          const count = t.questions ? t.questions.length : 0;
+          html += `<option value="${t.id}">${t.icon || '🌿'} ${t.title} (${count} câu)</option>`;
+        });
+        html += `</optgroup>`;
+
+        html += `<optgroup label="-- ⭐ UNIT 1: LIFE STORIES WE ADMIRE --">`;
+        engDb.filter(t => t.category === 'all' && t.id !== 'eng_all_marathon').concat(engDb.filter(t => !t.category || t.category === 'unit1')).forEach(t => {
+          if (t.id === 'eng_unit3_all' || t.category === 'writing' || t.id === 'eng_all_marathon') return;
+          const count = t.questions ? t.questions.length : 0;
+          html += `<option value="${t.id}">${t.icon || '⭐'} ${t.title} (${count} câu)</option>`;
+        });
+        html += `</optgroup>`;
+
         html += `
-          <optgroup label="-- ĐỀ THI TỔNG HỢP TIẾNG ANH --">
-            <option value="eng_unit1_all">🌟 Trọn Bộ Unit 1: Life Stories We Admire (32 câu)</option>
-            <option value="eng_random20">🎯 Đề Thi Thử 20 câu ngẫu nhiên (Unit 1)</option>
+          <optgroup label="-- 🏆 ĐỀ THI TỔNG HỢP & MARATHON TIẾNG ANH --">
+            <option value="eng_writing_all">✍️ Trọn Bộ 28 Câu Viết Ghép Thẻ Từ (28 câu)</option>
+            <option value="eng_unit3_all">🌿 Trọn Bộ Unit 3: Green Living (31 câu)</option>
+            <option value="eng_unit1_all">⭐ Trọn Bộ Unit 1: Life Stories (32 câu)</option>
+            <option value="eng_random20">🎯 Đề Thi Thử Tiếng Anh (20 câu ngẫu nhiên)</option>
+            <option value="eng_all_marathon">🏆 Marathon Toàn Bộ Tiếng Anh 12 (91 câu)</option>
           </optgroup>
         `;
       }
@@ -3363,29 +3578,39 @@ const firebaseConfig = {
         // Tiếng Anh
         const engDb = window.ENGLISH_TOPICS_DATABASE || [];
         engDb.forEach(t => {
-          if (t.id === 'eng_unit1_all') return;
+          if (t.id === 'eng_all_marathon') return;
+          // Áp dụng bộ lọc chuyên đề
+          if (currentCatFilter !== 'all') {
+            if (currentCatFilter === 'writing' && t.category !== 'writing') return;
+            if (currentCatFilter === 'unit3' && t.category !== 'unit3') return;
+            if (currentCatFilter === 'unit1' && t.category === 'unit3') return;
+            if (currentCatFilter === 'unit1' && t.category === 'writing') return;
+          }
           items.push({
             id: t.id,
             title: t.title,
             icon: t.icon || '🇬🇧',
-            sub: 'Task luyện tập',
+            sub: t.category === 'writing' ? 'Ghép thẻ từ tương tác' : 'Chuyên đề ôn tập',
             count: t.questions ? t.questions.length : 0
           });
         });
-        items.push({
-          id: 'eng_unit1_all',
-          title: 'Trọn Bộ Unit 1: Life Stories We Admire',
-          icon: '🌟',
-          sub: 'Toàn bộ 32 câu trọn vẹn 5 Task',
-          count: 32
-        });
-        items.push({
-          id: 'eng_random20',
-          title: 'Đề Thi Thử Tiếng Anh (20 câu ngẫu nhiên)',
-          icon: '🎯',
-          sub: 'Trích ngẫu nhiên từ ngân hàng Unit 1',
-          count: 20
-        });
+
+        if (currentCatFilter === 'all') {
+          items.push({
+            id: 'eng_random20',
+            title: 'Đề Thi Thử Tiếng Anh (20 câu ngẫu nhiên)',
+            icon: '🎯',
+            sub: 'Trích ngẫu nhiên từ toàn bộ ngân hàng',
+            count: 20
+          });
+          items.push({
+            id: 'eng_all_marathon',
+            title: 'Marathon Toàn Bộ Tiếng Anh 12 (91 câu)',
+            icon: '🏆',
+            sub: 'Toàn bộ 91 câu Unit 1, Unit 3 và Viết câu',
+            count: 91
+          });
+        }
       }
 
       let htmlGrid = '';
@@ -3456,8 +3681,8 @@ const firebaseConfig = {
       } else {
         if (topicId === 'eng_random20') {
           currentTopicTitle = 'Đề thi thử Tiếng Anh 12 (20 câu ngẫu nhiên)';
-        } else if (topicId === 'eng_unit1_all') {
-          currentTopicTitle = 'Unit 1: Life Stories We Admire (Trọn Bộ 32 câu)';
+        } else if (topicId === 'eng_all_marathon') {
+          currentTopicTitle = 'Marathon Toàn Bộ Tiếng Anh 12 (91 câu)';
         } else {
           const found = (window.ENGLISH_TOPICS_DATABASE || []).find(t => t.id === topicId);
           if (found) {
@@ -3609,17 +3834,24 @@ const firebaseConfig = {
       } else {
         // Tiếng Anh 12
         const engDb = window.ENGLISH_TOPICS_DATABASE || [];
-        const allEngTopic = engDb.find(t => t.id === 'eng_unit1_all') || engDb[0];
-        const allEngQ = allEngTopic ? allEngTopic.questions : [];
+        const marathonTopic = engDb.find(t => t.id === 'eng_all_marathon');
+        let fullPool = [];
+        if (marathonTopic && marathonTopic.questions) {
+          fullPool = marathonTopic.questions;
+        } else {
+          engDb.forEach(t => {
+            if (t.questions) fullPool.push(...t.questions);
+          });
+        }
 
-        if (currentTopicId === 'eng_unit1_all') {
-          examList = isShuffle ? shuffle(allEngQ) : [...allEngQ];
+        if (currentTopicId === 'eng_all_marathon') {
+          examList = isShuffle ? shuffle(fullPool) : [...fullPool];
         } else if (currentTopicId === 'eng_random20') {
-          const shuffled = shuffle(allEngQ);
+          const shuffled = shuffle(fullPool);
           examList = shuffled.slice(0, 20);
         } else {
           const found = engDb.find(t => t.id === currentTopicId);
-          const qSource = found ? found.questions : allEngQ;
+          const qSource = found ? found.questions : (fullPool.length ? fullPool : []);
           examList = isShuffle ? shuffle(qSource) : [...qSource];
         }
       }
@@ -3659,6 +3891,305 @@ const firebaseConfig = {
     }
 
     // RENDER CÂU HỎI
+    
+    // =========================================================================
+    // LOGIC TƯƠNG TÁC GHÉP THẺ TỪ (INTERACTIVE WORD CHIPS)
+    // =========================================================================
+    let chipBankList = {};    // Lưu danh sách thẻ từ trong khay theo từng câu
+    let chipPlacements = {};  // Lưu danh sách thẻ từ người dùng đã chọn theo từng câu
+
+    function renderWordChipsQuestion(q, idx, container, answered) {
+      const isAnswered = (answered !== undefined);
+
+      // Khởi tạo thẻ từ nếu câu chưa được giải và chưa tạo khay
+      if (!chipBankList[idx]) {
+        const pool = [];
+        if (q.targetWords && Array.isArray(q.targetWords)) {
+          q.targetWords.forEach((w, wIdx) => {
+            pool.push({ id: `t_${idx}_${wIdx}`, text: w, used: false });
+          });
+        }
+        if (q.distractors && Array.isArray(q.distractors)) {
+          q.distractors.forEach((w, wIdx) => {
+            pool.push({ id: `d_${idx}_${wIdx}`, text: w, used: false });
+          });
+        }
+        chipBankList[idx] = shuffle(pool);
+      }
+
+      if (!chipPlacements[idx]) {
+        chipPlacements[idx] = [];
+      }
+
+      const placed = isAnswered ? answered.placedChips || [] : chipPlacements[idx];
+      const bank = chipBankList[idx] || [];
+
+      // Cập nhật trạng thái used trong bank
+      bank.forEach(bChip => {
+        bChip.used = placed.some(p => p.id === bChip.id);
+      });
+
+      let html = '<div class="chip-exercise-container">';
+
+      // Hộp đề bài gợi ý
+      if (q.cues) {
+        html += `
+          <div class="chip-prompt-box">
+            <div style="font-weight:700; color:#60a5fa; margin-bottom:4px; font-size:0.92rem;">
+              📝 YÊU CẦU ĐỀ BÀI:
+            </div>
+            <div style="font-size:1.05rem; font-weight:500;">${q.cues}</div>
+            ${q.prompt ? `<div style="font-size:0.88rem; color:#94a3b8; margin-top:6px;">💡 ${q.prompt}</div>` : ''}
+          </div>
+        `;
+      }
+
+      // Khung chứa câu trả lời (Answer Zone)
+      let answerZoneClass = 'chip-answer-zone';
+      if (placed.length > 0) answerZoneClass += ' has-chips';
+      if (isAnswered) {
+        if (answered.isCorrect) answerZoneClass += ' correct-glow';
+        else answerZoneClass += ' wrong-shake';
+      }
+
+      html += `
+        <div id="chipAnswerZone" class="${answerZoneClass}" 
+             ondragover="onAnswerZoneDragOver(event)" 
+             ondragleave="onAnswerZoneDragLeave(event)" 
+             ondrop="onAnswerZoneDrop(event)">
+      `;
+
+      if (placed.length === 0) {
+        html += `<div class="chip-placeholder">👉 Chạm hoặc kéo các thẻ từ bên dưới vào đây để ghép câu...</div>`;
+      } else {
+        placed.forEach((pChip, pIdx) => {
+          html += `
+            <div class="word-chip placed ${isAnswered ? 'locked' : ''}" 
+                 onclick="${isAnswered ? '' : `removePlacedChip(${pIdx})`}" 
+                 draggable="${isAnswered ? 'false' : 'true'}" 
+                 ondragstart="onChipDragStart(event, 'placed', ${pIdx})"
+                 title="${isAnswered ? '' : 'Bấm để trả về khay'}">
+              <span>${pChip.text}</span>
+              ${isAnswered ? '' : '<span style="font-size:0.75rem; opacity:0.7; margin-left:4px;">✕</span>'}
+            </div>
+          `;
+        });
+      }
+
+      html += '</div>'; // Đóng chipAnswerZone
+
+      // Nếu đã trả lời xong, hiển thị kết quả và câu hoàn chỉnh
+      if (isAnswered) {
+        if (answered.isCorrect) {
+          html += `
+            <div style="margin-top:10px; padding:12px 16px; background:rgba(16,185,129,0.18); border:1px solid #10b981; border-radius:12px; color:#6ee7b7; font-weight:700; display:flex; align-items:center; gap:8px;">
+              <span style="font-size:1.3rem;">🎉</span>
+              <div><strong>Chính xác tuyệt đối!</strong> Bạn đã ghép câu chuẩn 100%.</div>
+            </div>
+          `;
+        } else {
+          html += `
+            <div style="margin-top:10px; padding:12px 16px; background:rgba(239,68,68,0.18); border:1px solid #ef4444; border-radius:12px; color:#fca5a5; line-height:1.5;">
+              <div style="font-weight:700; margin-bottom:4px;">❌ Chưa chính xác!</div>
+              <div style="color:#ffffff; font-size:1.02rem; margin-top:4px;">
+                <b>Đáp án đúng:</b> <span style="color:#60a5fa; font-weight:700;">${q.fullSentence || (q.targetWords ? q.targetWords.join(' ') : '')}</span>
+              </div>
+            </div>
+          `;
+        }
+      } else {
+        // Khay thẻ từ (Word Bank)
+        html += `
+          <div style="margin-top:10px; margin-bottom:4px; font-weight:700; color:#cbd5e1; font-size:0.92rem; display:flex; align-items:center; justify-content:space-between;">
+            <span>📦 Khay từ vựng (Nhấn để chọn):</span>
+            <span style="font-size:0.82rem; color:#94a3b8; font-weight:normal;">Đã xếp ${placed.length}/${q.targetWords ? q.targetWords.length : ''} từ</span>
+          </div>
+          <div id="chipWordBank" class="chip-word-bank" ondragover="event.preventDefault()" ondrop="onWordBankDrop(event)">
+        `;
+
+        bank.forEach((bChip, bIdx) => {
+          html += `
+            <div class="word-chip ${bChip.used ? 'bank-used' : ''}" 
+                 onclick="addChipFromBank(${bIdx})" 
+                 draggable="${bChip.used ? 'false' : 'true'}" 
+                 ondragstart="onChipDragStart(event, 'bank', ${bIdx})"
+                 title="Bấm để đưa lên câu trả lời">
+              ${bChip.text}
+            </div>
+          `;
+        });
+
+        html += '</div>'; // Đóng chipWordBank
+
+        // Thanh thao tác (Làm lại, Xóa từ cuối, Gợi ý, Kiểm tra)
+        html += `
+          <div class="chip-actions-bar">
+            <div class="chip-btn-group-left">
+              <button type="button" class="btn-chip-action" onclick="resetCurrentChips()" title="Trả toàn bộ từ về khay">
+                <span>🔄 Làm lại</span>
+              </button>
+              <button type="button" class="btn-chip-action" onclick="undoLastChip()" title="Xóa từ vừa chọn cuối cùng">
+                <span>🔙 Xóa từ cuối</span>
+              </button>
+              ${q.hint ? `
+                <button type="button" class="btn-chip-action" onclick="toggleChipHint()" title="Xem công thức ngữ pháp">
+                  <span>💡 Gợi ý</span>
+                </button>
+              ` : ''}
+            </div>
+            <button type="button" class="btn-chip-check" onclick="checkCurrentChipsAnswer()">
+              <span>✔️ KIỂM TRA</span>
+            </button>
+          </div>
+          ${q.hint ? `
+            <div id="chipHintBox" class="chip-hint-alert">
+              💡 <b>Gợi ý công thức:</b> ${q.hint}
+            </div>
+          ` : ''}
+        `;
+      }
+
+      html += '</div>'; // Đóng chip-exercise-container
+      container.innerHTML = html;
+    }
+
+    // THAO TÁC THẺ TỪ
+    function addChipFromBank(bankIdx) {
+      if (userAnswers[currentQ] !== undefined) return;
+      try { sound.playClick(); } catch(e) {}
+      const bank = chipBankList[currentQ];
+      if (!bank || !bank[bankIdx] || bank[bankIdx].used) return;
+
+      const chip = bank[bankIdx];
+      chip.used = true;
+      if (!chipPlacements[currentQ]) chipPlacements[currentQ] = [];
+      chipPlacements[currentQ].push(chip);
+
+      renderQuestion(currentQ);
+    }
+
+    function removePlacedChip(placedIdx) {
+      if (userAnswers[currentQ] !== undefined) return;
+      try { sound.playClick(); } catch(e) {}
+      const placed = chipPlacements[currentQ];
+      if (!placed || !placed[placedIdx]) return;
+
+      const removed = placed.splice(placedIdx, 1)[0];
+      const bank = chipBankList[currentQ];
+      if (bank) {
+        const found = bank.find(b => b.id === removed.id);
+        if (found) found.used = false;
+      }
+
+      renderQuestion(currentQ);
+    }
+
+    function resetCurrentChips() {
+      if (userAnswers[currentQ] !== undefined) return;
+      try { sound.playClick(); } catch(e) {}
+      chipPlacements[currentQ] = [];
+      const bank = chipBankList[currentQ];
+      if (bank) {
+        bank.forEach(b => b.used = false);
+      }
+      renderQuestion(currentQ);
+    }
+
+    function undoLastChip() {
+      if (userAnswers[currentQ] !== undefined) return;
+      const placed = chipPlacements[currentQ];
+      if (!placed || placed.length === 0) return;
+      removePlacedChip(placed.length - 1);
+    }
+
+    function toggleChipHint() {
+      try { sound.playClick(); } catch(e) {}
+      const box = document.getElementById('chipHintBox');
+      if (!box) return;
+      box.style.display = (box.style.display === 'block') ? 'none' : 'block';
+    }
+
+    // KÉO THẢ (DRAG AND DROP)
+    function onChipDragStart(e, type, index) {
+      if (userAnswers[currentQ] !== undefined) {
+        e.preventDefault();
+        return;
+      }
+      try {
+        e.dataTransfer.setData('text/plain', JSON.stringify({ type, index }));
+      } catch(err) {}
+    }
+
+    function onAnswerZoneDragOver(e) {
+      e.preventDefault();
+      const az = document.getElementById('chipAnswerZone');
+      if (az) az.style.borderColor = '#38bdf8';
+    }
+
+    function onAnswerZoneDragLeave(e) {
+      const az = document.getElementById('chipAnswerZone');
+      if (az) az.style.borderColor = '';
+    }
+
+    function onAnswerZoneDrop(e) {
+      e.preventDefault();
+      const az = document.getElementById('chipAnswerZone');
+      if (az) az.style.borderColor = '';
+      try {
+        const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+        if (data && data.type === 'bank') {
+          addChipFromBank(data.index);
+        }
+      } catch(err) {}
+    }
+
+    function onWordBankDrop(e) {
+      e.preventDefault();
+      try {
+        const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+        if (data && data.type === 'placed') {
+          removePlacedChip(data.index);
+        }
+      } catch(err) {}
+    }
+
+    // KIỂM TRA ĐÁP ÁN GHÉP THẺ
+    function checkCurrentChipsAnswer() {
+      const q = examList[currentQ];
+      const placed = chipPlacements[currentQ] || [];
+      if (placed.length === 0) {
+        alert("⚠️ Hãy chọn ít nhất một thẻ từ trước khi bấm Kiểm tra nhé!");
+        return;
+      }
+
+      const cleanStr = str => (str || '').toLowerCase().replace(/[\.,!\?]/g, '').trim().replace(/\s+/g, ' ');
+      const userJoined = cleanStr(placed.map(c => c.text).join(' '));
+      const targetJoined = cleanStr(q.targetWords ? q.targetWords.join(' ') : '');
+
+      let isCorrect = false;
+      if (targetJoined && userJoined === targetJoined) {
+        isCorrect = true;
+      } else if (q.fullSentence && cleanStr(q.fullSentence).endsWith(userJoined)) {
+        isCorrect = true;
+      } else if (q.fullSentence && cleanStr(q.fullSentence) === userJoined) {
+        isCorrect = true;
+      }
+
+      userAnswers[currentQ] = {
+        placedChips: [...placed],
+        isCorrect: isCorrect
+      };
+
+      if (isCorrect) {
+        sound.playCorrect();
+        try { confetti({ particleCount: 40, spread: 65, origin: { y: 0.7 } }); } catch(e) {}
+      } else {
+        sound.playWrong();
+      }
+
+      renderQuestion(currentQ);
+    }
+
     function renderQuestion(idx) {
       if (!examList || !examList[idx]) {
         console.warn("Không tìm thấy câu hỏi tại vị trí:", idx);
@@ -3684,7 +4215,10 @@ const firebaseConfig = {
       container.innerHTML = '';
       const answered = userAnswers[idx];
 
-      q.options.forEach((optText, optIdx) => {
+      if (q.type === 'word_chips') {
+        renderWordChipsQuestion(q, idx, container, answered);
+      } else if (q.options && Array.isArray(q.options)) {
+        q.options.forEach((optText, optIdx) => {
         const btn = document.createElement('button');
         btn.className = 'quiz-opt-btn';
         btn.textContent = optText;
@@ -3704,7 +4238,8 @@ const firebaseConfig = {
         };
 
         container.appendChild(btn);
-      });
+        });
+      }
 
       const explainAccordion = document.getElementById('examExplainAccordion');
       const explainBody = document.getElementById('examExplainBody');
@@ -3959,7 +4494,7 @@ const firebaseConfig = {
 
         card.innerHTML = `
           <div class="review-q-title">${statusPrefix} Câu ${idx + 1}: ${q.question}</div>
-          <div class="review-ans-correct">✔ ${q.options[q.correct]}</div>
+          <div class="review-ans-correct">✔ ${(q.options && q.options[q.correct]) ? q.options[q.correct] : (q.fullSentence || (q.targetWords ? q.targetWords.join(' ') : ''))}</div>
           <div class="review-explain">💡 <strong>Giải thích:</strong> ${q.explain}</div>
         `;
         container.appendChild(card);
