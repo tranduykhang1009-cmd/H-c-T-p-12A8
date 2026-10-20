@@ -1308,6 +1308,19 @@
       font-size: 0.73rem;
       color: #94a3b8;
     }
+    
+    .date-badge {
+      color: #94a3b8;
+      font-size: 0.70rem;
+      white-space: nowrap;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1px 6px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
     .attempt-badge {
       background: rgba(99, 102, 241, 0.18);
       border: 1px solid rgba(129, 140, 248, 0.35);
@@ -3363,7 +3376,7 @@ const firebaseConfig = {
       } else {
         currentTopicId = 'eng_unit3_all';
         currentTopicTitle = 'Unit 3: Green Living (Trọn Bộ 31 câu)';
-        if (pillBar) pillBar.style.display = 'flex'; // Hiển thị thanh lọc chuyên đề Unit 1, Unit 3, Viết câu
+        if (pillBar) pillBar.style.display = 'none'; // English có 5 mục lớn gọn gàng chuẩn như Vật Lí, không cần thanh pill gây rối
       }
 
       const sdLessons = document.getElementById('sdLessonsText');
@@ -3373,7 +3386,7 @@ const firebaseConfig = {
         } else if (subject === 'physics') {
           sdLessons.textContent = 'HOẶC CHỌN TỪNG CHỦ ĐỀ VẬT LÍ ĐỂ ÔN TẬP';
         } else {
-          sdLessons.textContent = 'HOẶC CHỌN TỪNG PHẦN TIẾNG ANH ĐỂ ÔN TẬP';
+          sdLessons.textContent = 'HOẶC CHỌN TỪNG CHUYÊN ĐỀ TIẾNG ANH ĐỂ ÔN TẬP';
         }
       }
 
@@ -3386,7 +3399,7 @@ const firebaseConfig = {
       const pillBar = document.getElementById('catPillBar');
       if (!pillBar) return;
       
-      if (currentSubject === 'physics') {
+      if (currentSubject === 'physics' || currentSubject === 'english') {
         pillBar.style.display = 'none';
         return;
       }
@@ -3456,35 +3469,14 @@ const firebaseConfig = {
           </optgroup>
         `;
       } else {
-        const engDb = window.ENGLISH_TOPICS_DATABASE || [];
-        html += `<optgroup label="-- ✍️ BÀI TẬP VIẾT CÂU (WORD CHIPS) --">`;
-        engDb.filter(t => t.category === 'writing').forEach(t => {
-          const count = t.questions ? t.questions.length : 0;
-          html += `<option value="${t.id}">${t.icon || '✍️'} ${t.title} (${count} câu)</option>`;
-        });
-        html += `</optgroup>`;
-
-        html += `<optgroup label="-- 🌿 UNIT 3: GREEN LIVING (SỐNG XANH) --">`;
-        engDb.filter(t => t.category === 'unit3').forEach(t => {
-          const count = t.questions ? t.questions.length : 0;
-          html += `<option value="${t.id}">${t.icon || '🌿'} ${t.title} (${count} câu)</option>`;
-        });
-        html += `</optgroup>`;
-
-        html += `<optgroup label="-- ⭐ UNIT 1: LIFE STORIES WE ADMIRE --">`;
-        engDb.filter(t => t.category === 'all' && t.id !== 'eng_all_marathon').concat(engDb.filter(t => !t.category || t.category === 'unit1')).forEach(t => {
-          if (t.id === 'eng_unit3_all' || t.category === 'writing' || t.id === 'eng_all_marathon') return;
-          const count = t.questions ? t.questions.length : 0;
-          html += `<option value="${t.id}">${t.icon || '⭐'} ${t.title} (${count} câu)</option>`;
-        });
-        html += `</optgroup>`;
-
         html += `
-          <optgroup label="-- 🏆 ĐỀ THI TỔNG HỢP & MARATHON TIẾNG ANH --">
-            <option value="eng_writing_all">✍️ Trọn Bộ 28 Câu Viết Ghép Thẻ Từ (28 câu)</option>
-            <option value="eng_unit3_all">🌿 Trọn Bộ Unit 3: Green Living (31 câu)</option>
-            <option value="eng_unit1_all">⭐ Trọn Bộ Unit 1: Life Stories (32 câu)</option>
-            <option value="eng_random20">🎯 Đề Thi Thử Tiếng Anh (20 câu ngẫu nhiên)</option>
+          <optgroup label="-- CÁC CHUYÊN ĐỀ TIẾNG ANH 12 --">
+            <option value="eng_unit1_all">⭐ Unit 1: Life Stories We Admire (32 câu)</option>
+            <option value="eng_unit3_all">🌿 Unit 3: Green Living (31 câu)</option>
+            <option value="eng_writing_all">✍️ Chuyên Đề Luyện Viết Câu (Word Chips) (28 câu)</option>
+          </optgroup>
+          <optgroup label="-- ĐỀ THI TỔNG HỢP TIẾNG ANH --">
+            <option value="eng_random20">🎯 Đề Thi Thử Tiếng Anh 12 (20 câu ngẫu nhiên)</option>
             <option value="eng_all_marathon">🏆 Marathon Toàn Bộ Tiếng Anh 12 (91 câu)</option>
           </optgroup>
         `;
@@ -3575,42 +3567,44 @@ const firebaseConfig = {
           });
         }
       } else {
-        // Tiếng Anh
-        const engDb = window.ENGLISH_TOPICS_DATABASE || [];
-        engDb.forEach(t => {
-          if (t.id === 'eng_all_marathon') return;
-          // Áp dụng bộ lọc chuyên đề
-          if (currentCatFilter !== 'all') {
-            if (currentCatFilter === 'writing' && t.category !== 'writing') return;
-            if (currentCatFilter === 'unit3' && t.category !== 'unit3') return;
-            if (currentCatFilter === 'unit1' && t.category === 'unit3') return;
-            if (currentCatFilter === 'unit1' && t.category === 'writing') return;
-          }
-          items.push({
-            id: t.id,
-            title: t.title,
-            icon: t.icon || '🇬🇧',
-            sub: t.category === 'writing' ? 'Ghép thẻ từ tương tác' : 'Chuyên đề ôn tập',
-            count: t.questions ? t.questions.length : 0
-          });
-        });
-
-        if (currentCatFilter === 'all') {
-          items.push({
+        // Tiếng Anh (Thiết kế tinh gọn, chuẩn như Vật Lí và Lịch Sử)
+        items = [
+          {
+            id: 'eng_unit1_all',
+            title: 'Unit 1: Life Stories We Admire',
+            icon: '⭐',
+            sub: 'Tiểu sử nhân vật, từ vựng, ngữ pháp & đọc hiểu Steve Jobs',
+            count: 32
+          },
+          {
+            id: 'eng_unit3_all',
+            title: 'Unit 3: Green Living (Sống Xanh)',
+            icon: '🌿',
+            sub: 'Bảo vệ môi trường, từ vựng, sắp xếp báo cáo & đọc hiểu Stockholm',
+            count: 31
+          },
+          {
+            id: 'eng_writing_all',
+            title: 'Chuyên Đề Luyện Viết Câu (Word Chips)',
+            icon: '✍️',
+            sub: 'Ghép thẻ từ: Mạo từ, MĐQH Which, Quá khứ đơn / QKTD, Phrasal Verbs',
+            count: 28
+          },
+          {
             id: 'eng_random20',
-            title: 'Đề Thi Thử Tiếng Anh (20 câu ngẫu nhiên)',
+            title: 'Đề Thi Thử Tiếng Anh 12 (20 câu ngẫu nhiên)',
             icon: '🎯',
-            sub: 'Trích ngẫu nhiên từ toàn bộ ngân hàng',
+            sub: 'Trích ngẫu nhiên chuẩn cấu trúc từ ngân hàng câu hỏi',
             count: 20
-          });
-          items.push({
+          },
+          {
             id: 'eng_all_marathon',
             title: 'Marathon Toàn Bộ Tiếng Anh 12 (91 câu)',
             icon: '🏆',
-            sub: 'Toàn bộ 91 câu Unit 1, Unit 3 và Viết câu',
+            sub: 'Toàn bộ 91 câu Unit 1, Unit 3 và Luyện viết ghép thẻ từ',
             count: 91
-          });
-        }
+          }
+        ];
       }
 
       let htmlGrid = '';
@@ -4708,6 +4702,17 @@ const firebaseConfig = {
         .replace(/'/g, '&#039;');
     }
 
+    
+    function formatSubmissionDate(ts) {
+      if (!ts) return '';
+      const d = new Date(ts);
+      if (isNaN(d.getTime())) return '';
+      const pad = n => n.toString().padStart(2, '0');
+      const dStr = `${pad(d.getDate())}/${pad(d.getMonth() + 1)}`;
+      const tStr = `${pad(d.getHours())}:${pad(d.getMinutes())}`;
+      return `${dStr} ${tStr}`;
+    }
+
     function renderLeaderboardRows(list) {
       if (list) currentRawLbList = list;
       renderLeaderboard();
@@ -4766,6 +4771,7 @@ const firebaseConfig = {
           if ((item.timeSec || 0) < studentMap[studentKey].bestTime) {
             studentMap[studentKey].bestTime = item.timeSec || 0;
             studentMap[studentKey].key = item.key;
+            studentMap[studentKey].timestamp = item.timestamp;
           }
         }
 
@@ -4888,6 +4894,7 @@ const firebaseConfig = {
               <div class="lb-meta-sub">
                 ${attemptBadgeHtml}
                 <span class="time-text">⏱️ ${timeStr}</span>
+                ${item.timestamp ? `<span class="date-badge">🕒 ${formatSubmissionDate(item.timestamp)}</span>` : ''}
               </div>
             </div>
             <div class="lb-score">${scoreFormatted}đ</div>
