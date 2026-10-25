@@ -2746,8 +2746,146 @@
       display: none;
     }
 
-</style>
-</head>
+
+
+    /* Header Author Badge: by Henry Khang */
+    .top-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .author-badge-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.18), rgba(168, 85, 247, 0.18));
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      box-shadow: 0 0 12px rgba(168, 85, 247, 0.2);
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      letter-spacing: 0.2px;
+      user-select: none;
+      transition: all 0.25s ease;
+    }
+    .author-badge-header:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 16px rgba(168, 85, 247, 0.4);
+      border-color: rgba(192, 132, 252, 0.6);
+    }
+    .author-badge-sparkle {
+      font-size: 0.82rem;
+      filter: drop-shadow(0 0 4px #facc15);
+      animation: pulseSparkle 2.5s infinite ease-in-out;
+    }
+    @keyframes pulseSparkle {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.18); opacity: 0.85; }
+    }
+    .author-badge-label {
+      color: #cbd5e1;
+    }
+    .author-badge-name {
+      background: linear-gradient(120deg, #60a5fa, #c084fc, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+
+    /* Footer ở dưới cuối - by Duy Khang */
+    .app-home-footer {
+      margin-top: 26px;
+      margin-bottom: 14px;
+      text-align: center;
+      position: relative;
+      padding: 14px 10px 10px;
+    }
+    .footer-divider-glow {
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.45), rgba(236, 72, 153, 0.45), transparent);
+      margin-bottom: 14px;
+    }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer-badge-author {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+    .footer-heart-icon {
+      font-size: 0.85rem;
+      display: inline-block;
+      animation: heartbeat 2s infinite ease-in-out;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      14% { transform: scale(1.22); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.15); }
+      70% { transform: scale(1); }
+    }
+    .footer-author-name {
+      background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+    .footer-meta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      color: #94a3b8;
+    }
+    .footer-tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+    .footer-dot {
+      color: #64748b;
+    }
+    .footer-sub-text {
+      font-size: 0.68rem;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 420px) {
+      .top-nav-bar {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .school-brand {
+        font-size: 0.76rem;
+      }
+      .author-badge-header {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+      }
+      .btn-audio-mini {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+      }
+    }
+  </style>
+
+    </head>
 <body>
   <!-- Ambient floating glow orbs -->
   <div class="glow-orb-1"></div>
@@ -2764,12 +2902,12 @@
           <span>🏛️</span>
           <span>THPT NGUYỄN HUỆ</span>
         </div>
-        <div class="audio-toggles-wrap">
-          <button id="btnToggleBgm" class="btn-audio-mini" onclick="toggleBgmMusic()">
-            <span>🎵</span>
-            <span id="bgmText">Nhạc Lofi</span>
-          </button>
-          <button id="btnToggleSfx" class="btn-audio-mini active" onclick="toggleSfxSound()">
+                <div class="top-nav-right">
+          <div class="author-badge-header">
+            <span class="author-badge-sparkle">⚡</span>
+            <span class="author-badge-label">by <span class="author-badge-name">Henry Khang</span></span>
+          </div>
+          <button id="btnToggleSfx" class="btn-audio-mini active" onclick="toggleSfxSound()" title="Bật/Tắt âm thanh hiệu ứng">
             <span id="sfxIcon">🔊</span>
             <span>Âm</span>
           </button>
@@ -2886,6 +3024,24 @@
       <div class="topic-cards-list" id="topicGridContainer">
         <!-- Injected via JavaScript -->
       </div>
+      <!-- Footer bản quyền & tác giả ở dưới cuối -->
+      <footer class="app-home-footer">
+        <div class="footer-divider-glow"></div>
+        <div class="footer-content">
+          <div class="footer-badge-author">
+            <span class="footer-heart-icon">❤️</span>
+            <span>Thiết kế &amp; Phát triển bởi <strong class="footer-author-name">Duy Khang</strong></span>
+          </div>
+          <div class="footer-meta-tags">
+            <span class="footer-tag">🏫 THPT Nguyễn Huệ</span>
+            <span class="footer-dot">•</span>
+            <span class="footer-tag">🎓 Lớp 12A8</span>
+            <span class="footer-dot">•</span>
+            <span class="footer-tag">📚 Khóa 2024 – 2025</span>
+          </div>
+          <div class="footer-sub-text">Hệ thống ôn luyện &amp; thi thử trắc nghiệm trực tuyến</div>
+        </div>
+      </footer>
     </div>
 
     <div id="quizScreen" class="screen">
@@ -3281,12 +3437,12 @@ const firebaseConfig = {
       const text = document.getElementById('bgmText');
       if (sound.bgmEnabled) {
         sound.stopBgm();
-        btn.classList.remove('active');
-        text.textContent = 'Nhạc Lofi';
+        if (btn) btn.classList.remove('active');
+        if (text) text.textContent = 'Nhạc Lofi';
       } else {
         sound.startBgm();
-        btn.classList.add('active');
-        text.textContent = 'Đang phát 🎵';
+        if (btn) btn.classList.add('active');
+        if (text) text.textContent = 'Đang phát 🎵';
       }
     }
 
