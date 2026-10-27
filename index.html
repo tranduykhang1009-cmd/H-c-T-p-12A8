@@ -2992,6 +2992,220 @@
       }
     }
 
+  
+    /* =========================================================================
+       PANEL REVIEW REFACTOR: STREAMLINED CONTROLS, TOUCH FEEDBACK & TOAST
+       ========================================================================= */
+    .exam-control-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .shuffle-ctrl-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(19, 23, 46, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 7px 12px;
+      transition: all 0.2s;
+    }
+    .shuffle-ctrl-pill:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      background: rgba(28, 35, 71, 0.95);
+    }
+    .shuffle-label-text {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      cursor: pointer;
+      user-select: none;
+    }
+    .btn-view-leaderboard-compact {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: #fcd34d;
+      padding: 9px 12px;
+      border-radius: 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-view-leaderboard-compact:hover {
+      background: rgba(245, 158, 11, 0.22);
+      color: #fff;
+      border-color: #f59e0b;
+      transform: translateY(-1px);
+    }
+
+    /* Thẻ bài học tối ưu: Touch Feedback & Active State cực nhạy */
+    .topic-item-card {
+      background: rgba(19, 23, 46, 0.88);
+      border: 1.5px solid rgba(255, 255, 255, 0.09);
+      border-radius: 14px;
+      padding: 13px 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s, border-color 0.2s, box-shadow 0.2s;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    /* Phản hồi xúc giác (Haptic/Touch Feedback) khi ấn ngón tay */
+    .topic-item-card:active {
+      transform: scale(0.982);
+    }
+    .topic-item-card:hover {
+      background: rgba(28, 35, 71, 0.95);
+      border-color: rgba(99, 102, 241, 0.45);
+    }
+    /* Thẻ được chọn: Viền neon xanh-tím nổi bật, nền sáng 1 tone, bóng đổ phát quang */
+    .topic-item-card.selected {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.32), rgba(99, 102, 241, 0.26)) !important;
+      border: 2px solid #38bdf8 !important;
+      box-shadow: 0 4px 18px rgba(56, 189, 248, 0.32), inset 0 0 10px rgba(56, 189, 248, 0.12) !important;
+    }
+    .tic-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+      flex: 1;
+    }
+    .tic-icon {
+      font-size: 1.45rem;
+      flex-shrink: 0;
+    }
+    .tic-info {
+      min-width: 0;
+      flex: 1;
+    }
+    .tic-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.35;
+      word-break: break-word;
+    }
+    .tic-sub {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      margin-top: 2px;
+      line-height: 1.3;
+    }
+    .tic-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .tic-count-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 3px 8px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    /* Radio / Checkbox Indicator */
+    .tic-radio {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      background: rgba(255, 255, 255, 0.04);
+      flex-shrink: 0;
+    }
+    .topic-item-card:hover .tic-radio {
+      border-color: #60a5fa;
+    }
+    .topic-item-card.selected .tic-radio {
+      border-color: #38bdf8 !important;
+      background: #0284c7 !important;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.5) !important;
+    }
+    .topic-item-card.selected .tic-radio::after {
+      content: "✓" !important;
+      color: #fff !important;
+      font-size: 0.75rem !important;
+      font-weight: 900 !important;
+      filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
+    }
+
+    /* Fallback State: Khi chưa chọn bài nào */
+    .btn-start-hero.disabled {
+      opacity: 0.65;
+      filter: grayscale(0.4);
+      cursor: not-allowed;
+    }
+
+    /* Toast Notification hiện đại */
+    .app-toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(239, 68, 68, 0.5);
+      color: #fca5a5;
+      padding: 10px 18px;
+      border-radius: 24px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      z-index: 99999;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s ease;
+    }
+    .app-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (max-width: 380px) {
+      .exam-control-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .shuffle-ctrl-pill {
+        justify-content: space-between;
+      }
+      .tic-left {
+        gap: 8px;
+      }
+      .tic-icon {
+        font-size: 1.25rem;
+      }
+      .tic-title {
+        font-size: 0.82rem;
+      }
+    }
+
   </style>
 
     </head>
@@ -3023,7 +3237,7 @@
         </div>
       </div>
 
-      <!-- 2. Hộp cài đặt bài thi (Chọn Môn dạng Sổ Xuống, Lớp, Tên thí sinh, Trộn đề) -->
+            <!-- 2. Hộp thông tin thí sinh (Chọn Môn & Lớp, Họ và tên) -->
       <div class="exam-setup-box">
         <!-- Hàng 1: Chọn Môn Học & Chọn Lớp -->
         <div class="setup-grid-2">
@@ -3065,43 +3279,36 @@
           </div>
         </div>
 
-        <!-- Hàng 2: Tên thí sinh & Trộn ngẫu nhiên câu hỏi -->
-        <div class="setup-grid-2" style="margin-top: 8px;">
-          <div class="setup-field">
-            <label class="setup-label" for="inputName">
-              <span>👤</span>
-              <span>Tên hiển thị:</span>
-            </label>
-            <input type="text" id="inputName" class="setup-input" placeholder="Nhập tên thí sinh..." value="" autocomplete="off" />
-          </div>
-
-          <div class="setup-field setup-field-shuffle">
-            <label class="setup-label" for="toggleShuffle">
-              <span>🔀</span>
-              <span>Trộn đề:</span>
-            </label>
-            <div class="shuffle-switch-wrap">
-              <label class="switch-clean">
-                <input type="checkbox" id="toggleShuffle" checked />
-                <span class="slider-clean"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- Hàng 3: Chọn Bài Học / Đề Thi (Sổ xuống trực tiếp, rõ ràng, không gây nhầm lẫn) -->
-        <div class="setup-field" style="margin-top: 8px;">
-          <label class="setup-label" for="selectTopicDropdown">
-            <span>🎯</span>
-            <span>Chọn bài học / đề thi:</span>
+        <!-- Hàng 2: Họ và tên thí sinh (Full-width, placeholder chuẩn) -->
+        <div class="setup-field" style="margin-top: 10px;">
+          <label class="setup-label" for="inputName">
+            <span>👤</span>
+            <span>Họ và tên thí sinh:</span>
           </label>
-          <select id="selectTopicDropdown" class="setup-select" onchange="onTopicDropdownChange(this.value)">
-            <!-- Injected via JavaScript -->
-          </select>
+          <input type="text" id="inputName" class="setup-input" placeholder="Nhập họ và tên thí sinh (ví dụ: Trần Duy Khang)..." value="" autocomplete="off" />
         </div>
       </div>
 
-      <!-- 4. Nút Bắt Đầu Làm Bài & Xem Bảng Vàng (Nằm ngay đây, rõ ràng bài đang chọn) -->
+      <!-- 3. Thanh điều khiển: Trộn đề & Bảng Vàng -->
+      <div class="exam-control-bar">
+        <div class="shuffle-ctrl-pill">
+          <label class="switch-clean">
+            <input type="checkbox" id="toggleShuffle" checked />
+            <span class="slider-clean"></span>
+          </label>
+          <label class="shuffle-label-text" for="toggleShuffle">
+            <span>🔀</span>
+            <span>Trộn câu hỏi</span>
+          </label>
+        </div>
+
+        <button class="btn-view-leaderboard-compact" onclick="openLeaderboardModal()">
+          <span>🏆</span>
+          <span>Bảng Vàng Vinh Danh</span>
+        </button>
+      </div>
+
+      <!-- 4. Nút Bắt Đầu Làm Bài Duy Nhất -->
       <div class="home-bottom-actions">
         <button class="btn-start-hero" id="btnMainStartHero" onclick="startExamAction()">
           <div class="bsh-main">
@@ -3110,18 +3317,6 @@
           </div>
           <div class="bsh-sub" id="btnMainSubInfo">Đang chọn: Bài 1: Liên Hợp Quốc (28 câu)</div>
         </button>
-
-        <button class="btn-view-leaderboard" onclick="openLeaderboardModal()">
-          <span>🏆</span>
-          <span>Xem Bảng Vàng Vinh Danh</span>
-        </button>
-      </div>
-
-      <!-- 5. Phân cách chọn từng bài lẻ -->
-      <div class="section-divider-clean" id="sectionDividerLessons">
-        <span class="sd-line"></span>
-        <span class="sd-text" id="sdLessonsText">HOẶC CHỌN TRONG DANH SÁCH CHI TIẾT</span>
-        <span class="sd-line"></span>
       </div>
 
       <!-- Thanh chọn lọc chuyên đề dạng Pill ngang (khi môn có nhiều bài như Lịch Sử) -->
@@ -3795,9 +3990,7 @@ const firebaseConfig = {
         selectedTopicIds = selectedTopicIds.filter(id => !isSpecialTopicId(id));
 
         if (selectedTopicIds.includes(topicId)) {
-          if (selectedTopicIds.length > 1) {
-            selectedTopicIds = selectedTopicIds.filter(id => id !== topicId);
-          }
+          selectedTopicIds = selectedTopicIds.filter(id => id !== topicId);
         } else {
           selectedTopicIds.push(topicId);
         }
@@ -4149,11 +4342,7 @@ const firebaseConfig = {
             </div>
             <div class="tic-right">
               <span class="tic-count-badge">${item.count} câu</span>
-              <button class="tic-play-btn" onclick="event.stopPropagation(); startSingleTopicExam('${item.id}');" title="Làm riêng bài này ngay">
-                <span>Vào thi</span>
-                <span>➔</span>
-              </button>
-              <div class="tic-radio" onclick="event.stopPropagation(); toggleTopicSelection('${item.id}');" title="${isSel ? 'Bỏ chọn bài này' : 'Chọn thêm bài này'}"></div>
+              <div class="tic-radio"></div>
             </div>
           </div>
         `;
@@ -4182,14 +4371,23 @@ const firebaseConfig = {
     function updateStartButtonUI() {
       updateTopicSelectionSummary();
       const el1 = document.getElementById('btnMainSubInfo');
-      if (el1) {
-        el1.textContent = 'Đang chọn: ' + currentTopicTitle;
-      }
       const heroBtn = document.getElementById('btnMainStartHero');
-      if (heroBtn) {
-        const mainLabel = heroBtn.querySelector('.bsh-main span:last-child');
-        if (mainLabel) {
-          mainLabel.textContent = selectedTopicIds.length > 1 ? `BẮT ĐẦU LÀM BÀI (${selectedTopicIds.length} BÀI GỘP)` : 'BẮT ĐẦU LÀM BÀI';
+      
+      if (selectedTopicIds.length === 0) {
+        if (el1) el1.textContent = '⚠️ Chưa chọn bài nào (Hãy chạm vào bài học bên dưới)';
+        if (heroBtn) {
+          heroBtn.classList.add('disabled');
+          const mainLabel = heroBtn.querySelector('.bsh-main span:last-child');
+          if (mainLabel) mainLabel.textContent = 'CHƯA CHỌN BÀI HỌC';
+        }
+      } else {
+        if (el1) el1.textContent = 'Đang chọn: ' + currentTopicTitle;
+        if (heroBtn) {
+          heroBtn.classList.remove('disabled');
+          const mainLabel = heroBtn.querySelector('.bsh-main span:last-child');
+          if (mainLabel) {
+            mainLabel.textContent = selectedTopicIds.length > 1 ? `BẮT ĐẦU LÀM BÀI (${selectedTopicIds.length} BÀI GỘP)` : 'BẮT ĐẦU LÀM BÀI';
+          }
         }
       }
     }
@@ -4235,6 +4433,21 @@ const firebaseConfig = {
       return array;
     }
 
+    
+    // Toast Notification Helper
+    let toastTimer = null;
+    function showToast(msg) {
+      const toast = document.getElementById('appToast');
+      const text = document.getElementById('appToastText');
+      if (!toast || !text) return;
+      text.textContent = msg;
+      toast.classList.add('show');
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+    
     function startExamAction(onlyWrongList = null) {
       try { sound.playClick(); } catch(e) {}
       const rawName = (document.getElementById('inputName') ? document.getElementById('inputName').value.trim() : '');
@@ -4334,7 +4547,12 @@ const firebaseConfig = {
       if (bannerTitle) bannerTitle.textContent = currentTopicTitle;
 
       if (!examList || examList.length === 0) {
-        alert("⚠️ Bộ đề chưa có câu hỏi hoặc đang tải dữ liệu. Bạn hãy chờ 2 giây rồi bấm lại nhé!");
+        showToast("⚠️ Vui lòng chọn ít nhất 1 bài học bên dưới để bắt đầu làm bài!");
+        const hero = document.getElementById('btnMainStartHero');
+        if (hero) {
+          hero.classList.add('shake');
+          setTimeout(() => hero.classList.remove('shake'), 600);
+        }
         return;
       }
 
@@ -5580,6 +5798,8 @@ const firebaseConfig = {
     });
   }
 </script>
+  <!-- Toast Notification -->
+  <div id="appToast" class="app-toast"><span>⚠️</span><span id="appToastText">Thông báo</span></div>
 </body>
 </html>
 
