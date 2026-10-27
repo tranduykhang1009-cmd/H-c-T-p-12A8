@@ -4044,12 +4044,12 @@ const firebaseConfig = {
 
     function onSubjectDropdownChange(subjectVal) {
       try { sound.playClick(); } catch(e) {}
-      if (['math', 'chemistry', 'biology', 'geography', 'civics', 'literature'].includes(subjectVal)) {
+      if (['math', 'chemistry', 'biology', 'civics', 'literature'].includes(subjectVal)) {
         const names = {
           math: 'Toán Học 12', chemistry: 'Hóa Học 12', biology: 'Sinh Học 12',
-          geography: 'Địa Lí 12', civics: 'GDCD 12', literature: 'Ngữ Văn 12'
+          civics: 'GDCD 12', literature: 'Ngữ Văn 12'
         };
-        alert("📚 Môn " + (names[subjectVal] || subjectVal) + " đang được cập nhật câu hỏi.\n\nHiện tại bạn có thể ôn luyện ngay: Vật Lí 12 (106 câu), Lịch Sử 12 (440 câu) hoặc Tiếng Anh 12 (32 câu) nhé!");
+        alert("📚 Môn " + (names[subjectVal] || subjectVal) + " đang được cập nhật câu hỏi.\n\nHiện tại bạn có thể ôn luyện ngay: Vật Lí 12 (106 câu), Lịch Sử 12 (440 câu), Tiếng Anh 12 (32 câu) hoặc Địa Lí 12 (159 câu) nhé!");
         // Trả lại môn hiện tại
         document.getElementById('selectSubject').value = currentSubject;
         return;
@@ -5248,6 +5248,24 @@ const firebaseConfig = {
       renderQuestion(currentQ);
     }
 
+    function toggleIllusView(idx, mode) {
+      const svgBox = document.getElementById('illusSvgBox_' + idx);
+      const imgBox = document.getElementById('illusImgBox_' + idx);
+      const btnSvg = document.getElementById('btnIllusSvg_' + idx);
+      const btnImg = document.getElementById('btnIllusImg_' + idx);
+      if (mode === 'svg') {
+        if (svgBox) svgBox.style.display = 'block';
+        if (imgBox) imgBox.style.display = 'none';
+        if (btnSvg) { btnSvg.style.background = '#1e3a8a'; btnSvg.style.borderColor = '#3b82f6'; btnSvg.style.color = '#fff'; }
+        if (btnImg) { btnImg.style.background = 'rgba(255,255,255,0.06)'; btnImg.style.borderColor = 'rgba(255,255,255,0.2)'; btnImg.style.color = '#cbd5e1'; }
+      } else {
+        if (svgBox) svgBox.style.display = 'none';
+        if (imgBox) imgBox.style.display = 'block';
+        if (btnImg) { btnImg.style.background = '#1e3a8a'; btnImg.style.borderColor = '#3b82f6'; btnImg.style.color = '#fff'; }
+        if (btnSvg) { btnSvg.style.background = 'rgba(255,255,255,0.06)'; btnSvg.style.borderColor = 'rgba(255,255,255,0.2)'; btnSvg.style.color = '#cbd5e1'; }
+      }
+    }
+
     function renderQuestion(idx) {
       if (!examList || !examList[idx]) {
         console.warn("Không tìm thấy câu hỏi tại vị trí:", idx);
@@ -5258,7 +5276,30 @@ const firebaseConfig = {
       const total = examList.length;
 
       document.getElementById('qCurrentBadge').textContent = `Câu ${idx + 1}/${total}`;
-      document.getElementById('qStemText').innerHTML = `<span style="font-weight: 800; color: #60a5fa; margin-right: 4px;">Câu ${idx + 1}:</span> ${q.question}`;
+      
+      let stemHtml = `<span style="font-weight: 800; color: #60a5fa; margin-right: 4px;">Câu ${idx + 1}:</span> ${q.question}`;
+      
+      if (q.illustration) {
+        const hasSvg = !!q.illustration.svg;
+        const hasImg = !!q.illustration.image;
+        stemHtml += `
+          <div class="question-illustration-card" style="margin: 14px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+            <div style="display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 8px;">
+              ${hasSvg ? `<button type="button" class="btn-toggle-illus active" onclick="toggleIllusView(${idx}, 'svg')" id="btnIllusSvg_${idx}" style="font-size: 12px; padding: 4px 10px; border-radius: 6px; border: 1px solid #3b82f6; background: #1e3a8a; color: #fff; cursor: pointer; font-weight: 600;">✨ Bản số hóa cực nét</button>` : ''}
+              ${hasImg ? `<button type="button" class="btn-toggle-illus" onclick="toggleIllusView(${idx}, 'img')" id="btnIllusImg_${idx}" style="font-size: 12px; padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06); color: #cbd5e1; cursor: pointer;">📄 Ảnh gốc tài liệu</button>` : ''}
+            </div>
+            ${hasSvg ? `<div id="illusSvgBox_${idx}" style="display: block; text-align: center; overflow-x: auto;">${q.illustration.svg}</div>` : ''}
+            ${hasImg ? `<div id="illusImgBox_${idx}" style="display: ${hasSvg ? 'none' : 'block'}; text-align: center;"><img src="${q.illustration.image}" alt="Hình minh họa" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.4);" /></div>` : ''}
+          </div>
+        `;
+      } else if (q.image) {
+        stemHtml += `
+          <div class="question-illustration-card" style="margin: 14px 0; text-align: center;">
+            <img src="${q.image}" alt="Hình minh họa" style="max-width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 4px 14px rgba(0,0,0,0.4);" />
+          </div>
+        `;
+      }
+      document.getElementById('qStemText').innerHTML = stemHtml;
 
       const btnBm = document.getElementById('btnBookmark');
       if (flaggedMap[idx]) {
