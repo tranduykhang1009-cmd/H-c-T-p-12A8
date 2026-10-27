@@ -5285,17 +5285,17 @@ const firebaseConfig = {
         stemHtml += `
           <div class="question-illustration-card" style="margin: 14px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
             <div style="display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 8px;">
-              ${hasSvg ? `<button type="button" class="btn-toggle-illus active" onclick="toggleIllusView(${idx}, 'svg')" id="btnIllusSvg_${idx}" style="font-size: 12px; padding: 4px 10px; border-radius: 6px; border: 1px solid #3b82f6; background: #1e3a8a; color: #fff; cursor: pointer; font-weight: 600;">✨ Bản số hóa cực nét</button>` : ''}
-              ${hasImg ? `<button type="button" class="btn-toggle-illus" onclick="toggleIllusView(${idx}, 'img')" id="btnIllusImg_${idx}" style="font-size: 12px; padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06); color: #cbd5e1; cursor: pointer;">📄 Ảnh gốc tài liệu</button>` : ''}
+              ${hasImg ? `<button type="button" class="btn-toggle-illus active" onclick="toggleIllusView(${idx}, 'img')" id="btnIllusImg_${idx}" style="font-size: 12px; padding: 4px 10px; border-radius: 6px; border: 1px solid #3b82f6; background: #1e3a8a; color: #fff; cursor: pointer; font-weight: 600;">📄 Ảnh gốc tài liệu / File Word</button>` : ''}
+              ${hasSvg ? `<button type="button" class="btn-toggle-illus" onclick="toggleIllusView(${idx}, 'svg')" id="btnIllusSvg_${idx}" style="font-size: 12px; padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06); color: #cbd5e1; cursor: pointer;">✨ Bản số hóa HD</button>` : ''}
             </div>
-            ${hasSvg ? `<div id="illusSvgBox_${idx}" style="display: block; text-align: center; overflow-x: auto;">${q.illustration.svg}</div>` : ''}
-            ${hasImg ? `<div id="illusImgBox_${idx}" style="display: ${hasSvg ? 'none' : 'block'}; text-align: center;"><img src="${q.illustration.image}" alt="Hình minh họa" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.4);" /></div>` : ''}
+            ${hasImg ? `<div id="illusImgBox_${idx}" style="display: block; text-align: center;"><img src="${q.illustration.image}" alt="Hình minh họa gốc" style="max-width: 100%; max-height: 420px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); background: #ffffff; padding: 6px;" /></div>` : ''}
+            ${hasSvg ? `<div id="illusSvgBox_${idx}" style="display: ${hasImg ? 'none' : 'block'}; text-align: center; overflow-x: auto;">${q.illustration.svg}</div>` : ''}
           </div>
         `;
       } else if (q.image) {
         stemHtml += `
-          <div class="question-illustration-card" style="margin: 14px 0; text-align: center;">
-            <img src="${q.image}" alt="Hình minh họa" style="max-width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 4px 14px rgba(0,0,0,0.4);" />
+          <div class="question-illustration-card" style="margin: 14px 0; text-align: center; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 12px;">
+            <img src="${q.image}" alt="Hình minh họa gốc" style="max-width: 100%; max-height: 420px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 4px 14px rgba(0,0,0,0.4); background: #ffffff; padding: 6px;" />
           </div>
         `;
       }

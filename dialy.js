@@ -13,22 +13,17 @@ const GEOGRAPHY_CATEGORIES = [
   },
   {
     "id": "cd1",
-    "name": "Chủ đề 1: Tự Nhiên VN",
-    "icon": "⛰️"
+    "name": "Phần I: Trắc nghiệm 4 lựa chọn (70 câu)",
+    "icon": "📖"
   },
   {
     "id": "cd2",
-    "name": "Chủ đề 2: Dân Cư & Lao Động",
-    "icon": "👥"
-  },
-  {
-    "id": "cd3",
-    "name": "Chủ đề 3: Đúng / Sai (THPT 2025)",
+    "name": "Phần II: Đúng / Sai (70 ý / 17 câu)",
     "icon": "⚖️"
   },
   {
-    "id": "cd4",
-    "name": "Chủ đề 4: Tính Toán & Bảng Số Liệu",
+    "id": "cd3",
+    "name": "Phần III: Trả lời ngắn & Tính toán (19 câu)",
     "icon": "📊"
   }
 ];
@@ -1991,46 +1986,42 @@ const geoAllQuestions = [
   }
 ];
 
-const geoTuNhien = geoAllQuestions.filter(q => q.topic === "ĐỊA LÍ TỰ NHIÊN");
-const geoDanCu = geoAllQuestions.filter(q => q.topic === "ĐỊA LÍ DÂN CƯ");
-const geoDungSai = geoAllQuestions.filter(q => q.topic === "TRẮC NGHIỆM ĐÚNG/SAI");
-const geoTinhToan = geoAllQuestions.filter(q => q.topic === "BÀI TẬP TÍNH TOÁN");
+const geoPhan1 = geoAllQuestions.slice(0, 70);    // Trang 1 - 10: Phần I (Câu 1 - 70)
+const geoPhan2 = geoAllQuestions.slice(70, 140);  // Trang 11 - 17: Phần II (Câu 71 - 140 / 17 câu ngữ cảnh Đúng/Sai)
+const geoPhan3 = geoAllQuestions.slice(140, 159); // Trang 18 - 20: Phần III (Câu 141 - 159 / 19 câu tính toán)
 
 const GEOGRAPHY_TOPICS_DATABASE = [
   {
     id: "geo_all",
-    title: "Toàn bộ Địa Lí 12 (159 câu)",
-    desc: "Ôn tập tổng lực toàn bộ 159 câu: Tự nhiên, Dân cư, Đúng/Sai & Tính toán",
+    title: "📑 Trọn Bộ Đề Ôn Tập 12A8 (159 câu) [Trang 1 - 20]",
+    desc: "Đầy đủ 159 câu theo đúng thứ tự 20 trang tài liệu ôn tập: Phần I (1-70), Phần II (71-140), Phần III (141-159)",
+    icon: "🌍",
     category: "all",
     questions: geoAllQuestions
   },
   {
-    id: "geo_cd1",
-    title: "Chủ đề 1: Tự Nhiên VN (51 câu)",
-    desc: "Vị trí địa lí, biển đảo, khí hậu nhiệt đới ẩm gió mùa, địa hình, sinh vật",
+    id: "geo_phan1",
+    title: "📖 Phần I: Trắc Nghiệm 4 Lựa Chọn (70 câu) [Trang 1 - 10]",
+    desc: "70 câu hỏi trắc nghiệm đơn 4 phương án chuẩn theo đúng thứ tự từ Trang 1 đến Trang 10 tài liệu in",
+    icon: "📝",
     category: "cd1",
-    questions: geoTuNhien
+    questions: geoPhan1
   },
   {
-    id: "geo_cd2",
-    title: "Chủ đề 2: Dân Cư & Lao Động (19 câu)",
-    desc: "Dân số già hóa, cơ cấu lao động, việc làm - thất nghiệp, đô thị hóa",
+    id: "geo_phan2",
+    title: "⚖️ Phần II: Trắc Nghiệm Đúng / Sai (70 ý / 17 câu gốc) [Trang 11 - 17]",
+    desc: "17 câu hỏi ngữ cảnh, bảng số liệu & sơ đồ với 70 ý Đúng/Sai theo chuẩn đề thi mới THPT 2025",
+    icon: "⚖️",
     category: "cd2",
-    questions: geoDanCu
+    questions: geoPhan2
   },
   {
-    id: "geo_cd3",
-    title: "Chủ đề 3: Đúng / Sai (70 câu)",
-    desc: "17 đoạn ngữ cảnh và bảng số liệu thực tế theo format THPT mới 2025",
+    id: "geo_phan3",
+    title: "📊 Phần III: Trả Lời Ngắn & Tính Toán (19 câu) [Trang 18 - 20]",
+    desc: "19 câu hỏi tính toán: Biên độ nhiệt, lượng mưa, độ che phủ rừng, mật độ & cơ cấu dân số",
+    icon: "🧮",
     category: "cd3",
-    questions: geoDungSai
-  },
-  {
-    id: "geo_cd4",
-    title: "Chủ đề 4: Tính Toán Địa Lí (19 câu)",
-    desc: "Tính biên độ nhiệt, che phủ rừng, mật độ dân số, tỉ suất gia tăng tự nhiên",
-    category: "cd4",
-    questions: geoTinhToan
+    questions: geoPhan3
   }
 ];
 
