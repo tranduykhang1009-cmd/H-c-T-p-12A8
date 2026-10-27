@@ -3319,52 +3319,7 @@
 
     
     /* CSS_ZALO_PROGRESS_DIRECT_START */
-    /* ZALO IN-APP BROWSER BANNER */
-    .zalo-notice-bar {
-      background: linear-gradient(90deg, #1e3a8a 0%, #0369a1 50%, #0284c7 100%);
-      color: #ffffff;
-      padding: 10px 16px;
-      font-size: 0.82rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
-      position: sticky;
-      top: 0;
-      z-index: 9999;
-      animation: slideDownBanner 0.3s ease-out;
-    }
-    @keyframes slideDownBanner {
-      from { transform: translateY(-100%); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    .zalo-notice-text {
-      flex: 1;
-      line-height: 1.45;
-    }
-    .zalo-notice-actions {
-      flex-shrink: 0;
-    }
-    .btn-zalo-stay {
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      color: #ffffff;
-      padding: 5px 12px;
-      border-radius: 8px;
-      font-size: 0.76rem;
-      font-weight: 700;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.2s;
-    }
-    .btn-zalo-stay:hover {
-      background: rgba(255, 255, 255, 0.3);
-      color: #ffffff;
-    }
-    .btn-zalo-stay:active {
-      transform: scale(0.96);
-    }
+    
 
     /* DIRECT START BUTTON ON TOPIC CARD */
     .btn-topic-start-direct {
@@ -3433,15 +3388,6 @@
 
     </head>
 <body>
-  <!-- Zalo In-App Browser Reminder Banner -->
-  <div id="zaloNoticeBanner" class="zalo-notice-bar" style="display: none;">
-    <div class="zalo-notice-text">
-      <span>💡 <b>Mẹo ôn thi:</b> Bấm <b>···</b> góc trên chọn <i>Mở bằng trình duyệt</i> (Safari/Chrome) để lưu kết quả và điểm số lâu dài nhé!</span>
-    </div>
-    <div class="zalo-notice-actions">
-      <button id="btnStayZalo" class="btn-zalo-stay" type="button">Ở lại đây ✕</button>
-    </div>
-  </div>
   <!-- Ambient floating glow orbs -->
   <div class="glow-orb-1"></div>
   <div class="glow-orb-2"></div>
@@ -4689,7 +4635,6 @@ const firebaseConfig = {
     // Khởi chạy môn học mặc định ban đầu trên giao diện (Vật Lí 12)
     const savedSubject = localStorage.getItem('hist12_current_subject') || 'physics';
     switchSubject(savedSubject);
-    initZaloDetector();
 
     // Tự động kiểm tra và làm mới danh sách bài học nếu mạng trên điện thoại/Zalo tải dữ liệu sau 1 chút
     [300, 800, 1500, 2500].forEach(delay => {
@@ -5472,30 +5417,7 @@ const firebaseConfig = {
       }
     }
 
-    function initZaloDetector() {
-      const ua = (navigator.userAgent || navigator.vendor || window.opera || '').toLowerCase();
-      const isZalo = ua.includes('zalo');
-      const banner = document.getElementById('zaloNoticeBanner');
-      const btnStay = document.getElementById('btnStayZalo');
-
-      if (btnStay && banner) {
-        btnStay.onclick = function() {
-          banner.style.display = 'none';
-          try {
-            sessionStorage.setItem('dismiss_zalo_banner', '1');
-          } catch(e) {}
-        };
-      }
-
-      let dismissed = false;
-      try {
-        dismissed = sessionStorage.getItem('dismiss_zalo_banner') === '1';
-      } catch(e) {}
-
-      if (isZalo && !dismissed && banner) {
-        banner.style.display = 'flex';
-      }
-    }
+    
 
     function executeSubmitExam() {
       sound.playCorrect();
