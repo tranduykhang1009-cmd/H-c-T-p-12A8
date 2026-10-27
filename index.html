@@ -3206,10 +3206,242 @@
       }
     }
 
-  </style>
+  
+    /* CSS_FINISH_AND_DRAWER_ENHANCEMENT */
+    .btn-nav-next.btn-nav-finish {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 16px rgba(239, 68, 68, 0.45) !important;
+      border: 1px solid rgba(254, 202, 202, 0.3) !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      animation: pulseFinishBtn 2.2s infinite ease-in-out;
+    }
+    .btn-nav-next.btn-nav-finish:hover {
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%) !important;
+      box-shadow: 0 6px 22px rgba(239, 68, 68, 0.65) !important;
+      transform: translateY(-1px);
+    }
+    .btn-nav-next.btn-nav-finish:active {
+      transform: scale(0.982);
+    }
+    @keyframes pulseFinishBtn {
+      0%, 100% {
+        box-shadow: 0 4px 16px rgba(239, 68, 68, 0.45);
+      }
+      50% {
+        box-shadow: 0 6px 24px rgba(239, 68, 68, 0.7);
+      }
+    }
+
+    .drawer-stats-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .drawer-stat-pill {
+      flex: 1;
+      min-width: 85px;
+      background: #0b0e22;
+      border: 1px solid #23284d;
+      border-radius: 10px;
+      padding: 7px 10px;
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .drawer-stat-pill .dsp-label {
+      font-size: 0.68rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .drawer-stat-pill .dsp-val {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .drawer-stat-pill.pill-done .dsp-val { color: #10b981; }
+    .drawer-stat-pill.pill-remain .dsp-val { color: #f59e0b; }
+    .drawer-stat-pill.pill-flag .dsp-val { color: #f43f5e; }
+
+    .drawer-footer-actions {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      gap: 10px;
+    }
+    .btn-drawer-continue {
+      background: #0b0e22;
+      border: 1.5px solid #282e5c;
+      color: #cbd5e1;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      flex: 1;
+      transition: all 0.2s;
+    }
+    .btn-drawer-continue:hover {
+      background: #1c2146;
+      color: #fff;
+    }
+    .btn-drawer-submit {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      border: none;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      cursor: pointer;
+      flex: 1.6;
+      box-shadow: 0 4px 14px rgba(239, 68, 68, 0.45);
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn-drawer-submit:hover {
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+      box-shadow: 0 6px 18px rgba(239, 68, 68, 0.65);
+      transform: translateY(-1px);
+    }
+
+    
+    /* CSS_ZALO_PROGRESS_DIRECT_START */
+    /* ZALO IN-APP BROWSER BANNER */
+    .zalo-notice-bar {
+      background: linear-gradient(90deg, #1e3a8a 0%, #0369a1 50%, #0284c7 100%);
+      color: #ffffff;
+      padding: 10px 16px;
+      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      animation: slideDownBanner 0.3s ease-out;
+    }
+    @keyframes slideDownBanner {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .zalo-notice-text {
+      flex: 1;
+      line-height: 1.45;
+    }
+    .zalo-notice-actions {
+      flex-shrink: 0;
+    }
+    .btn-zalo-stay {
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .btn-zalo-stay:hover {
+      background: rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+    }
+    .btn-zalo-stay:active {
+      transform: scale(0.96);
+    }
+
+    /* DIRECT START BUTTON ON TOPIC CARD */
+    .btn-topic-start-direct {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .btn-topic-start-direct:hover {
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.55);
+      transform: translateY(-1px);
+    }
+    .btn-topic-start-direct:active {
+      transform: scale(0.95);
+    }
+
+    /* STUDY PROGRESS BADGE */
+    .tic-progress-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 5px;
+      padding: 2px 7px;
+      border-radius: 6px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      font-size: 0.72rem;
+      font-weight: 700;
+      width: fit-content;
+    }
+    .tic-progress-badge.perfect {
+      background: rgba(245, 158, 11, 0.14);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: #fbbf24;
+    }
+    .tic-progress-badge .tpb-dot {
+      opacity: 0.45;
+    }
+
+    @media (max-width: 480px) {
+      .tic-right {
+        gap: 6px;
+      }
+      .btn-topic-start-direct {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+      }
+      .tic-count-badge {
+        display: none; /* Hide count badge on narrow mobile to give title and direct start button maximum room */
+      }
+    }
+
+    </style>
 
     </head>
 <body>
+  <!-- Zalo In-App Browser Reminder Banner -->
+  <div id="zaloNoticeBanner" class="zalo-notice-bar" style="display: none;">
+    <div class="zalo-notice-text">
+      <span>💡 <b>Mẹo ôn thi:</b> Bấm <b>···</b> góc trên chọn <i>Mở bằng trình duyệt</i> (Safari/Chrome) để lưu kết quả và điểm số lâu dài nhé!</span>
+    </div>
+    <div class="zalo-notice-actions">
+      <button id="btnStayZalo" class="btn-zalo-stay" type="button">Ở lại đây ✕</button>
+    </div>
+  </div>
   <!-- Ambient floating glow orbs -->
   <div class="glow-orb-1"></div>
   <div class="glow-orb-2"></div>
@@ -3413,10 +3645,37 @@
       <div class="drawer-overlay" id="quizDrawer" onclick="closeDrawer(event)">
         <div class="drawer-sheet" onclick="event.stopPropagation()">
           <div class="drawer-header">
-            <h3 class="drawer-title">Bảng câu hỏi</h3>
+            <h3 class="drawer-title" style="display: flex; align-items: center; gap: 6px;">
+              <span>📋</span>
+              <span>Bảng kiểm tra câu hỏi</span>
+            </h3>
             <button class="btn-drawer-close" onclick="closeDrawer()">✕</button>
           </div>
+
+          <!-- Thống kê tiến độ mini -->
+          <div class="drawer-stats-row">
+            <div class="drawer-stat-pill pill-done">
+              <span class="dsp-label">Đã làm</span>
+              <span class="dsp-val" id="drawerStatDone">0/28</span>
+            </div>
+            <div class="drawer-stat-pill pill-remain">
+              <span class="dsp-label">Chưa làm</span>
+              <span class="dsp-val" id="drawerStatRemain">28</span>
+            </div>
+            <div class="drawer-stat-pill pill-flag">
+              <span class="dsp-label">Đánh dấu</span>
+              <span class="dsp-val" id="drawerStatFlag">0 🚩</span>
+            </div>
+          </div>
+
+          <!-- Lưới các câu hỏi -->
           <div class="drawer-grid" id="drawerGrid"></div>
+
+          <!-- Chân bảng: Nút quay lại hoặc Nộp bài ngay -->
+          <div class="drawer-footer-actions">
+            <button class="btn-drawer-continue" onclick="closeDrawer()">✕ Làm tiếp</button>
+            <button class="btn-drawer-submit" onclick="submitFromDrawer()">🚀 Nộp bài ngay</button>
+          </div>
         </div>
       </div>
     </div>
@@ -3564,7 +3823,7 @@
           Bạn có chắc chắn muốn nộp bài để chấm điểm?
         </p>
         <div style="display: flex; gap: 10px; justify-content: center;">
-          <button class="btn-exit" onclick="closeSubmitModal()">Kiểm tra lại</button>
+          <button class="btn-exit" onclick="closeSubmitModalAndReview()">Kiểm tra lại</button>
           <button class="btn-submit-red" onclick="executeSubmitExam()">Nộp bài</button>
         </div>
       </div>
@@ -4329,6 +4588,20 @@ const firebaseConfig = {
       items.forEach(item => {
         const isSel = selectedTopicIds.includes(item.id);
 
+        const hist = getTopicStudyHistory(item.id);
+        let progressBadgeHtml = '';
+        if (hist && hist.attempts > 0) {
+          const isPerfect = (hist.bestScore >= 10);
+          progressBadgeHtml = `
+            <div class="tic-progress-badge ${isPerfect ? 'perfect' : ''}">
+              <span>${isPerfect ? '🏆' : '⭐'}</span>
+              <span>${hist.bestScore.toFixed(1)}đ</span>
+              <span class="tpb-dot">•</span>
+              <span>${hist.attempts} lần</span>
+            </div>
+          `;
+        }
+
         htmlGrid += `
           <div class="topic-item-card ${isSel ? 'selected' : ''}" onclick="toggleTopicSelection('${item.id}')">
             <div class="tic-left">
@@ -4338,10 +4611,12 @@ const firebaseConfig = {
                   <span>${item.title}</span>
                 </div>
                 <div class="tic-sub">${item.sub || ''}</div>
+                ${progressBadgeHtml}
               </div>
             </div>
             <div class="tic-right">
               <span class="tic-count-badge">${item.count} câu</span>
+              <button class="btn-topic-start-direct" onclick="event.stopPropagation(); startSingleTopicDirect('${item.id}')" title="Vào thi ngay bài này">Vào thi ➔</button>
               <div class="tic-radio"></div>
             </div>
           </div>
@@ -4414,6 +4689,7 @@ const firebaseConfig = {
     // Khởi chạy môn học mặc định ban đầu trên giao diện (Vật Lí 12)
     const savedSubject = localStorage.getItem('hist12_current_subject') || 'physics';
     switchSubject(savedSubject);
+    initZaloDetector();
 
     // Tự động kiểm tra và làm mới danh sách bài học nếu mạng trên điện thoại/Zalo tải dữ liệu sau 1 chút
     [300, 800, 1500, 2500].forEach(delay => {
@@ -4953,7 +5229,17 @@ const firebaseConfig = {
       }
 
       document.getElementById('btnPrevQ').disabled = (idx === 0);
-      document.getElementById('btnNextQ').textContent = (idx === total - 1) ? 'Xem lại / Nộp' : 'Tiếp ❯';
+      const isLastQ = (idx === total - 1);
+      const btnNext = document.getElementById('btnNextQ');
+      if (btnNext) {
+        if (isLastQ) {
+          btnNext.innerHTML = '<span>Kiểm tra & Nộp bài</span> ➔';
+          btnNext.classList.add('btn-nav-finish');
+        } else {
+          btnNext.innerHTML = 'Tiếp ❯';
+          btnNext.classList.remove('btn-nav-finish');
+        }
+      }
 
       updateDrawerStates();
     }
@@ -5055,9 +5341,38 @@ const firebaseConfig = {
       });
     }
 
+    function updateDrawerStats() {
+      const total = (examList && examList.length) ? examList.length : 0;
+      const done = Object.keys(userAnswers || {}).length;
+      const remain = Math.max(0, total - done);
+      const flagged = Object.values(flaggedMap || {}).filter(Boolean).length;
+
+      const elDone = document.getElementById('drawerStatDone');
+      const elRemain = document.getElementById('drawerStatRemain');
+      const elFlag = document.getElementById('drawerStatFlag');
+
+      if (elDone) elDone.textContent = `${done}/${total}`;
+      if (elRemain) elRemain.textContent = `${remain}`;
+      if (elFlag) elFlag.textContent = `${flagged} 🚩`;
+    }
+
     function openDrawer() {
       sound.playClick();
+      updateDrawerStats();
+      updateDrawerStates();
       document.getElementById('quizDrawer').classList.add('active');
+    }
+
+    function submitFromDrawer() {
+      sound.playClick();
+      closeDrawer();
+      confirmSubmitExam();
+    }
+
+    function closeSubmitModalAndReview() {
+      sound.playClick();
+      closeSubmitModal();
+      openDrawer();
     }
     function closeDrawer(e) {
       if (e && e.target !== e.currentTarget) return;
@@ -5087,11 +5402,18 @@ const firebaseConfig = {
       const done = Object.keys(userAnswers).length;
       const remain = total - done;
 
+      const flagged = Object.values(flaggedMap || {}).filter(Boolean).length;
       let msg = `Bạn đã làm ${done}/${total} câu.`;
       if (remain > 0) {
-        msg += ` Còn ${remain} câu chưa trả lời. Bạn có chắc chắn muốn nộp bài không?`;
+        msg += ` Hiện còn ${remain} câu chưa trả lời`;
+        if (flagged > 0) msg += ` và ${flagged} câu đang cắm cờ 🚩`;
+        msg += `. Bạn có chắc chắn muốn nộp bài chấm điểm ngay không?`;
       } else {
-        msg += ` Bạn đã hoàn thành tất cả câu hỏi! Nộp bài ngay nhé?`;
+        if (flagged > 0) {
+          msg += ` Tuy nhiên còn ${flagged} câu đang cắm cờ 🚩. Bạn có muốn nộp bài chấm điểm ngay không?`;
+        } else {
+          msg += ` Bạn đã hoàn thành tất cả câu hỏi! Nộp bài chấm điểm ngay nhé?`;
+        }
       }
       document.getElementById('submitModalText').textContent = msg;
       document.getElementById('confirmSubmitModal').classList.add('active');
@@ -5100,6 +5422,81 @@ const firebaseConfig = {
       sound.playClick();
       document.getElementById('confirmSubmitModal').classList.remove('active');
     }
+    
+    // JS_ZALO_AND_STUDY_PROGRESS_HELPERS
+    function startSingleTopicDirect(topicId) {
+      try { sound.playClick(); } catch(e) {}
+      selectedTopicIds = [topicId];
+      updateTopicSelectionSummary();
+      renderTopicGrid();
+      updateStartButtonUI();
+      syncTopicDropdown();
+      startExamAction();
+    }
+
+    function getTopicStudyHistory(topicId) {
+      try {
+        const historyMap = JSON.parse(localStorage.getItem('study_history_v1') || '{}');
+        return historyMap[topicId] || null;
+      } catch(e) {
+        return null;
+      }
+    }
+
+    function saveLocalStudyProgress(correctCount, total) {
+      try {
+        const score10 = parseFloat(((correctCount / total) * 10).toFixed(1));
+        const now = new Date();
+        const dateStr = `${now.getDate().toString().padStart(2, '0')}/${(now.getMonth()+1).toString().padStart(2, '0')} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+        
+        let historyMap = {};
+        try {
+          historyMap = JSON.parse(localStorage.getItem('study_history_v1') || '{}');
+        } catch(e) { historyMap = {}; }
+
+        const topicsToRecord = (selectedTopicIds && selectedTopicIds.length > 0) ? selectedTopicIds : [currentTopicId];
+        topicsToRecord.forEach(tId => {
+          if (!tId) return;
+          const prev = historyMap[tId] || { attempts: 0, bestScore: 0 };
+          historyMap[tId] = {
+            attempts: (prev.attempts || 0) + 1,
+            bestScore: Math.max(prev.bestScore !== undefined ? prev.bestScore : 0, score10),
+            lastScore: score10,
+            lastDate: dateStr
+          };
+        });
+
+        localStorage.setItem('study_history_v1', JSON.stringify(historyMap));
+      } catch(err) {
+        console.warn("Could not save study progress:", err);
+      }
+    }
+
+    function initZaloDetector() {
+      const ua = (navigator.userAgent || navigator.vendor || window.opera || '').toLowerCase();
+      const isZalo = ua.includes('zalo');
+      const banner = document.getElementById('zaloNoticeBanner');
+      const btnStay = document.getElementById('btnStayZalo');
+
+      if (btnStay && banner) {
+        btnStay.onclick = function() {
+          banner.style.display = 'none';
+          try {
+            sessionStorage.setItem('dismiss_zalo_banner', '1');
+          } catch(e) {}
+        };
+      }
+
+      let dismissed = false;
+      try {
+        dismissed = sessionStorage.getItem('dismiss_zalo_banner') === '1';
+      } catch(e) {}
+
+      if (isZalo && !dismissed && banner) {
+        banner.style.display = 'flex';
+      }
+    }
+
     function executeSubmitExam() {
       sound.playCorrect();
       closeSubmitModal();
@@ -5144,6 +5541,8 @@ const firebaseConfig = {
       // Xây dựng danh sách câu sai (mặc định đóng accordion)
       buildReviewStack();
 
+      // Lưu tiến độ học tập vào localStorage
+      saveLocalStudyProgress(correctCount, total);
       // Lưu lên Firebase
       saveToFirebaseLeaderboard(correctCount, total, totalSecondsElapsed);
       showScreen('resultScreen');
