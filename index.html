@@ -3393,7 +3393,41 @@
       }
     }
 
-    </style>
+      /* Geography Passages & Responsive Tables */
+    .geo-passage-card {
+      margin: 12px 0;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      border-left: 4px solid #3b82f6 !important;
+      border-radius: 8px;
+      padding: 12px 14px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+    .geo-table-card {
+      margin: 12px 0;
+      overflow-x: auto;
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+    .geo-table-card table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: center;
+    }
+    .geo-table-card th, .geo-table-card td {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 6px 8px;
+    }
+    .geo-table-card th {
+      background: rgba(30, 58, 138, 0.45);
+      color: #60a5fa;
+      font-weight: 600;
+    }
+  </style>
 
     </head>
 <body>
@@ -4010,10 +4044,10 @@ const firebaseConfig = {
 
     // Map each topic to category
     function getTopicCategory(topicId) {
-      if (topicId === 'geo_tu_nhien') return 'cd1';
-      if (topicId === 'geo_dan_cu') return 'cd2';
-      if (topicId === 'geo_dung_sai') return 'cd3';
-      if (topicId === 'geo_tinh_toan') return 'cd4';
+      if (topicId === 'geo_phan1') return 'cd1';
+      if (topicId === 'geo_phan2') return 'cd2';
+      if (topicId === 'geo_phan3') return 'cd3';
+      if (topicId === 'geo_all' || topicId === 'geo_random40') return 'all';
       if (['bai1', 'bai2', 'bai3'].includes(topicId)) return 'cd1';
       if (['bai4', 'bai5'].includes(topicId)) return 'cd2';
       if (['bai6', 'bai7', 'bai8', 'bai9'].includes(topicId)) return 'cd3';
@@ -4078,9 +4112,9 @@ const firebaseConfig = {
         currentTopicTitle = 'Bài 1: Liên Hợp Quốc (28 câu)';
         if (pillBar) pillBar.style.display = 'flex';
       } else if (subject === 'geography') {
-        selectedTopicIds = ['geo_tu_nhien'];
-        currentTopicId = 'geo_tu_nhien';
-        currentTopicTitle = 'Chủ đề 1: Địa Lí Tự Nhiên Việt Nam (51 câu)';
+        selectedTopicIds = ['geo_phan1'];
+        currentTopicId = 'geo_phan1';
+        currentTopicTitle = '📖 Phần I: Trắc Nghiệm 4 Lựa Chọn (70 câu) [Trang 1 - 10]';
         if (pillBar) pillBar.style.display = 'flex';
       } else {
         selectedTopicIds = ['eng_unit1_all'];
@@ -4274,7 +4308,7 @@ const firebaseConfig = {
       } else if (currentSubject === 'physics') {
         lessonIds = ['phys_chuyen_the', 'phys_thang_nhiet', 'phys_noi_nang'];
       } else if (currentSubject === 'geography') {
-        lessonIds = ['geo_tu_nhien', 'geo_dan_cu', 'geo_dung_sai', 'geo_tinh_toan'];
+        lessonIds = ['geo_phan1', 'geo_phan2', 'geo_phan3'];
       } else {
         lessonIds = ['eng_unit1_all', 'eng_unit3_all', 'eng_writing_all'];
       }
@@ -4296,7 +4330,7 @@ const firebaseConfig = {
       } else if (currentSubject === 'physics') {
         selectedTopicIds = ['phys_chuyen_the'];
       } else if (currentSubject === 'geography') {
-        selectedTopicIds = ['geo_tu_nhien'];
+        selectedTopicIds = ['geo_phan1'];
       } else {
         selectedTopicIds = ['eng_unit1_all'];
       }
@@ -4567,53 +4601,46 @@ const firebaseConfig = {
       } else if (currentSubject === 'geography') {
         items = [
           {
-            id: 'geo_tu_nhien',
-            title: 'Chủ đề 1: Địa Lí Tự Nhiên Việt Nam',
-            icon: '⛰️',
-            sub: 'Vị trí địa lí, phạm vi lãnh thổ, thiên nhiên nhiệt đới ẩm & đai cao',
-            count: 51
-          },
-          {
-            id: 'geo_dan_cu',
-            title: 'Chủ đề 2: Địa Lí Dân Cư & Lao Động',
-            icon: '👥',
-            sub: 'Dân số, phân bố dân cư, cơ cấu lao động, việc làm & đô thị hóa',
-            count: 19
-          },
-          {
-            id: 'geo_dung_sai',
-            title: 'Chủ đề 3: Trắc Nghiệm Đúng / Sai',
-            icon: '⚖️',
-            sub: 'Format mới tốt nghiệp THPT 2025 (17 chùm / 70 câu đúng sai)',
+            id: 'geo_phan1',
+            title: 'Phần I: Trắc Nghiệm 4 Lựa Chọn (70 câu)',
+            icon: '📖',
+            sub: 'Câu 1 đến Câu 70 theo đúng thứ tự 10 trang đầu tài liệu in',
             count: 70
           },
           {
-            id: 'geo_tinh_toan',
-            title: 'Chủ đề 4: Kĩ Năng & Tính Toán Địa Lí',
+            id: 'geo_phan2',
+            title: 'Phần II: Đúng / Sai (70 ý / 17 câu gốc)',
+            icon: '⚖️',
+            sub: '17 câu kèm đầy đủ ngữ liệu trích dẫn, bảng số liệu & lược đồ',
+            count: 70
+          },
+          {
+            id: 'geo_phan3',
+            title: 'Phần III: Trả Lời Ngắn & Tính Toán (19 câu)',
             icon: '📊',
             sub: 'Biên độ nhiệt, nhiệt độ TB, độ che phủ rừng, mật độ dân số...',
             count: 19
-          },
-          {
+          }
+        ];
+        if (currentCatFilter === 'all') {
+          items.push({
             id: 'geo_random40',
             title: 'Đề Thi Thử THPT Địa Lí 12 (40 câu)',
             icon: '🎯',
-            sub: 'Đề thi chuẩn ma trận cấu trúc đề thi tốt nghiệp THPT 2025',
+            sub: 'Đề thi chuẩn cấu trúc ma trận tốt nghiệp THPT 2025',
             count: 40
-          },
-          {
+          });
+          items.push({
             id: 'geo_all',
-            title: 'Marathon Toàn Bộ Địa Lí 12 (159 câu)',
+            title: 'Marathon Trọn Bộ 20 Trang Địa Lí (159 câu)',
             icon: '🌍',
-            sub: 'Trọn bộ 100% câu hỏi từ 20 trang tài liệu ôn tập chuẩn',
+            sub: 'Đầy đủ 159 câu theo đúng thứ tự 20 trang tài liệu ôn tập',
             count: 159
-          }
-        ];
-        if (currentCatFilter !== 'all') {
-          if (currentCatFilter === 'cd1') items = items.filter(it => it.id === 'geo_tu_nhien');
-          else if (currentCatFilter === 'cd2') items = items.filter(it => it.id === 'geo_dan_cu');
-          else if (currentCatFilter === 'cd3') items = items.filter(it => it.id === 'geo_dung_sai');
-          else if (currentCatFilter === 'cd4') items = items.filter(it => it.id === 'geo_tinh_toan');
+          });
+        } else {
+          if (currentCatFilter === 'cd1') items = items.filter(it => it.id === 'geo_phan1');
+          else if (currentCatFilter === 'cd2') items = items.filter(it => it.id === 'geo_phan2');
+          else if (currentCatFilter === 'cd3') items = items.filter(it => it.id === 'geo_phan3');
         }
       } else {
         // Tiếng Anh (Thiết kế tinh gọn, chuẩn như Vật Lí và Lịch Sử)

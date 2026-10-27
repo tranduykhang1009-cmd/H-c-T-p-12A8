@@ -947,7 +947,7 @@ const geoAllQuestions = [
   {
     "id": 71,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Vùng biển nước ta - Ý a]: Vùng biển nước ta có nhiều thuận lợi cho phát triển du lịch biển đảo.",
+    "question": "[Đúng/Sai về Vùng biển nước ta - Ý a]: Vùng biển nước ta có nhiều thuận lợi cho phát triển du lịch biển đảo.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Vùng biển và bờ biển nước ta</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Nước ta có đường bờ biển dài 3260 km, vùng biển rộng lớn khoảng 1 triệu km², với hơn 4000 hòn đảo lớn nhỏ, đường bờ biển khúc khuỷu, địa hình bờ biển đa dạng, tài nguyên khoáng sản phong phú, sinh vật đa dạng...</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -958,7 +958,7 @@ const geoAllQuestions = [
   {
     "id": 72,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Vùng biển nước ta - Ý b]: Dầu khí là loại khoáng sản có giá trị kinh tế nhất ở vùng biển.",
+    "question": "[Đúng/Sai về Vùng biển nước ta - Ý b]: Dầu khí là loại khoáng sản có giá trị kinh tế nhất ở vùng biển.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Vùng biển và bờ biển nước ta</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Nước ta có đường bờ biển dài 3260 km, vùng biển rộng lớn khoảng 1 triệu km², với hơn 4000 hòn đảo lớn nhỏ, đường bờ biển khúc khuỷu, địa hình bờ biển đa dạng, tài nguyên khoáng sản phong phú, sinh vật đa dạng...</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -969,7 +969,7 @@ const geoAllQuestions = [
   {
     "id": 73,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Vùng biển nước ta - Ý c]: Bắc Trung Bộ là vùng có điều kiện thuận lợi nhất để xây dựng cảng nước sâu.",
+    "question": "[Đúng/Sai về Vùng biển nước ta - Ý c]: Bắc Trung Bộ là vùng có điều kiện thuận lợi nhất để xây dựng cảng nước sâu.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Vùng biển và bờ biển nước ta</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Nước ta có đường bờ biển dài 3260 km, vùng biển rộng lớn khoảng 1 triệu km², với hơn 4000 hòn đảo lớn nhỏ, đường bờ biển khúc khuỷu, địa hình bờ biển đa dạng, tài nguyên khoáng sản phong phú, sinh vật đa dạng...</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -980,7 +980,7 @@ const geoAllQuestions = [
   {
     "id": 74,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Vùng biển nước ta - Ý d]: Một trong những giải pháp quan trọng để khai thác nguồn lợi hải sản là đánh bắt xa bờ.",
+    "question": "[Đúng/Sai về Vùng biển nước ta - Ý d]: Một trong những giải pháp quan trọng để khai thác nguồn lợi hải sản là đánh bắt xa bờ.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Vùng biển và bờ biển nước ta</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Nước ta có đường bờ biển dài 3260 km, vùng biển rộng lớn khoảng 1 triệu km², với hơn 4000 hòn đảo lớn nhỏ, đường bờ biển khúc khuỷu, địa hình bờ biển đa dạng, tài nguyên khoáng sản phong phú, sinh vật đa dạng...</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -991,7 +991,7 @@ const geoAllQuestions = [
   {
     "id": 75,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Phạm vi lãnh thổ - Ý a]: Biên giới trên đất liền nước ta tiếp giáp với bốn quốc gia.",
+    "question": "[Đúng/Sai về Phạm vi lãnh thổ - Ý a]: Biên giới trên đất liền nước ta tiếp giáp với bốn quốc gia.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Phần đất liền & các điểm cực của Tổ quốc</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Phần đất liền, phạm vi lãnh thổ Việt Nam được xác định bởi các điểm cực: cực Bắc ở khoảng vĩ độ 23°23'B; điểm cực Nam ở khoảng vĩ độ 8°34'B; điểm cực Tây ở khoảng vĩ độ 102°09'Đ; điểm cực Đông ở khoảng vĩ độ 109°28'Đ. Nước ta tiếp giáp với các nước láng giềng với Trung Quốc, Lào, Cam-pu-chia và có chung Biển Đông với nhiều quốc gia.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1002,7 +1002,7 @@ const geoAllQuestions = [
   {
     "id": 76,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Phạm vi lãnh thổ - Ý b]: Việt Nam nằm hoàn toàn trong vùng nội chí tuyến Bắc bán cầu.",
+    "question": "[Đúng/Sai về Phạm vi lãnh thổ - Ý b]: Việt Nam nằm hoàn toàn trong vùng nội chí tuyến Bắc bán cầu.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Phần đất liền & các điểm cực của Tổ quốc</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Phần đất liền, phạm vi lãnh thổ Việt Nam được xác định bởi các điểm cực: cực Bắc ở khoảng vĩ độ 23°23'B; điểm cực Nam ở khoảng vĩ độ 8°34'B; điểm cực Tây ở khoảng vĩ độ 102°09'Đ; điểm cực Đông ở khoảng vĩ độ 109°28'Đ. Nước ta tiếp giáp với các nước láng giềng với Trung Quốc, Lào, Cam-pu-chia và có chung Biển Đông với nhiều quốc gia.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1013,7 +1013,7 @@ const geoAllQuestions = [
   {
     "id": 77,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Phạm vi lãnh thổ - Ý c]: Nước ta nằm hoàn toàn ở bán cầu Đông.",
+    "question": "[Đúng/Sai về Phạm vi lãnh thổ - Ý c]: Nước ta nằm hoàn toàn ở bán cầu Đông.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Phần đất liền & các điểm cực của Tổ quốc</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Phần đất liền, phạm vi lãnh thổ Việt Nam được xác định bởi các điểm cực: cực Bắc ở khoảng vĩ độ 23°23'B; điểm cực Nam ở khoảng vĩ độ 8°34'B; điểm cực Tây ở khoảng vĩ độ 102°09'Đ; điểm cực Đông ở khoảng vĩ độ 109°28'Đ. Nước ta tiếp giáp với các nước láng giềng với Trung Quốc, Lào, Cam-pu-chia và có chung Biển Đông với nhiều quốc gia.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1024,7 +1024,7 @@ const geoAllQuestions = [
   {
     "id": 78,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Phạm vi lãnh thổ - Ý d]: Thiên nhiên nước ta chịu ảnh hưởng sâu sắc của biển.",
+    "question": "[Đúng/Sai về Phạm vi lãnh thổ - Ý d]: Thiên nhiên nước ta chịu ảnh hưởng sâu sắc của biển.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Phần đất liền & các điểm cực của Tổ quốc</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Phần đất liền, phạm vi lãnh thổ Việt Nam được xác định bởi các điểm cực: cực Bắc ở khoảng vĩ độ 23°23'B; điểm cực Nam ở khoảng vĩ độ 8°34'B; điểm cực Tây ở khoảng vĩ độ 102°09'Đ; điểm cực Đông ở khoảng vĩ độ 109°28'Đ. Nước ta tiếp giáp với các nước láng giềng với Trung Quốc, Lào, Cam-pu-chia và có chung Biển Đông với nhiều quốc gia.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1035,7 +1035,7 @@ const geoAllQuestions = [
   {
     "id": 79,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Tọa độ địa lí - Ý a]: Nước ta nằm hoàn toàn ở nửa cầu Bắc.",
+    "question": "[Đúng/Sai về Tọa độ địa lí - Ý a]: Nước ta nằm hoàn toàn ở nửa cầu Bắc.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Vị trí địa lí và phạm vi lãnh thổ Việt Nam</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Việt Nam nằm ở phía đông nam của châu Á, trên bán đảo Đông Dương. Phần đất liền nước ta giới hạn từ vĩ độ 8°34'B đến vĩ độ 23°23'B và từ kinh độ 102°09'Đ đến kinh độ 109°28'Đ. Trên Biển Đông, vùng biển nước ta kéo dài từ khoảng vĩ độ 6°50'B và kinh độ 101°Đ đến khoảng kinh độ 117°20'Đ.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1046,7 +1046,7 @@ const geoAllQuestions = [
   {
     "id": 80,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Tọa độ địa lí - Ý b]: Lãnh thổ phần đất liền nước ta kéo dài trên 17 vĩ độ.",
+    "question": "[Đúng/Sai về Tọa độ địa lí - Ý b]: Lãnh thổ phần đất liền nước ta kéo dài trên 17 vĩ độ.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Vị trí địa lí và phạm vi lãnh thổ Việt Nam</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Việt Nam nằm ở phía đông nam của châu Á, trên bán đảo Đông Dương. Phần đất liền nước ta giới hạn từ vĩ độ 8°34'B đến vĩ độ 23°23'B và từ kinh độ 102°09'Đ đến kinh độ 109°28'Đ. Trên Biển Đông, vùng biển nước ta kéo dài từ khoảng vĩ độ 6°50'B và kinh độ 101°Đ đến khoảng kinh độ 117°20'Đ.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1057,7 +1057,7 @@ const geoAllQuestions = [
   {
     "id": 81,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Tọa độ địa lí - Ý c]: Vị trí địa lí tạo thuận lợi cho nước ta phát triển tổng hợp kinh tế biển.",
+    "question": "[Đúng/Sai về Tọa độ địa lí - Ý c]: Vị trí địa lí tạo thuận lợi cho nước ta phát triển tổng hợp kinh tế biển.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Vị trí địa lí và phạm vi lãnh thổ Việt Nam</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Việt Nam nằm ở phía đông nam của châu Á, trên bán đảo Đông Dương. Phần đất liền nước ta giới hạn từ vĩ độ 8°34'B đến vĩ độ 23°23'B và từ kinh độ 102°09'Đ đến kinh độ 109°28'Đ. Trên Biển Đông, vùng biển nước ta kéo dài từ khoảng vĩ độ 6°50'B và kinh độ 101°Đ đến khoảng kinh độ 117°20'Đ.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1068,7 +1068,7 @@ const geoAllQuestions = [
   {
     "id": 82,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Tọa độ địa lí - Ý d]: Vị trí địa lí và hình dáng lãnh thổ đã làm sông ngòi nước ta phần lớn sông nhỏ, nhiều nước, thủy chế theo mùa.",
+    "question": "[Đúng/Sai về Tọa độ địa lí - Ý d]: Vị trí địa lí và hình dáng lãnh thổ đã làm sông ngòi nước ta phần lớn sông nhỏ, nhiều nước, thủy chế theo mùa.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Vị trí địa lí và phạm vi lãnh thổ Việt Nam</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Việt Nam nằm ở phía đông nam của châu Á, trên bán đảo Đông Dương. Phần đất liền nước ta giới hạn từ vĩ độ 8°34'B đến vĩ độ 23°23'B và từ kinh độ 102°09'Đ đến kinh độ 109°28'Đ. Trên Biển Đông, vùng biển nước ta kéo dài từ khoảng vĩ độ 6°50'B và kinh độ 101°Đ đến khoảng kinh độ 117°20'Đ.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1141,7 +1141,7 @@ const geoAllQuestions = [
   {
     "id": 88,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Gió mùa Đông Bắc - Ý a]: Nửa đầu mùa đông, miền Bắc có thời tiết lạnh ẩm.",
+    "question": "[Đúng/Sai về Gió mùa Đông Bắc - Ý a]: Nửa đầu mùa đông, miền Bắc có thời tiết lạnh ẩm.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Hoạt động của gió mùa Đông Bắc và Tín phong</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Từ tháng 11 đến tháng 4 năm sau, miền Bắc nước ta chịu tác động của gió mùa Đông Bắc. Nửa đầu mùa đông, miền Bắc có thời tiết lạnh khô, nửa sau mùa đông có thời tiết lạnh ẩm, có mưa phùn ở vùng ven biển và các đồng bằng ở Bắc Bộ và Bắc Trung Bộ. Từ 16°B trở vào Nam, khối khí lạnh đã bị suy yếu nên Tín phong bán cầu Bắc chiếm ưu thế.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1152,7 +1152,7 @@ const geoAllQuestions = [
   {
     "id": 89,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Gió mùa Đông Bắc - Ý b]: Gió mùa Đông Bắc tác động yếu đến miền Nam do ảnh hưởng của dãy Bạch Mã.",
+    "question": "[Đúng/Sai về Gió mùa Đông Bắc - Ý b]: Gió mùa Đông Bắc tác động yếu đến miền Nam do ảnh hưởng của dãy Bạch Mã.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Hoạt động của gió mùa Đông Bắc và Tín phong</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Từ tháng 11 đến tháng 4 năm sau, miền Bắc nước ta chịu tác động của gió mùa Đông Bắc. Nửa đầu mùa đông, miền Bắc có thời tiết lạnh khô, nửa sau mùa đông có thời tiết lạnh ẩm, có mưa phùn ở vùng ven biển và các đồng bằng ở Bắc Bộ và Bắc Trung Bộ. Từ 16°B trở vào Nam, khối khí lạnh đã bị suy yếu nên Tín phong bán cầu Bắc chiếm ưu thế.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1163,7 +1163,7 @@ const geoAllQuestions = [
   {
     "id": 90,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Gió mùa Đông Bắc - Ý c]: Gió mùa Đông Bắc là nguyên nhân chính tạo nên mùa khô ở Nam Bộ và Tây Nguyên.",
+    "question": "[Đúng/Sai về Gió mùa Đông Bắc - Ý c]: Gió mùa Đông Bắc là nguyên nhân chính tạo nên mùa khô ở Nam Bộ và Tây Nguyên.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Hoạt động của gió mùa Đông Bắc và Tín phong</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Từ tháng 11 đến tháng 4 năm sau, miền Bắc nước ta chịu tác động của gió mùa Đông Bắc. Nửa đầu mùa đông, miền Bắc có thời tiết lạnh khô, nửa sau mùa đông có thời tiết lạnh ẩm, có mưa phùn ở vùng ven biển và các đồng bằng ở Bắc Bộ và Bắc Trung Bộ. Từ 16°B trở vào Nam, khối khí lạnh đã bị suy yếu nên Tín phong bán cầu Bắc chiếm ưu thế.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1174,7 +1174,7 @@ const geoAllQuestions = [
   {
     "id": 91,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Gió mùa Đông Bắc - Ý d]: Gió mùa Đông Bắc di chuyển quãng đường dài trên lục địa, gây nên thời tiết lạnh khô vào đầu mùa Đông ở miền Bắc.",
+    "question": "[Đúng/Sai về Gió mùa Đông Bắc - Ý d]: Gió mùa Đông Bắc di chuyển quãng đường dài trên lục địa, gây nên thời tiết lạnh khô vào đầu mùa Đông ở miền Bắc.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Hoạt động của gió mùa Đông Bắc và Tín phong</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Từ tháng 11 đến tháng 4 năm sau, miền Bắc nước ta chịu tác động của gió mùa Đông Bắc. Nửa đầu mùa đông, miền Bắc có thời tiết lạnh khô, nửa sau mùa đông có thời tiết lạnh ẩm, có mưa phùn ở vùng ven biển và các đồng bằng ở Bắc Bộ và Bắc Trung Bộ. Từ 16°B trở vào Nam, khối khí lạnh đã bị suy yếu nên Tín phong bán cầu Bắc chiếm ưu thế.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1249,7 +1249,7 @@ const geoAllQuestions = [
   {
     "id": 96,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Đai cao chân núi - Ý a]: Độ cao dưới 600 - 700m (Bắc) và dưới 900 - 1000m (Nam) là đặc điểm của đai cận nhiệt đới gió mùa.",
+    "question": "[Đúng/Sai về Đai cao chân núi - Ý a]: Độ cao dưới 600 - 700m (Bắc) và dưới 900 - 1000m (Nam) là đặc điểm của đai cận nhiệt đới gió mùa.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Đai nhiệt đới gió mùa chân núi</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Nằm ở độ cao trung bình dưới 600 – 700m ở miền Bắc và dưới 900 – 1000m ở miền Nam. Mùa hạ nóng, nhiệt độ trung bình các tháng trên 25°C; độ ẩm thay đổi theo mùa và theo khu vực. Có hai nhóm đất chính là đất phù sa ở vùng đồng bằng và đất feralit ở vùng đồi núi thấp.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1260,7 +1260,7 @@ const geoAllQuestions = [
   {
     "id": 97,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Đai cao chân núi - Ý b]: Đai nhiệt đới chân núi có hệ sinh thái rừng ôn đới chiếm ưu thế.",
+    "question": "[Đúng/Sai về Đai cao chân núi - Ý b]: Đai nhiệt đới chân núi có hệ sinh thái rừng ôn đới chiếm ưu thế.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Đai nhiệt đới gió mùa chân núi</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Nằm ở độ cao trung bình dưới 600 – 700m ở miền Bắc và dưới 900 – 1000m ở miền Nam. Mùa hạ nóng, nhiệt độ trung bình các tháng trên 25°C; độ ẩm thay đổi theo mùa và theo khu vực. Có hai nhóm đất chính là đất phù sa ở vùng đồng bằng và đất feralit ở vùng đồi núi thấp.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1271,7 +1271,7 @@ const geoAllQuestions = [
   {
     "id": 98,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Đai cao chân núi - Ý c]: Mùa hạ nóng do ảnh hưởng vị trí địa lí và hoạt động của gió mùa hạ.",
+    "question": "[Đúng/Sai về Đai cao chân núi - Ý c]: Mùa hạ nóng do ảnh hưởng vị trí địa lí và hoạt động của gió mùa hạ.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Đai nhiệt đới gió mùa chân núi</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Nằm ở độ cao trung bình dưới 600 – 700m ở miền Bắc và dưới 900 – 1000m ở miền Nam. Mùa hạ nóng, nhiệt độ trung bình các tháng trên 25°C; độ ẩm thay đổi theo mùa và theo khu vực. Có hai nhóm đất chính là đất phù sa ở vùng đồng bằng và đất feralit ở vùng đồi núi thấp.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1282,7 +1282,7 @@ const geoAllQuestions = [
   {
     "id": 99,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Đai cao chân núi - Ý d]: Đất feralit chiếm ưu thế do tác động chủ yếu của yếu tố địa hình và khí hậu.",
+    "question": "[Đúng/Sai về Đai cao chân núi - Ý d]: Đất feralit chiếm ưu thế do tác động chủ yếu của yếu tố địa hình và khí hậu.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Đai nhiệt đới gió mùa chân núi</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Nằm ở độ cao trung bình dưới 600 – 700m ở miền Bắc và dưới 900 – 1000m ở miền Nam. Mùa hạ nóng, nhiệt độ trung bình các tháng trên 25°C; độ ẩm thay đổi theo mùa và theo khu vực. Có hai nhóm đất chính là đất phù sa ở vùng đồng bằng và đất feralit ở vùng đồi núi thấp.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1293,7 +1293,7 @@ const geoAllQuestions = [
   {
     "id": 100,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Hoàng Liên Sơn & Phan-xi-păng - Ý a]: Thiên nhiên dãy núi Hoàng Liên Sơn có 2 đai cao.",
+    "question": "[Đúng/Sai về Hoàng Liên Sơn & Phan-xi-păng - Ý a]: Thiên nhiên dãy núi Hoàng Liên Sơn có 2 đai cao.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Thiên nhiên phân hóa đai cao tại đỉnh Phan-xi-păng (Hoàng Liên Sơn)</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Phan – xi – păng là đỉnh núi cao nhất nước ta với độ cao 3143m, nằm trên dãy núi Hoàng Liên Sơn. Phan – xi – păng là một ngọn núi với thiên nhiên kỳ vĩ, ẩn chứa cả một thảm thực vật với nhiều loài đặc hữu. Phía dưới chân núi là những loài nhiệt đới như cây gạo, cây mít, từ 700m trở lên là tầng cây hạt trần như cây pơ mu, thông đỏ,... Lên cao trên 2600m khí hậu mang sắc thái vùng ôn đới, nhiệt độ trung bình hàng năm là dưới 15°C, vào các tháng mùa đông là dưới 5°, có lúc xuống dưới 0°C và có tuyết rơi.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1304,7 +1304,7 @@ const geoAllQuestions = [
   {
     "id": 101,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Hoàng Liên Sơn & Phan-xi-păng - Ý b]: Càng lên cao nhiệt độ càng giảm, tính nhiệt đới tăng dần.",
+    "question": "[Đúng/Sai về Hoàng Liên Sơn & Phan-xi-păng - Ý b]: Càng lên cao nhiệt độ càng giảm, tính nhiệt đới tăng dần.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Thiên nhiên phân hóa đai cao tại đỉnh Phan-xi-păng (Hoàng Liên Sơn)</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Phan – xi – păng là đỉnh núi cao nhất nước ta với độ cao 3143m, nằm trên dãy núi Hoàng Liên Sơn. Phan – xi – păng là một ngọn núi với thiên nhiên kỳ vĩ, ẩn chứa cả một thảm thực vật với nhiều loài đặc hữu. Phía dưới chân núi là những loài nhiệt đới như cây gạo, cây mít, từ 700m trở lên là tầng cây hạt trần như cây pơ mu, thông đỏ,... Lên cao trên 2600m khí hậu mang sắc thái vùng ôn đới, nhiệt độ trung bình hàng năm là dưới 15°C, vào các tháng mùa đông là dưới 5°, có lúc xuống dưới 0°C và có tuyết rơi.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1315,7 +1315,7 @@ const geoAllQuestions = [
   {
     "id": 102,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Hoàng Liên Sơn & Phan-xi-păng - Ý c]: Đai cao từ 700m đến 2600m có khí hậu mang tính chất cận nhiệt đới gió mùa.",
+    "question": "[Đúng/Sai về Hoàng Liên Sơn & Phan-xi-păng - Ý c]: Đai cao từ 700m đến 2600m có khí hậu mang tính chất cận nhiệt đới gió mùa.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Thiên nhiên phân hóa đai cao tại đỉnh Phan-xi-păng (Hoàng Liên Sơn)</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Phan – xi – păng là đỉnh núi cao nhất nước ta với độ cao 3143m, nằm trên dãy núi Hoàng Liên Sơn. Phan – xi – păng là một ngọn núi với thiên nhiên kỳ vĩ, ẩn chứa cả một thảm thực vật với nhiều loài đặc hữu. Phía dưới chân núi là những loài nhiệt đới như cây gạo, cây mít, từ 700m trở lên là tầng cây hạt trần như cây pơ mu, thông đỏ,... Lên cao trên 2600m khí hậu mang sắc thái vùng ôn đới, nhiệt độ trung bình hàng năm là dưới 15°C, vào các tháng mùa đông là dưới 5°, có lúc xuống dưới 0°C và có tuyết rơi.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1326,7 +1326,7 @@ const geoAllQuestions = [
   {
     "id": 103,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Hoàng Liên Sơn & Phan-xi-păng - Ý d]: Thiên nhiên nước ta phân hóa theo độ cao do địa hình đồi núi và gió.",
+    "question": "[Đúng/Sai về Hoàng Liên Sơn & Phan-xi-păng - Ý d]: Thiên nhiên nước ta phân hóa theo độ cao do địa hình đồi núi và gió.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Thiên nhiên phân hóa đai cao tại đỉnh Phan-xi-păng (Hoàng Liên Sơn)</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Phan – xi – păng là đỉnh núi cao nhất nước ta với độ cao 3143m, nằm trên dãy núi Hoàng Liên Sơn. Phan – xi – păng là một ngọn núi với thiên nhiên kỳ vĩ, ẩn chứa cả một thảm thực vật với nhiều loài đặc hữu. Phía dưới chân núi là những loài nhiệt đới như cây gạo, cây mít, từ 700m trở lên là tầng cây hạt trần như cây pơ mu, thông đỏ,... Lên cao trên 2600m khí hậu mang sắc thái vùng ôn đới, nhiệt độ trung bình hàng năm là dưới 15°C, vào các tháng mùa đông là dưới 5°, có lúc xuống dưới 0°C và có tuyết rơi.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1337,7 +1337,7 @@ const geoAllQuestions = [
   {
     "id": 104,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Môi trường - Ý a]: Ô nhiễm không khí diễn ra chủ yếu tại các thành phố lớn, đông dân.<br>\n    <div class=\"geo-table-card\" style=\"margin: 12px 0; overflow-x: auto; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 10px;\">\n      <div style=\"font-weight: 700; text-align: center; margin-bottom: 3px; color: #93c5fd; font-size: 13px;\">DIỆN TÍCH RỪNG NƯỚC TA GIAI ĐOẠN 1943 – 2021</div>\n      <div style=\"font-size: 11px; text-align: right; color: #94a3b8; margin-bottom: 6px; font-style: italic;\">(Nguồn: Tổng cục Thống kê, 2022)</div>\n      <table style=\"width: 100%; border-collapse: collapse; font-size: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.15);\">\n        <thead><tr><th style=\"border: 1px solid rgba(255,255,255,0.15); padding: 5px 8px; background: rgba(30, 58, 138, 0.4); color: #60a5fa;\">Chỉ tiêu</th><th style=\"border: 1px solid rgba(255,255,255,0.15); padding: 5px 8px; background: rgba(30, 58, 138, 0.4); color: #60a5fa;\">1943</th><th style=\"border: 1px solid rgba(255,255,255,0.15); padding: 5px 8px; background: rgba(30, 58, 138, 0.4); color: #60a5fa;\">2010</th><th style=\"border: 1px solid rgba(255,255,255,0.15); padding: 5px 8px; background: rgba(30, 58, 138, 0.4); color: #60a5fa;\">2021</th></tr></thead>\n        <tbody><tr><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: left; font-weight: 600;\">Tổng diện tích rừng (triệu ha)</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">14,3</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">13,4</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">14,7</td></tr><tr><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: left; font-weight: 600;\">- Diện tích rừng tự nhiên (triệu ha)</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">14,3</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">10,3</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">10,1</td></tr><tr><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: left; font-weight: 600;\">- Diện tích rừng trồng (triệu ha)</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">0</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">3,1</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">4,6</td></tr><tr><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: left; font-weight: 600;\">Độ che phủ (%)</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">43,0</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">39,5</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">42,0</td></tr></tbody>\n      </table>\n    </div>\n  ",
+    "question": "[Đúng/Sai về Môi trường - Ý a]: Ô nhiễm không khí diễn ra chủ yếu tại các thành phố lớn, đông dân.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Thực trạng ô nhiễm môi trường không khí và nguồn nước</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Tình trạng ô nhiễm môi trường ở nước ta đang là vấn đề cấp bách, mức độ ô nhiễm môi trường ở một số khu vực ngày càng gia tăng. Chất lượng môi trường nhiều nơi đang bị suy giảm do nhiều nguyên nhân khác nhau, đáng chú ý nhất là ô nhiễm môi trường không khí và môi trường nước. Ô nhiễm không khí diễn ra chủ yếu tại các thành phố lớn, đông dân, các khu vực tập trung hoạt động công nghiệp... Ô nhiễm nước tập trung chủ yếu ở trung lưu và đồng bằng hạ lưu của các lưu vực sông.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1348,7 +1348,7 @@ const geoAllQuestions = [
   {
     "id": 105,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Môi trường - Ý b]: Khí thải từ hoạt động công nghiệp và sinh hoạt là nguyên nhân chủ yếu gây ô nhiễm không khí.<br>\n    <div class=\"geo-table-card\" style=\"margin: 12px 0; overflow-x: auto; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 10px;\">\n      <div style=\"font-weight: 700; text-align: center; margin-bottom: 3px; color: #93c5fd; font-size: 13px;\">DIỆN TÍCH RỪNG NƯỚC TA GIAI ĐOẠN 1943 – 2021</div>\n      <div style=\"font-size: 11px; text-align: right; color: #94a3b8; margin-bottom: 6px; font-style: italic;\">(Nguồn: Tổng cục Thống kê, 2022)</div>\n      <table style=\"width: 100%; border-collapse: collapse; font-size: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.15);\">\n        <thead><tr><th style=\"border: 1px solid rgba(255,255,255,0.15); padding: 5px 8px; background: rgba(30, 58, 138, 0.4); color: #60a5fa;\">Chỉ tiêu</th><th style=\"border: 1px solid rgba(255,255,255,0.15); padding: 5px 8px; background: rgba(30, 58, 138, 0.4); color: #60a5fa;\">1943</th><th style=\"border: 1px solid rgba(255,255,255,0.15); padding: 5px 8px; background: rgba(30, 58, 138, 0.4); color: #60a5fa;\">2010</th><th style=\"border: 1px solid rgba(255,255,255,0.15); padding: 5px 8px; background: rgba(30, 58, 138, 0.4); color: #60a5fa;\">2021</th></tr></thead>\n        <tbody><tr><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: left; font-weight: 600;\">Tổng diện tích rừng (triệu ha)</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">14,3</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">13,4</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">14,7</td></tr><tr><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: left; font-weight: 600;\">- Diện tích rừng tự nhiên (triệu ha)</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">14,3</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">10,3</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">10,1</td></tr><tr><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: left; font-weight: 600;\">- Diện tích rừng trồng (triệu ha)</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">0</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">3,1</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">4,6</td></tr><tr><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: left; font-weight: 600;\">Độ che phủ (%)</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">43,0</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">39,5</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">42,0</td></tr></tbody>\n      </table>\n    </div>\n  ",
+    "question": "[Đúng/Sai về Môi trường - Ý b]: Khí thải từ hoạt động công nghiệp và sinh hoạt là nguyên nhân chủ yếu gây ô nhiễm không khí.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Thực trạng ô nhiễm môi trường không khí và nguồn nước</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Tình trạng ô nhiễm môi trường ở nước ta đang là vấn đề cấp bách, mức độ ô nhiễm môi trường ở một số khu vực ngày càng gia tăng. Chất lượng môi trường nhiều nơi đang bị suy giảm do nhiều nguyên nhân khác nhau, đáng chú ý nhất là ô nhiễm môi trường không khí và môi trường nước. Ô nhiễm không khí diễn ra chủ yếu tại các thành phố lớn, đông dân, các khu vực tập trung hoạt động công nghiệp... Ô nhiễm nước tập trung chủ yếu ở trung lưu và đồng bằng hạ lưu của các lưu vực sông.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1359,7 +1359,7 @@ const geoAllQuestions = [
   {
     "id": 106,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Môi trường - Ý c]: Sự gia tăng nguồn nước thải từ các ngành kinh tế và nước thải sinh hoạt là những nguyên nhân trực tiếp gây ô nhiễm nguồn nước.<br>\n    <div class=\"geo-table-card\" style=\"margin: 12px 0; overflow-x: auto; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 10px;\">\n      <div style=\"font-weight: 700; text-align: center; margin-bottom: 3px; color: #93c5fd; font-size: 13px;\">DIỆN TÍCH RỪNG NƯỚC TA GIAI ĐOẠN 1943 – 2021</div>\n      <div style=\"font-size: 11px; text-align: right; color: #94a3b8; margin-bottom: 6px; font-style: italic;\">(Nguồn: Tổng cục Thống kê, 2022)</div>\n      <table style=\"width: 100%; border-collapse: collapse; font-size: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.15);\">\n        <thead><tr><th style=\"border: 1px solid rgba(255,255,255,0.15); padding: 5px 8px; background: rgba(30, 58, 138, 0.4); color: #60a5fa;\">Chỉ tiêu</th><th style=\"border: 1px solid rgba(255,255,255,0.15); padding: 5px 8px; background: rgba(30, 58, 138, 0.4); color: #60a5fa;\">1943</th><th style=\"border: 1px solid rgba(255,255,255,0.15); padding: 5px 8px; background: rgba(30, 58, 138, 0.4); color: #60a5fa;\">2010</th><th style=\"border: 1px solid rgba(255,255,255,0.15); padding: 5px 8px; background: rgba(30, 58, 138, 0.4); color: #60a5fa;\">2021</th></tr></thead>\n        <tbody><tr><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: left; font-weight: 600;\">Tổng diện tích rừng (triệu ha)</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">14,3</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">13,4</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">14,7</td></tr><tr><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: left; font-weight: 600;\">- Diện tích rừng tự nhiên (triệu ha)</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">14,3</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">10,3</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">10,1</td></tr><tr><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: left; font-weight: 600;\">- Diện tích rừng trồng (triệu ha)</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">0</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">3,1</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">4,6</td></tr><tr><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: left; font-weight: 600;\">Độ che phủ (%)</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">43,0</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">39,5</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">42,0</td></tr></tbody>\n      </table>\n    </div>\n  ",
+    "question": "[Đúng/Sai về Môi trường - Ý c]: Sự gia tăng nguồn nước thải từ các ngành kinh tế và nước thải sinh hoạt là những nguyên nhân trực tiếp gây ô nhiễm nguồn nước.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Thực trạng ô nhiễm môi trường không khí và nguồn nước</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Tình trạng ô nhiễm môi trường ở nước ta đang là vấn đề cấp bách, mức độ ô nhiễm môi trường ở một số khu vực ngày càng gia tăng. Chất lượng môi trường nhiều nơi đang bị suy giảm do nhiều nguyên nhân khác nhau, đáng chú ý nhất là ô nhiễm môi trường không khí và môi trường nước. Ô nhiễm không khí diễn ra chủ yếu tại các thành phố lớn, đông dân, các khu vực tập trung hoạt động công nghiệp... Ô nhiễm nước tập trung chủ yếu ở trung lưu và đồng bằng hạ lưu của các lưu vực sông.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1370,7 +1370,7 @@ const geoAllQuestions = [
   {
     "id": 107,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Môi trường - Ý d]: Tăng cường sử dụng nguồn năng lượng hoá thạch góp phần giảm tình trạng ô nhiễm không khí.<br>\n    <div class=\"geo-table-card\" style=\"margin: 12px 0; overflow-x: auto; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 10px;\">\n      <div style=\"font-weight: 700; text-align: center; margin-bottom: 3px; color: #93c5fd; font-size: 13px;\">DIỆN TÍCH RỪNG NƯỚC TA GIAI ĐOẠN 1943 – 2021</div>\n      <div style=\"font-size: 11px; text-align: right; color: #94a3b8; margin-bottom: 6px; font-style: italic;\">(Nguồn: Tổng cục Thống kê, 2022)</div>\n      <table style=\"width: 100%; border-collapse: collapse; font-size: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.15);\">\n        <thead><tr><th style=\"border: 1px solid rgba(255,255,255,0.15); padding: 5px 8px; background: rgba(30, 58, 138, 0.4); color: #60a5fa;\">Chỉ tiêu</th><th style=\"border: 1px solid rgba(255,255,255,0.15); padding: 5px 8px; background: rgba(30, 58, 138, 0.4); color: #60a5fa;\">1943</th><th style=\"border: 1px solid rgba(255,255,255,0.15); padding: 5px 8px; background: rgba(30, 58, 138, 0.4); color: #60a5fa;\">2010</th><th style=\"border: 1px solid rgba(255,255,255,0.15); padding: 5px 8px; background: rgba(30, 58, 138, 0.4); color: #60a5fa;\">2021</th></tr></thead>\n        <tbody><tr><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: left; font-weight: 600;\">Tổng diện tích rừng (triệu ha)</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">14,3</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">13,4</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">14,7</td></tr><tr><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: left; font-weight: 600;\">- Diện tích rừng tự nhiên (triệu ha)</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">14,3</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">10,3</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">10,1</td></tr><tr><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: left; font-weight: 600;\">- Diện tích rừng trồng (triệu ha)</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">0</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">3,1</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">4,6</td></tr><tr><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: left; font-weight: 600;\">Độ che phủ (%)</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">43,0</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">39,5</td><td style=\"border: 1px solid rgba(255,255,255,0.15); padding: 4px 6px; text-align: center; font-weight: normal;\">42,0</td></tr></tbody>\n      </table>\n    </div>\n  ",
+    "question": "[Đúng/Sai về Môi trường - Ý d]: Tăng cường sử dụng nguồn năng lượng hoá thạch góp phần giảm tình trạng ô nhiễm không khí.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Thực trạng ô nhiễm môi trường không khí và nguồn nước</span>\n      </div>\n      \n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Tình trạng ô nhiễm môi trường ở nước ta đang là vấn đề cấp bách, mức độ ô nhiễm môi trường ở một số khu vực ngày càng gia tăng. Chất lượng môi trường nhiều nơi đang bị suy giảm do nhiều nguyên nhân khác nhau, đáng chú ý nhất là ô nhiễm môi trường không khí và môi trường nước. Ô nhiễm không khí diễn ra chủ yếu tại các thành phố lớn, đông dân, các khu vực tập trung hoạt động công nghiệp... Ô nhiễm nước tập trung chủ yếu ở trung lưu và đồng bằng hạ lưu của các lưu vực sông.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1425,7 +1425,7 @@ const geoAllQuestions = [
   {
     "id": 112,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Đa dạng sinh học - Ý a]: Giai đoạn 1943-1973, chiến tranh là một trong những nguyên nhân làm suy giảm diện tích rừng ở nước ta.",
+    "question": "[Đúng/Sai về Đa dạng sinh học - Ý a]: Giai đoạn 1943-1973, chiến tranh là một trong những nguyên nhân làm suy giảm diện tích rừng ở nước ta.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Bảo tồn đa dạng sinh học và suy giảm tài nguyên rừng</span>\n      </div>\n      <div style=\"font-size: 11px; color: #94a3b8; margin-bottom: 6px; font-style: italic;\">(Nguồn: moitruong.net.vn/da-dang-sinh-hoc-o-viet-nam-thuc-trang-va-cac-giai-phap-58613.html)</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Sinh vật nước ta có giá trị đa dạng sinh học cao nhưng hiện trạng tình trạng bảo tồn về đa dạng sinh học cũng là một vấn đề cấp bách của quốc gia. Trong giai đoạn chiến tranh (1943 – 1973), ít nhất 2,2 triệu héc-ta rừng đã bị ảnh hưởng. Sự suy giảm nguồn tài nguyên rừng tiếp tục diễn ra sau khi chiến tranh kết thúc do nhu cầu phát triển kinh tế. Bên cạnh đó, sử dụng động vật hoang dã để phục vụ nhu cầu sống của cộng đồng dân cư sống dựa vào rừng đã đẩy nhiều loài động vật đứng trước nguy cơ tuyệt chủng, đơn cử như đối với các loài linh trưởng. Bên cạnh đó là nhiều nguyên nhân khác như: chuyển đổi đất khi chưa có đủ luận cứ khoa học, phát triển cơ sở hạ tầng, loài ngoại lai xâm hại, khai thác quá mức nguồn tài nguyên, ô nhiễm môi trường, và áp lực từ việc tăng dân số.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1436,7 +1436,7 @@ const geoAllQuestions = [
   {
     "id": 113,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Đa dạng sinh học - Ý b]: Diện tích rừng suy giảm không ảnh hưởng đến sự đa dạng sinh học.",
+    "question": "[Đúng/Sai về Đa dạng sinh học - Ý b]: Diện tích rừng suy giảm không ảnh hưởng đến sự đa dạng sinh học.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Bảo tồn đa dạng sinh học và suy giảm tài nguyên rừng</span>\n      </div>\n      <div style=\"font-size: 11px; color: #94a3b8; margin-bottom: 6px; font-style: italic;\">(Nguồn: moitruong.net.vn/da-dang-sinh-hoc-o-viet-nam-thuc-trang-va-cac-giai-phap-58613.html)</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Sinh vật nước ta có giá trị đa dạng sinh học cao nhưng hiện trạng tình trạng bảo tồn về đa dạng sinh học cũng là một vấn đề cấp bách của quốc gia. Trong giai đoạn chiến tranh (1943 – 1973), ít nhất 2,2 triệu héc-ta rừng đã bị ảnh hưởng. Sự suy giảm nguồn tài nguyên rừng tiếp tục diễn ra sau khi chiến tranh kết thúc do nhu cầu phát triển kinh tế. Bên cạnh đó, sử dụng động vật hoang dã để phục vụ nhu cầu sống của cộng đồng dân cư sống dựa vào rừng đã đẩy nhiều loài động vật đứng trước nguy cơ tuyệt chủng, đơn cử như đối với các loài linh trưởng. Bên cạnh đó là nhiều nguyên nhân khác như: chuyển đổi đất khi chưa có đủ luận cứ khoa học, phát triển cơ sở hạ tầng, loài ngoại lai xâm hại, khai thác quá mức nguồn tài nguyên, ô nhiễm môi trường, và áp lực từ việc tăng dân số.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1447,7 +1447,7 @@ const geoAllQuestions = [
   {
     "id": 114,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Đa dạng sinh học - Ý c]: Nguyên nhân suy giảm sự đa dạng sinh học bao gồm cả các yếu tố tự nhiên và kinh tế xã hội.",
+    "question": "[Đúng/Sai về Đa dạng sinh học - Ý c]: Nguyên nhân suy giảm sự đa dạng sinh học bao gồm cả các yếu tố tự nhiên và kinh tế xã hội.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Bảo tồn đa dạng sinh học và suy giảm tài nguyên rừng</span>\n      </div>\n      <div style=\"font-size: 11px; color: #94a3b8; margin-bottom: 6px; font-style: italic;\">(Nguồn: moitruong.net.vn/da-dang-sinh-hoc-o-viet-nam-thuc-trang-va-cac-giai-phap-58613.html)</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Sinh vật nước ta có giá trị đa dạng sinh học cao nhưng hiện trạng tình trạng bảo tồn về đa dạng sinh học cũng là một vấn đề cấp bách của quốc gia. Trong giai đoạn chiến tranh (1943 – 1973), ít nhất 2,2 triệu héc-ta rừng đã bị ảnh hưởng. Sự suy giảm nguồn tài nguyên rừng tiếp tục diễn ra sau khi chiến tranh kết thúc do nhu cầu phát triển kinh tế. Bên cạnh đó, sử dụng động vật hoang dã để phục vụ nhu cầu sống của cộng đồng dân cư sống dựa vào rừng đã đẩy nhiều loài động vật đứng trước nguy cơ tuyệt chủng, đơn cử như đối với các loài linh trưởng. Bên cạnh đó là nhiều nguyên nhân khác như: chuyển đổi đất khi chưa có đủ luận cứ khoa học, phát triển cơ sở hạ tầng, loài ngoại lai xâm hại, khai thác quá mức nguồn tài nguyên, ô nhiễm môi trường, và áp lực từ việc tăng dân số.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -1458,7 +1458,7 @@ const geoAllQuestions = [
   {
     "id": 115,
     "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "[Đúng/Sai về Đa dạng sinh học - Ý d]: Thực hiện các giải pháp giảm nhẹ biến đổi khí hậu góp phần bảo vệ sự đa dạng sinh học.",
+    "question": "[Đúng/Sai về Đa dạng sinh học - Ý d]: Thực hiện các giải pháp giảm nhẹ biến đổi khí hậu góp phần bảo vệ sự đa dạng sinh học.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;\">\n        <span>📄 ĐOẠN TƯ LIỆU / THÔNG TIN:</span> <span style=\"color: #93c5fd;\">Bảo tồn đa dạng sinh học và suy giảm tài nguyên rừng</span>\n      </div>\n      <div style=\"font-size: 11px; color: #94a3b8; margin-bottom: 6px; font-style: italic;\">(Nguồn: moitruong.net.vn/da-dang-sinh-hoc-o-viet-nam-thuc-trang-va-cac-giai-phap-58613.html)</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0; text-align: justify;\">Sinh vật nước ta có giá trị đa dạng sinh học cao nhưng hiện trạng tình trạng bảo tồn về đa dạng sinh học cũng là một vấn đề cấp bách của quốc gia. Trong giai đoạn chiến tranh (1943 – 1973), ít nhất 2,2 triệu héc-ta rừng đã bị ảnh hưởng. Sự suy giảm nguồn tài nguyên rừng tiếp tục diễn ra sau khi chiến tranh kết thúc do nhu cầu phát triển kinh tế. Bên cạnh đó, sử dụng động vật hoang dã để phục vụ nhu cầu sống của cộng đồng dân cư sống dựa vào rừng đã đẩy nhiều loài động vật đứng trước nguy cơ tuyệt chủng, đơn cử như đối với các loài linh trưởng. Bên cạnh đó là nhiều nguyên nhân khác như: chuyển đổi đất khi chưa có đủ luận cứ khoa học, phát triển cơ sở hạ tầng, loài ngoại lai xâm hại, khai thác quá mức nguồn tài nguyên, ô nhiễm môi trường, và áp lực từ việc tăng dân số.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
@@ -2001,32 +2001,40 @@ const GEOGRAPHY_TOPICS_DATABASE = [
     id: "geo_all",
     title: "📑 Trọn Bộ Đề Ôn Tập 12A8 (159 câu) [Trang 1 - 20]",
     desc: "Đầy đủ 159 câu theo đúng thứ tự 20 trang tài liệu ôn tập: Phần I (1-70), Phần II (71-140), Phần III (141-159)",
+    sub: "Đầy đủ 159 câu theo đúng thứ tự 20 trang tài liệu ôn tập: Phần I (1-70), Phần II (71-140), Phần III (141-159)",
     icon: "🌍",
     category: "all",
+    catId: "all",
     questions: geoAllQuestions
   },
   {
     id: "geo_phan1",
     title: "📖 Phần I: Trắc Nghiệm 4 Lựa Chọn (70 câu) [Trang 1 - 10]",
     desc: "70 câu hỏi trắc nghiệm đơn 4 phương án chuẩn theo đúng thứ tự từ Trang 1 đến Trang 10 tài liệu in",
-    icon: "📝",
+    sub: "Câu 1 đến Câu 70 theo đúng thứ tự 10 trang đầu tài liệu in",
+    icon: "📖",
     category: "cd1",
+    catId: "cd1",
     questions: geoPhan1
   },
   {
     id: "geo_phan2",
     title: "⚖️ Phần II: Trắc Nghiệm Đúng / Sai (70 ý / 17 câu gốc) [Trang 11 - 17]",
     desc: "17 câu hỏi ngữ cảnh, bảng số liệu & sơ đồ với 70 ý Đúng/Sai theo chuẩn đề thi mới THPT 2025",
+    sub: "17 câu kèm đầy đủ ngữ liệu trích dẫn, bảng số liệu & lược đồ",
     icon: "⚖️",
     category: "cd2",
+    catId: "cd2",
     questions: geoPhan2
   },
   {
     id: "geo_phan3",
     title: "📊 Phần III: Trả Lời Ngắn & Tính Toán (19 câu) [Trang 18 - 20]",
     desc: "19 câu hỏi tính toán: Biên độ nhiệt, lượng mưa, độ che phủ rừng, mật độ & cơ cấu dân số",
-    icon: "🧮",
+    sub: "Biên độ nhiệt, nhiệt độ TB, độ che phủ rừng, mật độ dân số...",
+    icon: "📊",
     category: "cd3",
+    catId: "cd3",
     questions: geoPhan3
   }
 ];
