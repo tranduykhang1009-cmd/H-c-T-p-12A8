@@ -28,10 +28,10 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 
   <!-- DỮ LIỆU CÂU HỎI THEO MÔN: Tự động tương thích cả khi file ở thư mục gốc (GitHub) hoặc trong data/ -->
-  <script src="lichsu.js?v=20261027_2155"></script>
-  <script src="tienganh.js?v=20261027_2155"></script>
-  <script src="vatli.js?v=20261027_2155"></script>
-  <script src="dialy.js?v=20261027_2155"></script>
+  <script src="lichsu.js?v=20261027_2158"></script>
+  <script src="tienganh.js?v=20261027_2158"></script>
+  <script src="vatli.js?v=20261027_2158"></script>
+  <script src="dialy.js?v=20261027_2158"></script>
   <script>
     // Tự động nạp dự phòng từ data/ nếu mở file offline mà dữ liệu nằm trong thư mục con data/
     if (typeof ALL_TOPICS_DATABASE === 'undefined' && !window.ALL_TOPICS_DATABASE) {
@@ -5300,13 +5300,29 @@ const firebaseConfig = {
 
       document.getElementById('qCurrentBadge').textContent = `Câu ${idx + 1}/${total}`;
       
-      let stemHtml = `<span style="font-weight: 800; color: #60a5fa; margin-right: 4px;">Câu ${idx + 1}:</span> ${q.question}`;
-      
+      let contextHtml = '';
+      let statementHtml = q.question;
+
+      // 1. Tách thẻ ngữ liệu / bảng số liệu (đưa ngữ liệu lên trước, câu hỏi xuống dưới)
+      const cardStart = q.question.indexOf('<div class="geo-table-card');
+      if (cardStart !== -1) {
+        if (cardStart === 0) {
+          const lastDiv = q.question.lastIndexOf('</div>');
+          contextHtml = q.question.slice(0, lastDiv + 6).trim();
+          statementHtml = q.question.slice(lastDiv + 6).trim();
+        } else {
+          statementHtml = q.question.slice(0, cardStart).replace(/<br\s*\/?>\s*$/i, '').trim();
+          contextHtml = q.question.slice(cardStart).trim();
+        }
+      }
+
+      // 2. Hình ảnh minh họa / sơ đồ trích xuất (đưa hình lên trước)
+      let mediaHtml = '';
       if (q.illustration) {
         const hasSvg = !!q.illustration.svg;
         const hasImg = !!q.illustration.image;
-        stemHtml += `
-          <div class="question-illustration-card" style="margin: 14px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+        mediaHtml = `
+          <div class="question-illustration-card" style="margin: 10px 0 14px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
             <div style="display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 8px;">
               ${hasImg ? `<button type="button" class="btn-toggle-illus active" onclick="toggleIllusView(${idx}, 'img')" id="btnIllusImg_${idx}" style="font-size: 12px; padding: 4px 10px; border-radius: 6px; border: 1px solid #3b82f6; background: #1e3a8a; color: #fff; cursor: pointer; font-weight: 600;">📄 Ảnh gốc tài liệu / File Word</button>` : ''}
               ${hasSvg ? `<button type="button" class="btn-toggle-illus" onclick="toggleIllusView(${idx}, 'svg')" id="btnIllusSvg_${idx}" style="font-size: 12px; padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06); color: #cbd5e1; cursor: pointer;">✨ Bản số hóa HD</button>` : ''}
@@ -5316,11 +5332,26 @@ const firebaseConfig = {
           </div>
         `;
       } else if (q.image) {
-        stemHtml += `
-          <div class="question-illustration-card" style="margin: 14px 0; text-align: center; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 12px;">
+        mediaHtml = `
+          <div class="question-illustration-card" style="margin: 10px 0 14px 0; text-align: center; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 12px;">
             <img src="${q.image}" alt="Hình minh họa gốc" style="max-width: 100%; max-height: 420px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 4px 14px rgba(0,0,0,0.4); background: #ffffff; padding: 6px;" />
           </div>
         `;
+      }
+
+      // 3. Ráp hoàn chỉnh: TƯ LIỆU / BẢNG SỐ LIỆU / HÌNH ẢNH TRƯỚC -> RỒI MỚI ĐẾN CÂU HỎI
+      let stemHtml = '';
+      if (contextHtml || mediaHtml) {
+        stemHtml = `
+          ${contextHtml ? `<div class="geo-context-card-wrapper" style="margin-bottom: 12px;">${contextHtml}</div>` : ''}
+          ${mediaHtml}
+          <div class="geo-statement-wrapper" style="margin-top: 10px; font-size: 15.5px; font-weight: 700; color: #f8fafc; line-height: 1.6;">
+            <span style="font-weight: 800; color: #60a5fa; margin-right: 6px;">Câu ${idx + 1}:</span>
+            <span>${statementHtml}</span>
+          </div>
+        `;
+      } else {
+        stemHtml = `<span style="font-weight: 800; color: #60a5fa; margin-right: 4px;">Câu ${idx + 1}:</span> ${statementHtml}`;
       }
       document.getElementById('qStemText').innerHTML = stemHtml;
 
