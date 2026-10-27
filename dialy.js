@@ -1,0 +1,3953 @@
+// =========================================================================
+// DỮ LIỆU ĐỊA LÍ 12 - TRỌN BỘ TỰ NHIÊN, DÂN CƯ & CÂU HỎI THEO FORM MỚI 2025
+// (159 CÂU HỎI TRẮC NGHIỆM ĐƠN + ĐÚNG/SAI + BÀI TẬP TÍNH TOÁN)
+// Biên soạn theo đề cương và chương trình Địa lí 12 chuẩn Bộ GD&ĐT
+// =========================================================================
+
+const GEOGRAPHY_CATEGORIES = [
+  {
+    "id": "all",
+    "name": "Tất cả bài học",
+    "icon": "🌐"
+  },
+  {
+    "id": "cd1",
+    "name": "Chủ đề 1: Tự Nhiên VN",
+    "icon": "⛰️"
+  },
+  {
+    "id": "cd2",
+    "name": "Chủ đề 2: Dân Cư & Lao Động",
+    "icon": "👥"
+  },
+  {
+    "id": "cd3",
+    "name": "Chủ đề 3: Đúng / Sai (THPT 2025)",
+    "icon": "⚖️"
+  },
+  {
+    "id": "cd4",
+    "name": "Chủ đề 4: Tính Toán & Bảng Số Liệu",
+    "icon": "📊"
+  }
+];
+
+const geoAllQuestions = [
+  {
+    "id": 1,
+    "question": "Vị trí nằm hoàn toàn trong vùng nội chí tuyến nên nước ta có",
+    "options": [
+      "A. lượng mưa lớn.",
+      "B. nền nhiệt độ cao.",
+      "C. khí hậu mát mẻ.",
+      "D. nhiều sông lớn."
+    ],
+    "correct": 1,
+    "explain": "Do nằm hoàn toàn trong vùng nội chí tuyến bán cầu Bắc nên nước ta nhận được lượng bức xạ Mặt Trời lớn, quanh năm có nền nhiệt độ cao (nhiệt độ trung bình năm trên 20°C, trừ vùng núi cao), nhiều nắng.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 2,
+    "question": "Việt Nam tiếp giáp với nước nào sau đây trên đất liền?",
+    "options": [
+      "A. Trung Quốc.",
+      "B. Liên bang Nga.",
+      "C. Nhật Bản.",
+      "D. Ấn Độ."
+    ],
+    "correct": 0,
+    "explain": "Trên đất liền, Việt Nam tiếp giáp với 3 quốc gia: Trung Quốc ở phía Bắc, Lào và Cam-pu-chia ở phía Tây.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 3,
+    "question": "Việt Nam gắn liền với lục địa và đại dương nào sau đây?",
+    "options": [
+      "A. Á – Âu và Bắc Băng Dương.",
+      "B. Á – Âu và Đại Tây Dương.",
+      "C. Á – Âu và Thái Bình Dương.",
+      "D. Á – Âu và Ấn Độ Dương."
+    ],
+    "correct": 2,
+    "explain": "Việt Nam nằm ở rìa phía đông của bán đảo Đông Dương, gắn liền với lục địa Á – Âu và tiếp giáp với Thái Bình Dương (Biển Đông là một biển lớn thuộc Thái Bình Dương).",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 4,
+    "question": "Nước ta có vị trí ở",
+    "options": [
+      "A. bán cầu Nam.",
+      "B. ngoại chí tuyến.",
+      "C. vùng xích đạo.",
+      "D. bán cầu Bắc."
+    ],
+    "correct": 3,
+    "explain": "Lãnh thổ Việt Nam nằm hoàn toàn ở bán cầu Bắc (khoảng từ 8°34'B đến 23°23'B) và hoàn toàn ở bán cầu Đông.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 5,
+    "question": "Nước ta có nhiệt độ trung bình năm cao do",
+    "options": [
+      "A. nằm trong khu vực gió mùa.",
+      "B. nằm ở vùng nội chí tuyến.",
+      "C. tiếp giáp với biển Đông.",
+      "D. có gió Mậu dịch hoạt động."
+    ],
+    "correct": 1,
+    "explain": "Nước ta nằm hoàn toàn trong vùng nội chí tuyến bán cầu Bắc, góc nhập xạ lớn và trong năm có hai lần Mặt Trời lên thiên đỉnh nên nhận lượng bức xạ nhiệt dồi dào, nền nhiệt độ trung bình năm cao.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 6,
+    "question": "Nước ta có chung đường biên giới trên đất liền với quốc gia nào sau đây?",
+    "options": [
+      "A. Trung Quốc.",
+      "B. Thái Lan.",
+      "C. Xin-ga-po.",
+      "D. Phi-lip-pin."
+    ],
+    "correct": 0,
+    "explain": "Nước ta có chung đường biên giới trên đất liền với 3 nước: Trung Quốc, Lào và Cam-pu-chia. Thái Lan, Xin-ga-po và Phi-lip-pin không tiếp giáp đất liền với Việt Nam.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 7,
+    "question": "Đặc điểm nền nhiệt độ trung bình năm cao của nước ta là do nguyên nhân nào?",
+    "options": [
+      "A. nằm trong khu vực gió mùa.",
+      "B. nằm ở vùng nội chí tuyến.",
+      "C. tiếp giáp với biển Đông.",
+      "D. có gió Mậu dịch hoạt động."
+    ],
+    "correct": 1,
+    "explain": "Vị trí nằm trong vùng nội chí tuyến giúp nước ta có góc nhập xạ lớn, quanh năm nhận được lượng nhiệt lớn từ Mặt Trời.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 8,
+    "question": "Vị trí địa lí nước ta có đặc điểm nào sau đây?",
+    "options": [
+      "A. Nằm hoàn toàn ở vùng ngoại chí tuyến Bắc bán cầu.",
+      "B. Thuộc khu vực khí hậu nhiệt đới gió mùa Châu Á.",
+      "C. Nằm trung tâm của khu vực Đông Nam Á.",
+      "D. Nằm ở bờ phía đông của Thái Bình Dương."
+    ],
+    "correct": 1,
+    "explain": "Việt Nam nằm ở rìa đông bán đảo Đông Dương, tiếp giáp Biển Đông và thuộc khu vực khí hậu nhiệt đới gió mùa Châu Á.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 9,
+    "question": "Phát biểu nào sau đây đúng về đặc điểm vị trí địa lí và phạm vi lãnh thổ của vùng Đông Nam Bộ?",
+    "options": [
+      "A. Đông Nam Bộ tiếp giáp vùng Bắc Trung Bộ.",
+      "B. Chỉ giáp các nước trên đất liền, không giáp biển.",
+      "C. Tất cả các tỉnh, thành trong vùng đều giáp biển.",
+      "D. Giáp nước láng giềng Cam-pu-chia và Biển Đông."
+    ],
+    "correct": 3,
+    "explain": "Đông Nam Bộ có đường biên giới phía tây bắc giáp Cam-pu-chia và phía đông nam giáp Biển Đông (khu vực Bà Rịa - Vũng Tàu, TP.HCM).",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 10,
+    "question": "Nước ta nằm ở khu vực nào sau đây?",
+    "options": [
+      "A. Tây Nam Á.",
+      "B. Đông Nam Á.",
+      "C. Đông Bắc Á.",
+      "D. Trung Á."
+    ],
+    "correct": 1,
+    "explain": "Việt Nam thuộc khu vực Đông Nam Á, nằm ở rìa phía đông của bán đảo Đông Dương.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 11,
+    "question": "Vị trí địa lí nước ta có đặc điểm là",
+    "options": [
+      "A. nằm trong vùng nội chí tuyến bán cầu Nam.",
+      "B. nằm trong khu vực hoạt động của gió mùa châu Á.",
+      "C. nằm ở vị trí trung tâm khu vực Đông Nam Á.",
+      "D. phía bắc giáp với Trung Quốc và Lào."
+    ],
+    "correct": 1,
+    "explain": "Nước ta nằm trong khu vực nội chí tuyến bán cầu Bắc và thuộc khu vực hoạt động của hoàn lưu gió mùa châu Á.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 12,
+    "question": "Chiếm diện tích lớn nhất khu vực đồi núi nước ta là đất",
+    "options": [
+      "A. feralit.",
+      "B. phù sa.",
+      "C. xám phù sa cổ.",
+      "D. mùn thô."
+    ],
+    "correct": 0,
+    "explain": "Quá trình feralit là quá trình hình thành đất đặc trưng của khí hậu nhiệt đới ẩm gió mùa ở vùng đồi núi nước ta, đất feralit chiếm trên 60% diện tích đất tự nhiên cả nước.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 13,
+    "question": "Đặc điểm của thiên nhiên nhiệt đới, ẩm, gió mùa của nước ta là do",
+    "options": [
+      "A. vị trí địa lí, hình dáng lãnh thổ quy định.",
+      "B. ảnh hưởng của gió thổi theo mùa.",
+      "C. sự phân hóa phức tạp của địa hình.",
+      "D. ảnh hưởng của Biển Đông."
+    ],
+    "correct": 0,
+    "explain": "Vị trí địa lí nằm hoàn toàn trong vùng nội chí tuyến bán cầu Bắc, tiếp giáp Biển Đông rộng lớn và nằm trong khu vực gió mùa châu Á quy định tính chất nhiệt đới ẩm gió mùa của thiên nhiên nước ta.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 14,
+    "question": "Sự phân hóa thiên nhiên theo độ cao ở nước ta biểu hiện rõ qua các thành phần",
+    "options": [
+      "A. khí hậu, đất đai, sinh vật.",
+      "B. sông ngòi, đất đai, khí hậu.",
+      "C. sinh vật, đất đai, sông ngòi.",
+      "D. khí hậu, sinh vật, sông ngòi."
+    ],
+    "correct": 0,
+    "explain": "Sự phân hóa thiên nhiên theo đai cao thể hiện rõ rệt nhất qua 3 thành phần tự nhiên là khí hậu, đất đai và hệ sinh vật đặc trưng theo 3 đai cao.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 15,
+    "question": "Nguồn tài nguyên sinh vật dưới nước, đặc biệt là nguồn hải sản bị giảm sút rõ rệt do nguyên nhân chủ yếu nào sau đây?",
+    "options": [
+      "A. Ô nhiễm môi trường nước và khai thác quá mức.",
+      "B. Khai thác quá mức và bùng phát dịch bệnh.",
+      "C. Dịch bệnh và các hiện tượng thời tiết thất thường.",
+      "D. Thời tiết thất thường và khai thác quá mức."
+    ],
+    "correct": 0,
+    "explain": "Nguồn lợi sinh vật biển và thủy hải sản bị suy giảm nghiêm trọng chủ yếu do tình trạng đánh bắt quá mức (tận diệt) và môi trường nước bị ô nhiễm.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 16,
+    "question": "Cho bảng số liệu: Nhiệt độ trung bình năm tại một số địa điểm từ Bắc vào Nam (Lạng Sơn: 21,2°C; Hà Nội: 23,5°C; Huế: 25,1°C; Đà Nẵng: 25,5°C; Quy Nhơn: 26,8°C; TP.HCM: 27,1°C). Nhận xét nào sau đây đúng?",
+    "options": [
+      "A. Nhiệt độ trung bình năm nước ta tăng dần từ Bắc vào Nam.",
+      "B. Biên độ nhiệt năm tăng dần từ Bắc vào Nam.",
+      "C. Nước ta nằm trong vùng nhiệt đới.",
+      "D. Miền Bắc chịu ảnh hưởng của gió mùa Đông Bắc vào mùa đông."
+    ],
+    "correct": 0,
+    "explain": "Căn cứ vào bảng số liệu, nhiệt độ trung bình năm tăng đều đặn từ Bắc vào Nam: Lạng Sơn (21,2°C) lên đến TP. Hồ Chí Minh (27,1°C).",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 17,
+    "question": "Nguyên nhân chủ yếu làm cho biên độ nhiệt trung bình năm ở miền Bắc lớn là do",
+    "options": [
+      "A. Vị trí địa lý và độ cao địa hình.",
+      "B. Địa hình và hoạt động gió mùa.",
+      "C. Vị trí địa lý và hoạt động gió mùa.",
+      "D. Hình dáng lãnh thổ và dải hội tụ nhiệt đới."
+    ],
+    "correct": 2,
+    "explain": "Miền Bắc có biên độ nhiệt trung bình năm lớn do nằm ở vĩ độ cao hơn (gần chí tuyến Bắc) và chịu ảnh hưởng trực tiếp của gió mùa Đông Bắc làm mùa đông hạ nhiệt độ sâu, mùa hè góc nhập xạ lớn nhiệt độ cao.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 18,
+    "question": "Đất feralit ở nước ta thường bị chua vì nguyên nhân chủ yếu nào sau đây?",
+    "options": [
+      "A. Quá trình phong hóa diễn ra mạnh.",
+      "B. Tích tụ ôxít sắt Fe2O3.",
+      "C. Mưa nhiều, rửa trôi các chất bazơ dễ tan.",
+      "D. Tích tụ ôxít nhôm Al2O3."
+    ],
+    "correct": 2,
+    "explain": "Mưa nhiều và tập trung theo mùa làm rửa trôi các chất kiềm bazơ dễ tan (Ca2+, Mg2+, K+) xuống sâu, tích tụ oxit sắt và nhôm làm cho đất feralit có tính chất chua.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 19,
+    "question": "Sự phân hóa thiên nhiên giữa hai khu vực Đông Trường Sơn và Tây Nguyên chủ yếu do",
+    "options": [
+      "A. tác động của gió mùa và hướng của các dãy núi.",
+      "B. độ cao địa hình và ảnh hưởng của biển.",
+      "C. Ảnh hưởng của biển và lớp phủ thực vật.",
+      "D. độ cao địa hình và hướng các dãy núi."
+    ],
+    "correct": 0,
+    "explain": "Sự đối lập giữa mùa mưa và mùa khô giữa Đông Trường Sơn và Tây Nguyên là hệ quả của sự tương tác giữa hoàn lưu gió mùa với bức chắn địa hình dãy núi Trường Sơn.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 20,
+    "question": "Sự đối lập về mùa mưa và mùa khô giữa Đông Trường Sơn và Tây Nguyên chủ yếu là do",
+    "options": [
+      "A. tác động của gió mùa và hướng của các dãy núi.",
+      "B. độ cao địa hình và ảnh hưởng của biển.",
+      "C. Ảnh hưởng của biển và lớp phủ thực vật.",
+      "D. độ cao địa hình và hướng các dãy núi."
+    ],
+    "correct": 0,
+    "explain": "Gió mùa Tây Nam và gió mùa mùa đông kết hợp với hướng chạy bắc - nam của dãy núi Trường Sơn gây nên hiện tượng mưa sườn đón gió và khô nóng ở sườn khuất gió (hiệu ứng phơn).",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 21,
+    "question": "Tài nguyên sinh vật nước ta đang bị suy giảm biểu hiện ở",
+    "options": [
+      "A. số lượng cá thể các loài động vật, thực vật tăng.",
+      "B. số lượng cá thể và loài động vật hoang dã tăng.",
+      "C. hệ sinh thái rừng nguyên sinh chiếm diện tích lớn nhất.",
+      "D. một số loài động vật, thực vật có nguy cơ tuyệt chủng."
+    ],
+    "correct": 3,
+    "explain": "Sự suy giảm đa dạng sinh học biểu hiện rõ qua việc nhiều loài động thực vật quý hiếm bị suy giảm số lượng nghiêm trọng và có nguy cơ tuyệt chủng.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 22,
+    "question": "Căn cứ vào biểu đồ diện tích và tỉ lệ che phủ rừng nước ta giai đoạn 2008 - 2021 (tỉ lệ che phủ từ 38,7% năm 2008 lên 42,0% năm 2021), nhận xét nào sau đây đúng?",
+    "options": [
+      "A. Tổng diện tích rừng nước ta tăng liên tục.",
+      "B. Tỉ lệ che phủ rừng nước ta tăng 3,3% .",
+      "C. Diện tích rừng trồng giảm qua các năm.",
+      "D. Diện tích rừng không đổi qua các năm."
+    ],
+    "correct": 1,
+    "explain": "Tỉ lệ che phủ rừng năm 2021 là 42,0%, năm 2008 là 38,7%. Mức tăng là: 42,0% - 38,7% = 3,3% (3,3 điểm phần trăm).",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 23,
+    "question": "Nguồn tài nguyên sinh vật dưới nước, đặc biệt là nguồn hải sản ven bờ bị suy giảm do",
+    "options": [
+      "A. Ô nhiễm môi trường nước và khai thác quá mức.",
+      "B. Khai thác quá mức và bùng phát dịch bệnh.",
+      "C. Dịch bệnh và các hiện tượng thời tiết thất thường.",
+      "D. Thời tiết thất thường và khai thác quá mức."
+    ],
+    "correct": 0,
+    "explain": "Khai thác quá mức cho phép (đánh bắt hủy diệt ven bờ) và ô nhiễm môi trường nước biển ven bờ là hai nguyên nhân then chốt làm suy giảm hải sản.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 24,
+    "question": "Cho bảng số liệu diện tích rừng nước ta (1943 - 2021): Tổng diện tích rừng (14,3 - 13,4 - 14,7 triệu ha), Rừng trồng (0 - 3,1 - 4,6 triệu ha). Nhận xét nào đúng?",
+    "options": [
+      "A. Tổng diện tích có rừng tăng qua các năm.",
+      "B. Diện tích rừng trồng tăng chậm hơn tổng diện tích có rừng.",
+      "C. Tỉ trọng diện tích rừng trồng tăng liên tục.",
+      "D. Độ che phủ rừng tăng qua các năm."
+    ],
+    "correct": 2,
+    "explain": "Tỉ trọng diện tích rừng trồng trong tổng diện tích rừng tăng liên tục từ 0% (1943) lên 23,1% (2010) và đạt 31,3% (2021).",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 25,
+    "question": "Nguyên nhân nào làm cho sông ngòi nước ta nhiều nước, giàu phù sa?",
+    "options": [
+      "A. Nước ta có mùa mưa kéo dài, mưa lớn.",
+      "B. Mưa nhiều trên triền núi có độ dốc lớn.",
+      "C. Miền núi cao có nhiều cát, đất vụn bở.",
+      "D. Mưa nhiều và đất đai vụn bở dễ bị cuốn trôi."
+    ],
+    "correct": 3,
+    "explain": "Lượng mưa lớn cung cấp nguồn nước dồi dào; mưa nhiều kết hợp địa hình đồi núi dốc, đất phong hóa vụn bở dễ bị xói mòn, rửa trôi tạo nên lượng phù sa lớn cho sông ngòi.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 26,
+    "question": "Cơ cấu lao động có sự chuyển dịch giữa các ngành kinh tế ở nước ta là do tác động của",
+    "options": [
+      "A. quá trình công nghiệp hóa, hiện đại hóa.",
+      "B. chính sách dân số, kế hoạch hóa gia đình.",
+      "C. mạng lưới đô thị ngày càng mở rộng.",
+      "D. tỉ lệ lao động qua đào tạo tăng nhanh."
+    ],
+    "correct": 0,
+    "explain": "Công nghiệp hóa, hiện đại hóa thúc đẩy chuyển dịch cơ cấu kinh tế theo ngành, kéo theo sự chuyển dịch cơ cấu lao động từ nông nghiệp sang công nghiệp và dịch vụ.",
+    "topic": "ĐỊA LÍ DÂN CƯ"
+  },
+  {
+    "id": 27,
+    "question": "Vùng có mật độ dân số cao nhất ở nước ta hiện nay là",
+    "options": [
+      "A. Đông Nam Bộ.",
+      "B. Đồng bằng sông Hồng.",
+      "C. Đồng bằng sông Cửu Long.",
+      "D. Trung du và miền núi Bắc Bộ."
+    ],
+    "correct": 1,
+    "explain": "Đồng bằng sông Hồng có mật độ dân số cao nhất cả nước (trên 1000 người/km²) do lịch sử định cư lâu đời và hoạt động nông nghiệp, kinh tế phát triển.",
+    "topic": "ĐỊA LÍ DÂN CƯ"
+  },
+  {
+    "id": 28,
+    "question": "Dân cư nước ta phân bố",
+    "options": [
+      "A. tương đối đồng đều giữa các khu vực.",
+      "B. chủ yếu ở nông thôn với mật độ cao.",
+      "C. khác nhau giữa các khu vực.",
+      "D. chỉ tập trung ở đồng bằng ven biển."
+    ],
+    "correct": 2,
+    "explain": "Dân cư nước ta phân bố chưa hợp lí, có sự chênh lệch rõ rệt giữa đồng bằng và đồi núi, giữa thành thị và nông thôn.",
+    "topic": "ĐỊA LÍ DÂN CƯ"
+  },
+  {
+    "id": 29,
+    "question": "Xu hướng già hoá của dân số nước ta không có biểu hiện nào sau đây?",
+    "options": [
+      "A. Tỉ lệ người trên 60 tuổi tăng.",
+      "B. Tuổi thọ trung bình tăng.",
+      "C. Tỉ lệ người từ 0 – 14 tuổi tăng.",
+      "D. Tỉ suất gia tăng dân số giảm."
+    ],
+    "correct": 2,
+    "explain": "Già hóa dân số làm tỉ lệ trẻ em (nhóm 0 - 14 tuổi) ngày càng giảm chứ không tăng, trong khi tỉ lệ người già trên 60 tuổi và tuổi thọ trung bình tăng lên.",
+    "topic": "ĐỊA LÍ DÂN CƯ"
+  },
+  {
+    "id": 30,
+    "question": "Nguyên nhân nào sau đây là chủ yếu làm cho mật độ dân số trung bình của Đông Nam Bộ tăng nhiều nhất cả nước trong thời gian gần đây?",
+    "options": [
+      "A. Số người nhập cư tăng nhanh.",
+      "B. Gia tăng dân số tự nhiên cao.",
+      "C. Công nghiệp phát triển mạnh.",
+      "D. Cơ sở hạ tầng phát triển hiện đại."
+    ],
+    "correct": 0,
+    "explain": "Đông Nam Bộ là trung tâm kinh tế năng động, thu hút lực lượng lao động nhập cư từ khắp các vùng trong cả nước đến sinh sống và làm việc.",
+    "topic": "ĐỊA LÍ DÂN CƯ"
+  },
+  {
+    "id": 31,
+    "question": "Biện pháp chủ yếu để giải quyết tình trạng thất nghiệp ở thành thị nước ta hiện nay là",
+    "options": [
+      "A. xây dựng các nhà máy công nghiệp quy mô lớn.",
+      "B. phân bố lại lực lượng lao động trên quy mô cả nước.",
+      "C. hợp tác lao động quốc tế để xuất khẩu lao động.",
+      "D. đẩy mạnh phát triển công nghiệp và dịch vụ ở đô thị."
+    ],
+    "correct": 3,
+    "explain": "Đẩy mạnh phát triển công nghiệp và các ngành dịch vụ tại đô thị là giải pháp chủ yếu tạo ra nhiều việc làm mới, giải quyết tình trạng thất nghiệp.",
+    "topic": "ĐỊA LÍ DÂN CƯ"
+  },
+  {
+    "id": 32,
+    "question": "Để sử dụng có hiệu quả quỹ thời gian lao động dư thừa ở nông thôn, biện pháp tốt nhất là",
+    "options": [
+      "A. khôi phục các nghề thủ công.",
+      "B. tiến hành thâm canh, tăng vụ.",
+      "C. phát triển kinh tế hộ gia đình.",
+      "D. khai hoang mở rộng diện tích."
+    ],
+    "correct": 1,
+    "explain": "Biện pháp tốt nhất và trực tiếp nhất trong nông nghiệp là thâm canh, tăng vụ kết hợp đa dạng hóa nông nghiệp và phát triển ngành nghề phụ truyền thống.",
+    "topic": "ĐỊA LÍ DÂN CƯ"
+  },
+  {
+    "id": 33,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Phát biểu nào sau đây không đúng với đặc điểm của lao động của nước ta?",
+    "options": [
+      "A. Nguồn lao động dồi dào và tăng nhanh.",
+      "B. Đội ngũ công nhân kĩ thuật lành nghề thiếu nhiều.",
+      "C. Chất lượng lao động ngày càng được nâng lên.",
+      "D. Lực lượng lao động có trình độ cao đông đảo."
+    ],
+    "correct": 3,
+    "explain": "Lực lượng lao động có trình độ chuyên môn kĩ thuật cao của nước ta hiện nay vẫn còn mỏng, chưa đáp ứng đầy đủ yêu cầu hiện đại hóa công nghiệp và hội nhập quốc tế, do đó phát biểu 'đông đảo' là không chính xác."
+  },
+  {
+    "id": 34,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Lao động nước ta đang có xu hướng chuyển từ khu vực quốc doanh sang các khu vực khác vì",
+    "options": [
+      "A. Khu vực quốc doanh làm ăn không có hiệu quả.",
+      "B. Kinh tế nước ta đang từng bước chuyển sang cơ chế thị trường.",
+      "C. Tác động của công nghiệp hoá và hiện đại hoá.",
+      "D. Nước ta thực hiện nền kinh tế mở, thu hút đầu tư từ nước ngoài."
+    ],
+    "correct": 1,
+    "explain": "Nước ta chuyển đổi từ nền kinh tế kế hoạch hóa tập trung bao cấp sang nền kinh tế thị trường định hướng XHCN, phát triển đa dạng các thành phần kinh tế (ngoài nhà nước, có vốn đầu tư nước ngoài), tạo nhiều cơ hội việc làm mới ngoài khu vực quốc doanh."
+  },
+  {
+    "id": 35,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Tỉ lệ thời gian lao động được sử dụng ở nông thôn nước ta ngày càng tăng nhờ",
+    "options": [
+      "A. Việc thực hiện công nghiệp hoá nông thôn.",
+      "B. Thanh niên nông thôn đã ra thành thị tìm việc làm.",
+      "C. Chất lượng lao động ở nông thôn đã được nâng lên.",
+      "D. Việc đa dạng hoá cơ cấu kinh tế ở nông thôn."
+    ],
+    "correct": 3,
+    "explain": "Việc đẩy mạnh đa dạng hóa cơ cấu kinh tế nông thôn (phát triển ngành nghề tiểu thủ công nghiệp, làng nghề, chế biến nông sản và dịch vụ) giúp tạo thêm việc làm, tận dụng hiệu quả thời gian nông nhàn giữa các vụ mùa."
+  },
+  {
+    "id": 36,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Tỉ lệ thất nghiệp ở thành thị cao hơn nông thôn vì",
+    "options": [
+      "A. Thành thị đông dân hơn nên lao động cũng dồi dào hơn.",
+      "B. Chất lượng lao động ở thành thị thấp hơn.",
+      "C. Dân nông thôn vào thành thị tìm việc làm.",
+      "D. Đặc trưng hoạt động kinh tế ở thành thị khác nông thôn."
+    ],
+    "correct": 3,
+    "explain": "Kinh tế thành thị chủ yếu là sản xuất công nghiệp và dịch vụ đòi hỏi tuyển dụng theo vị trí chuyên môn, khi người lao động không tìm được việc làm sẽ rơi vào tình trạng thất nghiệp; trong khi kinh tế nông thôn mang tính chất mùa vụ, thời gian rảnh rỗi nhiều dẫn đến thiếu việc làm chứ ít khi thất nghiệp hoàn toàn."
+  },
+  {
+    "id": 37,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Dân cư thành thị nước ta hiện nay",
+    "options": [
+      "A. có tỉ lệ tăng liên tục qua các năm.",
+      "B. tập trung hoàn toàn ở đồng bằng.",
+      "C. chỉ hoạt động trong ngành dịch vụ.",
+      "D. có tỉ trọng lớn trong tổng số dân."
+    ],
+    "correct": 0,
+    "explain": "Cùng với quá trình công nghiệp hóa và hiện đại hóa, tỉ lệ dân cư thành thị của nước ta có xu hướng tăng liên tục qua các năm (từ khoảng 20% năm 1990 lên xấp xỉ 38% hiện nay)."
+  },
+  {
+    "id": 38,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Phát biểu nào sau đây không đúng với đặc điểm đô thị hóa nước ta?",
+    "options": [
+      "A. Đô thị hóa thúc đẩy tăng trưởng kinh tế.",
+      "B. Không gian đô thị ngày càng mở rộng.",
+      "C. Lịch sử hình thành đô thị từ lâu đời.",
+      "D. Tỉ lệ dân thành thị ngày càng tăng."
+    ],
+    "correct": 2,
+    "explain": "Trong các đặc điểm cơ bản của đô thị hóa nước ta theo SGK: Quá trình đô thị hóa diễn ra chậm chạp, trình độ đô thị hóa thấp; tỉ lệ dân thành thị thấp; phân bố đô thị không đều. Tuy mạng lưới đô thị manh nha từ sớm (thành Cổ Loa) nhưng lịch sử phát triển đô thị bị gián đoạn kéo dài, đô thị hóa chỉ thực sự phát triển mạnh trong thời kì Đổi mới."
+  },
+  {
+    "id": 39,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Mạng lưới đô thị của nước ta hiện nay phân bố",
+    "options": [
+      "A. chủ yếu ở đồi núi.",
+      "B. chủ yếu ở phía Tây.",
+      "C. đều giữa các vùng.",
+      "D. chủ yếu ở đồng bằng."
+    ],
+    "correct": 3,
+    "explain": "Mạng lưới đô thị nước ta phân bố không đều giữa các vùng, tập trung với mật độ cao chủ yếu ở các vùng đồng bằng và duyên hải ven biển (Đồng bằng sông Hồng, Đông Nam Bộ, Đồng bằng sông Cửu Long)."
+  },
+  {
+    "id": 40,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Do nằm trong khu vực nội chí tuyến nên Biển Đông có",
+    "options": [
+      "A. các vùng biển nông và giáp Thái Bình Dương, biển ẩm, mưa nhiều.",
+      "B. các dòng biển đổi hướng theo mùa, dải hội tụ và áp thấp nhiệt đới.",
+      "C. độ muối khá cao, nhiều ánh sáng, giàu ôxi, nhiệt độ nước biển cao.",
+      "D. biển kín và rộng, khí hậu nhiệt đới gió mùa, độ muối tương đối lớn."
+    ],
+    "correct": 2,
+    "explain": "Do nằm hoàn toàn trong vùng nội chí tuyến bán cầu Bắc, Biển Đông có nền nhiệt độ nước biển cao quanh năm (trên 25°C), bốc hơi mạnh nên độ muối khá cao (trung bình 32 - 33‰), tầng nước mặt nhận nhiều ánh sáng mặt trời và giàu oxy."
+  },
+  {
+    "id": 41,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Do lãnh thổ trải dài theo chiều vĩ tuyến nên Việt Nam",
+    "options": [
+      "A. khác nhau về tự nhiên hai phía tây và đông.",
+      "B. thiên nhiên có sự phân hoá theo bắc - nam.",
+      "C. chịu ảnh hưởng mạnh của các loại gió mùa.",
+      "D. chịu ảnh hưởng của khí hậu vùng xích đạo."
+    ],
+    "correct": 1,
+    "explain": "Lãnh thổ nước ta trải dài gần 15 độ vĩ tuyến (từ 8°34'B đến 23°23'B) làm cho góc nhập xạ và bức xạ mặt trời giảm dần từ Nam ra Bắc, kết hợp tác động của gió mùa Đông Bắc suy yếu dần về phía Nam dẫn đến sự phân hóa thiên nhiên theo chiều Bắc - Nam."
+  },
+  {
+    "id": 42,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Phát biểu nào sau đây không đúng về vị trí địa lí của Việt Nam?",
+    "options": [
+      "A. Nằm gần nơi giao nhau của các vành đai sinh khoáng lớn.",
+      "B. Ở trong vùng xích đạo và lãnh thổ kéo dài theo chiều vĩ tuyến.",
+      "C. Nằm hoàn toàn trong vùng nội chí tuyến của bán cầu Bắc.",
+      "D. Ở gần trung tâm Đông Nam Á và tiếp giáp với Biển Đông."
+    ],
+    "correct": 1,
+    "explain": "Việt Nam nằm hoàn toàn trong vùng nội chí tuyến bán cầu Bắc (khoảng từ 8°34'B đến 23°23'B), chứ không nằm ở trong vùng xích đạo (xích đạo nằm ở vĩ độ 0°)."
+  },
+  {
+    "id": 43,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Quần đảo Hoàng Sa thuộc tỉnh (thành phố) nào sau đây?",
+    "options": [
+      "A. Quảng Ngãi.",
+      "B. Đà Nẵng.",
+      "C. Khánh Hòa.",
+      "D. Quảng Nam."
+    ],
+    "correct": 1,
+    "explain": "Huyện đảo Hoàng Sa trực thuộc thành phố Đà Nẵng. Huyện đảo Trường Sa trực thuộc tỉnh Khánh Hòa."
+  },
+  {
+    "id": 44,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Nội thủy là vùng biển",
+    "options": [
+      "A. liền kề vùng biển quốc tế.",
+      "B. nằm ở phía ngoài lãnh hải.",
+      "C. ở phía trong đường cơ sở.",
+      "D. có chiều rộng là 12 hải lý."
+    ],
+    "correct": 2,
+    "explain": "Nội thủy là vùng nước tiếp giáp với bờ biển, nằm ở phía trong đường cơ sở. Tại nội thủy, quốc gia ven biển có chủ quyền hoàn toàn, tuyệt đối như trên lãnh thổ đất liền."
+  },
+  {
+    "id": 45,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Việt Nam nằm ở",
+    "options": [
+      "A. phía bắc của Đông Nam Á.",
+      "B. phía đông của lục địa Á - Âu.",
+      "C. trung tâm của Đông Dương.",
+      "D. phía đông nam của châu Á."
+    ],
+    "correct": 3,
+    "explain": "Vị trí địa lí của Việt Nam nằm ở phía Đông Nam châu Á, thuộc bán đảo Đông Dương, ven bờ biển Thái Bình Dương."
+  },
+  {
+    "id": 46,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Thuận lợi của vị trí địa lí nước ta đối với phát triển kinh tế không phải là",
+    "options": [
+      "A. có nét tương đồng lịch sử, văn hoá với các nước.",
+      "B. án ngữ trên tuyến đường hàng không quốc tế.",
+      "C. nằm trong khu vực kinh tế phát triển năng động.",
+      "D. ở vị trí trung chuyển tuyến hàng hải quốc tế."
+    ],
+    "correct": 0,
+    "explain": "Nét tương đồng về lịch sử, văn hóa và xã hội với các nước trong khu vực là thuận lợi về mặt văn hóa - xã hội và giao lưu ngoại giao, không phải là ý nghĩa trực tiếp đối với phát triển kinh tế."
+  },
+  {
+    "id": 47,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Do tiếp giáp với Biển Đông nên Việt Nam có",
+    "options": [
+      "A. nhiều bão, lũ lụt, hạn hán, động đất.",
+      "B. tài nguyên khoáng sản rất đa dạng.",
+      "C. thảm thực vật xanh tốt quanh năm.",
+      "D. tự nhiên phân hoá theo bắc - nam."
+    ],
+    "correct": 2,
+    "explain": "Nhờ Biển Đông mang lại nguồn ẩm dồi dào và lượng mưa phong phú, thảm thực vật của nước ta luôn xanh tốt quanh năm và giàu sức sống, khác hẳn với các vùng đất cùng vĩ độ ở Tây Á hay Bắc Phi."
+  },
+  {
+    "id": 48,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Lãnh hải là",
+    "options": [
+      "A. vùng nước sâu ở khoảng 200 m hoặc hơn nữa.",
+      "B. vùng biển rộng 200 hải lý tính từ đường cơ sở.",
+      "C. vùng biển thuộc chủ quyền quốc gia trên biển.",
+      "D. vùng được xem như bộ phận lãnh thổ đất liền."
+    ],
+    "correct": 2,
+    "explain": "Lãnh hải là vùng biển thuộc chủ quyền quốc gia trên biển, có chiều rộng 12 hải lí tính từ đường cơ sở. Ranh giới ngoài của lãnh hải chính là đường biên giới quốc gia trên biển."
+  },
+  {
+    "id": 49,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Vùng đất của nước ta gồm",
+    "options": [
+      "A. vùng đồi núi, đồng bằng và bán đảo.",
+      "B. phần đất liền và các quần đảo xa bờ.",
+      "C. các quần đảo, bãi ngầm và đảo ven bờ.",
+      "D. toàn bộ phần lục địa (đất liền) và các đảo."
+    ],
+    "correct": 3,
+    "explain": "Vùng đất của nước ta gồm toàn bộ phần đất liền (lục địa) và các hải đảo trên biển với tổng diện tích tự nhiên là hơn 331 nghìn km²."
+  },
+  {
+    "id": 50,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Phần lớn đường biên giới trên đất liền của nước ta nằm ở khu vực",
+    "options": [
+      "A. ven biển.",
+      "B. cao nguyên.",
+      "C. đồng bằng.",
+      "D. miền núi."
+    ],
+    "correct": 3,
+    "explain": "Đường biên giới trên đất liền của nước ta dài hơn 4600 km, phần lớn chạy qua các vùng núi cao, hiểm trở, đi theo các sống núi, đỉnh núi hoặc đường phân thủy tự nhiên."
+  },
+  {
+    "id": 51,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Mùa mưa ở Tây Nguyên bắt đầu do tác động chủ yếu của gió",
+    "options": [
+      "A. Mậu dịch ở chí tuyến bán cầu Bắc thổi đến.",
+      "B. Đông Bắc có nguồn gốc từ cao áp Xibia.",
+      "C. Tây Nam từ áp cao chí tuyến bán cầu Nam.",
+      "D. Tây Nam áp cao Bắc Ấn Độ Dương đến."
+    ],
+    "correct": 3,
+    "explain": "Vào đầu mùa hạ, khối khí nhiệt đới ẩm Bắc Ấn Độ Dương di chuyển theo hướng tây nam xâm nhập trực tiếp vào nước ta, gây mưa lớn cho đồng bằng Nam Bộ và Tây Nguyên, mở đầu mùa mưa tại khu vực này."
+  },
+  {
+    "id": 52,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Vào giữa và cuối mùa hạ, Tây Nguyên có mưa nhiều chủ yếu do tác động của",
+    "options": [
+      "A. Tín phong bán cầu Bắc.",
+      "B. Gió mùa Đông Bắc.",
+      "C. Gió Tây Nam từ vịnh Bengal đến.",
+      "D. Gió mùa Tây Nam từ bán cầu Nam."
+    ],
+    "correct": 3,
+    "explain": "Vào giữa và cuối mùa hạ, gió mùa Tây Nam xuất phát từ áp cao cận chí tuyến bán cầu Nam vượt qua vùng biển xích đạo trở nên nóng ẩm, gây mưa lớn và kéo dài cho Nam Bộ và Tây Nguyên."
+  },
+  {
+    "id": 53,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Tính chất nhiệt đới ẩm gió mùa của đất ở nước ta biểu hiện chủ yếu là",
+    "options": [
+      "A. Độ dày đất lớn nhưng dễ bị xói mòn, rửa trôi và thường nghèo mùn.",
+      "B. Quá trình feralit hình thành đất là chủ đạo, đất feralit là chủ yếu.",
+      "C. Quá trình tích tụ ôxít sắt, ôxít nhôm là chủ yếu, đất đá ong phổ biến.",
+      "D. Đất feralit có chủ yếu ở đồi núi và đất phù sa chủ yếu ở đồng bằng."
+    ],
+    "correct": 1,
+    "explain": "Quá trình feralit là quá trình hình thành đất đặc trưng cho khí hậu nhiệt đới ẩm gió mùa: quá trình phong hóa diễn ra mạnh, các chất bazơ dễ tan bị rửa trôi, tích tụ oxit sắt và oxit nhôm tạo nên loại đất feralit đỏ vàng chiếm hơn 65% diện tích đất tự nhiên."
+  },
+  {
+    "id": 54,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Nguồn gốc của gió Đông Nam từ biển thổi vào đồng bằng sông Hồng vào giữa và cuối mùa hạ là khối khí từ áp cao",
+    "options": [
+      "A. Siberia.",
+      "B. Tây Thái Bình Dương.",
+      "C. Chí tuyến Nam bán cầu.",
+      "D. Bắc Ấn Độ Dương."
+    ],
+    "correct": 2,
+    "explain": "Gió mùa Tây Nam (có nguồn gốc từ cao áp chí tuyến Nam bán cầu) vượt qua xích đạo, khi thổi đến Bắc Bộ bị hút về tâm áp thấp Bắc Bộ theo hướng đông nam, thổi từ biển vào đồng bằng sông Hồng."
+  },
+  {
+    "id": 55,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Biểu hiện của tính chất nhiệt đới ẩm khí hậu nước ta là:",
+    "options": [
+      "A. cân bằng bức xạ dương, tổng số giờ nắng lớn.",
+      "B. nhiệt độ trung bình năm cao, lượng mưa lớn.",
+      "C. nhiệt độ trung bình cao, độ ẩm không khí lớn.",
+      "D. gió mùa hoạt động, cân bằng ẩm luôn dương."
+    ],
+    "correct": 1,
+    "explain": "Tính chất nhiệt đới thể hiện ở nền nhiệt độ trung bình năm cao trên toàn quốc (trên 20°C, trừ vùng núi cao), còn tính chất ẩm thể hiện ở tổng lượng mưa năm rất lớn (1500 - 2000 mm) và độ ẩm không khí cao trên 80%."
+  },
+  {
+    "id": 56,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Thuận lợi của khí hậu nhiệt đới ẩm gió mùa đối với sản xuất nông nghiệp nước ta chủ yếu là",
+    "options": [
+      "A. Phát triển nông nghiệp nhiệt đới, sản xuất quanh năm, đa dạng cơ cấu nông sản.",
+      "B. Đa dạng hóa cây trồng và vật nuôi, nuôi trồng thủy sản, tạo điều kiện để tăng vụ.",
+      "C. Phát triển cây trồng nhiệt đới, tăng cường đánh bắt thủy sản, cung cấp nước tưới.",
+      "D. Cung cấp nước tưới, phát triển đánh bắt và nuôi trồng thủy sản, cải tạo đất trồng."
+    ],
+    "correct": 0,
+    "explain": "Khí hậu nhiệt đới ẩm dồi dào nhiệt và nước cho phép cây trồng vật nuôi sinh trưởng quanh năm, thâm canh tăng vụ, đồng thời sự phân hóa khí hậu giúp phát triển đa dạng hóa cơ cấu sản phẩm nông nghiệp nhiệt đới, cận nhiệt và ôn đới."
+  },
+  {
+    "id": 57,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Nguyên nhân chủ yếu gây mưa vào mùa hạ trên cả nước ta là",
+    "options": [
+      "A. Gió mùa Tây Nam, dải hội tụ nhiệt đới và bão.",
+      "B. Gió mùa Tây Nam, áp thấp nhiệt đới.",
+      "C. Tín phong bán cầu Bắc và dải hội tụ nhiệt đới.",
+      "D. Gió Tây Nam Bắc Ấn Độ Dương đến, bão."
+    ],
+    "correct": 0,
+    "explain": "Vào mùa hạ, lượng mưa trên cả nước chủ yếu do hoạt động của gió mùa Tây Nam kết hợp chặt chẽ với dải hội tụ nhiệt đới (FIT) chạy ngang qua lãnh thổ và các xoáy thuận nhiệt đới (bão, áp thấp nhiệt đới)."
+  },
+  {
+    "id": 58,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Biểu hiện của khí hậu nhiệt đới ẩm gió mùa ở nước ta là",
+    "options": [
+      "A. Độ ẩm tương đối của không khí cao, số giờ nắng nhiều.",
+      "B. Lượng bức xạ mặt trời lớn, nhiệt độ trung bình năm cao.",
+      "C. Có sự hoạt động của gió Mậu dịch và các loại gió mùa.",
+      "D. Cán cân bức xạ quanh năm dương, lượng mưa khá lớn."
+    ],
+    "correct": 1,
+    "explain": "Tính chất nhiệt đới thể hiện qua tổng lượng bức xạ mặt trời rất lớn (trên 130 kcal/cm²/năm) và cán cân bức xạ luôn dương quanh năm, nền nhiệt trung bình năm cao vượt chuẩn vùng nhiệt đới."
+  },
+  {
+    "id": 59,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Đặc điểm nào sau đây đúng với tính chất ẩm của khí hậu nước ta?",
+    "options": [
+      "A. Tổng lượng mưa trong năm lớn.",
+      "B. Cân bằng ẩm trong năm luôn âm.",
+      "C. Độ tương đối của không khí thấp.",
+      "D. Lượng bốc hơi lớn hơn lượng mưa."
+    ],
+    "correct": 0,
+    "explain": "Tính chất ẩm của khí hậu nước ta thể hiện ở tổng lượng mưa trung bình năm rất lớn (1500 - 2000 mm, một số sườn đón gió đạt trên 3000 mm/năm), cân bằng ẩm luôn dương và độ ẩm không khí trên 80%."
+  },
+  {
+    "id": 60,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Tính thất thường của thời tiết nước ta gây ra các khó khăn chủ yếu về",
+    "options": [
+      "A. Các loại dịch bệnh, bảo dưỡng máy móc, bảo quản nông sản.",
+      "B. Thiên tai, dịch bệnh, gây các thiệt hại cho đời sống nhân dân.",
+      "C. Hoạt động canh tác, kế hoạch mùa vụ, phòng chống thiên tai.",
+      "D. Cơ cấu mùa vụ, gián đoạn hoạt động giao thông, thâm canh."
+    ],
+    "correct": 2,
+    "explain": "Sự diễn biến thất thường của thời tiết (năm rét sớm năm rét muộn, hạn hán kéo dài, mưa bão trái mùa) gây khó khăn lớn nhất cho việc lên kế hoạch mùa vụ canh tác nông nghiệp và công tác dự báo phòng chống thiên tai."
+  },
+  {
+    "id": 61,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Đặc điểm thiên nhiên đai nhiệt đới gió mùa ở nước ta là:",
+    "options": [
+      "A. Nhiệt độ trung bình năm dưới 15°C, đất mùn thô, nhiều loài cây ôn đới.",
+      "B. Có khí hậu mát mẻ, đất feralit có mùn và đất mùn, rừng cận nhiệt đới.",
+      "C. Nhiệt độ trung bình các tháng dưới 25°C, đất mùn, sinh vật phong phú.",
+      "D. Nền nhiệt độ cao, đất chủ yếu là feralit và rừng nhiệt đới ẩm."
+    ],
+    "correct": 3,
+    "explain": "Đai nhiệt đới gió mùa chân núi (dưới 600 - 700m ở miền Bắc và dưới 900 - 1000m ở miền Nam) có nền nhiệt cao, mùa hạ nóng >25°C, đất feralit vùng đồi núi thấp và phù sa đồng bằng, hệ sinh thái rừng nhiệt đới ẩm lá rộng thường xanh phát triển mạnh."
+  },
+  {
+    "id": 62,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Nhân tố chủ yếu tạo ra sự đối lập về chế độ mưa giữa Đông Trường Sơn và Tây Nguyên là",
+    "options": [
+      "A. Gió mùa và độ cao dãy núi Trường Sơn Nam.",
+      "B. Các loại gió trong năm kết hợp hướng núi.",
+      "C. Biển Đông kết hợp với các loại gió theo mùa.",
+      "D. Vị trí địa lí và hoạt động của gió trong năm."
+    ],
+    "correct": 1,
+    "explain": "Sự đối lập mùa mưa và mùa khô giữa Đông Trường Sơn và Tây Nguyên được hình thành do bức chắn địa hình của dãy Trường Sơn kết hợp với các luồng gió hướng tây nam vào mùa hạ (Tây Nguyên mưa lớn, Đông Trường Sơn khô nóng) và gió hướng đông bắc vào mùa đông (Đông Trường Sơn mưa lớn, Tây Nguyên vào mùa khô)."
+  },
+  {
+    "id": 63,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Đặc điểm thiên nhiên đai cận nhiệt đới gió mùa trên núi ở nước ta là:",
+    "options": [
+      "A. Nhiệt độ trung bình năm dưới 15°C, đất mùn thô, nhiều loài cây ôn đới.",
+      "B. Có khí hậu mát mẻ, đất feralit có mùn và đất mùn, sinh vật cận nhiệt đới.",
+      "C. Nhiệt độ trung bình các tháng dưới 25°C, đất mùn, sinh vật phong phú.",
+      "D. Nền nhiệt độ cao, đất chủ yếu là feralit và phù sa, rừng nhiệt đới ẩm."
+    ],
+    "correct": 1,
+    "explain": "Đai cận nhiệt đới gió mùa trên núi (từ 600 - 700m lên đến 2600m) có khí hậu mát mẻ, nhiệt độ các tháng đều dưới 25°C, đất feralit có mùn và đất mùn trên núi, xuất hiện các loài sinh vật cận nhiệt như thông, dẻ, re, chim thú cận nhiệt."
+  },
+  {
+    "id": 64,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Nguyên nhân chủ yếu làm phân hoá thiên nhiên nước ta theo chiều bắc - nam là",
+    "options": [
+      "A. Gió mùa mùa hạ và độ cao các dãy núi.",
+      "B. Hoạt động của gió trong năm và vị trí.",
+      "C. Gió mùa kết hợp với hướng các dãy núi.",
+      "D. Gió mùa mùa đông và hướng các dãy núi."
+    ],
+    "correct": 2,
+    "explain": "Nguyên nhân chủ yếu là do lãnh thổ trải dài theo vĩ tuyến kết hợp hoạt động của gió mùa Đông Bắc suy yếu dần khi di chuyển về phía Nam do bị chặn lại bởi bức chắn địa hình của dãy Bạch Mã."
+  },
+  {
+    "id": 65,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Đặc điểm nào sau đây đúng với tính chất ẩm của khí hậu nước ta?",
+    "options": [
+      "A. Cân bằng ẩm trong năm luôn âm.",
+      "B. Độ tương đối của không khí thấp.",
+      "C. Lượng bốc hơi lớn hơn lượng mưa.",
+      "D. Tổng lượng mưa trong năm lớn."
+    ],
+    "correct": 3,
+    "explain": "Đặc điểm cơ bản của tính chất ẩm là tổng lượng mưa trung bình năm lớn (1500 - 2000 mm) và độ ẩm không khí tương đối cao trên 80%."
+  },
+  {
+    "id": 66,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Lao động nước ta hiện nay",
+    "options": [
+      "A. có tỉ lệ thất nghiệp còn cao.",
+      "B. phân bố đều khắp các vùng.",
+      "C. ở cố định, không di chuyển.",
+      "D. có sự phân bố không đồng đều giữa các vùng."
+    ],
+    "correct": 3,
+    "explain": "Nguồn lao động nước ta phân bố không đều giữa các vùng: tập trung rất đông đúc ở đồng bằng ven biển (chiếm khoảng 75% lao động), trong khi vùng trung du miền núi giàu tài nguyên lại thiếu hụt lao động."
+  },
+  {
+    "id": 67,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Phát biểu nào sau đây không đúng về vấn đề việc làm ở nước ta hiện nay?",
+    "options": [
+      "A. Là một vấn đề kinh tế - xã hội lớn cần quan tâm.",
+      "B. Tỉ lệ thất nghiệp ở nông thôn lớn hơn ở thành thị.",
+      "C. Thất nghiệp, thiếu việc làm vẫn đang còn gay gắt.",
+      "D. Tỉ lệ thiếu việc làm ở nông thôn lớn hơn thành thị."
+    ],
+    "correct": 1,
+    "explain": "Ở nước ta hiện nay, tỉ lệ thất nghiệp ở thành thị cao hơn nông thôn, còn tỉ lệ thiếu việc làm ở nông thôn lại cao hơn ở khu vực thành thị. Do đó phát biểu 'Tỉ lệ thất nghiệp ở nông thôn lớn hơn ở thành thị' là sai."
+  },
+  {
+    "id": 68,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Lao động nước ta phân bố không đều giữa các vùng gây khó khăn chủ yếu cho",
+    "options": [
+      "A. đẩy mạnh sự chuyển dịch cơ cấu kinh tế.",
+      "B. phát huy tiềm năng tự nhiên, tạo thu nhập.",
+      "C. sử dụng hợp lí tài nguyên, tạo ra việc làm.",
+      "D. chuyển dịch cơ cấu lao động theo lãnh thổ."
+    ],
+    "correct": 2,
+    "explain": "Sự phân bố lao động không đều (đồng bằng thừa lao động thiếu tài nguyên, miền núi thừa tài nguyên thiếu lao động) gây trở ngại lớn cho việc khai thác hợp lí tiềm năng tài nguyên thiên nhiên của từng vùng và giải quyết việc làm cho người lao động."
+  },
+  {
+    "id": 69,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Tỉ lệ lao động thiếu việc làm ở nông thôn nước ta còn cao chủ yếu do",
+    "options": [
+      "A. hoạt động trồng trọt, sản xuất theo thời vụ.",
+      "B. lao động đông, đất đai tài nguyên có hạn.",
+      "C. kinh tế hạn chế, ngành nghề chưa đa dạng.",
+      "D. dân số đông, mức sinh nhiều nơi còn cao."
+    ],
+    "correct": 0,
+    "explain": "Kinh tế nông thôn phụ thuộc lớn vào sản xuất nông nghiệp mang tính chất mùa vụ, khoảng thời gian nông nhàn giữa các đợt gieo trồng và thu hoạch là nguyên nhân chính dẫn đến tình trạng thiếu việc làm cao."
+  },
+  {
+    "id": 70,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Tỉ lệ lao động thất nghiệp ở thành thị nước ta vẫn còn cao chủ yếu do",
+    "options": [
+      "A. lao động tăng, số chưa qua đào tạo nhiều.",
+      "B. hoạt động dịch vụ chưa phát triển đa dạng.",
+      "C. lao động ở nhiều vùng nông thôn nhập cư.",
+      "D. mật độ dân cao, kinh tế phát triển hạn chế."
+    ],
+    "correct": 2,
+    "explain": "Dòng người lao động di cư từ khu vực nông thôn đổ dồn về các đô thị để tìm kiếm việc làm trong khi các ngành kinh tế đô thị chưa tạo thêm đủ vị trí việc làm mới, dẫn đến tỉ lệ thất nghiệp tại thành thị duy trì ở mức cao."
+  },
+  {
+    "id": 71,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Vùng biển nước ta - Ý a]: Vùng biển nước ta có nhiều thuận lợi cho phát triển du lịch biển đảo.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Với hơn 4000 hòn đảo lớn nhỏ, nhiều bãi biển đẹp và khí hậu nhiệt đới nắng ấm quanh năm, nước ta có tiềm năng vô cùng to lớn để phát triển du lịch biển đảo."
+  },
+  {
+    "id": 72,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Vùng biển nước ta - Ý b]: Dầu khí là loại khoáng sản có giá trị kinh tế nhất ở vùng biển.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Dầu mỏ và khí đốt ở thềm lục địa phía Nam là tài nguyên khoáng sản có giá trị kinh tế cao nhất và đóng góp tỉ trọng lớn nhất cho kinh tế biển của nước ta."
+  },
+  {
+    "id": 73,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Vùng biển nước ta - Ý c]: Bắc Trung Bộ là vùng có điều kiện thuận lợi nhất để xây dựng cảng nước sâu.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Vùng Duyên hải Nam Trung Bộ mới là vùng có điều kiện tự nhiên thuận lợi nhất để xây dựng cảng nước sâu (bờ biển khúc khuỷu, nhiều vũng vịnh kín gió, thềm lục địa hẹp và sâu)."
+  },
+  {
+    "id": 74,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Vùng biển nước ta - Ý d]: Một trong những giải pháp quan trọng để khai thác nguồn lợi hải sản là đánh bắt xa bờ.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Đẩy mạnh đánh bắt xa bờ giúp bảo vệ nguồn lợi thủy sản ven bờ đang cạn kiệt, nâng cao hiệu quả kinh tế và khẳng định chủ quyền biển đảo thiêng liêng của Tổ quốc."
+  },
+  {
+    "id": 75,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Phạm vi lãnh thổ - Ý a]: Biên giới trên đất liền nước ta tiếp giáp với bốn quốc gia.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Trên đất liền nước ta chỉ tiếp giáp với 3 quốc gia là Trung Quốc, Lào và Cam-pu-chia."
+  },
+  {
+    "id": 76,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Phạm vi lãnh thổ - Ý b]: Việt Nam nằm hoàn toàn trong vùng nội chí tuyến Bắc bán cầu.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Điểm cực Nam ở 8°34'B và cực Bắc ở 23°23'B đều nằm giữa xích đạo và chí tuyến Bắc (23°27'B), tức hoàn toàn trong vùng nội chí tuyến bán cầu Bắc."
+  },
+  {
+    "id": 77,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Phạm vi lãnh thổ - Ý c]: Nước ta nằm hoàn toàn ở bán cầu Đông.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Kinh độ nước ta từ 102°09'Đ đến 109°28'Đ (đất liền) và đến 117°20'Đ (vùng biển), đều nằm ở bán cầu Đông."
+  },
+  {
+    "id": 78,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Phạm vi lãnh thổ - Ý d]: Thiên nhiên nước ta chịu ảnh hưởng sâu sắc của biển.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Do tiếp giáp Biển Đông rộng lớn với bờ biển dài 3260 km, các khối khí qua biển mang lượng ẩm dồi dào khiến thiên nhiên nước ta mang tính chất hải dương sâu sắc."
+  },
+  {
+    "id": 79,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tọa độ địa lí - Ý a]: Nước ta nằm hoàn toàn ở nửa cầu Bắc.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Toàn bộ phần đất liền và vùng biển nước ta có vĩ độ từ 6°50'B đến 23°23'B, hoàn toàn ở nửa cầu Bắc."
+  },
+  {
+    "id": 80,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tọa độ địa lí - Ý b]: Lãnh thổ phần đất liền nước ta kéo dài trên 17 vĩ độ.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Phần đất liền từ 8°34'B đến 23°23'B kéo dài khoảng 14°49' vĩ độ (chưa tới 15 vĩ độ), không phải trên 17 vĩ độ."
+  },
+  {
+    "id": 81,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tọa độ địa lí - Ý c]: Vị trí địa lí tạo thuận lợi cho nước ta phát triển tổng hợp kinh tế biển.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Vùng biển rộng khoảng 1 triệu km² với tài nguyên phong phú tạo điều kiện phát triển toàn diện 4 ngành kinh tế biển: thủy sản, du lịch, giao thông vận tải và khai thác khoáng sản dầu khí."
+  },
+  {
+    "id": 82,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tọa độ địa lí - Ý d]: Vị trí địa lí và hình dáng lãnh thổ đã làm sông ngòi nước ta phần lớn sông nhỏ, nhiều nước, thủy chế theo mùa.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Lãnh thổ kéo dài và hẹp ngang, địa hình dốc ra biển khiến mạng lưới sông ngắn, nhỏ; lượng mưa lớn làm sông nhiều nước và chế độ nước biến động theo mùa mưa - khô của khí hậu."
+  },
+  {
+    "id": 83,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "Căn cứ vào sơ đồ khái quát các vùng biển Việt Nam, nhận định nào sau đây là đúng?",
+    "options": [
+      "A. Vùng biển nước ta bao gồm: Nội thủy, lãnh hải, vùng tiếp giáp lãnh hải và vùng đặc quyền kinh tế.",
+      "B. Vùng biển rộng 200 hải lí tính từ đường cơ sở ra phía đông hợp với lãnh hải là vùng đặc quyền kinh tế.",
+      "C. Vai trò chính của đường cơ sở là phân tách vùng nội thủy và vùng lãnh hải.",
+      "D. Trong vùng đặc quyền kinh tế nước ta, các quốc gia khác có quyền tự do thăm dò và khai thác tài nguyên."
+    ],
+    "correct": 1,
+    "explain": "Vùng đặc quyền kinh tế là vùng biển tiếp liền và nằm ngoài lãnh hải, hợp với lãnh hải thành một vùng biển có chiều rộng 200 hải lí tính từ đường cơ sở. Nước ta có chủ quyền hoàn toàn về kinh tế tại vùng này."
+  },
+  {
+    "id": 84,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Lượng mưa Đà Nẵng - Ý a]: Tháng có lượng mưa lớn nhất là tháng 9.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Tháng 9 có lượng mưa đạt 800,4 mm, là tháng có lượng mưa cao nhất trong năm 2021 tại trạm Đà Nẵng."
+  },
+  {
+    "id": 85,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Lượng mưa Đà Nẵng - Ý b]: Mùa mưa kéo dài từ tháng 1 đến tháng 5.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Từ tháng 1 đến tháng 5 lượng mưa rất thấp (tháng 5 chỉ có 2,1 mm), đây là các tháng mùa khô. Mùa mưa tại Đà Nẵng tập trung từ tháng 9 đến tháng 12."
+  },
+  {
+    "id": 86,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Lượng mưa Đà Nẵng - Ý c]: Lượng mưa trung bình năm của Đà Nẵng là 2492,1 mm.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tổng lượng mưa 12 tháng năm 2021 của trạm Đà Nẵng là: 34,7 + 32,1 + 14,6 + 21,4 + 2,1 + 38,5 + 12,5 + 93,5 + 800,4 + 782,8 + 271,0 + 485,8 = 2589,4 mm (khác với 2492,1 mm)."
+  },
+  {
+    "id": 87,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Lượng mưa Đà Nẵng - Ý d]: Lượng mưa lớn vào thu đông chủ yếu do hoạt động của gió mùa và dải hội tụ nhiệt đới.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Lượng mưa cực đại vào thu đông ở Duyên hải miền Trung (Đà Nẵng) là do gió mùa Đông Bắc thổi qua biển gặp địa hình dãy Trường Sơn chắn gió, kết hợp với dải hội tụ nhiệt đới và bão."
+  },
+  {
+    "id": 88,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Gió mùa Đông Bắc - Ý a]: Nửa đầu mùa đông, miền Bắc có thời tiết lạnh ẩm.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Nửa đầu mùa đông (từ tháng 11 đến tháng 1), miền Bắc có thời tiết lạnh khô; nửa sau mùa đông (từ tháng 2 đến tháng 4) mới chuyển sang thời tiết lạnh ẩm có mưa phùn."
+  },
+  {
+    "id": 89,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Gió mùa Đông Bắc - Ý b]: Gió mùa Đông Bắc tác động yếu đến miền Nam do ảnh hưởng của dãy Bạch Mã.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Gió mùa Đông Bắc bị chặn lại hầu như hoàn toàn tại bức chắn địa hình dãy Bạch Mã (16°B), do đó miền Nam hầu như không chịu ảnh hưởng của gió mùa Đông Bắc mà chịu sự thống trị của Tín phong bán cầu Bắc."
+  },
+  {
+    "id": 90,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Gió mùa Đông Bắc - Ý c]: Gió mùa Đông Bắc là nguyên nhân chính tạo nên mùa khô ở Nam Bộ và Tây Nguyên.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tín phong bán cầu Bắc (thổi theo hướng đông bắc mang tính chất khô ráo) mới là nguyên nhân chính tạo nên mùa khô sâu sắc kéo dài ở Nam Bộ và Tây Nguyên."
+  },
+  {
+    "id": 91,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Gió mùa Đông Bắc - Ý d]: Gió mùa Đông Bắc di chuyển quãng đường dài trên lục địa, gây nên thời tiết lạnh khô vào đầu mùa Đông ở miền Bắc.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Vào nửa đầu mùa đông, khối khí cực đới lục địa xuất phát từ cao áp Xibia di chuyển qua lục địa châu Á rộng lớn nên bị biến tính lạnh khô, gây thời tiết hanh khô rét buốt ở miền Bắc."
+  },
+  {
+    "id": 92,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Khí hậu Hà Nội và Cần Thơ - Ý a]: Hà Nội có biên độ nhiệt nhỏ hơn Cần Thơ.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Hà Nội ở miền Bắc có mùa đông lạnh nên biên độ nhiệt năm rất lớn (khoảng 12 - 13°C), trong khi Cần Thơ ở miền Nam nóng quanh năm nên biên độ nhiệt năm rất nhỏ (khoảng 2 - 3°C)."
+  },
+  {
+    "id": 93,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Khí hậu Hà Nội và Cần Thơ - Ý b]: Cần Thơ có mùa khô sâu sắc hơn Hà Nội.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Tại Cần Thơ, trong các tháng mùa khô (tháng 1, 2, 3), lượng mưa chỉ vài mm, mùa khô rất gay gắt; trong khi ở Hà Nội mùa đông vẫn có mưa nhỏ và mưa phùn vào nửa cuối mùa."
+  },
+  {
+    "id": 94,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Khí hậu Hà Nội và Cần Thơ - Ý c]: Hà Nội có một số tháng nhiệt độ dưới 20°C là do ảnh hưởng của gió Tín phong bán cầu Bắc.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Nhiệt độ mùa đông Hà Nội hạ thấp xuống dưới 20°C (có tháng dưới 18°C) là do tác động trực tiếp của các đợt gió mùa Đông Bắc từ lục địa phương Bắc tràn về, không phải do Tín phong."
+  },
+  {
+    "id": 95,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Khí hậu Hà Nội và Cần Thơ - Ý d]: Hà Nội có mùa khô ít sâu sắc hơn là do ảnh hưởng của gió mùa Đông Bắc vào cuối mùa đông.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Vào nửa sau mùa đông, khối khí áp cao Xibia lệch đông di chuyển qua biển vào nước ta, mang theo hơi ẩm gây mưa phùn và độ ẩm cao, làm cho mùa khô ở miền Bắc không sâu sắc như miền Nam."
+  },
+  {
+    "id": 96,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Đai cao chân núi - Ý a]: Độ cao dưới 600 - 700m (Bắc) và dưới 900 - 1000m (Nam) là đặc điểm của đai cận nhiệt đới gió mùa.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Đây là giới hạn độ cao của đai nhiệt đới gió mùa chân núi. Đai cận nhiệt đới gió mùa trên núi nằm ở độ cao từ 600 - 700m (hoặc 900 - 1000m) lên đến 2600m."
+  },
+  {
+    "id": 97,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Đai cao chân núi - Ý b]: Đai nhiệt đới chân núi có hệ sinh thái rừng ôn đới chiếm ưu thế.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tại đai nhiệt đới gió mùa, hệ sinh thái đặc trưng chiếm ưu thế là rừng nhiệt đới ẩm lá rộng thường xanh và rừng nhiệt đới gió mùa, không phải rừng ôn đới."
+  },
+  {
+    "id": 98,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Đai cao chân núi - Ý c]: Mùa hạ nóng do ảnh hưởng vị trí địa lí và hoạt động của gió mùa hạ.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Vị trí nội chí tuyến có góc nhập xạ lớn kết hợp với khối khí nhiệt đới ẩm Tây Nam hoạt động mạnh vào mùa hạ làm cho nền nhiệt mùa hạ luôn ở mức cao trên 25°C."
+  },
+  {
+    "id": 99,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Đai cao chân núi - Ý d]: Đất feralit chiếm ưu thế do tác động chủ yếu của yếu tố địa hình và khí hậu.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Khí hậu nhiệt đới ẩm nóng mưa nhiều kết hợp với địa hình đồi núi thấp làm cho quá trình phong hóa feralit diễn ra mạnh mẽ, tạo nên lớp đất feralit dày chiếm ưu thế."
+  },
+  {
+    "id": 100,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Hoàng Liên Sơn & Phan-xi-păng - Ý a]: Thiên nhiên dãy núi Hoàng Liên Sơn có 2 đai cao.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Với độ cao đỉnh 3143m, dãy Hoàng Liên Sơn là nơi duy nhất ở Việt Nam có đầy đủ cả 3 đai cao: đai nhiệt đới gió mùa chân núi, đai cận nhiệt đới gió mùa trên núi và đai ôn đới gió mùa trên núi (trên 2600m)."
+  },
+  {
+    "id": 101,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Hoàng Liên Sơn & Phan-xi-păng - Ý b]: Càng lên cao nhiệt độ càng giảm, tính nhiệt đới tăng dần.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Theo quy luật đai cao, càng lên cao nhiệt độ càng giảm nên tính nhiệt đới giảm dần, thay vào đó tính cận nhiệt đới và ôn đới tăng dần."
+  },
+  {
+    "id": 102,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Hoàng Liên Sơn & Phan-xi-păng - Ý c]: Đai cao từ 700m đến 2600m có khí hậu mang tính chất cận nhiệt đới gió mùa.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Từ 600 - 700m đến 2600m là đai cận nhiệt đới gió mùa trên núi, mùa hạ mát mẻ, nhiệt độ dưới 25°C, có nhiều loài cây lá kim và hạt trần cận nhiệt."
+  },
+  {
+    "id": 103,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Hoàng Liên Sơn & Phan-xi-păng - Ý d]: Thiên nhiên nước ta phân hóa theo độ cao do địa hình đồi núi và gió.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Nguyên nhân trực tiếp làm thiên nhiên phân hóa theo độ cao là sự suy giảm nhiệt độ (trung bình cứ lên cao 100m nhiệt độ giảm 0,6°C) và sự thay đổi độ ẩm theo độ cao địa hình."
+  },
+  {
+    "id": 104,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Môi trường - Ý a]: Ô nhiễm không khí diễn ra chủ yếu tại các thành phố lớn, đông dân.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Các đô thị lớn (như Hà Nội, TP.HCM) có mật độ giao thông dày đặc, tập trung nhiều công trình xây dựng và nhà máy nên mức độ ô nhiễm bụi mịn và khí thải rất nghiêm trọng."
+  },
+  {
+    "id": 105,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Môi trường - Ý b]: Khí thải từ hoạt động công nghiệp và sinh hoạt là nguyên nhân chủ yếu gây ô nhiễm không khí.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Khí thải phát tán từ phương tiện giao thông, nhà máy nhiệt điện, xí nghiệp công nghiệp và đun nấu sinh hoạt là các nguồn phát thải ô nhiễm không khí hàng đầu."
+  },
+  {
+    "id": 106,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Môi trường - Ý c]: Sự gia tăng nguồn nước thải từ các ngành kinh tế và nước thải sinh hoạt là những nguyên nhân trực tiếp gây ô nhiễm nguồn nước.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Nước thải công nghiệp, nông nghiệp (dư lượng phân bón, thuốc bảo vệ thực vật) và nước thải sinh hoạt chưa qua xử lí xả trực tiếp ra sông hồ là nguyên nhân trực tiếp gây ô nhiễm nguồn nước mặt."
+  },
+  {
+    "id": 107,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Môi trường - Ý d]: Tăng cường sử dụng nguồn năng lượng hoá thạch góp phần giảm tình trạng ô nhiễm không khí.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Đốt nhiên liệu hóa thạch (than đá, dầu mỏ, khí đốt) thải ra lượng lớn khí nhà kính và bụi độc hại. Để giảm ô nhiễm cần chuyển dịch sang năng lượng tái tạo (điện gió, điện mặt trời, sinh khối)."
+  },
+  {
+    "id": 108,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Diện tích rừng - Ý a]: Tổng diện tích rừng nước ta tăng liên tục qua các năm (1943 - 2021).",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tổng diện tích rừng giảm từ 14,3 triệu ha (1943) xuống 13,4 triệu ha (2010), sau đó mới tăng lên 14,7 triệu ha (2021), do đó không tăng liên tục."
+  },
+  {
+    "id": 109,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Diện tích rừng - Ý b]: Diện tích rừng nước ta chủ yếu là rừng tự nhiên.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Năm 2021, diện tích rừng tự nhiên là 10,1 triệu ha, chiếm tới 68,7% trong tổng số 14,7 triệu ha rừng cả nước."
+  },
+  {
+    "id": 110,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Diện tích rừng - Ý c]: Diện tích rừng nước ta tăng chủ yếu là do tăng diện tích rừng trồng.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Rừng trồng tăng từ 0 triệu ha (1943) lên 3,1 triệu ha (2010) và 4,6 triệu ha (2021), trong khi rừng tự nhiên suy giảm từ 14,3 triệu ha xuống 10,1 triệu ha."
+  },
+  {
+    "id": 111,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Diện tích rừng - Ý d]: Mặc dù tổng diện tích rừng tăng nhưng chất lượng rừng vẫn thấp do diện tích rừng nghèo, mới phục hồi.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Dù diện tích rừng đã phục hồi đạt 14,7 triệu ha, nhưng phần lớn là rừng non mới trồng và rừng nghèo, diện tích rừng giàu nguyên sinh còn rất ít, chất lượng và độ đa dạng sinh học còn thấp."
+  },
+  {
+    "id": 112,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Đa dạng sinh học - Ý a]: Giai đoạn 1943-1973, chiến tranh là một trong những nguyên nhân làm suy giảm diện tích rừng ở nước ta.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Trong chiến tranh, bom đạn và chất độc hóa học (dioxin) đã hủy diệt hơn 2 triệu ha rừng, làm suy giảm nghiêm trọng độ che phủ rừng và đa dạng sinh thái."
+  },
+  {
+    "id": 113,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Đa dạng sinh học - Ý b]: Diện tích rừng suy giảm không ảnh hưởng đến sự đa dạng sinh học.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Rừng là môi trường sống và nơi cư trú của phần lớn các loài động thực vật hoang dã. Khi rừng bị thu hẹp hoặc phân mảnh, các loài mất nơi cư trú và thức ăn, đẩy nhiều loài đến bờ vực tuyệt chủng."
+  },
+  {
+    "id": 114,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Đa dạng sinh học - Ý c]: Nguyên nhân suy giảm sự đa dạng sinh học bao gồm cả các yếu tố tự nhiên và kinh tế xã hội.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Suy giảm đa dạng sinh học do cả thiên tai biến đổi khí hậu (yếu tố tự nhiên) và khai thác quá mức, phá rừng, mở rộng đất canh tác, ô nhiễm môi trường (yếu tố kinh tế - xã hội)."
+  },
+  {
+    "id": 115,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Đa dạng sinh học - Ý d]: Thực hiện các giải pháp giảm nhẹ biến đổi khí hậu góp phần bảo vệ sự đa dạng sinh học.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Biến đổi khí hậu làm thay đổi môi trường sống và thời tiết cực đoan. Giảm thiểu biến đổi khí hậu giúp bảo tồn sinh cảnh tự nhiên và ổn định hệ sinh thái."
+  },
+  {
+    "id": 116,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tuổi thọ & Cơ cấu nhóm tuổi - Ý a]: Tỉ trọng dân số nhóm từ 0 – 14 tuổi ngày càng tăng.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Nhóm 0 - 14 tuổi giảm liên tục từ 24,5% (2009) xuống 24,3% (2019) và 24,1% (2021) do mức sinh giảm."
+  },
+  {
+    "id": 117,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tuổi thọ & Cơ cấu nhóm tuổi - Ý b]: Nước ta có nguồn lao động dồi dào và ngày càng tăng nhanh.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tỉ trọng nhóm tuổi lao động (15 - 64 tuổi) có xu hướng giảm từ 69,1% (2009) xuống 67,6% (2021), tốc độ tăng nguồn lao động đang có xu hướng chậm lại."
+  },
+  {
+    "id": 118,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tuổi thọ & Cơ cấu nhóm tuổi - Ý c]: Tỉ trọng nhóm từ 65 tuổi trở lên ngày càng tăng do kinh tế phát triển, điều kiện sống và dịch vụ y tế được cải thiện.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Nhóm từ 65 tuổi trở lên tăng nhanh từ 6,4% lên 8,3% nhờ sự tiến bộ của y tế và chất lượng cuộc sống nâng cao giúp kéo dài tuổi thọ người dân."
+  },
+  {
+    "id": 119,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tuổi thọ & Cơ cấu nhóm tuổi - Ý d]: Dân số nước ta ngày càng già hóa do tỉ suất sinh và tỉ suất tử ngày càng giảm, tuổi thọ trung bình ngày càng tăng.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Tỉ suất sinh thấp, tỉ lệ tử vong giảm và tuổi thọ bình quân tăng lên 73,6 tuổi là các nguyên nhân cốt lõi khiến nước ta bước vào thời kì già hóa dân số nhanh."
+  },
+  {
+    "id": 120,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Lao động việc làm 2022 - Ý a]: Tỉ lệ thất nghiệp giữa thành thị và nông thôn bằng nhau.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tỉ lệ thất nghiệp khu vực thành thị là 2,82%, cao hơn đáng kể so với khu vực nông thôn là 2,04%."
+  },
+  {
+    "id": 121,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Lao động việc làm 2022 - Ý b]: Tỉ lệ thiếu việc làm ở nông thôn cao hơn thành thị.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Tỉ lệ thiếu việc làm ở nông thôn là 2,52%, cao hơn khu vực thành thị (1,71%)."
+  },
+  {
+    "id": 122,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Lao động việc làm 2022 - Ý c]: Ở nông thôn, tỉ lệ thất nghiệp thấp hơn tỉ lệ thiếu việc làm do đặc điểm của hoạt động sản xuất.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Sản xuất nông nghiệp mang tính chất mùa vụ cao nên lúc nông nhàn người nông dân thiếu việc làm (2,52%) nhiều hơn là thất nghiệp hoàn toàn (2,04%)."
+  },
+  {
+    "id": 123,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Lao động việc làm 2022 - Ý d]: Biểu đồ tròn là dạng biểu đồ thích hợp nhất thể hiện tỉ lệ thiếu việc làm phân theo khu vực thành thị và nông thôn năm 2022.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tỉ lệ thiếu việc làm (%) ở hai khu vực là hai chỉ số độc lập, không cấu thành tổng thể 100%, do đó biểu đồ cột (hoặc cột đơn so sánh) mới là biểu đồ thích hợp nhất."
+  },
+  {
+    "id": 124,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "Căn cứ vào bảng số liệu Cơ cấu dân số theo nhóm tuổi ở nước ta giai đoạn 1999 – 2021, nhận xét nào sau đây là đúng?",
+    "options": [
+      "A. Tỉ lệ nhóm tuổi 0 - 14 tuổi tăng liên tục.",
+      "B. Tỉ lệ nhóm tuổi từ 65 trở lên tăng và luôn chiếm tỉ lệ thấp nhất.",
+      "C. Nước ta có cơ cấu dân số già ngay từ năm 1999.",
+      "D. Tỉ lệ nhóm tuổi 15 - 64 tuổi giảm liên tục từ năm 1999 đến 2021."
+    ],
+    "correct": 1,
+    "explain": "Theo bảng số liệu: Nhóm từ 65 tuổi trở lên tăng liên tục từ 5,8% (1999) lên 6,4% (2009), 7,7% (2019) và 8,3% (2021), đồng thời luôn là nhóm chiếm tỉ trọng thấp nhất trong cả 3 nhóm tuổi."
+  },
+  {
+    "id": 125,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Dân số năm 2022 - Ý a]: Dân số trung bình của cả nước tăng.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Dân số cả nước ước tính 99,46 triệu người, tăng 957,3 nghìn người (tương đương tăng 0,97%) so với năm 2021."
+  },
+  {
+    "id": 126,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Dân số năm 2022 - Ý b]: Nước ta có sự mất cân bằng giới tính khi sinh.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Tỷ số giới tính khi sinh là 111,6 bé trai/100 bé gái, vượt xa mức cân bằng sinh học tự nhiên (104 - 106 trai/100 gái)."
+  },
+  {
+    "id": 127,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Dân số năm 2022 - Ý c]: Số dân ở nông thôn vẫn còn nhiều do quá trình công nghiệp hóa chưa mạnh.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Dân số nông thôn vẫn chiếm tỉ trọng lớn (62,4%) do quá trình công nghiệp hóa, hiện đại hóa và đô thị hóa ở nước ta diễn ra tương đối chậm."
+  },
+  {
+    "id": 128,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Dân số năm 2022 - Ý d]: Dân số của nước ta đông làm giảm tốc độ tăng trưởng kinh tế.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Dân số đông tạo ra nguồn lao động dồi dào và thị trường tiêu thụ nội địa rộng lớn, thúc đẩy tăng trưởng kinh tế nếu được đào tạo và sử dụng hợp lí."
+  },
+  {
+    "id": 129,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tỉ lệ thất nghiệp 2019-2022 - Ý a]: Tỷ lệ thất nghiệp của cả nước năm 2022 so với 2019 giảm.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Năm 2019 tỉ lệ thất nghiệp cả nước là 2,19%, năm 2022 là 2,34% (tăng 0,15%)."
+  },
+  {
+    "id": 130,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tỉ lệ thất nghiệp 2019-2022 - Ý b]: Tỷ lệ thất nghiệp thành thị luôn cao hơn nông thôn.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Qua cả 3 năm (2019: 3,10% > 1,74%; 2021: 4,33% > 2,50%; 2022: 2,82% > 2,04%), tỉ lệ thất nghiệp thành thị luôn cao hơn nông thôn."
+  },
+  {
+    "id": 131,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tỉ lệ thất nghiệp 2019-2022 - Ý c]: Tỷ lệ thất nghiệp năm 2019 – 2021 tăng do tác động của dịch Covid.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Đại dịch Covid-19 làm đứt gãy chuỗi cung ứng, đình trệ sản xuất kinh doanh khiến tỉ lệ thất nghiệp năm 2021 tăng vọt lên 3,20%."
+  },
+  {
+    "id": 132,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tỉ lệ thất nghiệp 2019-2022 - Ý d]: Thất nghiệp ở thành thị biến động mạnh hơn nông thôn do sự khác nhau về quy mô dân số.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Thất nghiệp ở thành thị biến động mạnh hơn chủ yếu do đặc điểm cơ cấu ngành kinh tế thành thị gắn liền với dịch vụ và công nghiệp nhạy cảm với khủng hoảng thị trường, không phải do quy mô dân số."
+  },
+  {
+    "id": 133,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Trình độ lao động - Ý a]: Tỉ lệ lao động có việc làm đã qua đào tạo có xu hướng giảm.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tỉ lệ lao động đã qua đào tạo tăng mạnh từ 14,6% (2010) lên 26,2% (2021)."
+  },
+  {
+    "id": 134,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Trình độ lao động - Ý b]: Tỉ lệ lao động có việc làm chưa qua đào tạo có xu hướng tăng.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tỉ lệ lao động chưa qua đào tạo giảm từ 85,4% (2010) xuống 73,8% (2021)."
+  },
+  {
+    "id": 135,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Trình độ lao động - Ý c]: Chất lượng lao động ngày càng tăng phù hợp với yêu cầu hiện đại hoá đất nước.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Tỉ lệ lao động qua đào tạo tăng lên giúp nâng cao năng suất lao động, đáp ứng tốt hơn yêu cầu của quá trình công nghiệp hóa, hiện đại hóa."
+  },
+  {
+    "id": 136,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Trình độ lao động - Ý d]: Lao động chưa qua đào tạo chiếm tỉ lệ lớn do nước ta có xuất phát điểm nền kinh tế thấp.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Do xuất phát điểm là nền nông nghiệp lạc hậu, hệ thống đào tạo nghề phát triển muộn nên phần lớn người lao động chưa có bằng cấp chứng chỉ chuyên môn kĩ thuật."
+  },
+  {
+    "id": 137,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Quy mô & Gia tăng dân số - Ý a]: Quy mô dân số nước ta giảm liên tục qua các năm (1999 - 2021).",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Quy mô dân số tăng liên tục từ 76,5 triệu người (1999) lên 86,0 triệu người (2009), 96,5 triệu người (2019) và 98,5 triệu người (2021)."
+  },
+  {
+    "id": 138,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Quy mô & Gia tăng dân số - Ý b]: Tỉ lệ gia tăng dân số thấp nhất năm 2021.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Tỉ lệ gia tăng dân số năm 2021 đạt 0,94%, là mức thấp nhất so với các năm 1999 (1,51%), 2009 (1,06%) và 2019 (1,15%)."
+  },
+  {
+    "id": 139,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Quy mô & Gia tăng dân số - Ý c]: Tỉ lệ gia tăng dân số giảm, quy mô dân số tăng do dân số đông, số người trong độ tuổi sinh đẻ ít.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Nước ta có cơ cấu dân số vàng nên số phụ nữ trong độ tuổi sinh đẻ rất đông đảo (chứ không phải ít), quy mô dân số tăng mỗi năm gần 1 triệu người do quy mô dân số ban đầu rất lớn."
+  },
+  {
+    "id": 140,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Quy mô & Gia tăng dân số - Ý d]: Biểu đồ kết hợp là dạng biểu đồ thích hợp nhất thể hiện quy mô dân số và tỉ lệ gia tăng dân số nước ta giai đoạn 1999-2021.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Biểu đồ kết hợp (cột thể hiện quy mô dân số theo đơn vị triệu người, đường thể hiện tỉ lệ gia tăng dân số theo đơn vị %) là dạng biểu đồ chuẩn và thích hợp nhất."
+  },
+  {
+    "id": 141,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Cho bảng số liệu nhiệt độ trung bình tháng tại Hà Nội năm 2022: T1: 18,6°C; T2: 15,3°C; T3: 23,1°C; T4: 24,8°C; T5: 26,8°C; T6: 31,4°C; T7: 30,6°C; T8: 29,9°C; T9: 29,0°C; T10: 26,2°C; T11: 26,0°C; T12: 17,8°C. Tính biên độ nhiệt năm tại Hà Nội (làm tròn kết quả đến 1 chữ số thập phân của °C).",
+    "options": [
+      "A. 16,1°C",
+      "B. 15,3°C",
+      "C. 31,4°C",
+      "D. 12,8°C"
+    ],
+    "correct": 0,
+    "explain": "Công thức: Biên độ nhiệt năm = T_max - T_min. Trong đó tháng có nhiệt độ cao nhất là tháng 6 (31,4°C), tháng thấp nhất là tháng 2 (15,3°C). Biên độ nhiệt năm = 31,4 - 15,3 = 16,1°C."
+  },
+  {
+    "id": 142,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Cho bảng số liệu nhiệt độ không khí trung bình tháng của trạm quan trắc A: các tháng dao động từ 26,6°C đến 28,7°C (nhiệt độ tất cả các tháng đều >26°C, biên độ nhiệt năm 2,1°C). Trạm quan trắc A thuộc miền khí hậu nào của nước ta?",
+    "options": [
+      "A. Miền khí hậu phía Nam (Nam Bộ)",
+      "B. Miền khí hậu phía Bắc",
+      "C. Miền khí hậu Trung và Nam Bắc Bộ",
+      "D. Miền khí hậu Bắc Trung Bộ"
+    ],
+    "correct": 0,
+    "explain": "Trạm A có nền nhiệt cao quanh năm, không có tháng nào dưới 25°C, biên độ nhiệt năm rất nhỏ (2,1°C). Đây là đặc trưng tiêu biểu của khí hậu cận xích đạo gió mùa thuộc Miền khí hậu phía Nam (Nam Bộ và Tây Nguyên)."
+  },
+  {
+    "id": 143,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Nhiệt độ trung bình 12 tháng tại Hà Nội năm 2021 lần lượt là: 16,9; 20,9; 22,5; 25,6; 29,7; 31,6; 30,8; 30,5; 28,7; 24,6; 22,5; 19,4 (°C). Tính nhiệt độ trung bình năm tại Hà Nội năm 2021 (làm tròn đến hàng đơn vị °C).",
+    "options": [
+      "A. 25°C",
+      "B. 26°C",
+      "C. 24°C",
+      "D. 23°C"
+    ],
+    "correct": 0,
+    "explain": "Tổng nhiệt độ 12 tháng = 16,9 + 20,9 + 22,5 + 25,6 + 29,7 + 31,6 + 30,8 + 30,5 + 28,7 + 24,6 + 22,5 + 19,4 = 303,7°C. Nhiệt độ trung bình năm = 303,7 / 12 ≈ 25,31°C ≈ 25°C."
+  },
+  {
+    "id": 144,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Năm 2021, diện tích rừng nước ta là 148 nghìn km² và diện tích tự nhiên là 331 nghìn km². Hãy cho biết độ che phủ rừng của nước ta năm 2021 là bao nhiêu % (làm tròn đến số thập phân thứ nhất)?",
+    "options": [
+      "A. 44,7%",
+      "B. 42,0%",
+      "C. 45,2%",
+      "D. 39,5%"
+    ],
+    "correct": 0,
+    "explain": "Công thức: Độ che phủ rừng = (Diện tích rừng / Diện tích tự nhiên) × 100% = (148 / 331) × 100% ≈ 44,713% ≈ 44,7%."
+  },
+  {
+    "id": 145,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Tổng diện tích rừng của nước ta năm 2021 là 14,8 triệu ha. Trong đó, diện tích rừng tự nhiên là 10,2 triệu ha. Tính tỉ lệ diện tích rừng tự nhiên trong tổng diện tích rừng (làm tròn đến 1 chữ số thập phân của %)?",
+    "options": [
+      "A. 68,9%",
+      "B. 31,1%",
+      "C. 65,4%",
+      "D. 70,2%"
+    ],
+    "correct": 0,
+    "explain": "Công thức: Tỉ lệ rừng tự nhiên = (10,2 / 14,8) × 100% ≈ 68,919% ≈ 68,9%."
+  },
+  {
+    "id": 146,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Năm 2021, diện tích tự nhiên nước ta là 331 134,5 km², trong đó diện tích rừng là 14 790,1 nghìn ha. Cho biết độ che phủ rừng là bao nhiêu phần trăm (làm tròn đến 1 chữ số thập phân)?",
+    "options": [
+      "A. 44,7%",
+      "B. 46,2%",
+      "C. 42,5%",
+      "D. 43,8%"
+    ],
+    "correct": 0,
+    "explain": "Đổi đơn vị: 14 790,1 nghìn ha = 14 790 100 ha = 147 901 km² (do 1 km² = 100 ha). Độ che phủ rừng = (147 901 / 331 134,5) × 100% ≈ 44,665% ≈ 44,7%."
+  },
+  {
+    "id": 147,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Biết tổng diện tích rừng nước ta năm 2021 là 14,7 triệu ha, diện tích rừng tự nhiên là 10,1 triệu ha. Cho biết tỉ lệ diện tích rừng tự nhiên trong tổng diện tích rừng cả nước là bao nhiêu phần trăm (làm tròn đến 1 chữ số thập phân)?",
+    "options": [
+      "A. 68,7%",
+      "B. 69,5%",
+      "C. 31,3%",
+      "D. 67,2%"
+    ],
+    "correct": 0,
+    "explain": "Công thức: Tỉ lệ = (10,1 / 14,7) × 100% ≈ 68,707% ≈ 68,7%."
+  },
+  {
+    "id": 148,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Năm 2021, tổng diện tích rừng của nước ta là 148.000 km², diện tích tự nhiên là 331.000 km². Tính độ che phủ rừng của nước ta năm 2021 (làm tròn đến số thập phân thứ nhất)?",
+    "options": [
+      "A. 44,7%",
+      "B. 43,5%",
+      "C. 45,0%",
+      "D. 41,8%"
+    ],
+    "correct": 0,
+    "explain": "Độ che phủ rừng = (148.000 / 331.000) × 100% ≈ 44,71% ≈ 44,7%."
+  },
+  {
+    "id": 149,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Quy mô dân số nước ta năm 2021 là 98 504,4 nghìn người, trong đó dân thành thị là 36 563,3 nghìn người. Vậy tỉ lệ dân nông thôn năm 2021 của nước ta là bao nhiêu phần trăm (làm tròn đến số thập phân thứ nhất)?",
+    "options": [
+      "A. 62,9%",
+      "B. 37,1%",
+      "C. 63,5%",
+      "D. 61,8%"
+    ],
+    "correct": 0,
+    "explain": "Dân số nông thôn = 98 504,4 - 36 563,3 = 61 941,1 nghìn người. Tỉ lệ dân nông thôn = (61 941,1 / 98 504,4) × 100% ≈ 62,88% ≈ 62,9%."
+  },
+  {
+    "id": 150,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Tính đến 31/12/2023, dân số Việt Nam ước tính là 99 186 471 người, có 1 418 890 trẻ sinh ra và 681 157 người chết. Vậy tỉ suất gia tăng dân số tự nhiên của Việt Nam năm 2023 là bao nhiêu phần trăm (làm tròn đến 2 chữ số thập phân)?",
+    "options": [
+      "A. 0,74%",
+      "B. 0,95%",
+      "C. 1,43%",
+      "D. 0,68%"
+    ],
+    "correct": 0,
+    "explain": "Gia tăng dân số tự nhiên = Số sinh - Số chết = 1 418 890 - 681 157 = 737 733 người. Tỉ suất gia tăng tự nhiên = (737 733 / 99 186 471) × 100% ≈ 0,74378% ≈ 0,74%."
+  },
+  {
+    "id": 151,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Năm 2022, thành phố Cần Thơ có diện tích là 1 440,4 km², dân số 1 252,35 nghìn người. Vậy mật độ dân số trung bình ở thành phố Cần Thơ là bao nhiêu người/km² (làm tròn thành số nguyên)?",
+    "options": [
+      "A. 869 người/km²",
+      "B. 870 người/km²",
+      "C. 850 người/km²",
+      "D. 912 người/km²"
+    ],
+    "correct": 0,
+    "explain": "Đổi dân số: 1 252,35 nghìn người = 1 252 350 người. Mật độ dân số = Dân số / Diện tích = 1 252 350 / 1 440,4 ≈ 869,45 người/km² ≈ 869 người/km²."
+  },
+  {
+    "id": 152,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Quy mô dân số nước ta năm 2021 là 98 506,19 nghìn người, số người lao động thực tế là 49 072,00 nghìn người. Tỉ lệ lao động trong tổng số dân của nước ta chiếm bao nhiêu phần trăm (làm tròn đến 1 chữ số thập phân)?",
+    "options": [
+      "A. 49,8%",
+      "B. 51,2%",
+      "C. 48,5%",
+      "D. 50,0%"
+    ],
+    "correct": 0,
+    "explain": "Tỉ lệ lao động = (Số người lao động / Tổng dân số) × 100% = (49 072,00 / 98 506,19) × 100% ≈ 49,816% ≈ 49,8%."
+  },
+  {
+    "id": 153,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Năm 2022, quy mô dân số vùng Bắc Trung Bộ và Duyên hải miền Trung là 20 661,7 nghìn người; diện tích là 95 847,9 km². Vậy mật độ dân số của vùng là bao nhiêu người/km² (làm tròn thành số nguyên)?",
+    "options": [
+      "A. 216 người/km²",
+      "B. 215 người/km²",
+      "C. 220 người/km²",
+      "D. 198 người/km²"
+    ],
+    "correct": 0,
+    "explain": "Dân số = 20 661 700 người. Mật độ dân số = 20 661 700 / 95 847,9 ≈ 215,567 người/km² ≈ 216 người/km²."
+  },
+  {
+    "id": 154,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Năm 2022, tổng số lao động nước ta là 50 604,7 nghìn người, số lao động trong khu vực Công nghiệp, xây dựng là 24 442,0 nghìn người. Vậy tỉ trọng lao động của khu vực công nghiệp, xây dựng chiếm bao nhiêu phần trăm (làm tròn đến 1 chữ số thập phân)?",
+    "options": [
+      "A. 48,3%",
+      "B. 47,5%",
+      "C. 49,1%",
+      "D. 51,2%"
+    ],
+    "correct": 0,
+    "explain": "Tỉ trọng lao động = (24 442,0 / 50 604,7) × 100% ≈ 48,299% ≈ 48,3%."
+  },
+  {
+    "id": 155,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Dân số nước ta năm 1990 là 66,9 triệu người và năm 2021 là 98,5 triệu người. Hãy cho biết dân số năm 2021 tăng bao nhiêu triệu người so với năm 1990 (làm tròn đến 1 chữ số thập phân)?",
+    "options": [
+      "A. 31,6 triệu người",
+      "B. 32,4 triệu người",
+      "C. 30,8 triệu người",
+      "D. 29,5 triệu người"
+    ],
+    "correct": 0,
+    "explain": "Số dân tăng thêm = Dân số 2021 - Dân số 1990 = 98,5 - 66,9 = 31,6 triệu người."
+  },
+  {
+    "id": 156,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Biết diện tích tự nhiên của Việt Nam là 0,331212 triệu km², số dân năm 2022 là 99,47 triệu người. Vậy mật độ dân số nước ta năm 2022 là bao nhiêu người/km² (làm tròn đến hàng đơn vị)?",
+    "options": [
+      "A. 300 người/km²",
+      "B. 298 người/km²",
+      "C. 305 người/km²",
+      "D. 289 người/km²"
+    ],
+    "correct": 0,
+    "explain": "Mật độ dân số = Dân số / Diện tích = 99,47 / 0,331212 ≈ 300,32 người/km² ≈ 300 người/km²."
+  },
+  {
+    "id": 157,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Nước ta có 54 dân tộc, trong đó người Kinh là 82,9 triệu người, các dân tộc khác là 13,18 triệu người. Tính tỉ trọng người Kinh và các dân tộc thiểu số trong tổng dân số (làm tròn đến 2 chữ số thập phân)?",
+    "options": [
+      "A. 86,28% và 13,72%",
+      "B. 85,50% và 14,50%",
+      "C. 87,10% và 12,90%",
+      "D. 84,20% và 15,80%"
+    ],
+    "correct": 0,
+    "explain": "Tổng dân số = 82,9 + 13,18 = 96,08 triệu người. Tỉ trọng người Kinh = (82,9 / 96,08) × 100% ≈ 86,282% ≈ 86,28%. Tỉ trọng các dân tộc khác = 100% - 86,28% = 13,72%."
+  },
+  {
+    "id": 158,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Năm 2021, quy mô dân số nước ta là 95,8 triệu người; tỉ lệ dân thành thị là 38,2%. Vậy số dân thành thị nước ta là bao nhiêu triệu người (làm tròn đến 1 chữ số thập phân)?",
+    "options": [
+      "A. 36,6 triệu người",
+      "B. 37,2 triệu người",
+      "C. 35,8 triệu người",
+      "D. 38,0 triệu người"
+    ],
+    "correct": 0,
+    "explain": "Số dân thành thị = 95,8 × 38,2% = 36,5956 triệu người ≈ 36,6 triệu người."
+  },
+  {
+    "id": 159,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Năm 2021, dân số thành thị của nước ta là 36,6 triệu người và dân số nông thôn là 61,9 triệu người. Vậy tỉ lệ dân nông thôn của nước ta năm 2021 là bao nhiêu phần trăm (làm tròn đến 1 chữ số thập phân)?",
+    "options": [
+      "A. 62,8%",
+      "B. 63,5%",
+      "C. 37,2%",
+      "D. 61,9%"
+    ],
+    "correct": 0,
+    "explain": "Tổng dân số = 36,6 + 61,9 = 98,5 triệu người. Tỉ lệ dân nông thôn = (61,9 / 98,5) × 100% ≈ 62,84% ≈ 62,8%."
+  }
+];
+
+const geoTuNhien = [
+  {
+    "id": 1,
+    "question": "Vị trí nằm hoàn toàn trong vùng nội chí tuyến nên nước ta có",
+    "options": [
+      "A. lượng mưa lớn.",
+      "B. nền nhiệt độ cao.",
+      "C. khí hậu mát mẻ.",
+      "D. nhiều sông lớn."
+    ],
+    "correct": 1,
+    "explain": "Do nằm hoàn toàn trong vùng nội chí tuyến bán cầu Bắc nên nước ta nhận được lượng bức xạ Mặt Trời lớn, quanh năm có nền nhiệt độ cao (nhiệt độ trung bình năm trên 20°C, trừ vùng núi cao), nhiều nắng.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 2,
+    "question": "Việt Nam tiếp giáp với nước nào sau đây trên đất liền?",
+    "options": [
+      "A. Trung Quốc.",
+      "B. Liên bang Nga.",
+      "C. Nhật Bản.",
+      "D. Ấn Độ."
+    ],
+    "correct": 0,
+    "explain": "Trên đất liền, Việt Nam tiếp giáp với 3 quốc gia: Trung Quốc ở phía Bắc, Lào và Cam-pu-chia ở phía Tây.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 3,
+    "question": "Việt Nam gắn liền với lục địa và đại dương nào sau đây?",
+    "options": [
+      "A. Á – Âu và Bắc Băng Dương.",
+      "B. Á – Âu và Đại Tây Dương.",
+      "C. Á – Âu và Thái Bình Dương.",
+      "D. Á – Âu và Ấn Độ Dương."
+    ],
+    "correct": 2,
+    "explain": "Việt Nam nằm ở rìa phía đông của bán đảo Đông Dương, gắn liền với lục địa Á – Âu và tiếp giáp với Thái Bình Dương (Biển Đông là một biển lớn thuộc Thái Bình Dương).",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 4,
+    "question": "Nước ta có vị trí ở",
+    "options": [
+      "A. bán cầu Nam.",
+      "B. ngoại chí tuyến.",
+      "C. vùng xích đạo.",
+      "D. bán cầu Bắc."
+    ],
+    "correct": 3,
+    "explain": "Lãnh thổ Việt Nam nằm hoàn toàn ở bán cầu Bắc (khoảng từ 8°34'B đến 23°23'B) và hoàn toàn ở bán cầu Đông.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 5,
+    "question": "Nước ta có nhiệt độ trung bình năm cao do",
+    "options": [
+      "A. nằm trong khu vực gió mùa.",
+      "B. nằm ở vùng nội chí tuyến.",
+      "C. tiếp giáp với biển Đông.",
+      "D. có gió Mậu dịch hoạt động."
+    ],
+    "correct": 1,
+    "explain": "Nước ta nằm hoàn toàn trong vùng nội chí tuyến bán cầu Bắc, góc nhập xạ lớn và trong năm có hai lần Mặt Trời lên thiên đỉnh nên nhận lượng bức xạ nhiệt dồi dào, nền nhiệt độ trung bình năm cao.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 6,
+    "question": "Nước ta có chung đường biên giới trên đất liền với quốc gia nào sau đây?",
+    "options": [
+      "A. Trung Quốc.",
+      "B. Thái Lan.",
+      "C. Xin-ga-po.",
+      "D. Phi-lip-pin."
+    ],
+    "correct": 0,
+    "explain": "Nước ta có chung đường biên giới trên đất liền với 3 nước: Trung Quốc, Lào và Cam-pu-chia. Thái Lan, Xin-ga-po và Phi-lip-pin không tiếp giáp đất liền với Việt Nam.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 7,
+    "question": "Đặc điểm nền nhiệt độ trung bình năm cao của nước ta là do nguyên nhân nào?",
+    "options": [
+      "A. nằm trong khu vực gió mùa.",
+      "B. nằm ở vùng nội chí tuyến.",
+      "C. tiếp giáp với biển Đông.",
+      "D. có gió Mậu dịch hoạt động."
+    ],
+    "correct": 1,
+    "explain": "Vị trí nằm trong vùng nội chí tuyến giúp nước ta có góc nhập xạ lớn, quanh năm nhận được lượng nhiệt lớn từ Mặt Trời.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 8,
+    "question": "Vị trí địa lí nước ta có đặc điểm nào sau đây?",
+    "options": [
+      "A. Nằm hoàn toàn ở vùng ngoại chí tuyến Bắc bán cầu.",
+      "B. Thuộc khu vực khí hậu nhiệt đới gió mùa Châu Á.",
+      "C. Nằm trung tâm của khu vực Đông Nam Á.",
+      "D. Nằm ở bờ phía đông của Thái Bình Dương."
+    ],
+    "correct": 1,
+    "explain": "Việt Nam nằm ở rìa đông bán đảo Đông Dương, tiếp giáp Biển Đông và thuộc khu vực khí hậu nhiệt đới gió mùa Châu Á.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 9,
+    "question": "Phát biểu nào sau đây đúng về đặc điểm vị trí địa lí và phạm vi lãnh thổ của vùng Đông Nam Bộ?",
+    "options": [
+      "A. Đông Nam Bộ tiếp giáp vùng Bắc Trung Bộ.",
+      "B. Chỉ giáp các nước trên đất liền, không giáp biển.",
+      "C. Tất cả các tỉnh, thành trong vùng đều giáp biển.",
+      "D. Giáp nước láng giềng Cam-pu-chia và Biển Đông."
+    ],
+    "correct": 3,
+    "explain": "Đông Nam Bộ có đường biên giới phía tây bắc giáp Cam-pu-chia và phía đông nam giáp Biển Đông (khu vực Bà Rịa - Vũng Tàu, TP.HCM).",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 10,
+    "question": "Nước ta nằm ở khu vực nào sau đây?",
+    "options": [
+      "A. Tây Nam Á.",
+      "B. Đông Nam Á.",
+      "C. Đông Bắc Á.",
+      "D. Trung Á."
+    ],
+    "correct": 1,
+    "explain": "Việt Nam thuộc khu vực Đông Nam Á, nằm ở rìa phía đông của bán đảo Đông Dương.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 11,
+    "question": "Vị trí địa lí nước ta có đặc điểm là",
+    "options": [
+      "A. nằm trong vùng nội chí tuyến bán cầu Nam.",
+      "B. nằm trong khu vực hoạt động của gió mùa châu Á.",
+      "C. nằm ở vị trí trung tâm khu vực Đông Nam Á.",
+      "D. phía bắc giáp với Trung Quốc và Lào."
+    ],
+    "correct": 1,
+    "explain": "Nước ta nằm trong khu vực nội chí tuyến bán cầu Bắc và thuộc khu vực hoạt động của hoàn lưu gió mùa châu Á.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 12,
+    "question": "Chiếm diện tích lớn nhất khu vực đồi núi nước ta là đất",
+    "options": [
+      "A. feralit.",
+      "B. phù sa.",
+      "C. xám phù sa cổ.",
+      "D. mùn thô."
+    ],
+    "correct": 0,
+    "explain": "Quá trình feralit là quá trình hình thành đất đặc trưng của khí hậu nhiệt đới ẩm gió mùa ở vùng đồi núi nước ta, đất feralit chiếm trên 60% diện tích đất tự nhiên cả nước.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 13,
+    "question": "Đặc điểm của thiên nhiên nhiệt đới, ẩm, gió mùa của nước ta là do",
+    "options": [
+      "A. vị trí địa lí, hình dáng lãnh thổ quy định.",
+      "B. ảnh hưởng của gió thổi theo mùa.",
+      "C. sự phân hóa phức tạp của địa hình.",
+      "D. ảnh hưởng của Biển Đông."
+    ],
+    "correct": 0,
+    "explain": "Vị trí địa lí nằm hoàn toàn trong vùng nội chí tuyến bán cầu Bắc, tiếp giáp Biển Đông rộng lớn và nằm trong khu vực gió mùa châu Á quy định tính chất nhiệt đới ẩm gió mùa của thiên nhiên nước ta.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 14,
+    "question": "Sự phân hóa thiên nhiên theo độ cao ở nước ta biểu hiện rõ qua các thành phần",
+    "options": [
+      "A. khí hậu, đất đai, sinh vật.",
+      "B. sông ngòi, đất đai, khí hậu.",
+      "C. sinh vật, đất đai, sông ngòi.",
+      "D. khí hậu, sinh vật, sông ngòi."
+    ],
+    "correct": 0,
+    "explain": "Sự phân hóa thiên nhiên theo đai cao thể hiện rõ rệt nhất qua 3 thành phần tự nhiên là khí hậu, đất đai và hệ sinh vật đặc trưng theo 3 đai cao.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 15,
+    "question": "Nguồn tài nguyên sinh vật dưới nước, đặc biệt là nguồn hải sản bị giảm sút rõ rệt do nguyên nhân chủ yếu nào sau đây?",
+    "options": [
+      "A. Ô nhiễm môi trường nước và khai thác quá mức.",
+      "B. Khai thác quá mức và bùng phát dịch bệnh.",
+      "C. Dịch bệnh và các hiện tượng thời tiết thất thường.",
+      "D. Thời tiết thất thường và khai thác quá mức."
+    ],
+    "correct": 0,
+    "explain": "Nguồn lợi sinh vật biển và thủy hải sản bị suy giảm nghiêm trọng chủ yếu do tình trạng đánh bắt quá mức (tận diệt) và môi trường nước bị ô nhiễm.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 16,
+    "question": "Cho bảng số liệu: Nhiệt độ trung bình năm tại một số địa điểm từ Bắc vào Nam (Lạng Sơn: 21,2°C; Hà Nội: 23,5°C; Huế: 25,1°C; Đà Nẵng: 25,5°C; Quy Nhơn: 26,8°C; TP.HCM: 27,1°C). Nhận xét nào sau đây đúng?",
+    "options": [
+      "A. Nhiệt độ trung bình năm nước ta tăng dần từ Bắc vào Nam.",
+      "B. Biên độ nhiệt năm tăng dần từ Bắc vào Nam.",
+      "C. Nước ta nằm trong vùng nhiệt đới.",
+      "D. Miền Bắc chịu ảnh hưởng của gió mùa Đông Bắc vào mùa đông."
+    ],
+    "correct": 0,
+    "explain": "Căn cứ vào bảng số liệu, nhiệt độ trung bình năm tăng đều đặn từ Bắc vào Nam: Lạng Sơn (21,2°C) lên đến TP. Hồ Chí Minh (27,1°C).",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 17,
+    "question": "Nguyên nhân chủ yếu làm cho biên độ nhiệt trung bình năm ở miền Bắc lớn là do",
+    "options": [
+      "A. Vị trí địa lý và độ cao địa hình.",
+      "B. Địa hình và hoạt động gió mùa.",
+      "C. Vị trí địa lý và hoạt động gió mùa.",
+      "D. Hình dáng lãnh thổ và dải hội tụ nhiệt đới."
+    ],
+    "correct": 2,
+    "explain": "Miền Bắc có biên độ nhiệt trung bình năm lớn do nằm ở vĩ độ cao hơn (gần chí tuyến Bắc) và chịu ảnh hưởng trực tiếp của gió mùa Đông Bắc làm mùa đông hạ nhiệt độ sâu, mùa hè góc nhập xạ lớn nhiệt độ cao.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 18,
+    "question": "Đất feralit ở nước ta thường bị chua vì nguyên nhân chủ yếu nào sau đây?",
+    "options": [
+      "A. Quá trình phong hóa diễn ra mạnh.",
+      "B. Tích tụ ôxít sắt Fe2O3.",
+      "C. Mưa nhiều, rửa trôi các chất bazơ dễ tan.",
+      "D. Tích tụ ôxít nhôm Al2O3."
+    ],
+    "correct": 2,
+    "explain": "Mưa nhiều và tập trung theo mùa làm rửa trôi các chất kiềm bazơ dễ tan (Ca2+, Mg2+, K+) xuống sâu, tích tụ oxit sắt và nhôm làm cho đất feralit có tính chất chua.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 19,
+    "question": "Sự phân hóa thiên nhiên giữa hai khu vực Đông Trường Sơn và Tây Nguyên chủ yếu do",
+    "options": [
+      "A. tác động của gió mùa và hướng của các dãy núi.",
+      "B. độ cao địa hình và ảnh hưởng của biển.",
+      "C. Ảnh hưởng của biển và lớp phủ thực vật.",
+      "D. độ cao địa hình và hướng các dãy núi."
+    ],
+    "correct": 0,
+    "explain": "Sự đối lập giữa mùa mưa và mùa khô giữa Đông Trường Sơn và Tây Nguyên là hệ quả của sự tương tác giữa hoàn lưu gió mùa với bức chắn địa hình dãy núi Trường Sơn.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 20,
+    "question": "Sự đối lập về mùa mưa và mùa khô giữa Đông Trường Sơn và Tây Nguyên chủ yếu là do",
+    "options": [
+      "A. tác động của gió mùa và hướng của các dãy núi.",
+      "B. độ cao địa hình và ảnh hưởng của biển.",
+      "C. Ảnh hưởng của biển và lớp phủ thực vật.",
+      "D. độ cao địa hình và hướng các dãy núi."
+    ],
+    "correct": 0,
+    "explain": "Gió mùa Tây Nam và gió mùa mùa đông kết hợp với hướng chạy bắc - nam của dãy núi Trường Sơn gây nên hiện tượng mưa sườn đón gió và khô nóng ở sườn khuất gió (hiệu ứng phơn).",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 21,
+    "question": "Tài nguyên sinh vật nước ta đang bị suy giảm biểu hiện ở",
+    "options": [
+      "A. số lượng cá thể các loài động vật, thực vật tăng.",
+      "B. số lượng cá thể và loài động vật hoang dã tăng.",
+      "C. hệ sinh thái rừng nguyên sinh chiếm diện tích lớn nhất.",
+      "D. một số loài động vật, thực vật có nguy cơ tuyệt chủng."
+    ],
+    "correct": 3,
+    "explain": "Sự suy giảm đa dạng sinh học biểu hiện rõ qua việc nhiều loài động thực vật quý hiếm bị suy giảm số lượng nghiêm trọng và có nguy cơ tuyệt chủng.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 22,
+    "question": "Căn cứ vào biểu đồ diện tích và tỉ lệ che phủ rừng nước ta giai đoạn 2008 - 2021 (tỉ lệ che phủ từ 38,7% năm 2008 lên 42,0% năm 2021), nhận xét nào sau đây đúng?",
+    "options": [
+      "A. Tổng diện tích rừng nước ta tăng liên tục.",
+      "B. Tỉ lệ che phủ rừng nước ta tăng 3,3% .",
+      "C. Diện tích rừng trồng giảm qua các năm.",
+      "D. Diện tích rừng không đổi qua các năm."
+    ],
+    "correct": 1,
+    "explain": "Tỉ lệ che phủ rừng năm 2021 là 42,0%, năm 2008 là 38,7%. Mức tăng là: 42,0% - 38,7% = 3,3% (3,3 điểm phần trăm).",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 23,
+    "question": "Nguồn tài nguyên sinh vật dưới nước, đặc biệt là nguồn hải sản ven bờ bị suy giảm do",
+    "options": [
+      "A. Ô nhiễm môi trường nước và khai thác quá mức.",
+      "B. Khai thác quá mức và bùng phát dịch bệnh.",
+      "C. Dịch bệnh và các hiện tượng thời tiết thất thường.",
+      "D. Thời tiết thất thường và khai thác quá mức."
+    ],
+    "correct": 0,
+    "explain": "Khai thác quá mức cho phép (đánh bắt hủy diệt ven bờ) và ô nhiễm môi trường nước biển ven bờ là hai nguyên nhân then chốt làm suy giảm hải sản.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 24,
+    "question": "Cho bảng số liệu diện tích rừng nước ta (1943 - 2021): Tổng diện tích rừng (14,3 - 13,4 - 14,7 triệu ha), Rừng trồng (0 - 3,1 - 4,6 triệu ha). Nhận xét nào đúng?",
+    "options": [
+      "A. Tổng diện tích có rừng tăng qua các năm.",
+      "B. Diện tích rừng trồng tăng chậm hơn tổng diện tích có rừng.",
+      "C. Tỉ trọng diện tích rừng trồng tăng liên tục.",
+      "D. Độ che phủ rừng tăng qua các năm."
+    ],
+    "correct": 2,
+    "explain": "Tỉ trọng diện tích rừng trồng trong tổng diện tích rừng tăng liên tục từ 0% (1943) lên 23,1% (2010) và đạt 31,3% (2021).",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 25,
+    "question": "Nguyên nhân nào làm cho sông ngòi nước ta nhiều nước, giàu phù sa?",
+    "options": [
+      "A. Nước ta có mùa mưa kéo dài, mưa lớn.",
+      "B. Mưa nhiều trên triền núi có độ dốc lớn.",
+      "C. Miền núi cao có nhiều cát, đất vụn bở.",
+      "D. Mưa nhiều và đất đai vụn bở dễ bị cuốn trôi."
+    ],
+    "correct": 3,
+    "explain": "Lượng mưa lớn cung cấp nguồn nước dồi dào; mưa nhiều kết hợp địa hình đồi núi dốc, đất phong hóa vụn bở dễ bị xói mòn, rửa trôi tạo nên lượng phù sa lớn cho sông ngòi.",
+    "topic": "ĐỊA LÍ TỰ NHIÊN"
+  },
+  {
+    "id": 40,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Do nằm trong khu vực nội chí tuyến nên Biển Đông có",
+    "options": [
+      "A. các vùng biển nông và giáp Thái Bình Dương, biển ẩm, mưa nhiều.",
+      "B. các dòng biển đổi hướng theo mùa, dải hội tụ và áp thấp nhiệt đới.",
+      "C. độ muối khá cao, nhiều ánh sáng, giàu ôxi, nhiệt độ nước biển cao.",
+      "D. biển kín và rộng, khí hậu nhiệt đới gió mùa, độ muối tương đối lớn."
+    ],
+    "correct": 2,
+    "explain": "Do nằm hoàn toàn trong vùng nội chí tuyến bán cầu Bắc, Biển Đông có nền nhiệt độ nước biển cao quanh năm (trên 25°C), bốc hơi mạnh nên độ muối khá cao (trung bình 32 - 33‰), tầng nước mặt nhận nhiều ánh sáng mặt trời và giàu oxy."
+  },
+  {
+    "id": 41,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Do lãnh thổ trải dài theo chiều vĩ tuyến nên Việt Nam",
+    "options": [
+      "A. khác nhau về tự nhiên hai phía tây và đông.",
+      "B. thiên nhiên có sự phân hoá theo bắc - nam.",
+      "C. chịu ảnh hưởng mạnh của các loại gió mùa.",
+      "D. chịu ảnh hưởng của khí hậu vùng xích đạo."
+    ],
+    "correct": 1,
+    "explain": "Lãnh thổ nước ta trải dài gần 15 độ vĩ tuyến (từ 8°34'B đến 23°23'B) làm cho góc nhập xạ và bức xạ mặt trời giảm dần từ Nam ra Bắc, kết hợp tác động của gió mùa Đông Bắc suy yếu dần về phía Nam dẫn đến sự phân hóa thiên nhiên theo chiều Bắc - Nam."
+  },
+  {
+    "id": 42,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Phát biểu nào sau đây không đúng về vị trí địa lí của Việt Nam?",
+    "options": [
+      "A. Nằm gần nơi giao nhau của các vành đai sinh khoáng lớn.",
+      "B. Ở trong vùng xích đạo và lãnh thổ kéo dài theo chiều vĩ tuyến.",
+      "C. Nằm hoàn toàn trong vùng nội chí tuyến của bán cầu Bắc.",
+      "D. Ở gần trung tâm Đông Nam Á và tiếp giáp với Biển Đông."
+    ],
+    "correct": 1,
+    "explain": "Việt Nam nằm hoàn toàn trong vùng nội chí tuyến bán cầu Bắc (khoảng từ 8°34'B đến 23°23'B), chứ không nằm ở trong vùng xích đạo (xích đạo nằm ở vĩ độ 0°)."
+  },
+  {
+    "id": 43,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Quần đảo Hoàng Sa thuộc tỉnh (thành phố) nào sau đây?",
+    "options": [
+      "A. Quảng Ngãi.",
+      "B. Đà Nẵng.",
+      "C. Khánh Hòa.",
+      "D. Quảng Nam."
+    ],
+    "correct": 1,
+    "explain": "Huyện đảo Hoàng Sa trực thuộc thành phố Đà Nẵng. Huyện đảo Trường Sa trực thuộc tỉnh Khánh Hòa."
+  },
+  {
+    "id": 44,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Nội thủy là vùng biển",
+    "options": [
+      "A. liền kề vùng biển quốc tế.",
+      "B. nằm ở phía ngoài lãnh hải.",
+      "C. ở phía trong đường cơ sở.",
+      "D. có chiều rộng là 12 hải lý."
+    ],
+    "correct": 2,
+    "explain": "Nội thủy là vùng nước tiếp giáp với bờ biển, nằm ở phía trong đường cơ sở. Tại nội thủy, quốc gia ven biển có chủ quyền hoàn toàn, tuyệt đối như trên lãnh thổ đất liền."
+  },
+  {
+    "id": 45,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Việt Nam nằm ở",
+    "options": [
+      "A. phía bắc của Đông Nam Á.",
+      "B. phía đông của lục địa Á - Âu.",
+      "C. trung tâm của Đông Dương.",
+      "D. phía đông nam của châu Á."
+    ],
+    "correct": 3,
+    "explain": "Vị trí địa lí của Việt Nam nằm ở phía Đông Nam châu Á, thuộc bán đảo Đông Dương, ven bờ biển Thái Bình Dương."
+  },
+  {
+    "id": 46,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Thuận lợi của vị trí địa lí nước ta đối với phát triển kinh tế không phải là",
+    "options": [
+      "A. có nét tương đồng lịch sử, văn hoá với các nước.",
+      "B. án ngữ trên tuyến đường hàng không quốc tế.",
+      "C. nằm trong khu vực kinh tế phát triển năng động.",
+      "D. ở vị trí trung chuyển tuyến hàng hải quốc tế."
+    ],
+    "correct": 0,
+    "explain": "Nét tương đồng về lịch sử, văn hóa và xã hội với các nước trong khu vực là thuận lợi về mặt văn hóa - xã hội và giao lưu ngoại giao, không phải là ý nghĩa trực tiếp đối với phát triển kinh tế."
+  },
+  {
+    "id": 47,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Do tiếp giáp với Biển Đông nên Việt Nam có",
+    "options": [
+      "A. nhiều bão, lũ lụt, hạn hán, động đất.",
+      "B. tài nguyên khoáng sản rất đa dạng.",
+      "C. thảm thực vật xanh tốt quanh năm.",
+      "D. tự nhiên phân hoá theo bắc - nam."
+    ],
+    "correct": 2,
+    "explain": "Nhờ Biển Đông mang lại nguồn ẩm dồi dào và lượng mưa phong phú, thảm thực vật của nước ta luôn xanh tốt quanh năm và giàu sức sống, khác hẳn với các vùng đất cùng vĩ độ ở Tây Á hay Bắc Phi."
+  },
+  {
+    "id": 48,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Lãnh hải là",
+    "options": [
+      "A. vùng nước sâu ở khoảng 200 m hoặc hơn nữa.",
+      "B. vùng biển rộng 200 hải lý tính từ đường cơ sở.",
+      "C. vùng biển thuộc chủ quyền quốc gia trên biển.",
+      "D. vùng được xem như bộ phận lãnh thổ đất liền."
+    ],
+    "correct": 2,
+    "explain": "Lãnh hải là vùng biển thuộc chủ quyền quốc gia trên biển, có chiều rộng 12 hải lí tính từ đường cơ sở. Ranh giới ngoài của lãnh hải chính là đường biên giới quốc gia trên biển."
+  },
+  {
+    "id": 49,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Vùng đất của nước ta gồm",
+    "options": [
+      "A. vùng đồi núi, đồng bằng và bán đảo.",
+      "B. phần đất liền và các quần đảo xa bờ.",
+      "C. các quần đảo, bãi ngầm và đảo ven bờ.",
+      "D. toàn bộ phần lục địa (đất liền) và các đảo."
+    ],
+    "correct": 3,
+    "explain": "Vùng đất của nước ta gồm toàn bộ phần đất liền (lục địa) và các hải đảo trên biển với tổng diện tích tự nhiên là hơn 331 nghìn km²."
+  },
+  {
+    "id": 50,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Phần lớn đường biên giới trên đất liền của nước ta nằm ở khu vực",
+    "options": [
+      "A. ven biển.",
+      "B. cao nguyên.",
+      "C. đồng bằng.",
+      "D. miền núi."
+    ],
+    "correct": 3,
+    "explain": "Đường biên giới trên đất liền của nước ta dài hơn 4600 km, phần lớn chạy qua các vùng núi cao, hiểm trở, đi theo các sống núi, đỉnh núi hoặc đường phân thủy tự nhiên."
+  },
+  {
+    "id": 51,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Mùa mưa ở Tây Nguyên bắt đầu do tác động chủ yếu của gió",
+    "options": [
+      "A. Mậu dịch ở chí tuyến bán cầu Bắc thổi đến.",
+      "B. Đông Bắc có nguồn gốc từ cao áp Xibia.",
+      "C. Tây Nam từ áp cao chí tuyến bán cầu Nam.",
+      "D. Tây Nam áp cao Bắc Ấn Độ Dương đến."
+    ],
+    "correct": 3,
+    "explain": "Vào đầu mùa hạ, khối khí nhiệt đới ẩm Bắc Ấn Độ Dương di chuyển theo hướng tây nam xâm nhập trực tiếp vào nước ta, gây mưa lớn cho đồng bằng Nam Bộ và Tây Nguyên, mở đầu mùa mưa tại khu vực này."
+  },
+  {
+    "id": 52,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Vào giữa và cuối mùa hạ, Tây Nguyên có mưa nhiều chủ yếu do tác động của",
+    "options": [
+      "A. Tín phong bán cầu Bắc.",
+      "B. Gió mùa Đông Bắc.",
+      "C. Gió Tây Nam từ vịnh Bengal đến.",
+      "D. Gió mùa Tây Nam từ bán cầu Nam."
+    ],
+    "correct": 3,
+    "explain": "Vào giữa và cuối mùa hạ, gió mùa Tây Nam xuất phát từ áp cao cận chí tuyến bán cầu Nam vượt qua vùng biển xích đạo trở nên nóng ẩm, gây mưa lớn và kéo dài cho Nam Bộ và Tây Nguyên."
+  },
+  {
+    "id": 53,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Tính chất nhiệt đới ẩm gió mùa của đất ở nước ta biểu hiện chủ yếu là",
+    "options": [
+      "A. Độ dày đất lớn nhưng dễ bị xói mòn, rửa trôi và thường nghèo mùn.",
+      "B. Quá trình feralit hình thành đất là chủ đạo, đất feralit là chủ yếu.",
+      "C. Quá trình tích tụ ôxít sắt, ôxít nhôm là chủ yếu, đất đá ong phổ biến.",
+      "D. Đất feralit có chủ yếu ở đồi núi và đất phù sa chủ yếu ở đồng bằng."
+    ],
+    "correct": 1,
+    "explain": "Quá trình feralit là quá trình hình thành đất đặc trưng cho khí hậu nhiệt đới ẩm gió mùa: quá trình phong hóa diễn ra mạnh, các chất bazơ dễ tan bị rửa trôi, tích tụ oxit sắt và oxit nhôm tạo nên loại đất feralit đỏ vàng chiếm hơn 65% diện tích đất tự nhiên."
+  },
+  {
+    "id": 54,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Nguồn gốc của gió Đông Nam từ biển thổi vào đồng bằng sông Hồng vào giữa và cuối mùa hạ là khối khí từ áp cao",
+    "options": [
+      "A. Siberia.",
+      "B. Tây Thái Bình Dương.",
+      "C. Chí tuyến Nam bán cầu.",
+      "D. Bắc Ấn Độ Dương."
+    ],
+    "correct": 2,
+    "explain": "Gió mùa Tây Nam (có nguồn gốc từ cao áp chí tuyến Nam bán cầu) vượt qua xích đạo, khi thổi đến Bắc Bộ bị hút về tâm áp thấp Bắc Bộ theo hướng đông nam, thổi từ biển vào đồng bằng sông Hồng."
+  },
+  {
+    "id": 55,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Biểu hiện của tính chất nhiệt đới ẩm khí hậu nước ta là:",
+    "options": [
+      "A. cân bằng bức xạ dương, tổng số giờ nắng lớn.",
+      "B. nhiệt độ trung bình năm cao, lượng mưa lớn.",
+      "C. nhiệt độ trung bình cao, độ ẩm không khí lớn.",
+      "D. gió mùa hoạt động, cân bằng ẩm luôn dương."
+    ],
+    "correct": 1,
+    "explain": "Tính chất nhiệt đới thể hiện ở nền nhiệt độ trung bình năm cao trên toàn quốc (trên 20°C, trừ vùng núi cao), còn tính chất ẩm thể hiện ở tổng lượng mưa năm rất lớn (1500 - 2000 mm) và độ ẩm không khí cao trên 80%."
+  },
+  {
+    "id": 56,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Thuận lợi của khí hậu nhiệt đới ẩm gió mùa đối với sản xuất nông nghiệp nước ta chủ yếu là",
+    "options": [
+      "A. Phát triển nông nghiệp nhiệt đới, sản xuất quanh năm, đa dạng cơ cấu nông sản.",
+      "B. Đa dạng hóa cây trồng và vật nuôi, nuôi trồng thủy sản, tạo điều kiện để tăng vụ.",
+      "C. Phát triển cây trồng nhiệt đới, tăng cường đánh bắt thủy sản, cung cấp nước tưới.",
+      "D. Cung cấp nước tưới, phát triển đánh bắt và nuôi trồng thủy sản, cải tạo đất trồng."
+    ],
+    "correct": 0,
+    "explain": "Khí hậu nhiệt đới ẩm dồi dào nhiệt và nước cho phép cây trồng vật nuôi sinh trưởng quanh năm, thâm canh tăng vụ, đồng thời sự phân hóa khí hậu giúp phát triển đa dạng hóa cơ cấu sản phẩm nông nghiệp nhiệt đới, cận nhiệt và ôn đới."
+  },
+  {
+    "id": 57,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Nguyên nhân chủ yếu gây mưa vào mùa hạ trên cả nước ta là",
+    "options": [
+      "A. Gió mùa Tây Nam, dải hội tụ nhiệt đới và bão.",
+      "B. Gió mùa Tây Nam, áp thấp nhiệt đới.",
+      "C. Tín phong bán cầu Bắc và dải hội tụ nhiệt đới.",
+      "D. Gió Tây Nam Bắc Ấn Độ Dương đến, bão."
+    ],
+    "correct": 0,
+    "explain": "Vào mùa hạ, lượng mưa trên cả nước chủ yếu do hoạt động của gió mùa Tây Nam kết hợp chặt chẽ với dải hội tụ nhiệt đới (FIT) chạy ngang qua lãnh thổ và các xoáy thuận nhiệt đới (bão, áp thấp nhiệt đới)."
+  },
+  {
+    "id": 58,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Biểu hiện của khí hậu nhiệt đới ẩm gió mùa ở nước ta là",
+    "options": [
+      "A. Độ ẩm tương đối của không khí cao, số giờ nắng nhiều.",
+      "B. Lượng bức xạ mặt trời lớn, nhiệt độ trung bình năm cao.",
+      "C. Có sự hoạt động của gió Mậu dịch và các loại gió mùa.",
+      "D. Cán cân bức xạ quanh năm dương, lượng mưa khá lớn."
+    ],
+    "correct": 1,
+    "explain": "Tính chất nhiệt đới thể hiện qua tổng lượng bức xạ mặt trời rất lớn (trên 130 kcal/cm²/năm) và cán cân bức xạ luôn dương quanh năm, nền nhiệt trung bình năm cao vượt chuẩn vùng nhiệt đới."
+  },
+  {
+    "id": 59,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Đặc điểm nào sau đây đúng với tính chất ẩm của khí hậu nước ta?",
+    "options": [
+      "A. Tổng lượng mưa trong năm lớn.",
+      "B. Cân bằng ẩm trong năm luôn âm.",
+      "C. Độ tương đối của không khí thấp.",
+      "D. Lượng bốc hơi lớn hơn lượng mưa."
+    ],
+    "correct": 0,
+    "explain": "Tính chất ẩm của khí hậu nước ta thể hiện ở tổng lượng mưa trung bình năm rất lớn (1500 - 2000 mm, một số sườn đón gió đạt trên 3000 mm/năm), cân bằng ẩm luôn dương và độ ẩm không khí trên 80%."
+  },
+  {
+    "id": 60,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Tính thất thường của thời tiết nước ta gây ra các khó khăn chủ yếu về",
+    "options": [
+      "A. Các loại dịch bệnh, bảo dưỡng máy móc, bảo quản nông sản.",
+      "B. Thiên tai, dịch bệnh, gây các thiệt hại cho đời sống nhân dân.",
+      "C. Hoạt động canh tác, kế hoạch mùa vụ, phòng chống thiên tai.",
+      "D. Cơ cấu mùa vụ, gián đoạn hoạt động giao thông, thâm canh."
+    ],
+    "correct": 2,
+    "explain": "Sự diễn biến thất thường của thời tiết (năm rét sớm năm rét muộn, hạn hán kéo dài, mưa bão trái mùa) gây khó khăn lớn nhất cho việc lên kế hoạch mùa vụ canh tác nông nghiệp và công tác dự báo phòng chống thiên tai."
+  },
+  {
+    "id": 61,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Đặc điểm thiên nhiên đai nhiệt đới gió mùa ở nước ta là:",
+    "options": [
+      "A. Nhiệt độ trung bình năm dưới 15°C, đất mùn thô, nhiều loài cây ôn đới.",
+      "B. Có khí hậu mát mẻ, đất feralit có mùn và đất mùn, rừng cận nhiệt đới.",
+      "C. Nhiệt độ trung bình các tháng dưới 25°C, đất mùn, sinh vật phong phú.",
+      "D. Nền nhiệt độ cao, đất chủ yếu là feralit và rừng nhiệt đới ẩm."
+    ],
+    "correct": 3,
+    "explain": "Đai nhiệt đới gió mùa chân núi (dưới 600 - 700m ở miền Bắc và dưới 900 - 1000m ở miền Nam) có nền nhiệt cao, mùa hạ nóng >25°C, đất feralit vùng đồi núi thấp và phù sa đồng bằng, hệ sinh thái rừng nhiệt đới ẩm lá rộng thường xanh phát triển mạnh."
+  },
+  {
+    "id": 62,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Nhân tố chủ yếu tạo ra sự đối lập về chế độ mưa giữa Đông Trường Sơn và Tây Nguyên là",
+    "options": [
+      "A. Gió mùa và độ cao dãy núi Trường Sơn Nam.",
+      "B. Các loại gió trong năm kết hợp hướng núi.",
+      "C. Biển Đông kết hợp với các loại gió theo mùa.",
+      "D. Vị trí địa lí và hoạt động của gió trong năm."
+    ],
+    "correct": 1,
+    "explain": "Sự đối lập mùa mưa và mùa khô giữa Đông Trường Sơn và Tây Nguyên được hình thành do bức chắn địa hình của dãy Trường Sơn kết hợp với các luồng gió hướng tây nam vào mùa hạ (Tây Nguyên mưa lớn, Đông Trường Sơn khô nóng) và gió hướng đông bắc vào mùa đông (Đông Trường Sơn mưa lớn, Tây Nguyên vào mùa khô)."
+  },
+  {
+    "id": 63,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Đặc điểm thiên nhiên đai cận nhiệt đới gió mùa trên núi ở nước ta là:",
+    "options": [
+      "A. Nhiệt độ trung bình năm dưới 15°C, đất mùn thô, nhiều loài cây ôn đới.",
+      "B. Có khí hậu mát mẻ, đất feralit có mùn và đất mùn, sinh vật cận nhiệt đới.",
+      "C. Nhiệt độ trung bình các tháng dưới 25°C, đất mùn, sinh vật phong phú.",
+      "D. Nền nhiệt độ cao, đất chủ yếu là feralit và phù sa, rừng nhiệt đới ẩm."
+    ],
+    "correct": 1,
+    "explain": "Đai cận nhiệt đới gió mùa trên núi (từ 600 - 700m lên đến 2600m) có khí hậu mát mẻ, nhiệt độ các tháng đều dưới 25°C, đất feralit có mùn và đất mùn trên núi, xuất hiện các loài sinh vật cận nhiệt như thông, dẻ, re, chim thú cận nhiệt."
+  },
+  {
+    "id": 64,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Nguyên nhân chủ yếu làm phân hoá thiên nhiên nước ta theo chiều bắc - nam là",
+    "options": [
+      "A. Gió mùa mùa hạ và độ cao các dãy núi.",
+      "B. Hoạt động của gió trong năm và vị trí.",
+      "C. Gió mùa kết hợp với hướng các dãy núi.",
+      "D. Gió mùa mùa đông và hướng các dãy núi."
+    ],
+    "correct": 2,
+    "explain": "Nguyên nhân chủ yếu là do lãnh thổ trải dài theo vĩ tuyến kết hợp hoạt động của gió mùa Đông Bắc suy yếu dần khi di chuyển về phía Nam do bị chặn lại bởi bức chắn địa hình của dãy Bạch Mã."
+  },
+  {
+    "id": 65,
+    "topic": "ĐỊA LÍ TỰ NHIÊN",
+    "question": "Đặc điểm nào sau đây đúng với tính chất ẩm của khí hậu nước ta?",
+    "options": [
+      "A. Cân bằng ẩm trong năm luôn âm.",
+      "B. Độ tương đối của không khí thấp.",
+      "C. Lượng bốc hơi lớn hơn lượng mưa.",
+      "D. Tổng lượng mưa trong năm lớn."
+    ],
+    "correct": 3,
+    "explain": "Đặc điểm cơ bản của tính chất ẩm là tổng lượng mưa trung bình năm lớn (1500 - 2000 mm) và độ ẩm không khí tương đối cao trên 80%."
+  }
+];
+
+const geoDanCu = [
+  {
+    "id": 26,
+    "question": "Cơ cấu lao động có sự chuyển dịch giữa các ngành kinh tế ở nước ta là do tác động của",
+    "options": [
+      "A. quá trình công nghiệp hóa, hiện đại hóa.",
+      "B. chính sách dân số, kế hoạch hóa gia đình.",
+      "C. mạng lưới đô thị ngày càng mở rộng.",
+      "D. tỉ lệ lao động qua đào tạo tăng nhanh."
+    ],
+    "correct": 0,
+    "explain": "Công nghiệp hóa, hiện đại hóa thúc đẩy chuyển dịch cơ cấu kinh tế theo ngành, kéo theo sự chuyển dịch cơ cấu lao động từ nông nghiệp sang công nghiệp và dịch vụ.",
+    "topic": "ĐỊA LÍ DÂN CƯ"
+  },
+  {
+    "id": 27,
+    "question": "Vùng có mật độ dân số cao nhất ở nước ta hiện nay là",
+    "options": [
+      "A. Đông Nam Bộ.",
+      "B. Đồng bằng sông Hồng.",
+      "C. Đồng bằng sông Cửu Long.",
+      "D. Trung du và miền núi Bắc Bộ."
+    ],
+    "correct": 1,
+    "explain": "Đồng bằng sông Hồng có mật độ dân số cao nhất cả nước (trên 1000 người/km²) do lịch sử định cư lâu đời và hoạt động nông nghiệp, kinh tế phát triển.",
+    "topic": "ĐỊA LÍ DÂN CƯ"
+  },
+  {
+    "id": 28,
+    "question": "Dân cư nước ta phân bố",
+    "options": [
+      "A. tương đối đồng đều giữa các khu vực.",
+      "B. chủ yếu ở nông thôn với mật độ cao.",
+      "C. khác nhau giữa các khu vực.",
+      "D. chỉ tập trung ở đồng bằng ven biển."
+    ],
+    "correct": 2,
+    "explain": "Dân cư nước ta phân bố chưa hợp lí, có sự chênh lệch rõ rệt giữa đồng bằng và đồi núi, giữa thành thị và nông thôn.",
+    "topic": "ĐỊA LÍ DÂN CƯ"
+  },
+  {
+    "id": 29,
+    "question": "Xu hướng già hoá của dân số nước ta không có biểu hiện nào sau đây?",
+    "options": [
+      "A. Tỉ lệ người trên 60 tuổi tăng.",
+      "B. Tuổi thọ trung bình tăng.",
+      "C. Tỉ lệ người từ 0 – 14 tuổi tăng.",
+      "D. Tỉ suất gia tăng dân số giảm."
+    ],
+    "correct": 2,
+    "explain": "Già hóa dân số làm tỉ lệ trẻ em (nhóm 0 - 14 tuổi) ngày càng giảm chứ không tăng, trong khi tỉ lệ người già trên 60 tuổi và tuổi thọ trung bình tăng lên.",
+    "topic": "ĐỊA LÍ DÂN CƯ"
+  },
+  {
+    "id": 30,
+    "question": "Nguyên nhân nào sau đây là chủ yếu làm cho mật độ dân số trung bình của Đông Nam Bộ tăng nhiều nhất cả nước trong thời gian gần đây?",
+    "options": [
+      "A. Số người nhập cư tăng nhanh.",
+      "B. Gia tăng dân số tự nhiên cao.",
+      "C. Công nghiệp phát triển mạnh.",
+      "D. Cơ sở hạ tầng phát triển hiện đại."
+    ],
+    "correct": 0,
+    "explain": "Đông Nam Bộ là trung tâm kinh tế năng động, thu hút lực lượng lao động nhập cư từ khắp các vùng trong cả nước đến sinh sống và làm việc.",
+    "topic": "ĐỊA LÍ DÂN CƯ"
+  },
+  {
+    "id": 31,
+    "question": "Biện pháp chủ yếu để giải quyết tình trạng thất nghiệp ở thành thị nước ta hiện nay là",
+    "options": [
+      "A. xây dựng các nhà máy công nghiệp quy mô lớn.",
+      "B. phân bố lại lực lượng lao động trên quy mô cả nước.",
+      "C. hợp tác lao động quốc tế để xuất khẩu lao động.",
+      "D. đẩy mạnh phát triển công nghiệp và dịch vụ ở đô thị."
+    ],
+    "correct": 3,
+    "explain": "Đẩy mạnh phát triển công nghiệp và các ngành dịch vụ tại đô thị là giải pháp chủ yếu tạo ra nhiều việc làm mới, giải quyết tình trạng thất nghiệp.",
+    "topic": "ĐỊA LÍ DÂN CƯ"
+  },
+  {
+    "id": 32,
+    "question": "Để sử dụng có hiệu quả quỹ thời gian lao động dư thừa ở nông thôn, biện pháp tốt nhất là",
+    "options": [
+      "A. khôi phục các nghề thủ công.",
+      "B. tiến hành thâm canh, tăng vụ.",
+      "C. phát triển kinh tế hộ gia đình.",
+      "D. khai hoang mở rộng diện tích."
+    ],
+    "correct": 1,
+    "explain": "Biện pháp tốt nhất và trực tiếp nhất trong nông nghiệp là thâm canh, tăng vụ kết hợp đa dạng hóa nông nghiệp và phát triển ngành nghề phụ truyền thống.",
+    "topic": "ĐỊA LÍ DÂN CƯ"
+  },
+  {
+    "id": 33,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Phát biểu nào sau đây không đúng với đặc điểm của lao động của nước ta?",
+    "options": [
+      "A. Nguồn lao động dồi dào và tăng nhanh.",
+      "B. Đội ngũ công nhân kĩ thuật lành nghề thiếu nhiều.",
+      "C. Chất lượng lao động ngày càng được nâng lên.",
+      "D. Lực lượng lao động có trình độ cao đông đảo."
+    ],
+    "correct": 3,
+    "explain": "Lực lượng lao động có trình độ chuyên môn kĩ thuật cao của nước ta hiện nay vẫn còn mỏng, chưa đáp ứng đầy đủ yêu cầu hiện đại hóa công nghiệp và hội nhập quốc tế, do đó phát biểu 'đông đảo' là không chính xác."
+  },
+  {
+    "id": 34,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Lao động nước ta đang có xu hướng chuyển từ khu vực quốc doanh sang các khu vực khác vì",
+    "options": [
+      "A. Khu vực quốc doanh làm ăn không có hiệu quả.",
+      "B. Kinh tế nước ta đang từng bước chuyển sang cơ chế thị trường.",
+      "C. Tác động của công nghiệp hoá và hiện đại hoá.",
+      "D. Nước ta thực hiện nền kinh tế mở, thu hút đầu tư từ nước ngoài."
+    ],
+    "correct": 1,
+    "explain": "Nước ta chuyển đổi từ nền kinh tế kế hoạch hóa tập trung bao cấp sang nền kinh tế thị trường định hướng XHCN, phát triển đa dạng các thành phần kinh tế (ngoài nhà nước, có vốn đầu tư nước ngoài), tạo nhiều cơ hội việc làm mới ngoài khu vực quốc doanh."
+  },
+  {
+    "id": 35,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Tỉ lệ thời gian lao động được sử dụng ở nông thôn nước ta ngày càng tăng nhờ",
+    "options": [
+      "A. Việc thực hiện công nghiệp hoá nông thôn.",
+      "B. Thanh niên nông thôn đã ra thành thị tìm việc làm.",
+      "C. Chất lượng lao động ở nông thôn đã được nâng lên.",
+      "D. Việc đa dạng hoá cơ cấu kinh tế ở nông thôn."
+    ],
+    "correct": 3,
+    "explain": "Việc đẩy mạnh đa dạng hóa cơ cấu kinh tế nông thôn (phát triển ngành nghề tiểu thủ công nghiệp, làng nghề, chế biến nông sản và dịch vụ) giúp tạo thêm việc làm, tận dụng hiệu quả thời gian nông nhàn giữa các vụ mùa."
+  },
+  {
+    "id": 36,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Tỉ lệ thất nghiệp ở thành thị cao hơn nông thôn vì",
+    "options": [
+      "A. Thành thị đông dân hơn nên lao động cũng dồi dào hơn.",
+      "B. Chất lượng lao động ở thành thị thấp hơn.",
+      "C. Dân nông thôn vào thành thị tìm việc làm.",
+      "D. Đặc trưng hoạt động kinh tế ở thành thị khác nông thôn."
+    ],
+    "correct": 3,
+    "explain": "Kinh tế thành thị chủ yếu là sản xuất công nghiệp và dịch vụ đòi hỏi tuyển dụng theo vị trí chuyên môn, khi người lao động không tìm được việc làm sẽ rơi vào tình trạng thất nghiệp; trong khi kinh tế nông thôn mang tính chất mùa vụ, thời gian rảnh rỗi nhiều dẫn đến thiếu việc làm chứ ít khi thất nghiệp hoàn toàn."
+  },
+  {
+    "id": 37,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Dân cư thành thị nước ta hiện nay",
+    "options": [
+      "A. có tỉ lệ tăng liên tục qua các năm.",
+      "B. tập trung hoàn toàn ở đồng bằng.",
+      "C. chỉ hoạt động trong ngành dịch vụ.",
+      "D. có tỉ trọng lớn trong tổng số dân."
+    ],
+    "correct": 0,
+    "explain": "Cùng với quá trình công nghiệp hóa và hiện đại hóa, tỉ lệ dân cư thành thị của nước ta có xu hướng tăng liên tục qua các năm (từ khoảng 20% năm 1990 lên xấp xỉ 38% hiện nay)."
+  },
+  {
+    "id": 38,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Phát biểu nào sau đây không đúng với đặc điểm đô thị hóa nước ta?",
+    "options": [
+      "A. Đô thị hóa thúc đẩy tăng trưởng kinh tế.",
+      "B. Không gian đô thị ngày càng mở rộng.",
+      "C. Lịch sử hình thành đô thị từ lâu đời.",
+      "D. Tỉ lệ dân thành thị ngày càng tăng."
+    ],
+    "correct": 2,
+    "explain": "Trong các đặc điểm cơ bản của đô thị hóa nước ta theo SGK: Quá trình đô thị hóa diễn ra chậm chạp, trình độ đô thị hóa thấp; tỉ lệ dân thành thị thấp; phân bố đô thị không đều. Tuy mạng lưới đô thị manh nha từ sớm (thành Cổ Loa) nhưng lịch sử phát triển đô thị bị gián đoạn kéo dài, đô thị hóa chỉ thực sự phát triển mạnh trong thời kì Đổi mới."
+  },
+  {
+    "id": 39,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Mạng lưới đô thị của nước ta hiện nay phân bố",
+    "options": [
+      "A. chủ yếu ở đồi núi.",
+      "B. chủ yếu ở phía Tây.",
+      "C. đều giữa các vùng.",
+      "D. chủ yếu ở đồng bằng."
+    ],
+    "correct": 3,
+    "explain": "Mạng lưới đô thị nước ta phân bố không đều giữa các vùng, tập trung với mật độ cao chủ yếu ở các vùng đồng bằng và duyên hải ven biển (Đồng bằng sông Hồng, Đông Nam Bộ, Đồng bằng sông Cửu Long)."
+  },
+  {
+    "id": 66,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Lao động nước ta hiện nay",
+    "options": [
+      "A. có tỉ lệ thất nghiệp còn cao.",
+      "B. phân bố đều khắp các vùng.",
+      "C. ở cố định, không di chuyển.",
+      "D. có sự phân bố không đồng đều giữa các vùng."
+    ],
+    "correct": 3,
+    "explain": "Nguồn lao động nước ta phân bố không đều giữa các vùng: tập trung rất đông đúc ở đồng bằng ven biển (chiếm khoảng 75% lao động), trong khi vùng trung du miền núi giàu tài nguyên lại thiếu hụt lao động."
+  },
+  {
+    "id": 67,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Phát biểu nào sau đây không đúng về vấn đề việc làm ở nước ta hiện nay?",
+    "options": [
+      "A. Là một vấn đề kinh tế - xã hội lớn cần quan tâm.",
+      "B. Tỉ lệ thất nghiệp ở nông thôn lớn hơn ở thành thị.",
+      "C. Thất nghiệp, thiếu việc làm vẫn đang còn gay gắt.",
+      "D. Tỉ lệ thiếu việc làm ở nông thôn lớn hơn thành thị."
+    ],
+    "correct": 1,
+    "explain": "Ở nước ta hiện nay, tỉ lệ thất nghiệp ở thành thị cao hơn nông thôn, còn tỉ lệ thiếu việc làm ở nông thôn lại cao hơn ở khu vực thành thị. Do đó phát biểu 'Tỉ lệ thất nghiệp ở nông thôn lớn hơn ở thành thị' là sai."
+  },
+  {
+    "id": 68,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Lao động nước ta phân bố không đều giữa các vùng gây khó khăn chủ yếu cho",
+    "options": [
+      "A. đẩy mạnh sự chuyển dịch cơ cấu kinh tế.",
+      "B. phát huy tiềm năng tự nhiên, tạo thu nhập.",
+      "C. sử dụng hợp lí tài nguyên, tạo ra việc làm.",
+      "D. chuyển dịch cơ cấu lao động theo lãnh thổ."
+    ],
+    "correct": 2,
+    "explain": "Sự phân bố lao động không đều (đồng bằng thừa lao động thiếu tài nguyên, miền núi thừa tài nguyên thiếu lao động) gây trở ngại lớn cho việc khai thác hợp lí tiềm năng tài nguyên thiên nhiên của từng vùng và giải quyết việc làm cho người lao động."
+  },
+  {
+    "id": 69,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Tỉ lệ lao động thiếu việc làm ở nông thôn nước ta còn cao chủ yếu do",
+    "options": [
+      "A. hoạt động trồng trọt, sản xuất theo thời vụ.",
+      "B. lao động đông, đất đai tài nguyên có hạn.",
+      "C. kinh tế hạn chế, ngành nghề chưa đa dạng.",
+      "D. dân số đông, mức sinh nhiều nơi còn cao."
+    ],
+    "correct": 0,
+    "explain": "Kinh tế nông thôn phụ thuộc lớn vào sản xuất nông nghiệp mang tính chất mùa vụ, khoảng thời gian nông nhàn giữa các đợt gieo trồng và thu hoạch là nguyên nhân chính dẫn đến tình trạng thiếu việc làm cao."
+  },
+  {
+    "id": 70,
+    "topic": "ĐỊA LÍ DÂN CƯ",
+    "question": "Tỉ lệ lao động thất nghiệp ở thành thị nước ta vẫn còn cao chủ yếu do",
+    "options": [
+      "A. lao động tăng, số chưa qua đào tạo nhiều.",
+      "B. hoạt động dịch vụ chưa phát triển đa dạng.",
+      "C. lao động ở nhiều vùng nông thôn nhập cư.",
+      "D. mật độ dân cao, kinh tế phát triển hạn chế."
+    ],
+    "correct": 2,
+    "explain": "Dòng người lao động di cư từ khu vực nông thôn đổ dồn về các đô thị để tìm kiếm việc làm trong khi các ngành kinh tế đô thị chưa tạo thêm đủ vị trí việc làm mới, dẫn đến tỉ lệ thất nghiệp tại thành thị duy trì ở mức cao."
+  }
+];
+
+const geoDungSai = [
+  {
+    "id": 71,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Vùng biển nước ta - Ý a]: Vùng biển nước ta có nhiều thuận lợi cho phát triển du lịch biển đảo.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Với hơn 4000 hòn đảo lớn nhỏ, nhiều bãi biển đẹp và khí hậu nhiệt đới nắng ấm quanh năm, nước ta có tiềm năng vô cùng to lớn để phát triển du lịch biển đảo."
+  },
+  {
+    "id": 72,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Vùng biển nước ta - Ý b]: Dầu khí là loại khoáng sản có giá trị kinh tế nhất ở vùng biển.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Dầu mỏ và khí đốt ở thềm lục địa phía Nam là tài nguyên khoáng sản có giá trị kinh tế cao nhất và đóng góp tỉ trọng lớn nhất cho kinh tế biển của nước ta."
+  },
+  {
+    "id": 73,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Vùng biển nước ta - Ý c]: Bắc Trung Bộ là vùng có điều kiện thuận lợi nhất để xây dựng cảng nước sâu.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Vùng Duyên hải Nam Trung Bộ mới là vùng có điều kiện tự nhiên thuận lợi nhất để xây dựng cảng nước sâu (bờ biển khúc khuỷu, nhiều vũng vịnh kín gió, thềm lục địa hẹp và sâu)."
+  },
+  {
+    "id": 74,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Vùng biển nước ta - Ý d]: Một trong những giải pháp quan trọng để khai thác nguồn lợi hải sản là đánh bắt xa bờ.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Đẩy mạnh đánh bắt xa bờ giúp bảo vệ nguồn lợi thủy sản ven bờ đang cạn kiệt, nâng cao hiệu quả kinh tế và khẳng định chủ quyền biển đảo thiêng liêng của Tổ quốc."
+  },
+  {
+    "id": 75,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Phạm vi lãnh thổ - Ý a]: Biên giới trên đất liền nước ta tiếp giáp với bốn quốc gia.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Trên đất liền nước ta chỉ tiếp giáp với 3 quốc gia là Trung Quốc, Lào và Cam-pu-chia."
+  },
+  {
+    "id": 76,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Phạm vi lãnh thổ - Ý b]: Việt Nam nằm hoàn toàn trong vùng nội chí tuyến Bắc bán cầu.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Điểm cực Nam ở 8°34'B và cực Bắc ở 23°23'B đều nằm giữa xích đạo và chí tuyến Bắc (23°27'B), tức hoàn toàn trong vùng nội chí tuyến bán cầu Bắc."
+  },
+  {
+    "id": 77,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Phạm vi lãnh thổ - Ý c]: Nước ta nằm hoàn toàn ở bán cầu Đông.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Kinh độ nước ta từ 102°09'Đ đến 109°28'Đ (đất liền) và đến 117°20'Đ (vùng biển), đều nằm ở bán cầu Đông."
+  },
+  {
+    "id": 78,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Phạm vi lãnh thổ - Ý d]: Thiên nhiên nước ta chịu ảnh hưởng sâu sắc của biển.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Do tiếp giáp Biển Đông rộng lớn với bờ biển dài 3260 km, các khối khí qua biển mang lượng ẩm dồi dào khiến thiên nhiên nước ta mang tính chất hải dương sâu sắc."
+  },
+  {
+    "id": 79,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tọa độ địa lí - Ý a]: Nước ta nằm hoàn toàn ở nửa cầu Bắc.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Toàn bộ phần đất liền và vùng biển nước ta có vĩ độ từ 6°50'B đến 23°23'B, hoàn toàn ở nửa cầu Bắc."
+  },
+  {
+    "id": 80,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tọa độ địa lí - Ý b]: Lãnh thổ phần đất liền nước ta kéo dài trên 17 vĩ độ.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Phần đất liền từ 8°34'B đến 23°23'B kéo dài khoảng 14°49' vĩ độ (chưa tới 15 vĩ độ), không phải trên 17 vĩ độ."
+  },
+  {
+    "id": 81,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tọa độ địa lí - Ý c]: Vị trí địa lí tạo thuận lợi cho nước ta phát triển tổng hợp kinh tế biển.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Vùng biển rộng khoảng 1 triệu km² với tài nguyên phong phú tạo điều kiện phát triển toàn diện 4 ngành kinh tế biển: thủy sản, du lịch, giao thông vận tải và khai thác khoáng sản dầu khí."
+  },
+  {
+    "id": 82,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tọa độ địa lí - Ý d]: Vị trí địa lí và hình dáng lãnh thổ đã làm sông ngòi nước ta phần lớn sông nhỏ, nhiều nước, thủy chế theo mùa.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Lãnh thổ kéo dài và hẹp ngang, địa hình dốc ra biển khiến mạng lưới sông ngắn, nhỏ; lượng mưa lớn làm sông nhiều nước và chế độ nước biến động theo mùa mưa - khô của khí hậu."
+  },
+  {
+    "id": 83,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "Căn cứ vào sơ đồ khái quát các vùng biển Việt Nam, nhận định nào sau đây là đúng?",
+    "options": [
+      "A. Vùng biển nước ta bao gồm: Nội thủy, lãnh hải, vùng tiếp giáp lãnh hải và vùng đặc quyền kinh tế.",
+      "B. Vùng biển rộng 200 hải lí tính từ đường cơ sở ra phía đông hợp với lãnh hải là vùng đặc quyền kinh tế.",
+      "C. Vai trò chính của đường cơ sở là phân tách vùng nội thủy và vùng lãnh hải.",
+      "D. Trong vùng đặc quyền kinh tế nước ta, các quốc gia khác có quyền tự do thăm dò và khai thác tài nguyên."
+    ],
+    "correct": 1,
+    "explain": "Vùng đặc quyền kinh tế là vùng biển tiếp liền và nằm ngoài lãnh hải, hợp với lãnh hải thành một vùng biển có chiều rộng 200 hải lí tính từ đường cơ sở. Nước ta có chủ quyền hoàn toàn về kinh tế tại vùng này."
+  },
+  {
+    "id": 84,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Lượng mưa Đà Nẵng - Ý a]: Tháng có lượng mưa lớn nhất là tháng 9.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Tháng 9 có lượng mưa đạt 800,4 mm, là tháng có lượng mưa cao nhất trong năm 2021 tại trạm Đà Nẵng."
+  },
+  {
+    "id": 85,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Lượng mưa Đà Nẵng - Ý b]: Mùa mưa kéo dài từ tháng 1 đến tháng 5.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Từ tháng 1 đến tháng 5 lượng mưa rất thấp (tháng 5 chỉ có 2,1 mm), đây là các tháng mùa khô. Mùa mưa tại Đà Nẵng tập trung từ tháng 9 đến tháng 12."
+  },
+  {
+    "id": 86,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Lượng mưa Đà Nẵng - Ý c]: Lượng mưa trung bình năm của Đà Nẵng là 2492,1 mm.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tổng lượng mưa 12 tháng năm 2021 của trạm Đà Nẵng là: 34,7 + 32,1 + 14,6 + 21,4 + 2,1 + 38,5 + 12,5 + 93,5 + 800,4 + 782,8 + 271,0 + 485,8 = 2589,4 mm (khác với 2492,1 mm)."
+  },
+  {
+    "id": 87,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Lượng mưa Đà Nẵng - Ý d]: Lượng mưa lớn vào thu đông chủ yếu do hoạt động của gió mùa và dải hội tụ nhiệt đới.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Lượng mưa cực đại vào thu đông ở Duyên hải miền Trung (Đà Nẵng) là do gió mùa Đông Bắc thổi qua biển gặp địa hình dãy Trường Sơn chắn gió, kết hợp với dải hội tụ nhiệt đới và bão."
+  },
+  {
+    "id": 88,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Gió mùa Đông Bắc - Ý a]: Nửa đầu mùa đông, miền Bắc có thời tiết lạnh ẩm.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Nửa đầu mùa đông (từ tháng 11 đến tháng 1), miền Bắc có thời tiết lạnh khô; nửa sau mùa đông (từ tháng 2 đến tháng 4) mới chuyển sang thời tiết lạnh ẩm có mưa phùn."
+  },
+  {
+    "id": 89,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Gió mùa Đông Bắc - Ý b]: Gió mùa Đông Bắc tác động yếu đến miền Nam do ảnh hưởng của dãy Bạch Mã.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Gió mùa Đông Bắc bị chặn lại hầu như hoàn toàn tại bức chắn địa hình dãy Bạch Mã (16°B), do đó miền Nam hầu như không chịu ảnh hưởng của gió mùa Đông Bắc mà chịu sự thống trị của Tín phong bán cầu Bắc."
+  },
+  {
+    "id": 90,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Gió mùa Đông Bắc - Ý c]: Gió mùa Đông Bắc là nguyên nhân chính tạo nên mùa khô ở Nam Bộ và Tây Nguyên.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tín phong bán cầu Bắc (thổi theo hướng đông bắc mang tính chất khô ráo) mới là nguyên nhân chính tạo nên mùa khô sâu sắc kéo dài ở Nam Bộ và Tây Nguyên."
+  },
+  {
+    "id": 91,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Gió mùa Đông Bắc - Ý d]: Gió mùa Đông Bắc di chuyển quãng đường dài trên lục địa, gây nên thời tiết lạnh khô vào đầu mùa Đông ở miền Bắc.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Vào nửa đầu mùa đông, khối khí cực đới lục địa xuất phát từ cao áp Xibia di chuyển qua lục địa châu Á rộng lớn nên bị biến tính lạnh khô, gây thời tiết hanh khô rét buốt ở miền Bắc."
+  },
+  {
+    "id": 92,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Khí hậu Hà Nội và Cần Thơ - Ý a]: Hà Nội có biên độ nhiệt nhỏ hơn Cần Thơ.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Hà Nội ở miền Bắc có mùa đông lạnh nên biên độ nhiệt năm rất lớn (khoảng 12 - 13°C), trong khi Cần Thơ ở miền Nam nóng quanh năm nên biên độ nhiệt năm rất nhỏ (khoảng 2 - 3°C)."
+  },
+  {
+    "id": 93,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Khí hậu Hà Nội và Cần Thơ - Ý b]: Cần Thơ có mùa khô sâu sắc hơn Hà Nội.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Tại Cần Thơ, trong các tháng mùa khô (tháng 1, 2, 3), lượng mưa chỉ vài mm, mùa khô rất gay gắt; trong khi ở Hà Nội mùa đông vẫn có mưa nhỏ và mưa phùn vào nửa cuối mùa."
+  },
+  {
+    "id": 94,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Khí hậu Hà Nội và Cần Thơ - Ý c]: Hà Nội có một số tháng nhiệt độ dưới 20°C là do ảnh hưởng của gió Tín phong bán cầu Bắc.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Nhiệt độ mùa đông Hà Nội hạ thấp xuống dưới 20°C (có tháng dưới 18°C) là do tác động trực tiếp của các đợt gió mùa Đông Bắc từ lục địa phương Bắc tràn về, không phải do Tín phong."
+  },
+  {
+    "id": 95,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Khí hậu Hà Nội và Cần Thơ - Ý d]: Hà Nội có mùa khô ít sâu sắc hơn là do ảnh hưởng của gió mùa Đông Bắc vào cuối mùa đông.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Vào nửa sau mùa đông, khối khí áp cao Xibia lệch đông di chuyển qua biển vào nước ta, mang theo hơi ẩm gây mưa phùn và độ ẩm cao, làm cho mùa khô ở miền Bắc không sâu sắc như miền Nam."
+  },
+  {
+    "id": 96,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Đai cao chân núi - Ý a]: Độ cao dưới 600 - 700m (Bắc) và dưới 900 - 1000m (Nam) là đặc điểm của đai cận nhiệt đới gió mùa.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Đây là giới hạn độ cao của đai nhiệt đới gió mùa chân núi. Đai cận nhiệt đới gió mùa trên núi nằm ở độ cao từ 600 - 700m (hoặc 900 - 1000m) lên đến 2600m."
+  },
+  {
+    "id": 97,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Đai cao chân núi - Ý b]: Đai nhiệt đới chân núi có hệ sinh thái rừng ôn đới chiếm ưu thế.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tại đai nhiệt đới gió mùa, hệ sinh thái đặc trưng chiếm ưu thế là rừng nhiệt đới ẩm lá rộng thường xanh và rừng nhiệt đới gió mùa, không phải rừng ôn đới."
+  },
+  {
+    "id": 98,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Đai cao chân núi - Ý c]: Mùa hạ nóng do ảnh hưởng vị trí địa lí và hoạt động của gió mùa hạ.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Vị trí nội chí tuyến có góc nhập xạ lớn kết hợp với khối khí nhiệt đới ẩm Tây Nam hoạt động mạnh vào mùa hạ làm cho nền nhiệt mùa hạ luôn ở mức cao trên 25°C."
+  },
+  {
+    "id": 99,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Đai cao chân núi - Ý d]: Đất feralit chiếm ưu thế do tác động chủ yếu của yếu tố địa hình và khí hậu.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Khí hậu nhiệt đới ẩm nóng mưa nhiều kết hợp với địa hình đồi núi thấp làm cho quá trình phong hóa feralit diễn ra mạnh mẽ, tạo nên lớp đất feralit dày chiếm ưu thế."
+  },
+  {
+    "id": 100,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Hoàng Liên Sơn & Phan-xi-păng - Ý a]: Thiên nhiên dãy núi Hoàng Liên Sơn có 2 đai cao.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Với độ cao đỉnh 3143m, dãy Hoàng Liên Sơn là nơi duy nhất ở Việt Nam có đầy đủ cả 3 đai cao: đai nhiệt đới gió mùa chân núi, đai cận nhiệt đới gió mùa trên núi và đai ôn đới gió mùa trên núi (trên 2600m)."
+  },
+  {
+    "id": 101,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Hoàng Liên Sơn & Phan-xi-păng - Ý b]: Càng lên cao nhiệt độ càng giảm, tính nhiệt đới tăng dần.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Theo quy luật đai cao, càng lên cao nhiệt độ càng giảm nên tính nhiệt đới giảm dần, thay vào đó tính cận nhiệt đới và ôn đới tăng dần."
+  },
+  {
+    "id": 102,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Hoàng Liên Sơn & Phan-xi-păng - Ý c]: Đai cao từ 700m đến 2600m có khí hậu mang tính chất cận nhiệt đới gió mùa.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Từ 600 - 700m đến 2600m là đai cận nhiệt đới gió mùa trên núi, mùa hạ mát mẻ, nhiệt độ dưới 25°C, có nhiều loài cây lá kim và hạt trần cận nhiệt."
+  },
+  {
+    "id": 103,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Hoàng Liên Sơn & Phan-xi-păng - Ý d]: Thiên nhiên nước ta phân hóa theo độ cao do địa hình đồi núi và gió.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Nguyên nhân trực tiếp làm thiên nhiên phân hóa theo độ cao là sự suy giảm nhiệt độ (trung bình cứ lên cao 100m nhiệt độ giảm 0,6°C) và sự thay đổi độ ẩm theo độ cao địa hình."
+  },
+  {
+    "id": 104,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Môi trường - Ý a]: Ô nhiễm không khí diễn ra chủ yếu tại các thành phố lớn, đông dân.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Các đô thị lớn (như Hà Nội, TP.HCM) có mật độ giao thông dày đặc, tập trung nhiều công trình xây dựng và nhà máy nên mức độ ô nhiễm bụi mịn và khí thải rất nghiêm trọng."
+  },
+  {
+    "id": 105,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Môi trường - Ý b]: Khí thải từ hoạt động công nghiệp và sinh hoạt là nguyên nhân chủ yếu gây ô nhiễm không khí.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Khí thải phát tán từ phương tiện giao thông, nhà máy nhiệt điện, xí nghiệp công nghiệp và đun nấu sinh hoạt là các nguồn phát thải ô nhiễm không khí hàng đầu."
+  },
+  {
+    "id": 106,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Môi trường - Ý c]: Sự gia tăng nguồn nước thải từ các ngành kinh tế và nước thải sinh hoạt là những nguyên nhân trực tiếp gây ô nhiễm nguồn nước.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Nước thải công nghiệp, nông nghiệp (dư lượng phân bón, thuốc bảo vệ thực vật) và nước thải sinh hoạt chưa qua xử lí xả trực tiếp ra sông hồ là nguyên nhân trực tiếp gây ô nhiễm nguồn nước mặt."
+  },
+  {
+    "id": 107,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Môi trường - Ý d]: Tăng cường sử dụng nguồn năng lượng hoá thạch góp phần giảm tình trạng ô nhiễm không khí.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Đốt nhiên liệu hóa thạch (than đá, dầu mỏ, khí đốt) thải ra lượng lớn khí nhà kính và bụi độc hại. Để giảm ô nhiễm cần chuyển dịch sang năng lượng tái tạo (điện gió, điện mặt trời, sinh khối)."
+  },
+  {
+    "id": 108,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Diện tích rừng - Ý a]: Tổng diện tích rừng nước ta tăng liên tục qua các năm (1943 - 2021).",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tổng diện tích rừng giảm từ 14,3 triệu ha (1943) xuống 13,4 triệu ha (2010), sau đó mới tăng lên 14,7 triệu ha (2021), do đó không tăng liên tục."
+  },
+  {
+    "id": 109,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Diện tích rừng - Ý b]: Diện tích rừng nước ta chủ yếu là rừng tự nhiên.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Năm 2021, diện tích rừng tự nhiên là 10,1 triệu ha, chiếm tới 68,7% trong tổng số 14,7 triệu ha rừng cả nước."
+  },
+  {
+    "id": 110,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Diện tích rừng - Ý c]: Diện tích rừng nước ta tăng chủ yếu là do tăng diện tích rừng trồng.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Rừng trồng tăng từ 0 triệu ha (1943) lên 3,1 triệu ha (2010) và 4,6 triệu ha (2021), trong khi rừng tự nhiên suy giảm từ 14,3 triệu ha xuống 10,1 triệu ha."
+  },
+  {
+    "id": 111,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Diện tích rừng - Ý d]: Mặc dù tổng diện tích rừng tăng nhưng chất lượng rừng vẫn thấp do diện tích rừng nghèo, mới phục hồi.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Dù diện tích rừng đã phục hồi đạt 14,7 triệu ha, nhưng phần lớn là rừng non mới trồng và rừng nghèo, diện tích rừng giàu nguyên sinh còn rất ít, chất lượng và độ đa dạng sinh học còn thấp."
+  },
+  {
+    "id": 112,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Đa dạng sinh học - Ý a]: Giai đoạn 1943-1973, chiến tranh là một trong những nguyên nhân làm suy giảm diện tích rừng ở nước ta.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Trong chiến tranh, bom đạn và chất độc hóa học (dioxin) đã hủy diệt hơn 2 triệu ha rừng, làm suy giảm nghiêm trọng độ che phủ rừng và đa dạng sinh thái."
+  },
+  {
+    "id": 113,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Đa dạng sinh học - Ý b]: Diện tích rừng suy giảm không ảnh hưởng đến sự đa dạng sinh học.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Rừng là môi trường sống và nơi cư trú của phần lớn các loài động thực vật hoang dã. Khi rừng bị thu hẹp hoặc phân mảnh, các loài mất nơi cư trú và thức ăn, đẩy nhiều loài đến bờ vực tuyệt chủng."
+  },
+  {
+    "id": 114,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Đa dạng sinh học - Ý c]: Nguyên nhân suy giảm sự đa dạng sinh học bao gồm cả các yếu tố tự nhiên và kinh tế xã hội.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Suy giảm đa dạng sinh học do cả thiên tai biến đổi khí hậu (yếu tố tự nhiên) và khai thác quá mức, phá rừng, mở rộng đất canh tác, ô nhiễm môi trường (yếu tố kinh tế - xã hội)."
+  },
+  {
+    "id": 115,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Đa dạng sinh học - Ý d]: Thực hiện các giải pháp giảm nhẹ biến đổi khí hậu góp phần bảo vệ sự đa dạng sinh học.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Biến đổi khí hậu làm thay đổi môi trường sống và thời tiết cực đoan. Giảm thiểu biến đổi khí hậu giúp bảo tồn sinh cảnh tự nhiên và ổn định hệ sinh thái."
+  },
+  {
+    "id": 116,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tuổi thọ & Cơ cấu nhóm tuổi - Ý a]: Tỉ trọng dân số nhóm từ 0 – 14 tuổi ngày càng tăng.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Nhóm 0 - 14 tuổi giảm liên tục từ 24,5% (2009) xuống 24,3% (2019) và 24,1% (2021) do mức sinh giảm."
+  },
+  {
+    "id": 117,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tuổi thọ & Cơ cấu nhóm tuổi - Ý b]: Nước ta có nguồn lao động dồi dào và ngày càng tăng nhanh.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tỉ trọng nhóm tuổi lao động (15 - 64 tuổi) có xu hướng giảm từ 69,1% (2009) xuống 67,6% (2021), tốc độ tăng nguồn lao động đang có xu hướng chậm lại."
+  },
+  {
+    "id": 118,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tuổi thọ & Cơ cấu nhóm tuổi - Ý c]: Tỉ trọng nhóm từ 65 tuổi trở lên ngày càng tăng do kinh tế phát triển, điều kiện sống và dịch vụ y tế được cải thiện.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Nhóm từ 65 tuổi trở lên tăng nhanh từ 6,4% lên 8,3% nhờ sự tiến bộ của y tế và chất lượng cuộc sống nâng cao giúp kéo dài tuổi thọ người dân."
+  },
+  {
+    "id": 119,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tuổi thọ & Cơ cấu nhóm tuổi - Ý d]: Dân số nước ta ngày càng già hóa do tỉ suất sinh và tỉ suất tử ngày càng giảm, tuổi thọ trung bình ngày càng tăng.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Tỉ suất sinh thấp, tỉ lệ tử vong giảm và tuổi thọ bình quân tăng lên 73,6 tuổi là các nguyên nhân cốt lõi khiến nước ta bước vào thời kì già hóa dân số nhanh."
+  },
+  {
+    "id": 120,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Lao động việc làm 2022 - Ý a]: Tỉ lệ thất nghiệp giữa thành thị và nông thôn bằng nhau.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tỉ lệ thất nghiệp khu vực thành thị là 2,82%, cao hơn đáng kể so với khu vực nông thôn là 2,04%."
+  },
+  {
+    "id": 121,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Lao động việc làm 2022 - Ý b]: Tỉ lệ thiếu việc làm ở nông thôn cao hơn thành thị.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Tỉ lệ thiếu việc làm ở nông thôn là 2,52%, cao hơn khu vực thành thị (1,71%)."
+  },
+  {
+    "id": 122,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Lao động việc làm 2022 - Ý c]: Ở nông thôn, tỉ lệ thất nghiệp thấp hơn tỉ lệ thiếu việc làm do đặc điểm của hoạt động sản xuất.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Sản xuất nông nghiệp mang tính chất mùa vụ cao nên lúc nông nhàn người nông dân thiếu việc làm (2,52%) nhiều hơn là thất nghiệp hoàn toàn (2,04%)."
+  },
+  {
+    "id": 123,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Lao động việc làm 2022 - Ý d]: Biểu đồ tròn là dạng biểu đồ thích hợp nhất thể hiện tỉ lệ thiếu việc làm phân theo khu vực thành thị và nông thôn năm 2022.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tỉ lệ thiếu việc làm (%) ở hai khu vực là hai chỉ số độc lập, không cấu thành tổng thể 100%, do đó biểu đồ cột (hoặc cột đơn so sánh) mới là biểu đồ thích hợp nhất."
+  },
+  {
+    "id": 124,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "Căn cứ vào bảng số liệu Cơ cấu dân số theo nhóm tuổi ở nước ta giai đoạn 1999 – 2021, nhận xét nào sau đây là đúng?",
+    "options": [
+      "A. Tỉ lệ nhóm tuổi 0 - 14 tuổi tăng liên tục.",
+      "B. Tỉ lệ nhóm tuổi từ 65 trở lên tăng và luôn chiếm tỉ lệ thấp nhất.",
+      "C. Nước ta có cơ cấu dân số già ngay từ năm 1999.",
+      "D. Tỉ lệ nhóm tuổi 15 - 64 tuổi giảm liên tục từ năm 1999 đến 2021."
+    ],
+    "correct": 1,
+    "explain": "Theo bảng số liệu: Nhóm từ 65 tuổi trở lên tăng liên tục từ 5,8% (1999) lên 6,4% (2009), 7,7% (2019) và 8,3% (2021), đồng thời luôn là nhóm chiếm tỉ trọng thấp nhất trong cả 3 nhóm tuổi."
+  },
+  {
+    "id": 125,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Dân số năm 2022 - Ý a]: Dân số trung bình của cả nước tăng.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Dân số cả nước ước tính 99,46 triệu người, tăng 957,3 nghìn người (tương đương tăng 0,97%) so với năm 2021."
+  },
+  {
+    "id": 126,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Dân số năm 2022 - Ý b]: Nước ta có sự mất cân bằng giới tính khi sinh.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Tỷ số giới tính khi sinh là 111,6 bé trai/100 bé gái, vượt xa mức cân bằng sinh học tự nhiên (104 - 106 trai/100 gái)."
+  },
+  {
+    "id": 127,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Dân số năm 2022 - Ý c]: Số dân ở nông thôn vẫn còn nhiều do quá trình công nghiệp hóa chưa mạnh.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Dân số nông thôn vẫn chiếm tỉ trọng lớn (62,4%) do quá trình công nghiệp hóa, hiện đại hóa và đô thị hóa ở nước ta diễn ra tương đối chậm."
+  },
+  {
+    "id": 128,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Dân số năm 2022 - Ý d]: Dân số của nước ta đông làm giảm tốc độ tăng trưởng kinh tế.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Dân số đông tạo ra nguồn lao động dồi dào và thị trường tiêu thụ nội địa rộng lớn, thúc đẩy tăng trưởng kinh tế nếu được đào tạo và sử dụng hợp lí."
+  },
+  {
+    "id": 129,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tỉ lệ thất nghiệp 2019-2022 - Ý a]: Tỷ lệ thất nghiệp của cả nước năm 2022 so với 2019 giảm.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Năm 2019 tỉ lệ thất nghiệp cả nước là 2,19%, năm 2022 là 2,34% (tăng 0,15%)."
+  },
+  {
+    "id": 130,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tỉ lệ thất nghiệp 2019-2022 - Ý b]: Tỷ lệ thất nghiệp thành thị luôn cao hơn nông thôn.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Qua cả 3 năm (2019: 3,10% > 1,74%; 2021: 4,33% > 2,50%; 2022: 2,82% > 2,04%), tỉ lệ thất nghiệp thành thị luôn cao hơn nông thôn."
+  },
+  {
+    "id": 131,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tỉ lệ thất nghiệp 2019-2022 - Ý c]: Tỷ lệ thất nghiệp năm 2019 – 2021 tăng do tác động của dịch Covid.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Đại dịch Covid-19 làm đứt gãy chuỗi cung ứng, đình trệ sản xuất kinh doanh khiến tỉ lệ thất nghiệp năm 2021 tăng vọt lên 3,20%."
+  },
+  {
+    "id": 132,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Tỉ lệ thất nghiệp 2019-2022 - Ý d]: Thất nghiệp ở thành thị biến động mạnh hơn nông thôn do sự khác nhau về quy mô dân số.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Thất nghiệp ở thành thị biến động mạnh hơn chủ yếu do đặc điểm cơ cấu ngành kinh tế thành thị gắn liền với dịch vụ và công nghiệp nhạy cảm với khủng hoảng thị trường, không phải do quy mô dân số."
+  },
+  {
+    "id": 133,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Trình độ lao động - Ý a]: Tỉ lệ lao động có việc làm đã qua đào tạo có xu hướng giảm.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tỉ lệ lao động đã qua đào tạo tăng mạnh từ 14,6% (2010) lên 26,2% (2021)."
+  },
+  {
+    "id": 134,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Trình độ lao động - Ý b]: Tỉ lệ lao động có việc làm chưa qua đào tạo có xu hướng tăng.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Tỉ lệ lao động chưa qua đào tạo giảm từ 85,4% (2010) xuống 73,8% (2021)."
+  },
+  {
+    "id": 135,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Trình độ lao động - Ý c]: Chất lượng lao động ngày càng tăng phù hợp với yêu cầu hiện đại hoá đất nước.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Tỉ lệ lao động qua đào tạo tăng lên giúp nâng cao năng suất lao động, đáp ứng tốt hơn yêu cầu của quá trình công nghiệp hóa, hiện đại hóa."
+  },
+  {
+    "id": 136,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Trình độ lao động - Ý d]: Lao động chưa qua đào tạo chiếm tỉ lệ lớn do nước ta có xuất phát điểm nền kinh tế thấp.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Do xuất phát điểm là nền nông nghiệp lạc hậu, hệ thống đào tạo nghề phát triển muộn nên phần lớn người lao động chưa có bằng cấp chứng chỉ chuyên môn kĩ thuật."
+  },
+  {
+    "id": 137,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Quy mô & Gia tăng dân số - Ý a]: Quy mô dân số nước ta giảm liên tục qua các năm (1999 - 2021).",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Quy mô dân số tăng liên tục từ 76,5 triệu người (1999) lên 86,0 triệu người (2009), 96,5 triệu người (2019) và 98,5 triệu người (2021)."
+  },
+  {
+    "id": 138,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Quy mô & Gia tăng dân số - Ý b]: Tỉ lệ gia tăng dân số thấp nhất năm 2021.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Tỉ lệ gia tăng dân số năm 2021 đạt 0,94%, là mức thấp nhất so với các năm 1999 (1,51%), 2009 (1,06%) và 2019 (1,15%)."
+  },
+  {
+    "id": 139,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Quy mô & Gia tăng dân số - Ý c]: Tỉ lệ gia tăng dân số giảm, quy mô dân số tăng do dân số đông, số người trong độ tuổi sinh đẻ ít.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "Phát biểu SAI. Nước ta có cơ cấu dân số vàng nên số phụ nữ trong độ tuổi sinh đẻ rất đông đảo (chứ không phải ít), quy mô dân số tăng mỗi năm gần 1 triệu người do quy mô dân số ban đầu rất lớn."
+  },
+  {
+    "id": 140,
+    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
+    "question": "[Đúng/Sai về Quy mô & Gia tăng dân số - Ý d]: Biểu đồ kết hợp là dạng biểu đồ thích hợp nhất thể hiện quy mô dân số và tỉ lệ gia tăng dân số nước ta giai đoạn 1999-2021.",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "Phát biểu ĐÚNG. Biểu đồ kết hợp (cột thể hiện quy mô dân số theo đơn vị triệu người, đường thể hiện tỉ lệ gia tăng dân số theo đơn vị %) là dạng biểu đồ chuẩn và thích hợp nhất."
+  }
+];
+
+const geoTinhToan = [
+  {
+    "id": 141,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Cho bảng số liệu nhiệt độ trung bình tháng tại Hà Nội năm 2022: T1: 18,6°C; T2: 15,3°C; T3: 23,1°C; T4: 24,8°C; T5: 26,8°C; T6: 31,4°C; T7: 30,6°C; T8: 29,9°C; T9: 29,0°C; T10: 26,2°C; T11: 26,0°C; T12: 17,8°C. Tính biên độ nhiệt năm tại Hà Nội (làm tròn kết quả đến 1 chữ số thập phân của °C).",
+    "options": [
+      "A. 16,1°C",
+      "B. 15,3°C",
+      "C. 31,4°C",
+      "D. 12,8°C"
+    ],
+    "correct": 0,
+    "explain": "Công thức: Biên độ nhiệt năm = T_max - T_min. Trong đó tháng có nhiệt độ cao nhất là tháng 6 (31,4°C), tháng thấp nhất là tháng 2 (15,3°C). Biên độ nhiệt năm = 31,4 - 15,3 = 16,1°C."
+  },
+  {
+    "id": 142,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Cho bảng số liệu nhiệt độ không khí trung bình tháng của trạm quan trắc A: các tháng dao động từ 26,6°C đến 28,7°C (nhiệt độ tất cả các tháng đều >26°C, biên độ nhiệt năm 2,1°C). Trạm quan trắc A thuộc miền khí hậu nào của nước ta?",
+    "options": [
+      "A. Miền khí hậu phía Nam (Nam Bộ)",
+      "B. Miền khí hậu phía Bắc",
+      "C. Miền khí hậu Trung và Nam Bắc Bộ",
+      "D. Miền khí hậu Bắc Trung Bộ"
+    ],
+    "correct": 0,
+    "explain": "Trạm A có nền nhiệt cao quanh năm, không có tháng nào dưới 25°C, biên độ nhiệt năm rất nhỏ (2,1°C). Đây là đặc trưng tiêu biểu của khí hậu cận xích đạo gió mùa thuộc Miền khí hậu phía Nam (Nam Bộ và Tây Nguyên)."
+  },
+  {
+    "id": 143,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Nhiệt độ trung bình 12 tháng tại Hà Nội năm 2021 lần lượt là: 16,9; 20,9; 22,5; 25,6; 29,7; 31,6; 30,8; 30,5; 28,7; 24,6; 22,5; 19,4 (°C). Tính nhiệt độ trung bình năm tại Hà Nội năm 2021 (làm tròn đến hàng đơn vị °C).",
+    "options": [
+      "A. 25°C",
+      "B. 26°C",
+      "C. 24°C",
+      "D. 23°C"
+    ],
+    "correct": 0,
+    "explain": "Tổng nhiệt độ 12 tháng = 16,9 + 20,9 + 22,5 + 25,6 + 29,7 + 31,6 + 30,8 + 30,5 + 28,7 + 24,6 + 22,5 + 19,4 = 303,7°C. Nhiệt độ trung bình năm = 303,7 / 12 ≈ 25,31°C ≈ 25°C."
+  },
+  {
+    "id": 144,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Năm 2021, diện tích rừng nước ta là 148 nghìn km² và diện tích tự nhiên là 331 nghìn km². Hãy cho biết độ che phủ rừng của nước ta năm 2021 là bao nhiêu % (làm tròn đến số thập phân thứ nhất)?",
+    "options": [
+      "A. 44,7%",
+      "B. 42,0%",
+      "C. 45,2%",
+      "D. 39,5%"
+    ],
+    "correct": 0,
+    "explain": "Công thức: Độ che phủ rừng = (Diện tích rừng / Diện tích tự nhiên) × 100% = (148 / 331) × 100% ≈ 44,713% ≈ 44,7%."
+  },
+  {
+    "id": 145,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Tổng diện tích rừng của nước ta năm 2021 là 14,8 triệu ha. Trong đó, diện tích rừng tự nhiên là 10,2 triệu ha. Tính tỉ lệ diện tích rừng tự nhiên trong tổng diện tích rừng (làm tròn đến 1 chữ số thập phân của %)?",
+    "options": [
+      "A. 68,9%",
+      "B. 31,1%",
+      "C. 65,4%",
+      "D. 70,2%"
+    ],
+    "correct": 0,
+    "explain": "Công thức: Tỉ lệ rừng tự nhiên = (10,2 / 14,8) × 100% ≈ 68,919% ≈ 68,9%."
+  },
+  {
+    "id": 146,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Năm 2021, diện tích tự nhiên nước ta là 331 134,5 km², trong đó diện tích rừng là 14 790,1 nghìn ha. Cho biết độ che phủ rừng là bao nhiêu phần trăm (làm tròn đến 1 chữ số thập phân)?",
+    "options": [
+      "A. 44,7%",
+      "B. 46,2%",
+      "C. 42,5%",
+      "D. 43,8%"
+    ],
+    "correct": 0,
+    "explain": "Đổi đơn vị: 14 790,1 nghìn ha = 14 790 100 ha = 147 901 km² (do 1 km² = 100 ha). Độ che phủ rừng = (147 901 / 331 134,5) × 100% ≈ 44,665% ≈ 44,7%."
+  },
+  {
+    "id": 147,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Biết tổng diện tích rừng nước ta năm 2021 là 14,7 triệu ha, diện tích rừng tự nhiên là 10,1 triệu ha. Cho biết tỉ lệ diện tích rừng tự nhiên trong tổng diện tích rừng cả nước là bao nhiêu phần trăm (làm tròn đến 1 chữ số thập phân)?",
+    "options": [
+      "A. 68,7%",
+      "B. 69,5%",
+      "C. 31,3%",
+      "D. 67,2%"
+    ],
+    "correct": 0,
+    "explain": "Công thức: Tỉ lệ = (10,1 / 14,7) × 100% ≈ 68,707% ≈ 68,7%."
+  },
+  {
+    "id": 148,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Năm 2021, tổng diện tích rừng của nước ta là 148.000 km², diện tích tự nhiên là 331.000 km². Tính độ che phủ rừng của nước ta năm 2021 (làm tròn đến số thập phân thứ nhất)?",
+    "options": [
+      "A. 44,7%",
+      "B. 43,5%",
+      "C. 45,0%",
+      "D. 41,8%"
+    ],
+    "correct": 0,
+    "explain": "Độ che phủ rừng = (148.000 / 331.000) × 100% ≈ 44,71% ≈ 44,7%."
+  },
+  {
+    "id": 149,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Quy mô dân số nước ta năm 2021 là 98 504,4 nghìn người, trong đó dân thành thị là 36 563,3 nghìn người. Vậy tỉ lệ dân nông thôn năm 2021 của nước ta là bao nhiêu phần trăm (làm tròn đến số thập phân thứ nhất)?",
+    "options": [
+      "A. 62,9%",
+      "B. 37,1%",
+      "C. 63,5%",
+      "D. 61,8%"
+    ],
+    "correct": 0,
+    "explain": "Dân số nông thôn = 98 504,4 - 36 563,3 = 61 941,1 nghìn người. Tỉ lệ dân nông thôn = (61 941,1 / 98 504,4) × 100% ≈ 62,88% ≈ 62,9%."
+  },
+  {
+    "id": 150,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Tính đến 31/12/2023, dân số Việt Nam ước tính là 99 186 471 người, có 1 418 890 trẻ sinh ra và 681 157 người chết. Vậy tỉ suất gia tăng dân số tự nhiên của Việt Nam năm 2023 là bao nhiêu phần trăm (làm tròn đến 2 chữ số thập phân)?",
+    "options": [
+      "A. 0,74%",
+      "B. 0,95%",
+      "C. 1,43%",
+      "D. 0,68%"
+    ],
+    "correct": 0,
+    "explain": "Gia tăng dân số tự nhiên = Số sinh - Số chết = 1 418 890 - 681 157 = 737 733 người. Tỉ suất gia tăng tự nhiên = (737 733 / 99 186 471) × 100% ≈ 0,74378% ≈ 0,74%."
+  },
+  {
+    "id": 151,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Năm 2022, thành phố Cần Thơ có diện tích là 1 440,4 km², dân số 1 252,35 nghìn người. Vậy mật độ dân số trung bình ở thành phố Cần Thơ là bao nhiêu người/km² (làm tròn thành số nguyên)?",
+    "options": [
+      "A. 869 người/km²",
+      "B. 870 người/km²",
+      "C. 850 người/km²",
+      "D. 912 người/km²"
+    ],
+    "correct": 0,
+    "explain": "Đổi dân số: 1 252,35 nghìn người = 1 252 350 người. Mật độ dân số = Dân số / Diện tích = 1 252 350 / 1 440,4 ≈ 869,45 người/km² ≈ 869 người/km²."
+  },
+  {
+    "id": 152,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Quy mô dân số nước ta năm 2021 là 98 506,19 nghìn người, số người lao động thực tế là 49 072,00 nghìn người. Tỉ lệ lao động trong tổng số dân của nước ta chiếm bao nhiêu phần trăm (làm tròn đến 1 chữ số thập phân)?",
+    "options": [
+      "A. 49,8%",
+      "B. 51,2%",
+      "C. 48,5%",
+      "D. 50,0%"
+    ],
+    "correct": 0,
+    "explain": "Tỉ lệ lao động = (Số người lao động / Tổng dân số) × 100% = (49 072,00 / 98 506,19) × 100% ≈ 49,816% ≈ 49,8%."
+  },
+  {
+    "id": 153,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Năm 2022, quy mô dân số vùng Bắc Trung Bộ và Duyên hải miền Trung là 20 661,7 nghìn người; diện tích là 95 847,9 km². Vậy mật độ dân số của vùng là bao nhiêu người/km² (làm tròn thành số nguyên)?",
+    "options": [
+      "A. 216 người/km²",
+      "B. 215 người/km²",
+      "C. 220 người/km²",
+      "D. 198 người/km²"
+    ],
+    "correct": 0,
+    "explain": "Dân số = 20 661 700 người. Mật độ dân số = 20 661 700 / 95 847,9 ≈ 215,567 người/km² ≈ 216 người/km²."
+  },
+  {
+    "id": 154,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Năm 2022, tổng số lao động nước ta là 50 604,7 nghìn người, số lao động trong khu vực Công nghiệp, xây dựng là 24 442,0 nghìn người. Vậy tỉ trọng lao động của khu vực công nghiệp, xây dựng chiếm bao nhiêu phần trăm (làm tròn đến 1 chữ số thập phân)?",
+    "options": [
+      "A. 48,3%",
+      "B. 47,5%",
+      "C. 49,1%",
+      "D. 51,2%"
+    ],
+    "correct": 0,
+    "explain": "Tỉ trọng lao động = (24 442,0 / 50 604,7) × 100% ≈ 48,299% ≈ 48,3%."
+  },
+  {
+    "id": 155,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Dân số nước ta năm 1990 là 66,9 triệu người và năm 2021 là 98,5 triệu người. Hãy cho biết dân số năm 2021 tăng bao nhiêu triệu người so với năm 1990 (làm tròn đến 1 chữ số thập phân)?",
+    "options": [
+      "A. 31,6 triệu người",
+      "B. 32,4 triệu người",
+      "C. 30,8 triệu người",
+      "D. 29,5 triệu người"
+    ],
+    "correct": 0,
+    "explain": "Số dân tăng thêm = Dân số 2021 - Dân số 1990 = 98,5 - 66,9 = 31,6 triệu người."
+  },
+  {
+    "id": 156,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Biết diện tích tự nhiên của Việt Nam là 0,331212 triệu km², số dân năm 2022 là 99,47 triệu người. Vậy mật độ dân số nước ta năm 2022 là bao nhiêu người/km² (làm tròn đến hàng đơn vị)?",
+    "options": [
+      "A. 300 người/km²",
+      "B. 298 người/km²",
+      "C. 305 người/km²",
+      "D. 289 người/km²"
+    ],
+    "correct": 0,
+    "explain": "Mật độ dân số = Dân số / Diện tích = 99,47 / 0,331212 ≈ 300,32 người/km² ≈ 300 người/km²."
+  },
+  {
+    "id": 157,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Nước ta có 54 dân tộc, trong đó người Kinh là 82,9 triệu người, các dân tộc khác là 13,18 triệu người. Tính tỉ trọng người Kinh và các dân tộc thiểu số trong tổng dân số (làm tròn đến 2 chữ số thập phân)?",
+    "options": [
+      "A. 86,28% và 13,72%",
+      "B. 85,50% và 14,50%",
+      "C. 87,10% và 12,90%",
+      "D. 84,20% và 15,80%"
+    ],
+    "correct": 0,
+    "explain": "Tổng dân số = 82,9 + 13,18 = 96,08 triệu người. Tỉ trọng người Kinh = (82,9 / 96,08) × 100% ≈ 86,282% ≈ 86,28%. Tỉ trọng các dân tộc khác = 100% - 86,28% = 13,72%."
+  },
+  {
+    "id": 158,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Năm 2021, quy mô dân số nước ta là 95,8 triệu người; tỉ lệ dân thành thị là 38,2%. Vậy số dân thành thị nước ta là bao nhiêu triệu người (làm tròn đến 1 chữ số thập phân)?",
+    "options": [
+      "A. 36,6 triệu người",
+      "B. 37,2 triệu người",
+      "C. 35,8 triệu người",
+      "D. 38,0 triệu người"
+    ],
+    "correct": 0,
+    "explain": "Số dân thành thị = 95,8 × 38,2% = 36,5956 triệu người ≈ 36,6 triệu người."
+  },
+  {
+    "id": 159,
+    "topic": "BÀI TẬP TÍNH TOÁN ĐỊA LÍ",
+    "question": "Năm 2021, dân số thành thị của nước ta là 36,6 triệu người và dân số nông thôn là 61,9 triệu người. Vậy tỉ lệ dân nông thôn của nước ta năm 2021 là bao nhiêu phần trăm (làm tròn đến 1 chữ số thập phân)?",
+    "options": [
+      "A. 62,8%",
+      "B. 63,5%",
+      "C. 37,2%",
+      "D. 61,9%"
+    ],
+    "correct": 0,
+    "explain": "Tổng dân số = 36,6 + 61,9 = 98,5 triệu người. Tỉ lệ dân nông thôn = (61,9 / 98,5) × 100% ≈ 62,84% ≈ 62,8%."
+  }
+];
+
+const GEOGRAPHY_TOPICS_DATABASE = [
+  {
+    id: "geo_all",
+    title: "Trọn Bộ Ngân Hàng Địa Lí 12 (159 câu)",
+    icon: "🌍",
+    category: "all",
+    questions: geoAllQuestions
+  },
+  {
+    id: "geo_tu_nhien",
+    title: "Chủ đề 1: Địa Lí Tự Nhiên Việt Nam (51 câu)",
+    icon: "⛰️",
+    category: "cd1",
+    questions: geoTuNhien
+  },
+  {
+    id: "geo_dan_cu",
+    title: "Chủ đề 2: Địa Lí Dân Cư & Lao Động (19 câu)",
+    icon: "👥",
+    category: "cd2",
+    questions: geoDanCu
+  },
+  {
+    id: "geo_dung_sai",
+    title: "Chủ đề 3: Trắc Nghiệm Đúng / Sai (70 câu)",
+    icon: "⚖️",
+    category: "cd3",
+    questions: geoDungSai
+  },
+  {
+    id: "geo_tinh_toan",
+    title: "Chủ đề 4: Kĩ Năng & Tính Toán Địa Lí (19 câu)",
+    icon: "📊",
+    category: "cd4",
+    questions: geoTinhToan
+  }
+];
+
+if (typeof window !== 'undefined') {
+  window.GEOGRAPHY_CATEGORIES = GEOGRAPHY_CATEGORIES;
+  window.GEOGRAPHY_TOPICS_DATABASE = GEOGRAPHY_TOPICS_DATABASE;
+}

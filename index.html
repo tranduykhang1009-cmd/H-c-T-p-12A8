@@ -31,6 +31,7 @@
   <script src="lichsu.js"></script>
   <script src="tienganh.js"></script>
   <script src="vatli.js"></script>
+  <script src="dialy.js"></script>
   <script>
     // Tự động nạp dự phòng từ data/ nếu mở file offline mà dữ liệu nằm trong thư mục con data/
     if (typeof ALL_TOPICS_DATABASE === 'undefined' && !window.ALL_TOPICS_DATABASE) {
@@ -41,6 +42,9 @@
     }
     if (typeof PHYSICS_TOPICS_DATABASE === 'undefined' && !window.PHYSICS_TOPICS_DATABASE) {
       const s3 = document.createElement('script'); s3.src = 'data/vatli.js'; document.head.appendChild(s3);
+    }
+    if (typeof GEOGRAPHY_TOPICS_DATABASE === 'undefined' && !window.GEOGRAPHY_TOPICS_DATABASE) {
+      const s4 = document.createElement('script'); s4.src = 'data/dialy.js'; document.head.appendChild(s4);
     }
   </script>
 
@@ -1770,6 +1774,11 @@
       color: #34d399;
       border: 1px solid rgba(16, 185, 129, 0.35);
     }
+    .badge-subj-geography {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+    }
 
   
     /* =========================================================================
@@ -3431,7 +3440,7 @@
               <option value="math">📐 Toán Học 12 (Sắp có)</option>
               <option value="chemistry">🧪 Hóa Học 12 (Sắp có)</option>
               <option value="biology">🧬 Sinh Học 12 (Sắp có)</option>
-              <option value="geography">🌍 Địa Lí 12 (Sắp có)</option>
+              <option value="geography">🌍 Địa Lí 12 (159 câu)</option>
               <option value="civics">⚖️ GDCD 12 (Sắp có)</option>
               <option value="literature">📖 Ngữ Văn 12 (Sắp có)</option>
             </select>
@@ -3728,6 +3737,9 @@
           <button class="lb-sub-btn" id="btnLbSubPhysics" onclick="filterLbBySubject('physics')">
             <span>⚛️ Vật Lí</span>
           </button>
+          <button class="lb-sub-btn" id="btnLbSubGeography" onclick="filterLbBySubject('geography')">
+            <span>🌍 Địa Lí</span>
+          </button>
         </div>
 
         <div class="lb-tab-group">
@@ -3998,6 +4010,10 @@ const firebaseConfig = {
 
     // Map each topic to category
     function getTopicCategory(topicId) {
+      if (topicId === 'geo_tu_nhien') return 'cd1';
+      if (topicId === 'geo_dan_cu') return 'cd2';
+      if (topicId === 'geo_dung_sai') return 'cd3';
+      if (topicId === 'geo_tinh_toan') return 'cd4';
       if (['bai1', 'bai2', 'bai3'].includes(topicId)) return 'cd1';
       if (['bai4', 'bai5'].includes(topicId)) return 'cd2';
       if (['bai6', 'bai7', 'bai8', 'bai9'].includes(topicId)) return 'cd3';
@@ -4061,6 +4077,11 @@ const firebaseConfig = {
         currentTopicId = 'bai1';
         currentTopicTitle = 'Bài 1: Liên Hợp Quốc (28 câu)';
         if (pillBar) pillBar.style.display = 'flex';
+      } else if (subject === 'geography') {
+        selectedTopicIds = ['geo_tu_nhien'];
+        currentTopicId = 'geo_tu_nhien';
+        currentTopicTitle = 'Chủ đề 1: Địa Lí Tự Nhiên Việt Nam (51 câu)';
+        if (pillBar) pillBar.style.display = 'flex';
       } else {
         selectedTopicIds = ['eng_unit1_all'];
         currentTopicId = 'eng_unit1_all';
@@ -4074,6 +4095,8 @@ const firebaseConfig = {
           sdLessons.textContent = 'HOẶC CHỌN TỪNG BÀI LỊCH SỬ ĐỂ ÔN TẬP';
         } else if (subject === 'physics') {
           sdLessons.textContent = 'HOẶC CHỌN TỪNG CHỦ ĐỀ VẬT LÍ ĐỂ ÔN TẬP';
+        } else if (subject === 'geography') {
+          sdLessons.textContent = 'HOẶC CHỌN TỪNG CHỦ ĐỀ ĐỊA LÍ ĐỂ ÔN TẬP';
         } else {
           sdLessons.textContent = 'HOẶC CHỌN TỪNG CHUYÊN ĐỀ TIẾNG ANH ĐỂ ÔN TẬP';
         }
@@ -4097,6 +4120,8 @@ const firebaseConfig = {
       let cats = [];
       if (currentSubject === 'history') {
         cats = window.HISTORY_CATEGORIES || TOPIC_CATEGORIES || [];
+      } else if (currentSubject === 'geography') {
+        cats = window.GEOGRAPHY_CATEGORIES || [];
       } else if (currentSubject === 'english') {
         cats = [
           { id: 'all', name: 'Tất cả bài học', icon: '🌐' },
@@ -4143,6 +4168,21 @@ const firebaseConfig = {
             <option value="phys_all">🌟 Trọn Bộ Chương 1: Vật Lí Nhiệt (106 câu)</option>
           </optgroup>
         `;
+      } else if (currentSubject === 'geography') {
+        const geoDb = window.GEOGRAPHY_TOPICS_DATABASE || [];
+        html += `<optgroup label="-- 4 CHỦ ĐỀ ĐỊA LÍ 12 CHUẨN --">`;
+        geoDb.forEach(t => {
+          if (t.id !== 'geo_all') {
+            html += `<option value="${t.id}">${t.icon || '🌍'} ${t.title}</option>`;
+          }
+        });
+        html += `</optgroup>`;
+        html += `
+          <optgroup label="-- ĐỀ THI TỔNG HỢP ĐỊA LÍ --">
+            <option value="geo_random40">🎯 Đề Thi Thử THPT Địa Lí (40 câu chuẩn ma trận)</option>
+            <option value="geo_all">🏆 Marathon Toàn Bộ Địa Lí 12 (159 câu)</option>
+          </optgroup>
+        `;
       } else if (currentSubject === 'history') {
         const histDb = window.ALL_TOPICS_DATABASE || [];
         html += `<optgroup label="-- 16 BÀI HỌC LỊCH SỬ 12 --">`;
@@ -4182,7 +4222,7 @@ const firebaseConfig = {
 
     // Helper to check if a topic ID is a standalone special test
     function isSpecialTopicId(id) {
-      return ['thpt_random40', 'all', 'phys_random40', 'phys_all', 'eng_random20', 'eng_all_marathon'].includes(id);
+      return ['thpt_random40', 'all', 'phys_random40', 'phys_all', 'eng_random20', 'eng_all_marathon', 'geo_random40', 'geo_all'].includes(id);
     }
 
     // Toggle a topic in multi-select mode (cho phép gộp nhiều bài thi cùng lúc)
@@ -4233,6 +4273,8 @@ const firebaseConfig = {
         });
       } else if (currentSubject === 'physics') {
         lessonIds = ['phys_chuyen_the', 'phys_thang_nhiet', 'phys_noi_nang'];
+      } else if (currentSubject === 'geography') {
+        lessonIds = ['geo_tu_nhien', 'geo_dan_cu', 'geo_dung_sai', 'geo_tinh_toan'];
       } else {
         lessonIds = ['eng_unit1_all', 'eng_unit3_all', 'eng_writing_all'];
       }
@@ -4253,6 +4295,8 @@ const firebaseConfig = {
         selectedTopicIds = ['bai1'];
       } else if (currentSubject === 'physics') {
         selectedTopicIds = ['phys_chuyen_the'];
+      } else if (currentSubject === 'geography') {
+        selectedTopicIds = ['geo_tu_nhien'];
       } else {
         selectedTopicIds = ['eng_unit1_all'];
       }
@@ -4330,6 +4374,37 @@ const firebaseConfig = {
           currentTopicId = 'physics_combo';
           selectedTopicIds.forEach(id => {
             const found = physDb.find(t => t.id === id);
+            if (found) {
+              totalQuestions += (found.questions ? found.questions.length : 0);
+              const m = found.title.match(/Chủ đề\s*(\d+)/i);
+              if (m) shortTitles.push('CĐ ' + m[1]);
+              else shortTitles.push(found.title);
+            }
+          });
+          currentTopicTitle = `Gộp ${selectedTopicIds.length} chủ đề: ${shortTitles.join(', ')} (${totalQuestions} câu)`;
+        }
+      } else if (currentSubject === 'geography') {
+        const geoDb = window.GEOGRAPHY_TOPICS_DATABASE || [];
+        if (selectedTopicIds.length === 1) {
+          const id = selectedTopicIds[0];
+          currentTopicId = id;
+          if (id === 'geo_random40') {
+            currentTopicTitle = 'Đề Thi Thử THPT Địa Lí (40 câu ngẫu nhiên)';
+            totalQuestions = 40;
+          } else if (id === 'geo_all') {
+            currentTopicTitle = 'Toàn bộ ngân hàng Địa lí 12 (159 câu)';
+            totalQuestions = 159;
+          } else {
+            const found = geoDb.find(t => t.id === id);
+            if (found) {
+              currentTopicTitle = found.title;
+              totalQuestions = found.questions ? found.questions.length : 0;
+            }
+          }
+        } else {
+          currentTopicId = 'geography_combo';
+          selectedTopicIds.forEach(id => {
+            const found = geoDb.find(t => t.id === id);
             if (found) {
               totalQuestions += (found.questions ? found.questions.length : 0);
               const m = found.title.match(/Chủ đề\s*(\d+)/i);
@@ -4488,6 +4563,57 @@ const firebaseConfig = {
             sub: 'Toàn bộ 440 câu hỏi của 16 bài học',
             count: 440
           });
+        }
+      } else if (currentSubject === 'geography') {
+        items = [
+          {
+            id: 'geo_tu_nhien',
+            title: 'Chủ đề 1: Địa Lí Tự Nhiên Việt Nam',
+            icon: '⛰️',
+            sub: 'Vị trí địa lí, phạm vi lãnh thổ, thiên nhiên nhiệt đới ẩm & đai cao',
+            count: 51
+          },
+          {
+            id: 'geo_dan_cu',
+            title: 'Chủ đề 2: Địa Lí Dân Cư & Lao Động',
+            icon: '👥',
+            sub: 'Dân số, phân bố dân cư, cơ cấu lao động, việc làm & đô thị hóa',
+            count: 19
+          },
+          {
+            id: 'geo_dung_sai',
+            title: 'Chủ đề 3: Trắc Nghiệm Đúng / Sai',
+            icon: '⚖️',
+            sub: 'Format mới tốt nghiệp THPT 2025 (17 chùm / 70 câu đúng sai)',
+            count: 70
+          },
+          {
+            id: 'geo_tinh_toan',
+            title: 'Chủ đề 4: Kĩ Năng & Tính Toán Địa Lí',
+            icon: '📊',
+            sub: 'Biên độ nhiệt, nhiệt độ TB, độ che phủ rừng, mật độ dân số...',
+            count: 19
+          },
+          {
+            id: 'geo_random40',
+            title: 'Đề Thi Thử THPT Địa Lí 12 (40 câu)',
+            icon: '🎯',
+            sub: 'Đề thi chuẩn ma trận cấu trúc đề thi tốt nghiệp THPT 2025',
+            count: 40
+          },
+          {
+            id: 'geo_all',
+            title: 'Marathon Toàn Bộ Địa Lí 12 (159 câu)',
+            icon: '🌍',
+            sub: 'Trọn bộ 100% câu hỏi từ 20 trang tài liệu ôn tập chuẩn',
+            count: 159
+          }
+        ];
+        if (currentCatFilter !== 'all') {
+          if (currentCatFilter === 'cd1') items = items.filter(it => it.id === 'geo_tu_nhien');
+          else if (currentCatFilter === 'cd2') items = items.filter(it => it.id === 'geo_dan_cu');
+          else if (currentCatFilter === 'cd3') items = items.filter(it => it.id === 'geo_dung_sai');
+          else if (currentCatFilter === 'cd4') items = items.filter(it => it.id === 'geo_tinh_toan');
         }
       } else {
         // Tiếng Anh (Thiết kế tinh gọn, chuẩn như Vật Lí và Lịch Sử)
@@ -4730,6 +4856,26 @@ const firebaseConfig = {
             }
           });
           if (combinedPool.length === 0) combinedPool = allPhysQ;
+          examList = isShuffle ? shuffle(combinedPool) : combinedPool;
+        }
+      } else if (currentSubject === 'geography') {
+        const geoDb = window.GEOGRAPHY_TOPICS_DATABASE || [];
+        const allGeoTopic = geoDb.find(t => t.id === 'geo_all') || geoDb[0];
+        const allGeoQ = allGeoTopic ? allGeoTopic.questions : [];
+
+        if (selectedTopicIds.length === 1 && selectedTopicIds[0] === 'geo_all') {
+          examList = isShuffle ? shuffle(allGeoQ) : [...allGeoQ];
+        } else if (selectedTopicIds.length === 1 && selectedTopicIds[0] === 'geo_random40') {
+          examList = shuffle(allGeoQ).slice(0, 40);
+        } else {
+          let combinedPool = [];
+          selectedTopicIds.forEach(id => {
+            const found = geoDb.find(t => t.id === id);
+            if (found && Array.isArray(found.questions)) {
+              combinedPool.push(...found.questions);
+            }
+          });
+          if (combinedPool.length === 0) combinedPool = allGeoQ;
           examList = isShuffle ? shuffle(combinedPool) : combinedPool;
         }
       } else {
@@ -5562,7 +5708,7 @@ const firebaseConfig = {
         total: total,
         timeSec: timeSec,
         subject: currentSubject,
-        subjectName: currentSubject === 'history' ? 'Lịch Sử' : (currentSubject === 'physics' ? 'Vật Lí' : 'Tiếng Anh'),
+        subjectName: currentSubject === 'history' ? 'Lịch Sử' : (currentSubject === 'physics' ? 'Vật Lí' : (currentSubject === 'geography' ? 'Địa Lí' : 'Tiếng Anh')),
         topicId: currentTopicId,
         topicTitle: currentTopicTitle,
         attemptNumber: myAttemptCount,
@@ -5628,6 +5774,8 @@ const firebaseConfig = {
       if (btnHist) btnHist.classList.toggle('active', subj === 'history');
       if (btnEng) btnEng.classList.toggle('active', subj === 'english');
       if (btnPhys) btnPhys.classList.toggle('active', subj === 'physics');
+      const btnGeo = document.getElementById('btnLbSubGeography');
+      if (btnGeo) btnGeo.classList.toggle('active', subj === 'geography');
       renderLeaderboard();
     }
 
@@ -5744,7 +5892,7 @@ const firebaseConfig = {
       let rawList = currentRawLbList || [];
       const list = rawList.filter(item => {
         if (currentLbSubjectFilter === 'all') return true;
-        const subj = item.subject || (item.topicId && item.topicId.startsWith('eng_') ? 'english' : (item.topicId && item.topicId.startsWith('phys_') ? 'physics' : 'history'));
+        const subj = item.subject || (item.topicId && item.topicId.startsWith('eng_') ? 'english' : (item.topicId && item.topicId.startsWith('phys_') ? 'physics' : (item.topicId && item.topicId.startsWith('geo_') ? 'geography' : 'history')));
         return subj === currentLbSubjectFilter;
       });
       if (list.length === 0) {
