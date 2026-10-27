@@ -1,7 +1,7 @@
 {
-  "name": "Ôn Thi Tốt Nghiệp THPT - 12A8",
-  "short_name": "Ôn Thi 12",
-  "description": "Ứng dụng ôn thi trắc nghiệm Lịch Sử, Vật Lí, Tiếng Anh lớp 12 chuẩn GDPT 2018",
+  "name": "12A8 Học Tập THPT Nguyễn Huệ",
+  "short_name": "12A8 Học Tập",
+  "description": "Ứng dụng ôn tập trắc nghiệm Lịch Sử, Vật Lí, Tiếng Anh & Địa Lí lớp 12 - 12A8 THPT Nguyễn Huệ",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#080b1a",
