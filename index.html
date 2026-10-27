@@ -28,10 +28,10 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 
   <!-- DỮ LIỆU CÂU HỎI THEO MÔN: Tự động tương thích cả khi file ở thư mục gốc (GitHub) hoặc trong data/ -->
-  <script src="lichsu.js?v=20261027_2158"></script>
-  <script src="tienganh.js?v=20261027_2158"></script>
-  <script src="vatli.js?v=20261027_2158"></script>
-  <script src="dialy.js?v=20261027_2158"></script>
+  <script src="lichsu.js?v=20261027_2205"></script>
+  <script src="tienganh.js?v=20261027_2205"></script>
+  <script src="vatli.js?v=20261027_2205"></script>
+  <script src="dialy.js?v=20261027_2205"></script>
   <script>
     // Tự động nạp dự phòng từ data/ nếu mở file offline mà dữ liệu nằm trong thư mục con data/
     if (typeof ALL_TOPICS_DATABASE === 'undefined' && !window.ALL_TOPICS_DATABASE) {
@@ -5298,7 +5298,9 @@ const firebaseConfig = {
       const q = examList[idx];
       const total = examList.length;
 
-      document.getElementById('qCurrentBadge').textContent = `Câu ${idx + 1}/${total}`;
+      const qBadgeText = q.subLabel ? `Câu ${q.subLabel} (${idx + 1}/${total})` : `Câu ${idx + 1}/${total}`;
+      document.getElementById('qCurrentBadge').textContent = qBadgeText;
+      const qPrefix = q.subLabel ? `Câu ${q.subLabel}:` : `Câu ${idx + 1}:`;
       
       let contextHtml = '';
       let statementHtml = q.question;
@@ -5346,12 +5348,12 @@ const firebaseConfig = {
           ${contextHtml ? `<div class="geo-context-card-wrapper" style="margin-bottom: 12px;">${contextHtml}</div>` : ''}
           ${mediaHtml}
           <div class="geo-statement-wrapper" style="margin-top: 10px; font-size: 15.5px; font-weight: 700; color: #f8fafc; line-height: 1.6;">
-            <span style="font-weight: 800; color: #60a5fa; margin-right: 6px;">Câu ${idx + 1}:</span>
+            <span style="font-weight: 800; color: #60a5fa; margin-right: 6px;">${qPrefix}</span>
             <span>${statementHtml}</span>
           </div>
         `;
       } else {
-        stemHtml = `<span style="font-weight: 800; color: #60a5fa; margin-right: 4px;">Câu ${idx + 1}:</span> ${statementHtml}`;
+        stemHtml = `<span style="font-weight: 800; color: #60a5fa; margin-right: 4px;">${qPrefix}</span> ${statementHtml}`;
       }
       document.getElementById('qStemText').innerHTML = stemHtml;
 
@@ -5495,7 +5497,7 @@ const firebaseConfig = {
         const btn = document.createElement('button');
         btn.className = 'drawer-btn';
         btn.id = `drawer-btn-${idx}`;
-        btn.textContent = idx + 1;
+        btn.textContent = q.subLabel || (idx + 1);
         btn.onclick = () => {
           sound.playClick();
           renderQuestion(idx);
