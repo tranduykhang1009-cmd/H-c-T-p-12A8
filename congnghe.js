@@ -1,6 +1,7 @@
 // =========================================================================
 // DỮ LIỆU CÔNG NGHỆ 12 - PHÂN MÔN CÔNG NGHỆ ĐIỆN - ĐIỆN TỬ (BÀI 2 ĐẾN BÀI 7)
 // BỘ SÁCH KẾT NỐI TRI THỨC VỚI CUỘC SỐNG - TẬP TRUNG CAO ĐỘ VÀO BÀI 3
+// CÔNG THỨC CHUẨN TOÁN HỌC DẠNG PHÂN SỐ (KHÔNG DÙNG DẤU GẠCH CHÉO '/')
 // =========================================================================
 
 const CONGNGHE_CATEGORIES = [
@@ -188,7 +189,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. pha ban đầu của dòng điện."
     ],
     "correct": 1,
-    "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng: I = Im / √2 (SGK Công nghệ 12 trang 18)."
+    "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng: I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> (SGK Công nghệ 12 trang 18)."
   },
   {
     "id": 12,
@@ -201,7 +202,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. I = 2√2 A; f = 50 Hz"
     ],
     "correct": 0,
-    "explain": "Từ biểu thức: Im = 4√2 A => I = Im / √2 = 4 A. Tần số góc ω = 100π rad/s => Tần số f = ω / (2π) = 100π / (2π) = 50 Hz."
+    "explain": "Từ biểu thức: Im = 4√2 A => I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = 4 A. Tần số góc ω = 100π rad/s => Tần số f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz."
   },
   {
     "id": 13,
@@ -209,12 +210,12 @@ const CONGNGHE_ALL_QUESTIONS = [
     "question": "Công thức tính cảm kháng XL của cuộn cảm thuần có độ tự cảm L và dung kháng XC của tụ điện có điện dung C đối với dòng xoay chiều tần số f là:",
     "options": [
       "A. XL = 2πfL và XC = 2πfC",
-      "B. XL = 2πfL và XC = 1 / (2πfC)",
-      "C. XL = 1 / (2πfL) và XC = 1 / (2πfC)",
-      "D. XL = L / (2πf) và XC = C / (2πf)"
+      "B. XL = 2πfL và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
+      "C. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfL</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
+      "D. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span>"
     ],
     "correct": 1,
-    "explain": "Cảm kháng cuộn cảm: XL = ωL = 2πfL; Dung kháng tụ điện: XC = 1/(ωC) = 1/(2πfC) (SGK Công nghệ 12 trang 18)."
+    "explain": "Cảm kháng cuộn cảm: XL = ωL = 2πfL; Dung kháng tụ điện: XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span> (SGK Công nghệ 12 trang 18)."
   },
   {
     "id": 14,
@@ -227,7 +228,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. z_t = √[R² - (XL - XC)²]"
     ],
     "correct": 1,
-    "explain": "Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) với X = XL - XC, do đó z_t = √[R² + (XL - XC)²], và tan φ = X/R = (XL - XC)/R (SGK trang 18)."
+    "explain": "Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) với X = XL - XC, do đó z_t = √[R² + (XL - XC)²], và tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
   },
   {
     "id": 15,
@@ -240,7 +241,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. Khi tổng trở đạt giá trị vô cùng lớn"
     ],
     "correct": 1,
-    "explain": "Hiện tượng cộng hưởng xảy ra khi XL = XC (tức là 2πfL = 1/(2πfC)). Khi đó điện kháng X = 0, tổng trở mạch đạt giá trị nhỏ nhất z_min = R và dòng điện trong mạch đạt giá trị cực đại."
+    "explain": "Hiện tượng cộng hưởng xảy ra khi XL = XC (tức là 2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>). Khi đó điện kháng X = 0, tổng trở mạch đạt giá trị nhỏ nhất z_min = R và dòng điện trong mạch đạt giá trị cực đại."
   },
   {
     "id": 16,
@@ -341,7 +342,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "A. i0 = iA + iB + iC = 0",
       "B. i0 = 3.iA",
       "C. i0 = √3.iA",
-      "D. i0 = iA / √3"
+      "D. i0 = <span class=\"math-frac\"><span class=\"math-frac-top\">i<sub>A</sub></span><span class=\"math-frac-bottom\">√3</span></span>"
     ],
     "correct": 0,
     "explain": "Khi tải đối xứng: iA + iB + iC = 0 tại mọi thời điểm, do đó dòng điện tức thời và hiệu dụng chạy trong dây trung tính bằng 0 (i0 = 0)."
@@ -380,7 +381,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "A. Ud = Up và Id = √3.Ip",
       "B. Ud = √3.Up và Id = Ip",
       "C. Ud = √3.Up và Id = √3.Ip",
-      "D. Ud = Up/√3 và Id = Ip"
+      "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span> và Id = Ip"
     ],
     "correct": 1,
     "explain": "Khi tải nối hình sao (Y): Dòng điện dây bằng dòng điện pha (Id = Ip), Điện áp dây bằng căn 3 lần điện áp pha (Ud = √3.Up) (SGK trang 20)."
@@ -393,7 +394,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "A. Ud = Up và Id = √3.Ip",
       "B. Ud = √3.Up và Id = Ip",
       "C. Ud = Up và Id = Ip",
-      "D. Ud = Up/√3 và Id = √3.Ip"
+      "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span> và Id = √3.Ip"
     ],
     "correct": 0,
     "explain": "Khi tải nối hình tam giác (Δ): Điện áp dây bằng điện áp pha (Ud = Up), Dòng điện dây bằng căn 3 lần dòng điện pha (Id = √3.Ip) (SGK trang 21)."
@@ -435,7 +436,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. Ip = 2,2 A; Id = 2,2 A; Ud = 127 V"
     ],
     "correct": 0,
-    "explain": "Vì tải nối hình sao: Ip = Up / R = 220 / 50 = 4,4 A. Dòng điện dây: Id = Ip = 4,4 A. Điện áp dây: Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
+    "explain": "Vì tải nối hình sao: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">50</span></span> = 4,4 A. Dòng điện dây: Id = Ip = 4,4 A. Điện áp dây: Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
   },
   {
     "id": 31,
@@ -448,7 +449,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. Up = 380 V; Ip = 7,6 A; Id = 7,6 A"
     ],
     "correct": 1,
-    "explain": "Vì tải nối hình tam giác: Up = Ud = 380 V. Dòng điện pha: Ip = Up / R = 380 / 50 = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Bài tập 3 SGK trang 21)."
+    "explain": "Vì tải nối hình tam giác: Up = Ud = 380 V. Dòng điện pha: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">50</span></span> = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Bài tập 3 SGK trang 21)."
   },
   {
     "id": 32,
@@ -487,7 +488,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. Ip = 22 A; Id = 22 A"
     ],
     "correct": 0,
-    "explain": "Tổng trở mỗi pha: zp = √(R² + XL²) = √(8² + 6²) = 10 Ω. Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: Ip = Up / zp = 220 / 10 = 22 A. Dòng điện dây: Id = √3.Ip = √3 × 22 ≈ 38,1 A."
+    "explain": "Tổng trở mỗi pha: zp = √(R² + XL²) = √(8² + 6²) = 10 Ω. Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">10</span></span> = 22 A. Dòng điện dây: Id = √3.Ip = √3 × 22 ≈ 38,1 A."
   },
   {
     "id": 35,
@@ -926,7 +927,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "B. Sai"
     ],
     "correct": 0,
-    "explain": "ĐÚNG. Dòng điện pha của lò sấy: Ip = Up / R = 380 / 38 = 10 A.",
+    "explain": "ĐÚNG. Dòng điện pha của lò sấy: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = 380 / 38 = 10 A.",
     "subLabel": "1b"
   },
   {
@@ -1134,7 +1135,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. 22 A"
     ],
     "correct": 0,
-    "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = 20 Ω. Do tải nối sao: Up = Ud / √3 = 380 / √3 ≈ 220 V. Cường độ dòng điện pha: Ip = Up / z_p = 220 / 20 = 11 A."
+    "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = 20 Ω. Do tải nối sao: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Cường độ dòng điện pha: Ip = Up / z_p = 220 / 20 = 11 A."
   },
   {
     "id": 73,
@@ -1160,7 +1161,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. 600 kVA"
     ],
     "correct": 2,
-    "explain": "Tổng công suất tác dụng: P = 150 × 4 = 600 kW. Công suất biểu kiến của máy biến áp: S = P / cosφ = 600 / 0,8 = 750 kVA."
+    "explain": "Tổng công suất tác dụng: P = 150 × 4 = 600 kW. Công suất biểu kiến của máy biến áp: S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">600</span><span class=\"math-frac-bottom\">0,8</span></span> = 750 kVA."
   },
   {
     "id": 75,
@@ -1195,7 +1196,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. pha ban đầu của dòng điện."
         ],
         "correct": 1,
-        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng: I = Im / √2 (SGK Công nghệ 12 trang 18)."
+        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng: I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> (SGK Công nghệ 12 trang 18)."
       },
       {
         "id": 12,
@@ -1208,7 +1209,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. I = 2√2 A; f = 50 Hz"
         ],
         "correct": 0,
-        "explain": "Từ biểu thức: Im = 4√2 A => I = Im / √2 = 4 A. Tần số góc ω = 100π rad/s => Tần số f = ω / (2π) = 100π / (2π) = 50 Hz."
+        "explain": "Từ biểu thức: Im = 4√2 A => I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = 4 A. Tần số góc ω = 100π rad/s => Tần số f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz."
       },
       {
         "id": 13,
@@ -1216,12 +1217,12 @@ const CONGNGHE_TOPICS_DATABASE = [
         "question": "Công thức tính cảm kháng XL của cuộn cảm thuần có độ tự cảm L và dung kháng XC của tụ điện có điện dung C đối với dòng xoay chiều tần số f là:",
         "options": [
           "A. XL = 2πfL và XC = 2πfC",
-          "B. XL = 2πfL và XC = 1 / (2πfC)",
-          "C. XL = 1 / (2πfL) và XC = 1 / (2πfC)",
-          "D. XL = L / (2πf) và XC = C / (2πf)"
+          "B. XL = 2πfL và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
+          "C. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfL</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
+          "D. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span>"
         ],
         "correct": 1,
-        "explain": "Cảm kháng cuộn cảm: XL = ωL = 2πfL; Dung kháng tụ điện: XC = 1/(ωC) = 1/(2πfC) (SGK Công nghệ 12 trang 18)."
+        "explain": "Cảm kháng cuộn cảm: XL = ωL = 2πfL; Dung kháng tụ điện: XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span> (SGK Công nghệ 12 trang 18)."
       },
       {
         "id": 14,
@@ -1234,7 +1235,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. z_t = √[R² - (XL - XC)²]"
         ],
         "correct": 1,
-        "explain": "Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) với X = XL - XC, do đó z_t = √[R² + (XL - XC)²], và tan φ = X/R = (XL - XC)/R (SGK trang 18)."
+        "explain": "Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) với X = XL - XC, do đó z_t = √[R² + (XL - XC)²], và tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
       },
       {
         "id": 15,
@@ -1247,7 +1248,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Khi tổng trở đạt giá trị vô cùng lớn"
         ],
         "correct": 1,
-        "explain": "Hiện tượng cộng hưởng xảy ra khi XL = XC (tức là 2πfL = 1/(2πfC)). Khi đó điện kháng X = 0, tổng trở mạch đạt giá trị nhỏ nhất z_min = R và dòng điện trong mạch đạt giá trị cực đại."
+        "explain": "Hiện tượng cộng hưởng xảy ra khi XL = XC (tức là 2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>). Khi đó điện kháng X = 0, tổng trở mạch đạt giá trị nhỏ nhất z_min = R và dòng điện trong mạch đạt giá trị cực đại."
       },
       {
         "id": 16,
@@ -1348,7 +1349,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "A. i0 = iA + iB + iC = 0",
           "B. i0 = 3.iA",
           "C. i0 = √3.iA",
-          "D. i0 = iA / √3"
+          "D. i0 = <span class=\"math-frac\"><span class=\"math-frac-top\">i<sub>A</sub></span><span class=\"math-frac-bottom\">√3</span></span>"
         ],
         "correct": 0,
         "explain": "Khi tải đối xứng: iA + iB + iC = 0 tại mọi thời điểm, do đó dòng điện tức thời và hiệu dụng chạy trong dây trung tính bằng 0 (i0 = 0)."
@@ -1387,7 +1388,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "A. Ud = Up và Id = √3.Ip",
           "B. Ud = √3.Up và Id = Ip",
           "C. Ud = √3.Up và Id = √3.Ip",
-          "D. Ud = Up/√3 và Id = Ip"
+          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span> và Id = Ip"
         ],
         "correct": 1,
         "explain": "Khi tải nối hình sao (Y): Dòng điện dây bằng dòng điện pha (Id = Ip), Điện áp dây bằng căn 3 lần điện áp pha (Ud = √3.Up) (SGK trang 20)."
@@ -1400,7 +1401,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "A. Ud = Up và Id = √3.Ip",
           "B. Ud = √3.Up và Id = Ip",
           "C. Ud = Up và Id = Ip",
-          "D. Ud = Up/√3 và Id = √3.Ip"
+          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span> và Id = √3.Ip"
         ],
         "correct": 0,
         "explain": "Khi tải nối hình tam giác (Δ): Điện áp dây bằng điện áp pha (Ud = Up), Dòng điện dây bằng căn 3 lần dòng điện pha (Id = √3.Ip) (SGK trang 21)."
@@ -1442,7 +1443,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Ip = 2,2 A; Id = 2,2 A; Ud = 127 V"
         ],
         "correct": 0,
-        "explain": "Vì tải nối hình sao: Ip = Up / R = 220 / 50 = 4,4 A. Dòng điện dây: Id = Ip = 4,4 A. Điện áp dây: Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
+        "explain": "Vì tải nối hình sao: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">50</span></span> = 4,4 A. Dòng điện dây: Id = Ip = 4,4 A. Điện áp dây: Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
       },
       {
         "id": 31,
@@ -1455,7 +1456,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Up = 380 V; Ip = 7,6 A; Id = 7,6 A"
         ],
         "correct": 1,
-        "explain": "Vì tải nối hình tam giác: Up = Ud = 380 V. Dòng điện pha: Ip = Up / R = 380 / 50 = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Bài tập 3 SGK trang 21)."
+        "explain": "Vì tải nối hình tam giác: Up = Ud = 380 V. Dòng điện pha: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">50</span></span> = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Bài tập 3 SGK trang 21)."
       },
       {
         "id": 32,
@@ -1494,7 +1495,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Ip = 22 A; Id = 22 A"
         ],
         "correct": 0,
-        "explain": "Tổng trở mỗi pha: zp = √(R² + XL²) = √(8² + 6²) = 10 Ω. Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: Ip = Up / zp = 220 / 10 = 22 A. Dòng điện dây: Id = √3.Ip = √3 × 22 ≈ 38,1 A."
+        "explain": "Tổng trở mỗi pha: zp = √(R² + XL²) = √(8² + 6²) = 10 Ω. Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">10</span></span> = 22 A. Dòng điện dây: Id = √3.Ip = √3 × 22 ≈ 38,1 A."
       },
       {
         "id": 35,
@@ -1546,7 +1547,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 22 A"
         ],
         "correct": 0,
-        "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = 20 Ω. Do tải nối sao: Up = Ud / √3 = 380 / √3 ≈ 220 V. Cường độ dòng điện pha: Ip = Up / z_p = 220 / 20 = 11 A."
+        "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = 20 Ω. Do tải nối sao: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Cường độ dòng điện pha: Ip = Up / z_p = 220 / 20 = 11 A."
       },
       {
         "id": 73,
@@ -1572,7 +1573,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 600 kVA"
         ],
         "correct": 2,
-        "explain": "Tổng công suất tác dụng: P = 150 × 4 = 600 kW. Công suất biểu kiến của máy biến áp: S = P / cosφ = 600 / 0,8 = 750 kVA."
+        "explain": "Tổng công suất tác dụng: P = 150 × 4 = 600 kW. Công suất biểu kiến của máy biến áp: S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">600</span><span class=\"math-frac-bottom\">0,8</span></span> = 750 kVA."
       },
       {
         "id": 75,
@@ -2309,7 +2310,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. pha ban đầu của dòng điện."
         ],
         "correct": 1,
-        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng: I = Im / √2 (SGK Công nghệ 12 trang 18)."
+        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng: I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> (SGK Công nghệ 12 trang 18)."
       },
       {
         "id": 12,
@@ -2322,7 +2323,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. I = 2√2 A; f = 50 Hz"
         ],
         "correct": 0,
-        "explain": "Từ biểu thức: Im = 4√2 A => I = Im / √2 = 4 A. Tần số góc ω = 100π rad/s => Tần số f = ω / (2π) = 100π / (2π) = 50 Hz."
+        "explain": "Từ biểu thức: Im = 4√2 A => I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = 4 A. Tần số góc ω = 100π rad/s => Tần số f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz."
       },
       {
         "id": 13,
@@ -2330,12 +2331,12 @@ const CONGNGHE_TOPICS_DATABASE = [
         "question": "Công thức tính cảm kháng XL của cuộn cảm thuần có độ tự cảm L và dung kháng XC của tụ điện có điện dung C đối với dòng xoay chiều tần số f là:",
         "options": [
           "A. XL = 2πfL và XC = 2πfC",
-          "B. XL = 2πfL và XC = 1 / (2πfC)",
-          "C. XL = 1 / (2πfL) và XC = 1 / (2πfC)",
-          "D. XL = L / (2πf) và XC = C / (2πf)"
+          "B. XL = 2πfL và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
+          "C. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfL</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
+          "D. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span>"
         ],
         "correct": 1,
-        "explain": "Cảm kháng cuộn cảm: XL = ωL = 2πfL; Dung kháng tụ điện: XC = 1/(ωC) = 1/(2πfC) (SGK Công nghệ 12 trang 18)."
+        "explain": "Cảm kháng cuộn cảm: XL = ωL = 2πfL; Dung kháng tụ điện: XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span> (SGK Công nghệ 12 trang 18)."
       },
       {
         "id": 14,
@@ -2348,7 +2349,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. z_t = √[R² - (XL - XC)²]"
         ],
         "correct": 1,
-        "explain": "Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) với X = XL - XC, do đó z_t = √[R² + (XL - XC)²], và tan φ = X/R = (XL - XC)/R (SGK trang 18)."
+        "explain": "Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) với X = XL - XC, do đó z_t = √[R² + (XL - XC)²], và tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
       },
       {
         "id": 15,
@@ -2361,7 +2362,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Khi tổng trở đạt giá trị vô cùng lớn"
         ],
         "correct": 1,
-        "explain": "Hiện tượng cộng hưởng xảy ra khi XL = XC (tức là 2πfL = 1/(2πfC)). Khi đó điện kháng X = 0, tổng trở mạch đạt giá trị nhỏ nhất z_min = R và dòng điện trong mạch đạt giá trị cực đại."
+        "explain": "Hiện tượng cộng hưởng xảy ra khi XL = XC (tức là 2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>). Khi đó điện kháng X = 0, tổng trở mạch đạt giá trị nhỏ nhất z_min = R và dòng điện trong mạch đạt giá trị cực đại."
       },
       {
         "id": 16,
@@ -2462,7 +2463,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "A. i0 = iA + iB + iC = 0",
           "B. i0 = 3.iA",
           "C. i0 = √3.iA",
-          "D. i0 = iA / √3"
+          "D. i0 = <span class=\"math-frac\"><span class=\"math-frac-top\">i<sub>A</sub></span><span class=\"math-frac-bottom\">√3</span></span>"
         ],
         "correct": 0,
         "explain": "Khi tải đối xứng: iA + iB + iC = 0 tại mọi thời điểm, do đó dòng điện tức thời và hiệu dụng chạy trong dây trung tính bằng 0 (i0 = 0)."
@@ -2501,7 +2502,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "A. Ud = Up và Id = √3.Ip",
           "B. Ud = √3.Up và Id = Ip",
           "C. Ud = √3.Up và Id = √3.Ip",
-          "D. Ud = Up/√3 và Id = Ip"
+          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span> và Id = Ip"
         ],
         "correct": 1,
         "explain": "Khi tải nối hình sao (Y): Dòng điện dây bằng dòng điện pha (Id = Ip), Điện áp dây bằng căn 3 lần điện áp pha (Ud = √3.Up) (SGK trang 20)."
@@ -2514,7 +2515,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "A. Ud = Up và Id = √3.Ip",
           "B. Ud = √3.Up và Id = Ip",
           "C. Ud = Up và Id = Ip",
-          "D. Ud = Up/√3 và Id = √3.Ip"
+          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span> và Id = √3.Ip"
         ],
         "correct": 0,
         "explain": "Khi tải nối hình tam giác (Δ): Điện áp dây bằng điện áp pha (Ud = Up), Dòng điện dây bằng căn 3 lần dòng điện pha (Id = √3.Ip) (SGK trang 21)."
@@ -2556,7 +2557,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Ip = 2,2 A; Id = 2,2 A; Ud = 127 V"
         ],
         "correct": 0,
-        "explain": "Vì tải nối hình sao: Ip = Up / R = 220 / 50 = 4,4 A. Dòng điện dây: Id = Ip = 4,4 A. Điện áp dây: Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
+        "explain": "Vì tải nối hình sao: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">50</span></span> = 4,4 A. Dòng điện dây: Id = Ip = 4,4 A. Điện áp dây: Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
       },
       {
         "id": 31,
@@ -2569,7 +2570,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Up = 380 V; Ip = 7,6 A; Id = 7,6 A"
         ],
         "correct": 1,
-        "explain": "Vì tải nối hình tam giác: Up = Ud = 380 V. Dòng điện pha: Ip = Up / R = 380 / 50 = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Bài tập 3 SGK trang 21)."
+        "explain": "Vì tải nối hình tam giác: Up = Ud = 380 V. Dòng điện pha: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">50</span></span> = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Bài tập 3 SGK trang 21)."
       },
       {
         "id": 32,
@@ -2608,7 +2609,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Ip = 22 A; Id = 22 A"
         ],
         "correct": 0,
-        "explain": "Tổng trở mỗi pha: zp = √(R² + XL²) = √(8² + 6²) = 10 Ω. Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: Ip = Up / zp = 220 / 10 = 22 A. Dòng điện dây: Id = √3.Ip = √3 × 22 ≈ 38,1 A."
+        "explain": "Tổng trở mỗi pha: zp = √(R² + XL²) = √(8² + 6²) = 10 Ω. Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">10</span></span> = 22 A. Dòng điện dây: Id = √3.Ip = √3 × 22 ≈ 38,1 A."
       },
       {
         "id": 35,
@@ -2837,7 +2838,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. pha ban đầu của dòng điện."
         ],
         "correct": 1,
-        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng: I = Im / √2 (SGK Công nghệ 12 trang 18)."
+        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng: I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> (SGK Công nghệ 12 trang 18)."
       },
       {
         "id": 12,
@@ -2850,7 +2851,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. I = 2√2 A; f = 50 Hz"
         ],
         "correct": 0,
-        "explain": "Từ biểu thức: Im = 4√2 A => I = Im / √2 = 4 A. Tần số góc ω = 100π rad/s => Tần số f = ω / (2π) = 100π / (2π) = 50 Hz."
+        "explain": "Từ biểu thức: Im = 4√2 A => I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = 4 A. Tần số góc ω = 100π rad/s => Tần số f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz."
       },
       {
         "id": 13,
@@ -2858,12 +2859,12 @@ const CONGNGHE_TOPICS_DATABASE = [
         "question": "Công thức tính cảm kháng XL của cuộn cảm thuần có độ tự cảm L và dung kháng XC của tụ điện có điện dung C đối với dòng xoay chiều tần số f là:",
         "options": [
           "A. XL = 2πfL và XC = 2πfC",
-          "B. XL = 2πfL và XC = 1 / (2πfC)",
-          "C. XL = 1 / (2πfL) và XC = 1 / (2πfC)",
-          "D. XL = L / (2πf) và XC = C / (2πf)"
+          "B. XL = 2πfL và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
+          "C. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfL</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
+          "D. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span>"
         ],
         "correct": 1,
-        "explain": "Cảm kháng cuộn cảm: XL = ωL = 2πfL; Dung kháng tụ điện: XC = 1/(ωC) = 1/(2πfC) (SGK Công nghệ 12 trang 18)."
+        "explain": "Cảm kháng cuộn cảm: XL = ωL = 2πfL; Dung kháng tụ điện: XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span> (SGK Công nghệ 12 trang 18)."
       },
       {
         "id": 14,
@@ -2876,7 +2877,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. z_t = √[R² - (XL - XC)²]"
         ],
         "correct": 1,
-        "explain": "Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) với X = XL - XC, do đó z_t = √[R² + (XL - XC)²], và tan φ = X/R = (XL - XC)/R (SGK trang 18)."
+        "explain": "Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) với X = XL - XC, do đó z_t = √[R² + (XL - XC)²], và tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
       },
       {
         "id": 15,
@@ -2889,7 +2890,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Khi tổng trở đạt giá trị vô cùng lớn"
         ],
         "correct": 1,
-        "explain": "Hiện tượng cộng hưởng xảy ra khi XL = XC (tức là 2πfL = 1/(2πfC)). Khi đó điện kháng X = 0, tổng trở mạch đạt giá trị nhỏ nhất z_min = R và dòng điện trong mạch đạt giá trị cực đại."
+        "explain": "Hiện tượng cộng hưởng xảy ra khi XL = XC (tức là 2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>). Khi đó điện kháng X = 0, tổng trở mạch đạt giá trị nhỏ nhất z_min = R và dòng điện trong mạch đạt giá trị cực đại."
       },
       {
         "id": 16,
@@ -2990,7 +2991,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "A. i0 = iA + iB + iC = 0",
           "B. i0 = 3.iA",
           "C. i0 = √3.iA",
-          "D. i0 = iA / √3"
+          "D. i0 = <span class=\"math-frac\"><span class=\"math-frac-top\">i<sub>A</sub></span><span class=\"math-frac-bottom\">√3</span></span>"
         ],
         "correct": 0,
         "explain": "Khi tải đối xứng: iA + iB + iC = 0 tại mọi thời điểm, do đó dòng điện tức thời và hiệu dụng chạy trong dây trung tính bằng 0 (i0 = 0)."
@@ -3029,7 +3030,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "A. Ud = Up và Id = √3.Ip",
           "B. Ud = √3.Up và Id = Ip",
           "C. Ud = √3.Up và Id = √3.Ip",
-          "D. Ud = Up/√3 và Id = Ip"
+          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span> và Id = Ip"
         ],
         "correct": 1,
         "explain": "Khi tải nối hình sao (Y): Dòng điện dây bằng dòng điện pha (Id = Ip), Điện áp dây bằng căn 3 lần điện áp pha (Ud = √3.Up) (SGK trang 20)."
@@ -3042,7 +3043,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "A. Ud = Up và Id = √3.Ip",
           "B. Ud = √3.Up và Id = Ip",
           "C. Ud = Up và Id = Ip",
-          "D. Ud = Up/√3 và Id = √3.Ip"
+          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span> và Id = √3.Ip"
         ],
         "correct": 0,
         "explain": "Khi tải nối hình tam giác (Δ): Điện áp dây bằng điện áp pha (Ud = Up), Dòng điện dây bằng căn 3 lần dòng điện pha (Id = √3.Ip) (SGK trang 21)."
@@ -3084,7 +3085,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Ip = 2,2 A; Id = 2,2 A; Ud = 127 V"
         ],
         "correct": 0,
-        "explain": "Vì tải nối hình sao: Ip = Up / R = 220 / 50 = 4,4 A. Dòng điện dây: Id = Ip = 4,4 A. Điện áp dây: Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
+        "explain": "Vì tải nối hình sao: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">50</span></span> = 4,4 A. Dòng điện dây: Id = Ip = 4,4 A. Điện áp dây: Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
       },
       {
         "id": 31,
@@ -3097,7 +3098,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Up = 380 V; Ip = 7,6 A; Id = 7,6 A"
         ],
         "correct": 1,
-        "explain": "Vì tải nối hình tam giác: Up = Ud = 380 V. Dòng điện pha: Ip = Up / R = 380 / 50 = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Bài tập 3 SGK trang 21)."
+        "explain": "Vì tải nối hình tam giác: Up = Ud = 380 V. Dòng điện pha: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">50</span></span> = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Bài tập 3 SGK trang 21)."
       },
       {
         "id": 32,
@@ -3136,7 +3137,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Ip = 22 A; Id = 22 A"
         ],
         "correct": 0,
-        "explain": "Tổng trở mỗi pha: zp = √(R² + XL²) = √(8² + 6²) = 10 Ω. Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: Ip = Up / zp = 220 / 10 = 22 A. Dòng điện dây: Id = √3.Ip = √3 × 22 ≈ 38,1 A."
+        "explain": "Tổng trở mỗi pha: zp = √(R² + XL²) = √(8² + 6²) = 10 Ω. Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">10</span></span> = 22 A. Dòng điện dây: Id = √3.Ip = √3 × 22 ≈ 38,1 A."
       },
       {
         "id": 35,
@@ -3575,7 +3576,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "B. Sai"
         ],
         "correct": 0,
-        "explain": "ĐÚNG. Dòng điện pha của lò sấy: Ip = Up / R = 380 / 38 = 10 A.",
+        "explain": "ĐÚNG. Dòng điện pha của lò sấy: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = 380 / 38 = 10 A.",
         "subLabel": "1b"
       },
       {
@@ -3783,7 +3784,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 22 A"
         ],
         "correct": 0,
-        "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = 20 Ω. Do tải nối sao: Up = Ud / √3 = 380 / √3 ≈ 220 V. Cường độ dòng điện pha: Ip = Up / z_p = 220 / 20 = 11 A."
+        "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = 20 Ω. Do tải nối sao: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Cường độ dòng điện pha: Ip = Up / z_p = 220 / 20 = 11 A."
       },
       {
         "id": 73,
@@ -3809,7 +3810,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 600 kVA"
         ],
         "correct": 2,
-        "explain": "Tổng công suất tác dụng: P = 150 × 4 = 600 kW. Công suất biểu kiến của máy biến áp: S = P / cosφ = 600 / 0,8 = 750 kVA."
+        "explain": "Tổng công suất tác dụng: P = 150 × 4 = 600 kW. Công suất biểu kiến của máy biến áp: S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">600</span><span class=\"math-frac-bottom\">0,8</span></span> = 750 kVA."
       },
       {
         "id": 75,
