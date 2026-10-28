@@ -52,7 +52,7 @@ const CONGNGHE_ALL_QUESTIONS = [
   {
     "id": "cn_b3_01",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Dòng điện xoay chiều một pha có cường độ tức thời i = Im.sin(ωt + ψ). Đại lượng Im được gọi là gì?",
+    "question": "Dòng điện xoay chiều một pha có cường độ tức thời <span class=\"math-term\">i = I<sub>m</sub> · sin(ωt + ψ)</span>. Đại lượng I<sub>m</sub> được gọi là gì?",
     "options": [
       "A. Giá trị hiệu dụng của dòng điện.",
       "B. Giá trị cực đại (biên độ) của dòng điện.",
@@ -60,12 +60,12 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. Pha ban đầu của dòng điện."
     ],
     "correct": 1,
-    "explain": "Trong biểu thức i = Im.sin(ωt + ψ), đại lượng Im là cường độ dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng I: I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> (SGK Công nghệ 12 trang 18)."
+    "explain": "Trong biểu thức <span class=\"math-term\">i = I<sub>m</sub> · sin(ωt + ψ)</span>, đại lượng I<sub>m</sub> là cường độ dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng I: <span class=\"math-term\">I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span></span> (SGK Công nghệ 12 trang 18)."
   },
   {
     "id": "cn_b3_02",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Một dòng điện xoay chiều có biểu thức i = 4√2.sin(100πt) (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
+    "question": "Một dòng điện xoay chiều có biểu thức <span class=\"math-term\">i = 4√2 · sin(100πt)</span> (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
     "options": [
       "A. I = 4 A; f = 50 Hz",
       "B. I = 4√2 A; f = 100 Hz",
@@ -73,46 +73,46 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. I = 2√2 A; f = 50 Hz"
     ],
     "correct": 0,
-    "explain": "Cường độ cực đại Im = 4√2 A nên giá trị hiệu dụng I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">4√2</span><span class=\"math-frac-bottom\">√2</span></span> = 4 A. Tần số góc ω = 100π rad/s nên tần số f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz."
+    "explain": "Cường độ cực đại <span class=\"math-term\">I<sub>m</sub> = 4√2 A</span> nên giá trị hiệu dụng <span class=\"math-term\">I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">4√2</span><span class=\"math-frac-bottom\">√2</span></span> = 4 A</span>. Tần số góc <span class=\"math-term\">ω = 100π rad/s</span> nên tần số <span class=\"math-term\">f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz</span>."
   },
   {
     "id": "cn_b3_03",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Công thức tính cảm kháng XL của cuộn cảm thuần và dung kháng XC của tụ điện đối với dòng điện xoay chiều tần số f là:",
+    "question": "Công thức tính cảm kháng X<sub>L</sub> của cuộn cảm thuần và dung kháng X<sub>C</sub> của tụ điện đối với dòng điện xoay chiều tần số f là:",
     "options": [
-      "A. XL = 2πfL và XC = 2πfC",
-      "B. XL = 2πfL và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
-      "C. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfL</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
-      "D. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span>"
+      "A. <span class=\"math-term\">X<sub>L</sub> = 2πfL</span> và <span class=\"math-term\">X<sub>C</sub> = 2πfC</span>",
+      "B. <span class=\"math-term\">X<sub>L</sub> = 2πfL</span> và <span class=\"math-term\">X<sub>C</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span></span>",
+      "C. <span class=\"math-term\">X<sub>L</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfL</span></span></span> và <span class=\"math-term\">X<sub>C</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span></span>",
+      "D. <span class=\"math-term\">X<sub>L</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span></span> và <span class=\"math-term\">X<sub>C</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span></span>"
     ],
     "correct": 1,
-    "explain": "Cảm kháng cuộn cảm thuần: XL = ωL = 2πfL (đơn vị Ω); Dung kháng tụ điện: XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span> (đơn vị Ω) (SGK Công nghệ 12 trang 18)."
+    "explain": "Cảm kháng cuộn cảm thuần: <span class=\"math-term\">X<sub>L</sub> = ωL = 2πfL</span> (đơn vị Ω); Dung kháng tụ điện: <span class=\"math-term\">X<sub>C</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span></span> (đơn vị Ω) (SGK Công nghệ 12 trang 18)."
   },
   {
     "id": "cn_b3_04",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Tổng trở z_t của tải điện một pha gồm điện trở R mắc nối tiếp với cuộn cảm (XL) và tụ điện (XC) được tính theo công thức nào?",
+    "question": "Tổng trở z<sub>t</sub> của tải điện một pha gồm điện trở R mắc nối tiếp với cuộn cảm (X<sub>L</sub>) và tụ điện (X<sub>C</sub>) được tính theo công thức nào?",
     "options": [
-      "A. z_t = R + XL - XC",
-      "B. z_t = √[R² + (XL - XC)²]",
-      "C. z_t = √[R² + (XL + XC)²]",
-      "D. z_t = √[R² - (XL - XC)²]"
+      "A. <span class=\"math-term\">z<sub>t</sub> = R + X<sub>L</sub> - X<sub>C</sub></span>",
+      "B. <span class=\"math-term\">z<sub>t</sub> = √[R² + (X<sub>L</sub> - X<sub>C</sub>)²]</span>",
+      "C. <span class=\"math-term\">z<sub>t</sub> = √[R² + (X<sub>L</sub> + X<sub>C</sub>)²]</span>",
+      "D. <span class=\"math-term\">z<sub>t</sub> = √[R² - (X<sub>L</sub> - X<sub>C</sub>)²]</span>"
     ],
     "correct": 1,
-    "explain": "Tổng trở của tải R-L-C nối tiếp đặc trưng bởi độ lớn: z_t = √(R² + X²) với điện kháng X = XL - XC, do đó z_t = √[R² + (XL - XC)²]. Hệ số góc tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
+    "explain": "Tổng trở của tải R-L-C nối tiếp đặc trưng bởi độ lớn: <span class=\"math-term\">z<sub>t</sub> = √(R² + X²)</span> với điện kháng <span class=\"math-term\">X = X<sub>L</sub> - X<sub>C</sub></span>, do đó <span class=\"math-term\">z<sub>t</sub> = √[R² + (X<sub>L</sub> - X<sub>C</sub>)²]</span>. Hệ số góc <span class=\"math-term\">tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span></span> (SGK trang 18)."
   },
   {
     "id": "cn_b3_05",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
     "question": "Hiện tượng cộng hưởng điện trong đoạn mạch R-L-C nối tiếp xảy ra khi nào?",
     "options": [
-      "A. Khi R = XL",
-      "B. Khi cảm kháng bằng dung kháng (XL = XC)",
+      "A. Khi R = X<sub>L</sub>",
+      "B. Khi cảm kháng bằng dung kháng (X<sub>L</sub> = X<sub>C</sub>)",
       "C. Khi tần số f = 0",
       "D. Khi tổng trở đạt giá trị lớn vô cùng"
     ],
     "correct": 1,
-    "explain": "Cộng hưởng điện xảy ra khi cảm kháng bằng dung kháng XL = XC (tức 2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>), khi đó điện kháng triệt tiêu X = 0, tổng trở z_t đạt cực tiểu z_t = R và dòng điện trong mạch đạt cực đại I = <span class=\"math-frac\"><span class=\"math-frac-top\">U</span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
+    "explain": "Cộng hưởng điện xảy ra khi cảm kháng bằng dung kháng <span class=\"math-term\">X<sub>L</sub> = X<sub>C</sub></span> (tức <span class=\"math-term\">2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span></span>), khi đó điện kháng triệt tiêu X = 0, tổng trở z<sub>t</sub> đạt cực tiểu z<sub>t</sub> = R và dòng điện trong mạch đạt cực đại <span class=\"math-term\">I = <span class=\"math-frac\"><span class=\"math-frac-top\">U</span><span class=\"math-frac-bottom\">R</span></span></span> (SGK trang 18)."
   },
   {
     "id": "cn_b3_06",
@@ -143,15 +143,15 @@ const CONGNGHE_ALL_QUESTIONS = [
   {
     "id": "cn_b3_08",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Nếu chọn suất điện động pha A làm gốc: eA = Em.sin(ωt), thì biểu thức suất điện động pha B và pha C của máy phát ba pha là",
+    "question": "Nếu chọn suất điện động pha A làm gốc: <span class=\"math-term\">e<sub>A</sub> = E<sub>m</sub> · sin(ωt)</span>, thì biểu thức suất điện động pha B và pha C của máy phát ba pha là:",
     "options": [
-      "A. eB = Em.sin(ωt - π) và eC = Em.sin(ωt + π)",
-      "B. eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) và eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) [hoặc eC = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">4π</span><span class=\"math-frac-bottom\">3</span></span>)]",
-      "C. eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>) và eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>)",
-      "D. eB = Em.cos(ωt) và eC = Em.tan(ωt)"
+      "A. <span class=\"math-term\">e<sub>B</sub> = E<sub>m</sub> · sin(ωt - π)</span> và <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · sin(ωt + π)</span>",
+      "B. <span class=\"math-term\">e<sub>B</sub> = E<sub>m</sub> · sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>)</span> và <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>)</span>",
+      "C. <span class=\"math-term\">e<sub>B</sub> = E<sub>m</sub> · sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>)</span> và <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>)</span>",
+      "D. <span class=\"math-term\">e<sub>B</sub> = E<sub>m</sub> · cos(ωt)</span> và <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · tan(ωt)</span>"
     ],
     "correct": 1,
-    "explain": "Ba suất điện động cùng tần số, cùng biên độ và lệch pha nhau <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> rad: eA = Em.sin(ωt); eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>); eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) (SGK trang 18)."
+    "explain": "Ba suất điện động của máy phát ba pha đối xứng có cùng biên độ E<sub>m</sub>, cùng tần số góc ω và lần lượt lệch pha nhau <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> rad (120°): <span class=\"math-term\">e<sub>A</sub> = E<sub>m</sub> · sin(ωt)</span>; <span class=\"math-term\">e<sub>B</sub> = E<sub>m</sub> · sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>)</span>; <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>)</span> [có thể viết dạng góc âm: <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">4π</span><span class=\"math-frac-bottom\">3</span></span>)</span>] (SGK trang 18)."
   },
   {
     "id": "cn_b3_09",
@@ -195,87 +195,87 @@ const CONGNGHE_ALL_QUESTIONS = [
   {
     "id": "cn_b3_12",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Đại lượng 'Điện áp pha' (kí hiệu Up) trong mạch ba pha được định nghĩa là",
+    "question": "Đại lượng 'Điện áp pha' (kí hiệu U<sub>p</sub>) trong mạch ba pha được định nghĩa là",
     "options": [
       "A. điện áp giữa hai dây pha bất kì trong ba dây pha A, B, C.",
-      "B. điện áp đo giữa một dây pha và dây trung tính (hoặc giữa điểm đầu và điểm cuối của một pha).",
+      "B. điện áp đo giữa một dây pha và dây trung tính (hoặc giữa hai đầu của một pha).",
       "C. điện áp giữa dây trung tính và mặt đất.",
       "D. điện áp một chiều nạp vào ắc quy dự phòng."
     ],
     "correct": 1,
-    "explain": "Điện áp pha (Up): Là điện áp giữa điểm đầu và điểm cuối của một pha nguồn hoặc tải, tương đương điện áp đo giữa một dây pha và dây trung tính (như UA, UB, UC) (SGK trang 20)."
+    "explain": "Điện áp pha (U<sub>p</sub>): Là điện áp giữa điểm đầu và điểm cuối của một pha nguồn hoặc tải, tương đương điện áp đo giữa một dây pha và dây trung tính (như U<sub>A</sub>, U<sub>B</sub>, U<sub>C</sub>) (SGK trang 20)."
   },
   {
     "id": "cn_b3_13",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Đại lượng 'Điện áp dây' (kí hiệu Ud) trong mạch điện ba pha được định nghĩa là",
+    "question": "Đại lượng 'Điện áp dây' (kí hiệu U<sub>d</sub>) trong mạch điện ba pha được định nghĩa là",
     "options": [
       "A. điện áp đo giữa dây pha và dây trung tính.",
-      "B. điện áp giữa hai dây pha bất kì (UAB, UBC, UCA).",
+      "B. điện áp giữa hai dây pha bất kì (U<sub>AB</sub>, U<sub>BC</sub>, U<sub>CA</sub>).",
       "C. điện áp rơi trên một bóng đèn chiếu sáng một pha.",
       "D. điện áp danh định của lưới điện siêu cao áp."
     ],
     "correct": 1,
-    "explain": "Điện áp dây (Ud): Là điện áp đo giữa hai dây pha bất kì với nhau, ví dụ: UAB là điện áp giữa dây A và B, UBC giữa B và C, UCA giữa C và A (SGK trang 20)."
+    "explain": "Điện áp dây (U<sub>d</sub>): Là điện áp đo giữa hai dây pha bất kì với nhau, ví dụ: U<sub>AB</sub> là điện áp giữa dây A và B, U<sub>BC</sub> giữa B và C, U<sub>CA</sub> giữa C và A (SGK trang 20)."
   },
   {
     "id": "cn_b3_14",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Khi nguồn và tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa điện áp dây Ud và điện áp pha Up là:",
+    "question": "Khi nguồn và tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa điện áp dây U<sub>d</sub> và điện áp pha U<sub>p</sub> là:",
     "options": [
-      "A. Ud = Up",
-      "B. Ud = √3.Up ≈ 1,732.Up",
-      "C. Ud = 3.Up",
-      "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>"
+      "A. <span class=\"math-term\">U<sub>d</sub> = U<sub>p</sub></span>",
+      "B. <span class=\"math-term\">U<sub>d</sub> = √3 · U<sub>p</sub> ≈ 1,732 · U<sub>p</sub></span>",
+      "C. <span class=\"math-term\">U<sub>d</sub> = 3 · U<sub>p</sub></span>",
+      "D. <span class=\"math-term\">U<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>"
     ],
     "correct": 1,
-    "explain": "Mạch đối xứng nối hình sao (Y): Mối liên hệ điện áp là Ud = √3.Up ≈ 1,732.Up, suy ra Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span>. Ví dụ mạng hạ áp có Up = 220 V thì Ud = √3 × 220 ≈ 380 V (SGK trang 20)."
+    "explain": "Mạch đối xứng nối hình sao (Y): Mối liên hệ điện áp là <span class=\"math-term\">U<sub>d</sub> = √3 · U<sub>p</sub> ≈ 1,732 · U<sub>p</sub></span>, suy ra <span class=\"math-term\">U<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>. Ví dụ mạng hạ áp có U<sub>p</sub> = 220 V thì U<sub>d</sub> = √3 × 220 ≈ 380 V (SGK trang 20)."
   },
   {
     "id": "cn_b3_15",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Khi tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa cường độ dòng điện dây Id và dòng điện pha Ip là:",
+    "question": "Khi tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa cường độ dòng điện dây I<sub>d</sub> và dòng điện pha I<sub>p</sub> là:",
     "options": [
-      "A. Id = Ip",
-      "B. Id = √3.Ip",
-      "C. Id = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
-      "D. Id = 3.Ip"
+      "A. <span class=\"math-term\">I<sub>d</sub> = I<sub>p</sub></span>",
+      "B. <span class=\"math-term\">I<sub>d</sub> = √3 · I<sub>p</sub></span>",
+      "C. <span class=\"math-term\">I<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>",
+      "D. <span class=\"math-term\">I<sub>d</sub> = 3 · I<sub>p</sub></span>"
     ],
     "correct": 0,
-    "explain": "Khi tải nối hình sao (Y), dòng điện từ dây pha chạy thẳng trực tiếp vào cuộn dây pha của tải không bị phân nhánh, do đó dòng điện dây bằng dòng điện pha: Id = Ip (SGK trang 20)."
+    "explain": "Khi tải nối hình sao (Y), dòng điện từ dây pha chạy thẳng trực tiếp vào cuộn dây pha của tải không bị phân nhánh, do đó dòng điện dây bằng dòng điện pha: I<sub>d</sub> = I<sub>p</sub> (SGK trang 20)."
   },
   {
     "id": "cn_b3_16",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa điện áp dây Ud và điện áp pha Up là:",
+    "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa điện áp dây U<sub>d</sub> và điện áp pha U<sub>p</sub> là:",
     "options": [
-      "A. Ud = Up",
-      "B. Ud = √3.Up",
-      "C. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
-      "D. Ud = 2.Up"
+      "A. <span class=\"math-term\">U<sub>d</sub> = U<sub>p</sub></span>",
+      "B. <span class=\"math-term\">U<sub>d</sub> = √3 · U<sub>p</sub></span>",
+      "C. <span class=\"math-term\">U<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>",
+      "D. <span class=\"math-term\">U<sub>d</sub> = 2 · U<sub>p</sub></span>"
     ],
     "correct": 0,
-    "explain": "Khi tải nối hình tam giác (Δ), mỗi pha của tải được mắc trực tiếp giữa hai dây pha của nguồn điện, vì vậy điện áp pha của tải bằng chính điện áp dây của nguồn: Ud = Up (SGK trang 20)."
+    "explain": "Khi tải nối hình tam giác (Δ), mỗi pha của tải được mắc trực tiếp giữa hai dây pha của nguồn điện, vì vậy điện áp pha của tải bằng chính điện áp dây của nguồn: U<sub>d</sub> = U<sub>p</sub> (SGK trang 20)."
   },
   {
     "id": "cn_b3_17",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa dòng điện dây Id và dòng điện pha Ip là:",
+    "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa dòng điện dây I<sub>d</sub> và dòng điện pha I<sub>p</sub> là:",
     "options": [
-      "A. Id = Ip",
-      "B. Id = √3.Ip ≈ 1,732.Ip",
-      "C. Id = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
-      "D. Id = 3.Ip"
+      "A. <span class=\"math-term\">I<sub>d</sub> = I<sub>p</sub></span>",
+      "B. <span class=\"math-term\">I<sub>d</sub> = √3 · I<sub>p</sub> ≈ 1,732 · I<sub>p</sub></span>",
+      "C. <span class=\"math-term\">I<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>",
+      "D. <span class=\"math-term\">I<sub>d</sub> = 3 · I<sub>p</sub></span>"
     ],
     "correct": 1,
-    "explain": "Khi tải nối tam giác (Δ) đối xứng, dòng điện dây tại các nút rẽ nhánh thành hai dòng điện pha, biểu thức vectơ dòng điện cho ta: Id = √3.Ip ≈ 1,732.Ip, suy ra Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> (SGK trang 20)."
+    "explain": "Khi tải nối tam giác (Δ) đối xứng, dòng điện dây tại các nút rẽ nhánh thành hai dòng điện pha, cho ta: <span class=\"math-term\">I<sub>d</sub> = √3 · I<sub>p</sub> ≈ 1,732 · I<sub>p</sub></span>, suy ra <span class=\"math-term\">I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span></span> (SGK trang 20)."
   },
   {
     "id": "cn_b3_18",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
     "question": "Ưu điểm vượt trội của mạch điện ba pha bốn dây (nối hình sao có dây trung tính) so với mạch ba dây là gì?",
     "options": [
-      "A. Tạo ra được hai cấp điện áp khác nhau (điện áp dây Ud và điện áp pha Up), thuận tiện cấp điện đồng thời cho cả động cơ ba pha và thiết bị sinh hoạt một pha.",
+      "A. Tạo ra được hai cấp điện áp khác nhau (điện áp dây U<sub>d</sub> và điện áp pha U<sub>p</sub>), thuận tiện cấp điện đồng thời cho cả động cơ ba pha và thiết bị sinh hoạt một pha.",
       "B. Không bao giờ xảy ra sự cố chập mạch hay quá tải.",
       "C. Tiết kiệm 100% lượng dây nhôm và đồng truyền tải.",
       "D. Điện áp trên đường dây tự động tăng lên gấp mười lần."
@@ -286,15 +286,15 @@ const CONGNGHE_ALL_QUESTIONS = [
   {
     "id": "cn_b3_19",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Khi phụ tải ba pha hoàn toàn ĐỐI XỨNG, cường độ dòng điện chạy trong dây trung tính Io có giá trị bằng bao nhiêu?",
+    "question": "Khi phụ tải ba pha hoàn toàn ĐỐI XỨNG, cường độ dòng điện chạy trong dây trung tính I<sub>o</sub> có giá trị bằng bao nhiêu?",
     "options": [
-      "A. Bằng 3 lần dòng điện pha (Io = 3.Ip).",
-      "B. Bằng không (Io = 0).",
-      "C. Bằng dòng điện cực đại Im.",
-      "D. Bằng dòng điện dây Id."
+      "A. Bằng 3 lần dòng điện pha (I<sub>o</sub> = 3 · I<sub>p</sub>).",
+      "B. Bằng không (I<sub>o</sub> = 0).",
+      "C. Bằng dòng điện cực đại I<sub>m</sub>.",
+      "D. Bằng dòng điện dây I<sub>d</sub>."
     ],
     "correct": 1,
-    "explain": "Trong tải ba pha đối xứng, tổng vectơ của ba dòng điện pha bằng 0: iA + iB + iC = 0, do đó dòng điện hiệu dụng trong dây trung tính Io = 0 (SGK trang 20)."
+    "explain": "Trong tải ba pha đối xứng, tổng vectơ của ba dòng điện pha bằng 0: i<sub>A</sub> + i<sub>B</sub> + i<sub>C</sub> = 0, do đó dòng điện hiệu dụng trong dây trung tính I<sub>o</sub> = 0 (SGK trang 20)."
   },
   {
     "id": "cn_b3_20",
@@ -314,31 +314,31 @@ const CONGNGHE_ALL_QUESTIONS = [
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
     "question": "Công thức tính công suất tác dụng toàn phần P của mạch điện xoay chiều ba pha đối xứng là:",
     "options": [
-      "A. P = Ud.Id.cos φ",
-      "B. P = √3.Ud.Id.cos φ = 3.Up.Ip.cos φ",
-      "C. P = 3.Ud.Id.cos φ",
-      "D. P = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub>.I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span>.cos φ"
+      "A. <span class=\"math-term\">P = U<sub>d</sub> · I<sub>d</sub> · cos φ</span>",
+      "B. <span class=\"math-term\">P = √3 · U<sub>d</sub> · I<sub>d</sub> · cos φ = 3 · U<sub>p</sub> · I<sub>p</sub> · cos φ</span>",
+      "C. <span class=\"math-term\">P = 3 · U<sub>d</sub> · I<sub>d</sub> · cos φ</span>",
+      "D. <span class=\"math-term\">P = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub> · I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> · cos φ</span>"
     ],
     "correct": 1,
-    "explain": "Công suất tác dụng ba pha đối xứng tính theo thông số dây: P = √3.Ud.Id.cos φ; hoặc tính theo thông số pha: P = 3.Up.Ip.cos φ (trong đó cos φ là hệ số công suất của mỗi pha tải) (SGK trang 20)."
+    "explain": "Công suất tác dụng ba pha đối xứng tính theo thông số dây: P = √3 · U<sub>d</sub> · I<sub>d</sub> · cos φ; hoặc tính theo thông số pha: P = 3 · U<sub>p</sub> · I<sub>p</sub> · cos φ (trong đó cos φ là hệ số công suất của mỗi pha tải) (SGK trang 20)."
   },
   {
     "id": "cn_b3_22",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Một nguồn điện ba pha đối xứng có điện áp pha Up = 220 V. Giá trị điện áp dây Ud xấp xỉ bằng bao nhiêu vôn?",
+    "question": "Một nguồn điện ba pha đối xứng có điện áp pha U<sub>p</sub> = 220 V. Giá trị điện áp dây U<sub>d</sub> chuẩn bằng bao nhiêu vôn?",
     "options": [
       "A. 127 V",
       "B. 220 V",
-      "C. 380 V (hoặc 381 V)",
+      "C. 380 V",
       "D. 440 V"
     ],
     "correct": 2,
-    "explain": "Nguồn điện ba pha đối xứng nối hình sao: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế mạng điện hạ áp tiêu chuẩn Việt Nam quy ước là 380 V)."
+    "explain": "Nguồn điện ba pha đối xứng nối hình sao: U<sub>d</sub> = √3 · U<sub>p</sub> = √3 × 220 ≈ 381 V (trong thực tế mạng điện hạ áp tiêu chuẩn Việt Nam quy ước chuẩn là 380 V)."
   },
   {
     "id": "cn_b3_23",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Cho mạch xoay chiều một pha có R = 30 Ω, cảm kháng XL = 60 Ω, dung kháng XC = 20 Ω. Độ lớn tổng trở z_t của mạch là",
+    "question": "Cho mạch xoay chiều một pha có R = 30 Ω, cảm kháng X<sub>L</sub> = 60 Ω, dung kháng X<sub>C</sub> = 20 Ω. Độ lớn tổng trở z<sub>t</sub> của mạch là",
     "options": [
       "A. 110 Ω",
       "B. 50 Ω",
@@ -346,12 +346,12 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. 10 Ω"
     ],
     "correct": 1,
-    "explain": "Điện kháng của mạch: X = XL - XC = 60 - 20 = 40 Ω. Tổng trở của mạch: z_t = √(R² + X²) = √(30² + 40²) = √(900 + 1600) = √2500 = 50 Ω."
+    "explain": "Điện kháng của mạch: X = X<sub>L</sub> - X<sub>C</sub> = 60 - 20 = 40 Ω. Tổng trở của mạch: z<sub>t</sub> = √(R² + X²) = √(30² + 40²) = √(900 + 1600) = √2500 = 50 Ω."
   },
   {
     "id": "cn_b3_24",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có R = 12 Ω, XL = 16 Ω nối hình SAO (Y) vào nguồn điện có điện áp dây Ud = 380 V. Cường độ dòng điện pha Ip chạy qua mỗi cuộn dây là",
+    "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có R = 12 Ω, X<sub>L</sub> = 16 Ω nối hình SAO (Y) vào nguồn điện có điện áp dây U<sub>d</sub> = 380 V. Cường độ dòng điện pha I<sub>p</sub> chạy qua mỗi cuộn dây là",
     "options": [
       "A. 11 A",
       "B. 19 A",
@@ -359,12 +359,12 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. 22 A"
     ],
     "correct": 0,
-    "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = √400 = 20 Ω. Do tải nối sao, điện áp pha của tải: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Cường độ dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">20</span></span> = 11 A."
+    "explain": "Tổng trở mỗi pha của tải: <span class=\"math-term\">z<sub>p</sub> = √(R² + X<sub>L</sub>²) = √(12² + 16²) = √400 = 20 Ω</span>. Do tải nối sao, điện áp pha của tải: <span class=\"math-term\">U<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V</span>. Cường độ dòng điện pha: <span class=\"math-term\">I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">20</span></span> = 11 A</span>."
   },
   {
     "id": "cn_b3_25",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Một động cơ điện ba pha nối hình TAM GIÁC (Δ) tiêu thụ dòng điện pha Ip = 15 A. Cường độ dòng điện dây Id chạy trên đường dây cấp điện cho động cơ là",
+    "question": "Một động cơ điện ba pha nối hình TAM GIÁC (Δ) tiêu thụ dòng điện pha I<sub>p</sub> = 15 A. Cường độ dòng điện dây I<sub>d</sub> chạy trên đường dây cấp điện cho động cơ là",
     "options": [
       "A. 15 A",
       "B. 8,66 A",
@@ -372,46 +372,46 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. 45 A"
     ],
     "correct": 2,
-    "explain": "Tải nối hình tam giác (Δ) đối xứng: Dòng điện dây liên hệ với dòng điện pha qua công thức: Id = √3.Ip = √3 × 15 ≈ 1,732 × 15 = 25,98 A."
+    "explain": "Tải nối hình tam giác (Δ) đối xứng: Dòng điện dây liên hệ với dòng điện pha qua công thức: I<sub>d</sub> = √3 · I<sub>p</sub> = √3 × 15 ≈ 1,732 × 15 = 25,98 A."
   },
   {
     "id": "cn_b3_26",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Một nguồn điện ba pha có điện áp dây Ud = 380 V cấp cho một tải đối xứng nối hình SAO (Y) có tổng trở mỗi pha zp = 38 Ω. Dòng điện dây Id chạy trên dây pha có giá trị là",
+    "question": "Một nguồn điện ba pha có điện áp dây U<sub>d</sub> = 380 V cấp cho một tải đối xứng nối hình SAO (Y) có tổng trở mỗi pha z<sub>p</sub> = 38 Ω. Dòng điện dây I<sub>d</sub> chạy trên dây pha có giá trị là",
     "options": [
       "A. 10 A",
-      "B. 5,79 A (khoảng 5,8 A)",
+      "B. ≈ 5,8 A (chính xác 5,79 A)",
       "C. 17,3 A",
       "D. 3,34 A"
     ],
     "correct": 1,
-    "explain": "Do tải nối sao: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">38</span></span> ≈ 5,79 A. Do nối sao: Id = Ip ≈ 5,79 A."
+    "explain": "Do tải nối sao: <span class=\"math-term\">U<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V</span>. Dòng điện pha: <span class=\"math-term\">I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">38</span></span> ≈ 5,79 A</span>. Do nối sao: I<sub>d</sub> = I<sub>p</sub> ≈ 5,79 A."
   },
   {
     "id": "cn_b3_27",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Tải ba pha đối xứng gồm ba điện trở thuần R = 22 Ω nối hình TAM GIÁC (Δ) vào mạng điện có Ud = 220 V. Dòng điện pha Ip và dòng điện dây Id lần lượt là",
+    "question": "Tải ba pha đối xứng gồm ba điện trở thuần R = 22 Ω nối hình TAM GIÁC (Δ) vào mạng điện có U<sub>d</sub> = 220 V. Dòng điện pha I<sub>p</sub> và dòng điện dây I<sub>d</sub> lần lượt là",
     "options": [
-      "A. Ip = 10 A; Id = 17,32 A",
-      "B. Ip = 10 A; Id = 10 A",
-      "C. Ip = 5,77 A; Id = 10 A",
-      "D. Ip = 17,32 A; Id = 10 A"
+      "A. I<sub>p</sub> = 10 A; I<sub>d</sub> = 17,32 A",
+      "B. I<sub>p</sub> = 10 A; I<sub>d</sub> = 10 A",
+      "C. I<sub>p</sub> = 5,77 A; I<sub>d</sub> = 10 A",
+      "D. I<sub>p</sub> = 17,32 A; I<sub>d</sub> = 10 A"
     ],
     "correct": 0,
-    "explain": "Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">22</span></span> = 10 A. Dòng điện dây: Id = √3.Ip = √3 × 10 ≈ 17,32 A."
+    "explain": "Do tải nối tam giác: U<sub>p</sub> = U<sub>d</sub> = 220 V. Dòng điện pha: <span class=\"math-term\">I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">22</span></span> = 10 A</span>. Dòng điện dây: <span class=\"math-term\">I<sub>d</sub> = √3 · I<sub>p</sub> = √3 × 10 ≈ 17,32 A</span>."
   },
   {
     "id": "cn_b3_28",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Một tải điện ba pha tiêu thụ công suất P = 10 kW với điện áp dây Ud = 380 V và hệ số công suất cos φ = 0,8. Dòng điện dây Id chạy trong mạch xấp xỉ bằng",
+    "question": "Một tải điện ba pha tiêu thụ công suất P = 10 kW với điện áp dây U<sub>d</sub> = 380 V và hệ số công suất cos φ = 0,8. Dòng điện dây I<sub>d</sub> chạy trong mạch xấp xỉ bằng",
     "options": [
-      "A. 18,99 A",
+      "A. 18,99 A (khoảng 19 A)",
       "B. 32,89 A",
       "C. 10,95 A",
       "D. 15,20 A"
     ],
     "correct": 0,
-    "explain": "Từ công thức công suất ba pha: P = √3.Ud.Id.cos φ => Id = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">√3.U<sub>d</sub>.cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">√3 × 380 × 0,8</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">526,54</span></span> ≈ 18,99 A."
+    "explain": "Từ công thức công suất ba pha: <span class=\"math-term\">P = √3 · U<sub>d</sub> · I<sub>d</sub> · cos φ</span> => <span class=\"math-term\">I<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">√3 · U<sub>d</sub> · cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">√3 × 380 × 0,8</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">526,54</span></span> ≈ 18,99 A</span>."
   },
   {
     "id": "cn_b3_29",
@@ -450,7 +450,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. truyền toàn bộ công suất vào cọc tiếp địa."
     ],
     "correct": 1,
-    "explain": "Khi bị đứt mạch một pha, dòng điện trong nhánh pha đó bị ngắt hoàn toàn (Ip = 0). Nếu mạng có dây trung tính thì hai pha còn lại vẫn hoạt động bình thường ở điện áp 220 V."
+    "explain": "Khi bị đứt mạch một pha, dòng điện trong nhánh pha đó bị ngắt hoàn toàn (I<sub>p</sub> = 0). Nếu mạng có dây trung tính thì hai pha còn lại vẫn hoạt động bình thường ở điện áp 220 V."
   },
   {
     "id": "cn_b3_32",
@@ -463,7 +463,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. Đấu trực tiếp hai cực của bóng đèn vào dây trung tính O."
     ],
     "correct": 1,
-    "explain": "Bóng đèn có điện áp định mức 220 V (bằng điện áp pha Up của lưới), do đó phải đấu một đầu vào dây pha và một đầu vào dây trung tính O để nhận đúng điện áp 220 V. Nếu đấu vào giữa hai dây pha (Ud = 380 V) thì đèn sẽ bị quá áp và nổ ngay lập tức."
+    "explain": "Bóng đèn có điện áp định mức 220 V (bằng điện áp pha U<sub>p</sub> của lưới), do đó phải đấu một đầu vào dây pha và một đầu vào dây trung tính O để nhận đúng điện áp 220 V. Nếu đấu vào giữa hai dây pha (U<sub>d</sub> = 380 V) thì đèn sẽ bị quá áp và nổ ngay lập tức."
   },
   {
     "id": "cn_b4_01",
@@ -519,7 +519,7 @@ const CONGNGHE_ALL_QUESTIONS = [
   },
   {
     "id": "cn_b4_05",
-    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐG GIA",
     "question": "Theo quy chuẩn kĩ thuật điện Việt Nam, bốn cấp điện áp tiêu chuẩn của hệ thống lưới điện gồm:",
     "options": [
       "A. Điện cực thấp, điện trung bình, điện mạnh và điện cực mạnh.",
@@ -588,17 +588,17 @@ const CONGNGHE_ALL_QUESTIONS = [
     "question": "Vì sao tại các nhà máy điện nguồn, người ta bắt buộc phải đặt trạm biến áp TĂNG ÁP trước khi đưa điện lên đường dây truyền tải?",
     "options": [
       "A. Để tăng tần số dòng điện xoay chiều lên hàng nghìn Hz.",
-      "B. Để tăng điện áp U, từ đó giảm cường độ dòng điện I, giúp giảm mạnh công suất hao phí toả nhiệt trên dây dẫn theo công thức ΔP = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup>.R</span><span class=\"math-frac-bottom\">U<sup>2</sup>.cos<sup>2</sup>φ</span></span>.",
+      "B. Để tăng điện áp U, giảm cường độ dòng điện I, giúp giảm hao phí toả nhiệt theo công thức: <span class=\"math-term\">ΔP = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup> · R</span><span class=\"math-frac-bottom\">U<sup>2</sup> · cos<sup>2</sup>φ</span></span></span>.",
       "C. Để chuyển đổi dòng xoay chiều thành dòng điện một chiều.",
       "D. Để biến điện năng thành cơ năng dự trữ trong cột tháp."
     ],
     "correct": 1,
-    "explain": "Theo định luật Jun-Len-xơ, công suất hao phí nhiệt trên đường dây là: ΔP = I²R = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup>.R</span><span class=\"math-frac-bottom\">U<sup>2</sup>.cos<sup>2</sup>φ</span></span>. Khi tăng điện áp U lên n lần thì hao phí ΔP giảm đi n² lần, giúp tiết kiệm chi phí xây dựng đường dây và truyền tải được công suất cực lớn đi xa."
+    "explain": "Theo định luật Jun-Len-xơ, công suất hao phí nhiệt trên đường dây là: <span class=\"math-term\">ΔP = I²R = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup> · R</span><span class=\"math-frac-bottom\">U<sup>2</sup> · cos<sup>2</sup>φ</span></span></span>. Khi tăng điện áp U lên n lần thì hao phí ΔP giảm đi n² lần, giúp tiết kiệm chi phí xây dựng đường dây và truyền tải được công suất cực lớn đi xa."
   },
   {
     "id": "cn_b4_11",
     "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-    "question": "Khi truyền tải một công suất điện P xác định trên cùng một đường dây có điện trở R, nếu tăng điện áp từ U1 = 110 kV lên U2 = 220 kV thì công suất hao phí toả nhiệt ΔP trên đường dây sẽ",
+    "question": "Khi truyền tải một công suất điện P xác định trên cùng một đường dây có điện trở R, nếu tăng điện áp từ U<sub>1</sub> = 110 kV lên U<sub>2</sub> = 220 kV thì công suất hao phí toả nhiệt ΔP trên đường dây sẽ",
     "options": [
       "A. tăng lên gấp 2 lần.",
       "B. giảm đi 2 lần.",
@@ -902,7 +902,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. 250 kVA"
     ],
     "correct": 2,
-    "explain": "Công suất biểu kiến của máy biến áp: S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">160</span><span class=\"math-frac-bottom\">0,8</span></span> = 200 kVA. Do đó cần chọn máy biến áp có công suất định mức tối thiểu là 200 kVA."
+    "explain": "Công suất biểu kiến của máy biến áp: <span class=\"math-term\">S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">160</span><span class=\"math-frac-bottom\">0,8</span></span> = 200 kVA</span>. Do đó cần chọn máy biến áp có công suất định mức tối thiểu là 200 kVA."
   },
   {
     "id": "cn_b6_15",
@@ -915,7 +915,7 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. Giảm 0 kVA"
     ],
     "correct": 0,
-    "explain": "Ban đầu: S1 = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">0,8</span></span> = 100 kVA. Khi nâng cos φ' = 1,0: S2 = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ'</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">1,0</span></span> = 80 kVA. Công suất biểu kiến giảm: ΔS = 100 - 80 = 20 kVA (giảm dòng điện trên dây cáp nguồn)."
+    "explain": "Ban đầu: <span class=\"math-term\">S<sub>1</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">0,8</span></span> = 100 kVA</span>. Khi nâng cos φ' = 1,0: <span class=\"math-term\">S<sub>2</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ'</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">1,0</span></span> = 80 kVA</span>. Công suất biểu kiến giảm: ΔS = 100 - 80 = 20 kVA (giúp giảm dòng điện trên dây cáp nguồn)."
   },
   {
     "id": "cn_b6_16",
@@ -1101,13 +1101,13 @@ const CONGNGHE_ALL_QUESTIONS = [
     "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
     "question": "Các thông số kĩ thuật định mức tiêu chuẩn của mạng điện hạ áp sinh hoạt tại Việt Nam là:",
     "options": [
-      "A. Điện áp dây Ud = 380 V; Điện áp pha Up = 220 V; Tần số f = 50 Hz.",
-      "B. Điện áp dây Ud = 220 V; Điện áp pha Up = 110 V; Tần số f = 60 Hz.",
-      "C. Điện áp dây Ud = 500 V; Điện áp pha Up = 220 V; Tần số f = 25 Hz.",
+      "A. Điện áp dây U<sub>d</sub> = 380 V; Điện áp pha U<sub>p</sub> = 220 V; Tần số f = 50 Hz.",
+      "B. Điện áp dây U<sub>d</sub> = 220 V; Điện áp pha U<sub>p</sub> = 110 V; Tần số f = 60 Hz.",
+      "C. Điện áp dây U<sub>d</sub> = 500 V; Điện áp pha U<sub>p</sub> = 220 V; Tần số f = 25 Hz.",
       "D. Điện áp một chiều 12 V."
     ],
     "correct": 0,
-    "explain": "Quy chuẩn Việt Nam: Mạng hạ áp sinh hoạt 3 pha 4 dây có điện áp dây Ud = 380 V, điện áp pha Up = 220 V và tần số công nghiệp f = 50 Hz (SGK trang 36)."
+    "explain": "Quy chuẩn Việt Nam: Mạng hạ áp sinh hoạt 3 pha 4 dây có điện áp dây U<sub>d</sub> = 380 V, điện áp pha U<sub>p</sub> = 220 V và tần số công nghiệp f = 50 Hz (SGK trang 36)."
   },
   {
     "id": "cn_b7_03",
@@ -1370,13 +1370,13 @@ const CONGNGHE_ALL_QUESTIONS = [
   {
     "id": "cn_gk1_ds3a",
     "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
-    "question": "a. Trong mạch điện ba pha đối xứng nối hình sao (Y), điện áp dây luôn bằng điện áp pha (Ud = Up).<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
+    "question": "a. Trong mạch điện ba pha đối xứng nối hình sao (Y), điện áp dây luôn bằng điện áp pha (U<sub>d</sub> = U<sub>p</sub>).<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
     ],
     "correct": 1,
-    "explain": "SAI. Khi nối hình sao (Y), điện áp dây bằng căn 3 lần điện áp pha: Ud = √3.Up ≈ 1,732.Up; chỉ khi nối tam giác (Δ) thì mới có Ud = Up.",
+    "explain": "SAI. Khi nối hình sao (Y), điện áp dây bằng căn 3 lần điện áp pha: U<sub>d</sub> = √3 · U<sub>p</sub> ≈ 1,732 · U<sub>p</sub>; chỉ khi nối tam giác (Δ) thì mới có U<sub>d</sub> = U<sub>p</sub>.",
     "subLabel": "3a"
   },
   {
@@ -1388,19 +1388,18 @@ const CONGNGHE_ALL_QUESTIONS = [
       "B. Sai"
     ],
     "correct": 0,
-    "explain": "ĐÚNG. Khi tải nối sao, điện áp mỗi pha tải là điện áp pha Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V.",
-    "subLabel": "3b"
+    "explain": "ĐÚNG. Khi tải nối sao, điện áp mỗi pha tải là điện áp pha <span class=\"math-term\">U<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V</span>."
   },
   {
     "id": "cn_gk1_ds3c",
     "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
-    "question": "c. Nếu ba cụm lò sấy hoàn toàn đối xứng thì dòng điện hiệu dụng chạy trong dây trung tính Io bằng 0.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
+    "question": "c. Nếu ba cụm lò sấy hoàn toàn đối xứng thì dòng điện hiệu dụng chạy trong dây trung tính I<sub>o</sub> bằng 0.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
     "options": [
       "A. Đúng",
       "B. Sai"
     ],
     "correct": 0,
-    "explain": "ĐÚNG. Khi tải ba pha hoàn toàn đối xứng, tổng vectơ của 3 dòng điện pha bằng 0 (iA + iB + iC = 0), do đó dòng điện chạy trên dây trung tính Io = 0.",
+    "explain": "ĐÚNG. Khi tải ba pha hoàn toàn đối xứng, tổng vectơ của 3 dòng điện pha bằng 0 (i<sub>A</sub> + i<sub>B</sub> + i<sub>C</sub> = 0), do đó dòng điện chạy trên dây trung tính I<sub>o</sub> = 0.",
     "subLabel": "3c"
   },
   {
@@ -1427,7 +1426,7 @@ const CONGNGHE_TOPICS_DATABASE = [
       {
         "id": "cn_b3_01",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Dòng điện xoay chiều một pha có cường độ tức thời i = Im.sin(ωt + ψ). Đại lượng Im được gọi là gì?",
+        "question": "Dòng điện xoay chiều một pha có cường độ tức thời <span class=\"math-term\">i = I<sub>m</sub> · sin(ωt + ψ)</span>. Đại lượng I<sub>m</sub> được gọi là gì?",
         "options": [
           "A. Giá trị hiệu dụng của dòng điện.",
           "B. Giá trị cực đại (biên độ) của dòng điện.",
@@ -1435,12 +1434,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Pha ban đầu của dòng điện."
         ],
         "correct": 1,
-        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), đại lượng Im là cường độ dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng I: I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> (SGK Công nghệ 12 trang 18)."
+        "explain": "Trong biểu thức <span class=\"math-term\">i = I<sub>m</sub> · sin(ωt + ψ)</span>, đại lượng I<sub>m</sub> là cường độ dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng I: <span class=\"math-term\">I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span></span> (SGK Công nghệ 12 trang 18)."
       },
       {
         "id": "cn_b3_02",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một dòng điện xoay chiều có biểu thức i = 4√2.sin(100πt) (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
+        "question": "Một dòng điện xoay chiều có biểu thức <span class=\"math-term\">i = 4√2 · sin(100πt)</span> (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
         "options": [
           "A. I = 4 A; f = 50 Hz",
           "B. I = 4√2 A; f = 100 Hz",
@@ -1448,46 +1447,46 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. I = 2√2 A; f = 50 Hz"
         ],
         "correct": 0,
-        "explain": "Cường độ cực đại Im = 4√2 A nên giá trị hiệu dụng I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">4√2</span><span class=\"math-frac-bottom\">√2</span></span> = 4 A. Tần số góc ω = 100π rad/s nên tần số f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz."
+        "explain": "Cường độ cực đại <span class=\"math-term\">I<sub>m</sub> = 4√2 A</span> nên giá trị hiệu dụng <span class=\"math-term\">I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">4√2</span><span class=\"math-frac-bottom\">√2</span></span> = 4 A</span>. Tần số góc <span class=\"math-term\">ω = 100π rad/s</span> nên tần số <span class=\"math-term\">f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz</span>."
       },
       {
         "id": "cn_b3_03",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Công thức tính cảm kháng XL của cuộn cảm thuần và dung kháng XC của tụ điện đối với dòng điện xoay chiều tần số f là:",
+        "question": "Công thức tính cảm kháng X<sub>L</sub> của cuộn cảm thuần và dung kháng X<sub>C</sub> của tụ điện đối với dòng điện xoay chiều tần số f là:",
         "options": [
-          "A. XL = 2πfL và XC = 2πfC",
-          "B. XL = 2πfL và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
-          "C. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfL</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
-          "D. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span>"
+          "A. <span class=\"math-term\">X<sub>L</sub> = 2πfL</span> và <span class=\"math-term\">X<sub>C</sub> = 2πfC</span>",
+          "B. <span class=\"math-term\">X<sub>L</sub> = 2πfL</span> và <span class=\"math-term\">X<sub>C</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span></span>",
+          "C. <span class=\"math-term\">X<sub>L</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfL</span></span></span> và <span class=\"math-term\">X<sub>C</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span></span>",
+          "D. <span class=\"math-term\">X<sub>L</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span></span> và <span class=\"math-term\">X<sub>C</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span></span>"
         ],
         "correct": 1,
-        "explain": "Cảm kháng cuộn cảm thuần: XL = ωL = 2πfL (đơn vị Ω); Dung kháng tụ điện: XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span> (đơn vị Ω) (SGK Công nghệ 12 trang 18)."
+        "explain": "Cảm kháng cuộn cảm thuần: <span class=\"math-term\">X<sub>L</sub> = ωL = 2πfL</span> (đơn vị Ω); Dung kháng tụ điện: <span class=\"math-term\">X<sub>C</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span></span> (đơn vị Ω) (SGK Công nghệ 12 trang 18)."
       },
       {
         "id": "cn_b3_04",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Tổng trở z_t của tải điện một pha gồm điện trở R mắc nối tiếp với cuộn cảm (XL) và tụ điện (XC) được tính theo công thức nào?",
+        "question": "Tổng trở z<sub>t</sub> của tải điện một pha gồm điện trở R mắc nối tiếp với cuộn cảm (X<sub>L</sub>) và tụ điện (X<sub>C</sub>) được tính theo công thức nào?",
         "options": [
-          "A. z_t = R + XL - XC",
-          "B. z_t = √[R² + (XL - XC)²]",
-          "C. z_t = √[R² + (XL + XC)²]",
-          "D. z_t = √[R² - (XL - XC)²]"
+          "A. <span class=\"math-term\">z<sub>t</sub> = R + X<sub>L</sub> - X<sub>C</sub></span>",
+          "B. <span class=\"math-term\">z<sub>t</sub> = √[R² + (X<sub>L</sub> - X<sub>C</sub>)²]</span>",
+          "C. <span class=\"math-term\">z<sub>t</sub> = √[R² + (X<sub>L</sub> + X<sub>C</sub>)²]</span>",
+          "D. <span class=\"math-term\">z<sub>t</sub> = √[R² - (X<sub>L</sub> - X<sub>C</sub>)²]</span>"
         ],
         "correct": 1,
-        "explain": "Tổng trở của tải R-L-C nối tiếp đặc trưng bởi độ lớn: z_t = √(R² + X²) với điện kháng X = XL - XC, do đó z_t = √[R² + (XL - XC)²]. Hệ số góc tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
+        "explain": "Tổng trở của tải R-L-C nối tiếp đặc trưng bởi độ lớn: <span class=\"math-term\">z<sub>t</sub> = √(R² + X²)</span> với điện kháng <span class=\"math-term\">X = X<sub>L</sub> - X<sub>C</sub></span>, do đó <span class=\"math-term\">z<sub>t</sub> = √[R² + (X<sub>L</sub> - X<sub>C</sub>)²]</span>. Hệ số góc <span class=\"math-term\">tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span></span> (SGK trang 18)."
       },
       {
         "id": "cn_b3_05",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
         "question": "Hiện tượng cộng hưởng điện trong đoạn mạch R-L-C nối tiếp xảy ra khi nào?",
         "options": [
-          "A. Khi R = XL",
-          "B. Khi cảm kháng bằng dung kháng (XL = XC)",
+          "A. Khi R = X<sub>L</sub>",
+          "B. Khi cảm kháng bằng dung kháng (X<sub>L</sub> = X<sub>C</sub>)",
           "C. Khi tần số f = 0",
           "D. Khi tổng trở đạt giá trị lớn vô cùng"
         ],
         "correct": 1,
-        "explain": "Cộng hưởng điện xảy ra khi cảm kháng bằng dung kháng XL = XC (tức 2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>), khi đó điện kháng triệt tiêu X = 0, tổng trở z_t đạt cực tiểu z_t = R và dòng điện trong mạch đạt cực đại I = <span class=\"math-frac\"><span class=\"math-frac-top\">U</span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
+        "explain": "Cộng hưởng điện xảy ra khi cảm kháng bằng dung kháng <span class=\"math-term\">X<sub>L</sub> = X<sub>C</sub></span> (tức <span class=\"math-term\">2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span></span>), khi đó điện kháng triệt tiêu X = 0, tổng trở z<sub>t</sub> đạt cực tiểu z<sub>t</sub> = R và dòng điện trong mạch đạt cực đại <span class=\"math-term\">I = <span class=\"math-frac\"><span class=\"math-frac-top\">U</span><span class=\"math-frac-bottom\">R</span></span></span> (SGK trang 18)."
       },
       {
         "id": "cn_b3_06",
@@ -1518,15 +1517,15 @@ const CONGNGHE_TOPICS_DATABASE = [
       {
         "id": "cn_b3_08",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Nếu chọn suất điện động pha A làm gốc: eA = Em.sin(ωt), thì biểu thức suất điện động pha B và pha C của máy phát ba pha là",
+        "question": "Nếu chọn suất điện động pha A làm gốc: <span class=\"math-term\">e<sub>A</sub> = E<sub>m</sub> · sin(ωt)</span>, thì biểu thức suất điện động pha B và pha C của máy phát ba pha là:",
         "options": [
-          "A. eB = Em.sin(ωt - π) và eC = Em.sin(ωt + π)",
-          "B. eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) và eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) [hoặc eC = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">4π</span><span class=\"math-frac-bottom\">3</span></span>)]",
-          "C. eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>) và eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>)",
-          "D. eB = Em.cos(ωt) và eC = Em.tan(ωt)"
+          "A. <span class=\"math-term\">e<sub>B</sub> = E<sub>m</sub> · sin(ωt - π)</span> và <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · sin(ωt + π)</span>",
+          "B. <span class=\"math-term\">e<sub>B</sub> = E<sub>m</sub> · sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>)</span> và <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>)</span>",
+          "C. <span class=\"math-term\">e<sub>B</sub> = E<sub>m</sub> · sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>)</span> và <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>)</span>",
+          "D. <span class=\"math-term\">e<sub>B</sub> = E<sub>m</sub> · cos(ωt)</span> và <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · tan(ωt)</span>"
         ],
         "correct": 1,
-        "explain": "Ba suất điện động cùng tần số, cùng biên độ và lệch pha nhau <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> rad: eA = Em.sin(ωt); eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>); eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) (SGK trang 18)."
+        "explain": "Ba suất điện động của máy phát ba pha đối xứng có cùng biên độ E<sub>m</sub>, cùng tần số góc ω và lần lượt lệch pha nhau <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> rad (120°): <span class=\"math-term\">e<sub>A</sub> = E<sub>m</sub> · sin(ωt)</span>; <span class=\"math-term\">e<sub>B</sub> = E<sub>m</sub> · sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>)</span>; <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>)</span> [có thể viết dạng góc âm: <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">4π</span><span class=\"math-frac-bottom\">3</span></span>)</span>] (SGK trang 18)."
       },
       {
         "id": "cn_b3_09",
@@ -1570,87 +1569,87 @@ const CONGNGHE_TOPICS_DATABASE = [
       {
         "id": "cn_b3_12",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Đại lượng 'Điện áp pha' (kí hiệu Up) trong mạch ba pha được định nghĩa là",
+        "question": "Đại lượng 'Điện áp pha' (kí hiệu U<sub>p</sub>) trong mạch ba pha được định nghĩa là",
         "options": [
           "A. điện áp giữa hai dây pha bất kì trong ba dây pha A, B, C.",
-          "B. điện áp đo giữa một dây pha và dây trung tính (hoặc giữa điểm đầu và điểm cuối của một pha).",
+          "B. điện áp đo giữa một dây pha và dây trung tính (hoặc giữa hai đầu của một pha).",
           "C. điện áp giữa dây trung tính và mặt đất.",
           "D. điện áp một chiều nạp vào ắc quy dự phòng."
         ],
         "correct": 1,
-        "explain": "Điện áp pha (Up): Là điện áp giữa điểm đầu và điểm cuối của một pha nguồn hoặc tải, tương đương điện áp đo giữa một dây pha và dây trung tính (như UA, UB, UC) (SGK trang 20)."
+        "explain": "Điện áp pha (U<sub>p</sub>): Là điện áp giữa điểm đầu và điểm cuối của một pha nguồn hoặc tải, tương đương điện áp đo giữa một dây pha và dây trung tính (như U<sub>A</sub>, U<sub>B</sub>, U<sub>C</sub>) (SGK trang 20)."
       },
       {
         "id": "cn_b3_13",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Đại lượng 'Điện áp dây' (kí hiệu Ud) trong mạch điện ba pha được định nghĩa là",
+        "question": "Đại lượng 'Điện áp dây' (kí hiệu U<sub>d</sub>) trong mạch điện ba pha được định nghĩa là",
         "options": [
           "A. điện áp đo giữa dây pha và dây trung tính.",
-          "B. điện áp giữa hai dây pha bất kì (UAB, UBC, UCA).",
+          "B. điện áp giữa hai dây pha bất kì (U<sub>AB</sub>, U<sub>BC</sub>, U<sub>CA</sub>).",
           "C. điện áp rơi trên một bóng đèn chiếu sáng một pha.",
           "D. điện áp danh định của lưới điện siêu cao áp."
         ],
         "correct": 1,
-        "explain": "Điện áp dây (Ud): Là điện áp đo giữa hai dây pha bất kì với nhau, ví dụ: UAB là điện áp giữa dây A và B, UBC giữa B và C, UCA giữa C và A (SGK trang 20)."
+        "explain": "Điện áp dây (U<sub>d</sub>): Là điện áp đo giữa hai dây pha bất kì với nhau, ví dụ: U<sub>AB</sub> là điện áp giữa dây A và B, U<sub>BC</sub> giữa B và C, U<sub>CA</sub> giữa C và A (SGK trang 20)."
       },
       {
         "id": "cn_b3_14",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Khi nguồn và tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa điện áp dây Ud và điện áp pha Up là:",
+        "question": "Khi nguồn và tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa điện áp dây U<sub>d</sub> và điện áp pha U<sub>p</sub> là:",
         "options": [
-          "A. Ud = Up",
-          "B. Ud = √3.Up ≈ 1,732.Up",
-          "C. Ud = 3.Up",
-          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>"
+          "A. <span class=\"math-term\">U<sub>d</sub> = U<sub>p</sub></span>",
+          "B. <span class=\"math-term\">U<sub>d</sub> = √3 · U<sub>p</sub> ≈ 1,732 · U<sub>p</sub></span>",
+          "C. <span class=\"math-term\">U<sub>d</sub> = 3 · U<sub>p</sub></span>",
+          "D. <span class=\"math-term\">U<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>"
         ],
         "correct": 1,
-        "explain": "Mạch đối xứng nối hình sao (Y): Mối liên hệ điện áp là Ud = √3.Up ≈ 1,732.Up, suy ra Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span>. Ví dụ mạng hạ áp có Up = 220 V thì Ud = √3 × 220 ≈ 380 V (SGK trang 20)."
+        "explain": "Mạch đối xứng nối hình sao (Y): Mối liên hệ điện áp là <span class=\"math-term\">U<sub>d</sub> = √3 · U<sub>p</sub> ≈ 1,732 · U<sub>p</sub></span>, suy ra <span class=\"math-term\">U<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>. Ví dụ mạng hạ áp có U<sub>p</sub> = 220 V thì U<sub>d</sub> = √3 × 220 ≈ 380 V (SGK trang 20)."
       },
       {
         "id": "cn_b3_15",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Khi tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa cường độ dòng điện dây Id và dòng điện pha Ip là:",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa cường độ dòng điện dây I<sub>d</sub> và dòng điện pha I<sub>p</sub> là:",
         "options": [
-          "A. Id = Ip",
-          "B. Id = √3.Ip",
-          "C. Id = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
-          "D. Id = 3.Ip"
+          "A. <span class=\"math-term\">I<sub>d</sub> = I<sub>p</sub></span>",
+          "B. <span class=\"math-term\">I<sub>d</sub> = √3 · I<sub>p</sub></span>",
+          "C. <span class=\"math-term\">I<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>",
+          "D. <span class=\"math-term\">I<sub>d</sub> = 3 · I<sub>p</sub></span>"
         ],
         "correct": 0,
-        "explain": "Khi tải nối hình sao (Y), dòng điện từ dây pha chạy thẳng trực tiếp vào cuộn dây pha của tải không bị phân nhánh, do đó dòng điện dây bằng dòng điện pha: Id = Ip (SGK trang 20)."
+        "explain": "Khi tải nối hình sao (Y), dòng điện từ dây pha chạy thẳng trực tiếp vào cuộn dây pha của tải không bị phân nhánh, do đó dòng điện dây bằng dòng điện pha: I<sub>d</sub> = I<sub>p</sub> (SGK trang 20)."
       },
       {
         "id": "cn_b3_16",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa điện áp dây Ud và điện áp pha Up là:",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa điện áp dây U<sub>d</sub> và điện áp pha U<sub>p</sub> là:",
         "options": [
-          "A. Ud = Up",
-          "B. Ud = √3.Up",
-          "C. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
-          "D. Ud = 2.Up"
+          "A. <span class=\"math-term\">U<sub>d</sub> = U<sub>p</sub></span>",
+          "B. <span class=\"math-term\">U<sub>d</sub> = √3 · U<sub>p</sub></span>",
+          "C. <span class=\"math-term\">U<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>",
+          "D. <span class=\"math-term\">U<sub>d</sub> = 2 · U<sub>p</sub></span>"
         ],
         "correct": 0,
-        "explain": "Khi tải nối hình tam giác (Δ), mỗi pha của tải được mắc trực tiếp giữa hai dây pha của nguồn điện, vì vậy điện áp pha của tải bằng chính điện áp dây của nguồn: Ud = Up (SGK trang 20)."
+        "explain": "Khi tải nối hình tam giác (Δ), mỗi pha của tải được mắc trực tiếp giữa hai dây pha của nguồn điện, vì vậy điện áp pha của tải bằng chính điện áp dây của nguồn: U<sub>d</sub> = U<sub>p</sub> (SGK trang 20)."
       },
       {
         "id": "cn_b3_17",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa dòng điện dây Id và dòng điện pha Ip là:",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa dòng điện dây I<sub>d</sub> và dòng điện pha I<sub>p</sub> là:",
         "options": [
-          "A. Id = Ip",
-          "B. Id = √3.Ip ≈ 1,732.Ip",
-          "C. Id = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
-          "D. Id = 3.Ip"
+          "A. <span class=\"math-term\">I<sub>d</sub> = I<sub>p</sub></span>",
+          "B. <span class=\"math-term\">I<sub>d</sub> = √3 · I<sub>p</sub> ≈ 1,732 · I<sub>p</sub></span>",
+          "C. <span class=\"math-term\">I<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>",
+          "D. <span class=\"math-term\">I<sub>d</sub> = 3 · I<sub>p</sub></span>"
         ],
         "correct": 1,
-        "explain": "Khi tải nối tam giác (Δ) đối xứng, dòng điện dây tại các nút rẽ nhánh thành hai dòng điện pha, biểu thức vectơ dòng điện cho ta: Id = √3.Ip ≈ 1,732.Ip, suy ra Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> (SGK trang 20)."
+        "explain": "Khi tải nối tam giác (Δ) đối xứng, dòng điện dây tại các nút rẽ nhánh thành hai dòng điện pha, cho ta: <span class=\"math-term\">I<sub>d</sub> = √3 · I<sub>p</sub> ≈ 1,732 · I<sub>p</sub></span>, suy ra <span class=\"math-term\">I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span></span> (SGK trang 20)."
       },
       {
         "id": "cn_b3_18",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
         "question": "Ưu điểm vượt trội của mạch điện ba pha bốn dây (nối hình sao có dây trung tính) so với mạch ba dây là gì?",
         "options": [
-          "A. Tạo ra được hai cấp điện áp khác nhau (điện áp dây Ud và điện áp pha Up), thuận tiện cấp điện đồng thời cho cả động cơ ba pha và thiết bị sinh hoạt một pha.",
+          "A. Tạo ra được hai cấp điện áp khác nhau (điện áp dây U<sub>d</sub> và điện áp pha U<sub>p</sub>), thuận tiện cấp điện đồng thời cho cả động cơ ba pha và thiết bị sinh hoạt một pha.",
           "B. Không bao giờ xảy ra sự cố chập mạch hay quá tải.",
           "C. Tiết kiệm 100% lượng dây nhôm và đồng truyền tải.",
           "D. Điện áp trên đường dây tự động tăng lên gấp mười lần."
@@ -1661,15 +1660,15 @@ const CONGNGHE_TOPICS_DATABASE = [
       {
         "id": "cn_b3_19",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Khi phụ tải ba pha hoàn toàn ĐỐI XỨNG, cường độ dòng điện chạy trong dây trung tính Io có giá trị bằng bao nhiêu?",
+        "question": "Khi phụ tải ba pha hoàn toàn ĐỐI XỨNG, cường độ dòng điện chạy trong dây trung tính I<sub>o</sub> có giá trị bằng bao nhiêu?",
         "options": [
-          "A. Bằng 3 lần dòng điện pha (Io = 3.Ip).",
-          "B. Bằng không (Io = 0).",
-          "C. Bằng dòng điện cực đại Im.",
-          "D. Bằng dòng điện dây Id."
+          "A. Bằng 3 lần dòng điện pha (I<sub>o</sub> = 3 · I<sub>p</sub>).",
+          "B. Bằng không (I<sub>o</sub> = 0).",
+          "C. Bằng dòng điện cực đại I<sub>m</sub>.",
+          "D. Bằng dòng điện dây I<sub>d</sub>."
         ],
         "correct": 1,
-        "explain": "Trong tải ba pha đối xứng, tổng vectơ của ba dòng điện pha bằng 0: iA + iB + iC = 0, do đó dòng điện hiệu dụng trong dây trung tính Io = 0 (SGK trang 20)."
+        "explain": "Trong tải ba pha đối xứng, tổng vectơ của ba dòng điện pha bằng 0: i<sub>A</sub> + i<sub>B</sub> + i<sub>C</sub> = 0, do đó dòng điện hiệu dụng trong dây trung tính I<sub>o</sub> = 0 (SGK trang 20)."
       },
       {
         "id": "cn_b3_20",
@@ -1689,31 +1688,31 @@ const CONGNGHE_TOPICS_DATABASE = [
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
         "question": "Công thức tính công suất tác dụng toàn phần P của mạch điện xoay chiều ba pha đối xứng là:",
         "options": [
-          "A. P = Ud.Id.cos φ",
-          "B. P = √3.Ud.Id.cos φ = 3.Up.Ip.cos φ",
-          "C. P = 3.Ud.Id.cos φ",
-          "D. P = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub>.I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span>.cos φ"
+          "A. <span class=\"math-term\">P = U<sub>d</sub> · I<sub>d</sub> · cos φ</span>",
+          "B. <span class=\"math-term\">P = √3 · U<sub>d</sub> · I<sub>d</sub> · cos φ = 3 · U<sub>p</sub> · I<sub>p</sub> · cos φ</span>",
+          "C. <span class=\"math-term\">P = 3 · U<sub>d</sub> · I<sub>d</sub> · cos φ</span>",
+          "D. <span class=\"math-term\">P = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub> · I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> · cos φ</span>"
         ],
         "correct": 1,
-        "explain": "Công suất tác dụng ba pha đối xứng tính theo thông số dây: P = √3.Ud.Id.cos φ; hoặc tính theo thông số pha: P = 3.Up.Ip.cos φ (trong đó cos φ là hệ số công suất của mỗi pha tải) (SGK trang 20)."
+        "explain": "Công suất tác dụng ba pha đối xứng tính theo thông số dây: P = √3 · U<sub>d</sub> · I<sub>d</sub> · cos φ; hoặc tính theo thông số pha: P = 3 · U<sub>p</sub> · I<sub>p</sub> · cos φ (trong đó cos φ là hệ số công suất của mỗi pha tải) (SGK trang 20)."
       },
       {
         "id": "cn_b3_22",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một nguồn điện ba pha đối xứng có điện áp pha Up = 220 V. Giá trị điện áp dây Ud xấp xỉ bằng bao nhiêu vôn?",
+        "question": "Một nguồn điện ba pha đối xứng có điện áp pha U<sub>p</sub> = 220 V. Giá trị điện áp dây U<sub>d</sub> chuẩn bằng bao nhiêu vôn?",
         "options": [
           "A. 127 V",
           "B. 220 V",
-          "C. 380 V (hoặc 381 V)",
+          "C. 380 V",
           "D. 440 V"
         ],
         "correct": 2,
-        "explain": "Nguồn điện ba pha đối xứng nối hình sao: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế mạng điện hạ áp tiêu chuẩn Việt Nam quy ước là 380 V)."
+        "explain": "Nguồn điện ba pha đối xứng nối hình sao: U<sub>d</sub> = √3 · U<sub>p</sub> = √3 × 220 ≈ 381 V (trong thực tế mạng điện hạ áp tiêu chuẩn Việt Nam quy ước chuẩn là 380 V)."
       },
       {
         "id": "cn_b3_23",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cho mạch xoay chiều một pha có R = 30 Ω, cảm kháng XL = 60 Ω, dung kháng XC = 20 Ω. Độ lớn tổng trở z_t của mạch là",
+        "question": "Cho mạch xoay chiều một pha có R = 30 Ω, cảm kháng X<sub>L</sub> = 60 Ω, dung kháng X<sub>C</sub> = 20 Ω. Độ lớn tổng trở z<sub>t</sub> của mạch là",
         "options": [
           "A. 110 Ω",
           "B. 50 Ω",
@@ -1721,12 +1720,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 10 Ω"
         ],
         "correct": 1,
-        "explain": "Điện kháng của mạch: X = XL - XC = 60 - 20 = 40 Ω. Tổng trở của mạch: z_t = √(R² + X²) = √(30² + 40²) = √(900 + 1600) = √2500 = 50 Ω."
+        "explain": "Điện kháng của mạch: X = X<sub>L</sub> - X<sub>C</sub> = 60 - 20 = 40 Ω. Tổng trở của mạch: z<sub>t</sub> = √(R² + X²) = √(30² + 40²) = √(900 + 1600) = √2500 = 50 Ω."
       },
       {
         "id": "cn_b3_24",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có R = 12 Ω, XL = 16 Ω nối hình SAO (Y) vào nguồn điện có điện áp dây Ud = 380 V. Cường độ dòng điện pha Ip chạy qua mỗi cuộn dây là",
+        "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có R = 12 Ω, X<sub>L</sub> = 16 Ω nối hình SAO (Y) vào nguồn điện có điện áp dây U<sub>d</sub> = 380 V. Cường độ dòng điện pha I<sub>p</sub> chạy qua mỗi cuộn dây là",
         "options": [
           "A. 11 A",
           "B. 19 A",
@@ -1734,12 +1733,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 22 A"
         ],
         "correct": 0,
-        "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = √400 = 20 Ω. Do tải nối sao, điện áp pha của tải: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Cường độ dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">20</span></span> = 11 A."
+        "explain": "Tổng trở mỗi pha của tải: <span class=\"math-term\">z<sub>p</sub> = √(R² + X<sub>L</sub>²) = √(12² + 16²) = √400 = 20 Ω</span>. Do tải nối sao, điện áp pha của tải: <span class=\"math-term\">U<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V</span>. Cường độ dòng điện pha: <span class=\"math-term\">I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">20</span></span> = 11 A</span>."
       },
       {
         "id": "cn_b3_25",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một động cơ điện ba pha nối hình TAM GIÁC (Δ) tiêu thụ dòng điện pha Ip = 15 A. Cường độ dòng điện dây Id chạy trên đường dây cấp điện cho động cơ là",
+        "question": "Một động cơ điện ba pha nối hình TAM GIÁC (Δ) tiêu thụ dòng điện pha I<sub>p</sub> = 15 A. Cường độ dòng điện dây I<sub>d</sub> chạy trên đường dây cấp điện cho động cơ là",
         "options": [
           "A. 15 A",
           "B. 8,66 A",
@@ -1747,46 +1746,46 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 45 A"
         ],
         "correct": 2,
-        "explain": "Tải nối hình tam giác (Δ) đối xứng: Dòng điện dây liên hệ với dòng điện pha qua công thức: Id = √3.Ip = √3 × 15 ≈ 1,732 × 15 = 25,98 A."
+        "explain": "Tải nối hình tam giác (Δ) đối xứng: Dòng điện dây liên hệ với dòng điện pha qua công thức: I<sub>d</sub> = √3 · I<sub>p</sub> = √3 × 15 ≈ 1,732 × 15 = 25,98 A."
       },
       {
         "id": "cn_b3_26",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một nguồn điện ba pha có điện áp dây Ud = 380 V cấp cho một tải đối xứng nối hình SAO (Y) có tổng trở mỗi pha zp = 38 Ω. Dòng điện dây Id chạy trên dây pha có giá trị là",
+        "question": "Một nguồn điện ba pha có điện áp dây U<sub>d</sub> = 380 V cấp cho một tải đối xứng nối hình SAO (Y) có tổng trở mỗi pha z<sub>p</sub> = 38 Ω. Dòng điện dây I<sub>d</sub> chạy trên dây pha có giá trị là",
         "options": [
           "A. 10 A",
-          "B. 5,79 A (khoảng 5,8 A)",
+          "B. ≈ 5,8 A (chính xác 5,79 A)",
           "C. 17,3 A",
           "D. 3,34 A"
         ],
         "correct": 1,
-        "explain": "Do tải nối sao: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">38</span></span> ≈ 5,79 A. Do nối sao: Id = Ip ≈ 5,79 A."
+        "explain": "Do tải nối sao: <span class=\"math-term\">U<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V</span>. Dòng điện pha: <span class=\"math-term\">I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">38</span></span> ≈ 5,79 A</span>. Do nối sao: I<sub>d</sub> = I<sub>p</sub> ≈ 5,79 A."
       },
       {
         "id": "cn_b3_27",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Tải ba pha đối xứng gồm ba điện trở thuần R = 22 Ω nối hình TAM GIÁC (Δ) vào mạng điện có Ud = 220 V. Dòng điện pha Ip và dòng điện dây Id lần lượt là",
+        "question": "Tải ba pha đối xứng gồm ba điện trở thuần R = 22 Ω nối hình TAM GIÁC (Δ) vào mạng điện có U<sub>d</sub> = 220 V. Dòng điện pha I<sub>p</sub> và dòng điện dây I<sub>d</sub> lần lượt là",
         "options": [
-          "A. Ip = 10 A; Id = 17,32 A",
-          "B. Ip = 10 A; Id = 10 A",
-          "C. Ip = 5,77 A; Id = 10 A",
-          "D. Ip = 17,32 A; Id = 10 A"
+          "A. I<sub>p</sub> = 10 A; I<sub>d</sub> = 17,32 A",
+          "B. I<sub>p</sub> = 10 A; I<sub>d</sub> = 10 A",
+          "C. I<sub>p</sub> = 5,77 A; I<sub>d</sub> = 10 A",
+          "D. I<sub>p</sub> = 17,32 A; I<sub>d</sub> = 10 A"
         ],
         "correct": 0,
-        "explain": "Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">22</span></span> = 10 A. Dòng điện dây: Id = √3.Ip = √3 × 10 ≈ 17,32 A."
+        "explain": "Do tải nối tam giác: U<sub>p</sub> = U<sub>d</sub> = 220 V. Dòng điện pha: <span class=\"math-term\">I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">22</span></span> = 10 A</span>. Dòng điện dây: <span class=\"math-term\">I<sub>d</sub> = √3 · I<sub>p</sub> = √3 × 10 ≈ 17,32 A</span>."
       },
       {
         "id": "cn_b3_28",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một tải điện ba pha tiêu thụ công suất P = 10 kW với điện áp dây Ud = 380 V và hệ số công suất cos φ = 0,8. Dòng điện dây Id chạy trong mạch xấp xỉ bằng",
+        "question": "Một tải điện ba pha tiêu thụ công suất P = 10 kW với điện áp dây U<sub>d</sub> = 380 V và hệ số công suất cos φ = 0,8. Dòng điện dây I<sub>d</sub> chạy trong mạch xấp xỉ bằng",
         "options": [
-          "A. 18,99 A",
+          "A. 18,99 A (khoảng 19 A)",
           "B. 32,89 A",
           "C. 10,95 A",
           "D. 15,20 A"
         ],
         "correct": 0,
-        "explain": "Từ công thức công suất ba pha: P = √3.Ud.Id.cos φ => Id = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">√3.U<sub>d</sub>.cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">√3 × 380 × 0,8</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">526,54</span></span> ≈ 18,99 A."
+        "explain": "Từ công thức công suất ba pha: <span class=\"math-term\">P = √3 · U<sub>d</sub> · I<sub>d</sub> · cos φ</span> => <span class=\"math-term\">I<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">√3 · U<sub>d</sub> · cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">√3 × 380 × 0,8</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">526,54</span></span> ≈ 18,99 A</span>."
       },
       {
         "id": "cn_b3_29",
@@ -1825,7 +1824,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. truyền toàn bộ công suất vào cọc tiếp địa."
         ],
         "correct": 1,
-        "explain": "Khi bị đứt mạch một pha, dòng điện trong nhánh pha đó bị ngắt hoàn toàn (Ip = 0). Nếu mạng có dây trung tính thì hai pha còn lại vẫn hoạt động bình thường ở điện áp 220 V."
+        "explain": "Khi bị đứt mạch một pha, dòng điện trong nhánh pha đó bị ngắt hoàn toàn (I<sub>p</sub> = 0). Nếu mạng có dây trung tính thì hai pha còn lại vẫn hoạt động bình thường ở điện áp 220 V."
       },
       {
         "id": "cn_b3_32",
@@ -1838,7 +1837,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Đấu trực tiếp hai cực của bóng đèn vào dây trung tính O."
         ],
         "correct": 1,
-        "explain": "Bóng đèn có điện áp định mức 220 V (bằng điện áp pha Up của lưới), do đó phải đấu một đầu vào dây pha và một đầu vào dây trung tính O để nhận đúng điện áp 220 V. Nếu đấu vào giữa hai dây pha (Ud = 380 V) thì đèn sẽ bị quá áp và nổ ngay lập tức."
+        "explain": "Bóng đèn có điện áp định mức 220 V (bằng điện áp pha U<sub>p</sub> của lưới), do đó phải đấu một đầu vào dây pha và một đầu vào dây trung tính O để nhận đúng điện áp 220 V. Nếu đấu vào giữa hai dây pha (U<sub>d</sub> = 380 V) thì đèn sẽ bị quá áp và nổ ngay lập tức."
       }
     ]
   },
@@ -1902,7 +1901,7 @@ const CONGNGHE_TOPICS_DATABASE = [
       },
       {
         "id": "cn_b4_05",
-        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐG GIA",
         "question": "Theo quy chuẩn kĩ thuật điện Việt Nam, bốn cấp điện áp tiêu chuẩn của hệ thống lưới điện gồm:",
         "options": [
           "A. Điện cực thấp, điện trung bình, điện mạnh và điện cực mạnh.",
@@ -1971,17 +1970,17 @@ const CONGNGHE_TOPICS_DATABASE = [
         "question": "Vì sao tại các nhà máy điện nguồn, người ta bắt buộc phải đặt trạm biến áp TĂNG ÁP trước khi đưa điện lên đường dây truyền tải?",
         "options": [
           "A. Để tăng tần số dòng điện xoay chiều lên hàng nghìn Hz.",
-          "B. Để tăng điện áp U, từ đó giảm cường độ dòng điện I, giúp giảm mạnh công suất hao phí toả nhiệt trên dây dẫn theo công thức ΔP = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup>.R</span><span class=\"math-frac-bottom\">U<sup>2</sup>.cos<sup>2</sup>φ</span></span>.",
+          "B. Để tăng điện áp U, giảm cường độ dòng điện I, giúp giảm hao phí toả nhiệt theo công thức: <span class=\"math-term\">ΔP = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup> · R</span><span class=\"math-frac-bottom\">U<sup>2</sup> · cos<sup>2</sup>φ</span></span></span>.",
           "C. Để chuyển đổi dòng xoay chiều thành dòng điện một chiều.",
           "D. Để biến điện năng thành cơ năng dự trữ trong cột tháp."
         ],
         "correct": 1,
-        "explain": "Theo định luật Jun-Len-xơ, công suất hao phí nhiệt trên đường dây là: ΔP = I²R = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup>.R</span><span class=\"math-frac-bottom\">U<sup>2</sup>.cos<sup>2</sup>φ</span></span>. Khi tăng điện áp U lên n lần thì hao phí ΔP giảm đi n² lần, giúp tiết kiệm chi phí xây dựng đường dây và truyền tải được công suất cực lớn đi xa."
+        "explain": "Theo định luật Jun-Len-xơ, công suất hao phí nhiệt trên đường dây là: <span class=\"math-term\">ΔP = I²R = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup> · R</span><span class=\"math-frac-bottom\">U<sup>2</sup> · cos<sup>2</sup>φ</span></span></span>. Khi tăng điện áp U lên n lần thì hao phí ΔP giảm đi n² lần, giúp tiết kiệm chi phí xây dựng đường dây và truyền tải được công suất cực lớn đi xa."
       },
       {
         "id": "cn_b4_11",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Khi truyền tải một công suất điện P xác định trên cùng một đường dây có điện trở R, nếu tăng điện áp từ U1 = 110 kV lên U2 = 220 kV thì công suất hao phí toả nhiệt ΔP trên đường dây sẽ",
+        "question": "Khi truyền tải một công suất điện P xác định trên cùng một đường dây có điện trở R, nếu tăng điện áp từ U<sub>1</sub> = 110 kV lên U<sub>2</sub> = 220 kV thì công suất hao phí toả nhiệt ΔP trên đường dây sẽ",
         "options": [
           "A. tăng lên gấp 2 lần.",
           "B. giảm đi 2 lần.",
@@ -2293,7 +2292,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 250 kVA"
         ],
         "correct": 2,
-        "explain": "Công suất biểu kiến của máy biến áp: S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">160</span><span class=\"math-frac-bottom\">0,8</span></span> = 200 kVA. Do đó cần chọn máy biến áp có công suất định mức tối thiểu là 200 kVA."
+        "explain": "Công suất biểu kiến của máy biến áp: <span class=\"math-term\">S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">160</span><span class=\"math-frac-bottom\">0,8</span></span> = 200 kVA</span>. Do đó cần chọn máy biến áp có công suất định mức tối thiểu là 200 kVA."
       },
       {
         "id": "cn_b6_15",
@@ -2306,7 +2305,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Giảm 0 kVA"
         ],
         "correct": 0,
-        "explain": "Ban đầu: S1 = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">0,8</span></span> = 100 kVA. Khi nâng cos φ' = 1,0: S2 = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ'</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">1,0</span></span> = 80 kVA. Công suất biểu kiến giảm: ΔS = 100 - 80 = 20 kVA (giảm dòng điện trên dây cáp nguồn)."
+        "explain": "Ban đầu: <span class=\"math-term\">S<sub>1</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">0,8</span></span> = 100 kVA</span>. Khi nâng cos φ' = 1,0: <span class=\"math-term\">S<sub>2</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ'</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">1,0</span></span> = 80 kVA</span>. Công suất biểu kiến giảm: ΔS = 100 - 80 = 20 kVA (giúp giảm dòng điện trên dây cáp nguồn)."
       },
       {
         "id": "cn_b6_16",
@@ -2508,13 +2507,13 @@ const CONGNGHE_TOPICS_DATABASE = [
         "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
         "question": "Các thông số kĩ thuật định mức tiêu chuẩn của mạng điện hạ áp sinh hoạt tại Việt Nam là:",
         "options": [
-          "A. Điện áp dây Ud = 380 V; Điện áp pha Up = 220 V; Tần số f = 50 Hz.",
-          "B. Điện áp dây Ud = 220 V; Điện áp pha Up = 110 V; Tần số f = 60 Hz.",
-          "C. Điện áp dây Ud = 500 V; Điện áp pha Up = 220 V; Tần số f = 25 Hz.",
+          "A. Điện áp dây U<sub>d</sub> = 380 V; Điện áp pha U<sub>p</sub> = 220 V; Tần số f = 50 Hz.",
+          "B. Điện áp dây U<sub>d</sub> = 220 V; Điện áp pha U<sub>p</sub> = 110 V; Tần số f = 60 Hz.",
+          "C. Điện áp dây U<sub>d</sub> = 500 V; Điện áp pha U<sub>p</sub> = 220 V; Tần số f = 25 Hz.",
           "D. Điện áp một chiều 12 V."
         ],
         "correct": 0,
-        "explain": "Quy chuẩn Việt Nam: Mạng hạ áp sinh hoạt 3 pha 4 dây có điện áp dây Ud = 380 V, điện áp pha Up = 220 V và tần số công nghiệp f = 50 Hz (SGK trang 36)."
+        "explain": "Quy chuẩn Việt Nam: Mạng hạ áp sinh hoạt 3 pha 4 dây có điện áp dây U<sub>d</sub> = 380 V, điện áp pha U<sub>p</sub> = 220 V và tần số công nghiệp f = 50 Hz (SGK trang 36)."
       },
       {
         "id": "cn_b7_03",
@@ -2769,7 +2768,7 @@ const CONGNGHE_TOPICS_DATABASE = [
       {
         "id": "cn_b3_01",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Dòng điện xoay chiều một pha có cường độ tức thời i = Im.sin(ωt + ψ). Đại lượng Im được gọi là gì?",
+        "question": "Dòng điện xoay chiều một pha có cường độ tức thời <span class=\"math-term\">i = I<sub>m</sub> · sin(ωt + ψ)</span>. Đại lượng I<sub>m</sub> được gọi là gì?",
         "options": [
           "A. Giá trị hiệu dụng của dòng điện.",
           "B. Giá trị cực đại (biên độ) của dòng điện.",
@@ -2777,12 +2776,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Pha ban đầu của dòng điện."
         ],
         "correct": 1,
-        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), đại lượng Im là cường độ dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng I: I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> (SGK Công nghệ 12 trang 18)."
+        "explain": "Trong biểu thức <span class=\"math-term\">i = I<sub>m</sub> · sin(ωt + ψ)</span>, đại lượng I<sub>m</sub> là cường độ dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng I: <span class=\"math-term\">I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span></span> (SGK Công nghệ 12 trang 18)."
       },
       {
         "id": "cn_b3_02",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một dòng điện xoay chiều có biểu thức i = 4√2.sin(100πt) (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
+        "question": "Một dòng điện xoay chiều có biểu thức <span class=\"math-term\">i = 4√2 · sin(100πt)</span> (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
         "options": [
           "A. I = 4 A; f = 50 Hz",
           "B. I = 4√2 A; f = 100 Hz",
@@ -2790,46 +2789,46 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. I = 2√2 A; f = 50 Hz"
         ],
         "correct": 0,
-        "explain": "Cường độ cực đại Im = 4√2 A nên giá trị hiệu dụng I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">4√2</span><span class=\"math-frac-bottom\">√2</span></span> = 4 A. Tần số góc ω = 100π rad/s nên tần số f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz."
+        "explain": "Cường độ cực đại <span class=\"math-term\">I<sub>m</sub> = 4√2 A</span> nên giá trị hiệu dụng <span class=\"math-term\">I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">4√2</span><span class=\"math-frac-bottom\">√2</span></span> = 4 A</span>. Tần số góc <span class=\"math-term\">ω = 100π rad/s</span> nên tần số <span class=\"math-term\">f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz</span>."
       },
       {
         "id": "cn_b3_03",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Công thức tính cảm kháng XL của cuộn cảm thuần và dung kháng XC của tụ điện đối với dòng điện xoay chiều tần số f là:",
+        "question": "Công thức tính cảm kháng X<sub>L</sub> của cuộn cảm thuần và dung kháng X<sub>C</sub> của tụ điện đối với dòng điện xoay chiều tần số f là:",
         "options": [
-          "A. XL = 2πfL và XC = 2πfC",
-          "B. XL = 2πfL và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
-          "C. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfL</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
-          "D. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span>"
+          "A. <span class=\"math-term\">X<sub>L</sub> = 2πfL</span> và <span class=\"math-term\">X<sub>C</sub> = 2πfC</span>",
+          "B. <span class=\"math-term\">X<sub>L</sub> = 2πfL</span> và <span class=\"math-term\">X<sub>C</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span></span>",
+          "C. <span class=\"math-term\">X<sub>L</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfL</span></span></span> và <span class=\"math-term\">X<sub>C</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span></span>",
+          "D. <span class=\"math-term\">X<sub>L</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span></span> và <span class=\"math-term\">X<sub>C</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span></span>"
         ],
         "correct": 1,
-        "explain": "Cảm kháng cuộn cảm thuần: XL = ωL = 2πfL (đơn vị Ω); Dung kháng tụ điện: XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span> (đơn vị Ω) (SGK Công nghệ 12 trang 18)."
+        "explain": "Cảm kháng cuộn cảm thuần: <span class=\"math-term\">X<sub>L</sub> = ωL = 2πfL</span> (đơn vị Ω); Dung kháng tụ điện: <span class=\"math-term\">X<sub>C</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span></span> (đơn vị Ω) (SGK Công nghệ 12 trang 18)."
       },
       {
         "id": "cn_b3_04",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Tổng trở z_t của tải điện một pha gồm điện trở R mắc nối tiếp với cuộn cảm (XL) và tụ điện (XC) được tính theo công thức nào?",
+        "question": "Tổng trở z<sub>t</sub> của tải điện một pha gồm điện trở R mắc nối tiếp với cuộn cảm (X<sub>L</sub>) và tụ điện (X<sub>C</sub>) được tính theo công thức nào?",
         "options": [
-          "A. z_t = R + XL - XC",
-          "B. z_t = √[R² + (XL - XC)²]",
-          "C. z_t = √[R² + (XL + XC)²]",
-          "D. z_t = √[R² - (XL - XC)²]"
+          "A. <span class=\"math-term\">z<sub>t</sub> = R + X<sub>L</sub> - X<sub>C</sub></span>",
+          "B. <span class=\"math-term\">z<sub>t</sub> = √[R² + (X<sub>L</sub> - X<sub>C</sub>)²]</span>",
+          "C. <span class=\"math-term\">z<sub>t</sub> = √[R² + (X<sub>L</sub> + X<sub>C</sub>)²]</span>",
+          "D. <span class=\"math-term\">z<sub>t</sub> = √[R² - (X<sub>L</sub> - X<sub>C</sub>)²]</span>"
         ],
         "correct": 1,
-        "explain": "Tổng trở của tải R-L-C nối tiếp đặc trưng bởi độ lớn: z_t = √(R² + X²) với điện kháng X = XL - XC, do đó z_t = √[R² + (XL - XC)²]. Hệ số góc tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
+        "explain": "Tổng trở của tải R-L-C nối tiếp đặc trưng bởi độ lớn: <span class=\"math-term\">z<sub>t</sub> = √(R² + X²)</span> với điện kháng <span class=\"math-term\">X = X<sub>L</sub> - X<sub>C</sub></span>, do đó <span class=\"math-term\">z<sub>t</sub> = √[R² + (X<sub>L</sub> - X<sub>C</sub>)²]</span>. Hệ số góc <span class=\"math-term\">tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span></span> (SGK trang 18)."
       },
       {
         "id": "cn_b3_05",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
         "question": "Hiện tượng cộng hưởng điện trong đoạn mạch R-L-C nối tiếp xảy ra khi nào?",
         "options": [
-          "A. Khi R = XL",
-          "B. Khi cảm kháng bằng dung kháng (XL = XC)",
+          "A. Khi R = X<sub>L</sub>",
+          "B. Khi cảm kháng bằng dung kháng (X<sub>L</sub> = X<sub>C</sub>)",
           "C. Khi tần số f = 0",
           "D. Khi tổng trở đạt giá trị lớn vô cùng"
         ],
         "correct": 1,
-        "explain": "Cộng hưởng điện xảy ra khi cảm kháng bằng dung kháng XL = XC (tức 2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>), khi đó điện kháng triệt tiêu X = 0, tổng trở z_t đạt cực tiểu z_t = R và dòng điện trong mạch đạt cực đại I = <span class=\"math-frac\"><span class=\"math-frac-top\">U</span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
+        "explain": "Cộng hưởng điện xảy ra khi cảm kháng bằng dung kháng <span class=\"math-term\">X<sub>L</sub> = X<sub>C</sub></span> (tức <span class=\"math-term\">2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span></span>), khi đó điện kháng triệt tiêu X = 0, tổng trở z<sub>t</sub> đạt cực tiểu z<sub>t</sub> = R và dòng điện trong mạch đạt cực đại <span class=\"math-term\">I = <span class=\"math-frac\"><span class=\"math-frac-top\">U</span><span class=\"math-frac-bottom\">R</span></span></span> (SGK trang 18)."
       },
       {
         "id": "cn_b3_06",
@@ -2847,54 +2846,54 @@ const CONGNGHE_TOPICS_DATABASE = [
       {
         "id": "cn_b3_14",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Khi nguồn và tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa điện áp dây Ud và điện áp pha Up là:",
+        "question": "Khi nguồn và tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa điện áp dây U<sub>d</sub> và điện áp pha U<sub>p</sub> là:",
         "options": [
-          "A. Ud = Up",
-          "B. Ud = √3.Up ≈ 1,732.Up",
-          "C. Ud = 3.Up",
-          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>"
+          "A. <span class=\"math-term\">U<sub>d</sub> = U<sub>p</sub></span>",
+          "B. <span class=\"math-term\">U<sub>d</sub> = √3 · U<sub>p</sub> ≈ 1,732 · U<sub>p</sub></span>",
+          "C. <span class=\"math-term\">U<sub>d</sub> = 3 · U<sub>p</sub></span>",
+          "D. <span class=\"math-term\">U<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>"
         ],
         "correct": 1,
-        "explain": "Mạch đối xứng nối hình sao (Y): Mối liên hệ điện áp là Ud = √3.Up ≈ 1,732.Up, suy ra Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span>. Ví dụ mạng hạ áp có Up = 220 V thì Ud = √3 × 220 ≈ 380 V (SGK trang 20)."
+        "explain": "Mạch đối xứng nối hình sao (Y): Mối liên hệ điện áp là <span class=\"math-term\">U<sub>d</sub> = √3 · U<sub>p</sub> ≈ 1,732 · U<sub>p</sub></span>, suy ra <span class=\"math-term\">U<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>. Ví dụ mạng hạ áp có U<sub>p</sub> = 220 V thì U<sub>d</sub> = √3 × 220 ≈ 380 V (SGK trang 20)."
       },
       {
         "id": "cn_b3_15",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Khi tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa cường độ dòng điện dây Id và dòng điện pha Ip là:",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa cường độ dòng điện dây I<sub>d</sub> và dòng điện pha I<sub>p</sub> là:",
         "options": [
-          "A. Id = Ip",
-          "B. Id = √3.Ip",
-          "C. Id = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
-          "D. Id = 3.Ip"
+          "A. <span class=\"math-term\">I<sub>d</sub> = I<sub>p</sub></span>",
+          "B. <span class=\"math-term\">I<sub>d</sub> = √3 · I<sub>p</sub></span>",
+          "C. <span class=\"math-term\">I<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>",
+          "D. <span class=\"math-term\">I<sub>d</sub> = 3 · I<sub>p</sub></span>"
         ],
         "correct": 0,
-        "explain": "Khi tải nối hình sao (Y), dòng điện từ dây pha chạy thẳng trực tiếp vào cuộn dây pha của tải không bị phân nhánh, do đó dòng điện dây bằng dòng điện pha: Id = Ip (SGK trang 20)."
+        "explain": "Khi tải nối hình sao (Y), dòng điện từ dây pha chạy thẳng trực tiếp vào cuộn dây pha của tải không bị phân nhánh, do đó dòng điện dây bằng dòng điện pha: I<sub>d</sub> = I<sub>p</sub> (SGK trang 20)."
       },
       {
         "id": "cn_b3_16",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa điện áp dây Ud và điện áp pha Up là:",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa điện áp dây U<sub>d</sub> và điện áp pha U<sub>p</sub> là:",
         "options": [
-          "A. Ud = Up",
-          "B. Ud = √3.Up",
-          "C. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
-          "D. Ud = 2.Up"
+          "A. <span class=\"math-term\">U<sub>d</sub> = U<sub>p</sub></span>",
+          "B. <span class=\"math-term\">U<sub>d</sub> = √3 · U<sub>p</sub></span>",
+          "C. <span class=\"math-term\">U<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>",
+          "D. <span class=\"math-term\">U<sub>d</sub> = 2 · U<sub>p</sub></span>"
         ],
         "correct": 0,
-        "explain": "Khi tải nối hình tam giác (Δ), mỗi pha của tải được mắc trực tiếp giữa hai dây pha của nguồn điện, vì vậy điện áp pha của tải bằng chính điện áp dây của nguồn: Ud = Up (SGK trang 20)."
+        "explain": "Khi tải nối hình tam giác (Δ), mỗi pha của tải được mắc trực tiếp giữa hai dây pha của nguồn điện, vì vậy điện áp pha của tải bằng chính điện áp dây của nguồn: U<sub>d</sub> = U<sub>p</sub> (SGK trang 20)."
       },
       {
         "id": "cn_b3_17",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa dòng điện dây Id và dòng điện pha Ip là:",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa dòng điện dây I<sub>d</sub> và dòng điện pha I<sub>p</sub> là:",
         "options": [
-          "A. Id = Ip",
-          "B. Id = √3.Ip ≈ 1,732.Ip",
-          "C. Id = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
-          "D. Id = 3.Ip"
+          "A. <span class=\"math-term\">I<sub>d</sub> = I<sub>p</sub></span>",
+          "B. <span class=\"math-term\">I<sub>d</sub> = √3 · I<sub>p</sub> ≈ 1,732 · I<sub>p</sub></span>",
+          "C. <span class=\"math-term\">I<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>",
+          "D. <span class=\"math-term\">I<sub>d</sub> = 3 · I<sub>p</sub></span>"
         ],
         "correct": 1,
-        "explain": "Khi tải nối tam giác (Δ) đối xứng, dòng điện dây tại các nút rẽ nhánh thành hai dòng điện pha, biểu thức vectơ dòng điện cho ta: Id = √3.Ip ≈ 1,732.Ip, suy ra Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> (SGK trang 20)."
+        "explain": "Khi tải nối tam giác (Δ) đối xứng, dòng điện dây tại các nút rẽ nhánh thành hai dòng điện pha, cho ta: <span class=\"math-term\">I<sub>d</sub> = √3 · I<sub>p</sub> ≈ 1,732 · I<sub>p</sub></span>, suy ra <span class=\"math-term\">I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span></span> (SGK trang 20)."
       },
       {
         "id": "cn_b4_01",
@@ -2950,7 +2949,7 @@ const CONGNGHE_TOPICS_DATABASE = [
       },
       {
         "id": "cn_b4_05",
-        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐG GIA",
         "question": "Theo quy chuẩn kĩ thuật điện Việt Nam, bốn cấp điện áp tiêu chuẩn của hệ thống lưới điện gồm:",
         "options": [
           "A. Điện cực thấp, điện trung bình, điện mạnh và điện cực mạnh.",
@@ -2980,12 +2979,12 @@ const CONGNGHE_TOPICS_DATABASE = [
         "question": "Vì sao tại các nhà máy điện nguồn, người ta bắt buộc phải đặt trạm biến áp TĂNG ÁP trước khi đưa điện lên đường dây truyền tải?",
         "options": [
           "A. Để tăng tần số dòng điện xoay chiều lên hàng nghìn Hz.",
-          "B. Để tăng điện áp U, từ đó giảm cường độ dòng điện I, giúp giảm mạnh công suất hao phí toả nhiệt trên dây dẫn theo công thức ΔP = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup>.R</span><span class=\"math-frac-bottom\">U<sup>2</sup>.cos<sup>2</sup>φ</span></span>.",
+          "B. Để tăng điện áp U, giảm cường độ dòng điện I, giúp giảm hao phí toả nhiệt theo công thức: <span class=\"math-term\">ΔP = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup> · R</span><span class=\"math-frac-bottom\">U<sup>2</sup> · cos<sup>2</sup>φ</span></span></span>.",
           "C. Để chuyển đổi dòng xoay chiều thành dòng điện một chiều.",
           "D. Để biến điện năng thành cơ năng dự trữ trong cột tháp."
         ],
         "correct": 1,
-        "explain": "Theo định luật Jun-Len-xơ, công suất hao phí nhiệt trên đường dây là: ΔP = I²R = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup>.R</span><span class=\"math-frac-bottom\">U<sup>2</sup>.cos<sup>2</sup>φ</span></span>. Khi tăng điện áp U lên n lần thì hao phí ΔP giảm đi n² lần, giúp tiết kiệm chi phí xây dựng đường dây và truyền tải được công suất cực lớn đi xa."
+        "explain": "Theo định luật Jun-Len-xơ, công suất hao phí nhiệt trên đường dây là: <span class=\"math-term\">ΔP = I²R = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup> · R</span><span class=\"math-frac-bottom\">U<sup>2</sup> · cos<sup>2</sup>φ</span></span></span>. Khi tăng điện áp U lên n lần thì hao phí ΔP giảm đi n² lần, giúp tiết kiệm chi phí xây dựng đường dây và truyền tải được công suất cực lớn đi xa."
       },
       {
         "id": "cn_b6_01",
@@ -3125,13 +3124,13 @@ const CONGNGHE_TOPICS_DATABASE = [
       {
         "id": "cn_gk1_ds3a",
         "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
-        "question": "a. Trong mạch điện ba pha đối xứng nối hình sao (Y), điện áp dây luôn bằng điện áp pha (Ud = Up).<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
+        "question": "a. Trong mạch điện ba pha đối xứng nối hình sao (Y), điện áp dây luôn bằng điện áp pha (U<sub>d</sub> = U<sub>p</sub>).<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
         "options": [
           "A. Đúng",
           "B. Sai"
         ],
         "correct": 1,
-        "explain": "SAI. Khi nối hình sao (Y), điện áp dây bằng căn 3 lần điện áp pha: Ud = √3.Up ≈ 1,732.Up; chỉ khi nối tam giác (Δ) thì mới có Ud = Up.",
+        "explain": "SAI. Khi nối hình sao (Y), điện áp dây bằng căn 3 lần điện áp pha: U<sub>d</sub> = √3 · U<sub>p</sub> ≈ 1,732 · U<sub>p</sub>; chỉ khi nối tam giác (Δ) thì mới có U<sub>d</sub> = U<sub>p</sub>.",
         "subLabel": "3a"
       },
       {
@@ -3143,19 +3142,18 @@ const CONGNGHE_TOPICS_DATABASE = [
           "B. Sai"
         ],
         "correct": 0,
-        "explain": "ĐÚNG. Khi tải nối sao, điện áp mỗi pha tải là điện áp pha Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V.",
-        "subLabel": "3b"
+        "explain": "ĐÚNG. Khi tải nối sao, điện áp mỗi pha tải là điện áp pha <span class=\"math-term\">U<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V</span>."
       },
       {
         "id": "cn_gk1_ds3c",
         "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
-        "question": "c. Nếu ba cụm lò sấy hoàn toàn đối xứng thì dòng điện hiệu dụng chạy trong dây trung tính Io bằng 0.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
+        "question": "c. Nếu ba cụm lò sấy hoàn toàn đối xứng thì dòng điện hiệu dụng chạy trong dây trung tính I<sub>o</sub> bằng 0.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
         "options": [
           "A. Đúng",
           "B. Sai"
         ],
         "correct": 0,
-        "explain": "ĐÚNG. Khi tải ba pha hoàn toàn đối xứng, tổng vectơ của 3 dòng điện pha bằng 0 (iA + iB + iC = 0), do đó dòng điện chạy trên dây trung tính Io = 0.",
+        "explain": "ĐÚNG. Khi tải ba pha hoàn toàn đối xứng, tổng vectơ của 3 dòng điện pha bằng 0 (i<sub>A</sub> + i<sub>B</sub> + i<sub>C</sub> = 0), do đó dòng điện chạy trên dây trung tính I<sub>o</sub> = 0.",
         "subLabel": "3c"
       },
       {
@@ -3173,20 +3171,20 @@ const CONGNGHE_TOPICS_DATABASE = [
       {
         "id": "cn_b3_22",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một nguồn điện ba pha đối xứng có điện áp pha Up = 220 V. Giá trị điện áp dây Ud xấp xỉ bằng bao nhiêu vôn?",
+        "question": "Một nguồn điện ba pha đối xứng có điện áp pha U<sub>p</sub> = 220 V. Giá trị điện áp dây U<sub>d</sub> chuẩn bằng bao nhiêu vôn?",
         "options": [
           "A. 127 V",
           "B. 220 V",
-          "C. 380 V (hoặc 381 V)",
+          "C. 380 V",
           "D. 440 V"
         ],
         "correct": 2,
-        "explain": "Nguồn điện ba pha đối xứng nối hình sao: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế mạng điện hạ áp tiêu chuẩn Việt Nam quy ước là 380 V)."
+        "explain": "Nguồn điện ba pha đối xứng nối hình sao: U<sub>d</sub> = √3 · U<sub>p</sub> = √3 × 220 ≈ 381 V (trong thực tế mạng điện hạ áp tiêu chuẩn Việt Nam quy ước chuẩn là 380 V)."
       },
       {
         "id": "cn_b3_23",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cho mạch xoay chiều một pha có R = 30 Ω, cảm kháng XL = 60 Ω, dung kháng XC = 20 Ω. Độ lớn tổng trở z_t của mạch là",
+        "question": "Cho mạch xoay chiều một pha có R = 30 Ω, cảm kháng X<sub>L</sub> = 60 Ω, dung kháng X<sub>C</sub> = 20 Ω. Độ lớn tổng trở z<sub>t</sub> của mạch là",
         "options": [
           "A. 110 Ω",
           "B. 50 Ω",
@@ -3194,12 +3192,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 10 Ω"
         ],
         "correct": 1,
-        "explain": "Điện kháng của mạch: X = XL - XC = 60 - 20 = 40 Ω. Tổng trở của mạch: z_t = √(R² + X²) = √(30² + 40²) = √(900 + 1600) = √2500 = 50 Ω."
+        "explain": "Điện kháng của mạch: X = X<sub>L</sub> - X<sub>C</sub> = 60 - 20 = 40 Ω. Tổng trở của mạch: z<sub>t</sub> = √(R² + X²) = √(30² + 40²) = √(900 + 1600) = √2500 = 50 Ω."
       },
       {
         "id": "cn_b3_24",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có R = 12 Ω, XL = 16 Ω nối hình SAO (Y) vào nguồn điện có điện áp dây Ud = 380 V. Cường độ dòng điện pha Ip chạy qua mỗi cuộn dây là",
+        "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có R = 12 Ω, X<sub>L</sub> = 16 Ω nối hình SAO (Y) vào nguồn điện có điện áp dây U<sub>d</sub> = 380 V. Cường độ dòng điện pha I<sub>p</sub> chạy qua mỗi cuộn dây là",
         "options": [
           "A. 11 A",
           "B. 19 A",
@@ -3207,12 +3205,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 22 A"
         ],
         "correct": 0,
-        "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = √400 = 20 Ω. Do tải nối sao, điện áp pha của tải: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Cường độ dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">20</span></span> = 11 A."
+        "explain": "Tổng trở mỗi pha của tải: <span class=\"math-term\">z<sub>p</sub> = √(R² + X<sub>L</sub>²) = √(12² + 16²) = √400 = 20 Ω</span>. Do tải nối sao, điện áp pha của tải: <span class=\"math-term\">U<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V</span>. Cường độ dòng điện pha: <span class=\"math-term\">I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">20</span></span> = 11 A</span>."
       },
       {
         "id": "cn_b3_25",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một động cơ điện ba pha nối hình TAM GIÁC (Δ) tiêu thụ dòng điện pha Ip = 15 A. Cường độ dòng điện dây Id chạy trên đường dây cấp điện cho động cơ là",
+        "question": "Một động cơ điện ba pha nối hình TAM GIÁC (Δ) tiêu thụ dòng điện pha I<sub>p</sub> = 15 A. Cường độ dòng điện dây I<sub>d</sub> chạy trên đường dây cấp điện cho động cơ là",
         "options": [
           "A. 15 A",
           "B. 8,66 A",
@@ -3220,33 +3218,33 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 45 A"
         ],
         "correct": 2,
-        "explain": "Tải nối hình tam giác (Δ) đối xứng: Dòng điện dây liên hệ với dòng điện pha qua công thức: Id = √3.Ip = √3 × 15 ≈ 1,732 × 15 = 25,98 A."
+        "explain": "Tải nối hình tam giác (Δ) đối xứng: Dòng điện dây liên hệ với dòng điện pha qua công thức: I<sub>d</sub> = √3 · I<sub>p</sub> = √3 × 15 ≈ 1,732 × 15 = 25,98 A."
       },
       {
         "id": "cn_b3_26",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một nguồn điện ba pha có điện áp dây Ud = 380 V cấp cho một tải đối xứng nối hình SAO (Y) có tổng trở mỗi pha zp = 38 Ω. Dòng điện dây Id chạy trên dây pha có giá trị là",
+        "question": "Một nguồn điện ba pha có điện áp dây U<sub>d</sub> = 380 V cấp cho một tải đối xứng nối hình SAO (Y) có tổng trở mỗi pha z<sub>p</sub> = 38 Ω. Dòng điện dây I<sub>d</sub> chạy trên dây pha có giá trị là",
         "options": [
           "A. 10 A",
-          "B. 5,79 A (khoảng 5,8 A)",
+          "B. ≈ 5,8 A (chính xác 5,79 A)",
           "C. 17,3 A",
           "D. 3,34 A"
         ],
         "correct": 1,
-        "explain": "Do tải nối sao: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">38</span></span> ≈ 5,79 A. Do nối sao: Id = Ip ≈ 5,79 A."
+        "explain": "Do tải nối sao: <span class=\"math-term\">U<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V</span>. Dòng điện pha: <span class=\"math-term\">I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">38</span></span> ≈ 5,79 A</span>. Do nối sao: I<sub>d</sub> = I<sub>p</sub> ≈ 5,79 A."
       },
       {
         "id": "cn_b3_27",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Tải ba pha đối xứng gồm ba điện trở thuần R = 22 Ω nối hình TAM GIÁC (Δ) vào mạng điện có Ud = 220 V. Dòng điện pha Ip và dòng điện dây Id lần lượt là",
+        "question": "Tải ba pha đối xứng gồm ba điện trở thuần R = 22 Ω nối hình TAM GIÁC (Δ) vào mạng điện có U<sub>d</sub> = 220 V. Dòng điện pha I<sub>p</sub> và dòng điện dây I<sub>d</sub> lần lượt là",
         "options": [
-          "A. Ip = 10 A; Id = 17,32 A",
-          "B. Ip = 10 A; Id = 10 A",
-          "C. Ip = 5,77 A; Id = 10 A",
-          "D. Ip = 17,32 A; Id = 10 A"
+          "A. I<sub>p</sub> = 10 A; I<sub>d</sub> = 17,32 A",
+          "B. I<sub>p</sub> = 10 A; I<sub>d</sub> = 10 A",
+          "C. I<sub>p</sub> = 5,77 A; I<sub>d</sub> = 10 A",
+          "D. I<sub>p</sub> = 17,32 A; I<sub>d</sub> = 10 A"
         ],
         "correct": 0,
-        "explain": "Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">22</span></span> = 10 A. Dòng điện dây: Id = √3.Ip = √3 × 10 ≈ 17,32 A."
+        "explain": "Do tải nối tam giác: U<sub>p</sub> = U<sub>d</sub> = 220 V. Dòng điện pha: <span class=\"math-term\">I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">22</span></span> = 10 A</span>. Dòng điện dây: <span class=\"math-term\">I<sub>d</sub> = √3 · I<sub>p</sub> = √3 × 10 ≈ 17,32 A</span>."
       },
       {
         "id": "cn_b6_14",
@@ -3259,12 +3257,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 250 kVA"
         ],
         "correct": 2,
-        "explain": "Công suất biểu kiến của máy biến áp: S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">160</span><span class=\"math-frac-bottom\">0,8</span></span> = 200 kVA. Do đó cần chọn máy biến áp có công suất định mức tối thiểu là 200 kVA."
+        "explain": "Công suất biểu kiến của máy biến áp: <span class=\"math-term\">S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">160</span><span class=\"math-frac-bottom\">0,8</span></span> = 200 kVA</span>. Do đó cần chọn máy biến áp có công suất định mức tối thiểu là 200 kVA."
       },
       {
         "id": "cn_b4_11",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Khi truyền tải một công suất điện P xác định trên cùng một đường dây có điện trở R, nếu tăng điện áp từ U1 = 110 kV lên U2 = 220 kV thì công suất hao phí toả nhiệt ΔP trên đường dây sẽ",
+        "question": "Khi truyền tải một công suất điện P xác định trên cùng một đường dây có điện trở R, nếu tăng điện áp từ U<sub>1</sub> = 110 kV lên U<sub>2</sub> = 220 kV thì công suất hao phí toả nhiệt ΔP trên đường dây sẽ",
         "options": [
           "A. tăng lên gấp 2 lần.",
           "B. giảm đi 2 lần.",
@@ -3285,7 +3283,7 @@ const CONGNGHE_TOPICS_DATABASE = [
       {
         "id": "cn_b3_01",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Dòng điện xoay chiều một pha có cường độ tức thời i = Im.sin(ωt + ψ). Đại lượng Im được gọi là gì?",
+        "question": "Dòng điện xoay chiều một pha có cường độ tức thời <span class=\"math-term\">i = I<sub>m</sub> · sin(ωt + ψ)</span>. Đại lượng I<sub>m</sub> được gọi là gì?",
         "options": [
           "A. Giá trị hiệu dụng của dòng điện.",
           "B. Giá trị cực đại (biên độ) của dòng điện.",
@@ -3293,12 +3291,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Pha ban đầu của dòng điện."
         ],
         "correct": 1,
-        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), đại lượng Im là cường độ dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng I: I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> (SGK Công nghệ 12 trang 18)."
+        "explain": "Trong biểu thức <span class=\"math-term\">i = I<sub>m</sub> · sin(ωt + ψ)</span>, đại lượng I<sub>m</sub> là cường độ dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng I: <span class=\"math-term\">I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span></span> (SGK Công nghệ 12 trang 18)."
       },
       {
         "id": "cn_b3_02",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một dòng điện xoay chiều có biểu thức i = 4√2.sin(100πt) (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
+        "question": "Một dòng điện xoay chiều có biểu thức <span class=\"math-term\">i = 4√2 · sin(100πt)</span> (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
         "options": [
           "A. I = 4 A; f = 50 Hz",
           "B. I = 4√2 A; f = 100 Hz",
@@ -3306,46 +3304,46 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. I = 2√2 A; f = 50 Hz"
         ],
         "correct": 0,
-        "explain": "Cường độ cực đại Im = 4√2 A nên giá trị hiệu dụng I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">4√2</span><span class=\"math-frac-bottom\">√2</span></span> = 4 A. Tần số góc ω = 100π rad/s nên tần số f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz."
+        "explain": "Cường độ cực đại <span class=\"math-term\">I<sub>m</sub> = 4√2 A</span> nên giá trị hiệu dụng <span class=\"math-term\">I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">4√2</span><span class=\"math-frac-bottom\">√2</span></span> = 4 A</span>. Tần số góc <span class=\"math-term\">ω = 100π rad/s</span> nên tần số <span class=\"math-term\">f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz</span>."
       },
       {
         "id": "cn_b3_03",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Công thức tính cảm kháng XL của cuộn cảm thuần và dung kháng XC của tụ điện đối với dòng điện xoay chiều tần số f là:",
+        "question": "Công thức tính cảm kháng X<sub>L</sub> của cuộn cảm thuần và dung kháng X<sub>C</sub> của tụ điện đối với dòng điện xoay chiều tần số f là:",
         "options": [
-          "A. XL = 2πfL và XC = 2πfC",
-          "B. XL = 2πfL và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
-          "C. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfL</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
-          "D. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span>"
+          "A. <span class=\"math-term\">X<sub>L</sub> = 2πfL</span> và <span class=\"math-term\">X<sub>C</sub> = 2πfC</span>",
+          "B. <span class=\"math-term\">X<sub>L</sub> = 2πfL</span> và <span class=\"math-term\">X<sub>C</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span></span>",
+          "C. <span class=\"math-term\">X<sub>L</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfL</span></span></span> và <span class=\"math-term\">X<sub>C</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span></span>",
+          "D. <span class=\"math-term\">X<sub>L</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span></span> và <span class=\"math-term\">X<sub>C</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span></span>"
         ],
         "correct": 1,
-        "explain": "Cảm kháng cuộn cảm thuần: XL = ωL = 2πfL (đơn vị Ω); Dung kháng tụ điện: XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span> (đơn vị Ω) (SGK Công nghệ 12 trang 18)."
+        "explain": "Cảm kháng cuộn cảm thuần: <span class=\"math-term\">X<sub>L</sub> = ωL = 2πfL</span> (đơn vị Ω); Dung kháng tụ điện: <span class=\"math-term\">X<sub>C</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span></span> (đơn vị Ω) (SGK Công nghệ 12 trang 18)."
       },
       {
         "id": "cn_b3_04",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Tổng trở z_t của tải điện một pha gồm điện trở R mắc nối tiếp với cuộn cảm (XL) và tụ điện (XC) được tính theo công thức nào?",
+        "question": "Tổng trở z<sub>t</sub> của tải điện một pha gồm điện trở R mắc nối tiếp với cuộn cảm (X<sub>L</sub>) và tụ điện (X<sub>C</sub>) được tính theo công thức nào?",
         "options": [
-          "A. z_t = R + XL - XC",
-          "B. z_t = √[R² + (XL - XC)²]",
-          "C. z_t = √[R² + (XL + XC)²]",
-          "D. z_t = √[R² - (XL - XC)²]"
+          "A. <span class=\"math-term\">z<sub>t</sub> = R + X<sub>L</sub> - X<sub>C</sub></span>",
+          "B. <span class=\"math-term\">z<sub>t</sub> = √[R² + (X<sub>L</sub> - X<sub>C</sub>)²]</span>",
+          "C. <span class=\"math-term\">z<sub>t</sub> = √[R² + (X<sub>L</sub> + X<sub>C</sub>)²]</span>",
+          "D. <span class=\"math-term\">z<sub>t</sub> = √[R² - (X<sub>L</sub> - X<sub>C</sub>)²]</span>"
         ],
         "correct": 1,
-        "explain": "Tổng trở của tải R-L-C nối tiếp đặc trưng bởi độ lớn: z_t = √(R² + X²) với điện kháng X = XL - XC, do đó z_t = √[R² + (XL - XC)²]. Hệ số góc tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
+        "explain": "Tổng trở của tải R-L-C nối tiếp đặc trưng bởi độ lớn: <span class=\"math-term\">z<sub>t</sub> = √(R² + X²)</span> với điện kháng <span class=\"math-term\">X = X<sub>L</sub> - X<sub>C</sub></span>, do đó <span class=\"math-term\">z<sub>t</sub> = √[R² + (X<sub>L</sub> - X<sub>C</sub>)²]</span>. Hệ số góc <span class=\"math-term\">tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span></span> (SGK trang 18)."
       },
       {
         "id": "cn_b3_05",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
         "question": "Hiện tượng cộng hưởng điện trong đoạn mạch R-L-C nối tiếp xảy ra khi nào?",
         "options": [
-          "A. Khi R = XL",
-          "B. Khi cảm kháng bằng dung kháng (XL = XC)",
+          "A. Khi R = X<sub>L</sub>",
+          "B. Khi cảm kháng bằng dung kháng (X<sub>L</sub> = X<sub>C</sub>)",
           "C. Khi tần số f = 0",
           "D. Khi tổng trở đạt giá trị lớn vô cùng"
         ],
         "correct": 1,
-        "explain": "Cộng hưởng điện xảy ra khi cảm kháng bằng dung kháng XL = XC (tức 2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>), khi đó điện kháng triệt tiêu X = 0, tổng trở z_t đạt cực tiểu z_t = R và dòng điện trong mạch đạt cực đại I = <span class=\"math-frac\"><span class=\"math-frac-top\">U</span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
+        "explain": "Cộng hưởng điện xảy ra khi cảm kháng bằng dung kháng <span class=\"math-term\">X<sub>L</sub> = X<sub>C</sub></span> (tức <span class=\"math-term\">2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span></span>), khi đó điện kháng triệt tiêu X = 0, tổng trở z<sub>t</sub> đạt cực tiểu z<sub>t</sub> = R và dòng điện trong mạch đạt cực đại <span class=\"math-term\">I = <span class=\"math-frac\"><span class=\"math-frac-top\">U</span><span class=\"math-frac-bottom\">R</span></span></span> (SGK trang 18)."
       },
       {
         "id": "cn_b3_06",
@@ -3376,15 +3374,15 @@ const CONGNGHE_TOPICS_DATABASE = [
       {
         "id": "cn_b3_08",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Nếu chọn suất điện động pha A làm gốc: eA = Em.sin(ωt), thì biểu thức suất điện động pha B và pha C của máy phát ba pha là",
+        "question": "Nếu chọn suất điện động pha A làm gốc: <span class=\"math-term\">e<sub>A</sub> = E<sub>m</sub> · sin(ωt)</span>, thì biểu thức suất điện động pha B và pha C của máy phát ba pha là:",
         "options": [
-          "A. eB = Em.sin(ωt - π) và eC = Em.sin(ωt + π)",
-          "B. eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) và eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) [hoặc eC = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">4π</span><span class=\"math-frac-bottom\">3</span></span>)]",
-          "C. eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>) và eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>)",
-          "D. eB = Em.cos(ωt) và eC = Em.tan(ωt)"
+          "A. <span class=\"math-term\">e<sub>B</sub> = E<sub>m</sub> · sin(ωt - π)</span> và <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · sin(ωt + π)</span>",
+          "B. <span class=\"math-term\">e<sub>B</sub> = E<sub>m</sub> · sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>)</span> và <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>)</span>",
+          "C. <span class=\"math-term\">e<sub>B</sub> = E<sub>m</sub> · sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>)</span> và <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>)</span>",
+          "D. <span class=\"math-term\">e<sub>B</sub> = E<sub>m</sub> · cos(ωt)</span> và <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · tan(ωt)</span>"
         ],
         "correct": 1,
-        "explain": "Ba suất điện động cùng tần số, cùng biên độ và lệch pha nhau <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> rad: eA = Em.sin(ωt); eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>); eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) (SGK trang 18)."
+        "explain": "Ba suất điện động của máy phát ba pha đối xứng có cùng biên độ E<sub>m</sub>, cùng tần số góc ω và lần lượt lệch pha nhau <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> rad (120°): <span class=\"math-term\">e<sub>A</sub> = E<sub>m</sub> · sin(ωt)</span>; <span class=\"math-term\">e<sub>B</sub> = E<sub>m</sub> · sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>)</span>; <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>)</span> [có thể viết dạng góc âm: <span class=\"math-term\">e<sub>C</sub> = E<sub>m</sub> · sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">4π</span><span class=\"math-frac-bottom\">3</span></span>)</span>] (SGK trang 18)."
       },
       {
         "id": "cn_b3_09",
@@ -3428,87 +3426,87 @@ const CONGNGHE_TOPICS_DATABASE = [
       {
         "id": "cn_b3_12",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Đại lượng 'Điện áp pha' (kí hiệu Up) trong mạch ba pha được định nghĩa là",
+        "question": "Đại lượng 'Điện áp pha' (kí hiệu U<sub>p</sub>) trong mạch ba pha được định nghĩa là",
         "options": [
           "A. điện áp giữa hai dây pha bất kì trong ba dây pha A, B, C.",
-          "B. điện áp đo giữa một dây pha và dây trung tính (hoặc giữa điểm đầu và điểm cuối của một pha).",
+          "B. điện áp đo giữa một dây pha và dây trung tính (hoặc giữa hai đầu của một pha).",
           "C. điện áp giữa dây trung tính và mặt đất.",
           "D. điện áp một chiều nạp vào ắc quy dự phòng."
         ],
         "correct": 1,
-        "explain": "Điện áp pha (Up): Là điện áp giữa điểm đầu và điểm cuối của một pha nguồn hoặc tải, tương đương điện áp đo giữa một dây pha và dây trung tính (như UA, UB, UC) (SGK trang 20)."
+        "explain": "Điện áp pha (U<sub>p</sub>): Là điện áp giữa điểm đầu và điểm cuối của một pha nguồn hoặc tải, tương đương điện áp đo giữa một dây pha và dây trung tính (như U<sub>A</sub>, U<sub>B</sub>, U<sub>C</sub>) (SGK trang 20)."
       },
       {
         "id": "cn_b3_13",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Đại lượng 'Điện áp dây' (kí hiệu Ud) trong mạch điện ba pha được định nghĩa là",
+        "question": "Đại lượng 'Điện áp dây' (kí hiệu U<sub>d</sub>) trong mạch điện ba pha được định nghĩa là",
         "options": [
           "A. điện áp đo giữa dây pha và dây trung tính.",
-          "B. điện áp giữa hai dây pha bất kì (UAB, UBC, UCA).",
+          "B. điện áp giữa hai dây pha bất kì (U<sub>AB</sub>, U<sub>BC</sub>, U<sub>CA</sub>).",
           "C. điện áp rơi trên một bóng đèn chiếu sáng một pha.",
           "D. điện áp danh định của lưới điện siêu cao áp."
         ],
         "correct": 1,
-        "explain": "Điện áp dây (Ud): Là điện áp đo giữa hai dây pha bất kì với nhau, ví dụ: UAB là điện áp giữa dây A và B, UBC giữa B và C, UCA giữa C và A (SGK trang 20)."
+        "explain": "Điện áp dây (U<sub>d</sub>): Là điện áp đo giữa hai dây pha bất kì với nhau, ví dụ: U<sub>AB</sub> là điện áp giữa dây A và B, U<sub>BC</sub> giữa B và C, U<sub>CA</sub> giữa C và A (SGK trang 20)."
       },
       {
         "id": "cn_b3_14",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Khi nguồn và tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa điện áp dây Ud và điện áp pha Up là:",
+        "question": "Khi nguồn và tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa điện áp dây U<sub>d</sub> và điện áp pha U<sub>p</sub> là:",
         "options": [
-          "A. Ud = Up",
-          "B. Ud = √3.Up ≈ 1,732.Up",
-          "C. Ud = 3.Up",
-          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>"
+          "A. <span class=\"math-term\">U<sub>d</sub> = U<sub>p</sub></span>",
+          "B. <span class=\"math-term\">U<sub>d</sub> = √3 · U<sub>p</sub> ≈ 1,732 · U<sub>p</sub></span>",
+          "C. <span class=\"math-term\">U<sub>d</sub> = 3 · U<sub>p</sub></span>",
+          "D. <span class=\"math-term\">U<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>"
         ],
         "correct": 1,
-        "explain": "Mạch đối xứng nối hình sao (Y): Mối liên hệ điện áp là Ud = √3.Up ≈ 1,732.Up, suy ra Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span>. Ví dụ mạng hạ áp có Up = 220 V thì Ud = √3 × 220 ≈ 380 V (SGK trang 20)."
+        "explain": "Mạch đối xứng nối hình sao (Y): Mối liên hệ điện áp là <span class=\"math-term\">U<sub>d</sub> = √3 · U<sub>p</sub> ≈ 1,732 · U<sub>p</sub></span>, suy ra <span class=\"math-term\">U<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>. Ví dụ mạng hạ áp có U<sub>p</sub> = 220 V thì U<sub>d</sub> = √3 × 220 ≈ 380 V (SGK trang 20)."
       },
       {
         "id": "cn_b3_15",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Khi tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa cường độ dòng điện dây Id và dòng điện pha Ip là:",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa cường độ dòng điện dây I<sub>d</sub> và dòng điện pha I<sub>p</sub> là:",
         "options": [
-          "A. Id = Ip",
-          "B. Id = √3.Ip",
-          "C. Id = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
-          "D. Id = 3.Ip"
+          "A. <span class=\"math-term\">I<sub>d</sub> = I<sub>p</sub></span>",
+          "B. <span class=\"math-term\">I<sub>d</sub> = √3 · I<sub>p</sub></span>",
+          "C. <span class=\"math-term\">I<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>",
+          "D. <span class=\"math-term\">I<sub>d</sub> = 3 · I<sub>p</sub></span>"
         ],
         "correct": 0,
-        "explain": "Khi tải nối hình sao (Y), dòng điện từ dây pha chạy thẳng trực tiếp vào cuộn dây pha của tải không bị phân nhánh, do đó dòng điện dây bằng dòng điện pha: Id = Ip (SGK trang 20)."
+        "explain": "Khi tải nối hình sao (Y), dòng điện từ dây pha chạy thẳng trực tiếp vào cuộn dây pha của tải không bị phân nhánh, do đó dòng điện dây bằng dòng điện pha: I<sub>d</sub> = I<sub>p</sub> (SGK trang 20)."
       },
       {
         "id": "cn_b3_16",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa điện áp dây Ud và điện áp pha Up là:",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa điện áp dây U<sub>d</sub> và điện áp pha U<sub>p</sub> là:",
         "options": [
-          "A. Ud = Up",
-          "B. Ud = √3.Up",
-          "C. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
-          "D. Ud = 2.Up"
+          "A. <span class=\"math-term\">U<sub>d</sub> = U<sub>p</sub></span>",
+          "B. <span class=\"math-term\">U<sub>d</sub> = √3 · U<sub>p</sub></span>",
+          "C. <span class=\"math-term\">U<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>",
+          "D. <span class=\"math-term\">U<sub>d</sub> = 2 · U<sub>p</sub></span>"
         ],
         "correct": 0,
-        "explain": "Khi tải nối hình tam giác (Δ), mỗi pha của tải được mắc trực tiếp giữa hai dây pha của nguồn điện, vì vậy điện áp pha của tải bằng chính điện áp dây của nguồn: Ud = Up (SGK trang 20)."
+        "explain": "Khi tải nối hình tam giác (Δ), mỗi pha của tải được mắc trực tiếp giữa hai dây pha của nguồn điện, vì vậy điện áp pha của tải bằng chính điện áp dây của nguồn: U<sub>d</sub> = U<sub>p</sub> (SGK trang 20)."
       },
       {
         "id": "cn_b3_17",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa dòng điện dây Id và dòng điện pha Ip là:",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa dòng điện dây I<sub>d</sub> và dòng điện pha I<sub>p</sub> là:",
         "options": [
-          "A. Id = Ip",
-          "B. Id = √3.Ip ≈ 1,732.Ip",
-          "C. Id = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
-          "D. Id = 3.Ip"
+          "A. <span class=\"math-term\">I<sub>d</sub> = I<sub>p</sub></span>",
+          "B. <span class=\"math-term\">I<sub>d</sub> = √3 · I<sub>p</sub> ≈ 1,732 · I<sub>p</sub></span>",
+          "C. <span class=\"math-term\">I<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span></span>",
+          "D. <span class=\"math-term\">I<sub>d</sub> = 3 · I<sub>p</sub></span>"
         ],
         "correct": 1,
-        "explain": "Khi tải nối tam giác (Δ) đối xứng, dòng điện dây tại các nút rẽ nhánh thành hai dòng điện pha, biểu thức vectơ dòng điện cho ta: Id = √3.Ip ≈ 1,732.Ip, suy ra Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> (SGK trang 20)."
+        "explain": "Khi tải nối tam giác (Δ) đối xứng, dòng điện dây tại các nút rẽ nhánh thành hai dòng điện pha, cho ta: <span class=\"math-term\">I<sub>d</sub> = √3 · I<sub>p</sub> ≈ 1,732 · I<sub>p</sub></span>, suy ra <span class=\"math-term\">I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span></span> (SGK trang 20)."
       },
       {
         "id": "cn_b3_18",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
         "question": "Ưu điểm vượt trội của mạch điện ba pha bốn dây (nối hình sao có dây trung tính) so với mạch ba dây là gì?",
         "options": [
-          "A. Tạo ra được hai cấp điện áp khác nhau (điện áp dây Ud và điện áp pha Up), thuận tiện cấp điện đồng thời cho cả động cơ ba pha và thiết bị sinh hoạt một pha.",
+          "A. Tạo ra được hai cấp điện áp khác nhau (điện áp dây U<sub>d</sub> và điện áp pha U<sub>p</sub>), thuận tiện cấp điện đồng thời cho cả động cơ ba pha và thiết bị sinh hoạt một pha.",
           "B. Không bao giờ xảy ra sự cố chập mạch hay quá tải.",
           "C. Tiết kiệm 100% lượng dây nhôm và đồng truyền tải.",
           "D. Điện áp trên đường dây tự động tăng lên gấp mười lần."
@@ -3519,15 +3517,15 @@ const CONGNGHE_TOPICS_DATABASE = [
       {
         "id": "cn_b3_19",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Khi phụ tải ba pha hoàn toàn ĐỐI XỨNG, cường độ dòng điện chạy trong dây trung tính Io có giá trị bằng bao nhiêu?",
+        "question": "Khi phụ tải ba pha hoàn toàn ĐỐI XỨNG, cường độ dòng điện chạy trong dây trung tính I<sub>o</sub> có giá trị bằng bao nhiêu?",
         "options": [
-          "A. Bằng 3 lần dòng điện pha (Io = 3.Ip).",
-          "B. Bằng không (Io = 0).",
-          "C. Bằng dòng điện cực đại Im.",
-          "D. Bằng dòng điện dây Id."
+          "A. Bằng 3 lần dòng điện pha (I<sub>o</sub> = 3 · I<sub>p</sub>).",
+          "B. Bằng không (I<sub>o</sub> = 0).",
+          "C. Bằng dòng điện cực đại I<sub>m</sub>.",
+          "D. Bằng dòng điện dây I<sub>d</sub>."
         ],
         "correct": 1,
-        "explain": "Trong tải ba pha đối xứng, tổng vectơ của ba dòng điện pha bằng 0: iA + iB + iC = 0, do đó dòng điện hiệu dụng trong dây trung tính Io = 0 (SGK trang 20)."
+        "explain": "Trong tải ba pha đối xứng, tổng vectơ của ba dòng điện pha bằng 0: i<sub>A</sub> + i<sub>B</sub> + i<sub>C</sub> = 0, do đó dòng điện hiệu dụng trong dây trung tính I<sub>o</sub> = 0 (SGK trang 20)."
       },
       {
         "id": "cn_b3_20",
@@ -3547,31 +3545,31 @@ const CONGNGHE_TOPICS_DATABASE = [
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
         "question": "Công thức tính công suất tác dụng toàn phần P của mạch điện xoay chiều ba pha đối xứng là:",
         "options": [
-          "A. P = Ud.Id.cos φ",
-          "B. P = √3.Ud.Id.cos φ = 3.Up.Ip.cos φ",
-          "C. P = 3.Ud.Id.cos φ",
-          "D. P = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub>.I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span>.cos φ"
+          "A. <span class=\"math-term\">P = U<sub>d</sub> · I<sub>d</sub> · cos φ</span>",
+          "B. <span class=\"math-term\">P = √3 · U<sub>d</sub> · I<sub>d</sub> · cos φ = 3 · U<sub>p</sub> · I<sub>p</sub> · cos φ</span>",
+          "C. <span class=\"math-term\">P = 3 · U<sub>d</sub> · I<sub>d</sub> · cos φ</span>",
+          "D. <span class=\"math-term\">P = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub> · I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> · cos φ</span>"
         ],
         "correct": 1,
-        "explain": "Công suất tác dụng ba pha đối xứng tính theo thông số dây: P = √3.Ud.Id.cos φ; hoặc tính theo thông số pha: P = 3.Up.Ip.cos φ (trong đó cos φ là hệ số công suất của mỗi pha tải) (SGK trang 20)."
+        "explain": "Công suất tác dụng ba pha đối xứng tính theo thông số dây: P = √3 · U<sub>d</sub> · I<sub>d</sub> · cos φ; hoặc tính theo thông số pha: P = 3 · U<sub>p</sub> · I<sub>p</sub> · cos φ (trong đó cos φ là hệ số công suất của mỗi pha tải) (SGK trang 20)."
       },
       {
         "id": "cn_b3_22",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một nguồn điện ba pha đối xứng có điện áp pha Up = 220 V. Giá trị điện áp dây Ud xấp xỉ bằng bao nhiêu vôn?",
+        "question": "Một nguồn điện ba pha đối xứng có điện áp pha U<sub>p</sub> = 220 V. Giá trị điện áp dây U<sub>d</sub> chuẩn bằng bao nhiêu vôn?",
         "options": [
           "A. 127 V",
           "B. 220 V",
-          "C. 380 V (hoặc 381 V)",
+          "C. 380 V",
           "D. 440 V"
         ],
         "correct": 2,
-        "explain": "Nguồn điện ba pha đối xứng nối hình sao: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế mạng điện hạ áp tiêu chuẩn Việt Nam quy ước là 380 V)."
+        "explain": "Nguồn điện ba pha đối xứng nối hình sao: U<sub>d</sub> = √3 · U<sub>p</sub> = √3 × 220 ≈ 381 V (trong thực tế mạng điện hạ áp tiêu chuẩn Việt Nam quy ước chuẩn là 380 V)."
       },
       {
         "id": "cn_b3_23",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cho mạch xoay chiều một pha có R = 30 Ω, cảm kháng XL = 60 Ω, dung kháng XC = 20 Ω. Độ lớn tổng trở z_t của mạch là",
+        "question": "Cho mạch xoay chiều một pha có R = 30 Ω, cảm kháng X<sub>L</sub> = 60 Ω, dung kháng X<sub>C</sub> = 20 Ω. Độ lớn tổng trở z<sub>t</sub> của mạch là",
         "options": [
           "A. 110 Ω",
           "B. 50 Ω",
@@ -3579,12 +3577,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 10 Ω"
         ],
         "correct": 1,
-        "explain": "Điện kháng của mạch: X = XL - XC = 60 - 20 = 40 Ω. Tổng trở của mạch: z_t = √(R² + X²) = √(30² + 40²) = √(900 + 1600) = √2500 = 50 Ω."
+        "explain": "Điện kháng của mạch: X = X<sub>L</sub> - X<sub>C</sub> = 60 - 20 = 40 Ω. Tổng trở của mạch: z<sub>t</sub> = √(R² + X²) = √(30² + 40²) = √(900 + 1600) = √2500 = 50 Ω."
       },
       {
         "id": "cn_b3_24",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có R = 12 Ω, XL = 16 Ω nối hình SAO (Y) vào nguồn điện có điện áp dây Ud = 380 V. Cường độ dòng điện pha Ip chạy qua mỗi cuộn dây là",
+        "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có R = 12 Ω, X<sub>L</sub> = 16 Ω nối hình SAO (Y) vào nguồn điện có điện áp dây U<sub>d</sub> = 380 V. Cường độ dòng điện pha I<sub>p</sub> chạy qua mỗi cuộn dây là",
         "options": [
           "A. 11 A",
           "B. 19 A",
@@ -3592,12 +3590,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 22 A"
         ],
         "correct": 0,
-        "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = √400 = 20 Ω. Do tải nối sao, điện áp pha của tải: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Cường độ dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">20</span></span> = 11 A."
+        "explain": "Tổng trở mỗi pha của tải: <span class=\"math-term\">z<sub>p</sub> = √(R² + X<sub>L</sub>²) = √(12² + 16²) = √400 = 20 Ω</span>. Do tải nối sao, điện áp pha của tải: <span class=\"math-term\">U<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V</span>. Cường độ dòng điện pha: <span class=\"math-term\">I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">20</span></span> = 11 A</span>."
       },
       {
         "id": "cn_b3_25",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một động cơ điện ba pha nối hình TAM GIÁC (Δ) tiêu thụ dòng điện pha Ip = 15 A. Cường độ dòng điện dây Id chạy trên đường dây cấp điện cho động cơ là",
+        "question": "Một động cơ điện ba pha nối hình TAM GIÁC (Δ) tiêu thụ dòng điện pha I<sub>p</sub> = 15 A. Cường độ dòng điện dây I<sub>d</sub> chạy trên đường dây cấp điện cho động cơ là",
         "options": [
           "A. 15 A",
           "B. 8,66 A",
@@ -3605,46 +3603,46 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 45 A"
         ],
         "correct": 2,
-        "explain": "Tải nối hình tam giác (Δ) đối xứng: Dòng điện dây liên hệ với dòng điện pha qua công thức: Id = √3.Ip = √3 × 15 ≈ 1,732 × 15 = 25,98 A."
+        "explain": "Tải nối hình tam giác (Δ) đối xứng: Dòng điện dây liên hệ với dòng điện pha qua công thức: I<sub>d</sub> = √3 · I<sub>p</sub> = √3 × 15 ≈ 1,732 × 15 = 25,98 A."
       },
       {
         "id": "cn_b3_26",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một nguồn điện ba pha có điện áp dây Ud = 380 V cấp cho một tải đối xứng nối hình SAO (Y) có tổng trở mỗi pha zp = 38 Ω. Dòng điện dây Id chạy trên dây pha có giá trị là",
+        "question": "Một nguồn điện ba pha có điện áp dây U<sub>d</sub> = 380 V cấp cho một tải đối xứng nối hình SAO (Y) có tổng trở mỗi pha z<sub>p</sub> = 38 Ω. Dòng điện dây I<sub>d</sub> chạy trên dây pha có giá trị là",
         "options": [
           "A. 10 A",
-          "B. 5,79 A (khoảng 5,8 A)",
+          "B. ≈ 5,8 A (chính xác 5,79 A)",
           "C. 17,3 A",
           "D. 3,34 A"
         ],
         "correct": 1,
-        "explain": "Do tải nối sao: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">38</span></span> ≈ 5,79 A. Do nối sao: Id = Ip ≈ 5,79 A."
+        "explain": "Do tải nối sao: <span class=\"math-term\">U<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V</span>. Dòng điện pha: <span class=\"math-term\">I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">38</span></span> ≈ 5,79 A</span>. Do nối sao: I<sub>d</sub> = I<sub>p</sub> ≈ 5,79 A."
       },
       {
         "id": "cn_b3_27",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Tải ba pha đối xứng gồm ba điện trở thuần R = 22 Ω nối hình TAM GIÁC (Δ) vào mạng điện có Ud = 220 V. Dòng điện pha Ip và dòng điện dây Id lần lượt là",
+        "question": "Tải ba pha đối xứng gồm ba điện trở thuần R = 22 Ω nối hình TAM GIÁC (Δ) vào mạng điện có U<sub>d</sub> = 220 V. Dòng điện pha I<sub>p</sub> và dòng điện dây I<sub>d</sub> lần lượt là",
         "options": [
-          "A. Ip = 10 A; Id = 17,32 A",
-          "B. Ip = 10 A; Id = 10 A",
-          "C. Ip = 5,77 A; Id = 10 A",
-          "D. Ip = 17,32 A; Id = 10 A"
+          "A. I<sub>p</sub> = 10 A; I<sub>d</sub> = 17,32 A",
+          "B. I<sub>p</sub> = 10 A; I<sub>d</sub> = 10 A",
+          "C. I<sub>p</sub> = 5,77 A; I<sub>d</sub> = 10 A",
+          "D. I<sub>p</sub> = 17,32 A; I<sub>d</sub> = 10 A"
         ],
         "correct": 0,
-        "explain": "Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">22</span></span> = 10 A. Dòng điện dây: Id = √3.Ip = √3 × 10 ≈ 17,32 A."
+        "explain": "Do tải nối tam giác: U<sub>p</sub> = U<sub>d</sub> = 220 V. Dòng điện pha: <span class=\"math-term\">I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">22</span></span> = 10 A</span>. Dòng điện dây: <span class=\"math-term\">I<sub>d</sub> = √3 · I<sub>p</sub> = √3 × 10 ≈ 17,32 A</span>."
       },
       {
         "id": "cn_b3_28",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một tải điện ba pha tiêu thụ công suất P = 10 kW với điện áp dây Ud = 380 V và hệ số công suất cos φ = 0,8. Dòng điện dây Id chạy trong mạch xấp xỉ bằng",
+        "question": "Một tải điện ba pha tiêu thụ công suất P = 10 kW với điện áp dây U<sub>d</sub> = 380 V và hệ số công suất cos φ = 0,8. Dòng điện dây I<sub>d</sub> chạy trong mạch xấp xỉ bằng",
         "options": [
-          "A. 18,99 A",
+          "A. 18,99 A (khoảng 19 A)",
           "B. 32,89 A",
           "C. 10,95 A",
           "D. 15,20 A"
         ],
         "correct": 0,
-        "explain": "Từ công thức công suất ba pha: P = √3.Ud.Id.cos φ => Id = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">√3.U<sub>d</sub>.cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">√3 × 380 × 0,8</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">526,54</span></span> ≈ 18,99 A."
+        "explain": "Từ công thức công suất ba pha: <span class=\"math-term\">P = √3 · U<sub>d</sub> · I<sub>d</sub> · cos φ</span> => <span class=\"math-term\">I<sub>d</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">√3 · U<sub>d</sub> · cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">√3 × 380 × 0,8</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">526,54</span></span> ≈ 18,99 A</span>."
       },
       {
         "id": "cn_b3_29",
@@ -3683,7 +3681,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. truyền toàn bộ công suất vào cọc tiếp địa."
         ],
         "correct": 1,
-        "explain": "Khi bị đứt mạch một pha, dòng điện trong nhánh pha đó bị ngắt hoàn toàn (Ip = 0). Nếu mạng có dây trung tính thì hai pha còn lại vẫn hoạt động bình thường ở điện áp 220 V."
+        "explain": "Khi bị đứt mạch một pha, dòng điện trong nhánh pha đó bị ngắt hoàn toàn (I<sub>p</sub> = 0). Nếu mạng có dây trung tính thì hai pha còn lại vẫn hoạt động bình thường ở điện áp 220 V."
       },
       {
         "id": "cn_b3_32",
@@ -3696,7 +3694,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Đấu trực tiếp hai cực của bóng đèn vào dây trung tính O."
         ],
         "correct": 1,
-        "explain": "Bóng đèn có điện áp định mức 220 V (bằng điện áp pha Up của lưới), do đó phải đấu một đầu vào dây pha và một đầu vào dây trung tính O để nhận đúng điện áp 220 V. Nếu đấu vào giữa hai dây pha (Ud = 380 V) thì đèn sẽ bị quá áp và nổ ngay lập tức."
+        "explain": "Bóng đèn có điện áp định mức 220 V (bằng điện áp pha U<sub>p</sub> của lưới), do đó phải đấu một đầu vào dây pha và một đầu vào dây trung tính O để nhận đúng điện áp 220 V. Nếu đấu vào giữa hai dây pha (U<sub>d</sub> = 380 V) thì đèn sẽ bị quá áp và nổ ngay lập tức."
       },
       {
         "id": "cn_b4_01",
@@ -3752,7 +3750,7 @@ const CONGNGHE_TOPICS_DATABASE = [
       },
       {
         "id": "cn_b4_05",
-        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐG GIA",
         "question": "Theo quy chuẩn kĩ thuật điện Việt Nam, bốn cấp điện áp tiêu chuẩn của hệ thống lưới điện gồm:",
         "options": [
           "A. Điện cực thấp, điện trung bình, điện mạnh và điện cực mạnh.",
@@ -3821,17 +3819,17 @@ const CONGNGHE_TOPICS_DATABASE = [
         "question": "Vì sao tại các nhà máy điện nguồn, người ta bắt buộc phải đặt trạm biến áp TĂNG ÁP trước khi đưa điện lên đường dây truyền tải?",
         "options": [
           "A. Để tăng tần số dòng điện xoay chiều lên hàng nghìn Hz.",
-          "B. Để tăng điện áp U, từ đó giảm cường độ dòng điện I, giúp giảm mạnh công suất hao phí toả nhiệt trên dây dẫn theo công thức ΔP = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup>.R</span><span class=\"math-frac-bottom\">U<sup>2</sup>.cos<sup>2</sup>φ</span></span>.",
+          "B. Để tăng điện áp U, giảm cường độ dòng điện I, giúp giảm hao phí toả nhiệt theo công thức: <span class=\"math-term\">ΔP = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup> · R</span><span class=\"math-frac-bottom\">U<sup>2</sup> · cos<sup>2</sup>φ</span></span></span>.",
           "C. Để chuyển đổi dòng xoay chiều thành dòng điện một chiều.",
           "D. Để biến điện năng thành cơ năng dự trữ trong cột tháp."
         ],
         "correct": 1,
-        "explain": "Theo định luật Jun-Len-xơ, công suất hao phí nhiệt trên đường dây là: ΔP = I²R = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup>.R</span><span class=\"math-frac-bottom\">U<sup>2</sup>.cos<sup>2</sup>φ</span></span>. Khi tăng điện áp U lên n lần thì hao phí ΔP giảm đi n² lần, giúp tiết kiệm chi phí xây dựng đường dây và truyền tải được công suất cực lớn đi xa."
+        "explain": "Theo định luật Jun-Len-xơ, công suất hao phí nhiệt trên đường dây là: <span class=\"math-term\">ΔP = I²R = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup> · R</span><span class=\"math-frac-bottom\">U<sup>2</sup> · cos<sup>2</sup>φ</span></span></span>. Khi tăng điện áp U lên n lần thì hao phí ΔP giảm đi n² lần, giúp tiết kiệm chi phí xây dựng đường dây và truyền tải được công suất cực lớn đi xa."
       },
       {
         "id": "cn_b4_11",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Khi truyền tải một công suất điện P xác định trên cùng một đường dây có điện trở R, nếu tăng điện áp từ U1 = 110 kV lên U2 = 220 kV thì công suất hao phí toả nhiệt ΔP trên đường dây sẽ",
+        "question": "Khi truyền tải một công suất điện P xác định trên cùng một đường dây có điện trở R, nếu tăng điện áp từ U<sub>1</sub> = 110 kV lên U<sub>2</sub> = 220 kV thì công suất hao phí toả nhiệt ΔP trên đường dây sẽ",
         "options": [
           "A. tăng lên gấp 2 lần.",
           "B. giảm đi 2 lần.",
@@ -4135,7 +4133,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 250 kVA"
         ],
         "correct": 2,
-        "explain": "Công suất biểu kiến của máy biến áp: S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">160</span><span class=\"math-frac-bottom\">0,8</span></span> = 200 kVA. Do đó cần chọn máy biến áp có công suất định mức tối thiểu là 200 kVA."
+        "explain": "Công suất biểu kiến của máy biến áp: <span class=\"math-term\">S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">160</span><span class=\"math-frac-bottom\">0,8</span></span> = 200 kVA</span>. Do đó cần chọn máy biến áp có công suất định mức tối thiểu là 200 kVA."
       },
       {
         "id": "cn_b6_15",
@@ -4148,7 +4146,7 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Giảm 0 kVA"
         ],
         "correct": 0,
-        "explain": "Ban đầu: S1 = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">0,8</span></span> = 100 kVA. Khi nâng cos φ' = 1,0: S2 = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ'</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">1,0</span></span> = 80 kVA. Công suất biểu kiến giảm: ΔS = 100 - 80 = 20 kVA (giảm dòng điện trên dây cáp nguồn)."
+        "explain": "Ban đầu: <span class=\"math-term\">S<sub>1</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">0,8</span></span> = 100 kVA</span>. Khi nâng cos φ' = 1,0: <span class=\"math-term\">S<sub>2</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ'</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">1,0</span></span> = 80 kVA</span>. Công suất biểu kiến giảm: ΔS = 100 - 80 = 20 kVA (giúp giảm dòng điện trên dây cáp nguồn)."
       },
       {
         "id": "cn_b6_16",
@@ -4334,13 +4332,13 @@ const CONGNGHE_TOPICS_DATABASE = [
         "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
         "question": "Các thông số kĩ thuật định mức tiêu chuẩn của mạng điện hạ áp sinh hoạt tại Việt Nam là:",
         "options": [
-          "A. Điện áp dây Ud = 380 V; Điện áp pha Up = 220 V; Tần số f = 50 Hz.",
-          "B. Điện áp dây Ud = 220 V; Điện áp pha Up = 110 V; Tần số f = 60 Hz.",
-          "C. Điện áp dây Ud = 500 V; Điện áp pha Up = 220 V; Tần số f = 25 Hz.",
+          "A. Điện áp dây U<sub>d</sub> = 380 V; Điện áp pha U<sub>p</sub> = 220 V; Tần số f = 50 Hz.",
+          "B. Điện áp dây U<sub>d</sub> = 220 V; Điện áp pha U<sub>p</sub> = 110 V; Tần số f = 60 Hz.",
+          "C. Điện áp dây U<sub>d</sub> = 500 V; Điện áp pha U<sub>p</sub> = 220 V; Tần số f = 25 Hz.",
           "D. Điện áp một chiều 12 V."
         ],
         "correct": 0,
-        "explain": "Quy chuẩn Việt Nam: Mạng hạ áp sinh hoạt 3 pha 4 dây có điện áp dây Ud = 380 V, điện áp pha Up = 220 V và tần số công nghiệp f = 50 Hz (SGK trang 36)."
+        "explain": "Quy chuẩn Việt Nam: Mạng hạ áp sinh hoạt 3 pha 4 dây có điện áp dây U<sub>d</sub> = 380 V, điện áp pha U<sub>p</sub> = 220 V và tần số công nghiệp f = 50 Hz (SGK trang 36)."
       },
       {
         "id": "cn_b7_03",
@@ -4603,13 +4601,13 @@ const CONGNGHE_TOPICS_DATABASE = [
       {
         "id": "cn_gk1_ds3a",
         "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
-        "question": "a. Trong mạch điện ba pha đối xứng nối hình sao (Y), điện áp dây luôn bằng điện áp pha (Ud = Up).<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
+        "question": "a. Trong mạch điện ba pha đối xứng nối hình sao (Y), điện áp dây luôn bằng điện áp pha (U<sub>d</sub> = U<sub>p</sub>).<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
         "options": [
           "A. Đúng",
           "B. Sai"
         ],
         "correct": 1,
-        "explain": "SAI. Khi nối hình sao (Y), điện áp dây bằng căn 3 lần điện áp pha: Ud = √3.Up ≈ 1,732.Up; chỉ khi nối tam giác (Δ) thì mới có Ud = Up.",
+        "explain": "SAI. Khi nối hình sao (Y), điện áp dây bằng căn 3 lần điện áp pha: U<sub>d</sub> = √3 · U<sub>p</sub> ≈ 1,732 · U<sub>p</sub>; chỉ khi nối tam giác (Δ) thì mới có U<sub>d</sub> = U<sub>p</sub>.",
         "subLabel": "3a"
       },
       {
@@ -4621,19 +4619,18 @@ const CONGNGHE_TOPICS_DATABASE = [
           "B. Sai"
         ],
         "correct": 0,
-        "explain": "ĐÚNG. Khi tải nối sao, điện áp mỗi pha tải là điện áp pha Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V.",
-        "subLabel": "3b"
+        "explain": "ĐÚNG. Khi tải nối sao, điện áp mỗi pha tải là điện áp pha <span class=\"math-term\">U<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V</span>."
       },
       {
         "id": "cn_gk1_ds3c",
         "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
-        "question": "c. Nếu ba cụm lò sấy hoàn toàn đối xứng thì dòng điện hiệu dụng chạy trong dây trung tính Io bằng 0.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
+        "question": "c. Nếu ba cụm lò sấy hoàn toàn đối xứng thì dòng điện hiệu dụng chạy trong dây trung tính I<sub>o</sub> bằng 0.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
         "options": [
           "A. Đúng",
           "B. Sai"
         ],
         "correct": 0,
-        "explain": "ĐÚNG. Khi tải ba pha hoàn toàn đối xứng, tổng vectơ của 3 dòng điện pha bằng 0 (iA + iB + iC = 0), do đó dòng điện chạy trên dây trung tính Io = 0.",
+        "explain": "ĐÚNG. Khi tải ba pha hoàn toàn đối xứng, tổng vectơ của 3 dòng điện pha bằng 0 (i<sub>A</sub> + i<sub>B</sub> + i<sub>C</sub> = 0), do đó dòng điện chạy trên dây trung tính I<sub>o</sub> = 0.",
         "subLabel": "3c"
       },
       {

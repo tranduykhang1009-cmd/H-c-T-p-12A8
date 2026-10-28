@@ -680,9 +680,12 @@
       text-align: left;
       cursor: pointer;
       transition: all 0.18s;
-      line-height: 1.45;
-      display: flex;
-      align-items: center;
+      line-height: 1.6;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      word-break: normal;
+      overflow-wrap: break-word;
     }
     .quiz-opt-btn:hover:not(.locked) {
       border-color: #4f46e5;
@@ -1794,19 +1797,24 @@
     .math-frac {
       display: inline-flex;
       flex-direction: column;
-      vertical-align: middle;
+      vertical-align: -0.45em;
       text-align: center;
-      padding: 0 4px;
-      font-size: 0.95em;
-      line-height: 1.15;
+      padding: 0 2px;
+      margin: 0 2px;
+      font-size: 0.88em;
+      line-height: 1.05;
       font-weight: 700;
     }
     .math-frac-top {
       border-bottom: 1.5px solid currentColor;
-      padding-bottom: 2px;
+      padding-bottom: 1px;
     }
     .math-frac-bottom {
-      padding-top: 2px;
+      padding-top: 1px;
+    }
+    .math-term {
+      display: inline-block;
+      white-space: nowrap;
     }
 
   
