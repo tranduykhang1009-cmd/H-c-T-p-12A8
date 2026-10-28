@@ -1761,13 +1761,18 @@
       color: #fff;
     }
     .lb-subject-badge {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
       font-size: 0.65rem;
       font-weight: 800;
-      padding: 1px 6px;
-      border-radius: 4px;
-      margin-right: 5px;
-      text-transform: uppercase;
+      padding: 1.5px 6px;
+      border-radius: 5px;
+      margin-left: 4px;
+      text-transform: none;
+      flex-shrink: 0;
+      vertical-align: middle;
+      line-height: 1.2;
     }
     .badge-subj-history {
       background: rgba(239, 68, 68, 0.2);
@@ -2299,6 +2304,18 @@
       color: #60a5fa;
       font-weight: 800;
       cursor: pointer;
+    }
+    .setup-select optgroup {
+      background: #111827;
+      color: #94a3b8;
+      font-weight: 800;
+      font-size: 0.8rem;
+    }
+    .setup-select option {
+      background: #0f172a;
+      color: #f1f5f9;
+      font-weight: 600;
+      padding: 6px;
     }
     .setup-field-shuffle {
       display: flex;
@@ -3501,16 +3518,21 @@
               <span>Chọn môn học:</span>
             </label>
             <select id="selectSubject" class="setup-select setup-select-subj" onchange="onSubjectDropdownChange(this.value)">
-              <option value="physics" selected>⚛️ Vật Lí 12 (106 câu)</option>
-              <option value="history">🏛️ Lịch Sử 12 (440 câu)</option>
-              <option value="english">🇬🇧 Tiếng Anh 12 (32 câu)</option>
-              <option value="math">📐 Toán Học 12 (Sắp có)</option>
-              <option value="chemistry">🧪 Hóa Học 12 (Sắp có)</option>
-              <option value="biology">🧬 Sinh Học 12 (Sắp có)</option>
-              <option value="technology">⚡ Công Nghệ 12 (75 câu - Bài 2 đến Bài 7)</option>
-              <option value="geography">🌍 Địa Lí 12 (159 câu)</option>
-              <option value="civics">⚖️ GDCD 12 (Sắp có)</option>
-              <option value="literature">📖 Ngữ Văn 12 (Sắp có)</option>
+              <optgroup label="⭐ CÁC MÔN ĐÃ CÓ NGÂN HÀNG CÂU HỎI">
+                <option value="technology">⚡ Công Nghệ 12 (106 câu)</option>
+                <option value="history">🏛️ Lịch Sử 12 (440 câu)</option>
+                <option value="geography">🌍 Địa Lí 12 (159 câu)</option>
+                <option value="physics" selected>⚛️ Vật Lí 12 (106 câu)</option>
+                <option value="english">🇬🇧 Tiếng Anh 12 (32 câu)</option>
+              </optgroup>
+              <optgroup label="⏳ CÁC MÔN ĐANG CẬP NHẬT (SẮP CÓ)">
+                <option value="math">📐 Toán Học 12 (Sắp có)</option>
+                <option value="chemistry">🧪 Hóa Học 12 (Sắp có)</option>
+                <option value="biology">🧬 Sinh Học 12 (Sắp có)</option>
+                <option value="civics">⚖️ GDCD 12 (Sắp có)</option>
+                <option value="literature">📖 Ngữ Văn 12 (Sắp có)</option>
+                <option value="informatics">💻 Tin Học 12 (Sắp có)</option>
+              </optgroup>
             </select>
           </div>
 
@@ -3796,17 +3818,20 @@
           <button class="lb-sub-btn active" id="btnLbSubAll" onclick="filterLbBySubject('all')">
             <span>🌐 Tất cả môn</span>
           </button>
+          <button class="lb-sub-btn" id="btnLbSubTechnology" onclick="filterLbBySubject('technology')">
+            <span>⚡ Công Nghệ</span>
+          </button>
           <button class="lb-sub-btn" id="btnLbSubHistory" onclick="filterLbBySubject('history')">
             <span>🏛️ Lịch Sử</span>
           </button>
-          <button class="lb-sub-btn" id="btnLbSubEnglish" onclick="filterLbBySubject('english')">
-            <span>🇬🇧 Tiếng Anh</span>
+          <button class="lb-sub-btn" id="btnLbSubGeography" onclick="filterLbBySubject('geography')">
+            <span>🌍 Địa Lí</span>
           </button>
           <button class="lb-sub-btn" id="btnLbSubPhysics" onclick="filterLbBySubject('physics')">
             <span>⚛️ Vật Lí</span>
           </button>
-          <button class="lb-sub-btn" id="btnLbSubGeography" onclick="filterLbBySubject('geography')">
-            <span>🌍 Địa Lí</span>
+          <button class="lb-sub-btn" id="btnLbSubEnglish" onclick="filterLbBySubject('english')">
+            <span>🇬🇧 Tiếng Anh</span>
           </button>
         </div>
 
@@ -4112,12 +4137,12 @@ const firebaseConfig = {
 
     function onSubjectDropdownChange(subjectVal) {
       try { sound.playClick(); } catch(e) {}
-      if (['math', 'chemistry', 'biology', 'civics', 'literature'].includes(subjectVal)) {
+      if (['math', 'chemistry', 'biology', 'civics', 'literature', 'informatics'].includes(subjectVal)) {
         const names = {
           math: 'Toán Học 12', chemistry: 'Hóa Học 12', biology: 'Sinh Học 12',
-          civics: 'GDCD 12', literature: 'Ngữ Văn 12'
+          civics: 'GDCD 12', literature: 'Ngữ Văn 12', informatics: 'Tin Học 12'
         };
-        alert("📚 Môn " + (names[subjectVal] || subjectVal) + " đang được cập nhật câu hỏi.\n\nHiện tại bạn có thể ôn luyện ngay: Vật Lí 12 (106 câu), Lịch Sử 12 (440 câu), Tiếng Anh 12 (32 câu) hoặc Địa Lí 12 (159 câu) nhé!");
+        alert("📚 Môn " + (names[subjectVal] || subjectVal) + " đang được cập nhật câu hỏi.\n\nHiện tại bạn có thể ôn luyện ngay: Công Nghệ 12 (106 câu), Lịch Sử 12 (440 câu), Địa Lí 12 (159 câu), Vật Lí 12 (106 câu) hoặc Tiếng Anh 12 (32 câu) nhé!");
         // Trả lại môn hiện tại
         document.getElementById('selectSubject').value = currentSubject;
         return;
@@ -6030,14 +6055,16 @@ const firebaseConfig = {
       try { sound.playClick(); } catch(e) {}
       currentLbSubjectFilter = subj;
       const btnAll = document.getElementById('btnLbSubAll');
+      const btnTech = document.getElementById('btnLbSubTechnology');
       const btnHist = document.getElementById('btnLbSubHistory');
       const btnEng = document.getElementById('btnLbSubEnglish');
       const btnPhys = document.getElementById('btnLbSubPhysics');
+      const btnGeo = document.getElementById('btnLbSubGeography');
       if (btnAll) btnAll.classList.toggle('active', subj === 'all');
+      if (btnTech) btnTech.classList.toggle('active', subj === 'technology');
       if (btnHist) btnHist.classList.toggle('active', subj === 'history');
       if (btnEng) btnEng.classList.toggle('active', subj === 'english');
       if (btnPhys) btnPhys.classList.toggle('active', subj === 'physics');
-      const btnGeo = document.getElementById('btnLbSubGeography');
       if (btnGeo) btnGeo.classList.toggle('active', subj === 'geography');
       renderLeaderboard();
     }
@@ -6142,6 +6169,31 @@ const firebaseConfig = {
       return `${dStr} ${tStr}`;
     }
 
+    function getRecordSubjectInfo(item) {
+      if (!item) return { id: 'other', name: 'Môn học', icon: '📚', badgeClass: 'badge-subj-physics' };
+      let subj = item.subject;
+      const tid = String(item.topicId || '');
+      if (!subj) {
+        if (tid.startsWith('cn_')) subj = 'technology';
+        else if (tid.startsWith('phys_')) subj = 'physics';
+        else if (tid.startsWith('geo_')) subj = 'geography';
+        else if (tid.startsWith('eng_')) subj = 'english';
+        else if (item.subjectName === 'Công Nghệ') subj = 'technology';
+        else if (item.subjectName === 'Vật Lí') subj = 'physics';
+        else if (item.subjectName === 'Địa Lí') subj = 'geography';
+        else if (item.subjectName === 'Tiếng Anh') subj = 'english';
+        else subj = 'history';
+      }
+      const map = {
+        technology: { id: 'technology', name: 'Công Nghệ', icon: '⚡', badgeClass: 'badge-subj-technology' },
+        history:    { id: 'history',    name: 'Lịch Sử',   icon: '🏛️', badgeClass: 'badge-subj-history' },
+        geography:  { id: 'geography',  name: 'Địa Lí',    icon: '🌍', badgeClass: 'badge-subj-geography' },
+        physics:    { id: 'physics',    name: 'Vật Lí',    icon: '⚛️', badgeClass: 'badge-subj-physics' },
+        english:    { id: 'english',    name: 'Tiếng Anh', icon: '🇬🇧', badgeClass: 'badge-subj-english' }
+      };
+      return map[subj] || { id: subj || 'other', name: item.subjectName || 'Môn học', icon: '📚', badgeClass: 'badge-subj-physics' };
+    }
+
     function renderLeaderboardRows(list) {
       if (list) currentRawLbList = list;
       renderLeaderboard();
@@ -6155,8 +6207,8 @@ const firebaseConfig = {
       let rawList = currentRawLbList || [];
       const list = rawList.filter(item => {
         if (currentLbSubjectFilter === 'all') return true;
-        const subj = item.subject || (item.topicId && item.topicId.startsWith('eng_') ? 'english' : (item.topicId && item.topicId.startsWith('phys_') ? 'physics' : (item.topicId && item.topicId.startsWith('geo_') ? 'geography' : 'history')));
-        return subj === currentLbSubjectFilter;
+        const subjInfo = getRecordSubjectInfo(item);
+        return subjInfo.id === currentLbSubjectFilter;
       });
       if (list.length === 0) {
         container.innerHTML = '<div style="text-align:center; padding: 40px 10px; color:#94a3b8;">Chưa có ai nộp bài. Hãy là người đầu tiên lên bảng vàng!</div>';
@@ -6184,7 +6236,11 @@ const firebaseConfig = {
             reactions: {},
             likes: 0,
             key: item.key,
-            timestamp: item.timestamp || 0
+            timestamp: item.timestamp || 0,
+            subject: item.subject,
+            subjectName: item.subjectName,
+            topicId: item.topicId,
+            topicTitle: item.topicTitle
           };
         }
         studentMap[studentKey].attempts++;
@@ -6196,11 +6252,19 @@ const firebaseConfig = {
           studentMap[studentKey].bestTime = item.timeSec || 0;
           studentMap[studentKey].key = item.key;
           studentMap[studentKey].timestamp = item.timestamp;
+          studentMap[studentKey].subject = item.subject;
+          studentMap[studentKey].subjectName = item.subjectName;
+          studentMap[studentKey].topicId = item.topicId;
+          studentMap[studentKey].topicTitle = item.topicTitle;
         } else if (sNum === studentMap[studentKey].bestScore) {
           if ((item.timeSec || 0) < studentMap[studentKey].bestTime) {
             studentMap[studentKey].bestTime = item.timeSec || 0;
             studentMap[studentKey].key = item.key;
             studentMap[studentKey].timestamp = item.timestamp;
+            studentMap[studentKey].subject = item.subject;
+            studentMap[studentKey].subjectName = item.subjectName;
+            studentMap[studentKey].topicId = item.topicId;
+            studentMap[studentKey].topicTitle = item.topicTitle;
           }
         }
 
@@ -6313,17 +6377,22 @@ const firebaseConfig = {
           const fbKeyEscaped = item.key ? String(item.key).replace(/'/g, "\\'") : '';
           const recordIdEscaped = String(recordId).replace(/'/g, "\\'");
 
+          const subjInfo = getRecordSubjectInfo(item);
+          const topicLabel = item.topicTitle ? escapeHtml(item.topicTitle) : '';
+
           row.innerHTML = `
             <div class="lb-rank ${rankClass}">${rankBadge}</div>
             <div class="lb-info-block">
               <div class="lb-name-row">
                 <span class="lb-name">${displayName}</span>
                 <span class="lb-class">(${displayClass})</span>
+                <span class="lb-subject-badge ${subjInfo.badgeClass}">${subjInfo.icon} ${subjInfo.name}</span>
               </div>
               <div class="lb-meta-sub">
                 ${attemptBadgeHtml}
                 <span class="time-text">⏱️ ${timeStr}</span>
                 ${item.timestamp ? `<span class="date-badge">🕒 ${formatSubmissionDate(item.timestamp)}</span>` : ''}
+                ${topicLabel ? `<span class="topic-badge" style="color:#94a3b8;font-size:0.75rem;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;vertical-align:middle;" title="${topicLabel}">• ${topicLabel}</span>` : ''}
               </div>
             </div>
             <div class="lb-right-col">
