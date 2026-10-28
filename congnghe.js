@@ -1,198 +1,69 @@
 // =========================================================================
 // DỮ LIỆU CÔNG NGHỆ 12 - PHÂN MÔN CÔNG NGHỆ ĐIỆN - ĐIỆN TỬ (BÀI 2 ĐẾN BÀI 7)
-// BỘ SÁCH KẾT NỐI TRI THỨC VỚI CUỘC SỐNG - TẬP TRUNG CAO ĐỘ VÀO BÀI 3
-// CÔNG THỨC CHUẨN TOÁN HỌC DẠNG PHÂN SỐ (KHÔNG DÙNG DẤU GẠCH CHÉO '/')
+// BỘ SÁCH KẾT NỐI TRI THỨC VỚI CUỘC SỐNG
+// ĐẶC BIỆT TRỌNG TÂM: BÀI 3, BÀI 4 VÀ BÀI 6 (ĐẶC ĐIỂM MẠNG ĐIỆN SX QUY MÔ NHỎ)
+// TOÀN BỘ CÔNG THỨC TOÁN HỌC ĐƯỢC ĐỊNH DẠNG PHÂN SỐ CHUẨN, TUYỆT ĐỐI KHÔNG DÙNG '/'
 // =========================================================================
 
 const CONGNGHE_CATEGORIES = [
   {
     "id": "all",
-    "name": "Tất cả bài học (Bài 2 - 7)",
+    "name": "⚡ Tất cả bài (Bài 3 - 7)",
     "icon": "⚡"
   },
   {
     "id": "bai3",
-    "name": "⭐ BÀI 3 TRỌNG TÂM: Mạch 3 Pha",
+    "name": "🌀 Bài 3: Mạch 3 Pha (Xem kĩ)",
     "icon": "🌀"
   },
   {
-    "id": "bai2",
-    "name": "Bài 2: Ngành nghề kĩ thuật điện",
-    "icon": "👷"
-  },
-  {
     "id": "bai4",
-    "name": "Bài 4: Hệ thống điện quốc gia",
+    "name": "🗼 Bài 4: Hệ thống điện QG (Xem kĩ)",
     "icon": "🗼"
   },
   {
-    "id": "bai5",
-    "name": "Bài 5: Sản xuất điện năng",
-    "icon": "☀️"
-  },
-  {
     "id": "bai6",
-    "name": "Bài 6: Mạng điện sản xuất nhỏ",
+    "name": "🏭 Bài 6: Mạng điện SX nhỏ (Xem kĩ)",
     "icon": "🏭"
   },
   {
+    "id": "bai5",
+    "name": "☀️ Bài 5: Sản xuất điện năng",
+    "icon": "☀️"
+  },
+  {
     "id": "bai7",
-    "name": "Bài 7: Mạng điện hạ áp sinh hoạt",
+    "name": "🏠 Bài 7: Mạng hạ áp sinh hoạt",
     "icon": "🏠"
   },
   {
+    "id": "bai2",
+    "name": "👷 Bài 2: Ngành nghề kĩ thuật điện",
+    "icon": "👷"
+  },
+  {
     "id": "gk1",
-    "name": "Đề thi Giữa Kì 1 (Chuẩn ma trận)",
+    "name": "🎯 Đề Giữa Kì 1 (40 câu chuẩn)",
     "icon": "🎯"
   }
 ];
 
 const CONGNGHE_ALL_QUESTIONS = [
   {
-    "id": 1,
-    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-    "question": "Công việc nào sau đây thuộc nhóm công việc thiết kế điện?",
-    "options": [
-      "A. Lắp đặt đường dây và trạm biến áp ngoài hiện trường.",
-      "B. Nghiên cứu, ứng dụng kiến thức kĩ thuật điện để phân tích, lựa chọn vật liệu và thiết bị điện, lập bản vẽ sơ đồ mạch điện.",
-      "C. Đóng cắt và giám sát các chỉ số hoạt động của lưới điện tại phòng điều độ.",
-      "D. Thay thế dầu bôi trơn và bảo dưỡng định kì máy biến áp."
-    ],
-    "correct": 1,
-    "explain": "Thiết kế điện là việc nghiên cứu, ứng dụng các kiến thức về kĩ thuật điện và phương pháp tính toán để phân tích, thiết kế, lựa chọn vật liệu, thiết bị điện cho các hệ thống và thiết bị điện; tạo ra sản phẩm là bản vẽ sơ đồ mạch điện và tài liệu kĩ thuật."
-  },
-  {
-    "id": 2,
-    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-    "question": "Sản phẩm chính của công việc thiết kế điện là gì?",
-    "options": [
-      "A. Các linh kiện điện tử và bóng đèn LED.",
-      "B. Bản vẽ sơ đồ mạch điện và tài liệu kĩ thuật mô tả hệ thống điện.",
-      "C. Hệ thống cột điện và đường dây truyền tải điện.",
-      "D. Điện năng cung cấp cho các hộ gia đình."
-    ],
-    "correct": 1,
-    "explain": "Theo SGK Công nghệ 12 (KNTT trang 11), sản phẩm của công việc thiết kế điện là các bản vẽ sơ đồ mạch điện và các tài liệu kĩ thuật mô tả hệ thống điện."
-  },
-  {
-    "id": 3,
-    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-    "question": "Vị trí kĩ sư thiết kế điện đòi hỏi người lao động phải có trình độ đào tạo tối thiểu là",
-    "options": [
-      "A. sơ cấp nghề điện.",
-      "B. trung cấp nghề kĩ thuật điện.",
-      "C. cao đẳng nghề kĩ thuật điện.",
-      "D. đại học ngành kĩ thuật điện."
-    ],
-    "correct": 3,
-    "explain": "Người làm nghề thiết kế điện đối với vị trí kĩ sư phải có trình độ đại học ngành kĩ thuật điện (hoặc các chuyên ngành gần tương đương)."
-  },
-  {
-    "id": 4,
-    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-    "question": "Trong ngành sản xuất, chế tạo thiết bị điện, công việc nào sau đây do thợ sản xuất, chế tạo thực hiện?",
-    "options": [
-      "A. Quản lí chất lượng và kiểm soát quy trình kiểm định xuất xưởng.",
-      "B. Tổ chức vận hành và tối ưu hóa dây chuyền công nghệ sản xuất.",
-      "C. Thao tác các công việc cụ thể như kiểm tra linh kiện đầu vào, lắp ráp, hàn linh kiện, đóng gói bao bì sản phẩm.",
-      "D. Nghiên cứu công nghệ vật liệu mới cho thiết bị điện."
-    ],
-    "correct": 2,
-    "explain": "Thợ sản xuất, chế tạo chịu trách nhiệm thao tác các công việc cụ thể trong dây chuyền như: kiểm tra linh kiện đầu vào, lắp ráp và hàn linh kiện, đóng gói bao bì sản phẩm đạt chất lượng (SGK trang 11)."
-  },
-  {
-    "id": 5,
-    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-    "question": "Mô tả nào sau đây thể hiện đúng nhất công việc của người làm nghề lắp đặt điện?",
-    "options": [
-      "A. Theo dõi các thông số đồng hồ đo tại phòng điều khiển trung tâm nhà máy điện.",
-      "B. Thi công, lắp đặt, kết nối đường dây điện và thiết bị điện theo hồ sơ thiết kế, quy chuẩn kĩ thuật và an toàn điện.",
-      "C. Tính toán mô phỏng mạch điện tử bằng phần mềm chuyên dụng trên máy tính tính toán.",
-      "D. Kiểm tra định kì và vệ sinh, thay dầu máy biến thế đang vận hành."
-    ],
-    "correct": 1,
-    "explain": "Lắp đặt điện là việc thi công, lắp đặt, kết nối đường dây điện và thiết bị điện cho các hệ thống điện, công trình điện theo hồ sơ thiết kế, quy chuẩn kĩ thuật và an toàn điện (SGK trang 12)."
-  },
-  {
-    "id": 6,
-    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-    "question": "Mục đích chính của công việc vận hành điện là gì?",
-    "options": [
-      "A. Xây dựng mới hoàn toàn các cột tháp truyền tải điện 500 kV.",
-      "B. Duy trì chế độ làm việc bình thường của hệ thống điện, đáp ứng các yêu cầu chất lượng, độ tin cậy và tính kinh tế.",
-      "C. Thay thế toàn bộ dây dẫn điện trong khu dân cư sau mỗi tháng.",
-      "D. Thiết kế các linh kiện vi mạch điện tử siêu nhỏ."
-    ],
-    "correct": 1,
-    "explain": "Vận hành thiết bị điện là các hoạt động nhằm duy trì chế độ làm việc bình thường của hệ thống điện đáp ứng các yêu cầu chất lượng, độ tin cậy và kinh tế (SGK trang 12)."
-  },
-  {
-    "id": 7,
-    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-    "question": "Phát biểu nào sau đây phân biệt chính xác giữa hoạt động 'bảo dưỡng điện' và 'sửa chữa điện'?",
-    "options": [
-      "A. Bảo dưỡng tiến hành khi có sự cố hư hỏng, còn sửa chữa tiến hành định kì thường xuyên.",
-      "B. Bảo dưỡng là hoạt động thường kì nhằm duy trì hệ thống hoạt động bình thường và phòng ngừa hư hỏng; sửa chữa là hoạt động phục hồi khi xảy ra sự cố.",
-      "C. Bảo dưỡng do thợ điện làm, sửa chữa chỉ do kĩ sư điện làm.",
-      "D. Bảo dưỡng chỉ áp dụng cho đồ gia dụng, sửa chữa áp dụng cho lưới điện quốc gia."
-    ],
-    "correct": 1,
-    "explain": "Bảo dưỡng điện là hoạt động thường kì nhằm duy trì hệ thống điện, thiết bị điện hoạt động bình thường, tránh hỏng hóc. Sửa chữa điện là hoạt động thực hiện khi có sự cố nhằm phục hồi hệ thống trở lại trạng thái hoạt động bình thường (SGK trang 13)."
-  },
-  {
-    "id": 8,
-    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-    "question": "Vị trí việc làm kĩ sư thi công điện trong nhóm công việc lắp đặt điện có nhiệm vụ chính là",
-    "options": [
-      "A. trực tiếp leo trèo lắp dây dẫn trên cột điện cao áp.",
-      "B. chỉ huy và giám sát thi công lắp đặt điện theo hồ sơ thiết kế.",
-      "C. sản xuất vỏ tủ điện tại phân xưởng gia công cơ khí.",
-      "D. sửa chữa các thiết bị gia dụng trong hộ gia đình."
-    ],
-    "correct": 1,
-    "explain": "Trong nhóm công việc lắp đặt điện: kĩ sư thi công điện có nhiệm vụ chỉ huy và giám sát thi công lắp đặt điện; kĩ thuật viên hỗ trợ thi công và lắp đặt; thợ điện trực tiếp thực hiện lắp đặt (SGK trang 12)."
-  },
-  {
-    "id": 9,
-    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-    "question": "Nơi làm việc nào sau đây là môi trường làm việc đặc trưng của nghề vận hành điện?",
-    "options": [
-      "A. Phòng thiết kế đồ họa của công ty quảng cáo truyền thông.",
-      "B. Phòng điều hành, quản lí điện của công ty điện lực, trạm biến áp, nhà máy điện.",
-      "C. Xưởng dệt may xuất khẩu.",
-      "D. Cửa hàng kinh doanh thiết bị văn phòng."
-    ],
-    "correct": 1,
-    "explain": "Người làm nghề vận hành điện thường làm việc tại phòng điều hành, quản lí điện của các công ty điện lực, công ty chiếu sáng đô thị, bộ phận quản lí hệ thống điện trong tòa nhà, nhà máy, cơ quan (SGK trang 12)."
-  },
-  {
-    "id": 10,
-    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-    "question": "Năng lực nào dưới đây đặc biệt quan trọng đối với người làm nghề bảo dưỡng và sửa chữa điện?",
-    "options": [
-      "A. Năng khiếu hội họa và sáng tác văn học.",
-      "B. Khả năng tư duy logic, chẩn đoán, phát hiện lỗi hư hỏng và sử dụng thành thạo dụng cụ đo kiểm tra điện an toàn.",
-      "C. Kĩ năng tiếp thị và bán hàng đa kênh.",
-      "D. Kĩ năng đàm phán hợp đồng kinh tế quốc tế."
-    ],
-    "correct": 1,
-    "explain": "Người làm nghề bảo dưỡng và sửa chữa điện cần có tư duy logic, khả năng suy luận, chẩn đoán lỗi; kĩ năng thành thạo trong sử dụng các thiết bị đo, thiết bị chẩn đoán lỗi và tuân thủ tuyệt đối quy chuẩn kĩ thuật, an toàn điện (SGK trang 13)."
-  },
-  {
-    "id": 11,
+    "id": "cn_b3_01",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Dòng điện xoay chiều một pha có cường độ tức thời i = Im.sin(ωt + ψ). Đại lượng Im được gọi là",
+    "question": "Dòng điện xoay chiều một pha có cường độ tức thời i = Im.sin(ωt + ψ). Đại lượng Im được gọi là gì?",
     "options": [
-      "A. giá trị hiệu dụng của dòng điện.",
-      "B. giá trị cực đại (biên độ) của dòng điện.",
-      "C. tần số góc của dòng điện.",
-      "D. pha ban đầu của dòng điện."
+      "A. Giá trị hiệu dụng của dòng điện.",
+      "B. Giá trị cực đại (biên độ) của dòng điện.",
+      "C. Tần số góc của dòng điện.",
+      "D. Pha ban đầu của dòng điện."
     ],
     "correct": 1,
-    "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng: I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> (SGK Công nghệ 12 trang 18)."
+    "explain": "Trong biểu thức i = Im.sin(ωt + ψ), đại lượng Im là cường độ dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng I: I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> (SGK Công nghệ 12 trang 18)."
   },
   {
-    "id": 12,
+    "id": "cn_b3_02",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
     "question": "Một dòng điện xoay chiều có biểu thức i = 4√2.sin(100πt) (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
     "options": [
@@ -202,12 +73,12 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. I = 2√2 A; f = 50 Hz"
     ],
     "correct": 0,
-    "explain": "Từ biểu thức: Im = 4√2 A => I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = 4 A. Tần số góc ω = 100π rad/s => Tần số f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz."
+    "explain": "Cường độ cực đại Im = 4√2 A nên giá trị hiệu dụng I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">4√2</span><span class=\"math-frac-bottom\">√2</span></span> = 4 A. Tần số góc ω = 100π rad/s nên tần số f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz."
   },
   {
-    "id": 13,
+    "id": "cn_b3_03",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Công thức tính cảm kháng XL của cuộn cảm thuần có độ tự cảm L và dung kháng XC của tụ điện có điện dung C đối với dòng xoay chiều tần số f là:",
+    "question": "Công thức tính cảm kháng XL của cuộn cảm thuần và dung kháng XC của tụ điện đối với dòng điện xoay chiều tần số f là:",
     "options": [
       "A. XL = 2πfL và XC = 2πfC",
       "B. XL = 2πfL và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
@@ -215,12 +86,12 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span>"
     ],
     "correct": 1,
-    "explain": "Cảm kháng cuộn cảm: XL = ωL = 2πfL; Dung kháng tụ điện: XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span> (SGK Công nghệ 12 trang 18)."
+    "explain": "Cảm kháng cuộn cảm thuần: XL = ωL = 2πfL (đơn vị Ω); Dung kháng tụ điện: XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span> (đơn vị Ω) (SGK Công nghệ 12 trang 18)."
   },
   {
-    "id": 14,
+    "id": "cn_b3_04",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Tổng trở z_t của tải điện một pha gồm điện trở R nối tiếp với cuộn cảm (XL) và tụ điện (XC) được tính theo công thức nào?",
+    "question": "Tổng trở z_t của tải điện một pha gồm điện trở R mắc nối tiếp với cuộn cảm (XL) và tụ điện (XC) được tính theo công thức nào?",
     "options": [
       "A. z_t = R + XL - XC",
       "B. z_t = √[R² + (XL - XC)²]",
@@ -228,194 +99,233 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. z_t = √[R² - (XL - XC)²]"
     ],
     "correct": 1,
-    "explain": "Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) với X = XL - XC, do đó z_t = √[R² + (XL - XC)²], và tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
+    "explain": "Tổng trở của tải R-L-C nối tiếp đặc trưng bởi độ lớn: z_t = √(R² + X²) với điện kháng X = XL - XC, do đó z_t = √[R² + (XL - XC)²]. Hệ số góc tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
   },
   {
-    "id": 15,
+    "id": "cn_b3_05",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Hiện tượng cộng hưởng điện trong mạch R-L-C nối tiếp xảy ra khi nào?",
+    "question": "Hiện tượng cộng hưởng điện trong đoạn mạch R-L-C nối tiếp xảy ra khi nào?",
     "options": [
       "A. Khi R = XL",
       "B. Khi cảm kháng bằng dung kháng (XL = XC)",
-      "C. Khi tần số dòng điện f = 0",
-      "D. Khi tổng trở đạt giá trị vô cùng lớn"
+      "C. Khi tần số f = 0",
+      "D. Khi tổng trở đạt giá trị lớn vô cùng"
     ],
     "correct": 1,
-    "explain": "Hiện tượng cộng hưởng xảy ra khi XL = XC (tức là 2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>). Khi đó điện kháng X = 0, tổng trở mạch đạt giá trị nhỏ nhất z_min = R và dòng điện trong mạch đạt giá trị cực đại."
+    "explain": "Cộng hưởng điện xảy ra khi cảm kháng bằng dung kháng XL = XC (tức 2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>), khi đó điện kháng triệt tiêu X = 0, tổng trở z_t đạt cực tiểu z_t = R và dòng điện trong mạch đạt cực đại I = <span class=\"math-frac\"><span class=\"math-frac-top\">U</span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
   },
   {
-    "id": 16,
+    "id": "cn_b3_06",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Dòng điện xoay chiều ba pha là hệ thống ba dòng điện xoay chiều có đặc điểm nào sau đây?",
+    "question": "Hệ thống dòng điện xoay chiều ba pha đối xứng là tập hợp của ba dòng điện xoay chiều hình sin có đặc điểm gì?",
     "options": [
-      "A. Cùng tần số, cùng biên độ, cùng pha với nhau.",
-      "B. Cùng tần số, cùng biên độ nhưng lệch pha nhau góc 2π/3 (120°) lần lượt giữa các pha.",
-      "C. Tần số khác nhau, cùng biên độ, lệch pha nhau góc 90°.",
-      "D. Cùng pha ban đầu nhưng tần số gấp ba lần nhau."
+      "A. Cùng biên độ, cùng tần số và cùng pha với nhau.",
+      "B. Cùng tần số, cùng biên độ nhưng lệch pha nhau góc <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> (120°) lần lượt giữa các pha.",
+      "C. Khác tần số, cùng biên độ và lệch pha nhau 90°.",
+      "D. Cùng biên độ nhưng tần số pha sau gấp đôi pha trước."
     ],
     "correct": 1,
-    "explain": "Định nghĩa chuẩn SGK trang 18: Dòng điện xoay chiều ba pha sinh ra trong mạch điện ba pha là hệ thống ba dòng điện xoay chiều có cùng tần số, cùng biên độ và có góc pha lệch nhau 120° (2π/3 rad) lần lượt giữa các pha."
+    "explain": "Theo định nghĩa SGK trang 18: Dòng điện ba pha đối xứng gồm 3 dòng điện xoay chiều hình sin có cùng tần số, cùng biên độ và lệch pha nhau góc <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> rad (tức 120°) lần lượt giữa các pha."
   },
   {
-    "id": 17,
+    "id": "cn_b3_07",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Cấu tạo phần tĩnh (Stator) của máy phát điện xoay chiều ba pha gồm",
+    "question": "Cấu tạo phần tĩnh (stator) của máy phát điện xoay chiều ba pha gồm:",
     "options": [
-      "A. một nam châm vĩnh cửu hình chữ U.",
-      "B. lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ giống hệt nhau về số vòng và tiết diện, đặt lệch nhau góc 120° trên đường tròn.",
-      "C. hai cuộn dây đặt vuông góc nhau.",
-      "D. vành trượt và chổi than tiếp điện."
+      "A. Một nam châm điện có hai cực Bắc - Nam quay quanh trục.",
+      "B. Lõi thép có các rãnh đặt ba cuộn dây giống hệt nhau về số vòng và kích thước, bố trí lệch nhau 120° trên đường tròn stator.",
+      "C. Bộ góp và chổi than tiếp điện.",
+      "D. Ba cặp cực nam châm vĩnh cửu quay tròn liên tục."
     ],
     "correct": 1,
-    "explain": "Phần tĩnh (stator) là lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ có cùng số vòng và kích thước dây, đặt lệch nhau góc 120° trên không gian (SGK trang 19)."
+    "explain": "Stator (phần tĩnh) là lõi thép hình trụ có rãnh đặt ba cuộn dây AX (pha A), BY (pha B), CZ (pha C) có số vòng và kích thước hoàn toàn giống nhau, bố trí lệch nhau góc 120° trên vòng tròn stator (SGK trang 18)."
   },
   {
-    "id": 18,
+    "id": "cn_b3_08",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Trong máy phát điện xoay chiều ba pha, kí hiệu các đầu cuộn dây pha A, pha B, pha C lần lượt là",
+    "question": "Nếu chọn suất điện động pha A làm gốc: eA = Em.sin(ωt), thì biểu thức suất điện động pha B và pha C của máy phát ba pha là",
     "options": [
-      "A. Đầu đầu: A, B, C; Đầu cuối tương ứng: X, Y, Z.",
-      "B. Đầu đầu: X, Y, Z; Đầu cuối: A, B, C.",
-      "C. Đầu đầu: U, V, W; Đầu cuối: 1, 2, 3.",
-      "D. Đầu đầu: L1, L2, L3; Đầu cuối: N."
-    ],
-    "correct": 0,
-    "explain": "Theo quy ước SGK trang 19: Cuộn thứ nhất AX (pha A), cuộn thứ hai BY (pha B), cuộn thứ ba CZ (pha C). A, B, C là các điểm đầu; X, Y, Z là các điểm cuối của cuộn dây."
-  },
-  {
-    "id": 19,
-    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Nếu chọn suất điện động pha A làm gốc eA = Em.sin(ωt), thì biểu thức suất điện động pha B (eB) và pha C (eC) lần lượt là",
-    "options": [
-      "A. eB = Em.sin(ωt - π/2) và eC = Em.sin(ωt + π/2)",
-      "B. eB = Em.sin(ωt - 2π/3) và eC = Em.sin(ωt + 2π/3) [hoặc eC = Em.sin(ωt - 4π/3)]",
-      "C. eB = Em.sin(ωt - π) và eC = Em.sin(ωt + π)",
-      "D. eB = Em.sin(2ωt) và eC = Em.sin(3ωt)"
+      "A. eB = Em.sin(ωt - π) và eC = Em.sin(ωt + π)",
+      "B. eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) và eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) [hoặc eC = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">4π</span><span class=\"math-frac-bottom\">3</span></span>)]",
+      "C. eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>) và eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>)",
+      "D. eB = Em.cos(ωt) và eC = Em.tan(ωt)"
     ],
     "correct": 1,
-    "explain": "Ba suất điện động cùng biên độ, cùng tần số và lần lượt lệch pha nhau góc 2π/3 rad (SGK trang 19, Luyện tập 1 trang 21)."
+    "explain": "Ba suất điện động cùng tần số, cùng biên độ và lệch pha nhau <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> rad: eA = Em.sin(ωt); eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>); eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) (SGK trang 18)."
   },
   {
-    "id": 20,
+    "id": "cn_b3_09",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Cách nối nguồn điện hoặc tải ba pha hình sao (Y) có đặc điểm gì?",
+    "question": "Trong cách nối nguồn hoặc tải ba pha hình sao (Y), điểm trung tính O được tạo thành bằng cách nào?",
     "options": [
-      "A. Ba điểm cuối X, Y, Z của ba pha được nối chung với nhau tạo thành điểm trung tính (O).",
-      "B. Điểm đầu của pha này nối với điểm cuối của pha kia tạo mạch vòng kín.",
-      "C. Ba điểm đầu A, B, C chập lại với nhau, ba điểm cuối nối ra dây pha.",
-      "D. Mỗi cuộn dây nối với một cặp dây dẫn riêng biệt không nối chung điểm nào."
-    ],
-    "correct": 0,
-    "explain": "Nối hình sao (Y): Ba điểm cuối X, Y, Z của các pha được nối chung với nhau tạo thành điểm trung tính O (SGK trang 19)."
-  },
-  {
-    "id": 21,
-    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Cách nối nguồn điện hoặc tải ba pha hình tam giác (Δ) có đặc điểm gì?",
-    "options": [
-      "A. Ba điểm cuối X, Y, Z nối chụm lại thành điểm trung tính.",
-      "B. Điểm đầu của pha này được nối với điểm cuối của pha kia (A nối Z, B nối X, C nối Y) tạo thành hình tam giác khép kín.",
-      "C. Ba cuộn dây mắc song song với nhau.",
-      "D. Dùng dây trung tính nối qua tâm hình tam giác."
+      "A. Nối ba điểm đầu A, B, C lại với nhau.",
+      "B. Nối ba điểm cuối X, Y, Z của ba pha lại với nhau.",
+      "C. Nối đầu pha này với cuối pha kia: A nối Z, B nối X, C nối Y.",
+      "D. Nối dây pha A trực tiếp với cọc tiếp địa bằng đồng."
     ],
     "correct": 1,
-    "explain": "Nối hình tam giác (Δ): Điểm đầu của pha này được nối với điểm cuối của pha kia tạo thành hình tam giác khép kín (SGK trang 19)."
+    "explain": "Cách nối hình sao (Y): Ba điểm cuối X, Y, Z của các cuộn dây pha được nối chung với nhau tạo thành điểm trung tính O. Ba điểm đầu A, B, C đưa ra ba đường dây pha (SGK trang 19)."
   },
   {
-    "id": 22,
+    "id": "cn_b3_10",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Dây trung tính trong mạng điện ba pha bốn dây có tác dụng quan trọng nhất là gì?",
+    "question": "Mạch điện ba pha bốn dây gồm các dây dẫn nào sau đây?",
     "options": [
-      "A. Làm tăng công suất phát của máy phát điện lên gấp đôi.",
-      "B. Giữ cho điện áp trên các pha tải luôn ổn định ở mức điện áp pha (Up), không bị thay đổi ngay cả khi phụ tải các pha không đối xứng.",
-      "C. Triệt tiêu toàn bộ dòng điện chạy trong ba dây pha.",
-      "D. Làm giảm điện trở của các dây dẫn truyền tải."
+      "A. Bốn dây pha A, B, C, D.",
+      "B. Ba dây pha (A, B, C) và một dây trung tính (dây trung hòa O-O').",
+      "C. Hai dây pha và hai dây tiếp địa.",
+      "D. Ba dây trung tính và một dây pha mang điện."
     ],
     "correct": 1,
-    "explain": "Dây trung tính nối giữa điểm trung tính của nguồn và tải có tác dụng cân bằng và duy trì điện áp pha trên mỗi pha tải luôn bằng điện áp pha của nguồn, bảo vệ các thiết bị điện 1 pha hoạt động bình thường kể cả khi tải các pha không đều."
+    "explain": "Mạch điện ba pha bốn dây gồm ba dây dẫn nối từ các đầu pha A, B, C (gọi là ba dây pha) và một dây dẫn nối từ điểm trung tính O của nguồn đến điểm trung tính O' của tải (gọi là dây trung tính hay dây trung hòa) (SGK trang 19)."
   },
   {
-    "id": 23,
+    "id": "cn_b3_11",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Trong mạch điện ba pha bốn dây đối xứng, cường độ dòng điện chạy trong dây trung tính (i0) có giá trị bằng",
+    "question": "Trong cách nối tải ba pha hình tam giác (Δ), các pha được liên kết với nhau theo nguyên tắc nào?",
     "options": [
-      "A. i0 = iA + iB + iC = 0",
-      "B. i0 = 3.iA",
-      "C. i0 = √3.iA",
-      "D. i0 = <span class=\"math-frac\"><span class=\"math-frac-top\">i<sub>A</sub></span><span class=\"math-frac-bottom\">√3</span></span>"
-    ],
-    "correct": 0,
-    "explain": "Khi tải đối xứng: iA + iB + iC = 0 tại mọi thời điểm, do đó dòng điện tức thời và hiệu dụng chạy trong dây trung tính bằng 0 (i0 = 0)."
-  },
-  {
-    "id": 24,
-    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Phát biểu nào sau đây định nghĩa chính xác về điện áp pha (Up) và điện áp dây (Ud)?",
-    "options": [
-      "A. Up là điện áp giữa hai dây pha; Ud là điện áp giữa dây pha và dây trung tính.",
-      "B. Up là điện áp giữa một dây pha và dây trung tính (hoặc giữa hai đầu một pha); Ud là điện áp giữa hai dây pha.",
-      "C. Up và Ud luôn có giá trị bằng nhau trong mọi trường hợp.",
-      "D. Ud là điện áp chịu đựng của dây cách điện; Up là điện áp sinh công."
-    ],
-    "correct": 1,
-    "explain": "Định nghĩa chuẩn SGK trang 20: Dòng điện chạy trong dây pha gọi là Id; dòng điện chạy trong mỗi pha gọi là Ip. Điện áp giữa hai dây pha gọi là Ud; điện áp giữa dây pha và dây trung tính (hoặc giữa điểm đầu và cuối mỗi pha) gọi là Up."
-  },
-  {
-    "id": 25,
-    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Mạch điện ba pha được gọi là ĐỐI XỨNG khi thỏa mãn điều kiện nào sau đây?",
-    "options": [
-      "A. Chỉ cần nguồn điện ba pha đối xứng.",
-      "B. Chỉ cần tổng trở ba pha tải bằng nhau.",
-      "C. Có nguồn điện ba pha đối xứng và tải ba pha đối xứng (ZA = ZB = ZC).",
-      "D. Cả nguồn và tải đều nối hình tam giác."
+      "A. Ba đầu pha A, B, C nối chung với nhau.",
+      "B. Ba cuối pha X, Y, Z nối chung với nhau.",
+      "C. Điểm đầu pha này nối với điểm cuối pha kia khép kín: A nối Z, B nối X, C nối Y.",
+      "D. Nối song song cả ba cuộn dây vào một nguồn một pha."
     ],
     "correct": 2,
-    "explain": "Mạch điện ba pha được gọi là đối xứng nếu có nguồn đối xứng (cùng biên độ, tần số, lệch pha 120°) VÀ tải đối xứng (ZA = ZB = ZC) (SGK trang 20)."
+    "explain": "Nối hình tam giác (Δ): Điểm đầu của pha này nối với điểm cuối của pha kia theo thứ tự vòng tròn khép kín: A nối với Z, B nối với X, C nối với Y (SGK trang 19)."
   },
   {
-    "id": 26,
+    "id": "cn_b3_12",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Trong mạch ba pha đối xứng khi tải nối hình sao (Y), mối quan hệ giữa các đại lượng là:",
+    "question": "Đại lượng 'Điện áp pha' (kí hiệu Up) trong mạch ba pha được định nghĩa là",
     "options": [
-      "A. Ud = Up và Id = √3.Ip",
-      "B. Ud = √3.Up và Id = Ip",
-      "C. Ud = √3.Up và Id = √3.Ip",
-      "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span> và Id = Ip"
+      "A. điện áp giữa hai dây pha bất kì trong ba dây pha A, B, C.",
+      "B. điện áp đo giữa một dây pha và dây trung tính (hoặc giữa điểm đầu và điểm cuối của một pha).",
+      "C. điện áp giữa dây trung tính và mặt đất.",
+      "D. điện áp một chiều nạp vào ắc quy dự phòng."
     ],
     "correct": 1,
-    "explain": "Khi tải nối hình sao (Y): Dòng điện dây bằng dòng điện pha (Id = Ip), Điện áp dây bằng căn 3 lần điện áp pha (Ud = √3.Up) (SGK trang 20)."
+    "explain": "Điện áp pha (Up): Là điện áp giữa điểm đầu và điểm cuối của một pha nguồn hoặc tải, tương đương điện áp đo giữa một dây pha và dây trung tính (như UA, UB, UC) (SGK trang 20)."
   },
   {
-    "id": 27,
+    "id": "cn_b3_13",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Trong mạch ba pha đối xứng khi tải nối hình tam giác (Δ), mối quan hệ giữa các đại lượng là:",
+    "question": "Đại lượng 'Điện áp dây' (kí hiệu Ud) trong mạch điện ba pha được định nghĩa là",
     "options": [
-      "A. Ud = Up và Id = √3.Ip",
-      "B. Ud = √3.Up và Id = Ip",
-      "C. Ud = Up và Id = Ip",
-      "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span> và Id = √3.Ip"
+      "A. điện áp đo giữa dây pha và dây trung tính.",
+      "B. điện áp giữa hai dây pha bất kì (UAB, UBC, UCA).",
+      "C. điện áp rơi trên một bóng đèn chiếu sáng một pha.",
+      "D. điện áp danh định của lưới điện siêu cao áp."
+    ],
+    "correct": 1,
+    "explain": "Điện áp dây (Ud): Là điện áp đo giữa hai dây pha bất kì với nhau, ví dụ: UAB là điện áp giữa dây A và B, UBC giữa B và C, UCA giữa C và A (SGK trang 20)."
+  },
+  {
+    "id": "cn_b3_14",
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Khi nguồn và tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa điện áp dây Ud và điện áp pha Up là:",
+    "options": [
+      "A. Ud = Up",
+      "B. Ud = √3.Up ≈ 1,732.Up",
+      "C. Ud = 3.Up",
+      "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>"
+    ],
+    "correct": 1,
+    "explain": "Mạch đối xứng nối hình sao (Y): Mối liên hệ điện áp là Ud = √3.Up ≈ 1,732.Up, suy ra Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span>. Ví dụ mạng hạ áp có Up = 220 V thì Ud = √3 × 220 ≈ 380 V (SGK trang 20)."
+  },
+  {
+    "id": "cn_b3_15",
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Khi tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa cường độ dòng điện dây Id và dòng điện pha Ip là:",
+    "options": [
+      "A. Id = Ip",
+      "B. Id = √3.Ip",
+      "C. Id = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
+      "D. Id = 3.Ip"
     ],
     "correct": 0,
-    "explain": "Khi tải nối hình tam giác (Δ): Điện áp dây bằng điện áp pha (Ud = Up), Dòng điện dây bằng căn 3 lần dòng điện pha (Id = √3.Ip) (SGK trang 21)."
+    "explain": "Khi tải nối hình sao (Y), dòng điện từ dây pha chạy thẳng trực tiếp vào cuộn dây pha của tải không bị phân nhánh, do đó dòng điện dây bằng dòng điện pha: Id = Ip (SGK trang 20)."
   },
   {
-    "id": 28,
+    "id": "cn_b3_16",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Công suất tác dụng toàn phần của mạch điện ba pha đối xứng được tính theo công thức nào sau đây?",
+    "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa điện áp dây Ud và điện áp pha Up là:",
     "options": [
-      "A. P = 3.Ud.Id.cosφ",
-      "B. P = √3.Ud.Id.cosφ = 3.Up.Ip.cosφ",
-      "C. P = Ud.Id.cosφ",
-      "D. P = √3.Up.Ip.cosφ"
+      "A. Ud = Up",
+      "B. Ud = √3.Up",
+      "C. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
+      "D. Ud = 2.Up"
+    ],
+    "correct": 0,
+    "explain": "Khi tải nối hình tam giác (Δ), mỗi pha của tải được mắc trực tiếp giữa hai dây pha của nguồn điện, vì vậy điện áp pha của tải bằng chính điện áp dây của nguồn: Ud = Up (SGK trang 20)."
+  },
+  {
+    "id": "cn_b3_17",
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa dòng điện dây Id và dòng điện pha Ip là:",
+    "options": [
+      "A. Id = Ip",
+      "B. Id = √3.Ip ≈ 1,732.Ip",
+      "C. Id = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
+      "D. Id = 3.Ip"
     ],
     "correct": 1,
-    "explain": "Công suất tác dụng ba pha đối xứng bằng 3 lần công suất một pha: P = 3.P1p = 3.Up.Ip.cosφ. Dù nối sao hay tam giác, thay Ud và Id vào đều rút ra công thức chung: P = √3.Ud.Id.cosφ."
+    "explain": "Khi tải nối tam giác (Δ) đối xứng, dòng điện dây tại các nút rẽ nhánh thành hai dòng điện pha, biểu thức vectơ dòng điện cho ta: Id = √3.Ip ≈ 1,732.Ip, suy ra Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> (SGK trang 20)."
   },
   {
-    "id": 29,
+    "id": "cn_b3_18",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Một nguồn điện xoay chiều ba pha đối xứng có điện áp pha Up = 220 V. Điện áp dây Ud của nguồn điện này có giá trị xấp xỉ bằng bao nhiêu?",
+    "question": "Ưu điểm vượt trội của mạch điện ba pha bốn dây (nối hình sao có dây trung tính) so với mạch ba dây là gì?",
+    "options": [
+      "A. Tạo ra được hai cấp điện áp khác nhau (điện áp dây Ud và điện áp pha Up), thuận tiện cấp điện đồng thời cho cả động cơ ba pha và thiết bị sinh hoạt một pha.",
+      "B. Không bao giờ xảy ra sự cố chập mạch hay quá tải.",
+      "C. Tiết kiệm 100% lượng dây nhôm và đồng truyền tải.",
+      "D. Điện áp trên đường dây tự động tăng lên gấp mười lần."
+    ],
+    "correct": 0,
+    "explain": "Mạch ba pha 4 dây cung cấp được hai cấp điện áp tiện lợi: điện áp dây 380 V (dùng cho động cơ ba pha công nghiệp) và điện áp pha 220 V (dùng cho các thiết bị sinh hoạt một pha gia đình) (SGK trang 20)."
+  },
+  {
+    "id": "cn_b3_19",
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Khi phụ tải ba pha hoàn toàn ĐỐI XỨNG, cường độ dòng điện chạy trong dây trung tính Io có giá trị bằng bao nhiêu?",
+    "options": [
+      "A. Bằng 3 lần dòng điện pha (Io = 3.Ip).",
+      "B. Bằng không (Io = 0).",
+      "C. Bằng dòng điện cực đại Im.",
+      "D. Bằng dòng điện dây Id."
+    ],
+    "correct": 1,
+    "explain": "Trong tải ba pha đối xứng, tổng vectơ của ba dòng điện pha bằng 0: iA + iB + iC = 0, do đó dòng điện hiệu dụng trong dây trung tính Io = 0 (SGK trang 20)."
+  },
+  {
+    "id": "cn_b3_20",
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Vì sao trên dây trung tính của mạng điện ba pha bốn dây TUYỆT ĐỐI KHÔNG ĐƯỢC đặt cầu chì hay công tắc đơn ngắt mạch?",
+    "options": [
+      "A. Vì dây trung tính không có dòng điện chạy qua nên cầu chì không thể đứt.",
+      "B. Vì nếu cầu chì trên dây trung tính bị đứt khi tải không đối xứng, điện áp pha các tải sẽ bị lệch nghiêm trọng, làm thiết bị điện pha non tải chịu điện áp cao dẫn đến cháy nổ.",
+      "C. Vì giá thành của cầu chì dây trung tính quá đắt đỏ.",
+      "D. Vì dây trung tính được chôn dưới lòng đất nên không chạm tới được."
+    ],
+    "correct": 1,
+    "explain": "Nếu đứt dây trung tính khi phụ tải ba pha không đối xứng, điểm trung tính O' của tải sẽ bị dịch chuyển, dẫn đến điện áp giữa các pha tải bị mất cân bằng trầm trọng: pha nào có tổng trở lớn sẽ chịu điện áp vượt quá 220 V gây cháy thiết bị (SGK trang 20)."
+  },
+  {
+    "id": "cn_b3_21",
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Công thức tính công suất tác dụng toàn phần P của mạch điện xoay chiều ba pha đối xứng là:",
+    "options": [
+      "A. P = Ud.Id.cos φ",
+      "B. P = √3.Ud.Id.cos φ = 3.Up.Ip.cos φ",
+      "C. P = 3.Ud.Id.cos φ",
+      "D. P = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub>.I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span>.cos φ"
+    ],
+    "correct": 1,
+    "explain": "Công suất tác dụng ba pha đối xứng tính theo thông số dây: P = √3.Ud.Id.cos φ; hoặc tính theo thông số pha: P = 3.Up.Ip.cos φ (trong đó cos φ là hệ số công suất của mỗi pha tải) (SGK trang 20)."
+  },
+  {
+    "id": "cn_b3_22",
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Một nguồn điện ba pha đối xứng có điện áp pha Up = 220 V. Giá trị điện áp dây Ud xấp xỉ bằng bao nhiêu vôn?",
     "options": [
       "A. 127 V",
       "B. 220 V",
@@ -423,698 +333,12 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. 440 V"
     ],
     "correct": 2,
-    "explain": "Ta có: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế quy chuẩn là 380 V)."
+    "explain": "Nguồn điện ba pha đối xứng nối hình sao: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế mạng điện hạ áp tiêu chuẩn Việt Nam quy ước là 380 V)."
   },
   {
-    "id": 30,
+    "id": "cn_b3_23",
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Cho mạch điện ba pha tải đối xứng nối theo hình sao (Y) trong đó điện áp pha Up = 220 V và tải ba pha gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp dây Ud lần lượt là",
-    "options": [
-      "A. Ip = 4,4 A; Id = 4,4 A; Ud ≈ 381 V",
-      "B. Ip = 7,6 A; Id = 4,4 A; Ud = 220 V",
-      "C. Ip = 4,4 A; Id = 7,6 A; Ud = 380 V",
-      "D. Ip = 2,2 A; Id = 2,2 A; Ud = 127 V"
-    ],
-    "correct": 0,
-    "explain": "Vì tải nối hình sao: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">50</span></span> = 4,4 A. Dòng điện dây: Id = Ip = 4,4 A. Điện áp dây: Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
-  },
-  {
-    "id": 31,
-    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Cho mạch điện ba pha tải đối xứng nối theo hình tam giác (Δ), điện áp dây Ud = 380 V, tải ba pha gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp pha Up lần lượt là",
-    "options": [
-      "A. Up = 220 V; Ip = 4,4 A; Id = 4,4 A",
-      "B. Up = 380 V; Ip = 7,6 A; Id ≈ 13,16 A",
-      "C. Up = 380 V; Ip = 13,16 A; Id = 7,6 A",
-      "D. Up = 380 V; Ip = 7,6 A; Id = 7,6 A"
-    ],
-    "correct": 1,
-    "explain": "Vì tải nối hình tam giác: Up = Ud = 380 V. Dòng điện pha: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">50</span></span> = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Bài tập 3 SGK trang 21)."
-  },
-  {
-    "id": 32,
-    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Cho nguồn điện xoay chiều ba pha bốn dây có Ud/Up = 380/220 V. Có 6 bóng đèn sợi đốt loại 220 V - 60 W và một động cơ ba pha loại 380 V - 2,2 kW. Để các thiết bị hoạt động bình thường trong mạch ba pha đối xứng thì:",
-    "options": [
-      "A. Bóng đèn nối tam giác, động cơ nối sao.",
-      "B. Bóng đèn chia đều nối hình sao (mỗi pha 2 bóng song song), động cơ nối hình tam giác.",
-      "C. Cả bóng đèn và động cơ đều nối hình sao có dây trung tính.",
-      "D. Cả bóng đèn và động cơ đều nối hình tam giác."
-    ],
-    "correct": 1,
-    "explain": "Bóng đèn có Uđm = 220 V = Up của nguồn nên phải nối hình sao (Y) có dây trung tính (6 bóng chia đều mỗi pha 2 bóng song song). Động cơ có Uđm = 380 V = Ud của nguồn nên phải nối hình tam giác (Δ) vào 3 dây pha (Bài tập 5 SGK trang 21)."
-  },
-  {
-    "id": 33,
-    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Một động cơ không đồng bộ ba pha khi làm việc ở mạng điện có điện áp dây Ud = 380 V thì tiêu thụ dòng điện dây Id = 10 A với hệ số công suất cosφ = 0,85. Công suất tác dụng P tiêu thụ của động cơ là",
-    "options": [
-      "A. 3 230 W",
-      "B. 5 594 W",
-      "C. 9 690 W",
-      "D. 1 860 W"
-    ],
-    "correct": 1,
-    "explain": "Công suất tiêu thụ ba pha: P = √3.Ud.Id.cosφ = √3 × 380 × 10 × 0,85 ≈ 1,732 × 380 × 8,5 ≈ 5 594 W (≈ 5,6 kW)."
-  },
-  {
-    "id": 34,
-    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Tải ba pha đối xứng gồm 3 cuộn dây, mỗi cuộn có điện trở R = 8 Ω và cảm kháng XL = 6 Ω. Nối tải theo hình tam giác (Δ) vào nguồn có điện áp dây Ud = 220 V. Dòng điện pha Ip và dòng điện dây Id là",
-    "options": [
-      "A. Ip = 22 A; Id ≈ 38,1 A",
-      "B. Ip = 15,7 A; Id = 15,7 A",
-      "C. Ip = 27,5 A; Id = 47,6 A",
-      "D. Ip = 22 A; Id = 22 A"
-    ],
-    "correct": 0,
-    "explain": "Tổng trở mỗi pha: zp = √(R² + XL²) = √(8² + 6²) = 10 Ω. Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">10</span></span> = 22 A. Dòng điện dây: Id = √3.Ip = √3 × 22 ≈ 38,1 A."
-  },
-  {
-    "id": 35,
-    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "So với hệ thống điện một pha, hệ thống truyền tải dòng điện xoay chiều ba pha có ưu điểm vượt trội nào?",
-    "options": [
-      "A. Chỉ cần dùng 1 dây dẫn duy nhất.",
-      "B. Tiết kiệm tiết diện kim loại làm dây dẫn khi truyền tải công suất lớn đi xa, và tạo ra từ trường quay giúp chế tạo động cơ ba pha cấu tạo đơn giản, bền bỉ.",
-      "C. Không bao giờ xảy ra sự cố ngắn mạch hay quá tải.",
-      "D. Luôn có điện áp một chiều ổn định không đổi."
-    ],
-    "correct": 1,
-    "explain": "Ưu điểm của mạch 3 pha: Tiết kiệm dây dẫn kim loại (đồng, nhôm) so với 3 đường dây 1 pha độc lập; tạo ra từ trường quay để vận hành động cơ điện ba pha - thiết bị cốt lõi trong công nghiệp (SGK trang 21)."
-  },
-  {
-    "id": 23,
-    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-    "question": "Hệ thống điện quốc gia thực hiện quá trình nào sau đây?",
-    "options": [
-      "A. Khai thác than, dầu mỏ và lọc dầu thành phẩm.",
-      "B. Sản xuất, truyền tải, phân phối và tiêu thụ điện năng trên quy mô toàn quốc.",
-      "C. Sản xuất và lắp ráp các loại ô tô điện và xe máy điện.",
-      "D. Quản lí dự báo thời tiết và thủy văn toàn quốc."
-    ],
-    "correct": 1,
-    "explain": "Hệ thống điện quốc gia gồm nguồn điện, lưới điện và tải tiêu thụ liên kết thành hệ thống thống nhất để thực hiện quá trình sản xuất, truyền tải, phân phối và tiêu thụ điện năng (SGK trang 23)."
-  },
-  {
-    "id": 24,
-    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-    "question": "Cấu trúc chung của hệ thống điện quốc gia gồm ba thành phần chính là",
-    "options": [
-      "A. Trạm biến áp, công tơ điện và dây dẫn.",
-      "B. Nguồn điện, lưới điện và tải tiêu thụ.",
-      "C. Nhà máy nhiệt điện, nhà máy thủy điện và điện mặt trời.",
-      "D. Tủ tổng, tủ nhánh và tủ động lực."
-    ],
-    "correct": 1,
-    "explain": "Ba thành phần chính của hệ thống điện quốc gia là: Nguồn điện, Lưới điện và Tải tiêu thụ (Hình 4.2 và 4.3 SGK trang 22-23)."
-  },
-  {
-    "id": 25,
-    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-    "question": "Lưới điện truyền tải trong hệ thống điện quốc gia có cấp điện áp là",
-    "options": [
-      "A. dưới 1 kV.",
-      "B. từ 1 kV đến 35 kV.",
-      "C. từ 110 kV trở xuống.",
-      "D. trên 110 kV."
-    ],
-    "correct": 3,
-    "explain": "Lưới điện truyền tải có điện áp trên 110 kV, làm nhiệm vụ truyền tải điện năng số lượng lớn từ các nhà máy điện/trạm nguồn đến các trạm phân phối chính (SGK trang 23)."
-  },
-  {
-    "id": 26,
-    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-    "question": "Lưới điện phân phối trong hệ thống điện quốc gia có cấp điện áp là",
-    "options": [
-      "A. từ 110 kV trở xuống.",
-      "B. trên 110 kV đến 500 kV.",
-      "C. trên 220 kV.",
-      "D. chỉ duy nhất cấp 220 V."
-    ],
-    "correct": 0,
-    "explain": "Lưới điện phân phối có điện áp từ 110 kV trở xuống, có nhiệm vụ truyền tải điện năng từ trạm điện phân phối chính đến các tải tiêu thụ (SGK trang 23)."
-  },
-  {
-    "id": 27,
-    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-    "question": "Cấp điện áp siêu cao áp trong hệ thống lưới điện Việt Nam là",
-    "options": [
-      "A. điện áp đến 1 kV.",
-      "B. điện áp trên 1 kV đến 35 kV.",
-      "C. điện áp từ trên 35 kV đến 220 kV.",
-      "D. điện áp trên 220 kV."
-    ],
-    "correct": 3,
-    "explain": "Phân cấp điện áp: Hạ áp (đến 1 kV); Trung áp (trên 1 kV đến 35 kV); Cao áp (từ trên 35 kV đến 220 kV); Siêu cao áp (trên 220 kV, ví dụ đường dây 500 kV) (SGK trang 23)."
-  },
-  {
-    "id": 28,
-    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-    "question": "Đường dây truyền tải điện 500 kV Bắc - Nam mạch 1 được khánh thành và đóng điện vào thời gian nào?",
-    "options": [
-      "A. Ngày 5/4/1992",
-      "B. Ngày 27/5/1994",
-      "C. Ngày 30/4/1975",
-      "D. Ngày 1/1/2000"
-    ],
-    "correct": 1,
-    "explain": "Đường dây truyền tải điện 500 kV Bắc Nam được khởi công ngày 5/4/1992 và hoàn thành ngày 27/5/1994, dài 1487 km từ Hòa Bình đến TP. Hồ Chí Minh (SGK trang 24)."
-  },
-  {
-    "id": 29,
-    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-    "question": "Vì sao tại các nhà máy điện người ta phải sử dụng máy biến áp tăng áp trước khi đưa điện lên đường dây truyền tải đi xa?",
-    "options": [
-      "A. Để tăng tần số dòng điện lên cao.",
-      "B. Để tăng điện áp, từ đó giảm dòng điện chạy trên dây, giúp giảm hao phí công suất toả nhiệt trên đường dây.",
-      "C. Để chuyển điện xoay chiều thành một chiều.",
-      "D. Để bảo vệ máy phát điện không bị sét đánh."
-    ],
-    "correct": 1,
-    "explain": "Theo định luật Jun-Len-xơ, công suất hao phí toả nhiệt ΔP = I²R = (P²/U²cos²φ)R. Tăng điện áp U lên n lần thì hao phí giảm n² lần, giúp truyền tải công suất lớn đi xa hiệu quả và tiết kiệm tiết diện dây dẫn."
-  },
-  {
-    "id": 30,
-    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-    "question": "Thiết bị nào trong lưới điện có chức năng chuyển đổi cấp điện áp từ thấp lên cao hoặc từ cao xuống thấp?",
-    "options": [
-      "A. Máy phát điện xoay chiều.",
-      "B. Máy biến áp.",
-      "C. Động cơ không đồng bộ ba pha.",
-      "D. Aptomat khối MCCB."
-    ],
-    "correct": 1,
-    "explain": "Trạm biến áp thực hiện chức năng chuyển đổi cấp điện áp từ điện áp thấp lên điện áp cao hoặc ngược lại thông qua các máy biến áp (SGK trang 24)."
-  },
-  {
-    "id": 31,
-    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-    "question": "Quá trình sản xuất điện năng là quá trình",
-    "options": [
-      "A. biến đổi điện năng thành nhiệt năng và cơ năng.",
-      "B. chuyển đổi các dạng năng lượng khác trong tự nhiên thành năng lượng điện.",
-      "C. truyền tải điện năng từ nhà máy đến hộ gia đình.",
-      "D. lưu trữ điện năng trong tụ điện phẳng."
-    ],
-    "correct": 1,
-    "explain": "Sản xuất điện năng là quá trình chuyển đổi các dạng năng lượng khác nhau thành năng lượng điện (SGK trang 27)."
-  },
-  {
-    "id": 32,
-    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-    "question": "Nguồn năng lượng nào sau đây là nguồn năng lượng tái tạo?",
-    "options": [
-      "A. Than đá",
-      "B. Dầu mỏ",
-      "C. Năng lượng dòng nước (thủy điện)",
-      "D. Khí thiên nhiên"
-    ],
-    "correct": 2,
-    "explain": "Năng lượng dòng nước, năng lượng gió, năng lượng mặt trời, sinh khối là các nguồn năng lượng tái tạo. Than đá, dầu mỏ, khí thiên nhiên là nhiên liệu hóa thạch không tái tạo (Hình 5.2 SGK trang 26)."
-  },
-  {
-    "id": 33,
-    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-    "question": "Nguyên lí hoạt động của nhà máy thủy điện là",
-    "options": [
-      "A. sử dụng thế năng của nước trong hồ chứa chuyển thành động năng làm quay turbine của máy phát điện tạo ra điện.",
-      "B. đốt than để đun sôi nước tạo hơi nước đẩy cánh quạt.",
-      "C. sử dụng phản ứng nhiệt hạch giải phóng nhiệt lượng lớn.",
-      "D. dùng ánh sáng mặt trời chiếu vào tấm silic tạo dòng electron."
-    ],
-    "correct": 0,
-    "explain": "Nhà máy thủy điện sử dụng thế năng của nước trong hồ chứa để chuyển thành động năng làm quay turbine của máy phát điện tạo ra điện (SGK trang 27)."
-  },
-  {
-    "id": 34,
-    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-    "question": "Một trong những nhược điểm lớn của nhà máy thủy điện là",
-    "options": [
-      "A. phát thải lượng lớn khí nhà kính CO2 trong quá trình vận hành.",
-      "B. công suất phát điện phụ thuộc nhiều vào lượng nước tích trữ trong hồ chứa (theo mùa) và tác động làm thay đổi chế độ thủy văn, hệ sinh thái.",
-      "C. chi phí vận hành hàng ngày rất cao.",
-      "D. tuổi thọ công trình rất ngắn dưới 5 năm."
-    ],
-    "correct": 1,
-    "explain": "Nhược điểm của thủy điện: Công suất phát phụ thuộc vào lưu lượng nước trong hồ chứa (hạn hán thì giảm mạnh), chi phí đầu tư ban đầu lớn, làm thay đổi cơ chế thủy văn và đa dạng sinh học (SGK trang 27)."
-  },
-  {
-    "id": 35,
-    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-    "question": "Ưu điểm nổi bật của nhà máy nhiệt điện so với nhà máy thủy điện là",
-    "options": [
-      "A. hoàn toàn không gây ô nhiễm môi trường.",
-      "B. có thể vận hành liên tục, ổn định quanh năm mà không phụ thuộc vào điều kiện thời tiết hay mùa vụ.",
-      "C. sử dụng nguồn năng lượng tái tạo vô tận.",
-      "D. không tốn chi phí mua nhiên liệu vận hành."
-    ],
-    "correct": 1,
-    "explain": "Ưu điểm của nhiệt điện là công suất phát điện lớn, chi phí đầu tư ban đầu không quá cao, xây dựng nhanh và có thể vận hành liên tục, không phụ thuộc vào thời tiết (SGK trang 28)."
-  },
-  {
-    "id": 36,
-    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-    "question": "Nhà máy điện hạt nhân chuyển hóa năng lượng từ đâu để sản xuất điện?",
-    "options": [
-      "A. Đốt cháy khí hidro trong bầu khí quyển.",
-      "B. Năng lượng nhiệt sinh ra từ các phản ứng phân hạch hạt nhân để đun nóng nước tạo hơi nước áp suất cao quay turbine.",
-      "C. Thế năng của các hạt nhân phóng xạ nặng.",
-      "D. Điện trường tĩnh điện xung quanh lò phản ứng."
-    ],
-    "correct": 1,
-    "explain": "Nhà máy điện hạt nhân sử dụng năng lượng từ phản ứng phân hạch (thường là Uranium) để đun nóng nước tạo ra hơi nước có áp suất cao làm quay turbine của máy phát điện tạo ra điện (SGK trang 28-29)."
-  },
-  {
-    "id": 37,
-    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-    "question": "Bộ phận nào trong hệ thống điện mặt trời có chức năng chuyển đổi dòng điện một chiều (DC) từ các tấm pin mặt trời thành dòng xoay chiều (AC) để cấp cho tải và hòa vào lưới điện?",
-    "options": [
-      "A. Tấm pin mặt trời (PV)",
-      "B. Bộ biến tần (Inverter)",
-      "C. Pin lưu trữ (Battery)",
-      "D. Máy biến áp phân phối"
-    ],
-    "correct": 1,
-    "explain": "Nguồn điện do tấm pin mặt trời tạo ra là dòng điện một chiều (DC), cần qua bộ điều khiển sạc và biến tần (Inverter - biến đổi DC thành AC) trước khi hòa vào lưới điện hoặc cung cấp cho các thiết bị xoay chiều (Hình 5.7 SGK trang 30)."
-  },
-  {
-    "id": 38,
-    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-    "question": "Tại sao các hệ thống điện mặt trời và điện gió thường cần có hệ thống lưu trữ năng lượng (pin tích năng / ắc quy)?",
-    "options": [
-      "A. Vì công suất của chúng rất lớn, lưới điện quốc gia không thể tiếp nhận hết.",
-      "B. Vì gió và ánh sáng mặt trời có tính gián đoạn, phụ thuộc vào thời tiết, ngày đêm nên cần tích trữ để cấp điện khi không đủ gió hoặc nắng.",
-      "C. Để làm mát cánh quạt turbine gió và các tấm pin.",
-      "D. Để tự động chuyển đổi điện áp từ cao xuống thấp."
-    ],
-    "correct": 1,
-    "explain": "Ánh sáng mặt trời không có vào ban đêm và suy giảm vào ngày mưa, gió cũng thay đổi thất thường theo thời gian. Do đó cần hệ thống pin tích năng để lưu trữ khi phát dư thừa và xả ra cung cấp khi thiếu hụt (SGK trang 29-30)."
-  },
-  {
-    "id": 39,
-    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-    "question": "Mạng điện sản xuất quy mô nhỏ thường có công suất tiêu thụ điện năng trong khoảng",
-    "options": [
-      "A. dưới 1 kW.",
-      "B. từ vài chục đến vài trăm kW.",
-      "C. từ vài nghìn đến vài chục nghìn MW.",
-      "D. trên 1 000 000 kW."
-    ],
-    "correct": 1,
-    "explain": "Mạng điện sản xuất quy mô nhỏ là mạng điện có công suất tiêu thụ điện năng từ vài chục đến vài trăm kW, lấy điện từ lưới phân phối cấp cho tải (SGK trang 31)."
-  },
-  {
-    "id": 40,
-    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-    "question": "Đặc điểm nào sau đây là đặc điểm của mạng điện sản xuất quy mô nhỏ?",
-    "options": [
-      "A. Tải phân bố rải rác trên phạm vi hàng trăm km vuông.",
-      "B. Tải phân bố tập trung, mạng điện dùng cho thiết bị sản xuất và mạng điện chiếu sáng hoạt động độc lập.",
-      "C. Toàn bộ thiết bị đều dùng điện áp 110 kV.",
-      "D. Không cần thiết bị đóng cắt và bảo vệ quá tải."
-    ],
-    "correct": 1,
-    "explain": "Mạng điện sản xuất quy mô nhỏ có các đặc điểm: tải phân bố tập trung; dùng máy biến áp riêng hoặc lấy điện từ đường hạ áp 380/220 V; mạng điện cho thiết bị sản xuất và mạng điện chiếu sáng hoạt động độc lập (SGK trang 31)."
-  },
-  {
-    "id": 41,
-    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-    "question": "Trạm biến áp hạ áp trong mạng điện sản xuất quy mô nhỏ có nhiệm vụ gì?",
-    "options": [
-      "A. Tăng điện áp từ 380 V lên 500 kV để truyền tải đi xa.",
-      "B. Hạ áp từ lưới điện phân phối (thường là đường trung áp 22 kV hoặc 35 kV) xuống điện áp hạ áp 380/220 V.",
-      "C. Đo đếm trực tiếp công suất của từng bóng đèn trong xưởng.",
-      "D. Biến đổi dòng xoay chiều thành dòng một chiều cho toàn bộ nhà máy."
-    ],
-    "correct": 1,
-    "explain": "Trạm biến áp có vai trò hạ áp từ lưới điện phân phối (trung áp 22 kV hoặc 35 kV) xuống điện áp hạ áp (380/220 V) cấp cho cơ sở sản xuất (SGK trang 33)."
-  },
-  {
-    "id": 42,
-    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-    "question": "Tủ điện nào sau đây nhận điện trực tiếp từ máy biến áp hạ áp để phân phối cho các tủ điện nhánh của các phân xưởng?",
-    "options": [
-      "A. Tủ điện chiếu sáng",
-      "B. Tủ điện động lực",
-      "C. Tủ điện phân phối tổng",
-      "D. Tủ điều khiển máy CNC"
-    ],
-    "correct": 2,
-    "explain": "Tủ điện phân phối tổng được đặt ở trạm biến áp, lấy điện từ đường hạ áp 380/220 V của máy biến áp để phân phối cho các tủ điện phân phối nhánh ở các phân xưởng sản xuất (SGK trang 33)."
-  },
-  {
-    "id": 43,
-    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-    "question": "Tủ điện động lực trong phân xưởng sản xuất có vai trò chính là",
-    "options": [
-      "A. cấp nguồn cho hệ thống chiếu sáng bảo vệ hành lang.",
-      "B. lấy nguồn từ tủ phân phối nhánh để cấp cho tải tiêu thụ là các máy sản xuất trong phân xưởng (động cơ điện, máy hàn, máy công cụ...).",
-      "C. tăng điện áp từ 220 V lên 22 kV.",
-      "D. lọc sóng hài và tích trữ điện năng."
-    ],
-    "correct": 1,
-    "explain": "Tủ điện động lực được đặt ở phân xưởng sản xuất, lấy nguồn từ tủ phân phối nhánh để cấp cho tải tiêu thụ là các máy sản xuất trong phân xưởng, chứa thiết bị đóng cắt và bảo vệ quá tải, ngắn mạch (SGK trang 33)."
-  },
-  {
-    "id": 44,
-    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-    "question": "Khi thực hiện thao tác ĐÓNG ĐIỆN cho một xưởng sản xuất, quy trình an toàn chuẩn là gì?",
-    "options": [
-      "A. Đóng từ thiết bị tiêu thụ trước, sau đó mới đóng ngược về tủ tổng và nguồn.",
-      "B. Đóng lần lượt từ nguồn đến tải (Trạm biến áp -> Tủ phân phối tổng -> Tủ phân phối nhánh -> Tủ động lực/chiếu sáng -> Bật thiết bị máy móc).",
-      "C. Bật tất cả các máy móc cùng lúc rồi mới đóng cầu dao nguồn.",
-      "D. Đóng ngẫu nhiên bất kì công tắc nào trước cũng được."
-    ],
-    "correct": 1,
-    "explain": "Quy trình đóng điện an toàn: Đóng lần lượt từ nguồn đến tải (Nguồn -> Tủ tổng -> Tủ nhánh -> Tủ động lực / chiếu sáng -> Tải máy móc). Mục đích là để các cấp bảo vệ sẵn sàng và tránh quá tải đột ngột (SGK trang 33)."
-  },
-  {
-    "id": 45,
-    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-    "question": "Vì sao khi CẮT ĐIỆN xưởng sản xuất, người ta phải thực hiện theo chiều ngược lại (cắt từ phía tải trước, sau đó mới cắt dần về tủ nhánh và tủ tổng)?",
-    "options": [
-      "A. Để tránh tiêu tốn nhiều điện năng không cần thiết.",
-      "B. Để ngắt dòng điện tải đang chạy lớn trước, tránh sinh ra hồ quang điện nguy hiểm gây cháy nổ, hư hỏng tiếp điểm tại cầu dao/aptomat phía nguồn.",
-      "C. Để làm nguội dây dẫn từ từ.",
-      "D. Vì tủ phân phối tổng không có khả năng ngắt dòng điện."
-    ],
-    "correct": 1,
-    "explain": "Cắt điện từ tải về nguồn nhằm giảm dòng điện trước khi ngắt các thiết bị phía nguồn. Nếu ngắt tủ tổng khi tải đang ăn dòng cực lớn sẽ phát sinh hồ quang điện rất mạnh, có thể gây nổ tiếp điểm, phóng điện nguy hiểm cho người vận hành (SGK trang 33)."
-  },
-  {
-    "id": 46,
-    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-    "question": "Mạng điện hạ áp dùng trong sinh hoạt thuộc loại lưới điện nào?",
-    "options": [
-      "A. Lưới điện siêu cao áp.",
-      "B. Lưới điện truyền tải.",
-      "C. Lưới điện phân phối.",
-      "D. Lưới điện cao áp trên 110 kV."
-    ],
-    "correct": 2,
-    "explain": "Mạng điện hạ áp dùng trong sinh hoạt thuộc lưới điện phân phối, có nhiệm vụ truyền tải năng lượng điện từ trạm biến áp phân phối đến công tơ điện của các hộ gia đình (SGK trang 34)."
-  },
-  {
-    "id": 47,
-    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-    "question": "Thông số kĩ thuật điện áp định mức và tần số của mạng điện hạ áp sinh hoạt tại Việt Nam là",
-    "options": [
-      "A. 110 V / 60 Hz",
-      "B. 380/220 V / 50 Hz",
-      "C. 220 V / 60 Hz",
-      "D. 500 kV / 50 Hz"
-    ],
-    "correct": 1,
-    "explain": "Thông số kĩ thuật định mức của mạng điện hạ áp dùng trong sinh hoạt ở nước ta là: Điện áp dây/pha: 380/220 V; Tần số điện lưới: 50 Hz (SGK trang 34 & 36)."
-  },
-  {
-    "id": 48,
-    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-    "question": "Sai số điện áp cho phép đối với mạng điện hạ áp dùng trong sinh hoạt là không quá",
-    "options": [
-      "A. ± 1%",
-      "B. ± 5%",
-      "C. ± 15%",
-      "D. ± 20%"
-    ],
-    "correct": 1,
-    "explain": "Theo SGK Công nghệ 12 trang 36: Mức sai số cho phép đối với điện áp là không quá ± 5%, tần số cũng không quá ± 5% so với giá trị định mức."
-  },
-  {
-    "id": 49,
-    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-    "question": "Công suất của lưới điện hạ áp sinh hoạt thường dao động trong khoảng nào tùy thuộc quy mô khu dân cư?",
-    "options": [
-      "A. Từ 1 kW đến 10 kW",
-      "B. Từ 50 kW đến 2 500 kW",
-      "C. Từ 10 000 kW đến 50 000 kW",
-      "D. Trên 100 000 kW"
-    ],
-    "correct": 1,
-    "explain": "Công suất của lưới điện hạ áp sinh hoạt từ 50 kW đến 2 500 kW, tuỳ thuộc vào công suất của máy biến áp cấp điện cho khu dân cư đó (SGK trang 36)."
-  },
-  {
-    "id": 50,
-    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-    "question": "Đường dây trục chính nối từ tủ điện phân phối tổng đến các tủ điện phân phối khu vực (nhánh) thường là đường dây",
-    "options": [
-      "A. một pha hai dây.",
-      "B. ba pha ba dây không có dây trung tính.",
-      "C. ba pha bốn dây.",
-      "D. một pha một dây."
-    ],
-    "correct": 2,
-    "explain": "Đường dây trục chính nối từ tủ điện phân phối tổng đến các tủ điện phân phối nhánh là ba pha bốn dây (gồm 3 dây pha và 1 dây trung tính) (SGK trang 36)."
-  },
-  {
-    "id": 51,
-    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-    "question": "Đường dây nhánh nối từ tủ điện phân phối khu vực vào công tơ điện của các hộ gia đình chủ yếu là",
-    "options": [
-      "A. đường dây một pha hai dây (dây pha và dây trung tính).",
-      "B. đường dây cáp quang.",
-      "C. đường dây cao áp 22 kV.",
-      "D. đường dây siêu dẫn nhiệt độ thấp."
-    ],
-    "correct": 0,
-    "explain": "Đường dây nhánh nối từ tủ điện khu vực đến các hộ gia đình chủ yếu là các đường một pha hai dây, một số ít trường hợp có nhu cầu lớn là ba pha bốn dây (SGK trang 36)."
-  },
-  {
-    "id": 52,
-    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-    "question": "Loại aptomat nào sau đây thường được sử dụng trong tủ điện phân phối tổng tại trạm biến áp hạ áp do có khả năng đóng cắt dòng điện rất lớn?",
-    "options": [
-      "A. MCB (Miniature Circuit Breaker - aptomat tép)",
-      "B. Cầu chì ống sứ nhỏ",
-      "C. ACB (Air Circuit Breaker - máy cắt không khí)",
-      "D. Công tắc xoay một cực"
-    ],
-    "correct": 2,
-    "explain": "Trong các tủ điện phân phối: ACB (máy cắt không khí) và MCCB (aptomat khối) thường dùng cho tủ tổng do dòng định mức lớn; còn MCB (aptomat tép) thường dùng cho tủ khu vực và hộ gia đình (Hình 7.3 SGK trang 35-36)."
-  },
-  {
-    "id": 53,
-    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-    "question": "Để đảm bảo mạng điện ba pha không bị lệch pha nghiêm trọng khi cấp điện cho các hộ gia đình, các kĩ sư thiết kế mạng điện cần phải",
-    "options": [
-      "A. nối tất cả các hộ gia đình vào cùng một pha duy nhất.",
-      "B. phân chia các đường nhánh cấp điện cho các hộ gia đình rải đều để đảm bảo cân bằng tải giữa ba pha của nguồn.",
-      "C. bắt buộc mọi gia đình phải dùng động cơ ba pha.",
-      "D. không nối dây trung tính về nguồn."
-    ],
-    "correct": 1,
-    "explain": "Các đường rẽ nhánh một pha được thiết kế chia đều cho các pha nhằm đảm bảo cân bằng tải giữa các pha của nguồn điện, giảm dòng điện chạy trong dây trung tính và ổn định điện áp (SGK trang 36)."
-  },
-  {
-    "id": 54,
-    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "a. Khi lò sấy nối hình tam giác, điện áp đặt trên mỗi điện trở R bằng 380 V.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / TÌNH HUỐNG THỰC TẾ: Mạch điện ba pha xưởng cơ khí</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một xưởng cơ khí nhỏ sử dụng nguồn điện ba pha bốn dây với điện áp dây Ud = 380 V, điện áp pha Up = 220 V. Phân xưởng có một lò sấy điện trở ba pha đối xứng công suất lớn gồm 3 điện trở R = 38 Ω mắc hình tam giác (Δ), và một hệ thống đèn chiếu sáng gồm 12 bóng sợi đốt loại 220 V - 100 W được chia đều cho 3 pha mắc hình sao (Y) có dây trung tính.</div>\n    </div>",
-    "options": [
-      "A. Đúng",
-      "B. Sai"
-    ],
-    "correct": 0,
-    "explain": "ĐÚNG. Khi tải nối hình tam giác (Δ), điện áp pha trên tải bằng điện áp dây của nguồn: Up(tải) = Ud = 380 V.",
-    "subLabel": "1a"
-  },
-  {
-    "id": 55,
-    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "b. Cường độ dòng điện chạy qua mỗi điện trở của lò sấy là Ip = 10 A.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / TÌNH HUỐNG THỰC TẾ: Mạch điện ba pha xưởng cơ khí</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một xưởng cơ khí nhỏ sử dụng nguồn điện ba pha bốn dây với điện áp dây Ud = 380 V, điện áp pha Up = 220 V. Phân xưởng có một lò sấy điện trở ba pha đối xứng công suất lớn gồm 3 điện trở R = 38 Ω mắc hình tam giác (Δ), và một hệ thống đèn chiếu sáng gồm 12 bóng sợi đốt loại 220 V - 100 W được chia đều cho 3 pha mắc hình sao (Y) có dây trung tính.</div>\n    </div>",
-    "options": [
-      "A. Đúng",
-      "B. Sai"
-    ],
-    "correct": 0,
-    "explain": "ĐÚNG. Dòng điện pha của lò sấy: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = 380 / 38 = 10 A.",
-    "subLabel": "1b"
-  },
-  {
-    "id": 56,
-    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "c. Dòng điện dây cấp cho lò sấy nối hình tam giác có độ lớn bằng dòng điện pha Ip = 10 A.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / TÌNH HUỐNG THỰC TẾ: Mạch điện ba pha xưởng cơ khí</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một xưởng cơ khí nhỏ sử dụng nguồn điện ba pha bốn dây với điện áp dây Ud = 380 V, điện áp pha Up = 220 V. Phân xưởng có một lò sấy điện trở ba pha đối xứng công suất lớn gồm 3 điện trở R = 38 Ω mắc hình tam giác (Δ), và một hệ thống đèn chiếu sáng gồm 12 bóng sợi đốt loại 220 V - 100 W được chia đều cho 3 pha mắc hình sao (Y) có dây trung tính.</div>\n    </div>",
-    "options": [
-      "A. Đúng",
-      "B. Sai"
-    ],
-    "correct": 1,
-    "explain": "SAI. Đối với tải nối hình tam giác (Δ), dòng điện dây Id = √3.Ip = √3 × 10 ≈ 17,32 A, không bằng Ip.",
-    "subLabel": "1c"
-  },
-  {
-    "id": 57,
-    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "d. Để các bóng đèn 220V sáng bình thường, bắt buộc phải nối hệ thống đèn theo hình sao có dây trung tính vào nguồn 380/220V.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / TÌNH HUỐNG THỰC TẾ: Mạch điện ba pha xưởng cơ khí</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một xưởng cơ khí nhỏ sử dụng nguồn điện ba pha bốn dây với điện áp dây Ud = 380 V, điện áp pha Up = 220 V. Phân xưởng có một lò sấy điện trở ba pha đối xứng công suất lớn gồm 3 điện trở R = 38 Ω mắc hình tam giác (Δ), và một hệ thống đèn chiếu sáng gồm 12 bóng sợi đốt loại 220 V - 100 W được chia đều cho 3 pha mắc hình sao (Y) có dây trung tính.</div>\n    </div>",
-    "options": [
-      "A. Đúng",
-      "B. Sai"
-    ],
-    "correct": 0,
-    "explain": "ĐÚNG. Nguồn có điện áp pha Up = 220 V phù hợp với điện áp định mức của bóng đèn (220 V). Nối hình sao có dây trung tính giữ cho điện áp mỗi pha luôn ổn định ở mức 220 V ngay cả khi tải các pha không hoàn toàn bằng nhau.",
-    "subLabel": "1d"
-  },
-  {
-    "id": 58,
-    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "a. Đường dây 500 kV Bắc - Nam thuộc lưới điện truyền tải của hệ thống điện quốc gia.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / THÔNG TIN: Hệ thống điện quốc gia Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Hệ thống điện quốc gia Việt Nam gồm các nguồn điện (thủy điện Sơn La, Hòa Bình; nhiệt điện Phả Lại, Vĩnh Tân; điện mặt trời, điện gió Ninh Thuận...), liên kết với nhau qua lưới truyền tải siêu cao áp 500 kV Bắc - Nam và các cấp 220 kV, 110 kV để cấp điện cho các trung tâm phụ tải và hộ sinh hoạt trên toàn quốc.</div>\n    </div>",
-    "options": [
-      "A. Đúng",
-      "B. Sai"
-    ],
-    "correct": 0,
-    "explain": "ĐÚNG. Lưới truyền tải có điện áp trên 110 kV, đường dây 500 kV thuộc cấp siêu cao áp và là trục truyền tải điện năng chính kết nối hai miền Nam - Bắc.",
-    "subLabel": "2a"
-  },
-  {
-    "id": 59,
-    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "b. Các nhà máy nhiệt điện than như Phả Lại, Vĩnh Tân có ưu điểm là không thải khí CO2 ra môi trường.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / THÔNG TIN: Hệ thống điện quốc gia Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Hệ thống điện quốc gia Việt Nam gồm các nguồn điện (thủy điện Sơn La, Hòa Bình; nhiệt điện Phả Lại, Vĩnh Tân; điện mặt trời, điện gió Ninh Thuận...), liên kết với nhau qua lưới truyền tải siêu cao áp 500 kV Bắc - Nam và các cấp 220 kV, 110 kV để cấp điện cho các trung tâm phụ tải và hộ sinh hoạt trên toàn quốc.</div>\n    </div>",
-    "options": [
-      "A. Đúng",
-      "B. Sai"
-    ],
-    "correct": 1,
-    "explain": "SAI. Nhiệt điện than đốt nhiên liệu hóa thạch nên thải ra lượng khí nhà kính CO2, tro xỉ và khí SO2, NOx rất lớn gây ô nhiễm môi trường.",
-    "subLabel": "2b"
-  },
-  {
-    "id": 60,
-    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "c. Điện mặt trời và điện gió là các nguồn năng lượng tái tạo sạch nhưng công suất phụ thuộc vào điều kiện tự nhiên.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / THÔNG TIN: Hệ thống điện quốc gia Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Hệ thống điện quốc gia Việt Nam gồm các nguồn điện (thủy điện Sơn La, Hòa Bình; nhiệt điện Phả Lại, Vĩnh Tân; điện mặt trời, điện gió Ninh Thuận...), liên kết với nhau qua lưới truyền tải siêu cao áp 500 kV Bắc - Nam và các cấp 220 kV, 110 kV để cấp điện cho các trung tâm phụ tải và hộ sinh hoạt trên toàn quốc.</div>\n    </div>",
-    "options": [
-      "A. Đúng",
-      "B. Sai"
-    ],
-    "correct": 0,
-    "explain": "ĐÚNG. Năng lượng mặt trời và gió là nguồn năng lượng tái tạo, vô tận và sạch; tuy nhiên nhược điểm là công suất thấp hơn nhà máy lớn và thiếu ổn định (phụ thuộc cường độ nắng và sức gió).",
-    "subLabel": "2c"
-  },
-  {
-    "id": 61,
-    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "d. Các trạm biến áp trung gian 220/110 kV và 110/22 kV làm nhiệm vụ tăng điện áp để đưa vào các hộ sinh hoạt.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / THÔNG TIN: Hệ thống điện quốc gia Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Hệ thống điện quốc gia Việt Nam gồm các nguồn điện (thủy điện Sơn La, Hòa Bình; nhiệt điện Phả Lại, Vĩnh Tân; điện mặt trời, điện gió Ninh Thuận...), liên kết với nhau qua lưới truyền tải siêu cao áp 500 kV Bắc - Nam và các cấp 220 kV, 110 kV để cấp điện cho các trung tâm phụ tải và hộ sinh hoạt trên toàn quốc.</div>\n    </div>",
-    "options": [
-      "A. Đúng",
-      "B. Sai"
-    ],
-    "correct": 1,
-    "explain": "SAI. Trạm 220/110 kV và 110/22 kV là các trạm biến áp hạ áp (hạ từ 220 kV xuống 110 kV, rồi hạ tiếp xuống 22 kV trung áp). Điện sinh hoạt dùng điện áp hạ áp 220 V nên phải qua tiếp trạm hạ áp 22/0,4 kV.",
-    "subLabel": "2d"
-  },
-  {
-    "id": 62,
-    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "a. Cơ sở chế biến này cần xây dựng một trạm biến áp hạ áp riêng để biến đổi điện áp từ 22 kV xuống 380/220 V.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / DỰ ÁN: Mạng điện cơ sở sản xuất 150 kW</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một cơ sở chế biến thực phẩm tư nhân chuẩn bị xây dựng mạng điện sản xuất quy mô nhỏ với công suất tính toán khoảng 150 kW, lấy nguồn từ đường dây trung áp 22 kV của điện lực địa phương đi ngang qua cổng xưởng.</div>\n    </div>",
-    "options": [
-      "A. Đúng",
-      "B. Sai"
-    ],
-    "correct": 0,
-    "explain": "ĐÚNG. Với công suất 150 kW và lấy nguồn trung áp 22 kV, xưởng sản xuất quy mô nhỏ cần lắp đặt một trạm biến áp hạ áp 22/0,4 kV riêng để cấp điện cho hệ thống thiết bị.",
-    "subLabel": "3a"
-  },
-  {
-    "id": 63,
-    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "b. Tủ điện phân phối tổng của cơ sở nên được đặt trực tiếp cạnh các máy trộn thực phẩm ẩm ướt trong phân xưởng.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / DỰ ÁN: Mạng điện cơ sở sản xuất 150 kW</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một cơ sở chế biến thực phẩm tư nhân chuẩn bị xây dựng mạng điện sản xuất quy mô nhỏ với công suất tính toán khoảng 150 kW, lấy nguồn từ đường dây trung áp 22 kV của điện lực địa phương đi ngang qua cổng xưởng.</div>\n    </div>",
-    "options": [
-      "A. Đúng",
-      "B. Sai"
-    ],
-    "correct": 1,
-    "explain": "SAI. Tủ điện phân phối tổng thường được đặt ngay tại phòng điện của trạm biến áp, ở nơi khô ráo, an toàn, có khóa bảo vệ; không được đặt cạnh khu vực ẩm ướt dễ gây chập cháy nguy hiểm.",
-    "subLabel": "3b"
-  },
-  {
-    "id": 64,
-    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "c. Mạng điện động lực và mạng điện chiếu sáng của phân xưởng phải được bố trí cấp nguồn độc lập từ tủ phân phối nhánh.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / DỰ ÁN: Mạng điện cơ sở sản xuất 150 kW</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một cơ sở chế biến thực phẩm tư nhân chuẩn bị xây dựng mạng điện sản xuất quy mô nhỏ với công suất tính toán khoảng 150 kW, lấy nguồn từ đường dây trung áp 22 kV của điện lực địa phương đi ngang qua cổng xưởng.</div>\n    </div>",
-    "options": [
-      "A. Đúng",
-      "B. Sai"
-    ],
-    "correct": 0,
-    "explain": "ĐÚNG. Theo đặc điểm của mạng điện sản xuất quy mô nhỏ (SGK trang 31): Mạng điện dùng cho các thiết bị sản xuất (động lực) và mạng điện chiếu sáng hoạt động độc lập nhằm tránh nhấp nháy đèn khi máy móc khởi động và đảm bảo ánh sáng khi sửa chữa máy.",
-    "subLabel": "3c"
-  },
-  {
-    "id": 65,
-    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "d. Để tiết kiệm thời gian, cuối ca làm việc công nhân chỉ cần ngắt aptomat tổng ở trạm biến áp mà không cần tắt các máy sản xuất.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / DỰ ÁN: Mạng điện cơ sở sản xuất 150 kW</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một cơ sở chế biến thực phẩm tư nhân chuẩn bị xây dựng mạng điện sản xuất quy mô nhỏ với công suất tính toán khoảng 150 kW, lấy nguồn từ đường dây trung áp 22 kV của điện lực địa phương đi ngang qua cổng xưởng.</div>\n    </div>",
-    "options": [
-      "A. Đúng",
-      "B. Sai"
-    ],
-    "correct": 1,
-    "explain": "SAI. Quy tắc an toàn nghiêm ngặt khi cắt điện là phải cắt từ tải trước (tắt máy móc -> ngắt tủ động lực/chiếu sáng -> ngắt tủ nhánh -> ngắt tủ tổng) để tránh hồ quang điện nguy hiểm và bảo vệ thiết bị.",
-    "subLabel": "3d"
-  },
-  {
-    "id": 66,
-    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "a. Vị trí kĩ sư thiết kế điện của công ty yêu cầu người ứng tuyển phải có trình độ từ đại học trở lên chuyên ngành kĩ thuật điện.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / ĐỊNH HƯỚNG: Tuyển dụng ngành kĩ thuật điện</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Bạn An đang tìm hiểu về định hướng nghề nghiệp trong lĩnh vực kĩ thuật điện và khảo sát thông tin tuyển dụng của một công ty xây lắp cơ điện tại khu công nghiệp.</div>\n    </div>",
-    "options": [
-      "A. Đúng",
-      "B. Sai"
-    ],
-    "correct": 0,
-    "explain": "ĐÚNG. Theo yêu cầu chuẩn trình độ nghề nghiệp trong SGK trang 11, vị trí kĩ sư yêu cầu trình độ đại học chuyên ngành kĩ thuật điện.",
-    "subLabel": "4a"
-  },
-  {
-    "id": 67,
-    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "b. Thợ điện lắp đặt chỉ cần hiểu biết về an toàn điện mà không cần biết đọc hiểu sơ đồ bản vẽ kĩ thuật.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / ĐỊNH HƯỚNG: Tuyển dụng ngành kĩ thuật điện</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Bạn An đang tìm hiểu về định hướng nghề nghiệp trong lĩnh vực kĩ thuật điện và khảo sát thông tin tuyển dụng của một công ty xây lắp cơ điện tại khu công nghiệp.</div>\n    </div>",
-    "options": [
-      "A. Đúng",
-      "B. Sai"
-    ],
-    "correct": 1,
-    "explain": "SAI. Người làm nghề lắp đặt điện bắt buộc phải có kĩ năng đọc hiểu sơ đồ thiết kế điện để lắp đặt đúng vị trí, đúng sơ đồ và đảm bảo kĩ thuật (SGK trang 12).",
-    "subLabel": "4b"
-  },
-  {
-    "id": 68,
-    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "c. Kĩ thuật viên vận hành điện thường xuyên làm việc ngoài trời để trực tiếp đào hào chôn cáp ngầm.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / ĐỊNH HƯỚNG: Tuyển dụng ngành kĩ thuật điện</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Bạn An đang tìm hiểu về định hướng nghề nghiệp trong lĩnh vực kĩ thuật điện và khảo sát thông tin tuyển dụng của một công ty xây lắp cơ điện tại khu công nghiệp.</div>\n    </div>",
-    "options": [
-      "A. Đúng",
-      "B. Sai"
-    ],
-    "correct": 1,
-    "explain": "SAI. Nhóm công việc vận hành điện thường làm việc tại các phòng điều hành, trạm biến áp để theo dõi, điều khiển thông số; còn việc đào rãnh chôn cáp thuộc nhóm công việc lắp đặt điện.",
-    "subLabel": "4c"
-  },
-  {
-    "id": 69,
-    "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-    "question": "d. Sự phát triển mạnh mẽ của năng lượng tái tạo và lưới điện thông minh mở ra nhiều cơ hội việc làm mới cho ngành kĩ thuật điện.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / ĐỊNH HƯỚNG: Tuyển dụng ngành kĩ thuật điện</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Bạn An đang tìm hiểu về định hướng nghề nghiệp trong lĩnh vực kĩ thuật điện và khảo sát thông tin tuyển dụng của một công ty xây lắp cơ điện tại khu công nghiệp.</div>\n    </div>",
-    "options": [
-      "A. Đúng",
-      "B. Sai"
-    ],
-    "correct": 0,
-    "explain": "ĐÚNG. Nhu cầu chuyển đổi xanh, phát triển điện gió, điện mặt trời, xe điện và lưới điện thông minh tạo ra nhu cầu nhân lực rất lớn cho ngành kĩ thuật điện trong tương lai.",
-    "subLabel": "4d"
-  },
-  {
-    "id": 70,
-    "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-    "question": "Một nguồn điện ba pha đối xứng có điện áp pha Up = 220 V. Giá trị của điện áp dây Ud xấp xỉ bằng bao nhiêu vôn?",
-    "options": [
-      "A. 127 V",
-      "B. 220 V",
-      "C. 380 V (hoặc 381 V)",
-      "D. 440 V"
-    ],
-    "correct": 2,
-    "explain": "Ta có công thức liên hệ giữa điện áp dây và điện áp pha của nguồn đối xứng: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế mạng điện quy ước là 380 V)."
-  },
-  {
-    "id": 71,
-    "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-    "question": "Cho mạch điện xoay chiều một pha có R = 30 Ω, cảm kháng XL = 60 Ω, dung kháng XC = 20 Ω. Độ lớn tổng trở z_t của mạch điện là",
+    "question": "Cho mạch xoay chiều một pha có R = 30 Ω, cảm kháng XL = 60 Ω, dung kháng XC = 20 Ω. Độ lớn tổng trở z_t của mạch là",
     "options": [
       "A. 110 Ω",
       "B. 50 Ω",
@@ -1122,12 +346,12 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. 10 Ω"
     ],
     "correct": 1,
-    "explain": "Điện kháng của mạch: X = XL - XC = 60 - 20 = 40 Ω. Tổng trở: z_t = √(R² + X²) = √(30² + 40²) = 50 Ω."
+    "explain": "Điện kháng của mạch: X = XL - XC = 60 - 20 = 40 Ω. Tổng trở của mạch: z_t = √(R² + X²) = √(30² + 40²) = √(900 + 1600) = √2500 = 50 Ω."
   },
   {
-    "id": 72,
-    "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-    "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có điện trở R = 12 Ω và cảm kháng XL = 16 Ω mỗi pha nối hình sao (Y) vào nguồn có điện áp dây Ud = 380 V. Cường độ dòng điện pha Ip chạy qua mỗi cuộn dây là",
+    "id": "cn_b3_24",
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có R = 12 Ω, XL = 16 Ω nối hình SAO (Y) vào nguồn điện có điện áp dây Ud = 380 V. Cường độ dòng điện pha Ip chạy qua mỗi cuộn dây là",
     "options": [
       "A. 11 A",
       "B. 19 A",
@@ -1135,12 +359,12 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. 22 A"
     ],
     "correct": 0,
-    "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = 20 Ω. Do tải nối sao: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Cường độ dòng điện pha: Ip = Up / z_p = 220 / 20 = 11 A."
+    "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = √400 = 20 Ω. Do tải nối sao, điện áp pha của tải: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Cường độ dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">20</span></span> = 11 A."
   },
   {
-    "id": 73,
-    "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-    "question": "Một động cơ điện ba pha nối hình tam giác (Δ) tiêu thụ dòng điện pha Ip = 15 A. Cường độ dòng điện dây Id chạy trên đường dây cấp điện cho động cơ là",
+    "id": "cn_b3_25",
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Một động cơ điện ba pha nối hình TAM GIÁC (Δ) tiêu thụ dòng điện pha Ip = 15 A. Cường độ dòng điện dây Id chạy trên đường dây cấp điện cho động cơ là",
     "options": [
       "A. 15 A",
       "B. 8,66 A",
@@ -1148,33 +372,1048 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. 45 A"
     ],
     "correct": 2,
-    "explain": "Tải nối tam giác (Δ) đối xứng thì: Id = √3.Ip = √3 × 15 ≈ 25,98 A."
+    "explain": "Tải nối hình tam giác (Δ) đối xứng: Dòng điện dây liên hệ với dòng điện pha qua công thức: Id = √3.Ip = √3 × 15 ≈ 1,732 × 15 = 25,98 A."
   },
   {
-    "id": 74,
-    "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-    "question": "Một khu tập thể gồm 150 hộ gia đình, mỗi hộ tiêu thụ công suất trung bình vào giờ cao điểm là 4 kW. Cần chọn máy biến áp phân phối có công suất định mức tối thiểu là bao nhiêu kVA (giả sử hệ số công suất cosφ = 0,8)?",
+    "id": "cn_b3_26",
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Một nguồn điện ba pha có điện áp dây Ud = 380 V cấp cho một tải đối xứng nối hình SAO (Y) có tổng trở mỗi pha zp = 38 Ω. Dòng điện dây Id chạy trên dây pha có giá trị là",
     "options": [
-      "A. 150 kVA",
-      "B. 480 kVA",
-      "C. 750 kVA",
-      "D. 600 kVA"
-    ],
-    "correct": 2,
-    "explain": "Tổng công suất tác dụng: P = 150 × 4 = 600 kW. Công suất biểu kiến của máy biến áp: S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">600</span><span class=\"math-frac-bottom\">0,8</span></span> = 750 kVA."
-  },
-  {
-    "id": 75,
-    "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-    "question": "Điện áp danh định mạng điện hạ áp sinh hoạt là 220 V. Theo quy chuẩn sai số cho phép không quá ±5%, dải điện áp thực tế tại ổ cắm trong nhà chấp nhận được là",
-    "options": [
-      "A. từ 200 V đến 240 V",
-      "B. từ 209 V đến 231 V",
-      "C. từ 215 V đến 225 V",
-      "D. từ 180 V đến 260 V"
+      "A. 10 A",
+      "B. 5,79 A (khoảng 5,8 A)",
+      "C. 17,3 A",
+      "D. 3,34 A"
     ],
     "correct": 1,
-    "explain": "Độ lệch điện áp 5%: ΔU = 220 × 5% = 11 V. Dải điện áp cho phép: U_min = 220 - 11 = 209 V; U_max = 220 + 11 = 231 V."
+    "explain": "Do tải nối sao: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">38</span></span> ≈ 5,79 A. Do nối sao: Id = Ip ≈ 5,79 A."
+  },
+  {
+    "id": "cn_b3_27",
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Tải ba pha đối xứng gồm ba điện trở thuần R = 22 Ω nối hình TAM GIÁC (Δ) vào mạng điện có Ud = 220 V. Dòng điện pha Ip và dòng điện dây Id lần lượt là",
+    "options": [
+      "A. Ip = 10 A; Id = 17,32 A",
+      "B. Ip = 10 A; Id = 10 A",
+      "C. Ip = 5,77 A; Id = 10 A",
+      "D. Ip = 17,32 A; Id = 10 A"
+    ],
+    "correct": 0,
+    "explain": "Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">22</span></span> = 10 A. Dòng điện dây: Id = √3.Ip = √3 × 10 ≈ 17,32 A."
+  },
+  {
+    "id": "cn_b3_28",
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Một tải điện ba pha tiêu thụ công suất P = 10 kW với điện áp dây Ud = 380 V và hệ số công suất cos φ = 0,8. Dòng điện dây Id chạy trong mạch xấp xỉ bằng",
+    "options": [
+      "A. 18,99 A",
+      "B. 32,89 A",
+      "C. 10,95 A",
+      "D. 15,20 A"
+    ],
+    "correct": 0,
+    "explain": "Từ công thức công suất ba pha: P = √3.Ud.Id.cos φ => Id = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">√3.U<sub>d</sub>.cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">√3 × 380 × 0,8</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">526,54</span></span> ≈ 18,99 A."
+  },
+  {
+    "id": "cn_b3_29",
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Máy biến áp ba pha sử dụng trong trạm điện có chức năng cơ bản là gì?",
+    "options": [
+      "A. Biến đổi điện áp và dòng điện của hệ thống điện ba pha nhưng giữ nguyên tần số f = 50 Hz.",
+      "B. Biến đổi dòng xoay chiều thành dòng điện một chiều.",
+      "C. Tăng công suất tác dụng P của nguồn điện lên gấp đôi.",
+      "D. Tích trữ điện năng vào cuộn dây sơ cấp để phát điện khi mất lưới."
+    ],
+    "correct": 0,
+    "explain": "Máy biến áp ba pha làm việc dựa trên hiện tượng cảm ứng điện từ, có chức năng biến đổi điện áp và dòng điện xoay chiều ba pha từ cấp này sang cấp khác nhưng giữ nguyên tần số dòng điện (f = 50 Hz) (SGK trang 20)."
+  },
+  {
+    "id": "cn_b3_30",
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Kí hiệu tổ đấu dây Y/Δ-11 của máy biến áp ba pha có ý nghĩa là",
+    "options": [
+      "A. Cuộn sơ cấp nối hình sao (Y), cuộn thứ cấp nối hình tam giác (Δ), góc lệch pha giữa điện áp sơ cấp và thứ cấp tương ứng góc 11 giờ (330°).",
+      "B. Máy biến áp có 11 cuộn dây độc lập.",
+      "C. Máy biến áp làm việc ở cấp điện áp 11 kV.",
+      "D. Máy biến áp sử dụng 11 kg lõi thép Silic."
+    ],
+    "correct": 0,
+    "explain": "Quy ước tổ đấu dây: Kí hiệu Y/Δ biểu thị cuộn sơ cấp nối sao, cuộn thứ cấp nối tam giác; con số 11 là chỉ số giờ lệch pha giữa vectơ điện áp dây thứ cấp so với sơ cấp (11 × 30° = 330°)."
+  },
+  {
+    "id": "cn_b3_31",
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Khi một pha của tải hình sao (Y) bị đứt (hở mạch), dòng điện trong pha bị đứt đó sẽ",
+    "options": [
+      "A. tăng lên gấp √3 lần.",
+      "B. bằng 0, hai pha còn lại vẫn tiếp tục có dòng điện chạy qua.",
+      "C. đổi chiều liên tục không xác định.",
+      "D. truyền toàn bộ công suất vào cọc tiếp địa."
+    ],
+    "correct": 1,
+    "explain": "Khi bị đứt mạch một pha, dòng điện trong nhánh pha đó bị ngắt hoàn toàn (Ip = 0). Nếu mạng có dây trung tính thì hai pha còn lại vẫn hoạt động bình thường ở điện áp 220 V."
+  },
+  {
+    "id": "cn_b3_32",
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Một xưởng thực hành có nguồn ba pha 4 dây 380/220 V. Muốn lắp một bóng đèn sợi đốt 220 V - 100 W vào mạng điện này, người ta phải đấu bóng đèn vào vị trí nào?",
+    "options": [
+      "A. Giữa hai dây pha bất kì (ví dụ dây pha A và dây pha B).",
+      "B. Giữa một dây pha bất kì và dây trung tính (ví dụ dây pha A và dây trung tính O).",
+      "C. Nối tiếp cả ba dây pha A, B, C vào một đầu bóng đèn.",
+      "D. Đấu trực tiếp hai cực của bóng đèn vào dây trung tính O."
+    ],
+    "correct": 1,
+    "explain": "Bóng đèn có điện áp định mức 220 V (bằng điện áp pha Up của lưới), do đó phải đấu một đầu vào dây pha và một đầu vào dây trung tính O để nhận đúng điện áp 220 V. Nếu đấu vào giữa hai dây pha (Ud = 380 V) thì đèn sẽ bị quá áp và nổ ngay lập tức."
+  },
+  {
+    "id": "cn_b4_01",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Hệ thống điện quốc gia là một hệ thống thống nhất gồm những thành phần cơ bản nào?",
+    "options": [
+      "A. Các công ty kinh doanh thiết bị điện gia dụng và các cửa hàng phân phối bán lẻ.",
+      "B. Nguồn điện, lưới điện và các tải tiêu thụ điện được liên kết chặt chẽ với nhau trên quy mô toàn quốc.",
+      "C. Các cơ quan quản lí tài nguyên nước và các hồ chứa thủy lợi.",
+      "D. Trạm phát sóng viễn thông và các vệ tinh địa tĩnh quân sự."
+    ],
+    "correct": 1,
+    "explain": "Theo SGK Công nghệ 12 trang 22-23: Hệ thống điện quốc gia gồm các nguồn điện (nhà máy điện), lưới điện (đường dây và trạm biến áp) và các hộ tiêu thụ điện trên toàn quốc được liên kết chặt chẽ thành một hệ thống thống nhất."
+  },
+  {
+    "id": "cn_b4_02",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Hệ thống điện quốc gia thực hiện liên tục bốn khâu then chốt nào sau đây?",
+    "options": [
+      "A. Sản xuất, truyền tải, phân phối và tiêu thụ điện năng.",
+      "B. Thiết kế, lắp ráp cơ khí, đóng tàu và thử nghiệm ô tô.",
+      "C. Đào tạo nhân lực, in ấn sách giáo khoa, bán hàng và bảo hành.",
+      "D. Chế tạo linh kiện điện tử, lập trình phần mềm và bảo dưỡng máy tính."
+    ],
+    "correct": 0,
+    "explain": "Hệ thống điện quốc gia thực hiện quá trình: Sản xuất điện năng (tại nhà máy điện) -> Truyền tải điện năng (lưới truyền tải) -> Phân phối điện năng (lưới phân phối) -> Tiêu thụ điện năng (tại các phụ tải) (SGK trang 22)."
+  },
+  {
+    "id": "cn_b4_03",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Thành phần 'LƯỚI ĐIỆN TRUYỀN TẢI' trong hệ thống điện quốc gia có cấp điện áp là",
+    "options": [
+      "A. dưới 1 kV.",
+      "B. từ 1 kV đến 35 kV.",
+      "C. từ 110 kV trở xuống.",
+      "D. trên 110 kV (như 220 kV và 500 kV)."
+    ],
+    "correct": 3,
+    "explain": "Theo quy chuẩn phân loại SGK trang 23: Lưới điện truyền tải có cấp điện áp TRÊN 110 kV (ở Việt Nam phổ biến là 220 kV và siêu cao áp 500 kV), đảm nhận truyền tải công suất lớn từ nhà máy điện đến các trạm phân phối chính."
+  },
+  {
+    "id": "cn_b4_04",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Thành phần 'LƯỚI ĐIỆN PHÂN PHỐI' trong hệ thống điện quốc gia có cấp điện áp là",
+    "options": [
+      "A. từ 110 kV trở xuống (110 kV, 35 kV, 22 kV, 10 kV, 6 kV, 0,4 kV).",
+      "B. trên 110 kV đến 500 kV.",
+      "C. trên 220 kV.",
+      "D. chỉ duy nhất cấp điện áp sinh hoạt 220 V."
+    ],
+    "correct": 0,
+    "explain": "Lưới điện phân phối có cấp điện áp TỪ 110 kV TRỞ XUỐNG (110 kV, 35 kV, 22 kV, 10 kV, 6 kV và hạ áp 0,4 kV/380/220V), làm nhiệm vụ đưa điện từ trạm phân phối chính đến các phụ tải tiêu thụ địa phương (SGK trang 23)."
+  },
+  {
+    "id": "cn_b4_05",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Theo quy chuẩn kĩ thuật điện Việt Nam, bốn cấp điện áp tiêu chuẩn của hệ thống lưới điện gồm:",
+    "options": [
+      "A. Điện cực thấp, điện trung bình, điện mạnh và điện cực mạnh.",
+      "B. Hạ áp (≤ 1 kV), Trung áp (> 1 kV đến 35 kV), Cao áp (> 35 kV đến 220 kV), Siêu cao áp (> 220 kV).",
+      "C. 12 V, 24 V, 110 V và 220 V.",
+      "D. Điện dân dụng, điện công nghiệp, điện nông nghiệp và điện quốc phòng."
+    ],
+    "correct": 1,
+    "explain": "Bốn cấp điện áp tiêu chuẩn quy định rõ ràng trong SGK trang 23: 1. Hạ áp (đến 1 kV); 2. Trung áp (từ trên 1 kV đến 35 kV); 3. Cao áp (từ trên 35 kV đến 220 kV); 4. Siêu cao áp (trên 220 kV, tiêu biểu là 500 kV)."
+  },
+  {
+    "id": "cn_b4_06",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Đường dây truyền tải điện siêu cao áp 500 kV Bắc - Nam mạch 1 được khởi công và khánh thành đóng điện vào các mốc thời gian lịch sử nào?",
+    "options": [
+      "A. Khởi công ngày 05/04/1992 và đóng điện ngày 27/05/1994.",
+      "B. Khởi công ngày 30/04/1975 và đóng điện ngày 02/09/1985.",
+      "C. Khởi công ngày 01/01/2000 và đóng điện ngày 10/10/2010.",
+      "D. Khởi công ngày 19/05/1990 và đóng điện ngày 27/07/1995."
+    ],
+    "correct": 0,
+    "explain": "Đường dây truyền tải 500 kV Bắc - Nam mạch 1 là công trình thế kỉ: khởi công ngày 05/04/1992 và hoàn thành đóng điện vận hành chính thức ngày 27/05/1994 (SGK Công nghệ 12 trang 24)."
+  },
+  {
+    "id": "cn_b4_07",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Quy mô kĩ thuật của đường dây siêu cao áp 500 kV Bắc - Nam mạch 1 là",
+    "options": [
+      "A. dài 500 km, gồm 1 000 cột tháp sắt, nối từ Hà Nội vào Đà Nẵng.",
+      "B. dài 1 487 km, gồm 3 437 cột tháp sắt, đi qua 14 tỉnh thành từ Trạm 500 kV Hoà Bình đến Trạm 500 kV Phú Lâm (TP. Hồ Chí Minh).",
+      "C. dài 2 500 km nối từ Móng Cái đến Mũi Cà Mau.",
+      "D. chạy ngầm dưới đáy biển dọc bờ biển miền Trung."
+    ],
+    "correct": 1,
+    "explain": "Đường dây 500 kV mạch 1 dài 1 487 km, xây dựng với 3 437 cột tháp sắt, băng qua rừng núi hiểm trở của 14 tỉnh thành từ Trạm 500 kV Hoà Bình tới Trạm 500 kV Phú Lâm (TP.HCM) (SGK trang 24)."
+  },
+  {
+    "id": "cn_b4_08",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Ý nghĩa chiến lược quan trọng nhất của việc xây dựng và đưa vào vận hành đường dây siêu cao áp 500 kV Bắc - Nam là gì?",
+    "options": [
+      "A. Hợp nhất hệ thống điện ba miền Bắc - Trung - Nam thành một hệ thống điện quốc gia thống nhất, giải quyết bài toán truyền tải nguồn điện dôi dư từ miền Bắc vào chi viện cho miền Nam đang thiếu điện nghiêm trọng.",
+      "B. Bỏ hẳn việc xây dựng các nhà máy nhiệt điện và thủy điện ở miền Nam.",
+      "C. Giúp giá điện sinh hoạt giảm về mức miễn phí cho toàn bộ người dân.",
+      "D. Thay thế hoàn toàn đường dây điện thoại và internet liên tỉnh."
+    ],
+    "correct": 0,
+    "explain": "Đường dây 500 kV Bắc - Nam đã liên kết lưới điện ba miền thành một khối thống nhất, chấm dứt tình trạng vận hành phân tán rời rạc, tối ưu hóa công suất phát điện của các nhà máy lớn như Thủy điện Hòa Bình để phục vụ phát triển kinh tế cả nước (SGK trang 24)."
+  },
+  {
+    "id": "cn_b4_09",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Đường dây siêu cao áp 500 kV mạch 3 vừa được khánh thành thần tốc năm 2024 nối từ địa phương nào đến địa phương nào?",
+    "options": [
+      "A. Từ Cà Mau đến TP. Hồ Chí Minh.",
+      "B. Từ Quảng Trạch (Quảng Bình) đến Phố Nối (Hưng Yên).",
+      "C. Từ Sơn La về Hà Nội.",
+      "D. Từ Pleiku sang Savannakhet (Lào)."
+    ],
+    "correct": 1,
+    "explain": "Đường dây 500 kV mạch 3 (cung đoạn Quảng Trạch - Phố Nối) dài hơn 519 km nối từ Trung tâm nhiệt điện Quảng Trạch (Quảng Bình) đến Trạm 500 kV Phố Nối (Hưng Yên), góp phần đảm bảo an ninh cấp điện trọng điểm cho miền Bắc."
+  },
+  {
+    "id": "cn_b4_10",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Vì sao tại các nhà máy điện nguồn, người ta bắt buộc phải đặt trạm biến áp TĂNG ÁP trước khi đưa điện lên đường dây truyền tải?",
+    "options": [
+      "A. Để tăng tần số dòng điện xoay chiều lên hàng nghìn Hz.",
+      "B. Để tăng điện áp U, từ đó giảm cường độ dòng điện I, giúp giảm mạnh công suất hao phí toả nhiệt trên dây dẫn theo công thức ΔP = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup>.R</span><span class=\"math-frac-bottom\">U<sup>2</sup>.cos<sup>2</sup>φ</span></span>.",
+      "C. Để chuyển đổi dòng xoay chiều thành dòng điện một chiều.",
+      "D. Để biến điện năng thành cơ năng dự trữ trong cột tháp."
+    ],
+    "correct": 1,
+    "explain": "Theo định luật Jun-Len-xơ, công suất hao phí nhiệt trên đường dây là: ΔP = I²R = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup>.R</span><span class=\"math-frac-bottom\">U<sup>2</sup>.cos<sup>2</sup>φ</span></span>. Khi tăng điện áp U lên n lần thì hao phí ΔP giảm đi n² lần, giúp tiết kiệm chi phí xây dựng đường dây và truyền tải được công suất cực lớn đi xa."
+  },
+  {
+    "id": "cn_b4_11",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Khi truyền tải một công suất điện P xác định trên cùng một đường dây có điện trở R, nếu tăng điện áp từ U1 = 110 kV lên U2 = 220 kV thì công suất hao phí toả nhiệt ΔP trên đường dây sẽ",
+    "options": [
+      "A. tăng lên gấp 2 lần.",
+      "B. giảm đi 2 lần.",
+      "C. giảm đi 4 lần.",
+      "D. không thay đổi."
+    ],
+    "correct": 2,
+    "explain": "Công suất hao phí tỉ lệ nghịch với bình phương điện áp: ΔP tỉ lệ với <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">U<sup>2</sup></span></span>. Khi tăng điện áp từ 110 kV lên 220 kV (tăng gấp <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">110</span></span> = 2 lần) thì hao phí giảm: 2² = 4 lần."
+  },
+  {
+    "id": "cn_b4_12",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Vai trò chủ yếu của các trạm biến áp HẠ ÁP bố trí gần các khu dân cư và xí nghiệp công nghiệp là gì?",
+    "options": [
+      "A. Tăng điện áp lên 500 kV để trả ngược về nhà máy điện.",
+      "B. Giảm điện áp từ cấp truyền tải và trung áp xuống cấp điện áp hạ áp an toàn, phù hợp với các thiết bị tiêu thụ điện (380 V / 220 V).",
+      "C. Làm mát không khí và phát điện dự phòng khi trời mưa bão.",
+      "D. Khử từ trường xung quanh đường dây điện."
+    ],
+    "correct": 1,
+    "explain": "Trạm biến áp hạ áp có nhiệm vụ hạ cấp điện áp từ trung áp (22 kV, 35 kV) hoặc cao áp (110 kV) xuống điện áp hạ áp 380/220 V tương thích với mức điện áp làm việc an toàn của máy móc và đồ dùng gia đình (SGK trang 23)."
+  },
+  {
+    "id": "cn_b4_13",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Tần số danh định của dòng điện xoay chiều trong hệ thống điện quốc gia Việt Nam được chuẩn hóa là bao nhiêu?",
+    "options": [
+      "A. 60 Hz",
+      "B. 50 Hz",
+      "C. 100 Hz",
+      "D. 25 Hz"
+    ],
+    "correct": 1,
+    "explain": "Tần số công nghiệp danh định của hệ thống điện quốc gia Việt Nam là 50 Hz (SGK trang 22-23), sai số vận hành cho phép rất nghiêm ngặt (không quá ±5%)."
+  },
+  {
+    "id": "cn_b4_14",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Cơ quan đầu não chịu trách nhiệm chỉ huy điều độ, điều hòa công suất phát của các nhà máy điện và vận hành an toàn hệ thống điện quốc gia 24/7 tại Việt Nam là",
+    "options": [
+      "A. Trung tâm Điều độ Hệ thống điện Quốc gia (A0 - NSMO).",
+      "B. Viện Khoa học Thủy lợi Việt Nam.",
+      "C. Cục Quản lí Thị trường.",
+      "D. Tổng công ty Bưu chính Viễn thông."
+    ],
+    "correct": 0,
+    "explain": "Trung tâm Điều độ Hệ thống điện Quốc gia (A0) là đơn vị chỉ huy vận hành, theo dõi giám sát cung - cầu điện theo thời gian thực để duy trì ổn định tần số 50 Hz và điện áp trên toàn bộ lưới điện quốc gia."
+  },
+  {
+    "id": "cn_b4_15",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Cấp điện áp trung áp phổ biến nhất đang được sử dụng trong lưới điện phân phối tại các đô thị và khu dân cư ở Việt Nam hiện nay là:",
+    "options": [
+      "A. 0,4 kV",
+      "B. 22 kV",
+      "C. 110 kV",
+      "D. 500 kV"
+    ],
+    "correct": 1,
+    "explain": "Ở Việt Nam, cấp điện áp 22 kV là cấp điện áp trung áp tiêu chuẩn phổ biến nhất trong lưới phân phối hiện đại để cấp điện từ các trạm 110 kV về các trạm biến áp phân phối phụ tải (SGK trang 23)."
+  },
+  {
+    "id": "cn_b4_16",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Các chỉ tiêu chất lượng điện năng quan trọng hàng đầu trong hệ thống điện quốc gia gồm có:",
+    "options": [
+      "A. Độ ổn định tần số (50 Hz), độ ổn định điện áp (độ lệch trong ngưỡng ±5%) và độ tin cậy cung cấp điện liên tục.",
+      "B. Màu sắc của lớp vỏ cách điện cáp ngầm.",
+      "C. Tốc độ gió thổi qua đường dây và nhiệt độ cột tháp sắt.",
+      "D. Số lượng nhân viên trực ca tại các trạm biến áp."
+    ],
+    "correct": 0,
+    "explain": "Chất lượng điện năng được đo bằng: tần số ổn định quanh mức 50 Hz, độ lệch điện áp nằm trong tiêu chuẩn cho phép (±5%), sóng hài thấp và chỉ số cấp điện liên tục (SAIDI, SAIFI)."
+  },
+  {
+    "id": "cn_b4_17",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "Thiết bị nào sau đây thường được lắp đặt tại các trạm biến áp phân phối để nâng cao hệ số công suất cos φ và giảm tổn thất điện năng trên lưới điện?",
+    "options": [
+      "A. Tụ bù công suất phản kháng (bộ tụ điện).",
+      "B. Đèn LED chiếu sáng công suất lớn.",
+      "C. Cột thu lôi chống sét.",
+      "D. Máy hàn điện hồ quang."
+    ],
+    "correct": 0,
+    "explain": "Tụ bù công suất phản kháng phát ra công suất phản kháng Q bù cho các phụ tải cảm (động cơ điện), giúp nâng cao hệ số công suất cos φ của lưới lên gần bằng 1, làm giảm dòng điện trên dây dẫn và giảm hao phí truyền tải."
+  },
+  {
+    "id": "cn_b4_18",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "a. Lưới điện truyền tải bao gồm các đường dây và trạm biến áp có cấp điện áp từ 110 kV trở xuống.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH VẬN HÀNH: Hệ thống truyền tải điện Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Tổng công ty Truyền tải điện Quốc gia (EVNNPT) quản lí vận hành hệ thống lưới điện truyền tải điện áp 220 kV và 500 kV liên kết các nhà máy điện nguồn với các trung tâm phụ tải lớn trên phạm vi cả nước.</div>\n    </div>",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "SAI. Lưới điện truyền tải có cấp điện áp TRÊN 110 kV (ở nước ta là 220 kV và 500 kV); còn lưới điện từ 110 kV trở xuống thuộc về lưới điện phân phối (SGK trang 23).",
+    "subLabel": "1a"
+  },
+  {
+    "id": "cn_b4_19",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "b. Đường dây 500 kV mạch 1 đóng vai trò lịch sử kết nối hệ thống điện ba miền thành một hệ thống điện quốc gia thống nhất.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH VẬN HÀNH: Hệ thống truyền tải điện Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Đường dây 500 kV mạch 1 được đóng điện năm 1994, truyền tải nguồn điện dôi dư từ miền Bắc (nhà máy thủy điện Hòa Bình) vào miền Trung và miền Nam.</div>\n    </div>",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "ĐÚNG. Đây là ý nghĩa lớn nhất của đường dây 500 kV Bắc - Nam mạch 1: liên kết lưới điện ba miền, xóa bỏ tình trạng chia cắt năng lượng và tạo tiền đề phát triển kinh tế toàn diện.",
+    "subLabel": "1b"
+  },
+  {
+    "id": "cn_b4_20",
+    "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+    "question": "c. Trong hệ thống điện quốc gia, điện năng có thể được lưu trữ dễ dàng với dung lượng không giới hạn vào các đường dây dẫn điện.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH VẬN HÀNH: Hệ thống truyền tải điện Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Điều độ viên hệ thống điện phải tính toán liên tục lượng điện phát ra và lượng điện tiêu thụ trong từng giây để cân bằng hệ thống.</div>\n    </div>",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "SAI. Đặc thù của điện năng là sản xuất, truyền tải và tiêu thụ diễn ra hầu như đồng thời tại cùng một thời điểm, đường dây chỉ có chức năng dẫn điện chứ không tích trữ được năng lượng. Do đó hệ thống luôn phải đảm bảo công suất phát bằng công suất tiêu thụ cộng hao phí.",
+    "subLabel": "1c"
+  },
+  {
+    "id": "cn_b6_01",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "Mạng điện sản xuất quy mô nhỏ là mạng điện có công suất tiêu thụ điện năng nằm trong khoảng nào sau đây?",
+    "options": [
+      "A. Dưới 1 kW.",
+      "B. Từ vài chục đến vài trăm kW.",
+      "C. Từ vài nghìn đến vài chục nghìn MW.",
+      "D. Trên 1 000 000 kW."
+    ],
+    "correct": 1,
+    "explain": "Theo định nghĩa chuẩn SGK Công nghệ 12 trang 31: Mạng điện sản xuất quy mô nhỏ là mạng điện có công suất tiêu thụ điện năng từ vài chục đến vài trăm kW, lấy điện từ lưới điện phân phối để cung cấp cho cơ sở sản xuất."
+  },
+  {
+    "id": "cn_b6_02",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "Ba đặc điểm quan trọng nhất của mạng điện sản xuất quy mô nhỏ bao gồm:",
+    "options": [
+      "A. Công suất nhỏ dưới 100 W; dùng nguồn pin năng lượng mặt trời; không có aptomat.",
+      "B. Công suất tiêu thụ từ vài chục đến vài trăm kW; phụ tải phân bố tập trung; mạng điện động lực và mạng điện chiếu sáng hoạt động độc lập.",
+      "C. Dùng cấp điện áp siêu cao áp 500 kV; phụ tải rải rác trên diện tích hàng nghìn km²; mạng động lực và chiếu sáng mắc chung trên một công tắc.",
+      "D. Toàn bộ thiết bị đều dùng dòng điện một chiều 24 V."
+    ],
+    "correct": 1,
+    "explain": "Ba đặc điểm cốt lõi học sinh bắt buộc phải ghi nhớ theo SGK trang 31: 1. Công suất tiêu thụ từ vài chục đến vài trăm kW; 2. Tải tiêu thụ phân bố tập trung trong phân xưởng; 3. Mạng điện động lực và mạng điện chiếu sáng hoạt động độc lập."
+  },
+  {
+    "id": "cn_b6_03",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "Đặc điểm 'phụ tải phân bố tập trung' trong mạng điện sản xuất quy mô nhỏ có ý nghĩa thực tế là gì?",
+    "options": [
+      "A. Các thiết bị tiêu thụ điện (động cơ điện, máy hàn, máy cơ khí, lò sấy...) được bố trí tập trung trong một phạm vi không gian nhà xưởng hẹp của cơ sở sản xuất.",
+      "B. Các phụ tải nằm rải rác ở nhiều huyện và tỉnh thành khác nhau.",
+      "C. Tất cả máy móc đều cắm chung vào một ổ điện đơn duy nhất.",
+      "D. Thiết bị điện chỉ hoạt động tập trung vào đúng một giờ trong ngày."
+    ],
+    "correct": 0,
+    "explain": "Trong cơ sở sản xuất nhỏ (như xưởng may, xưởng cơ khí, xưởng chế biến nông sản), các phụ tải là máy móc thiết bị sản xuất được bố trí tập trung trong phạm vi các phân xưởng có diện tích vừa và nhỏ (SGK trang 31)."
+  },
+  {
+    "id": "cn_b6_04",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "Vì sao trong mạng điện sản xuất quy mô nhỏ, mạng điện ĐỘNG LỰC và mạng điện CHIẾU SÁNG bắt buộc phải hoạt động ĐỘC LẬP?",
+    "options": [
+      "A. Để tránh việc bóng đèn chiếu sáng làm nóng hỏng động cơ điện.",
+      "B. Để khi xảy ra sự cố quá tải hay ngắn mạch ở máy móc làm nhảy aptomat tủ động lực, hệ thống đèn chiếu sáng vẫn có điện bình thường, giúp công nhân không bị hoảng loạn, thuận tiện thoát hiểm và xử lí sự cố an toàn.",
+      "C. Để công ty điện lực dễ ghi số điện của từng bóng đèn.",
+      "D. Để tiết kiệm chi phí lắp đặt dây dẫn."
+    ],
+    "correct": 1,
+    "explain": "Tải động lực (máy móc, động cơ) thường có dòng khởi động lớn và dễ xảy ra sự cố quá tải. Tách độc lập mạng chiếu sáng giúp hệ thống chiếu sáng không bị chập chờn hay mất điện đột ngột khi tải động lực gặp sự cố, đảm bảo an toàn lao động tối đa (SGK trang 31)."
+  },
+  {
+    "id": "cn_b6_05",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "Nguồn cấp điện cho mạng điện sản xuất quy mô nhỏ thường được lấy từ đâu?",
+    "options": [
+      "A. Lấy trực tiếp từ đường dây siêu cao áp 500 kV đi ngang qua cổng xưởng.",
+      "B. Lấy từ lưới điện phân phối (trung áp 22 kV hoặc 35 kV) qua máy biến áp hạ áp riêng hoặc chung để hạ xuống cấp 380/220 V.",
+      "C. Hoàn toàn chạy bằng máy phát điện xăng mini xách tay.",
+      "D. Lấy từ mạng điện 110 V của pin quang điện đồ chơi."
+    ],
+    "correct": 1,
+    "explain": "Nguồn điện cấp cho cơ sở sản xuất quy mô nhỏ thường lấy từ đường dây trung áp 22 kV hoặc 35 kV của lưới phân phối công cộng qua trạm biến áp hạ áp (380/220 V) (SGK trang 31)."
+  },
+  {
+    "id": "cn_b6_06",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "Sơ đồ cấu trúc phân cấp chuẩn của mạng điện sản xuất quy mô nhỏ theo đúng thứ tự là:",
+    "options": [
+      "A. Phụ tải -> Tủ chiếu sáng -> Tủ động lực -> Trạm biến áp -> Lưới phân phối.",
+      "B. Lưới điện phân phối -> Trạm biến áp hạ áp -> Tủ điện phân phối tổng (MSB) -> Tủ điện phân phối nhánh -> Tủ điện động lực / Tủ điện chiếu sáng -> Phụ tải tiêu thụ.",
+      "C. Trạm biến áp -> Tủ chiếu sáng -> Tủ tổng -> Máy sản xuất.",
+      "D. Tủ tổng -> Tủ động lực -> Trạm biến áp -> Phụ tải."
+    ],
+    "correct": 1,
+    "explain": "Cấu trúc phân cấp chuẩn SGK trang 32-33: Nguồn từ lưới phân phối -> Trạm biến áp hạ áp -> Tủ phân phối tổng (MSB) -> Tủ phân phối nhánh từng phân xưởng -> Tủ động lực & Tủ chiếu sáng -> Máy móc thiết bị."
+  },
+  {
+    "id": "cn_b6_07",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "Tủ điện phân phối TỔNG (MSB) trong mạng điện sản xuất quy mô nhỏ có vai trò chính là",
+    "options": [
+      "A. điều khiển tốc độ quay của từng quạt thông gió.",
+      "B. nhận điện hạ áp (380/220 V) trực tiếp từ máy biến áp để phân chia và cấp nguồn cho các tủ điện phân phối nhánh, trang bị thiết bị đóng cắt bảo vệ tổng.",
+      "C. nắn dòng xoay chiều thành một chiều nạp cho bình ắc quy.",
+      "D. nâng điện áp lên 110 kV để bán lại cho lưới điện."
+    ],
+    "correct": 1,
+    "explain": "Tủ phân phối tổng (MSB) đặt ngay sau máy biến áp hạ áp, chứa aptomat tổng dòng lớn (MCCB hoặc ACB) để bảo vệ toàn bộ mạng điện và cấp nguồn cho các tủ nhánh (SGK trang 33)."
+  },
+  {
+    "id": "cn_b6_08",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "Tủ điện phân phối NHÁNH có nhiệm vụ gì trong sơ đồ mạng điện cơ sở sản xuất?",
+    "options": [
+      "A. Nhận điện từ tủ tổng để phân phối tiếp đến các tủ điện động lực và tủ điện chiếu sáng trong từng phân xưởng riêng biệt.",
+      "B. Hạ áp từ 22 kV xuống 380 V.",
+      "C. Thay thế hoàn toàn động cơ của máy sản xuất.",
+      "D. Thu sét bảo vệ mái nhà xưởng."
+    ],
+    "correct": 0,
+    "explain": "Tủ phân phối nhánh được đặt tại từng phân xưởng sản xuất, nhận điện từ tủ tổng và chia thành các nhánh cấp riêng cho tủ động lực và tủ chiếu sáng của phân xưởng đó (SGK trang 33)."
+  },
+  {
+    "id": "cn_b6_09",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "Tủ điện ĐỘNG LỰC trong phân xưởng sản xuất cấp nguồn trực tiếp cho đối tượng nào?",
+    "options": [
+      "A. Các bóng đèn tuýp chiếu sáng hành lang và bảng hiệu quảng cáo.",
+      "B. Các máy móc, thiết bị sản xuất như động cơ điện ba pha, máy gia công kim loại, máy may, máy ép, máy nén khí...",
+      "C. Máy tính xách tay của nhân viên kế toán.",
+      "D. Đồng hồ đeo tay của công nhân."
+    ],
+    "correct": 1,
+    "explain": "Tủ động lực chuyên dùng cấp điện cho các máy công tác trong dây chuyền sản xuất (chủ yếu là động cơ ba pha, lò nhiệt, máy công cụ), chứa aptomat, khởi động từ và rơ le nhiệt bảo vệ (SGK trang 33)."
+  },
+  {
+    "id": "cn_b6_10",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "Quy trình an toàn bắt buộc khi thao tác ĐÓNG ĐIỆN cho một mạng điện phân xưởng sản xuất là:",
+    "options": [
+      "A. Đóng lần lượt TỪ NGUỒN ĐẾN TẢI: Trạm biến áp -> Tủ phân phối tổng -> Tủ phân phối nhánh -> Tủ động lực / chiếu sáng -> Khởi động máy sản xuất.",
+      "B. Đóng lần lượt từ tải về nguồn: Bật tất cả các máy móc trước rồi mới đóng tủ tổng.",
+      "C. Đóng ngẫu nhiên bất kì aptomat nào trong xưởng trước cũng được.",
+      "D. Vừa đóng aptomat tổng vừa bật máy sản xuất cùng lúc."
+    ],
+    "correct": 0,
+    "explain": "Quy trình ĐÓNG ĐIỆN chuẩn: Đóng từ NGUỒN đến TẢI (Trạm -> Tủ tổng -> Tủ nhánh -> Tủ động lực/chiếu sáng -> Bật máy). Giúp các cấp bảo vệ sẵn sàng và kiểm soát thông số điện áp trước khi tải làm việc (SGK trang 33)."
+  },
+  {
+    "id": "cn_b6_11",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "Quy trình an toàn bắt buộc khi thao tác CẮT ĐIỆN để bảo dưỡng hoặc hết ca sản xuất là:",
+    "options": [
+      "A. Cắt trực tiếp cầu dao/aptomat tại tủ tổng trước tiên trong khi các máy vẫn đang chạy.",
+      "B. Cắt lần lượt TỪ TẢI VỀ NGUỒN: Tắt các máy sản xuất -> Cắt tủ động lực / chiếu sáng -> Cắt tủ phân phối nhánh -> Cắt tủ phân phối tổng.",
+      "C. Cắt ngẫu nhiên bất kì aptomat nào.",
+      "D. Dùng kìm bấm đứt dây cáp nguồn."
+    ],
+    "correct": 1,
+    "explain": "Quy trình CẮT ĐIỆN chuẩn: Cắt từ TẢI về NGUỒN (Tắt máy -> Cắt tủ động lực/chiếu sáng -> Cắt tủ nhánh -> Cắt tủ tổng) (SGK trang 33)."
+  },
+  {
+    "id": "cn_b6_12",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "Về mặt kĩ thuật và an toàn, VÌ SAO KHI CẮT ĐIỆN BẮT BUỘC PHẢI CẮT TỪ TẢI VỀ NGUỒN?",
+    "options": [
+      "A. Vì công tắc ở tải nhỏ hơn nên bấm nhẹ tay hơn.",
+      "B. Vì khi các máy sản xuất đang hoạt động, dòng điện phụ tải rất lớn. Cắt tải trước để dập tắt dòng điện, tránh phát sinh HỒ QUANG ĐIỆN nguy hiểm gây nổ thiết bị, cháy tiếp điểm và gây bỏng cho người thao tác ở các tủ điện nguồn phía trên.",
+      "C. Để bóng đèn chiếu sáng kịp nguội bớt.",
+      "D. Vì quy định này chỉ áp dụng cho mạng điện sinh hoạt gia đình."
+    ],
+    "correct": 1,
+    "explain": "Lí do sống còn: Khi mang tải lớn, việc mở tiếp điểm đóng cắt nguồn sẽ làm bùng phát hồ quang điện cực kì mạnh có thể làm nổ buồng dập hồ quang, cháy mặt và gây bỏng nghiêm trọng cho công nhân điện. Cắt tải trước giúp dập dòng không tải an toàn (SGK trang 33)."
+  },
+  {
+    "id": "cn_b6_13",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "Thiết bị bảo vệ quá tải và ngắn mạch được sử dụng phổ biến nhất cho động cơ ba pha trong tủ điện động lực là:",
+    "options": [
+      "A. Aptomat (MCB, MCCB) kết hợp với Rơ le nhiệt.",
+      "B. Dây đồng quấn quanh đinh ốc.",
+      "C. Công tơ điện một pha.",
+      "D. Biến trở con chạy thủ công."
+    ],
+    "correct": 0,
+    "explain": "Aptomat (MCB, MCCB) bảo vệ ngắn mạch và quá tải tức thời, còn rơ le nhiệt gắn sau khởi động từ chuyên bảo vệ quá tải lâu dài chống cháy cuộn dây động cơ (SGK trang 33)."
+  },
+  {
+    "id": "cn_b6_14",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "Một phân xưởng may công nghiệp có tổng công suất tác dụng tiêu thụ P = 160 kW, hệ số công suất cos φ = 0,8. Cần chọn máy biến áp phân phối có công suất biểu kiến định mức tối thiểu là bao nhiêu kVA?",
+    "options": [
+      "A. 128 kVA",
+      "B. 160 kVA",
+      "C. 200 kVA",
+      "D. 250 kVA"
+    ],
+    "correct": 2,
+    "explain": "Công suất biểu kiến của máy biến áp: S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">160</span><span class=\"math-frac-bottom\">0,8</span></span> = 200 kVA. Do đó cần chọn máy biến áp có công suất định mức tối thiểu là 200 kVA."
+  },
+  {
+    "id": "cn_b6_15",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "Một xưởng chế biến gỗ có công suất tiêu thụ P = 80 kW, cos φ = 0,8. Nếu lắp đặt tụ bù để nâng hệ số công suất lên cos φ' = 1,0 thì công suất biểu kiến S tiêu thụ từ lưới điện giảm đi bao nhiêu kVA?",
+    "options": [
+      "A. Giảm 20 kVA",
+      "B. Giảm 80 kVA",
+      "C. Giảm 100 kVA",
+      "D. Giảm 0 kVA"
+    ],
+    "correct": 0,
+    "explain": "Ban đầu: S1 = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">0,8</span></span> = 100 kVA. Khi nâng cos φ' = 1,0: S2 = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ'</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">1,0</span></span> = 80 kVA. Công suất biểu kiến giảm: ΔS = 100 - 80 = 20 kVA (giảm dòng điện trên dây cáp nguồn)."
+  },
+  {
+    "id": "cn_b6_16",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "a. Mạng điện sản xuất quy mô nhỏ có công suất tiêu thụ trong khoảng từ vài chục đến vài trăm kW.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH THỰC TẾ: Phân xưởng cơ khí chính xác An Phát</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Xưởng cơ khí An Phát có diện tích 800 m², trang bị 10 máy tiện CNC, 5 máy phay cơ và hệ thống đèn chiếu sáng LED phân xưởng. Nguồn điện lấy từ trạm biến áp hạ áp 22/0,4 kV riêng của công ty.</div>\n    </div>",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "ĐÚNG. Mạng điện sản xuất quy mô nhỏ có công suất tiêu thụ điển hình từ vài chục đến vài trăm kW (SGK trang 31).",
+    "subLabel": "2a"
+  },
+  {
+    "id": "cn_b6_17",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "b. Mạng điện động lực cấp cho các máy tiện CNC và mạng điện chiếu sáng xưởng An Phát phải được cấp nguồn từ cùng một công tắc chung để tiết kiệm tủ điện.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH THỰC TẾ: Phân xưởng cơ khí chính xác An Phát</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Xưởng cơ khí An Phát có diện tích 800 m², trang bị 10 máy tiện CNC, 5 máy phay cơ và hệ thống đèn chiếu sáng LED phân xưởng. Nguồn điện lấy từ trạm biến áp hạ áp 22/0,4 kV riêng của công ty.</div>\n    </div>",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "SAI. Mạng điện động lực và mạng điện chiếu sáng bắt buộc phải hoạt động độc lập để đảm bảo an toàn, khi máy móc bị sự cố nhảy aptomat thì đèn chiếu sáng vẫn sáng bình thường.",
+    "subLabel": "2b"
+  },
+  {
+    "id": "cn_b6_18",
+    "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+    "question": "c. Khi hết ca làm việc, thợ điện ngắt điện bằng cách cắt aptomat tổng ở trạm biến áp trước khi tắt các máy tiện CNC đang gia công.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH THỰC TẾ: Phân xưởng cơ khí chính xác An Phát</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Xưởng cơ khí An Phát có diện tích 800 m², trang bị 10 máy tiện CNC, 5 máy phay cơ và hệ thống đèn chiếu sáng LED phân xưởng. Nguồn điện lấy từ trạm biến áp hạ áp 22/0,4 kV riêng của công ty.</div>\n    </div>",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "SAI. Quy trình cắt điện an toàn bắt buộc phải cắt từ TẢI về NGUỒN: Tắt từng máy tiện CNC -> Cắt aptomat tủ động lực -> Cắt tủ nhánh -> Cắt tủ tổng để dập dòng phụ tải, tránh phát sinh hồ quang gây nổ và hỏng tiếp điểm ở tủ nguồn.",
+    "subLabel": "2c"
+  },
+  {
+    "id": "cn_b5_01",
+    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+    "question": "Nhà máy thủy điện sử dụng dạng năng lượng đầu vào nào để biến đổi thành điện năng?",
+    "options": [
+      "A. Nhiệt năng của than đá.",
+      "B. Cơ năng (thế năng và động năng) của dòng nước chảy từ trên cao.",
+      "C. Năng lượng phản ứng phân hạch hạt nhân.",
+      "D. Năng lượng bức xạ mặt trời."
+    ],
+    "correct": 1,
+    "explain": "Nhà máy thủy điện sử dụng thế năng của nước tích trữ ở hồ chứa trên cao, qua ống áp lực tạo dòng nước có động năng lớn làm quay tuabin nước, kéo máy phát điện quay để phát ra điện (SGK trang 26)."
+  },
+  {
+    "id": "cn_b5_02",
+    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+    "question": "Ưu điểm nổi bật nhất của nhà máy nhiệt điện sử dụng nhiên liệu hóa thạch (than đá, khí đốt) là gì?",
+    "options": [
+      "A. Hoàn toàn không phát thải khí nhà kính.",
+      "B. Công suất phát điện lớn và khả năng vận hành liên tục, ổn định, không phụ thuộc vào mùa mưa hay mùa khô như thủy điện.",
+      "C. Chi phí xây dựng và nhiên liệu bằng 0.",
+      "D. Sử dụng nguồn tài nguyên vĩnh cửu không bao giờ cạn kiệt."
+    ],
+    "correct": 1,
+    "explain": "Nhà máy nhiệt điện có ưu điểm lớn là công suất phát rất cao, vận hành liên tục 24/7 ổn định quanh năm, đảm bảo cấp điện nền cho hệ thống mà không bị ảnh hưởng bởi thời tiết hay hạn hán (SGK trang 27)."
+  },
+  {
+    "id": "cn_b5_03",
+    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+    "question": "Nhược điểm lớn nhất về mặt môi trường của các nhà máy nhiệt điện than là:",
+    "options": [
+      "A. Phát thải lượng lớn khí nhà kính (CO2, SO2, NOx), bụi mịn và khối lượng tro xỉ khổng lồ gây ô nhiễm đất, nước và không khí.",
+      "B. Làm khô cạn các dòng sông lớn.",
+      "C. Gây ra các vụ rò rỉ phóng xạ nguy hiểm.",
+      "D. Tiêu diệt chim và dơi do cánh quạt quay."
+    ],
+    "correct": 0,
+    "explain": "Đốt than phát thải lượng khí CO2 lớn gây hiệu ứng nhà kính và biến đổi khí hậu toàn cầu, kèm theo khí SO2 gây mưa axit và bãi thải tro xỉ chiếm nhiều diện tích đất (SGK trang 27)."
+  },
+  {
+    "id": "cn_b5_04",
+    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+    "question": "Trong nhà máy điện hạt nhân, năng lượng dùng để đun sôi nước tạo hơi áp suất cao quay tuabin xuất phát từ đâu?",
+    "options": [
+      "A. Phản ứng phân hạch hạt nhân của nhiên liệu phóng xạ (chủ yếu là Uranium-235) trong lò phản ứng.",
+      "B. Đốt cháy khí hydro hóa lỏng.",
+      "C. Bức xạ nhiệt của tia vũ trụ.",
+      "D. Phản ứng hóa học giữa axit và bazo."
+    ],
+    "correct": 0,
+    "explain": "Nhà máy điện hạt nhân giải phóng nhiệt năng cực lớn từ phản ứng phân hạch dây chuyền của hạt nhân Uranium trong lò phản ứng hạt nhân để tạo hơi nước quay tuabin máy phát (SGK trang 28)."
+  },
+  {
+    "id": "cn_b5_05",
+    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+    "question": "Thiết bị biến tần (Inverter) trong hệ thống điện mặt trời nối lưới có nhiệm vụ gì?",
+    "options": [
+      "A. Tích trữ điện năng vào pin dự phòng.",
+      "B. Chuyển đổi dòng điện một chiều (DC) do các tấm pin quang điện tạo ra thành dòng điện xoay chiều (AC) đồng bộ về tần số và điện áp để cấp cho tải và hòa vào lưới điện quốc gia.",
+      "C. Làm mát các tấm pin mặt trời khi trời quá nắng.",
+      "D. Tự động xoay tấm pin theo hướng gió."
+    ],
+    "correct": 1,
+    "explain": "Pin mặt trời tạo ra dòng điện một chiều (DC). Muốn cấp điện cho thiết bị xoay chiều 220V hoặc đưa lên lưới điện 50 Hz thì bắt buộc phải qua bộ biến tần (Inverter) chuyển DC thành AC (SGK trang 29)."
+  },
+  {
+    "id": "cn_b5_06",
+    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+    "question": "Hạn chế chung lớn nhất của hai nguồn năng lượng tái tạo là điện gió và điện mặt trời là gì?",
+    "options": [
+      "A. Phát thải quá nhiều khí CO2 độc hại.",
+      "B. Phụ thuộc hoàn toàn vào điều kiện thời tiết (nắng, gió), tính bất định cao, không phát được điện vào ban đêm (điện mặt trời) hoặc lúc lặng gió.",
+      "C. Giá thành thiết bị tăng gấp 100 lần mỗi năm.",
+      "D. Không thể kết nối vào hệ thống lưới điện."
+    ],
+    "correct": 1,
+    "explain": "Năng lượng gió và mặt trời có nhược điểm lớn là tính chập chờn, bất định, phụ thuộc vào thời tiết. Khi thời tiết xấu hoặc đêm xuống, công suất phát sụt giảm mạnh đòi hỏi hệ thống điện phải có nguồn điện nền bù đắp (SGK trang 29-30)."
+  },
+  {
+    "id": "cn_b5_07",
+    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+    "question": "Nhà máy thủy điện lớn nhất Việt Nam và khu vực Đông Nam Á hiện nay là",
+    "options": [
+      "A. Thủy điện Hòa Bình",
+      "B. Thủy điện Sơn La (công suất 2 400 MW)",
+      "C. Thủy điện Yaly",
+      "D. Thủy điện Trị An"
+    ],
+    "correct": 1,
+    "explain": "Thủy điện Sơn La trên sông Đà với 6 tổ máy có tổng công suất 2 400 MW là nhà máy thủy điện có quy mô lớn nhất Việt Nam và Đông Nam Á."
+  },
+  {
+    "id": "cn_b5_08",
+    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+    "question": "Nguồn năng lượng sinh khối (Biomass) dùng để sản xuất điện năng bao gồm các nguồn vật liệu nào?",
+    "options": [
+      "A. Quặng sắt, bauxit và đất hiếm.",
+      "B. Phụ phẩm nông nghiệp và lâm nghiệp như bã mía, trấu, rơm rạ, mùn cưa, dăm gỗ và chất thải hữu cơ.",
+      "C. Dầu mỏ thô dưới đáy biển sâu.",
+      "D. Than đá antraxit."
+    ],
+    "correct": 1,
+    "explain": "Năng lượng sinh khối tận dụng các phế phụ phẩm nông nghiệp (bã mía ở các nhà máy đường, trấu, dăm gỗ) để đốt lò hơi phát điện, giúp giảm thiểu rác thải nông nghiệp và bảo vệ môi trường (SGK trang 30)."
+  },
+  {
+    "id": "cn_b5_09",
+    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+    "question": "Hiệu suất chuyển đổi quang năng thành điện năng của các tấm pin quang điện (Silicon tinh thể) thương mại phổ biến hiện nay đạt khoảng",
+    "options": [
+      "A. từ 15% đến 22%",
+      "B. từ 85% đến 98%",
+      "C. 100%",
+      "D. dưới 2%"
+    ],
+    "correct": 0,
+    "explain": "Các tấm pin mặt trời silicon thương dụng hiện nay có hiệu suất chuyển đổi quang điện trung bình trong khoảng 15% - 22%."
+  },
+  {
+    "id": "cn_b5_10",
+    "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+    "question": "Xu hướng chuyển dịch năng lượng hiện nay tại Việt Nam và trên thế giới hướng tới mục tiêu Net Zero là",
+    "options": [
+      "A. Xây dựng thêm thật nhiều nhà máy nhiệt điện đốt than.",
+      "B. Giảm dần nhiệt điện than, tăng nhanh tỉ trọng năng lượng tái tạo (điện gió ngoài khơi, điện mặt trời, sinh khối) kết hợp hệ thống pin tích năng (BESS) và lưới điện thông minh.",
+      "C. Ngừng hoàn toàn việc sử dụng điện năng.",
+      "D. Chỉ sử dụng máy phát điện chạy xăng dầu tại từng hộ gia đình."
+    ],
+    "correct": 1,
+    "explain": "Chuyển dịch năng lượng xanh: cắt giảm điện than ô nhiễm, phát triển năng lượng tái tạo sạch (gió, mặt trời, thủy điện tích năng) hướng tới mục tiêu phát thải ròng bằng 0 (Net Zero) vào năm 2050 theo cam kết của Việt Nam tại COP26."
+  },
+  {
+    "id": "cn_b7_01",
+    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+    "question": "Mạng điện hạ áp dùng trong sinh hoạt thuộc thành phần nào của hệ thống điện quốc gia?",
+    "options": [
+      "A. Lưới điện truyền tải siêu cao áp.",
+      "B. Lưới điện phân phối.",
+      "C. Nhà máy nhiệt điện nguồn.",
+      "D. Hệ thống đập tràn thủy điện."
+    ],
+    "correct": 1,
+    "explain": "Mạng điện hạ áp sinh hoạt là khâu cuối cùng của lưới điện phân phối, nhận điện từ trạm biến áp hạ áp để cấp điện trực tiếp cho các hộ gia đình (SGK trang 35)."
+  },
+  {
+    "id": "cn_b7_02",
+    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+    "question": "Các thông số kĩ thuật định mức tiêu chuẩn của mạng điện hạ áp sinh hoạt tại Việt Nam là:",
+    "options": [
+      "A. Điện áp dây Ud = 380 V; Điện áp pha Up = 220 V; Tần số f = 50 Hz.",
+      "B. Điện áp dây Ud = 220 V; Điện áp pha Up = 110 V; Tần số f = 60 Hz.",
+      "C. Điện áp dây Ud = 500 V; Điện áp pha Up = 220 V; Tần số f = 25 Hz.",
+      "D. Điện áp một chiều 12 V."
+    ],
+    "correct": 0,
+    "explain": "Quy chuẩn Việt Nam: Mạng hạ áp sinh hoạt 3 pha 4 dây có điện áp dây Ud = 380 V, điện áp pha Up = 220 V và tần số công nghiệp f = 50 Hz (SGK trang 36)."
+  },
+  {
+    "id": "cn_b7_03",
+    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+    "question": "Theo quy chuẩn kĩ thuật, mức sai số điện áp cho phép đối với mạng điện hạ áp sinh hoạt không vượt quá ngưỡng nào?",
+    "options": [
+      "A. ±5% so với điện áp danh định 220 V (tương ứng dải điện áp an toàn từ 209 V đến 231 V).",
+      "B. ±50% (tương ứng dải từ 110 V đến 330 V).",
+      "C. ±1% (chỉ dao động không quá 2 V).",
+      "D. Không có quy định sai số."
+    ],
+    "correct": 0,
+    "explain": "Mức lệch điện áp cho phép trong điều kiện vận hành bình thường là ±5% của 220 V: ΔU = 220 × 5% = 11 V, tức điện áp tại ổ cắm dao động trong ngưỡng từ 209 V đến 231 V là đạt chuẩn (SGK trang 36)."
+  },
+  {
+    "id": "cn_b7_04",
+    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+    "question": "Sơ đồ cấu trúc điển hình của mạng điện hạ áp sinh hoạt từ trạm điện đến các hộ gia đình gồm:",
+    "options": [
+      "A. Trạm biến áp hạ áp -> Tủ phân phối tổng -> Tủ phân phối khu vực (nhánh) -> Đường cáp trục chính ba pha -> Đường cáp rẽ nhánh một pha -> Công tơ điện hộ gia đình.",
+      "B. Công tơ điện -> Trạm biến áp -> Nhà máy nhiệt điện.",
+      "C. Đường dây 500 kV nối thẳng vào ổ cắm gia đình.",
+      "D. Tủ tổng -> Bình ắc quy -> Bóng đèn."
+    ],
+    "correct": 0,
+    "explain": "Cấu trúc mạng hạ áp sinh hoạt: Trạm biến áp hạ áp (380/220V) -> Tủ phân phối tổng -> Tủ phân phối nhánh cụm dân cư -> Dây trục chính 3 pha 4 dây -> Dây rẽ nhánh 1 pha 2 dây -> Công tơ điện và bảng điện trong nhà (SGK trang 35-36)."
+  },
+  {
+    "id": "cn_b7_05",
+    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+    "question": "Mục đích quan trọng nhất của việc phân chia các hộ gia đình rẽ nhánh đồng đều từ ba pha A, B, C của đường trục chính là gì?",
+    "options": [
+      "A. Để cân bằng phụ tải giữa các pha, tránh hiện tượng lệch pha gây quá tải một pha và sụt áp trên dây trung tính.",
+      "B. Để các hộ gia đình dùng chung một công tơ điện.",
+      "C. Để làm đẹp cảnh quan đường phố.",
+      "D. Để dòng điện pha tăng lên gấp 10 lần."
+    ],
+    "correct": 0,
+    "explain": "Phụ tải sinh hoạt là phụ tải một pha. Phải phân bổ đều các hộ vào pha A, pha B, pha C để phụ tải ba pha cân bằng, giảm thiểu dòng điện chạy trên dây trung tính và tránh sụt áp cục bộ (SGK trang 36)."
+  },
+  {
+    "id": "cn_b7_06",
+    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+    "question": "Thiết bị nào sau đây dùng để đo đếm điện năng tiêu thụ (tính bằng kilowatt giờ - kWh) của từng hộ gia đình để thanh toán tiền điện?",
+    "options": [
+      "A. Công tơ điện (đồng hồ điện).",
+      "B. Vôn kế.",
+      "C. Ampe kế kẹp.",
+      "D. Tụ điện chống sét."
+    ],
+    "correct": 0,
+    "explain": "Công tơ điện (điện tử hoặc cơ) là thiết bị đo đếm điện năng tiêu thụ A = P.t (đơn vị kWh hay 'số điện') của từng khách hàng dùng điện (SGK trang 36)."
+  },
+  {
+    "id": "cn_b7_07",
+    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+    "question": "Thiết bị chống giật và chống rò điện (RCBO hoặc ELCB) trong bảng điện gia đình hoạt động dựa trên nguyên lí nào?",
+    "options": [
+      "A. Tự động so sánh dòng điện chạy trên dây pha và dòng điện hồi về trên dây trung tính, nếu có sự chênh lệch (dòng rò ra vỏ chạm vào người) vượt ngưỡng an toàn (thường là 30 mA) thì ngắt điện tức thì trong tích tắc.",
+      "B. Đo nhiệt độ nóng lên của bóng đèn.",
+      "C. Đếm số lần bật tắt công tắc trong ngày.",
+      "D. Ngắt điện khi có tiếng động lớn."
+    ],
+    "correct": 0,
+    "explain": "Aptomat chống giật (RCBO/ELCB) đo dòng rò: bình thường dòng đi trên dây pha bằng dòng về trên dây trung tính (Ipha = Itrungtinh). Khi có người bị giật hoặc rò điện ra vỏ máy xuống đất, dòng bị lệch, rơ le cảm biến từ sẽ tác động cắt mạch ngay lập tức (dưới 0,03 giây) để cứu sống người."
+  },
+  {
+    "id": "cn_b7_08",
+    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+    "question": "Dây tiếp địa bảo vệ (PE - màu vàng sọc xanh lá) trong hệ thống điện gia đình có vai trò gì?",
+    "options": [
+      "A. Dẫn dòng điện rò từ vỏ kim loại của thiết bị (máy giặt, tủ lạnh, bình nóng lạnh) xuống cọc đất, ngăn ngừa nguy cơ điện giật cho người sử dụng.",
+      "B. Làm cho tủ lạnh làm đá nhanh hơn.",
+      "C. Tăng độ sáng cho bóng đèn phòng khách.",
+      "D. Dẫn sóng wifi vào trong nhà."
+    ],
+    "correct": 0,
+    "explain": "Nối đất vỏ thiết bị kim loại (dây PE) giúp triệt tiêu điện áp rò nguy hiểm trên vỏ máy: khi có chạm vỏ, dòng rò theo dây tiếp địa có điện trở rất nhỏ truyền xuống đất làm nhảy aptomat và bảo vệ người chạm vào không bị giật."
+  },
+  {
+    "id": "cn_b7_09",
+    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+    "question": "Một hộ gia đình trong 30 ngày sử dụng bình nóng lạnh công suất 2 500 W mỗi ngày bật 1,5 giờ. Lượng điện năng tiêu thụ riêng của bình nóng lạnh trong tháng đó là",
+    "options": [
+      "A. 112,5 kWh",
+      "B. 37,5 kWh",
+      "C. 75 kWh",
+      "D. 150 kWh"
+    ],
+    "correct": 0,
+    "explain": "Đổi công suất P = 2 500 W = 2,5 kW. Tổng thời gian sử dụng trong 30 ngày: t = 30 × 1,5 = 45 giờ. Điện năng tiêu thụ: A = P × t = 2,5 × 45 = 112,5 kWh (số điện)."
+  },
+  {
+    "id": "cn_b7_10",
+    "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+    "question": "Hành vi nào sau đây vi phạm nghiêm trọng quy tắc an toàn khi sử dụng mạng điện hạ áp sinh hoạt?",
+    "options": [
+      "A. Rút phích cắm bình siêu tốc khi tay còn đang ướt hoặc dùng dây đồng thay thế cho dây chì của cầu chì.",
+      "B. Lắp đặt aptomat chống rò 30 mA cho bình nước nóng.",
+      "C. Tắt bớt các bóng đèn khi rời khỏi phòng.",
+      "D. Nối dây tiếp địa cho vỏ máy giặt."
+    ],
+    "correct": 0,
+    "explain": "Nước dẫn điện tốt nên tay ướt chạm vào phích cắm dễ bị phóng điện gây giật chết người; thay dây đồng vào cầu chì làm mất tác dụng bảo vệ quá tải, khi chập mạch dây dẫn sẽ bốc cháy gây hỏa hoạn."
+  },
+  {
+    "id": "cn_b2_01",
+    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+    "question": "Nghiên cứu, tính toán lựa chọn thiết bị điện và lập hồ sơ bản vẽ thiết kế sơ đồ mạch điện thuộc nhóm nghề nào?",
+    "options": [
+      "A. Lắp đặt điện.",
+      "B. Thiết kế điện.",
+      "C. Vận hành điện.",
+      "D. Bảo dưỡng và sửa chữa điện."
+    ],
+    "correct": 1,
+    "explain": "Nhóm nghề thiết kế điện có nhiệm vụ nghiên cứu, ứng dụng kiến thức kĩ thuật điện để tính toán lựa chọn khí cụ, thiết bị điện và lập hồ sơ bản vẽ thiết kế hệ thống điện (SGK trang 9-10)."
+  },
+  {
+    "id": "cn_b2_02",
+    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+    "question": "Chế tạo các thiết bị như máy biến áp, động cơ điện, dây cáp điện và khí cụ đóng cắt trên dây chuyền công nghiệp thuộc nhóm nghề nào?",
+    "options": [
+      "A. Sản xuất, chế tạo thiết bị điện.",
+      "B. Vận hành điện.",
+      "C. Thiết kế thời trang.",
+      "D. Kinh doanh bất động sản."
+    ],
+    "correct": 0,
+    "explain": "Nhóm nghề sản xuất, chế tạo thiết bị điện làm việc tại các nhà máy, xí nghiệp cơ điện để sản xuất các thiết bị, máy móc điện và linh kiện đạt chuẩn kiểm định (SGK trang 11)."
+  },
+  {
+    "id": "cn_b2_03",
+    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+    "question": "Thi công kéo dây, lắp đặt tủ điện và kết nối các thiết bị điện tại hiện trường công trình xây dựng theo bản vẽ thiết kế thuộc nhóm nghề nào?",
+    "options": [
+      "A. Lắp đặt điện.",
+      "B. Nghiên cứu lí thuyết vật lí.",
+      "C. Thiết kế vi mạch máy tính.",
+      "D. Vận hành tổng đài điện thoại."
+    ],
+    "correct": 0,
+    "explain": "Nhóm nghề lắp đặt điện trực tiếp làm việc tại hiện trường các công trình dân dụng và công nghiệp để thi công mạng điện và lắp đặt thiết bị đúng quy chuẩn kĩ thuật (SGK trang 12)."
+  },
+  {
+    "id": "cn_b2_04",
+    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+    "question": "Theo dõi các thông số điện áp, dòng điện, tần số và thao tác đóng cắt các thiết bị điện tại phòng điều khiển trung tâm thuộc nhóm nghề nào?",
+    "options": [
+      "A. Vận hành điện.",
+      "B. Thiết kế điện.",
+      "C. Sản xuất thiết bị.",
+      "D. Môi giới việc làm."
+    ],
+    "correct": 0,
+    "explain": "Nhóm nghề vận hành điện làm việc tại phòng điều độ, trung tâm điều khiển nhà máy điện và trạm biến áp để giám sát và duy trì mạng điện hoạt động liên tục, an toàn (SGK trang 13)."
+  },
+  {
+    "id": "cn_b2_05",
+    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+    "question": "Kiểm tra định kì, tra dầu mỡ, siết chặt các điểm tiếp xúc và phục hồi các chi tiết bị hỏng hóc thuộc nhóm nghề nào?",
+    "options": [
+      "A. Bảo dưỡng và sửa chữa điện.",
+      "B. Thiết kế điện.",
+      "C. Xây dựng cầu đường.",
+      "D. Khảo sát địa chất."
+    ],
+    "correct": 0,
+    "explain": "Bảo dưỡng nhằm ngăn ngừa nguy cơ sự cố hỏng hóc; sửa chữa nhằm phục hồi hoạt động bình thường của thiết bị khi xảy ra sự cố hư hỏng (SGK trang 14)."
+  },
+  {
+    "id": "cn_b2_06",
+    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+    "question": "Yêu cầu về phẩm chất đạo đức và kĩ năng cốt lõi của người làm việc trong ngành kĩ thuật điện là:",
+    "options": [
+      "A. Tuân thủ nghiêm ngặt quy trình an toàn điện, cẩn thận, tỉ mỉ, có tinh thần trách nhiệm cao và khả năng làm việc nhóm.",
+      "B. Làm việc tùy tiện, tự ý thay đổi quy trình khi thấy tiện.",
+      "C. Không cần trang bị đồ bảo hộ lao động.",
+      "D. Chỉ cần thể lực mà không cần kiến thức chuyên môn."
+    ],
+    "correct": 0,
+    "explain": "Ngành điện tiềm ẩn nguy hiểm cao về điện giật và cháy nổ, do đó đòi hỏi tính kỉ luật an toàn tuyệt đối, sự cẩn trọng và kiến thức kĩ thuật vững vàng (SGK trang 15)."
+  },
+  {
+    "id": "cn_b2_07",
+    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+    "question": "Để trở thành một Kĩ sư thiết kế hệ thống điện, người học cần tốt nghiệp trình độ đào tạo nào?",
+    "options": [
+      "A. Đại học chuyên ngành Kĩ thuật điện / Hệ thống điện.",
+      "B. Sơ cấp nghề 3 tháng.",
+      "C. Chỉ cần tốt nghiệp Trung học cơ sở.",
+      "D. Bằng lái xe hạng C."
+    ],
+    "correct": 0,
+    "explain": "Vị trí kĩ sư thiết kế đòi hỏi nền tảng kiến thức chuyên sâu về tính toán giải tích mạch điện, tiêu chuẩn kĩ thuật và phần mềm đồ họa chuyên dụng, yêu cầu tốt nghiệp đại học chuyên ngành (SGK trang 10)."
+  },
+  {
+    "id": "cn_b2_08",
+    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+    "question": "Sự phát triển mạnh mẽ của xe điện, hệ thống điện mặt trời mái nhà và lưới điện thông minh mang lại cơ hội gì cho nhân lực ngành kĩ thuật điện?",
+    "options": [
+      "A. Làm giảm nhu cầu việc làm của ngành điện.",
+      "B. Mở ra rất nhiều cơ hội việc làm mới, thu nhập cao và triển vọng phát triển nghề nghiệp lâu dài.",
+      "C. Khiến ngành kĩ thuật điện bị xóa bỏ hoàn toàn.",
+      "D. Không có tác động gì."
+    ],
+    "correct": 1,
+    "explain": "Xu thế chuyển đổi xanh và tự động hóa công nghiệp đòi hỏi nguồn nhân lực kĩ thuật điện chất lượng cao lớn hơn bao giờ hết (SGK trang 16)."
+  },
+  {
+    "id": "cn_b2_09",
+    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+    "question": "Dụng cụ bảo hộ lao động cá nhân bắt buộc khi kiểm tra, thao tác trên lưới điện hạ áp đang mang điện gồm:",
+    "options": [
+      "A. Găng tay cách điện hạ áp, ủng cách điện, mũ bảo hộ, kính bảo vệ mắt và bút thử điện đạt chuẩn kiểm định.",
+      "B. Đi chân đất để tiếp đất tốt hơn.",
+      "C. Đeo găng tay len ướt.",
+      "D. Sử dụng tuốc nơ vít kim loại không bọc cán cách điện."
+    ],
+    "correct": 0,
+    "explain": "Quy tắc an toàn điện đòi hỏi thợ điện phải sử dụng đầy đủ đồ cách điện chuyên dụng đã qua kiểm định định kì (găng tay cách điện, ủng, bút thử điện...) để ngăn chặn dòng điện giật truyền qua cơ thể."
+  },
+  {
+    "id": "cn_b2_10",
+    "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+    "question": "Khẩu hiệu an toàn hàng đầu được áp dụng trong mọi công việc kĩ thuật điện là gì?",
+    "options": [
+      "A. 'An toàn là trên hết - Cắt điện, kiểm tra không còn điện và tiếp đất trước khi thao tác'.",
+      "B. 'Càng nhanh càng tốt, bỏ qua kiểm tra an toàn'.",
+      "C. 'Chạm tay thử xem có giật không'.",
+      "D. 'Cứ đóng điện rồi tính sau'."
+    ],
+    "correct": 0,
+    "explain": "Nguyên tắc vàng của an toàn điện: Trước khi sửa chữa phải cắt điện, khóa aptomat gắn biển cảnh báo, dùng bút thử điện kiểm tra chắc chắn hết điện rồi mới được phép thao tác."
+  },
+  {
+    "id": "cn_gk1_ds1d",
+    "topic": "HỆ THỐNG ĐIỆN QUỐC GIA (ĐÚNG/SAI)",
+    "question": "d. Đường dây 500 kV mạch 3 (Quảng Trạch - Phố Nối) khánh thành năm 2024 giúp tăng cường liên kết lưới truyền tải và an ninh năng lượng cho miền Bắc.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH VẬN HÀNH: Hệ thống truyền tải điện Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Tổng công ty Truyền tải điện Quốc gia (EVNNPT) quản lí vận hành hệ thống lưới điện truyền tải điện áp 220 kV và 500 kV liên kết các nhà máy điện nguồn với các trung tâm phụ tải lớn trên phạm vi cả nước.</div>\n    </div>",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "ĐÚNG. Dự án 500 kV mạch 3 Quảng Trạch - Phố Nối dài 519 km khánh thành tháng 8/2024 giúp truyền tải công suất điện từ miền Trung ra miền Bắc, giải tỏa nguy cơ thiếu điện vào cao điểm nắng nóng.",
+    "subLabel": "1d"
+  },
+  {
+    "id": "cn_gk1_ds2d",
+    "topic": "MẠNG ĐIỆN SẢN XUẤT NHỎ (ĐÚNG/SAI)",
+    "question": "d. Trong phân xưởng An Phát, tủ điện phân phối tổng (MSB) nhận điện trực tiếp từ máy biến áp hạ áp để cấp điện cho các tủ nhánh.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH THỰC TẾ: Phân xưởng cơ khí chính xác An Phát</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Xưởng cơ khí An Phát có diện tích 800 m², trang bị 10 máy tiện CNC, 5 máy phay cơ và hệ thống đèn chiếu sáng LED phân xưởng. Nguồn điện lấy từ trạm biến áp hạ áp 22/0,4 kV riêng của công ty.</div>\n    </div>",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "ĐÚNG. Theo sơ đồ cấu trúc phân cấp chuẩn, tủ phân phối tổng (MSB) đặt tại trạm biến áp, lấy điện từ đầu ra hạ áp của máy biến áp để chia nguồn cho các tủ nhánh.",
+    "subLabel": "2d"
+  },
+  {
+    "id": "cn_gk1_ds3a",
+    "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
+    "question": "a. Trong mạch điện ba pha đối xứng nối hình sao (Y), điện áp dây luôn bằng điện áp pha (Ud = Up).<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "SAI. Khi nối hình sao (Y), điện áp dây bằng căn 3 lần điện áp pha: Ud = √3.Up ≈ 1,732.Up; chỉ khi nối tam giác (Δ) thì mới có Ud = Up.",
+    "subLabel": "3a"
+  },
+  {
+    "id": "cn_gk1_ds3b",
+    "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
+    "question": "b. Nếu đấu ba cụm lò sấy hình sao (Y) vào lưới 380/220 V thì điện áp đặt vào mỗi cụm lò sấy là 220 V.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "ĐÚNG. Khi tải nối sao, điện áp mỗi pha tải là điện áp pha Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V.",
+    "subLabel": "3b"
+  },
+  {
+    "id": "cn_gk1_ds3c",
+    "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
+    "question": "c. Nếu ba cụm lò sấy hoàn toàn đối xứng thì dòng điện hiệu dụng chạy trong dây trung tính Io bằng 0.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 0,
+    "explain": "ĐÚNG. Khi tải ba pha hoàn toàn đối xứng, tổng vectơ của 3 dòng điện pha bằng 0 (iA + iB + iC = 0), do đó dòng điện chạy trên dây trung tính Io = 0.",
+    "subLabel": "3c"
+  },
+  {
+    "id": "cn_gk1_ds3d",
+    "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
+    "question": "d. Kĩ sư điện có thể lắp thêm một cầu chì ngắt mạch trên dây trung tính để bảo vệ an toàn cho hệ thống lò sấy.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
+    "options": [
+      "A. Đúng",
+      "B. Sai"
+    ],
+    "correct": 1,
+    "explain": "SAI. Tuyệt đối KHÔNG ĐƯỢC đặt cầu chì hay thiết bị đóng ngắt đơn cực trên dây trung tính, vì nếu cầu chì đứt khi phụ tải mất cân bằng sẽ làm điểm trung tính bị trôi, gây quá điện áp nghiêm trọng cháy thiết bị.",
+    "subLabel": "3d"
   }
 ];
 
@@ -1183,23 +1422,23 @@ const CONGNGHE_TOPICS_DATABASE = [
     "id": "cn_bai3",
     "title": "🌀 BÀI 3 TRỌNG TÂM: Mạch điện xoay chiều ba pha",
     "icon": "🌀",
-    "description": "Nguồn 3 pha, nối Y, Δ; Công thức Ud, Up, Id, Ip, tính toán tổng trở & tải đối xứng",
+    "description": "Nguồn 3 pha, nối Y, Δ; Công thức Ud, Up, Id, Ip, tính toán tổng trở & tải đối xứng (Xem kĩ)",
     "questions": [
       {
-        "id": 11,
+        "id": "cn_b3_01",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Dòng điện xoay chiều một pha có cường độ tức thời i = Im.sin(ωt + ψ). Đại lượng Im được gọi là",
+        "question": "Dòng điện xoay chiều một pha có cường độ tức thời i = Im.sin(ωt + ψ). Đại lượng Im được gọi là gì?",
         "options": [
-          "A. giá trị hiệu dụng của dòng điện.",
-          "B. giá trị cực đại (biên độ) của dòng điện.",
-          "C. tần số góc của dòng điện.",
-          "D. pha ban đầu của dòng điện."
+          "A. Giá trị hiệu dụng của dòng điện.",
+          "B. Giá trị cực đại (biên độ) của dòng điện.",
+          "C. Tần số góc của dòng điện.",
+          "D. Pha ban đầu của dòng điện."
         ],
         "correct": 1,
-        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng: I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> (SGK Công nghệ 12 trang 18)."
+        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), đại lượng Im là cường độ dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng I: I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> (SGK Công nghệ 12 trang 18)."
       },
       {
-        "id": 12,
+        "id": "cn_b3_02",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
         "question": "Một dòng điện xoay chiều có biểu thức i = 4√2.sin(100πt) (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
         "options": [
@@ -1209,12 +1448,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. I = 2√2 A; f = 50 Hz"
         ],
         "correct": 0,
-        "explain": "Từ biểu thức: Im = 4√2 A => I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = 4 A. Tần số góc ω = 100π rad/s => Tần số f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz."
+        "explain": "Cường độ cực đại Im = 4√2 A nên giá trị hiệu dụng I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">4√2</span><span class=\"math-frac-bottom\">√2</span></span> = 4 A. Tần số góc ω = 100π rad/s nên tần số f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz."
       },
       {
-        "id": 13,
+        "id": "cn_b3_03",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Công thức tính cảm kháng XL của cuộn cảm thuần có độ tự cảm L và dung kháng XC của tụ điện có điện dung C đối với dòng xoay chiều tần số f là:",
+        "question": "Công thức tính cảm kháng XL của cuộn cảm thuần và dung kháng XC của tụ điện đối với dòng điện xoay chiều tần số f là:",
         "options": [
           "A. XL = 2πfL và XC = 2πfC",
           "B. XL = 2πfL và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
@@ -1222,12 +1461,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span>"
         ],
         "correct": 1,
-        "explain": "Cảm kháng cuộn cảm: XL = ωL = 2πfL; Dung kháng tụ điện: XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span> (SGK Công nghệ 12 trang 18)."
+        "explain": "Cảm kháng cuộn cảm thuần: XL = ωL = 2πfL (đơn vị Ω); Dung kháng tụ điện: XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span> (đơn vị Ω) (SGK Công nghệ 12 trang 18)."
       },
       {
-        "id": 14,
+        "id": "cn_b3_04",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Tổng trở z_t của tải điện một pha gồm điện trở R nối tiếp với cuộn cảm (XL) và tụ điện (XC) được tính theo công thức nào?",
+        "question": "Tổng trở z_t của tải điện một pha gồm điện trở R mắc nối tiếp với cuộn cảm (XL) và tụ điện (XC) được tính theo công thức nào?",
         "options": [
           "A. z_t = R + XL - XC",
           "B. z_t = √[R² + (XL - XC)²]",
@@ -1235,194 +1474,233 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. z_t = √[R² - (XL - XC)²]"
         ],
         "correct": 1,
-        "explain": "Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) với X = XL - XC, do đó z_t = √[R² + (XL - XC)²], và tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
+        "explain": "Tổng trở của tải R-L-C nối tiếp đặc trưng bởi độ lớn: z_t = √(R² + X²) với điện kháng X = XL - XC, do đó z_t = √[R² + (XL - XC)²]. Hệ số góc tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
       },
       {
-        "id": 15,
+        "id": "cn_b3_05",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Hiện tượng cộng hưởng điện trong mạch R-L-C nối tiếp xảy ra khi nào?",
+        "question": "Hiện tượng cộng hưởng điện trong đoạn mạch R-L-C nối tiếp xảy ra khi nào?",
         "options": [
           "A. Khi R = XL",
           "B. Khi cảm kháng bằng dung kháng (XL = XC)",
-          "C. Khi tần số dòng điện f = 0",
-          "D. Khi tổng trở đạt giá trị vô cùng lớn"
+          "C. Khi tần số f = 0",
+          "D. Khi tổng trở đạt giá trị lớn vô cùng"
         ],
         "correct": 1,
-        "explain": "Hiện tượng cộng hưởng xảy ra khi XL = XC (tức là 2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>). Khi đó điện kháng X = 0, tổng trở mạch đạt giá trị nhỏ nhất z_min = R và dòng điện trong mạch đạt giá trị cực đại."
+        "explain": "Cộng hưởng điện xảy ra khi cảm kháng bằng dung kháng XL = XC (tức 2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>), khi đó điện kháng triệt tiêu X = 0, tổng trở z_t đạt cực tiểu z_t = R và dòng điện trong mạch đạt cực đại I = <span class=\"math-frac\"><span class=\"math-frac-top\">U</span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
       },
       {
-        "id": 16,
+        "id": "cn_b3_06",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Dòng điện xoay chiều ba pha là hệ thống ba dòng điện xoay chiều có đặc điểm nào sau đây?",
+        "question": "Hệ thống dòng điện xoay chiều ba pha đối xứng là tập hợp của ba dòng điện xoay chiều hình sin có đặc điểm gì?",
         "options": [
-          "A. Cùng tần số, cùng biên độ, cùng pha với nhau.",
-          "B. Cùng tần số, cùng biên độ nhưng lệch pha nhau góc 2π/3 (120°) lần lượt giữa các pha.",
-          "C. Tần số khác nhau, cùng biên độ, lệch pha nhau góc 90°.",
-          "D. Cùng pha ban đầu nhưng tần số gấp ba lần nhau."
+          "A. Cùng biên độ, cùng tần số và cùng pha với nhau.",
+          "B. Cùng tần số, cùng biên độ nhưng lệch pha nhau góc <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> (120°) lần lượt giữa các pha.",
+          "C. Khác tần số, cùng biên độ và lệch pha nhau 90°.",
+          "D. Cùng biên độ nhưng tần số pha sau gấp đôi pha trước."
         ],
         "correct": 1,
-        "explain": "Định nghĩa chuẩn SGK trang 18: Dòng điện xoay chiều ba pha sinh ra trong mạch điện ba pha là hệ thống ba dòng điện xoay chiều có cùng tần số, cùng biên độ và có góc pha lệch nhau 120° (2π/3 rad) lần lượt giữa các pha."
+        "explain": "Theo định nghĩa SGK trang 18: Dòng điện ba pha đối xứng gồm 3 dòng điện xoay chiều hình sin có cùng tần số, cùng biên độ và lệch pha nhau góc <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> rad (tức 120°) lần lượt giữa các pha."
       },
       {
-        "id": 17,
+        "id": "cn_b3_07",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cấu tạo phần tĩnh (Stator) của máy phát điện xoay chiều ba pha gồm",
+        "question": "Cấu tạo phần tĩnh (stator) của máy phát điện xoay chiều ba pha gồm:",
         "options": [
-          "A. một nam châm vĩnh cửu hình chữ U.",
-          "B. lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ giống hệt nhau về số vòng và tiết diện, đặt lệch nhau góc 120° trên đường tròn.",
-          "C. hai cuộn dây đặt vuông góc nhau.",
-          "D. vành trượt và chổi than tiếp điện."
+          "A. Một nam châm điện có hai cực Bắc - Nam quay quanh trục.",
+          "B. Lõi thép có các rãnh đặt ba cuộn dây giống hệt nhau về số vòng và kích thước, bố trí lệch nhau 120° trên đường tròn stator.",
+          "C. Bộ góp và chổi than tiếp điện.",
+          "D. Ba cặp cực nam châm vĩnh cửu quay tròn liên tục."
         ],
         "correct": 1,
-        "explain": "Phần tĩnh (stator) là lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ có cùng số vòng và kích thước dây, đặt lệch nhau góc 120° trên không gian (SGK trang 19)."
+        "explain": "Stator (phần tĩnh) là lõi thép hình trụ có rãnh đặt ba cuộn dây AX (pha A), BY (pha B), CZ (pha C) có số vòng và kích thước hoàn toàn giống nhau, bố trí lệch nhau góc 120° trên vòng tròn stator (SGK trang 18)."
       },
       {
-        "id": 18,
+        "id": "cn_b3_08",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong máy phát điện xoay chiều ba pha, kí hiệu các đầu cuộn dây pha A, pha B, pha C lần lượt là",
+        "question": "Nếu chọn suất điện động pha A làm gốc: eA = Em.sin(ωt), thì biểu thức suất điện động pha B và pha C của máy phát ba pha là",
         "options": [
-          "A. Đầu đầu: A, B, C; Đầu cuối tương ứng: X, Y, Z.",
-          "B. Đầu đầu: X, Y, Z; Đầu cuối: A, B, C.",
-          "C. Đầu đầu: U, V, W; Đầu cuối: 1, 2, 3.",
-          "D. Đầu đầu: L1, L2, L3; Đầu cuối: N."
-        ],
-        "correct": 0,
-        "explain": "Theo quy ước SGK trang 19: Cuộn thứ nhất AX (pha A), cuộn thứ hai BY (pha B), cuộn thứ ba CZ (pha C). A, B, C là các điểm đầu; X, Y, Z là các điểm cuối của cuộn dây."
-      },
-      {
-        "id": 19,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Nếu chọn suất điện động pha A làm gốc eA = Em.sin(ωt), thì biểu thức suất điện động pha B (eB) và pha C (eC) lần lượt là",
-        "options": [
-          "A. eB = Em.sin(ωt - π/2) và eC = Em.sin(ωt + π/2)",
-          "B. eB = Em.sin(ωt - 2π/3) và eC = Em.sin(ωt + 2π/3) [hoặc eC = Em.sin(ωt - 4π/3)]",
-          "C. eB = Em.sin(ωt - π) và eC = Em.sin(ωt + π)",
-          "D. eB = Em.sin(2ωt) và eC = Em.sin(3ωt)"
+          "A. eB = Em.sin(ωt - π) và eC = Em.sin(ωt + π)",
+          "B. eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) và eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) [hoặc eC = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">4π</span><span class=\"math-frac-bottom\">3</span></span>)]",
+          "C. eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>) và eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>)",
+          "D. eB = Em.cos(ωt) và eC = Em.tan(ωt)"
         ],
         "correct": 1,
-        "explain": "Ba suất điện động cùng biên độ, cùng tần số và lần lượt lệch pha nhau góc 2π/3 rad (SGK trang 19, Luyện tập 1 trang 21)."
+        "explain": "Ba suất điện động cùng tần số, cùng biên độ và lệch pha nhau <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> rad: eA = Em.sin(ωt); eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>); eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) (SGK trang 18)."
       },
       {
-        "id": 20,
+        "id": "cn_b3_09",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cách nối nguồn điện hoặc tải ba pha hình sao (Y) có đặc điểm gì?",
+        "question": "Trong cách nối nguồn hoặc tải ba pha hình sao (Y), điểm trung tính O được tạo thành bằng cách nào?",
         "options": [
-          "A. Ba điểm cuối X, Y, Z của ba pha được nối chung với nhau tạo thành điểm trung tính (O).",
-          "B. Điểm đầu của pha này nối với điểm cuối của pha kia tạo mạch vòng kín.",
-          "C. Ba điểm đầu A, B, C chập lại với nhau, ba điểm cuối nối ra dây pha.",
-          "D. Mỗi cuộn dây nối với một cặp dây dẫn riêng biệt không nối chung điểm nào."
-        ],
-        "correct": 0,
-        "explain": "Nối hình sao (Y): Ba điểm cuối X, Y, Z của các pha được nối chung với nhau tạo thành điểm trung tính O (SGK trang 19)."
-      },
-      {
-        "id": 21,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cách nối nguồn điện hoặc tải ba pha hình tam giác (Δ) có đặc điểm gì?",
-        "options": [
-          "A. Ba điểm cuối X, Y, Z nối chụm lại thành điểm trung tính.",
-          "B. Điểm đầu của pha này được nối với điểm cuối của pha kia (A nối Z, B nối X, C nối Y) tạo thành hình tam giác khép kín.",
-          "C. Ba cuộn dây mắc song song với nhau.",
-          "D. Dùng dây trung tính nối qua tâm hình tam giác."
+          "A. Nối ba điểm đầu A, B, C lại với nhau.",
+          "B. Nối ba điểm cuối X, Y, Z của ba pha lại với nhau.",
+          "C. Nối đầu pha này với cuối pha kia: A nối Z, B nối X, C nối Y.",
+          "D. Nối dây pha A trực tiếp với cọc tiếp địa bằng đồng."
         ],
         "correct": 1,
-        "explain": "Nối hình tam giác (Δ): Điểm đầu của pha này được nối với điểm cuối của pha kia tạo thành hình tam giác khép kín (SGK trang 19)."
+        "explain": "Cách nối hình sao (Y): Ba điểm cuối X, Y, Z của các cuộn dây pha được nối chung với nhau tạo thành điểm trung tính O. Ba điểm đầu A, B, C đưa ra ba đường dây pha (SGK trang 19)."
       },
       {
-        "id": 22,
+        "id": "cn_b3_10",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Dây trung tính trong mạng điện ba pha bốn dây có tác dụng quan trọng nhất là gì?",
+        "question": "Mạch điện ba pha bốn dây gồm các dây dẫn nào sau đây?",
         "options": [
-          "A. Làm tăng công suất phát của máy phát điện lên gấp đôi.",
-          "B. Giữ cho điện áp trên các pha tải luôn ổn định ở mức điện áp pha (Up), không bị thay đổi ngay cả khi phụ tải các pha không đối xứng.",
-          "C. Triệt tiêu toàn bộ dòng điện chạy trong ba dây pha.",
-          "D. Làm giảm điện trở của các dây dẫn truyền tải."
+          "A. Bốn dây pha A, B, C, D.",
+          "B. Ba dây pha (A, B, C) và một dây trung tính (dây trung hòa O-O').",
+          "C. Hai dây pha và hai dây tiếp địa.",
+          "D. Ba dây trung tính và một dây pha mang điện."
         ],
         "correct": 1,
-        "explain": "Dây trung tính nối giữa điểm trung tính của nguồn và tải có tác dụng cân bằng và duy trì điện áp pha trên mỗi pha tải luôn bằng điện áp pha của nguồn, bảo vệ các thiết bị điện 1 pha hoạt động bình thường kể cả khi tải các pha không đều."
+        "explain": "Mạch điện ba pha bốn dây gồm ba dây dẫn nối từ các đầu pha A, B, C (gọi là ba dây pha) và một dây dẫn nối từ điểm trung tính O của nguồn đến điểm trung tính O' của tải (gọi là dây trung tính hay dây trung hòa) (SGK trang 19)."
       },
       {
-        "id": 23,
+        "id": "cn_b3_11",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong mạch điện ba pha bốn dây đối xứng, cường độ dòng điện chạy trong dây trung tính (i0) có giá trị bằng",
+        "question": "Trong cách nối tải ba pha hình tam giác (Δ), các pha được liên kết với nhau theo nguyên tắc nào?",
         "options": [
-          "A. i0 = iA + iB + iC = 0",
-          "B. i0 = 3.iA",
-          "C. i0 = √3.iA",
-          "D. i0 = <span class=\"math-frac\"><span class=\"math-frac-top\">i<sub>A</sub></span><span class=\"math-frac-bottom\">√3</span></span>"
-        ],
-        "correct": 0,
-        "explain": "Khi tải đối xứng: iA + iB + iC = 0 tại mọi thời điểm, do đó dòng điện tức thời và hiệu dụng chạy trong dây trung tính bằng 0 (i0 = 0)."
-      },
-      {
-        "id": 24,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Phát biểu nào sau đây định nghĩa chính xác về điện áp pha (Up) và điện áp dây (Ud)?",
-        "options": [
-          "A. Up là điện áp giữa hai dây pha; Ud là điện áp giữa dây pha và dây trung tính.",
-          "B. Up là điện áp giữa một dây pha và dây trung tính (hoặc giữa hai đầu một pha); Ud là điện áp giữa hai dây pha.",
-          "C. Up và Ud luôn có giá trị bằng nhau trong mọi trường hợp.",
-          "D. Ud là điện áp chịu đựng của dây cách điện; Up là điện áp sinh công."
-        ],
-        "correct": 1,
-        "explain": "Định nghĩa chuẩn SGK trang 20: Dòng điện chạy trong dây pha gọi là Id; dòng điện chạy trong mỗi pha gọi là Ip. Điện áp giữa hai dây pha gọi là Ud; điện áp giữa dây pha và dây trung tính (hoặc giữa điểm đầu và cuối mỗi pha) gọi là Up."
-      },
-      {
-        "id": 25,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Mạch điện ba pha được gọi là ĐỐI XỨNG khi thỏa mãn điều kiện nào sau đây?",
-        "options": [
-          "A. Chỉ cần nguồn điện ba pha đối xứng.",
-          "B. Chỉ cần tổng trở ba pha tải bằng nhau.",
-          "C. Có nguồn điện ba pha đối xứng và tải ba pha đối xứng (ZA = ZB = ZC).",
-          "D. Cả nguồn và tải đều nối hình tam giác."
+          "A. Ba đầu pha A, B, C nối chung với nhau.",
+          "B. Ba cuối pha X, Y, Z nối chung với nhau.",
+          "C. Điểm đầu pha này nối với điểm cuối pha kia khép kín: A nối Z, B nối X, C nối Y.",
+          "D. Nối song song cả ba cuộn dây vào một nguồn một pha."
         ],
         "correct": 2,
-        "explain": "Mạch điện ba pha được gọi là đối xứng nếu có nguồn đối xứng (cùng biên độ, tần số, lệch pha 120°) VÀ tải đối xứng (ZA = ZB = ZC) (SGK trang 20)."
+        "explain": "Nối hình tam giác (Δ): Điểm đầu của pha này nối với điểm cuối của pha kia theo thứ tự vòng tròn khép kín: A nối với Z, B nối với X, C nối với Y (SGK trang 19)."
       },
       {
-        "id": 26,
+        "id": "cn_b3_12",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong mạch ba pha đối xứng khi tải nối hình sao (Y), mối quan hệ giữa các đại lượng là:",
+        "question": "Đại lượng 'Điện áp pha' (kí hiệu Up) trong mạch ba pha được định nghĩa là",
         "options": [
-          "A. Ud = Up và Id = √3.Ip",
-          "B. Ud = √3.Up và Id = Ip",
-          "C. Ud = √3.Up và Id = √3.Ip",
-          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span> và Id = Ip"
+          "A. điện áp giữa hai dây pha bất kì trong ba dây pha A, B, C.",
+          "B. điện áp đo giữa một dây pha và dây trung tính (hoặc giữa điểm đầu và điểm cuối của một pha).",
+          "C. điện áp giữa dây trung tính và mặt đất.",
+          "D. điện áp một chiều nạp vào ắc quy dự phòng."
         ],
         "correct": 1,
-        "explain": "Khi tải nối hình sao (Y): Dòng điện dây bằng dòng điện pha (Id = Ip), Điện áp dây bằng căn 3 lần điện áp pha (Ud = √3.Up) (SGK trang 20)."
+        "explain": "Điện áp pha (Up): Là điện áp giữa điểm đầu và điểm cuối của một pha nguồn hoặc tải, tương đương điện áp đo giữa một dây pha và dây trung tính (như UA, UB, UC) (SGK trang 20)."
       },
       {
-        "id": 27,
+        "id": "cn_b3_13",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong mạch ba pha đối xứng khi tải nối hình tam giác (Δ), mối quan hệ giữa các đại lượng là:",
+        "question": "Đại lượng 'Điện áp dây' (kí hiệu Ud) trong mạch điện ba pha được định nghĩa là",
         "options": [
-          "A. Ud = Up và Id = √3.Ip",
-          "B. Ud = √3.Up và Id = Ip",
-          "C. Ud = Up và Id = Ip",
-          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span> và Id = √3.Ip"
+          "A. điện áp đo giữa dây pha và dây trung tính.",
+          "B. điện áp giữa hai dây pha bất kì (UAB, UBC, UCA).",
+          "C. điện áp rơi trên một bóng đèn chiếu sáng một pha.",
+          "D. điện áp danh định của lưới điện siêu cao áp."
+        ],
+        "correct": 1,
+        "explain": "Điện áp dây (Ud): Là điện áp đo giữa hai dây pha bất kì với nhau, ví dụ: UAB là điện áp giữa dây A và B, UBC giữa B và C, UCA giữa C và A (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_14",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Khi nguồn và tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa điện áp dây Ud và điện áp pha Up là:",
+        "options": [
+          "A. Ud = Up",
+          "B. Ud = √3.Up ≈ 1,732.Up",
+          "C. Ud = 3.Up",
+          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>"
+        ],
+        "correct": 1,
+        "explain": "Mạch đối xứng nối hình sao (Y): Mối liên hệ điện áp là Ud = √3.Up ≈ 1,732.Up, suy ra Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span>. Ví dụ mạng hạ áp có Up = 220 V thì Ud = √3 × 220 ≈ 380 V (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_15",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa cường độ dòng điện dây Id và dòng điện pha Ip là:",
+        "options": [
+          "A. Id = Ip",
+          "B. Id = √3.Ip",
+          "C. Id = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
+          "D. Id = 3.Ip"
         ],
         "correct": 0,
-        "explain": "Khi tải nối hình tam giác (Δ): Điện áp dây bằng điện áp pha (Ud = Up), Dòng điện dây bằng căn 3 lần dòng điện pha (Id = √3.Ip) (SGK trang 21)."
+        "explain": "Khi tải nối hình sao (Y), dòng điện từ dây pha chạy thẳng trực tiếp vào cuộn dây pha của tải không bị phân nhánh, do đó dòng điện dây bằng dòng điện pha: Id = Ip (SGK trang 20)."
       },
       {
-        "id": 28,
+        "id": "cn_b3_16",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Công suất tác dụng toàn phần của mạch điện ba pha đối xứng được tính theo công thức nào sau đây?",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa điện áp dây Ud và điện áp pha Up là:",
         "options": [
-          "A. P = 3.Ud.Id.cosφ",
-          "B. P = √3.Ud.Id.cosφ = 3.Up.Ip.cosφ",
-          "C. P = Ud.Id.cosφ",
-          "D. P = √3.Up.Ip.cosφ"
+          "A. Ud = Up",
+          "B. Ud = √3.Up",
+          "C. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
+          "D. Ud = 2.Up"
+        ],
+        "correct": 0,
+        "explain": "Khi tải nối hình tam giác (Δ), mỗi pha của tải được mắc trực tiếp giữa hai dây pha của nguồn điện, vì vậy điện áp pha của tải bằng chính điện áp dây của nguồn: Ud = Up (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_17",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa dòng điện dây Id và dòng điện pha Ip là:",
+        "options": [
+          "A. Id = Ip",
+          "B. Id = √3.Ip ≈ 1,732.Ip",
+          "C. Id = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
+          "D. Id = 3.Ip"
         ],
         "correct": 1,
-        "explain": "Công suất tác dụng ba pha đối xứng bằng 3 lần công suất một pha: P = 3.P1p = 3.Up.Ip.cosφ. Dù nối sao hay tam giác, thay Ud và Id vào đều rút ra công thức chung: P = √3.Ud.Id.cosφ."
+        "explain": "Khi tải nối tam giác (Δ) đối xứng, dòng điện dây tại các nút rẽ nhánh thành hai dòng điện pha, biểu thức vectơ dòng điện cho ta: Id = √3.Ip ≈ 1,732.Ip, suy ra Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> (SGK trang 20)."
       },
       {
-        "id": 29,
+        "id": "cn_b3_18",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một nguồn điện xoay chiều ba pha đối xứng có điện áp pha Up = 220 V. Điện áp dây Ud của nguồn điện này có giá trị xấp xỉ bằng bao nhiêu?",
+        "question": "Ưu điểm vượt trội của mạch điện ba pha bốn dây (nối hình sao có dây trung tính) so với mạch ba dây là gì?",
+        "options": [
+          "A. Tạo ra được hai cấp điện áp khác nhau (điện áp dây Ud và điện áp pha Up), thuận tiện cấp điện đồng thời cho cả động cơ ba pha và thiết bị sinh hoạt một pha.",
+          "B. Không bao giờ xảy ra sự cố chập mạch hay quá tải.",
+          "C. Tiết kiệm 100% lượng dây nhôm và đồng truyền tải.",
+          "D. Điện áp trên đường dây tự động tăng lên gấp mười lần."
+        ],
+        "correct": 0,
+        "explain": "Mạch ba pha 4 dây cung cấp được hai cấp điện áp tiện lợi: điện áp dây 380 V (dùng cho động cơ ba pha công nghiệp) và điện áp pha 220 V (dùng cho các thiết bị sinh hoạt một pha gia đình) (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_19",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Khi phụ tải ba pha hoàn toàn ĐỐI XỨNG, cường độ dòng điện chạy trong dây trung tính Io có giá trị bằng bao nhiêu?",
+        "options": [
+          "A. Bằng 3 lần dòng điện pha (Io = 3.Ip).",
+          "B. Bằng không (Io = 0).",
+          "C. Bằng dòng điện cực đại Im.",
+          "D. Bằng dòng điện dây Id."
+        ],
+        "correct": 1,
+        "explain": "Trong tải ba pha đối xứng, tổng vectơ của ba dòng điện pha bằng 0: iA + iB + iC = 0, do đó dòng điện hiệu dụng trong dây trung tính Io = 0 (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_20",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Vì sao trên dây trung tính của mạng điện ba pha bốn dây TUYỆT ĐỐI KHÔNG ĐƯỢC đặt cầu chì hay công tắc đơn ngắt mạch?",
+        "options": [
+          "A. Vì dây trung tính không có dòng điện chạy qua nên cầu chì không thể đứt.",
+          "B. Vì nếu cầu chì trên dây trung tính bị đứt khi tải không đối xứng, điện áp pha các tải sẽ bị lệch nghiêm trọng, làm thiết bị điện pha non tải chịu điện áp cao dẫn đến cháy nổ.",
+          "C. Vì giá thành của cầu chì dây trung tính quá đắt đỏ.",
+          "D. Vì dây trung tính được chôn dưới lòng đất nên không chạm tới được."
+        ],
+        "correct": 1,
+        "explain": "Nếu đứt dây trung tính khi phụ tải ba pha không đối xứng, điểm trung tính O' của tải sẽ bị dịch chuyển, dẫn đến điện áp giữa các pha tải bị mất cân bằng trầm trọng: pha nào có tổng trở lớn sẽ chịu điện áp vượt quá 220 V gây cháy thiết bị (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_21",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Công thức tính công suất tác dụng toàn phần P của mạch điện xoay chiều ba pha đối xứng là:",
+        "options": [
+          "A. P = Ud.Id.cos φ",
+          "B. P = √3.Ud.Id.cos φ = 3.Up.Ip.cos φ",
+          "C. P = 3.Ud.Id.cos φ",
+          "D. P = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub>.I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span>.cos φ"
+        ],
+        "correct": 1,
+        "explain": "Công suất tác dụng ba pha đối xứng tính theo thông số dây: P = √3.Ud.Id.cos φ; hoặc tính theo thông số pha: P = 3.Up.Ip.cos φ (trong đó cos φ là hệ số công suất của mỗi pha tải) (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_22",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một nguồn điện ba pha đối xứng có điện áp pha Up = 220 V. Giá trị điện áp dây Ud xấp xỉ bằng bao nhiêu vôn?",
         "options": [
           "A. 127 V",
           "B. 220 V",
@@ -1430,103 +1708,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 440 V"
         ],
         "correct": 2,
-        "explain": "Ta có: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế quy chuẩn là 380 V)."
+        "explain": "Nguồn điện ba pha đối xứng nối hình sao: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế mạng điện hạ áp tiêu chuẩn Việt Nam quy ước là 380 V)."
       },
       {
-        "id": 30,
+        "id": "cn_b3_23",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cho mạch điện ba pha tải đối xứng nối theo hình sao (Y) trong đó điện áp pha Up = 220 V và tải ba pha gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp dây Ud lần lượt là",
-        "options": [
-          "A. Ip = 4,4 A; Id = 4,4 A; Ud ≈ 381 V",
-          "B. Ip = 7,6 A; Id = 4,4 A; Ud = 220 V",
-          "C. Ip = 4,4 A; Id = 7,6 A; Ud = 380 V",
-          "D. Ip = 2,2 A; Id = 2,2 A; Ud = 127 V"
-        ],
-        "correct": 0,
-        "explain": "Vì tải nối hình sao: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">50</span></span> = 4,4 A. Dòng điện dây: Id = Ip = 4,4 A. Điện áp dây: Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
-      },
-      {
-        "id": 31,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cho mạch điện ba pha tải đối xứng nối theo hình tam giác (Δ), điện áp dây Ud = 380 V, tải ba pha gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp pha Up lần lượt là",
-        "options": [
-          "A. Up = 220 V; Ip = 4,4 A; Id = 4,4 A",
-          "B. Up = 380 V; Ip = 7,6 A; Id ≈ 13,16 A",
-          "C. Up = 380 V; Ip = 13,16 A; Id = 7,6 A",
-          "D. Up = 380 V; Ip = 7,6 A; Id = 7,6 A"
-        ],
-        "correct": 1,
-        "explain": "Vì tải nối hình tam giác: Up = Ud = 380 V. Dòng điện pha: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">50</span></span> = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Bài tập 3 SGK trang 21)."
-      },
-      {
-        "id": 32,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cho nguồn điện xoay chiều ba pha bốn dây có Ud/Up = 380/220 V. Có 6 bóng đèn sợi đốt loại 220 V - 60 W và một động cơ ba pha loại 380 V - 2,2 kW. Để các thiết bị hoạt động bình thường trong mạch ba pha đối xứng thì:",
-        "options": [
-          "A. Bóng đèn nối tam giác, động cơ nối sao.",
-          "B. Bóng đèn chia đều nối hình sao (mỗi pha 2 bóng song song), động cơ nối hình tam giác.",
-          "C. Cả bóng đèn và động cơ đều nối hình sao có dây trung tính.",
-          "D. Cả bóng đèn và động cơ đều nối hình tam giác."
-        ],
-        "correct": 1,
-        "explain": "Bóng đèn có Uđm = 220 V = Up của nguồn nên phải nối hình sao (Y) có dây trung tính (6 bóng chia đều mỗi pha 2 bóng song song). Động cơ có Uđm = 380 V = Ud của nguồn nên phải nối hình tam giác (Δ) vào 3 dây pha (Bài tập 5 SGK trang 21)."
-      },
-      {
-        "id": 33,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một động cơ không đồng bộ ba pha khi làm việc ở mạng điện có điện áp dây Ud = 380 V thì tiêu thụ dòng điện dây Id = 10 A với hệ số công suất cosφ = 0,85. Công suất tác dụng P tiêu thụ của động cơ là",
-        "options": [
-          "A. 3 230 W",
-          "B. 5 594 W",
-          "C. 9 690 W",
-          "D. 1 860 W"
-        ],
-        "correct": 1,
-        "explain": "Công suất tiêu thụ ba pha: P = √3.Ud.Id.cosφ = √3 × 380 × 10 × 0,85 ≈ 1,732 × 380 × 8,5 ≈ 5 594 W (≈ 5,6 kW)."
-      },
-      {
-        "id": 34,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Tải ba pha đối xứng gồm 3 cuộn dây, mỗi cuộn có điện trở R = 8 Ω và cảm kháng XL = 6 Ω. Nối tải theo hình tam giác (Δ) vào nguồn có điện áp dây Ud = 220 V. Dòng điện pha Ip và dòng điện dây Id là",
-        "options": [
-          "A. Ip = 22 A; Id ≈ 38,1 A",
-          "B. Ip = 15,7 A; Id = 15,7 A",
-          "C. Ip = 27,5 A; Id = 47,6 A",
-          "D. Ip = 22 A; Id = 22 A"
-        ],
-        "correct": 0,
-        "explain": "Tổng trở mỗi pha: zp = √(R² + XL²) = √(8² + 6²) = 10 Ω. Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">10</span></span> = 22 A. Dòng điện dây: Id = √3.Ip = √3 × 22 ≈ 38,1 A."
-      },
-      {
-        "id": 35,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "So với hệ thống điện một pha, hệ thống truyền tải dòng điện xoay chiều ba pha có ưu điểm vượt trội nào?",
-        "options": [
-          "A. Chỉ cần dùng 1 dây dẫn duy nhất.",
-          "B. Tiết kiệm tiết diện kim loại làm dây dẫn khi truyền tải công suất lớn đi xa, và tạo ra từ trường quay giúp chế tạo động cơ ba pha cấu tạo đơn giản, bền bỉ.",
-          "C. Không bao giờ xảy ra sự cố ngắn mạch hay quá tải.",
-          "D. Luôn có điện áp một chiều ổn định không đổi."
-        ],
-        "correct": 1,
-        "explain": "Ưu điểm của mạch 3 pha: Tiết kiệm dây dẫn kim loại (đồng, nhôm) so với 3 đường dây 1 pha độc lập; tạo ra từ trường quay để vận hành động cơ điện ba pha - thiết bị cốt lõi trong công nghiệp (SGK trang 21)."
-      },
-      {
-        "id": 70,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Một nguồn điện ba pha đối xứng có điện áp pha Up = 220 V. Giá trị của điện áp dây Ud xấp xỉ bằng bao nhiêu vôn?",
-        "options": [
-          "A. 127 V",
-          "B. 220 V",
-          "C. 380 V (hoặc 381 V)",
-          "D. 440 V"
-        ],
-        "correct": 2,
-        "explain": "Ta có công thức liên hệ giữa điện áp dây và điện áp pha của nguồn đối xứng: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế mạng điện quy ước là 380 V)."
-      },
-      {
-        "id": 71,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Cho mạch điện xoay chiều một pha có R = 30 Ω, cảm kháng XL = 60 Ω, dung kháng XC = 20 Ω. Độ lớn tổng trở z_t của mạch điện là",
+        "question": "Cho mạch xoay chiều một pha có R = 30 Ω, cảm kháng XL = 60 Ω, dung kháng XC = 20 Ω. Độ lớn tổng trở z_t của mạch là",
         "options": [
           "A. 110 Ω",
           "B. 50 Ω",
@@ -1534,12 +1721,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 10 Ω"
         ],
         "correct": 1,
-        "explain": "Điện kháng của mạch: X = XL - XC = 60 - 20 = 40 Ω. Tổng trở: z_t = √(R² + X²) = √(30² + 40²) = 50 Ω."
+        "explain": "Điện kháng của mạch: X = XL - XC = 60 - 20 = 40 Ω. Tổng trở của mạch: z_t = √(R² + X²) = √(30² + 40²) = √(900 + 1600) = √2500 = 50 Ω."
       },
       {
-        "id": 72,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có điện trở R = 12 Ω và cảm kháng XL = 16 Ω mỗi pha nối hình sao (Y) vào nguồn có điện áp dây Ud = 380 V. Cường độ dòng điện pha Ip chạy qua mỗi cuộn dây là",
+        "id": "cn_b3_24",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có R = 12 Ω, XL = 16 Ω nối hình SAO (Y) vào nguồn điện có điện áp dây Ud = 380 V. Cường độ dòng điện pha Ip chạy qua mỗi cuộn dây là",
         "options": [
           "A. 11 A",
           "B. 19 A",
@@ -1547,12 +1734,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 22 A"
         ],
         "correct": 0,
-        "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = 20 Ω. Do tải nối sao: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Cường độ dòng điện pha: Ip = Up / z_p = 220 / 20 = 11 A."
+        "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = √400 = 20 Ω. Do tải nối sao, điện áp pha của tải: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Cường độ dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">20</span></span> = 11 A."
       },
       {
-        "id": 73,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Một động cơ điện ba pha nối hình tam giác (Δ) tiêu thụ dòng điện pha Ip = 15 A. Cường độ dòng điện dây Id chạy trên đường dây cấp điện cho động cơ là",
+        "id": "cn_b3_25",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một động cơ điện ba pha nối hình TAM GIÁC (Δ) tiêu thụ dòng điện pha Ip = 15 A. Cường độ dòng điện dây Id chạy trên đường dây cấp điện cho động cơ là",
         "options": [
           "A. 15 A",
           "B. 8,66 A",
@@ -1560,760 +1747,1040 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 45 A"
         ],
         "correct": 2,
-        "explain": "Tải nối tam giác (Δ) đối xứng thì: Id = √3.Ip = √3 × 15 ≈ 25,98 A."
+        "explain": "Tải nối hình tam giác (Δ) đối xứng: Dòng điện dây liên hệ với dòng điện pha qua công thức: Id = √3.Ip = √3 × 15 ≈ 1,732 × 15 = 25,98 A."
       },
       {
-        "id": 74,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Một khu tập thể gồm 150 hộ gia đình, mỗi hộ tiêu thụ công suất trung bình vào giờ cao điểm là 4 kW. Cần chọn máy biến áp phân phối có công suất định mức tối thiểu là bao nhiêu kVA (giả sử hệ số công suất cosφ = 0,8)?",
+        "id": "cn_b3_26",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một nguồn điện ba pha có điện áp dây Ud = 380 V cấp cho một tải đối xứng nối hình SAO (Y) có tổng trở mỗi pha zp = 38 Ω. Dòng điện dây Id chạy trên dây pha có giá trị là",
         "options": [
-          "A. 150 kVA",
-          "B. 480 kVA",
-          "C. 750 kVA",
-          "D. 600 kVA"
-        ],
-        "correct": 2,
-        "explain": "Tổng công suất tác dụng: P = 150 × 4 = 600 kW. Công suất biểu kiến của máy biến áp: S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">600</span><span class=\"math-frac-bottom\">0,8</span></span> = 750 kVA."
-      },
-      {
-        "id": 75,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Điện áp danh định mạng điện hạ áp sinh hoạt là 220 V. Theo quy chuẩn sai số cho phép không quá ±5%, dải điện áp thực tế tại ổ cắm trong nhà chấp nhận được là",
-        "options": [
-          "A. từ 200 V đến 240 V",
-          "B. từ 209 V đến 231 V",
-          "C. từ 215 V đến 225 V",
-          "D. từ 180 V đến 260 V"
+          "A. 10 A",
+          "B. 5,79 A (khoảng 5,8 A)",
+          "C. 17,3 A",
+          "D. 3,34 A"
         ],
         "correct": 1,
-        "explain": "Độ lệch điện áp 5%: ΔU = 220 × 5% = 11 V. Dải điện áp cho phép: U_min = 220 - 11 = 209 V; U_max = 220 + 11 = 231 V."
-      }
-    ]
-  },
-  {
-    "id": "cn_bai2",
-    "title": "Bài 2: Ngành nghề trong lĩnh vực kĩ thuật điện",
-    "icon": "👷",
-    "description": "5 nhóm nghề: Thiết kế, chế tạo, lắp đặt, vận hành, bảo dưỡng & sửa chữa",
-    "questions": [
+        "explain": "Do tải nối sao: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">38</span></span> ≈ 5,79 A. Do nối sao: Id = Ip ≈ 5,79 A."
+      },
       {
-        "id": 1,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Công việc nào sau đây thuộc nhóm công việc thiết kế điện?",
+        "id": "cn_b3_27",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Tải ba pha đối xứng gồm ba điện trở thuần R = 22 Ω nối hình TAM GIÁC (Δ) vào mạng điện có Ud = 220 V. Dòng điện pha Ip và dòng điện dây Id lần lượt là",
         "options": [
-          "A. Lắp đặt đường dây và trạm biến áp ngoài hiện trường.",
-          "B. Nghiên cứu, ứng dụng kiến thức kĩ thuật điện để phân tích, lựa chọn vật liệu và thiết bị điện, lập bản vẽ sơ đồ mạch điện.",
-          "C. Đóng cắt và giám sát các chỉ số hoạt động của lưới điện tại phòng điều độ.",
-          "D. Thay thế dầu bôi trơn và bảo dưỡng định kì máy biến áp."
+          "A. Ip = 10 A; Id = 17,32 A",
+          "B. Ip = 10 A; Id = 10 A",
+          "C. Ip = 5,77 A; Id = 10 A",
+          "D. Ip = 17,32 A; Id = 10 A"
+        ],
+        "correct": 0,
+        "explain": "Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">22</span></span> = 10 A. Dòng điện dây: Id = √3.Ip = √3 × 10 ≈ 17,32 A."
+      },
+      {
+        "id": "cn_b3_28",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một tải điện ba pha tiêu thụ công suất P = 10 kW với điện áp dây Ud = 380 V và hệ số công suất cos φ = 0,8. Dòng điện dây Id chạy trong mạch xấp xỉ bằng",
+        "options": [
+          "A. 18,99 A",
+          "B. 32,89 A",
+          "C. 10,95 A",
+          "D. 15,20 A"
+        ],
+        "correct": 0,
+        "explain": "Từ công thức công suất ba pha: P = √3.Ud.Id.cos φ => Id = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">√3.U<sub>d</sub>.cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">√3 × 380 × 0,8</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">526,54</span></span> ≈ 18,99 A."
+      },
+      {
+        "id": "cn_b3_29",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Máy biến áp ba pha sử dụng trong trạm điện có chức năng cơ bản là gì?",
+        "options": [
+          "A. Biến đổi điện áp và dòng điện của hệ thống điện ba pha nhưng giữ nguyên tần số f = 50 Hz.",
+          "B. Biến đổi dòng xoay chiều thành dòng điện một chiều.",
+          "C. Tăng công suất tác dụng P của nguồn điện lên gấp đôi.",
+          "D. Tích trữ điện năng vào cuộn dây sơ cấp để phát điện khi mất lưới."
+        ],
+        "correct": 0,
+        "explain": "Máy biến áp ba pha làm việc dựa trên hiện tượng cảm ứng điện từ, có chức năng biến đổi điện áp và dòng điện xoay chiều ba pha từ cấp này sang cấp khác nhưng giữ nguyên tần số dòng điện (f = 50 Hz) (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_30",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Kí hiệu tổ đấu dây Y/Δ-11 của máy biến áp ba pha có ý nghĩa là",
+        "options": [
+          "A. Cuộn sơ cấp nối hình sao (Y), cuộn thứ cấp nối hình tam giác (Δ), góc lệch pha giữa điện áp sơ cấp và thứ cấp tương ứng góc 11 giờ (330°).",
+          "B. Máy biến áp có 11 cuộn dây độc lập.",
+          "C. Máy biến áp làm việc ở cấp điện áp 11 kV.",
+          "D. Máy biến áp sử dụng 11 kg lõi thép Silic."
+        ],
+        "correct": 0,
+        "explain": "Quy ước tổ đấu dây: Kí hiệu Y/Δ biểu thị cuộn sơ cấp nối sao, cuộn thứ cấp nối tam giác; con số 11 là chỉ số giờ lệch pha giữa vectơ điện áp dây thứ cấp so với sơ cấp (11 × 30° = 330°)."
+      },
+      {
+        "id": "cn_b3_31",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Khi một pha của tải hình sao (Y) bị đứt (hở mạch), dòng điện trong pha bị đứt đó sẽ",
+        "options": [
+          "A. tăng lên gấp √3 lần.",
+          "B. bằng 0, hai pha còn lại vẫn tiếp tục có dòng điện chạy qua.",
+          "C. đổi chiều liên tục không xác định.",
+          "D. truyền toàn bộ công suất vào cọc tiếp địa."
         ],
         "correct": 1,
-        "explain": "Thiết kế điện là việc nghiên cứu, ứng dụng các kiến thức về kĩ thuật điện và phương pháp tính toán để phân tích, thiết kế, lựa chọn vật liệu, thiết bị điện cho các hệ thống và thiết bị điện; tạo ra sản phẩm là bản vẽ sơ đồ mạch điện và tài liệu kĩ thuật."
+        "explain": "Khi bị đứt mạch một pha, dòng điện trong nhánh pha đó bị ngắt hoàn toàn (Ip = 0). Nếu mạng có dây trung tính thì hai pha còn lại vẫn hoạt động bình thường ở điện áp 220 V."
       },
       {
-        "id": 2,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Sản phẩm chính của công việc thiết kế điện là gì?",
+        "id": "cn_b3_32",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một xưởng thực hành có nguồn ba pha 4 dây 380/220 V. Muốn lắp một bóng đèn sợi đốt 220 V - 100 W vào mạng điện này, người ta phải đấu bóng đèn vào vị trí nào?",
         "options": [
-          "A. Các linh kiện điện tử và bóng đèn LED.",
-          "B. Bản vẽ sơ đồ mạch điện và tài liệu kĩ thuật mô tả hệ thống điện.",
-          "C. Hệ thống cột điện và đường dây truyền tải điện.",
-          "D. Điện năng cung cấp cho các hộ gia đình."
+          "A. Giữa hai dây pha bất kì (ví dụ dây pha A và dây pha B).",
+          "B. Giữa một dây pha bất kì và dây trung tính (ví dụ dây pha A và dây trung tính O).",
+          "C. Nối tiếp cả ba dây pha A, B, C vào một đầu bóng đèn.",
+          "D. Đấu trực tiếp hai cực của bóng đèn vào dây trung tính O."
         ],
         "correct": 1,
-        "explain": "Theo SGK Công nghệ 12 (KNTT trang 11), sản phẩm của công việc thiết kế điện là các bản vẽ sơ đồ mạch điện và các tài liệu kĩ thuật mô tả hệ thống điện."
-      },
-      {
-        "id": 3,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Vị trí kĩ sư thiết kế điện đòi hỏi người lao động phải có trình độ đào tạo tối thiểu là",
-        "options": [
-          "A. sơ cấp nghề điện.",
-          "B. trung cấp nghề kĩ thuật điện.",
-          "C. cao đẳng nghề kĩ thuật điện.",
-          "D. đại học ngành kĩ thuật điện."
-        ],
-        "correct": 3,
-        "explain": "Người làm nghề thiết kế điện đối với vị trí kĩ sư phải có trình độ đại học ngành kĩ thuật điện (hoặc các chuyên ngành gần tương đương)."
-      },
-      {
-        "id": 4,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Trong ngành sản xuất, chế tạo thiết bị điện, công việc nào sau đây do thợ sản xuất, chế tạo thực hiện?",
-        "options": [
-          "A. Quản lí chất lượng và kiểm soát quy trình kiểm định xuất xưởng.",
-          "B. Tổ chức vận hành và tối ưu hóa dây chuyền công nghệ sản xuất.",
-          "C. Thao tác các công việc cụ thể như kiểm tra linh kiện đầu vào, lắp ráp, hàn linh kiện, đóng gói bao bì sản phẩm.",
-          "D. Nghiên cứu công nghệ vật liệu mới cho thiết bị điện."
-        ],
-        "correct": 2,
-        "explain": "Thợ sản xuất, chế tạo chịu trách nhiệm thao tác các công việc cụ thể trong dây chuyền như: kiểm tra linh kiện đầu vào, lắp ráp và hàn linh kiện, đóng gói bao bì sản phẩm đạt chất lượng (SGK trang 11)."
-      },
-      {
-        "id": 5,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Mô tả nào sau đây thể hiện đúng nhất công việc của người làm nghề lắp đặt điện?",
-        "options": [
-          "A. Theo dõi các thông số đồng hồ đo tại phòng điều khiển trung tâm nhà máy điện.",
-          "B. Thi công, lắp đặt, kết nối đường dây điện và thiết bị điện theo hồ sơ thiết kế, quy chuẩn kĩ thuật và an toàn điện.",
-          "C. Tính toán mô phỏng mạch điện tử bằng phần mềm chuyên dụng trên máy tính tính toán.",
-          "D. Kiểm tra định kì và vệ sinh, thay dầu máy biến thế đang vận hành."
-        ],
-        "correct": 1,
-        "explain": "Lắp đặt điện là việc thi công, lắp đặt, kết nối đường dây điện và thiết bị điện cho các hệ thống điện, công trình điện theo hồ sơ thiết kế, quy chuẩn kĩ thuật và an toàn điện (SGK trang 12)."
-      },
-      {
-        "id": 6,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Mục đích chính của công việc vận hành điện là gì?",
-        "options": [
-          "A. Xây dựng mới hoàn toàn các cột tháp truyền tải điện 500 kV.",
-          "B. Duy trì chế độ làm việc bình thường của hệ thống điện, đáp ứng các yêu cầu chất lượng, độ tin cậy và tính kinh tế.",
-          "C. Thay thế toàn bộ dây dẫn điện trong khu dân cư sau mỗi tháng.",
-          "D. Thiết kế các linh kiện vi mạch điện tử siêu nhỏ."
-        ],
-        "correct": 1,
-        "explain": "Vận hành thiết bị điện là các hoạt động nhằm duy trì chế độ làm việc bình thường của hệ thống điện đáp ứng các yêu cầu chất lượng, độ tin cậy và kinh tế (SGK trang 12)."
-      },
-      {
-        "id": 7,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Phát biểu nào sau đây phân biệt chính xác giữa hoạt động 'bảo dưỡng điện' và 'sửa chữa điện'?",
-        "options": [
-          "A. Bảo dưỡng tiến hành khi có sự cố hư hỏng, còn sửa chữa tiến hành định kì thường xuyên.",
-          "B. Bảo dưỡng là hoạt động thường kì nhằm duy trì hệ thống hoạt động bình thường và phòng ngừa hư hỏng; sửa chữa là hoạt động phục hồi khi xảy ra sự cố.",
-          "C. Bảo dưỡng do thợ điện làm, sửa chữa chỉ do kĩ sư điện làm.",
-          "D. Bảo dưỡng chỉ áp dụng cho đồ gia dụng, sửa chữa áp dụng cho lưới điện quốc gia."
-        ],
-        "correct": 1,
-        "explain": "Bảo dưỡng điện là hoạt động thường kì nhằm duy trì hệ thống điện, thiết bị điện hoạt động bình thường, tránh hỏng hóc. Sửa chữa điện là hoạt động thực hiện khi có sự cố nhằm phục hồi hệ thống trở lại trạng thái hoạt động bình thường (SGK trang 13)."
-      },
-      {
-        "id": 8,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Vị trí việc làm kĩ sư thi công điện trong nhóm công việc lắp đặt điện có nhiệm vụ chính là",
-        "options": [
-          "A. trực tiếp leo trèo lắp dây dẫn trên cột điện cao áp.",
-          "B. chỉ huy và giám sát thi công lắp đặt điện theo hồ sơ thiết kế.",
-          "C. sản xuất vỏ tủ điện tại phân xưởng gia công cơ khí.",
-          "D. sửa chữa các thiết bị gia dụng trong hộ gia đình."
-        ],
-        "correct": 1,
-        "explain": "Trong nhóm công việc lắp đặt điện: kĩ sư thi công điện có nhiệm vụ chỉ huy và giám sát thi công lắp đặt điện; kĩ thuật viên hỗ trợ thi công và lắp đặt; thợ điện trực tiếp thực hiện lắp đặt (SGK trang 12)."
-      },
-      {
-        "id": 9,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Nơi làm việc nào sau đây là môi trường làm việc đặc trưng của nghề vận hành điện?",
-        "options": [
-          "A. Phòng thiết kế đồ họa của công ty quảng cáo truyền thông.",
-          "B. Phòng điều hành, quản lí điện của công ty điện lực, trạm biến áp, nhà máy điện.",
-          "C. Xưởng dệt may xuất khẩu.",
-          "D. Cửa hàng kinh doanh thiết bị văn phòng."
-        ],
-        "correct": 1,
-        "explain": "Người làm nghề vận hành điện thường làm việc tại phòng điều hành, quản lí điện của các công ty điện lực, công ty chiếu sáng đô thị, bộ phận quản lí hệ thống điện trong tòa nhà, nhà máy, cơ quan (SGK trang 12)."
-      },
-      {
-        "id": 10,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Năng lực nào dưới đây đặc biệt quan trọng đối với người làm nghề bảo dưỡng và sửa chữa điện?",
-        "options": [
-          "A. Năng khiếu hội họa và sáng tác văn học.",
-          "B. Khả năng tư duy logic, chẩn đoán, phát hiện lỗi hư hỏng và sử dụng thành thạo dụng cụ đo kiểm tra điện an toàn.",
-          "C. Kĩ năng tiếp thị và bán hàng đa kênh.",
-          "D. Kĩ năng đàm phán hợp đồng kinh tế quốc tế."
-        ],
-        "correct": 1,
-        "explain": "Người làm nghề bảo dưỡng và sửa chữa điện cần có tư duy logic, khả năng suy luận, chẩn đoán lỗi; kĩ năng thành thạo trong sử dụng các thiết bị đo, thiết bị chẩn đoán lỗi và tuân thủ tuyệt đối quy chuẩn kĩ thuật, an toàn điện (SGK trang 13)."
+        "explain": "Bóng đèn có điện áp định mức 220 V (bằng điện áp pha Up của lưới), do đó phải đấu một đầu vào dây pha và một đầu vào dây trung tính O để nhận đúng điện áp 220 V. Nếu đấu vào giữa hai dây pha (Ud = 380 V) thì đèn sẽ bị quá áp và nổ ngay lập tức."
       }
     ]
   },
   {
     "id": "cn_bai4",
-    "title": "Bài 4: Hệ thống điện quốc gia",
+    "title": "🗼 BÀI 4: Hệ thống điện quốc gia (Xem kĩ)",
     "icon": "🗼",
-    "description": "Nguồn điện, Lưới truyền tải (>110kV), Lưới phân phối (<=110kV), Đường dây 500kV Bắc - Nam",
+    "description": "Nguồn điện, Lưới truyền tải (>110kV), Lưới phân phối (<=110kV), Đường dây 500kV Bắc - Nam (Xem kĩ)",
     "questions": [
       {
-        "id": 23,
+        "id": "cn_b4_01",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Hệ thống điện quốc gia thực hiện quá trình nào sau đây?",
+        "question": "Hệ thống điện quốc gia là một hệ thống thống nhất gồm những thành phần cơ bản nào?",
         "options": [
-          "A. Khai thác than, dầu mỏ và lọc dầu thành phẩm.",
-          "B. Sản xuất, truyền tải, phân phối và tiêu thụ điện năng trên quy mô toàn quốc.",
-          "C. Sản xuất và lắp ráp các loại ô tô điện và xe máy điện.",
-          "D. Quản lí dự báo thời tiết và thủy văn toàn quốc."
+          "A. Các công ty kinh doanh thiết bị điện gia dụng và các cửa hàng phân phối bán lẻ.",
+          "B. Nguồn điện, lưới điện và các tải tiêu thụ điện được liên kết chặt chẽ với nhau trên quy mô toàn quốc.",
+          "C. Các cơ quan quản lí tài nguyên nước và các hồ chứa thủy lợi.",
+          "D. Trạm phát sóng viễn thông và các vệ tinh địa tĩnh quân sự."
         ],
         "correct": 1,
-        "explain": "Hệ thống điện quốc gia gồm nguồn điện, lưới điện và tải tiêu thụ liên kết thành hệ thống thống nhất để thực hiện quá trình sản xuất, truyền tải, phân phối và tiêu thụ điện năng (SGK trang 23)."
+        "explain": "Theo SGK Công nghệ 12 trang 22-23: Hệ thống điện quốc gia gồm các nguồn điện (nhà máy điện), lưới điện (đường dây và trạm biến áp) và các hộ tiêu thụ điện trên toàn quốc được liên kết chặt chẽ thành một hệ thống thống nhất."
       },
       {
-        "id": 24,
+        "id": "cn_b4_02",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Cấu trúc chung của hệ thống điện quốc gia gồm ba thành phần chính là",
+        "question": "Hệ thống điện quốc gia thực hiện liên tục bốn khâu then chốt nào sau đây?",
         "options": [
-          "A. Trạm biến áp, công tơ điện và dây dẫn.",
-          "B. Nguồn điện, lưới điện và tải tiêu thụ.",
-          "C. Nhà máy nhiệt điện, nhà máy thủy điện và điện mặt trời.",
-          "D. Tủ tổng, tủ nhánh và tủ động lực."
+          "A. Sản xuất, truyền tải, phân phối và tiêu thụ điện năng.",
+          "B. Thiết kế, lắp ráp cơ khí, đóng tàu và thử nghiệm ô tô.",
+          "C. Đào tạo nhân lực, in ấn sách giáo khoa, bán hàng và bảo hành.",
+          "D. Chế tạo linh kiện điện tử, lập trình phần mềm và bảo dưỡng máy tính."
         ],
-        "correct": 1,
-        "explain": "Ba thành phần chính của hệ thống điện quốc gia là: Nguồn điện, Lưới điện và Tải tiêu thụ (Hình 4.2 và 4.3 SGK trang 22-23)."
+        "correct": 0,
+        "explain": "Hệ thống điện quốc gia thực hiện quá trình: Sản xuất điện năng (tại nhà máy điện) -> Truyền tải điện năng (lưới truyền tải) -> Phân phối điện năng (lưới phân phối) -> Tiêu thụ điện năng (tại các phụ tải) (SGK trang 22)."
       },
       {
-        "id": 25,
+        "id": "cn_b4_03",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Lưới điện truyền tải trong hệ thống điện quốc gia có cấp điện áp là",
+        "question": "Thành phần 'LƯỚI ĐIỆN TRUYỀN TẢI' trong hệ thống điện quốc gia có cấp điện áp là",
         "options": [
           "A. dưới 1 kV.",
           "B. từ 1 kV đến 35 kV.",
           "C. từ 110 kV trở xuống.",
-          "D. trên 110 kV."
+          "D. trên 110 kV (như 220 kV và 500 kV)."
         ],
         "correct": 3,
-        "explain": "Lưới điện truyền tải có điện áp trên 110 kV, làm nhiệm vụ truyền tải điện năng số lượng lớn từ các nhà máy điện/trạm nguồn đến các trạm phân phối chính (SGK trang 23)."
+        "explain": "Theo quy chuẩn phân loại SGK trang 23: Lưới điện truyền tải có cấp điện áp TRÊN 110 kV (ở Việt Nam phổ biến là 220 kV và siêu cao áp 500 kV), đảm nhận truyền tải công suất lớn từ nhà máy điện đến các trạm phân phối chính."
       },
       {
-        "id": 26,
+        "id": "cn_b4_04",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Lưới điện phân phối trong hệ thống điện quốc gia có cấp điện áp là",
+        "question": "Thành phần 'LƯỚI ĐIỆN PHÂN PHỐI' trong hệ thống điện quốc gia có cấp điện áp là",
         "options": [
-          "A. từ 110 kV trở xuống.",
+          "A. từ 110 kV trở xuống (110 kV, 35 kV, 22 kV, 10 kV, 6 kV, 0,4 kV).",
           "B. trên 110 kV đến 500 kV.",
           "C. trên 220 kV.",
-          "D. chỉ duy nhất cấp 220 V."
+          "D. chỉ duy nhất cấp điện áp sinh hoạt 220 V."
         ],
         "correct": 0,
-        "explain": "Lưới điện phân phối có điện áp từ 110 kV trở xuống, có nhiệm vụ truyền tải điện năng từ trạm điện phân phối chính đến các tải tiêu thụ (SGK trang 23)."
+        "explain": "Lưới điện phân phối có cấp điện áp TỪ 110 kV TRỞ XUỐNG (110 kV, 35 kV, 22 kV, 10 kV, 6 kV và hạ áp 0,4 kV/380/220V), làm nhiệm vụ đưa điện từ trạm phân phối chính đến các phụ tải tiêu thụ địa phương (SGK trang 23)."
       },
       {
-        "id": 27,
+        "id": "cn_b4_05",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Cấp điện áp siêu cao áp trong hệ thống lưới điện Việt Nam là",
+        "question": "Theo quy chuẩn kĩ thuật điện Việt Nam, bốn cấp điện áp tiêu chuẩn của hệ thống lưới điện gồm:",
         "options": [
-          "A. điện áp đến 1 kV.",
-          "B. điện áp trên 1 kV đến 35 kV.",
-          "C. điện áp từ trên 35 kV đến 220 kV.",
-          "D. điện áp trên 220 kV."
-        ],
-        "correct": 3,
-        "explain": "Phân cấp điện áp: Hạ áp (đến 1 kV); Trung áp (trên 1 kV đến 35 kV); Cao áp (từ trên 35 kV đến 220 kV); Siêu cao áp (trên 220 kV, ví dụ đường dây 500 kV) (SGK trang 23)."
-      },
-      {
-        "id": 28,
-        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Đường dây truyền tải điện 500 kV Bắc - Nam mạch 1 được khánh thành và đóng điện vào thời gian nào?",
-        "options": [
-          "A. Ngày 5/4/1992",
-          "B. Ngày 27/5/1994",
-          "C. Ngày 30/4/1975",
-          "D. Ngày 1/1/2000"
+          "A. Điện cực thấp, điện trung bình, điện mạnh và điện cực mạnh.",
+          "B. Hạ áp (≤ 1 kV), Trung áp (> 1 kV đến 35 kV), Cao áp (> 35 kV đến 220 kV), Siêu cao áp (> 220 kV).",
+          "C. 12 V, 24 V, 110 V và 220 V.",
+          "D. Điện dân dụng, điện công nghiệp, điện nông nghiệp và điện quốc phòng."
         ],
         "correct": 1,
-        "explain": "Đường dây truyền tải điện 500 kV Bắc Nam được khởi công ngày 5/4/1992 và hoàn thành ngày 27/5/1994, dài 1487 km từ Hòa Bình đến TP. Hồ Chí Minh (SGK trang 24)."
+        "explain": "Bốn cấp điện áp tiêu chuẩn quy định rõ ràng trong SGK trang 23: 1. Hạ áp (đến 1 kV); 2. Trung áp (từ trên 1 kV đến 35 kV); 3. Cao áp (từ trên 35 kV đến 220 kV); 4. Siêu cao áp (trên 220 kV, tiêu biểu là 500 kV)."
       },
       {
-        "id": 29,
+        "id": "cn_b4_06",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Vì sao tại các nhà máy điện người ta phải sử dụng máy biến áp tăng áp trước khi đưa điện lên đường dây truyền tải đi xa?",
+        "question": "Đường dây truyền tải điện siêu cao áp 500 kV Bắc - Nam mạch 1 được khởi công và khánh thành đóng điện vào các mốc thời gian lịch sử nào?",
         "options": [
-          "A. Để tăng tần số dòng điện lên cao.",
-          "B. Để tăng điện áp, từ đó giảm dòng điện chạy trên dây, giúp giảm hao phí công suất toả nhiệt trên đường dây.",
-          "C. Để chuyển điện xoay chiều thành một chiều.",
-          "D. Để bảo vệ máy phát điện không bị sét đánh."
+          "A. Khởi công ngày 05/04/1992 và đóng điện ngày 27/05/1994.",
+          "B. Khởi công ngày 30/04/1975 và đóng điện ngày 02/09/1985.",
+          "C. Khởi công ngày 01/01/2000 và đóng điện ngày 10/10/2010.",
+          "D. Khởi công ngày 19/05/1990 và đóng điện ngày 27/07/1995."
         ],
-        "correct": 1,
-        "explain": "Theo định luật Jun-Len-xơ, công suất hao phí toả nhiệt ΔP = I²R = (P²/U²cos²φ)R. Tăng điện áp U lên n lần thì hao phí giảm n² lần, giúp truyền tải công suất lớn đi xa hiệu quả và tiết kiệm tiết diện dây dẫn."
+        "correct": 0,
+        "explain": "Đường dây truyền tải 500 kV Bắc - Nam mạch 1 là công trình thế kỉ: khởi công ngày 05/04/1992 và hoàn thành đóng điện vận hành chính thức ngày 27/05/1994 (SGK Công nghệ 12 trang 24)."
       },
       {
-        "id": 30,
+        "id": "cn_b4_07",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Thiết bị nào trong lưới điện có chức năng chuyển đổi cấp điện áp từ thấp lên cao hoặc từ cao xuống thấp?",
+        "question": "Quy mô kĩ thuật của đường dây siêu cao áp 500 kV Bắc - Nam mạch 1 là",
         "options": [
-          "A. Máy phát điện xoay chiều.",
-          "B. Máy biến áp.",
-          "C. Động cơ không đồng bộ ba pha.",
-          "D. Aptomat khối MCCB."
+          "A. dài 500 km, gồm 1 000 cột tháp sắt, nối từ Hà Nội vào Đà Nẵng.",
+          "B. dài 1 487 km, gồm 3 437 cột tháp sắt, đi qua 14 tỉnh thành từ Trạm 500 kV Hoà Bình đến Trạm 500 kV Phú Lâm (TP. Hồ Chí Minh).",
+          "C. dài 2 500 km nối từ Móng Cái đến Mũi Cà Mau.",
+          "D. chạy ngầm dưới đáy biển dọc bờ biển miền Trung."
         ],
         "correct": 1,
-        "explain": "Trạm biến áp thực hiện chức năng chuyển đổi cấp điện áp từ điện áp thấp lên điện áp cao hoặc ngược lại thông qua các máy biến áp (SGK trang 24)."
-      }
-    ]
-  },
-  {
-    "id": "cn_bai5",
-    "title": "Bài 5: Sản xuất điện năng",
-    "icon": "☀️",
-    "description": "Thủy điện, Nhiệt điện, Điện hạt nhân, Điện gió, Điện mặt trời (Ưu - Nhược điểm)",
-    "questions": [
-      {
-        "id": 31,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Quá trình sản xuất điện năng là quá trình",
-        "options": [
-          "A. biến đổi điện năng thành nhiệt năng và cơ năng.",
-          "B. chuyển đổi các dạng năng lượng khác trong tự nhiên thành năng lượng điện.",
-          "C. truyền tải điện năng từ nhà máy đến hộ gia đình.",
-          "D. lưu trữ điện năng trong tụ điện phẳng."
-        ],
-        "correct": 1,
-        "explain": "Sản xuất điện năng là quá trình chuyển đổi các dạng năng lượng khác nhau thành năng lượng điện (SGK trang 27)."
+        "explain": "Đường dây 500 kV mạch 1 dài 1 487 km, xây dựng với 3 437 cột tháp sắt, băng qua rừng núi hiểm trở của 14 tỉnh thành từ Trạm 500 kV Hoà Bình tới Trạm 500 kV Phú Lâm (TP.HCM) (SGK trang 24)."
       },
       {
-        "id": 32,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Nguồn năng lượng nào sau đây là nguồn năng lượng tái tạo?",
+        "id": "cn_b4_08",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Ý nghĩa chiến lược quan trọng nhất của việc xây dựng và đưa vào vận hành đường dây siêu cao áp 500 kV Bắc - Nam là gì?",
         "options": [
-          "A. Than đá",
-          "B. Dầu mỏ",
-          "C. Năng lượng dòng nước (thủy điện)",
-          "D. Khí thiên nhiên"
+          "A. Hợp nhất hệ thống điện ba miền Bắc - Trung - Nam thành một hệ thống điện quốc gia thống nhất, giải quyết bài toán truyền tải nguồn điện dôi dư từ miền Bắc vào chi viện cho miền Nam đang thiếu điện nghiêm trọng.",
+          "B. Bỏ hẳn việc xây dựng các nhà máy nhiệt điện và thủy điện ở miền Nam.",
+          "C. Giúp giá điện sinh hoạt giảm về mức miễn phí cho toàn bộ người dân.",
+          "D. Thay thế hoàn toàn đường dây điện thoại và internet liên tỉnh."
+        ],
+        "correct": 0,
+        "explain": "Đường dây 500 kV Bắc - Nam đã liên kết lưới điện ba miền thành một khối thống nhất, chấm dứt tình trạng vận hành phân tán rời rạc, tối ưu hóa công suất phát điện của các nhà máy lớn như Thủy điện Hòa Bình để phục vụ phát triển kinh tế cả nước (SGK trang 24)."
+      },
+      {
+        "id": "cn_b4_09",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Đường dây siêu cao áp 500 kV mạch 3 vừa được khánh thành thần tốc năm 2024 nối từ địa phương nào đến địa phương nào?",
+        "options": [
+          "A. Từ Cà Mau đến TP. Hồ Chí Minh.",
+          "B. Từ Quảng Trạch (Quảng Bình) đến Phố Nối (Hưng Yên).",
+          "C. Từ Sơn La về Hà Nội.",
+          "D. Từ Pleiku sang Savannakhet (Lào)."
+        ],
+        "correct": 1,
+        "explain": "Đường dây 500 kV mạch 3 (cung đoạn Quảng Trạch - Phố Nối) dài hơn 519 km nối từ Trung tâm nhiệt điện Quảng Trạch (Quảng Bình) đến Trạm 500 kV Phố Nối (Hưng Yên), góp phần đảm bảo an ninh cấp điện trọng điểm cho miền Bắc."
+      },
+      {
+        "id": "cn_b4_10",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Vì sao tại các nhà máy điện nguồn, người ta bắt buộc phải đặt trạm biến áp TĂNG ÁP trước khi đưa điện lên đường dây truyền tải?",
+        "options": [
+          "A. Để tăng tần số dòng điện xoay chiều lên hàng nghìn Hz.",
+          "B. Để tăng điện áp U, từ đó giảm cường độ dòng điện I, giúp giảm mạnh công suất hao phí toả nhiệt trên dây dẫn theo công thức ΔP = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup>.R</span><span class=\"math-frac-bottom\">U<sup>2</sup>.cos<sup>2</sup>φ</span></span>.",
+          "C. Để chuyển đổi dòng xoay chiều thành dòng điện một chiều.",
+          "D. Để biến điện năng thành cơ năng dự trữ trong cột tháp."
+        ],
+        "correct": 1,
+        "explain": "Theo định luật Jun-Len-xơ, công suất hao phí nhiệt trên đường dây là: ΔP = I²R = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup>.R</span><span class=\"math-frac-bottom\">U<sup>2</sup>.cos<sup>2</sup>φ</span></span>. Khi tăng điện áp U lên n lần thì hao phí ΔP giảm đi n² lần, giúp tiết kiệm chi phí xây dựng đường dây và truyền tải được công suất cực lớn đi xa."
+      },
+      {
+        "id": "cn_b4_11",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Khi truyền tải một công suất điện P xác định trên cùng một đường dây có điện trở R, nếu tăng điện áp từ U1 = 110 kV lên U2 = 220 kV thì công suất hao phí toả nhiệt ΔP trên đường dây sẽ",
+        "options": [
+          "A. tăng lên gấp 2 lần.",
+          "B. giảm đi 2 lần.",
+          "C. giảm đi 4 lần.",
+          "D. không thay đổi."
         ],
         "correct": 2,
-        "explain": "Năng lượng dòng nước, năng lượng gió, năng lượng mặt trời, sinh khối là các nguồn năng lượng tái tạo. Than đá, dầu mỏ, khí thiên nhiên là nhiên liệu hóa thạch không tái tạo (Hình 5.2 SGK trang 26)."
+        "explain": "Công suất hao phí tỉ lệ nghịch với bình phương điện áp: ΔP tỉ lệ với <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">U<sup>2</sup></span></span>. Khi tăng điện áp từ 110 kV lên 220 kV (tăng gấp <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">110</span></span> = 2 lần) thì hao phí giảm: 2² = 4 lần."
       },
       {
-        "id": 33,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Nguyên lí hoạt động của nhà máy thủy điện là",
+        "id": "cn_b4_12",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Vai trò chủ yếu của các trạm biến áp HẠ ÁP bố trí gần các khu dân cư và xí nghiệp công nghiệp là gì?",
         "options": [
-          "A. sử dụng thế năng của nước trong hồ chứa chuyển thành động năng làm quay turbine của máy phát điện tạo ra điện.",
-          "B. đốt than để đun sôi nước tạo hơi nước đẩy cánh quạt.",
-          "C. sử dụng phản ứng nhiệt hạch giải phóng nhiệt lượng lớn.",
-          "D. dùng ánh sáng mặt trời chiếu vào tấm silic tạo dòng electron."
+          "A. Tăng điện áp lên 500 kV để trả ngược về nhà máy điện.",
+          "B. Giảm điện áp từ cấp truyền tải và trung áp xuống cấp điện áp hạ áp an toàn, phù hợp với các thiết bị tiêu thụ điện (380 V / 220 V).",
+          "C. Làm mát không khí và phát điện dự phòng khi trời mưa bão.",
+          "D. Khử từ trường xung quanh đường dây điện."
+        ],
+        "correct": 1,
+        "explain": "Trạm biến áp hạ áp có nhiệm vụ hạ cấp điện áp từ trung áp (22 kV, 35 kV) hoặc cao áp (110 kV) xuống điện áp hạ áp 380/220 V tương thích với mức điện áp làm việc an toàn của máy móc và đồ dùng gia đình (SGK trang 23)."
+      },
+      {
+        "id": "cn_b4_13",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Tần số danh định của dòng điện xoay chiều trong hệ thống điện quốc gia Việt Nam được chuẩn hóa là bao nhiêu?",
+        "options": [
+          "A. 60 Hz",
+          "B. 50 Hz",
+          "C. 100 Hz",
+          "D. 25 Hz"
+        ],
+        "correct": 1,
+        "explain": "Tần số công nghiệp danh định của hệ thống điện quốc gia Việt Nam là 50 Hz (SGK trang 22-23), sai số vận hành cho phép rất nghiêm ngặt (không quá ±5%)."
+      },
+      {
+        "id": "cn_b4_14",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Cơ quan đầu não chịu trách nhiệm chỉ huy điều độ, điều hòa công suất phát của các nhà máy điện và vận hành an toàn hệ thống điện quốc gia 24/7 tại Việt Nam là",
+        "options": [
+          "A. Trung tâm Điều độ Hệ thống điện Quốc gia (A0 - NSMO).",
+          "B. Viện Khoa học Thủy lợi Việt Nam.",
+          "C. Cục Quản lí Thị trường.",
+          "D. Tổng công ty Bưu chính Viễn thông."
         ],
         "correct": 0,
-        "explain": "Nhà máy thủy điện sử dụng thế năng của nước trong hồ chứa để chuyển thành động năng làm quay turbine của máy phát điện tạo ra điện (SGK trang 27)."
+        "explain": "Trung tâm Điều độ Hệ thống điện Quốc gia (A0) là đơn vị chỉ huy vận hành, theo dõi giám sát cung - cầu điện theo thời gian thực để duy trì ổn định tần số 50 Hz và điện áp trên toàn bộ lưới điện quốc gia."
       },
       {
-        "id": 34,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Một trong những nhược điểm lớn của nhà máy thủy điện là",
+        "id": "cn_b4_15",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Cấp điện áp trung áp phổ biến nhất đang được sử dụng trong lưới điện phân phối tại các đô thị và khu dân cư ở Việt Nam hiện nay là:",
         "options": [
-          "A. phát thải lượng lớn khí nhà kính CO2 trong quá trình vận hành.",
-          "B. công suất phát điện phụ thuộc nhiều vào lượng nước tích trữ trong hồ chứa (theo mùa) và tác động làm thay đổi chế độ thủy văn, hệ sinh thái.",
-          "C. chi phí vận hành hàng ngày rất cao.",
-          "D. tuổi thọ công trình rất ngắn dưới 5 năm."
+          "A. 0,4 kV",
+          "B. 22 kV",
+          "C. 110 kV",
+          "D. 500 kV"
         ],
         "correct": 1,
-        "explain": "Nhược điểm của thủy điện: Công suất phát phụ thuộc vào lưu lượng nước trong hồ chứa (hạn hán thì giảm mạnh), chi phí đầu tư ban đầu lớn, làm thay đổi cơ chế thủy văn và đa dạng sinh học (SGK trang 27)."
+        "explain": "Ở Việt Nam, cấp điện áp 22 kV là cấp điện áp trung áp tiêu chuẩn phổ biến nhất trong lưới phân phối hiện đại để cấp điện từ các trạm 110 kV về các trạm biến áp phân phối phụ tải (SGK trang 23)."
       },
       {
-        "id": 35,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Ưu điểm nổi bật của nhà máy nhiệt điện so với nhà máy thủy điện là",
+        "id": "cn_b4_16",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Các chỉ tiêu chất lượng điện năng quan trọng hàng đầu trong hệ thống điện quốc gia gồm có:",
         "options": [
-          "A. hoàn toàn không gây ô nhiễm môi trường.",
-          "B. có thể vận hành liên tục, ổn định quanh năm mà không phụ thuộc vào điều kiện thời tiết hay mùa vụ.",
-          "C. sử dụng nguồn năng lượng tái tạo vô tận.",
-          "D. không tốn chi phí mua nhiên liệu vận hành."
+          "A. Độ ổn định tần số (50 Hz), độ ổn định điện áp (độ lệch trong ngưỡng ±5%) và độ tin cậy cung cấp điện liên tục.",
+          "B. Màu sắc của lớp vỏ cách điện cáp ngầm.",
+          "C. Tốc độ gió thổi qua đường dây và nhiệt độ cột tháp sắt.",
+          "D. Số lượng nhân viên trực ca tại các trạm biến áp."
         ],
-        "correct": 1,
-        "explain": "Ưu điểm của nhiệt điện là công suất phát điện lớn, chi phí đầu tư ban đầu không quá cao, xây dựng nhanh và có thể vận hành liên tục, không phụ thuộc vào thời tiết (SGK trang 28)."
+        "correct": 0,
+        "explain": "Chất lượng điện năng được đo bằng: tần số ổn định quanh mức 50 Hz, độ lệch điện áp nằm trong tiêu chuẩn cho phép (±5%), sóng hài thấp và chỉ số cấp điện liên tục (SAIDI, SAIFI)."
       },
       {
-        "id": 36,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Nhà máy điện hạt nhân chuyển hóa năng lượng từ đâu để sản xuất điện?",
+        "id": "cn_b4_17",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Thiết bị nào sau đây thường được lắp đặt tại các trạm biến áp phân phối để nâng cao hệ số công suất cos φ và giảm tổn thất điện năng trên lưới điện?",
         "options": [
-          "A. Đốt cháy khí hidro trong bầu khí quyển.",
-          "B. Năng lượng nhiệt sinh ra từ các phản ứng phân hạch hạt nhân để đun nóng nước tạo hơi nước áp suất cao quay turbine.",
-          "C. Thế năng của các hạt nhân phóng xạ nặng.",
-          "D. Điện trường tĩnh điện xung quanh lò phản ứng."
+          "A. Tụ bù công suất phản kháng (bộ tụ điện).",
+          "B. Đèn LED chiếu sáng công suất lớn.",
+          "C. Cột thu lôi chống sét.",
+          "D. Máy hàn điện hồ quang."
         ],
-        "correct": 1,
-        "explain": "Nhà máy điện hạt nhân sử dụng năng lượng từ phản ứng phân hạch (thường là Uranium) để đun nóng nước tạo ra hơi nước có áp suất cao làm quay turbine của máy phát điện tạo ra điện (SGK trang 28-29)."
+        "correct": 0,
+        "explain": "Tụ bù công suất phản kháng phát ra công suất phản kháng Q bù cho các phụ tải cảm (động cơ điện), giúp nâng cao hệ số công suất cos φ của lưới lên gần bằng 1, làm giảm dòng điện trên dây dẫn và giảm hao phí truyền tải."
       },
       {
-        "id": 37,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Bộ phận nào trong hệ thống điện mặt trời có chức năng chuyển đổi dòng điện một chiều (DC) từ các tấm pin mặt trời thành dòng xoay chiều (AC) để cấp cho tải và hòa vào lưới điện?",
+        "id": "cn_b4_18",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "a. Lưới điện truyền tải bao gồm các đường dây và trạm biến áp có cấp điện áp từ 110 kV trở xuống.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH VẬN HÀNH: Hệ thống truyền tải điện Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Tổng công ty Truyền tải điện Quốc gia (EVNNPT) quản lí vận hành hệ thống lưới điện truyền tải điện áp 220 kV và 500 kV liên kết các nhà máy điện nguồn với các trung tâm phụ tải lớn trên phạm vi cả nước.</div>\n    </div>",
         "options": [
-          "A. Tấm pin mặt trời (PV)",
-          "B. Bộ biến tần (Inverter)",
-          "C. Pin lưu trữ (Battery)",
-          "D. Máy biến áp phân phối"
+          "A. Đúng",
+          "B. Sai"
         ],
         "correct": 1,
-        "explain": "Nguồn điện do tấm pin mặt trời tạo ra là dòng điện một chiều (DC), cần qua bộ điều khiển sạc và biến tần (Inverter - biến đổi DC thành AC) trước khi hòa vào lưới điện hoặc cung cấp cho các thiết bị xoay chiều (Hình 5.7 SGK trang 30)."
+        "explain": "SAI. Lưới điện truyền tải có cấp điện áp TRÊN 110 kV (ở nước ta là 220 kV và 500 kV); còn lưới điện từ 110 kV trở xuống thuộc về lưới điện phân phối (SGK trang 23).",
+        "subLabel": "1a"
       },
       {
-        "id": 38,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Tại sao các hệ thống điện mặt trời và điện gió thường cần có hệ thống lưu trữ năng lượng (pin tích năng / ắc quy)?",
+        "id": "cn_b4_19",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "b. Đường dây 500 kV mạch 1 đóng vai trò lịch sử kết nối hệ thống điện ba miền thành một hệ thống điện quốc gia thống nhất.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH VẬN HÀNH: Hệ thống truyền tải điện Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Đường dây 500 kV mạch 1 được đóng điện năm 1994, truyền tải nguồn điện dôi dư từ miền Bắc (nhà máy thủy điện Hòa Bình) vào miền Trung và miền Nam.</div>\n    </div>",
         "options": [
-          "A. Vì công suất của chúng rất lớn, lưới điện quốc gia không thể tiếp nhận hết.",
-          "B. Vì gió và ánh sáng mặt trời có tính gián đoạn, phụ thuộc vào thời tiết, ngày đêm nên cần tích trữ để cấp điện khi không đủ gió hoặc nắng.",
-          "C. Để làm mát cánh quạt turbine gió và các tấm pin.",
-          "D. Để tự động chuyển đổi điện áp từ cao xuống thấp."
+          "A. Đúng",
+          "B. Sai"
+        ],
+        "correct": 0,
+        "explain": "ĐÚNG. Đây là ý nghĩa lớn nhất của đường dây 500 kV Bắc - Nam mạch 1: liên kết lưới điện ba miền, xóa bỏ tình trạng chia cắt năng lượng và tạo tiền đề phát triển kinh tế toàn diện.",
+        "subLabel": "1b"
+      },
+      {
+        "id": "cn_b4_20",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "c. Trong hệ thống điện quốc gia, điện năng có thể được lưu trữ dễ dàng với dung lượng không giới hạn vào các đường dây dẫn điện.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH VẬN HÀNH: Hệ thống truyền tải điện Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Điều độ viên hệ thống điện phải tính toán liên tục lượng điện phát ra và lượng điện tiêu thụ trong từng giây để cân bằng hệ thống.</div>\n    </div>",
+        "options": [
+          "A. Đúng",
+          "B. Sai"
         ],
         "correct": 1,
-        "explain": "Ánh sáng mặt trời không có vào ban đêm và suy giảm vào ngày mưa, gió cũng thay đổi thất thường theo thời gian. Do đó cần hệ thống pin tích năng để lưu trữ khi phát dư thừa và xả ra cung cấp khi thiếu hụt (SGK trang 29-30)."
+        "explain": "SAI. Đặc thù của điện năng là sản xuất, truyền tải và tiêu thụ diễn ra hầu như đồng thời tại cùng một thời điểm, đường dây chỉ có chức năng dẫn điện chứ không tích trữ được năng lượng. Do đó hệ thống luôn phải đảm bảo công suất phát bằng công suất tiêu thụ cộng hao phí.",
+        "subLabel": "1c"
       }
     ]
   },
   {
     "id": "cn_bai6",
-    "title": "Bài 6: Mạng điện sản xuất quy mô nhỏ",
+    "title": "🏭 BÀI 6: Mạng điện sản xuất quy mô nhỏ (Xem kĩ)",
     "icon": "🏭",
-    "description": "Trạm biến áp, Tủ tổng MSB, Tủ nhánh, Tủ động lực, Tủ chiếu sáng; Quy tắc đóng/cắt an toàn",
+    "description": "Đặc điểm mạng SX nhỏ, Trạm biến áp, Tủ tổng MSB, Tủ nhánh, Tủ động lực; Quy tắc đóng/cắt an toàn (Xem kĩ)",
     "questions": [
       {
-        "id": 39,
+        "id": "cn_b6_01",
         "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-        "question": "Mạng điện sản xuất quy mô nhỏ thường có công suất tiêu thụ điện năng trong khoảng",
+        "question": "Mạng điện sản xuất quy mô nhỏ là mạng điện có công suất tiêu thụ điện năng nằm trong khoảng nào sau đây?",
         "options": [
-          "A. dưới 1 kW.",
-          "B. từ vài chục đến vài trăm kW.",
-          "C. từ vài nghìn đến vài chục nghìn MW.",
-          "D. trên 1 000 000 kW."
+          "A. Dưới 1 kW.",
+          "B. Từ vài chục đến vài trăm kW.",
+          "C. Từ vài nghìn đến vài chục nghìn MW.",
+          "D. Trên 1 000 000 kW."
         ],
         "correct": 1,
-        "explain": "Mạng điện sản xuất quy mô nhỏ là mạng điện có công suất tiêu thụ điện năng từ vài chục đến vài trăm kW, lấy điện từ lưới phân phối cấp cho tải (SGK trang 31)."
+        "explain": "Theo định nghĩa chuẩn SGK Công nghệ 12 trang 31: Mạng điện sản xuất quy mô nhỏ là mạng điện có công suất tiêu thụ điện năng từ vài chục đến vài trăm kW, lấy điện từ lưới điện phân phối để cung cấp cho cơ sở sản xuất."
       },
       {
-        "id": 40,
+        "id": "cn_b6_02",
         "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-        "question": "Đặc điểm nào sau đây là đặc điểm của mạng điện sản xuất quy mô nhỏ?",
+        "question": "Ba đặc điểm quan trọng nhất của mạng điện sản xuất quy mô nhỏ bao gồm:",
         "options": [
-          "A. Tải phân bố rải rác trên phạm vi hàng trăm km vuông.",
-          "B. Tải phân bố tập trung, mạng điện dùng cho thiết bị sản xuất và mạng điện chiếu sáng hoạt động độc lập.",
-          "C. Toàn bộ thiết bị đều dùng điện áp 110 kV.",
-          "D. Không cần thiết bị đóng cắt và bảo vệ quá tải."
+          "A. Công suất nhỏ dưới 100 W; dùng nguồn pin năng lượng mặt trời; không có aptomat.",
+          "B. Công suất tiêu thụ từ vài chục đến vài trăm kW; phụ tải phân bố tập trung; mạng điện động lực và mạng điện chiếu sáng hoạt động độc lập.",
+          "C. Dùng cấp điện áp siêu cao áp 500 kV; phụ tải rải rác trên diện tích hàng nghìn km²; mạng động lực và chiếu sáng mắc chung trên một công tắc.",
+          "D. Toàn bộ thiết bị đều dùng dòng điện một chiều 24 V."
         ],
         "correct": 1,
-        "explain": "Mạng điện sản xuất quy mô nhỏ có các đặc điểm: tải phân bố tập trung; dùng máy biến áp riêng hoặc lấy điện từ đường hạ áp 380/220 V; mạng điện cho thiết bị sản xuất và mạng điện chiếu sáng hoạt động độc lập (SGK trang 31)."
+        "explain": "Ba đặc điểm cốt lõi học sinh bắt buộc phải ghi nhớ theo SGK trang 31: 1. Công suất tiêu thụ từ vài chục đến vài trăm kW; 2. Tải tiêu thụ phân bố tập trung trong phân xưởng; 3. Mạng điện động lực và mạng điện chiếu sáng hoạt động độc lập."
       },
       {
-        "id": 41,
+        "id": "cn_b6_03",
         "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-        "question": "Trạm biến áp hạ áp trong mạng điện sản xuất quy mô nhỏ có nhiệm vụ gì?",
+        "question": "Đặc điểm 'phụ tải phân bố tập trung' trong mạng điện sản xuất quy mô nhỏ có ý nghĩa thực tế là gì?",
         "options": [
-          "A. Tăng điện áp từ 380 V lên 500 kV để truyền tải đi xa.",
-          "B. Hạ áp từ lưới điện phân phối (thường là đường trung áp 22 kV hoặc 35 kV) xuống điện áp hạ áp 380/220 V.",
-          "C. Đo đếm trực tiếp công suất của từng bóng đèn trong xưởng.",
-          "D. Biến đổi dòng xoay chiều thành dòng một chiều cho toàn bộ nhà máy."
+          "A. Các thiết bị tiêu thụ điện (động cơ điện, máy hàn, máy cơ khí, lò sấy...) được bố trí tập trung trong một phạm vi không gian nhà xưởng hẹp của cơ sở sản xuất.",
+          "B. Các phụ tải nằm rải rác ở nhiều huyện và tỉnh thành khác nhau.",
+          "C. Tất cả máy móc đều cắm chung vào một ổ điện đơn duy nhất.",
+          "D. Thiết bị điện chỉ hoạt động tập trung vào đúng một giờ trong ngày."
+        ],
+        "correct": 0,
+        "explain": "Trong cơ sở sản xuất nhỏ (như xưởng may, xưởng cơ khí, xưởng chế biến nông sản), các phụ tải là máy móc thiết bị sản xuất được bố trí tập trung trong phạm vi các phân xưởng có diện tích vừa và nhỏ (SGK trang 31)."
+      },
+      {
+        "id": "cn_b6_04",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Vì sao trong mạng điện sản xuất quy mô nhỏ, mạng điện ĐỘNG LỰC và mạng điện CHIẾU SÁNG bắt buộc phải hoạt động ĐỘC LẬP?",
+        "options": [
+          "A. Để tránh việc bóng đèn chiếu sáng làm nóng hỏng động cơ điện.",
+          "B. Để khi xảy ra sự cố quá tải hay ngắn mạch ở máy móc làm nhảy aptomat tủ động lực, hệ thống đèn chiếu sáng vẫn có điện bình thường, giúp công nhân không bị hoảng loạn, thuận tiện thoát hiểm và xử lí sự cố an toàn.",
+          "C. Để công ty điện lực dễ ghi số điện của từng bóng đèn.",
+          "D. Để tiết kiệm chi phí lắp đặt dây dẫn."
         ],
         "correct": 1,
-        "explain": "Trạm biến áp có vai trò hạ áp từ lưới điện phân phối (trung áp 22 kV hoặc 35 kV) xuống điện áp hạ áp (380/220 V) cấp cho cơ sở sản xuất (SGK trang 33)."
+        "explain": "Tải động lực (máy móc, động cơ) thường có dòng khởi động lớn và dễ xảy ra sự cố quá tải. Tách độc lập mạng chiếu sáng giúp hệ thống chiếu sáng không bị chập chờn hay mất điện đột ngột khi tải động lực gặp sự cố, đảm bảo an toàn lao động tối đa (SGK trang 31)."
       },
       {
-        "id": 42,
+        "id": "cn_b6_05",
         "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-        "question": "Tủ điện nào sau đây nhận điện trực tiếp từ máy biến áp hạ áp để phân phối cho các tủ điện nhánh của các phân xưởng?",
+        "question": "Nguồn cấp điện cho mạng điện sản xuất quy mô nhỏ thường được lấy từ đâu?",
         "options": [
-          "A. Tủ điện chiếu sáng",
-          "B. Tủ điện động lực",
-          "C. Tủ điện phân phối tổng",
-          "D. Tủ điều khiển máy CNC"
+          "A. Lấy trực tiếp từ đường dây siêu cao áp 500 kV đi ngang qua cổng xưởng.",
+          "B. Lấy từ lưới điện phân phối (trung áp 22 kV hoặc 35 kV) qua máy biến áp hạ áp riêng hoặc chung để hạ xuống cấp 380/220 V.",
+          "C. Hoàn toàn chạy bằng máy phát điện xăng mini xách tay.",
+          "D. Lấy từ mạng điện 110 V của pin quang điện đồ chơi."
+        ],
+        "correct": 1,
+        "explain": "Nguồn điện cấp cho cơ sở sản xuất quy mô nhỏ thường lấy từ đường dây trung áp 22 kV hoặc 35 kV của lưới phân phối công cộng qua trạm biến áp hạ áp (380/220 V) (SGK trang 31)."
+      },
+      {
+        "id": "cn_b6_06",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Sơ đồ cấu trúc phân cấp chuẩn của mạng điện sản xuất quy mô nhỏ theo đúng thứ tự là:",
+        "options": [
+          "A. Phụ tải -> Tủ chiếu sáng -> Tủ động lực -> Trạm biến áp -> Lưới phân phối.",
+          "B. Lưới điện phân phối -> Trạm biến áp hạ áp -> Tủ điện phân phối tổng (MSB) -> Tủ điện phân phối nhánh -> Tủ điện động lực / Tủ điện chiếu sáng -> Phụ tải tiêu thụ.",
+          "C. Trạm biến áp -> Tủ chiếu sáng -> Tủ tổng -> Máy sản xuất.",
+          "D. Tủ tổng -> Tủ động lực -> Trạm biến áp -> Phụ tải."
+        ],
+        "correct": 1,
+        "explain": "Cấu trúc phân cấp chuẩn SGK trang 32-33: Nguồn từ lưới phân phối -> Trạm biến áp hạ áp -> Tủ phân phối tổng (MSB) -> Tủ phân phối nhánh từng phân xưởng -> Tủ động lực & Tủ chiếu sáng -> Máy móc thiết bị."
+      },
+      {
+        "id": "cn_b6_07",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Tủ điện phân phối TỔNG (MSB) trong mạng điện sản xuất quy mô nhỏ có vai trò chính là",
+        "options": [
+          "A. điều khiển tốc độ quay của từng quạt thông gió.",
+          "B. nhận điện hạ áp (380/220 V) trực tiếp từ máy biến áp để phân chia và cấp nguồn cho các tủ điện phân phối nhánh, trang bị thiết bị đóng cắt bảo vệ tổng.",
+          "C. nắn dòng xoay chiều thành một chiều nạp cho bình ắc quy.",
+          "D. nâng điện áp lên 110 kV để bán lại cho lưới điện."
+        ],
+        "correct": 1,
+        "explain": "Tủ phân phối tổng (MSB) đặt ngay sau máy biến áp hạ áp, chứa aptomat tổng dòng lớn (MCCB hoặc ACB) để bảo vệ toàn bộ mạng điện và cấp nguồn cho các tủ nhánh (SGK trang 33)."
+      },
+      {
+        "id": "cn_b6_08",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Tủ điện phân phối NHÁNH có nhiệm vụ gì trong sơ đồ mạng điện cơ sở sản xuất?",
+        "options": [
+          "A. Nhận điện từ tủ tổng để phân phối tiếp đến các tủ điện động lực và tủ điện chiếu sáng trong từng phân xưởng riêng biệt.",
+          "B. Hạ áp từ 22 kV xuống 380 V.",
+          "C. Thay thế hoàn toàn động cơ của máy sản xuất.",
+          "D. Thu sét bảo vệ mái nhà xưởng."
+        ],
+        "correct": 0,
+        "explain": "Tủ phân phối nhánh được đặt tại từng phân xưởng sản xuất, nhận điện từ tủ tổng và chia thành các nhánh cấp riêng cho tủ động lực và tủ chiếu sáng của phân xưởng đó (SGK trang 33)."
+      },
+      {
+        "id": "cn_b6_09",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Tủ điện ĐỘNG LỰC trong phân xưởng sản xuất cấp nguồn trực tiếp cho đối tượng nào?",
+        "options": [
+          "A. Các bóng đèn tuýp chiếu sáng hành lang và bảng hiệu quảng cáo.",
+          "B. Các máy móc, thiết bị sản xuất như động cơ điện ba pha, máy gia công kim loại, máy may, máy ép, máy nén khí...",
+          "C. Máy tính xách tay của nhân viên kế toán.",
+          "D. Đồng hồ đeo tay của công nhân."
+        ],
+        "correct": 1,
+        "explain": "Tủ động lực chuyên dùng cấp điện cho các máy công tác trong dây chuyền sản xuất (chủ yếu là động cơ ba pha, lò nhiệt, máy công cụ), chứa aptomat, khởi động từ và rơ le nhiệt bảo vệ (SGK trang 33)."
+      },
+      {
+        "id": "cn_b6_10",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Quy trình an toàn bắt buộc khi thao tác ĐÓNG ĐIỆN cho một mạng điện phân xưởng sản xuất là:",
+        "options": [
+          "A. Đóng lần lượt TỪ NGUỒN ĐẾN TẢI: Trạm biến áp -> Tủ phân phối tổng -> Tủ phân phối nhánh -> Tủ động lực / chiếu sáng -> Khởi động máy sản xuất.",
+          "B. Đóng lần lượt từ tải về nguồn: Bật tất cả các máy móc trước rồi mới đóng tủ tổng.",
+          "C. Đóng ngẫu nhiên bất kì aptomat nào trong xưởng trước cũng được.",
+          "D. Vừa đóng aptomat tổng vừa bật máy sản xuất cùng lúc."
+        ],
+        "correct": 0,
+        "explain": "Quy trình ĐÓNG ĐIỆN chuẩn: Đóng từ NGUỒN đến TẢI (Trạm -> Tủ tổng -> Tủ nhánh -> Tủ động lực/chiếu sáng -> Bật máy). Giúp các cấp bảo vệ sẵn sàng và kiểm soát thông số điện áp trước khi tải làm việc (SGK trang 33)."
+      },
+      {
+        "id": "cn_b6_11",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Quy trình an toàn bắt buộc khi thao tác CẮT ĐIỆN để bảo dưỡng hoặc hết ca sản xuất là:",
+        "options": [
+          "A. Cắt trực tiếp cầu dao/aptomat tại tủ tổng trước tiên trong khi các máy vẫn đang chạy.",
+          "B. Cắt lần lượt TỪ TẢI VỀ NGUỒN: Tắt các máy sản xuất -> Cắt tủ động lực / chiếu sáng -> Cắt tủ phân phối nhánh -> Cắt tủ phân phối tổng.",
+          "C. Cắt ngẫu nhiên bất kì aptomat nào.",
+          "D. Dùng kìm bấm đứt dây cáp nguồn."
+        ],
+        "correct": 1,
+        "explain": "Quy trình CẮT ĐIỆN chuẩn: Cắt từ TẢI về NGUỒN (Tắt máy -> Cắt tủ động lực/chiếu sáng -> Cắt tủ nhánh -> Cắt tủ tổng) (SGK trang 33)."
+      },
+      {
+        "id": "cn_b6_12",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Về mặt kĩ thuật và an toàn, VÌ SAO KHI CẮT ĐIỆN BẮT BUỘC PHẢI CẮT TỪ TẢI VỀ NGUỒN?",
+        "options": [
+          "A. Vì công tắc ở tải nhỏ hơn nên bấm nhẹ tay hơn.",
+          "B. Vì khi các máy sản xuất đang hoạt động, dòng điện phụ tải rất lớn. Cắt tải trước để dập tắt dòng điện, tránh phát sinh HỒ QUANG ĐIỆN nguy hiểm gây nổ thiết bị, cháy tiếp điểm và gây bỏng cho người thao tác ở các tủ điện nguồn phía trên.",
+          "C. Để bóng đèn chiếu sáng kịp nguội bớt.",
+          "D. Vì quy định này chỉ áp dụng cho mạng điện sinh hoạt gia đình."
+        ],
+        "correct": 1,
+        "explain": "Lí do sống còn: Khi mang tải lớn, việc mở tiếp điểm đóng cắt nguồn sẽ làm bùng phát hồ quang điện cực kì mạnh có thể làm nổ buồng dập hồ quang, cháy mặt và gây bỏng nghiêm trọng cho công nhân điện. Cắt tải trước giúp dập dòng không tải an toàn (SGK trang 33)."
+      },
+      {
+        "id": "cn_b6_13",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Thiết bị bảo vệ quá tải và ngắn mạch được sử dụng phổ biến nhất cho động cơ ba pha trong tủ điện động lực là:",
+        "options": [
+          "A. Aptomat (MCB, MCCB) kết hợp với Rơ le nhiệt.",
+          "B. Dây đồng quấn quanh đinh ốc.",
+          "C. Công tơ điện một pha.",
+          "D. Biến trở con chạy thủ công."
+        ],
+        "correct": 0,
+        "explain": "Aptomat (MCB, MCCB) bảo vệ ngắn mạch và quá tải tức thời, còn rơ le nhiệt gắn sau khởi động từ chuyên bảo vệ quá tải lâu dài chống cháy cuộn dây động cơ (SGK trang 33)."
+      },
+      {
+        "id": "cn_b6_14",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Một phân xưởng may công nghiệp có tổng công suất tác dụng tiêu thụ P = 160 kW, hệ số công suất cos φ = 0,8. Cần chọn máy biến áp phân phối có công suất biểu kiến định mức tối thiểu là bao nhiêu kVA?",
+        "options": [
+          "A. 128 kVA",
+          "B. 160 kVA",
+          "C. 200 kVA",
+          "D. 250 kVA"
         ],
         "correct": 2,
-        "explain": "Tủ điện phân phối tổng được đặt ở trạm biến áp, lấy điện từ đường hạ áp 380/220 V của máy biến áp để phân phối cho các tủ điện phân phối nhánh ở các phân xưởng sản xuất (SGK trang 33)."
+        "explain": "Công suất biểu kiến của máy biến áp: S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">160</span><span class=\"math-frac-bottom\">0,8</span></span> = 200 kVA. Do đó cần chọn máy biến áp có công suất định mức tối thiểu là 200 kVA."
       },
       {
-        "id": 43,
+        "id": "cn_b6_15",
         "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-        "question": "Tủ điện động lực trong phân xưởng sản xuất có vai trò chính là",
+        "question": "Một xưởng chế biến gỗ có công suất tiêu thụ P = 80 kW, cos φ = 0,8. Nếu lắp đặt tụ bù để nâng hệ số công suất lên cos φ' = 1,0 thì công suất biểu kiến S tiêu thụ từ lưới điện giảm đi bao nhiêu kVA?",
         "options": [
-          "A. cấp nguồn cho hệ thống chiếu sáng bảo vệ hành lang.",
-          "B. lấy nguồn từ tủ phân phối nhánh để cấp cho tải tiêu thụ là các máy sản xuất trong phân xưởng (động cơ điện, máy hàn, máy công cụ...).",
-          "C. tăng điện áp từ 220 V lên 22 kV.",
-          "D. lọc sóng hài và tích trữ điện năng."
+          "A. Giảm 20 kVA",
+          "B. Giảm 80 kVA",
+          "C. Giảm 100 kVA",
+          "D. Giảm 0 kVA"
         ],
-        "correct": 1,
-        "explain": "Tủ điện động lực được đặt ở phân xưởng sản xuất, lấy nguồn từ tủ phân phối nhánh để cấp cho tải tiêu thụ là các máy sản xuất trong phân xưởng, chứa thiết bị đóng cắt và bảo vệ quá tải, ngắn mạch (SGK trang 33)."
+        "correct": 0,
+        "explain": "Ban đầu: S1 = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">0,8</span></span> = 100 kVA. Khi nâng cos φ' = 1,0: S2 = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ'</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">1,0</span></span> = 80 kVA. Công suất biểu kiến giảm: ΔS = 100 - 80 = 20 kVA (giảm dòng điện trên dây cáp nguồn)."
       },
       {
-        "id": 44,
+        "id": "cn_b6_16",
         "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-        "question": "Khi thực hiện thao tác ĐÓNG ĐIỆN cho một xưởng sản xuất, quy trình an toàn chuẩn là gì?",
+        "question": "a. Mạng điện sản xuất quy mô nhỏ có công suất tiêu thụ trong khoảng từ vài chục đến vài trăm kW.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH THỰC TẾ: Phân xưởng cơ khí chính xác An Phát</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Xưởng cơ khí An Phát có diện tích 800 m², trang bị 10 máy tiện CNC, 5 máy phay cơ và hệ thống đèn chiếu sáng LED phân xưởng. Nguồn điện lấy từ trạm biến áp hạ áp 22/0,4 kV riêng của công ty.</div>\n    </div>",
         "options": [
-          "A. Đóng từ thiết bị tiêu thụ trước, sau đó mới đóng ngược về tủ tổng và nguồn.",
-          "B. Đóng lần lượt từ nguồn đến tải (Trạm biến áp -> Tủ phân phối tổng -> Tủ phân phối nhánh -> Tủ động lực/chiếu sáng -> Bật thiết bị máy móc).",
-          "C. Bật tất cả các máy móc cùng lúc rồi mới đóng cầu dao nguồn.",
-          "D. Đóng ngẫu nhiên bất kì công tắc nào trước cũng được."
+          "A. Đúng",
+          "B. Sai"
         ],
-        "correct": 1,
-        "explain": "Quy trình đóng điện an toàn: Đóng lần lượt từ nguồn đến tải (Nguồn -> Tủ tổng -> Tủ nhánh -> Tủ động lực / chiếu sáng -> Tải máy móc). Mục đích là để các cấp bảo vệ sẵn sàng và tránh quá tải đột ngột (SGK trang 33)."
+        "correct": 0,
+        "explain": "ĐÚNG. Mạng điện sản xuất quy mô nhỏ có công suất tiêu thụ điển hình từ vài chục đến vài trăm kW (SGK trang 31).",
+        "subLabel": "2a"
       },
       {
-        "id": 45,
+        "id": "cn_b6_17",
         "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-        "question": "Vì sao khi CẮT ĐIỆN xưởng sản xuất, người ta phải thực hiện theo chiều ngược lại (cắt từ phía tải trước, sau đó mới cắt dần về tủ nhánh và tủ tổng)?",
+        "question": "b. Mạng điện động lực cấp cho các máy tiện CNC và mạng điện chiếu sáng xưởng An Phát phải được cấp nguồn từ cùng một công tắc chung để tiết kiệm tủ điện.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH THỰC TẾ: Phân xưởng cơ khí chính xác An Phát</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Xưởng cơ khí An Phát có diện tích 800 m², trang bị 10 máy tiện CNC, 5 máy phay cơ và hệ thống đèn chiếu sáng LED phân xưởng. Nguồn điện lấy từ trạm biến áp hạ áp 22/0,4 kV riêng của công ty.</div>\n    </div>",
         "options": [
-          "A. Để tránh tiêu tốn nhiều điện năng không cần thiết.",
-          "B. Để ngắt dòng điện tải đang chạy lớn trước, tránh sinh ra hồ quang điện nguy hiểm gây cháy nổ, hư hỏng tiếp điểm tại cầu dao/aptomat phía nguồn.",
-          "C. Để làm nguội dây dẫn từ từ.",
-          "D. Vì tủ phân phối tổng không có khả năng ngắt dòng điện."
+          "A. Đúng",
+          "B. Sai"
         ],
         "correct": 1,
-        "explain": "Cắt điện từ tải về nguồn nhằm giảm dòng điện trước khi ngắt các thiết bị phía nguồn. Nếu ngắt tủ tổng khi tải đang ăn dòng cực lớn sẽ phát sinh hồ quang điện rất mạnh, có thể gây nổ tiếp điểm, phóng điện nguy hiểm cho người vận hành (SGK trang 33)."
+        "explain": "SAI. Mạng điện động lực và mạng điện chiếu sáng bắt buộc phải hoạt động độc lập để đảm bảo an toàn, khi máy móc bị sự cố nhảy aptomat thì đèn chiếu sáng vẫn sáng bình thường.",
+        "subLabel": "2b"
+      },
+      {
+        "id": "cn_b6_18",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "c. Khi hết ca làm việc, thợ điện ngắt điện bằng cách cắt aptomat tổng ở trạm biến áp trước khi tắt các máy tiện CNC đang gia công.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH THỰC TẾ: Phân xưởng cơ khí chính xác An Phát</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Xưởng cơ khí An Phát có diện tích 800 m², trang bị 10 máy tiện CNC, 5 máy phay cơ và hệ thống đèn chiếu sáng LED phân xưởng. Nguồn điện lấy từ trạm biến áp hạ áp 22/0,4 kV riêng của công ty.</div>\n    </div>",
+        "options": [
+          "A. Đúng",
+          "B. Sai"
+        ],
+        "correct": 1,
+        "explain": "SAI. Quy trình cắt điện an toàn bắt buộc phải cắt từ TẢI về NGUỒN: Tắt từng máy tiện CNC -> Cắt aptomat tủ động lực -> Cắt tủ nhánh -> Cắt tủ tổng để dập dòng phụ tải, tránh phát sinh hồ quang gây nổ và hỏng tiếp điểm ở tủ nguồn.",
+        "subLabel": "2c"
+      }
+    ]
+  },
+  {
+    "id": "cn_bai5",
+    "title": "☀️ Bài 5: Sản xuất điện năng",
+    "icon": "☀️",
+    "description": "Thủy điện, Nhiệt điện, Điện hạt nhân, Điện gió, Điện mặt trời, Sinh khối & Chuyển dịch năng lượng",
+    "questions": [
+      {
+        "id": "cn_b5_01",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Nhà máy thủy điện sử dụng dạng năng lượng đầu vào nào để biến đổi thành điện năng?",
+        "options": [
+          "A. Nhiệt năng của than đá.",
+          "B. Cơ năng (thế năng và động năng) của dòng nước chảy từ trên cao.",
+          "C. Năng lượng phản ứng phân hạch hạt nhân.",
+          "D. Năng lượng bức xạ mặt trời."
+        ],
+        "correct": 1,
+        "explain": "Nhà máy thủy điện sử dụng thế năng của nước tích trữ ở hồ chứa trên cao, qua ống áp lực tạo dòng nước có động năng lớn làm quay tuabin nước, kéo máy phát điện quay để phát ra điện (SGK trang 26)."
+      },
+      {
+        "id": "cn_b5_02",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Ưu điểm nổi bật nhất của nhà máy nhiệt điện sử dụng nhiên liệu hóa thạch (than đá, khí đốt) là gì?",
+        "options": [
+          "A. Hoàn toàn không phát thải khí nhà kính.",
+          "B. Công suất phát điện lớn và khả năng vận hành liên tục, ổn định, không phụ thuộc vào mùa mưa hay mùa khô như thủy điện.",
+          "C. Chi phí xây dựng và nhiên liệu bằng 0.",
+          "D. Sử dụng nguồn tài nguyên vĩnh cửu không bao giờ cạn kiệt."
+        ],
+        "correct": 1,
+        "explain": "Nhà máy nhiệt điện có ưu điểm lớn là công suất phát rất cao, vận hành liên tục 24/7 ổn định quanh năm, đảm bảo cấp điện nền cho hệ thống mà không bị ảnh hưởng bởi thời tiết hay hạn hán (SGK trang 27)."
+      },
+      {
+        "id": "cn_b5_03",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Nhược điểm lớn nhất về mặt môi trường của các nhà máy nhiệt điện than là:",
+        "options": [
+          "A. Phát thải lượng lớn khí nhà kính (CO2, SO2, NOx), bụi mịn và khối lượng tro xỉ khổng lồ gây ô nhiễm đất, nước và không khí.",
+          "B. Làm khô cạn các dòng sông lớn.",
+          "C. Gây ra các vụ rò rỉ phóng xạ nguy hiểm.",
+          "D. Tiêu diệt chim và dơi do cánh quạt quay."
+        ],
+        "correct": 0,
+        "explain": "Đốt than phát thải lượng khí CO2 lớn gây hiệu ứng nhà kính và biến đổi khí hậu toàn cầu, kèm theo khí SO2 gây mưa axit và bãi thải tro xỉ chiếm nhiều diện tích đất (SGK trang 27)."
+      },
+      {
+        "id": "cn_b5_04",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Trong nhà máy điện hạt nhân, năng lượng dùng để đun sôi nước tạo hơi áp suất cao quay tuabin xuất phát từ đâu?",
+        "options": [
+          "A. Phản ứng phân hạch hạt nhân của nhiên liệu phóng xạ (chủ yếu là Uranium-235) trong lò phản ứng.",
+          "B. Đốt cháy khí hydro hóa lỏng.",
+          "C. Bức xạ nhiệt của tia vũ trụ.",
+          "D. Phản ứng hóa học giữa axit và bazo."
+        ],
+        "correct": 0,
+        "explain": "Nhà máy điện hạt nhân giải phóng nhiệt năng cực lớn từ phản ứng phân hạch dây chuyền của hạt nhân Uranium trong lò phản ứng hạt nhân để tạo hơi nước quay tuabin máy phát (SGK trang 28)."
+      },
+      {
+        "id": "cn_b5_05",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Thiết bị biến tần (Inverter) trong hệ thống điện mặt trời nối lưới có nhiệm vụ gì?",
+        "options": [
+          "A. Tích trữ điện năng vào pin dự phòng.",
+          "B. Chuyển đổi dòng điện một chiều (DC) do các tấm pin quang điện tạo ra thành dòng điện xoay chiều (AC) đồng bộ về tần số và điện áp để cấp cho tải và hòa vào lưới điện quốc gia.",
+          "C. Làm mát các tấm pin mặt trời khi trời quá nắng.",
+          "D. Tự động xoay tấm pin theo hướng gió."
+        ],
+        "correct": 1,
+        "explain": "Pin mặt trời tạo ra dòng điện một chiều (DC). Muốn cấp điện cho thiết bị xoay chiều 220V hoặc đưa lên lưới điện 50 Hz thì bắt buộc phải qua bộ biến tần (Inverter) chuyển DC thành AC (SGK trang 29)."
+      },
+      {
+        "id": "cn_b5_06",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Hạn chế chung lớn nhất của hai nguồn năng lượng tái tạo là điện gió và điện mặt trời là gì?",
+        "options": [
+          "A. Phát thải quá nhiều khí CO2 độc hại.",
+          "B. Phụ thuộc hoàn toàn vào điều kiện thời tiết (nắng, gió), tính bất định cao, không phát được điện vào ban đêm (điện mặt trời) hoặc lúc lặng gió.",
+          "C. Giá thành thiết bị tăng gấp 100 lần mỗi năm.",
+          "D. Không thể kết nối vào hệ thống lưới điện."
+        ],
+        "correct": 1,
+        "explain": "Năng lượng gió và mặt trời có nhược điểm lớn là tính chập chờn, bất định, phụ thuộc vào thời tiết. Khi thời tiết xấu hoặc đêm xuống, công suất phát sụt giảm mạnh đòi hỏi hệ thống điện phải có nguồn điện nền bù đắp (SGK trang 29-30)."
+      },
+      {
+        "id": "cn_b5_07",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Nhà máy thủy điện lớn nhất Việt Nam và khu vực Đông Nam Á hiện nay là",
+        "options": [
+          "A. Thủy điện Hòa Bình",
+          "B. Thủy điện Sơn La (công suất 2 400 MW)",
+          "C. Thủy điện Yaly",
+          "D. Thủy điện Trị An"
+        ],
+        "correct": 1,
+        "explain": "Thủy điện Sơn La trên sông Đà với 6 tổ máy có tổng công suất 2 400 MW là nhà máy thủy điện có quy mô lớn nhất Việt Nam và Đông Nam Á."
+      },
+      {
+        "id": "cn_b5_08",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Nguồn năng lượng sinh khối (Biomass) dùng để sản xuất điện năng bao gồm các nguồn vật liệu nào?",
+        "options": [
+          "A. Quặng sắt, bauxit và đất hiếm.",
+          "B. Phụ phẩm nông nghiệp và lâm nghiệp như bã mía, trấu, rơm rạ, mùn cưa, dăm gỗ và chất thải hữu cơ.",
+          "C. Dầu mỏ thô dưới đáy biển sâu.",
+          "D. Than đá antraxit."
+        ],
+        "correct": 1,
+        "explain": "Năng lượng sinh khối tận dụng các phế phụ phẩm nông nghiệp (bã mía ở các nhà máy đường, trấu, dăm gỗ) để đốt lò hơi phát điện, giúp giảm thiểu rác thải nông nghiệp và bảo vệ môi trường (SGK trang 30)."
+      },
+      {
+        "id": "cn_b5_09",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Hiệu suất chuyển đổi quang năng thành điện năng của các tấm pin quang điện (Silicon tinh thể) thương mại phổ biến hiện nay đạt khoảng",
+        "options": [
+          "A. từ 15% đến 22%",
+          "B. từ 85% đến 98%",
+          "C. 100%",
+          "D. dưới 2%"
+        ],
+        "correct": 0,
+        "explain": "Các tấm pin mặt trời silicon thương dụng hiện nay có hiệu suất chuyển đổi quang điện trung bình trong khoảng 15% - 22%."
+      },
+      {
+        "id": "cn_b5_10",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Xu hướng chuyển dịch năng lượng hiện nay tại Việt Nam và trên thế giới hướng tới mục tiêu Net Zero là",
+        "options": [
+          "A. Xây dựng thêm thật nhiều nhà máy nhiệt điện đốt than.",
+          "B. Giảm dần nhiệt điện than, tăng nhanh tỉ trọng năng lượng tái tạo (điện gió ngoài khơi, điện mặt trời, sinh khối) kết hợp hệ thống pin tích năng (BESS) và lưới điện thông minh.",
+          "C. Ngừng hoàn toàn việc sử dụng điện năng.",
+          "D. Chỉ sử dụng máy phát điện chạy xăng dầu tại từng hộ gia đình."
+        ],
+        "correct": 1,
+        "explain": "Chuyển dịch năng lượng xanh: cắt giảm điện than ô nhiễm, phát triển năng lượng tái tạo sạch (gió, mặt trời, thủy điện tích năng) hướng tới mục tiêu phát thải ròng bằng 0 (Net Zero) vào năm 2050 theo cam kết của Việt Nam tại COP26."
       }
     ]
   },
   {
     "id": "cn_bai7",
-    "title": "Bài 7: Mạng điện hạ áp dùng trong sinh hoạt",
+    "title": "🏠 Bài 7: Mạng điện hạ áp dùng trong sinh hoạt",
     "icon": "🏠",
-    "description": "Mạng điện gia đình 380/220V, 50Hz, dây trục 3 pha 4 dây, rẽ nhánh cân pha, thiết bị ACB, MCCB, MCB",
+    "description": "Mạng hạ áp sinh hoạt 220V/380V, tần số 50Hz, sai số ±5%, thiết bị đóng cắt MCB/MCCB, công tơ điện",
     "questions": [
       {
-        "id": 46,
+        "id": "cn_b7_01",
         "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-        "question": "Mạng điện hạ áp dùng trong sinh hoạt thuộc loại lưới điện nào?",
+        "question": "Mạng điện hạ áp dùng trong sinh hoạt thuộc thành phần nào của hệ thống điện quốc gia?",
         "options": [
-          "A. Lưới điện siêu cao áp.",
-          "B. Lưới điện truyền tải.",
-          "C. Lưới điện phân phối.",
-          "D. Lưới điện cao áp trên 110 kV."
-        ],
-        "correct": 2,
-        "explain": "Mạng điện hạ áp dùng trong sinh hoạt thuộc lưới điện phân phối, có nhiệm vụ truyền tải năng lượng điện từ trạm biến áp phân phối đến công tơ điện của các hộ gia đình (SGK trang 34)."
-      },
-      {
-        "id": 47,
-        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-        "question": "Thông số kĩ thuật điện áp định mức và tần số của mạng điện hạ áp sinh hoạt tại Việt Nam là",
-        "options": [
-          "A. 110 V / 60 Hz",
-          "B. 380/220 V / 50 Hz",
-          "C. 220 V / 60 Hz",
-          "D. 500 kV / 50 Hz"
+          "A. Lưới điện truyền tải siêu cao áp.",
+          "B. Lưới điện phân phối.",
+          "C. Nhà máy nhiệt điện nguồn.",
+          "D. Hệ thống đập tràn thủy điện."
         ],
         "correct": 1,
-        "explain": "Thông số kĩ thuật định mức của mạng điện hạ áp dùng trong sinh hoạt ở nước ta là: Điện áp dây/pha: 380/220 V; Tần số điện lưới: 50 Hz (SGK trang 34 & 36)."
+        "explain": "Mạng điện hạ áp sinh hoạt là khâu cuối cùng của lưới điện phân phối, nhận điện từ trạm biến áp hạ áp để cấp điện trực tiếp cho các hộ gia đình (SGK trang 35)."
       },
       {
-        "id": 48,
+        "id": "cn_b7_02",
         "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-        "question": "Sai số điện áp cho phép đối với mạng điện hạ áp dùng trong sinh hoạt là không quá",
+        "question": "Các thông số kĩ thuật định mức tiêu chuẩn của mạng điện hạ áp sinh hoạt tại Việt Nam là:",
         "options": [
-          "A. ± 1%",
-          "B. ± 5%",
-          "C. ± 15%",
-          "D. ± 20%"
-        ],
-        "correct": 1,
-        "explain": "Theo SGK Công nghệ 12 trang 36: Mức sai số cho phép đối với điện áp là không quá ± 5%, tần số cũng không quá ± 5% so với giá trị định mức."
-      },
-      {
-        "id": 49,
-        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-        "question": "Công suất của lưới điện hạ áp sinh hoạt thường dao động trong khoảng nào tùy thuộc quy mô khu dân cư?",
-        "options": [
-          "A. Từ 1 kW đến 10 kW",
-          "B. Từ 50 kW đến 2 500 kW",
-          "C. Từ 10 000 kW đến 50 000 kW",
-          "D. Trên 100 000 kW"
-        ],
-        "correct": 1,
-        "explain": "Công suất của lưới điện hạ áp sinh hoạt từ 50 kW đến 2 500 kW, tuỳ thuộc vào công suất của máy biến áp cấp điện cho khu dân cư đó (SGK trang 36)."
-      },
-      {
-        "id": 50,
-        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-        "question": "Đường dây trục chính nối từ tủ điện phân phối tổng đến các tủ điện phân phối khu vực (nhánh) thường là đường dây",
-        "options": [
-          "A. một pha hai dây.",
-          "B. ba pha ba dây không có dây trung tính.",
-          "C. ba pha bốn dây.",
-          "D. một pha một dây."
-        ],
-        "correct": 2,
-        "explain": "Đường dây trục chính nối từ tủ điện phân phối tổng đến các tủ điện phân phối nhánh là ba pha bốn dây (gồm 3 dây pha và 1 dây trung tính) (SGK trang 36)."
-      },
-      {
-        "id": 51,
-        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-        "question": "Đường dây nhánh nối từ tủ điện phân phối khu vực vào công tơ điện của các hộ gia đình chủ yếu là",
-        "options": [
-          "A. đường dây một pha hai dây (dây pha và dây trung tính).",
-          "B. đường dây cáp quang.",
-          "C. đường dây cao áp 22 kV.",
-          "D. đường dây siêu dẫn nhiệt độ thấp."
+          "A. Điện áp dây Ud = 380 V; Điện áp pha Up = 220 V; Tần số f = 50 Hz.",
+          "B. Điện áp dây Ud = 220 V; Điện áp pha Up = 110 V; Tần số f = 60 Hz.",
+          "C. Điện áp dây Ud = 500 V; Điện áp pha Up = 220 V; Tần số f = 25 Hz.",
+          "D. Điện áp một chiều 12 V."
         ],
         "correct": 0,
-        "explain": "Đường dây nhánh nối từ tủ điện khu vực đến các hộ gia đình chủ yếu là các đường một pha hai dây, một số ít trường hợp có nhu cầu lớn là ba pha bốn dây (SGK trang 36)."
+        "explain": "Quy chuẩn Việt Nam: Mạng hạ áp sinh hoạt 3 pha 4 dây có điện áp dây Ud = 380 V, điện áp pha Up = 220 V và tần số công nghiệp f = 50 Hz (SGK trang 36)."
       },
       {
-        "id": 52,
+        "id": "cn_b7_03",
         "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-        "question": "Loại aptomat nào sau đây thường được sử dụng trong tủ điện phân phối tổng tại trạm biến áp hạ áp do có khả năng đóng cắt dòng điện rất lớn?",
+        "question": "Theo quy chuẩn kĩ thuật, mức sai số điện áp cho phép đối với mạng điện hạ áp sinh hoạt không vượt quá ngưỡng nào?",
         "options": [
-          "A. MCB (Miniature Circuit Breaker - aptomat tép)",
-          "B. Cầu chì ống sứ nhỏ",
-          "C. ACB (Air Circuit Breaker - máy cắt không khí)",
-          "D. Công tắc xoay một cực"
+          "A. ±5% so với điện áp danh định 220 V (tương ứng dải điện áp an toàn từ 209 V đến 231 V).",
+          "B. ±50% (tương ứng dải từ 110 V đến 330 V).",
+          "C. ±1% (chỉ dao động không quá 2 V).",
+          "D. Không có quy định sai số."
         ],
-        "correct": 2,
-        "explain": "Trong các tủ điện phân phối: ACB (máy cắt không khí) và MCCB (aptomat khối) thường dùng cho tủ tổng do dòng định mức lớn; còn MCB (aptomat tép) thường dùng cho tủ khu vực và hộ gia đình (Hình 7.3 SGK trang 35-36)."
+        "correct": 0,
+        "explain": "Mức lệch điện áp cho phép trong điều kiện vận hành bình thường là ±5% của 220 V: ΔU = 220 × 5% = 11 V, tức điện áp tại ổ cắm dao động trong ngưỡng từ 209 V đến 231 V là đạt chuẩn (SGK trang 36)."
       },
       {
-        "id": 53,
+        "id": "cn_b7_04",
         "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-        "question": "Để đảm bảo mạng điện ba pha không bị lệch pha nghiêm trọng khi cấp điện cho các hộ gia đình, các kĩ sư thiết kế mạng điện cần phải",
+        "question": "Sơ đồ cấu trúc điển hình của mạng điện hạ áp sinh hoạt từ trạm điện đến các hộ gia đình gồm:",
         "options": [
-          "A. nối tất cả các hộ gia đình vào cùng một pha duy nhất.",
-          "B. phân chia các đường nhánh cấp điện cho các hộ gia đình rải đều để đảm bảo cân bằng tải giữa ba pha của nguồn.",
-          "C. bắt buộc mọi gia đình phải dùng động cơ ba pha.",
-          "D. không nối dây trung tính về nguồn."
+          "A. Trạm biến áp hạ áp -> Tủ phân phối tổng -> Tủ phân phối khu vực (nhánh) -> Đường cáp trục chính ba pha -> Đường cáp rẽ nhánh một pha -> Công tơ điện hộ gia đình.",
+          "B. Công tơ điện -> Trạm biến áp -> Nhà máy nhiệt điện.",
+          "C. Đường dây 500 kV nối thẳng vào ổ cắm gia đình.",
+          "D. Tủ tổng -> Bình ắc quy -> Bóng đèn."
+        ],
+        "correct": 0,
+        "explain": "Cấu trúc mạng hạ áp sinh hoạt: Trạm biến áp hạ áp (380/220V) -> Tủ phân phối tổng -> Tủ phân phối nhánh cụm dân cư -> Dây trục chính 3 pha 4 dây -> Dây rẽ nhánh 1 pha 2 dây -> Công tơ điện và bảng điện trong nhà (SGK trang 35-36)."
+      },
+      {
+        "id": "cn_b7_05",
+        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+        "question": "Mục đích quan trọng nhất của việc phân chia các hộ gia đình rẽ nhánh đồng đều từ ba pha A, B, C của đường trục chính là gì?",
+        "options": [
+          "A. Để cân bằng phụ tải giữa các pha, tránh hiện tượng lệch pha gây quá tải một pha và sụt áp trên dây trung tính.",
+          "B. Để các hộ gia đình dùng chung một công tơ điện.",
+          "C. Để làm đẹp cảnh quan đường phố.",
+          "D. Để dòng điện pha tăng lên gấp 10 lần."
+        ],
+        "correct": 0,
+        "explain": "Phụ tải sinh hoạt là phụ tải một pha. Phải phân bổ đều các hộ vào pha A, pha B, pha C để phụ tải ba pha cân bằng, giảm thiểu dòng điện chạy trên dây trung tính và tránh sụt áp cục bộ (SGK trang 36)."
+      },
+      {
+        "id": "cn_b7_06",
+        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+        "question": "Thiết bị nào sau đây dùng để đo đếm điện năng tiêu thụ (tính bằng kilowatt giờ - kWh) của từng hộ gia đình để thanh toán tiền điện?",
+        "options": [
+          "A. Công tơ điện (đồng hồ điện).",
+          "B. Vôn kế.",
+          "C. Ampe kế kẹp.",
+          "D. Tụ điện chống sét."
+        ],
+        "correct": 0,
+        "explain": "Công tơ điện (điện tử hoặc cơ) là thiết bị đo đếm điện năng tiêu thụ A = P.t (đơn vị kWh hay 'số điện') của từng khách hàng dùng điện (SGK trang 36)."
+      },
+      {
+        "id": "cn_b7_07",
+        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+        "question": "Thiết bị chống giật và chống rò điện (RCBO hoặc ELCB) trong bảng điện gia đình hoạt động dựa trên nguyên lí nào?",
+        "options": [
+          "A. Tự động so sánh dòng điện chạy trên dây pha và dòng điện hồi về trên dây trung tính, nếu có sự chênh lệch (dòng rò ra vỏ chạm vào người) vượt ngưỡng an toàn (thường là 30 mA) thì ngắt điện tức thì trong tích tắc.",
+          "B. Đo nhiệt độ nóng lên của bóng đèn.",
+          "C. Đếm số lần bật tắt công tắc trong ngày.",
+          "D. Ngắt điện khi có tiếng động lớn."
+        ],
+        "correct": 0,
+        "explain": "Aptomat chống giật (RCBO/ELCB) đo dòng rò: bình thường dòng đi trên dây pha bằng dòng về trên dây trung tính (Ipha = Itrungtinh). Khi có người bị giật hoặc rò điện ra vỏ máy xuống đất, dòng bị lệch, rơ le cảm biến từ sẽ tác động cắt mạch ngay lập tức (dưới 0,03 giây) để cứu sống người."
+      },
+      {
+        "id": "cn_b7_08",
+        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+        "question": "Dây tiếp địa bảo vệ (PE - màu vàng sọc xanh lá) trong hệ thống điện gia đình có vai trò gì?",
+        "options": [
+          "A. Dẫn dòng điện rò từ vỏ kim loại của thiết bị (máy giặt, tủ lạnh, bình nóng lạnh) xuống cọc đất, ngăn ngừa nguy cơ điện giật cho người sử dụng.",
+          "B. Làm cho tủ lạnh làm đá nhanh hơn.",
+          "C. Tăng độ sáng cho bóng đèn phòng khách.",
+          "D. Dẫn sóng wifi vào trong nhà."
+        ],
+        "correct": 0,
+        "explain": "Nối đất vỏ thiết bị kim loại (dây PE) giúp triệt tiêu điện áp rò nguy hiểm trên vỏ máy: khi có chạm vỏ, dòng rò theo dây tiếp địa có điện trở rất nhỏ truyền xuống đất làm nhảy aptomat và bảo vệ người chạm vào không bị giật."
+      },
+      {
+        "id": "cn_b7_09",
+        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+        "question": "Một hộ gia đình trong 30 ngày sử dụng bình nóng lạnh công suất 2 500 W mỗi ngày bật 1,5 giờ. Lượng điện năng tiêu thụ riêng của bình nóng lạnh trong tháng đó là",
+        "options": [
+          "A. 112,5 kWh",
+          "B. 37,5 kWh",
+          "C. 75 kWh",
+          "D. 150 kWh"
+        ],
+        "correct": 0,
+        "explain": "Đổi công suất P = 2 500 W = 2,5 kW. Tổng thời gian sử dụng trong 30 ngày: t = 30 × 1,5 = 45 giờ. Điện năng tiêu thụ: A = P × t = 2,5 × 45 = 112,5 kWh (số điện)."
+      },
+      {
+        "id": "cn_b7_10",
+        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+        "question": "Hành vi nào sau đây vi phạm nghiêm trọng quy tắc an toàn khi sử dụng mạng điện hạ áp sinh hoạt?",
+        "options": [
+          "A. Rút phích cắm bình siêu tốc khi tay còn đang ướt hoặc dùng dây đồng thay thế cho dây chì của cầu chì.",
+          "B. Lắp đặt aptomat chống rò 30 mA cho bình nước nóng.",
+          "C. Tắt bớt các bóng đèn khi rời khỏi phòng.",
+          "D. Nối dây tiếp địa cho vỏ máy giặt."
+        ],
+        "correct": 0,
+        "explain": "Nước dẫn điện tốt nên tay ướt chạm vào phích cắm dễ bị phóng điện gây giật chết người; thay dây đồng vào cầu chì làm mất tác dụng bảo vệ quá tải, khi chập mạch dây dẫn sẽ bốc cháy gây hỏa hoạn."
+      }
+    ]
+  },
+  {
+    "id": "cn_bai2",
+    "title": "👷 Bài 2: Ngành nghề trong lĩnh vực kĩ thuật điện",
+    "icon": "👷",
+    "description": "5 nhóm nghề cốt lõi: Thiết kế, Sản xuất chế tạo, Lắp đặt, Vận hành, Bảo dưỡng & Sửa chữa điện",
+    "questions": [
+      {
+        "id": "cn_b2_01",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Nghiên cứu, tính toán lựa chọn thiết bị điện và lập hồ sơ bản vẽ thiết kế sơ đồ mạch điện thuộc nhóm nghề nào?",
+        "options": [
+          "A. Lắp đặt điện.",
+          "B. Thiết kế điện.",
+          "C. Vận hành điện.",
+          "D. Bảo dưỡng và sửa chữa điện."
         ],
         "correct": 1,
-        "explain": "Các đường rẽ nhánh một pha được thiết kế chia đều cho các pha nhằm đảm bảo cân bằng tải giữa các pha của nguồn điện, giảm dòng điện chạy trong dây trung tính và ổn định điện áp (SGK trang 36)."
+        "explain": "Nhóm nghề thiết kế điện có nhiệm vụ nghiên cứu, ứng dụng kiến thức kĩ thuật điện để tính toán lựa chọn khí cụ, thiết bị điện và lập hồ sơ bản vẽ thiết kế hệ thống điện (SGK trang 9-10)."
+      },
+      {
+        "id": "cn_b2_02",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Chế tạo các thiết bị như máy biến áp, động cơ điện, dây cáp điện và khí cụ đóng cắt trên dây chuyền công nghiệp thuộc nhóm nghề nào?",
+        "options": [
+          "A. Sản xuất, chế tạo thiết bị điện.",
+          "B. Vận hành điện.",
+          "C. Thiết kế thời trang.",
+          "D. Kinh doanh bất động sản."
+        ],
+        "correct": 0,
+        "explain": "Nhóm nghề sản xuất, chế tạo thiết bị điện làm việc tại các nhà máy, xí nghiệp cơ điện để sản xuất các thiết bị, máy móc điện và linh kiện đạt chuẩn kiểm định (SGK trang 11)."
+      },
+      {
+        "id": "cn_b2_03",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Thi công kéo dây, lắp đặt tủ điện và kết nối các thiết bị điện tại hiện trường công trình xây dựng theo bản vẽ thiết kế thuộc nhóm nghề nào?",
+        "options": [
+          "A. Lắp đặt điện.",
+          "B. Nghiên cứu lí thuyết vật lí.",
+          "C. Thiết kế vi mạch máy tính.",
+          "D. Vận hành tổng đài điện thoại."
+        ],
+        "correct": 0,
+        "explain": "Nhóm nghề lắp đặt điện trực tiếp làm việc tại hiện trường các công trình dân dụng và công nghiệp để thi công mạng điện và lắp đặt thiết bị đúng quy chuẩn kĩ thuật (SGK trang 12)."
+      },
+      {
+        "id": "cn_b2_04",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Theo dõi các thông số điện áp, dòng điện, tần số và thao tác đóng cắt các thiết bị điện tại phòng điều khiển trung tâm thuộc nhóm nghề nào?",
+        "options": [
+          "A. Vận hành điện.",
+          "B. Thiết kế điện.",
+          "C. Sản xuất thiết bị.",
+          "D. Môi giới việc làm."
+        ],
+        "correct": 0,
+        "explain": "Nhóm nghề vận hành điện làm việc tại phòng điều độ, trung tâm điều khiển nhà máy điện và trạm biến áp để giám sát và duy trì mạng điện hoạt động liên tục, an toàn (SGK trang 13)."
+      },
+      {
+        "id": "cn_b2_05",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Kiểm tra định kì, tra dầu mỡ, siết chặt các điểm tiếp xúc và phục hồi các chi tiết bị hỏng hóc thuộc nhóm nghề nào?",
+        "options": [
+          "A. Bảo dưỡng và sửa chữa điện.",
+          "B. Thiết kế điện.",
+          "C. Xây dựng cầu đường.",
+          "D. Khảo sát địa chất."
+        ],
+        "correct": 0,
+        "explain": "Bảo dưỡng nhằm ngăn ngừa nguy cơ sự cố hỏng hóc; sửa chữa nhằm phục hồi hoạt động bình thường của thiết bị khi xảy ra sự cố hư hỏng (SGK trang 14)."
+      },
+      {
+        "id": "cn_b2_06",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Yêu cầu về phẩm chất đạo đức và kĩ năng cốt lõi của người làm việc trong ngành kĩ thuật điện là:",
+        "options": [
+          "A. Tuân thủ nghiêm ngặt quy trình an toàn điện, cẩn thận, tỉ mỉ, có tinh thần trách nhiệm cao và khả năng làm việc nhóm.",
+          "B. Làm việc tùy tiện, tự ý thay đổi quy trình khi thấy tiện.",
+          "C. Không cần trang bị đồ bảo hộ lao động.",
+          "D. Chỉ cần thể lực mà không cần kiến thức chuyên môn."
+        ],
+        "correct": 0,
+        "explain": "Ngành điện tiềm ẩn nguy hiểm cao về điện giật và cháy nổ, do đó đòi hỏi tính kỉ luật an toàn tuyệt đối, sự cẩn trọng và kiến thức kĩ thuật vững vàng (SGK trang 15)."
+      },
+      {
+        "id": "cn_b2_07",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Để trở thành một Kĩ sư thiết kế hệ thống điện, người học cần tốt nghiệp trình độ đào tạo nào?",
+        "options": [
+          "A. Đại học chuyên ngành Kĩ thuật điện / Hệ thống điện.",
+          "B. Sơ cấp nghề 3 tháng.",
+          "C. Chỉ cần tốt nghiệp Trung học cơ sở.",
+          "D. Bằng lái xe hạng C."
+        ],
+        "correct": 0,
+        "explain": "Vị trí kĩ sư thiết kế đòi hỏi nền tảng kiến thức chuyên sâu về tính toán giải tích mạch điện, tiêu chuẩn kĩ thuật và phần mềm đồ họa chuyên dụng, yêu cầu tốt nghiệp đại học chuyên ngành (SGK trang 10)."
+      },
+      {
+        "id": "cn_b2_08",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Sự phát triển mạnh mẽ của xe điện, hệ thống điện mặt trời mái nhà và lưới điện thông minh mang lại cơ hội gì cho nhân lực ngành kĩ thuật điện?",
+        "options": [
+          "A. Làm giảm nhu cầu việc làm của ngành điện.",
+          "B. Mở ra rất nhiều cơ hội việc làm mới, thu nhập cao và triển vọng phát triển nghề nghiệp lâu dài.",
+          "C. Khiến ngành kĩ thuật điện bị xóa bỏ hoàn toàn.",
+          "D. Không có tác động gì."
+        ],
+        "correct": 1,
+        "explain": "Xu thế chuyển đổi xanh và tự động hóa công nghiệp đòi hỏi nguồn nhân lực kĩ thuật điện chất lượng cao lớn hơn bao giờ hết (SGK trang 16)."
+      },
+      {
+        "id": "cn_b2_09",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Dụng cụ bảo hộ lao động cá nhân bắt buộc khi kiểm tra, thao tác trên lưới điện hạ áp đang mang điện gồm:",
+        "options": [
+          "A. Găng tay cách điện hạ áp, ủng cách điện, mũ bảo hộ, kính bảo vệ mắt và bút thử điện đạt chuẩn kiểm định.",
+          "B. Đi chân đất để tiếp đất tốt hơn.",
+          "C. Đeo găng tay len ướt.",
+          "D. Sử dụng tuốc nơ vít kim loại không bọc cán cách điện."
+        ],
+        "correct": 0,
+        "explain": "Quy tắc an toàn điện đòi hỏi thợ điện phải sử dụng đầy đủ đồ cách điện chuyên dụng đã qua kiểm định định kì (găng tay cách điện, ủng, bút thử điện...) để ngăn chặn dòng điện giật truyền qua cơ thể."
+      },
+      {
+        "id": "cn_b2_10",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Khẩu hiệu an toàn hàng đầu được áp dụng trong mọi công việc kĩ thuật điện là gì?",
+        "options": [
+          "A. 'An toàn là trên hết - Cắt điện, kiểm tra không còn điện và tiếp đất trước khi thao tác'.",
+          "B. 'Càng nhanh càng tốt, bỏ qua kiểm tra an toàn'.",
+          "C. 'Chạm tay thử xem có giật không'.",
+          "D. 'Cứ đóng điện rồi tính sau'."
+        ],
+        "correct": 0,
+        "explain": "Nguyên tắc vàng của an toàn điện: Trước khi sửa chữa phải cắt điện, khóa aptomat gắn biển cảnh báo, dùng bút thử điện kiểm tra chắc chắn hết điện rồi mới được phép thao tác."
       }
     ]
   },
   {
     "id": "cn_gk1",
-    "title": "🎯 Đề Thi Thử Giữa Kì 1 Công Nghệ 12 (Chuẩn Ma Trận)",
+    "title": "🎯 Đề Thi Thử Giữa Kì 1 Công Nghệ 12 (Chuẩn Ma Trận 2025)",
     "icon": "🎯",
-    "description": "Trắc nghiệm 4 lựa chọn + Trắc nghiệm Đúng/Sai 4 ý có ngữ liệu + Tính toán mạch 3 pha",
+    "description": "Đề thi chuẩn cấu trúc 40 câu: Trắc nghiệm 4 lựa chọn + Đúng/Sai có ngữ liệu thực tế + Bài tập tính toán",
     "questions": [
       {
-        "id": 1,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Công việc nào sau đây thuộc nhóm công việc thiết kế điện?",
-        "options": [
-          "A. Lắp đặt đường dây và trạm biến áp ngoài hiện trường.",
-          "B. Nghiên cứu, ứng dụng kiến thức kĩ thuật điện để phân tích, lựa chọn vật liệu và thiết bị điện, lập bản vẽ sơ đồ mạch điện.",
-          "C. Đóng cắt và giám sát các chỉ số hoạt động của lưới điện tại phòng điều độ.",
-          "D. Thay thế dầu bôi trơn và bảo dưỡng định kì máy biến áp."
-        ],
-        "correct": 1,
-        "explain": "Thiết kế điện là việc nghiên cứu, ứng dụng các kiến thức về kĩ thuật điện và phương pháp tính toán để phân tích, thiết kế, lựa chọn vật liệu, thiết bị điện cho các hệ thống và thiết bị điện; tạo ra sản phẩm là bản vẽ sơ đồ mạch điện và tài liệu kĩ thuật."
-      },
-      {
-        "id": 2,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Sản phẩm chính của công việc thiết kế điện là gì?",
-        "options": [
-          "A. Các linh kiện điện tử và bóng đèn LED.",
-          "B. Bản vẽ sơ đồ mạch điện và tài liệu kĩ thuật mô tả hệ thống điện.",
-          "C. Hệ thống cột điện và đường dây truyền tải điện.",
-          "D. Điện năng cung cấp cho các hộ gia đình."
-        ],
-        "correct": 1,
-        "explain": "Theo SGK Công nghệ 12 (KNTT trang 11), sản phẩm của công việc thiết kế điện là các bản vẽ sơ đồ mạch điện và các tài liệu kĩ thuật mô tả hệ thống điện."
-      },
-      {
-        "id": 3,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Vị trí kĩ sư thiết kế điện đòi hỏi người lao động phải có trình độ đào tạo tối thiểu là",
-        "options": [
-          "A. sơ cấp nghề điện.",
-          "B. trung cấp nghề kĩ thuật điện.",
-          "C. cao đẳng nghề kĩ thuật điện.",
-          "D. đại học ngành kĩ thuật điện."
-        ],
-        "correct": 3,
-        "explain": "Người làm nghề thiết kế điện đối với vị trí kĩ sư phải có trình độ đại học ngành kĩ thuật điện (hoặc các chuyên ngành gần tương đương)."
-      },
-      {
-        "id": 4,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Trong ngành sản xuất, chế tạo thiết bị điện, công việc nào sau đây do thợ sản xuất, chế tạo thực hiện?",
-        "options": [
-          "A. Quản lí chất lượng và kiểm soát quy trình kiểm định xuất xưởng.",
-          "B. Tổ chức vận hành và tối ưu hóa dây chuyền công nghệ sản xuất.",
-          "C. Thao tác các công việc cụ thể như kiểm tra linh kiện đầu vào, lắp ráp, hàn linh kiện, đóng gói bao bì sản phẩm.",
-          "D. Nghiên cứu công nghệ vật liệu mới cho thiết bị điện."
-        ],
-        "correct": 2,
-        "explain": "Thợ sản xuất, chế tạo chịu trách nhiệm thao tác các công việc cụ thể trong dây chuyền như: kiểm tra linh kiện đầu vào, lắp ráp và hàn linh kiện, đóng gói bao bì sản phẩm đạt chất lượng (SGK trang 11)."
-      },
-      {
-        "id": 5,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Mô tả nào sau đây thể hiện đúng nhất công việc của người làm nghề lắp đặt điện?",
-        "options": [
-          "A. Theo dõi các thông số đồng hồ đo tại phòng điều khiển trung tâm nhà máy điện.",
-          "B. Thi công, lắp đặt, kết nối đường dây điện và thiết bị điện theo hồ sơ thiết kế, quy chuẩn kĩ thuật và an toàn điện.",
-          "C. Tính toán mô phỏng mạch điện tử bằng phần mềm chuyên dụng trên máy tính tính toán.",
-          "D. Kiểm tra định kì và vệ sinh, thay dầu máy biến thế đang vận hành."
-        ],
-        "correct": 1,
-        "explain": "Lắp đặt điện là việc thi công, lắp đặt, kết nối đường dây điện và thiết bị điện cho các hệ thống điện, công trình điện theo hồ sơ thiết kế, quy chuẩn kĩ thuật và an toàn điện (SGK trang 12)."
-      },
-      {
-        "id": 6,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Mục đích chính của công việc vận hành điện là gì?",
-        "options": [
-          "A. Xây dựng mới hoàn toàn các cột tháp truyền tải điện 500 kV.",
-          "B. Duy trì chế độ làm việc bình thường của hệ thống điện, đáp ứng các yêu cầu chất lượng, độ tin cậy và tính kinh tế.",
-          "C. Thay thế toàn bộ dây dẫn điện trong khu dân cư sau mỗi tháng.",
-          "D. Thiết kế các linh kiện vi mạch điện tử siêu nhỏ."
-        ],
-        "correct": 1,
-        "explain": "Vận hành thiết bị điện là các hoạt động nhằm duy trì chế độ làm việc bình thường của hệ thống điện đáp ứng các yêu cầu chất lượng, độ tin cậy và kinh tế (SGK trang 12)."
-      },
-      {
-        "id": 7,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Phát biểu nào sau đây phân biệt chính xác giữa hoạt động 'bảo dưỡng điện' và 'sửa chữa điện'?",
-        "options": [
-          "A. Bảo dưỡng tiến hành khi có sự cố hư hỏng, còn sửa chữa tiến hành định kì thường xuyên.",
-          "B. Bảo dưỡng là hoạt động thường kì nhằm duy trì hệ thống hoạt động bình thường và phòng ngừa hư hỏng; sửa chữa là hoạt động phục hồi khi xảy ra sự cố.",
-          "C. Bảo dưỡng do thợ điện làm, sửa chữa chỉ do kĩ sư điện làm.",
-          "D. Bảo dưỡng chỉ áp dụng cho đồ gia dụng, sửa chữa áp dụng cho lưới điện quốc gia."
-        ],
-        "correct": 1,
-        "explain": "Bảo dưỡng điện là hoạt động thường kì nhằm duy trì hệ thống điện, thiết bị điện hoạt động bình thường, tránh hỏng hóc. Sửa chữa điện là hoạt động thực hiện khi có sự cố nhằm phục hồi hệ thống trở lại trạng thái hoạt động bình thường (SGK trang 13)."
-      },
-      {
-        "id": 8,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Vị trí việc làm kĩ sư thi công điện trong nhóm công việc lắp đặt điện có nhiệm vụ chính là",
-        "options": [
-          "A. trực tiếp leo trèo lắp dây dẫn trên cột điện cao áp.",
-          "B. chỉ huy và giám sát thi công lắp đặt điện theo hồ sơ thiết kế.",
-          "C. sản xuất vỏ tủ điện tại phân xưởng gia công cơ khí.",
-          "D. sửa chữa các thiết bị gia dụng trong hộ gia đình."
-        ],
-        "correct": 1,
-        "explain": "Trong nhóm công việc lắp đặt điện: kĩ sư thi công điện có nhiệm vụ chỉ huy và giám sát thi công lắp đặt điện; kĩ thuật viên hỗ trợ thi công và lắp đặt; thợ điện trực tiếp thực hiện lắp đặt (SGK trang 12)."
-      },
-      {
-        "id": 9,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Nơi làm việc nào sau đây là môi trường làm việc đặc trưng của nghề vận hành điện?",
-        "options": [
-          "A. Phòng thiết kế đồ họa của công ty quảng cáo truyền thông.",
-          "B. Phòng điều hành, quản lí điện của công ty điện lực, trạm biến áp, nhà máy điện.",
-          "C. Xưởng dệt may xuất khẩu.",
-          "D. Cửa hàng kinh doanh thiết bị văn phòng."
-        ],
-        "correct": 1,
-        "explain": "Người làm nghề vận hành điện thường làm việc tại phòng điều hành, quản lí điện của các công ty điện lực, công ty chiếu sáng đô thị, bộ phận quản lí hệ thống điện trong tòa nhà, nhà máy, cơ quan (SGK trang 12)."
-      },
-      {
-        "id": 10,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Năng lực nào dưới đây đặc biệt quan trọng đối với người làm nghề bảo dưỡng và sửa chữa điện?",
-        "options": [
-          "A. Năng khiếu hội họa và sáng tác văn học.",
-          "B. Khả năng tư duy logic, chẩn đoán, phát hiện lỗi hư hỏng và sử dụng thành thạo dụng cụ đo kiểm tra điện an toàn.",
-          "C. Kĩ năng tiếp thị và bán hàng đa kênh.",
-          "D. Kĩ năng đàm phán hợp đồng kinh tế quốc tế."
-        ],
-        "correct": 1,
-        "explain": "Người làm nghề bảo dưỡng và sửa chữa điện cần có tư duy logic, khả năng suy luận, chẩn đoán lỗi; kĩ năng thành thạo trong sử dụng các thiết bị đo, thiết bị chẩn đoán lỗi và tuân thủ tuyệt đối quy chuẩn kĩ thuật, an toàn điện (SGK trang 13)."
-      },
-      {
-        "id": 11,
+        "id": "cn_b3_01",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Dòng điện xoay chiều một pha có cường độ tức thời i = Im.sin(ωt + ψ). Đại lượng Im được gọi là",
+        "question": "Dòng điện xoay chiều một pha có cường độ tức thời i = Im.sin(ωt + ψ). Đại lượng Im được gọi là gì?",
         "options": [
-          "A. giá trị hiệu dụng của dòng điện.",
-          "B. giá trị cực đại (biên độ) của dòng điện.",
-          "C. tần số góc của dòng điện.",
-          "D. pha ban đầu của dòng điện."
+          "A. Giá trị hiệu dụng của dòng điện.",
+          "B. Giá trị cực đại (biên độ) của dòng điện.",
+          "C. Tần số góc của dòng điện.",
+          "D. Pha ban đầu của dòng điện."
         ],
         "correct": 1,
-        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng: I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> (SGK Công nghệ 12 trang 18)."
+        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), đại lượng Im là cường độ dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng I: I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> (SGK Công nghệ 12 trang 18)."
       },
       {
-        "id": 12,
+        "id": "cn_b3_02",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
         "question": "Một dòng điện xoay chiều có biểu thức i = 4√2.sin(100πt) (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
         "options": [
@@ -2323,12 +2790,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. I = 2√2 A; f = 50 Hz"
         ],
         "correct": 0,
-        "explain": "Từ biểu thức: Im = 4√2 A => I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = 4 A. Tần số góc ω = 100π rad/s => Tần số f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz."
+        "explain": "Cường độ cực đại Im = 4√2 A nên giá trị hiệu dụng I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">4√2</span><span class=\"math-frac-bottom\">√2</span></span> = 4 A. Tần số góc ω = 100π rad/s nên tần số f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz."
       },
       {
-        "id": 13,
+        "id": "cn_b3_03",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Công thức tính cảm kháng XL của cuộn cảm thuần có độ tự cảm L và dung kháng XC của tụ điện có điện dung C đối với dòng xoay chiều tần số f là:",
+        "question": "Công thức tính cảm kháng XL của cuộn cảm thuần và dung kháng XC của tụ điện đối với dòng điện xoay chiều tần số f là:",
         "options": [
           "A. XL = 2πfL và XC = 2πfC",
           "B. XL = 2πfL và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
@@ -2336,12 +2803,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span>"
         ],
         "correct": 1,
-        "explain": "Cảm kháng cuộn cảm: XL = ωL = 2πfL; Dung kháng tụ điện: XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span> (SGK Công nghệ 12 trang 18)."
+        "explain": "Cảm kháng cuộn cảm thuần: XL = ωL = 2πfL (đơn vị Ω); Dung kháng tụ điện: XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span> (đơn vị Ω) (SGK Công nghệ 12 trang 18)."
       },
       {
-        "id": 14,
+        "id": "cn_b3_04",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Tổng trở z_t của tải điện một pha gồm điện trở R nối tiếp với cuộn cảm (XL) và tụ điện (XC) được tính theo công thức nào?",
+        "question": "Tổng trở z_t của tải điện một pha gồm điện trở R mắc nối tiếp với cuộn cảm (XL) và tụ điện (XC) được tính theo công thức nào?",
         "options": [
           "A. z_t = R + XL - XC",
           "B. z_t = √[R² + (XL - XC)²]",
@@ -2349,1408 +2816,364 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. z_t = √[R² - (XL - XC)²]"
         ],
         "correct": 1,
-        "explain": "Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) với X = XL - XC, do đó z_t = √[R² + (XL - XC)²], và tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
+        "explain": "Tổng trở của tải R-L-C nối tiếp đặc trưng bởi độ lớn: z_t = √(R² + X²) với điện kháng X = XL - XC, do đó z_t = √[R² + (XL - XC)²]. Hệ số góc tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
       },
       {
-        "id": 15,
+        "id": "cn_b3_05",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Hiện tượng cộng hưởng điện trong mạch R-L-C nối tiếp xảy ra khi nào?",
+        "question": "Hiện tượng cộng hưởng điện trong đoạn mạch R-L-C nối tiếp xảy ra khi nào?",
         "options": [
           "A. Khi R = XL",
           "B. Khi cảm kháng bằng dung kháng (XL = XC)",
-          "C. Khi tần số dòng điện f = 0",
-          "D. Khi tổng trở đạt giá trị vô cùng lớn"
+          "C. Khi tần số f = 0",
+          "D. Khi tổng trở đạt giá trị lớn vô cùng"
         ],
         "correct": 1,
-        "explain": "Hiện tượng cộng hưởng xảy ra khi XL = XC (tức là 2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>). Khi đó điện kháng X = 0, tổng trở mạch đạt giá trị nhỏ nhất z_min = R và dòng điện trong mạch đạt giá trị cực đại."
+        "explain": "Cộng hưởng điện xảy ra khi cảm kháng bằng dung kháng XL = XC (tức 2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>), khi đó điện kháng triệt tiêu X = 0, tổng trở z_t đạt cực tiểu z_t = R và dòng điện trong mạch đạt cực đại I = <span class=\"math-frac\"><span class=\"math-frac-top\">U</span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
       },
       {
-        "id": 16,
+        "id": "cn_b3_06",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Dòng điện xoay chiều ba pha là hệ thống ba dòng điện xoay chiều có đặc điểm nào sau đây?",
+        "question": "Hệ thống dòng điện xoay chiều ba pha đối xứng là tập hợp của ba dòng điện xoay chiều hình sin có đặc điểm gì?",
         "options": [
-          "A. Cùng tần số, cùng biên độ, cùng pha với nhau.",
-          "B. Cùng tần số, cùng biên độ nhưng lệch pha nhau góc 2π/3 (120°) lần lượt giữa các pha.",
-          "C. Tần số khác nhau, cùng biên độ, lệch pha nhau góc 90°.",
-          "D. Cùng pha ban đầu nhưng tần số gấp ba lần nhau."
+          "A. Cùng biên độ, cùng tần số và cùng pha với nhau.",
+          "B. Cùng tần số, cùng biên độ nhưng lệch pha nhau góc <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> (120°) lần lượt giữa các pha.",
+          "C. Khác tần số, cùng biên độ và lệch pha nhau 90°.",
+          "D. Cùng biên độ nhưng tần số pha sau gấp đôi pha trước."
         ],
         "correct": 1,
-        "explain": "Định nghĩa chuẩn SGK trang 18: Dòng điện xoay chiều ba pha sinh ra trong mạch điện ba pha là hệ thống ba dòng điện xoay chiều có cùng tần số, cùng biên độ và có góc pha lệch nhau 120° (2π/3 rad) lần lượt giữa các pha."
+        "explain": "Theo định nghĩa SGK trang 18: Dòng điện ba pha đối xứng gồm 3 dòng điện xoay chiều hình sin có cùng tần số, cùng biên độ và lệch pha nhau góc <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> rad (tức 120°) lần lượt giữa các pha."
       },
       {
-        "id": 17,
+        "id": "cn_b3_14",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cấu tạo phần tĩnh (Stator) của máy phát điện xoay chiều ba pha gồm",
+        "question": "Khi nguồn và tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa điện áp dây Ud và điện áp pha Up là:",
         "options": [
-          "A. một nam châm vĩnh cửu hình chữ U.",
-          "B. lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ giống hệt nhau về số vòng và tiết diện, đặt lệch nhau góc 120° trên đường tròn.",
-          "C. hai cuộn dây đặt vuông góc nhau.",
-          "D. vành trượt và chổi than tiếp điện."
+          "A. Ud = Up",
+          "B. Ud = √3.Up ≈ 1,732.Up",
+          "C. Ud = 3.Up",
+          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>"
         ],
         "correct": 1,
-        "explain": "Phần tĩnh (stator) là lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ có cùng số vòng và kích thước dây, đặt lệch nhau góc 120° trên không gian (SGK trang 19)."
+        "explain": "Mạch đối xứng nối hình sao (Y): Mối liên hệ điện áp là Ud = √3.Up ≈ 1,732.Up, suy ra Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span>. Ví dụ mạng hạ áp có Up = 220 V thì Ud = √3 × 220 ≈ 380 V (SGK trang 20)."
       },
       {
-        "id": 18,
+        "id": "cn_b3_15",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong máy phát điện xoay chiều ba pha, kí hiệu các đầu cuộn dây pha A, pha B, pha C lần lượt là",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa cường độ dòng điện dây Id và dòng điện pha Ip là:",
         "options": [
-          "A. Đầu đầu: A, B, C; Đầu cuối tương ứng: X, Y, Z.",
-          "B. Đầu đầu: X, Y, Z; Đầu cuối: A, B, C.",
-          "C. Đầu đầu: U, V, W; Đầu cuối: 1, 2, 3.",
-          "D. Đầu đầu: L1, L2, L3; Đầu cuối: N."
+          "A. Id = Ip",
+          "B. Id = √3.Ip",
+          "C. Id = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
+          "D. Id = 3.Ip"
         ],
         "correct": 0,
-        "explain": "Theo quy ước SGK trang 19: Cuộn thứ nhất AX (pha A), cuộn thứ hai BY (pha B), cuộn thứ ba CZ (pha C). A, B, C là các điểm đầu; X, Y, Z là các điểm cuối của cuộn dây."
+        "explain": "Khi tải nối hình sao (Y), dòng điện từ dây pha chạy thẳng trực tiếp vào cuộn dây pha của tải không bị phân nhánh, do đó dòng điện dây bằng dòng điện pha: Id = Ip (SGK trang 20)."
       },
       {
-        "id": 19,
+        "id": "cn_b3_16",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Nếu chọn suất điện động pha A làm gốc eA = Em.sin(ωt), thì biểu thức suất điện động pha B (eB) và pha C (eC) lần lượt là",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa điện áp dây Ud và điện áp pha Up là:",
         "options": [
-          "A. eB = Em.sin(ωt - π/2) và eC = Em.sin(ωt + π/2)",
-          "B. eB = Em.sin(ωt - 2π/3) và eC = Em.sin(ωt + 2π/3) [hoặc eC = Em.sin(ωt - 4π/3)]",
-          "C. eB = Em.sin(ωt - π) và eC = Em.sin(ωt + π)",
-          "D. eB = Em.sin(2ωt) và eC = Em.sin(3ωt)"
-        ],
-        "correct": 1,
-        "explain": "Ba suất điện động cùng biên độ, cùng tần số và lần lượt lệch pha nhau góc 2π/3 rad (SGK trang 19, Luyện tập 1 trang 21)."
-      },
-      {
-        "id": 20,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cách nối nguồn điện hoặc tải ba pha hình sao (Y) có đặc điểm gì?",
-        "options": [
-          "A. Ba điểm cuối X, Y, Z của ba pha được nối chung với nhau tạo thành điểm trung tính (O).",
-          "B. Điểm đầu của pha này nối với điểm cuối của pha kia tạo mạch vòng kín.",
-          "C. Ba điểm đầu A, B, C chập lại với nhau, ba điểm cuối nối ra dây pha.",
-          "D. Mỗi cuộn dây nối với một cặp dây dẫn riêng biệt không nối chung điểm nào."
+          "A. Ud = Up",
+          "B. Ud = √3.Up",
+          "C. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
+          "D. Ud = 2.Up"
         ],
         "correct": 0,
-        "explain": "Nối hình sao (Y): Ba điểm cuối X, Y, Z của các pha được nối chung với nhau tạo thành điểm trung tính O (SGK trang 19)."
+        "explain": "Khi tải nối hình tam giác (Δ), mỗi pha của tải được mắc trực tiếp giữa hai dây pha của nguồn điện, vì vậy điện áp pha của tải bằng chính điện áp dây của nguồn: Ud = Up (SGK trang 20)."
       },
       {
-        "id": 21,
+        "id": "cn_b3_17",
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cách nối nguồn điện hoặc tải ba pha hình tam giác (Δ) có đặc điểm gì?",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa dòng điện dây Id và dòng điện pha Ip là:",
         "options": [
-          "A. Ba điểm cuối X, Y, Z nối chụm lại thành điểm trung tính.",
-          "B. Điểm đầu của pha này được nối với điểm cuối của pha kia (A nối Z, B nối X, C nối Y) tạo thành hình tam giác khép kín.",
-          "C. Ba cuộn dây mắc song song với nhau.",
-          "D. Dùng dây trung tính nối qua tâm hình tam giác."
+          "A. Id = Ip",
+          "B. Id = √3.Ip ≈ 1,732.Ip",
+          "C. Id = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
+          "D. Id = 3.Ip"
         ],
         "correct": 1,
-        "explain": "Nối hình tam giác (Δ): Điểm đầu của pha này được nối với điểm cuối của pha kia tạo thành hình tam giác khép kín (SGK trang 19)."
+        "explain": "Khi tải nối tam giác (Δ) đối xứng, dòng điện dây tại các nút rẽ nhánh thành hai dòng điện pha, biểu thức vectơ dòng điện cho ta: Id = √3.Ip ≈ 1,732.Ip, suy ra Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> (SGK trang 20)."
       },
       {
-        "id": 22,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Dây trung tính trong mạng điện ba pha bốn dây có tác dụng quan trọng nhất là gì?",
-        "options": [
-          "A. Làm tăng công suất phát của máy phát điện lên gấp đôi.",
-          "B. Giữ cho điện áp trên các pha tải luôn ổn định ở mức điện áp pha (Up), không bị thay đổi ngay cả khi phụ tải các pha không đối xứng.",
-          "C. Triệt tiêu toàn bộ dòng điện chạy trong ba dây pha.",
-          "D. Làm giảm điện trở của các dây dẫn truyền tải."
-        ],
-        "correct": 1,
-        "explain": "Dây trung tính nối giữa điểm trung tính của nguồn và tải có tác dụng cân bằng và duy trì điện áp pha trên mỗi pha tải luôn bằng điện áp pha của nguồn, bảo vệ các thiết bị điện 1 pha hoạt động bình thường kể cả khi tải các pha không đều."
-      },
-      {
-        "id": 23,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong mạch điện ba pha bốn dây đối xứng, cường độ dòng điện chạy trong dây trung tính (i0) có giá trị bằng",
-        "options": [
-          "A. i0 = iA + iB + iC = 0",
-          "B. i0 = 3.iA",
-          "C. i0 = √3.iA",
-          "D. i0 = <span class=\"math-frac\"><span class=\"math-frac-top\">i<sub>A</sub></span><span class=\"math-frac-bottom\">√3</span></span>"
-        ],
-        "correct": 0,
-        "explain": "Khi tải đối xứng: iA + iB + iC = 0 tại mọi thời điểm, do đó dòng điện tức thời và hiệu dụng chạy trong dây trung tính bằng 0 (i0 = 0)."
-      },
-      {
-        "id": 24,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Phát biểu nào sau đây định nghĩa chính xác về điện áp pha (Up) và điện áp dây (Ud)?",
-        "options": [
-          "A. Up là điện áp giữa hai dây pha; Ud là điện áp giữa dây pha và dây trung tính.",
-          "B. Up là điện áp giữa một dây pha và dây trung tính (hoặc giữa hai đầu một pha); Ud là điện áp giữa hai dây pha.",
-          "C. Up và Ud luôn có giá trị bằng nhau trong mọi trường hợp.",
-          "D. Ud là điện áp chịu đựng của dây cách điện; Up là điện áp sinh công."
-        ],
-        "correct": 1,
-        "explain": "Định nghĩa chuẩn SGK trang 20: Dòng điện chạy trong dây pha gọi là Id; dòng điện chạy trong mỗi pha gọi là Ip. Điện áp giữa hai dây pha gọi là Ud; điện áp giữa dây pha và dây trung tính (hoặc giữa điểm đầu và cuối mỗi pha) gọi là Up."
-      },
-      {
-        "id": 25,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Mạch điện ba pha được gọi là ĐỐI XỨNG khi thỏa mãn điều kiện nào sau đây?",
-        "options": [
-          "A. Chỉ cần nguồn điện ba pha đối xứng.",
-          "B. Chỉ cần tổng trở ba pha tải bằng nhau.",
-          "C. Có nguồn điện ba pha đối xứng và tải ba pha đối xứng (ZA = ZB = ZC).",
-          "D. Cả nguồn và tải đều nối hình tam giác."
-        ],
-        "correct": 2,
-        "explain": "Mạch điện ba pha được gọi là đối xứng nếu có nguồn đối xứng (cùng biên độ, tần số, lệch pha 120°) VÀ tải đối xứng (ZA = ZB = ZC) (SGK trang 20)."
-      },
-      {
-        "id": 26,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong mạch ba pha đối xứng khi tải nối hình sao (Y), mối quan hệ giữa các đại lượng là:",
-        "options": [
-          "A. Ud = Up và Id = √3.Ip",
-          "B. Ud = √3.Up và Id = Ip",
-          "C. Ud = √3.Up và Id = √3.Ip",
-          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span> và Id = Ip"
-        ],
-        "correct": 1,
-        "explain": "Khi tải nối hình sao (Y): Dòng điện dây bằng dòng điện pha (Id = Ip), Điện áp dây bằng căn 3 lần điện áp pha (Ud = √3.Up) (SGK trang 20)."
-      },
-      {
-        "id": 27,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong mạch ba pha đối xứng khi tải nối hình tam giác (Δ), mối quan hệ giữa các đại lượng là:",
-        "options": [
-          "A. Ud = Up và Id = √3.Ip",
-          "B. Ud = √3.Up và Id = Ip",
-          "C. Ud = Up và Id = Ip",
-          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span> và Id = √3.Ip"
-        ],
-        "correct": 0,
-        "explain": "Khi tải nối hình tam giác (Δ): Điện áp dây bằng điện áp pha (Ud = Up), Dòng điện dây bằng căn 3 lần dòng điện pha (Id = √3.Ip) (SGK trang 21)."
-      },
-      {
-        "id": 28,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Công suất tác dụng toàn phần của mạch điện ba pha đối xứng được tính theo công thức nào sau đây?",
-        "options": [
-          "A. P = 3.Ud.Id.cosφ",
-          "B. P = √3.Ud.Id.cosφ = 3.Up.Ip.cosφ",
-          "C. P = Ud.Id.cosφ",
-          "D. P = √3.Up.Ip.cosφ"
-        ],
-        "correct": 1,
-        "explain": "Công suất tác dụng ba pha đối xứng bằng 3 lần công suất một pha: P = 3.P1p = 3.Up.Ip.cosφ. Dù nối sao hay tam giác, thay Ud và Id vào đều rút ra công thức chung: P = √3.Ud.Id.cosφ."
-      },
-      {
-        "id": 29,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một nguồn điện xoay chiều ba pha đối xứng có điện áp pha Up = 220 V. Điện áp dây Ud của nguồn điện này có giá trị xấp xỉ bằng bao nhiêu?",
-        "options": [
-          "A. 127 V",
-          "B. 220 V",
-          "C. 380 V (hoặc 381 V)",
-          "D. 440 V"
-        ],
-        "correct": 2,
-        "explain": "Ta có: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế quy chuẩn là 380 V)."
-      },
-      {
-        "id": 30,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cho mạch điện ba pha tải đối xứng nối theo hình sao (Y) trong đó điện áp pha Up = 220 V và tải ba pha gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp dây Ud lần lượt là",
-        "options": [
-          "A. Ip = 4,4 A; Id = 4,4 A; Ud ≈ 381 V",
-          "B. Ip = 7,6 A; Id = 4,4 A; Ud = 220 V",
-          "C. Ip = 4,4 A; Id = 7,6 A; Ud = 380 V",
-          "D. Ip = 2,2 A; Id = 2,2 A; Ud = 127 V"
-        ],
-        "correct": 0,
-        "explain": "Vì tải nối hình sao: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">50</span></span> = 4,4 A. Dòng điện dây: Id = Ip = 4,4 A. Điện áp dây: Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
-      },
-      {
-        "id": 31,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cho mạch điện ba pha tải đối xứng nối theo hình tam giác (Δ), điện áp dây Ud = 380 V, tải ba pha gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp pha Up lần lượt là",
-        "options": [
-          "A. Up = 220 V; Ip = 4,4 A; Id = 4,4 A",
-          "B. Up = 380 V; Ip = 7,6 A; Id ≈ 13,16 A",
-          "C. Up = 380 V; Ip = 13,16 A; Id = 7,6 A",
-          "D. Up = 380 V; Ip = 7,6 A; Id = 7,6 A"
-        ],
-        "correct": 1,
-        "explain": "Vì tải nối hình tam giác: Up = Ud = 380 V. Dòng điện pha: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">50</span></span> = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Bài tập 3 SGK trang 21)."
-      },
-      {
-        "id": 32,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cho nguồn điện xoay chiều ba pha bốn dây có Ud/Up = 380/220 V. Có 6 bóng đèn sợi đốt loại 220 V - 60 W và một động cơ ba pha loại 380 V - 2,2 kW. Để các thiết bị hoạt động bình thường trong mạch ba pha đối xứng thì:",
-        "options": [
-          "A. Bóng đèn nối tam giác, động cơ nối sao.",
-          "B. Bóng đèn chia đều nối hình sao (mỗi pha 2 bóng song song), động cơ nối hình tam giác.",
-          "C. Cả bóng đèn và động cơ đều nối hình sao có dây trung tính.",
-          "D. Cả bóng đèn và động cơ đều nối hình tam giác."
-        ],
-        "correct": 1,
-        "explain": "Bóng đèn có Uđm = 220 V = Up của nguồn nên phải nối hình sao (Y) có dây trung tính (6 bóng chia đều mỗi pha 2 bóng song song). Động cơ có Uđm = 380 V = Ud của nguồn nên phải nối hình tam giác (Δ) vào 3 dây pha (Bài tập 5 SGK trang 21)."
-      },
-      {
-        "id": 33,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một động cơ không đồng bộ ba pha khi làm việc ở mạng điện có điện áp dây Ud = 380 V thì tiêu thụ dòng điện dây Id = 10 A với hệ số công suất cosφ = 0,85. Công suất tác dụng P tiêu thụ của động cơ là",
-        "options": [
-          "A. 3 230 W",
-          "B. 5 594 W",
-          "C. 9 690 W",
-          "D. 1 860 W"
-        ],
-        "correct": 1,
-        "explain": "Công suất tiêu thụ ba pha: P = √3.Ud.Id.cosφ = √3 × 380 × 10 × 0,85 ≈ 1,732 × 380 × 8,5 ≈ 5 594 W (≈ 5,6 kW)."
-      },
-      {
-        "id": 34,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Tải ba pha đối xứng gồm 3 cuộn dây, mỗi cuộn có điện trở R = 8 Ω và cảm kháng XL = 6 Ω. Nối tải theo hình tam giác (Δ) vào nguồn có điện áp dây Ud = 220 V. Dòng điện pha Ip và dòng điện dây Id là",
-        "options": [
-          "A. Ip = 22 A; Id ≈ 38,1 A",
-          "B. Ip = 15,7 A; Id = 15,7 A",
-          "C. Ip = 27,5 A; Id = 47,6 A",
-          "D. Ip = 22 A; Id = 22 A"
-        ],
-        "correct": 0,
-        "explain": "Tổng trở mỗi pha: zp = √(R² + XL²) = √(8² + 6²) = 10 Ω. Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">10</span></span> = 22 A. Dòng điện dây: Id = √3.Ip = √3 × 22 ≈ 38,1 A."
-      },
-      {
-        "id": 35,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "So với hệ thống điện một pha, hệ thống truyền tải dòng điện xoay chiều ba pha có ưu điểm vượt trội nào?",
-        "options": [
-          "A. Chỉ cần dùng 1 dây dẫn duy nhất.",
-          "B. Tiết kiệm tiết diện kim loại làm dây dẫn khi truyền tải công suất lớn đi xa, và tạo ra từ trường quay giúp chế tạo động cơ ba pha cấu tạo đơn giản, bền bỉ.",
-          "C. Không bao giờ xảy ra sự cố ngắn mạch hay quá tải.",
-          "D. Luôn có điện áp một chiều ổn định không đổi."
-        ],
-        "correct": 1,
-        "explain": "Ưu điểm của mạch 3 pha: Tiết kiệm dây dẫn kim loại (đồng, nhôm) so với 3 đường dây 1 pha độc lập; tạo ra từ trường quay để vận hành động cơ điện ba pha - thiết bị cốt lõi trong công nghiệp (SGK trang 21)."
-      },
-      {
-        "id": 23,
+        "id": "cn_b4_01",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Hệ thống điện quốc gia thực hiện quá trình nào sau đây?",
+        "question": "Hệ thống điện quốc gia là một hệ thống thống nhất gồm những thành phần cơ bản nào?",
         "options": [
-          "A. Khai thác than, dầu mỏ và lọc dầu thành phẩm.",
-          "B. Sản xuất, truyền tải, phân phối và tiêu thụ điện năng trên quy mô toàn quốc.",
-          "C. Sản xuất và lắp ráp các loại ô tô điện và xe máy điện.",
-          "D. Quản lí dự báo thời tiết và thủy văn toàn quốc."
+          "A. Các công ty kinh doanh thiết bị điện gia dụng và các cửa hàng phân phối bán lẻ.",
+          "B. Nguồn điện, lưới điện và các tải tiêu thụ điện được liên kết chặt chẽ với nhau trên quy mô toàn quốc.",
+          "C. Các cơ quan quản lí tài nguyên nước và các hồ chứa thủy lợi.",
+          "D. Trạm phát sóng viễn thông và các vệ tinh địa tĩnh quân sự."
         ],
         "correct": 1,
-        "explain": "Hệ thống điện quốc gia gồm nguồn điện, lưới điện và tải tiêu thụ liên kết thành hệ thống thống nhất để thực hiện quá trình sản xuất, truyền tải, phân phối và tiêu thụ điện năng (SGK trang 23)."
+        "explain": "Theo SGK Công nghệ 12 trang 22-23: Hệ thống điện quốc gia gồm các nguồn điện (nhà máy điện), lưới điện (đường dây và trạm biến áp) và các hộ tiêu thụ điện trên toàn quốc được liên kết chặt chẽ thành một hệ thống thống nhất."
       },
       {
-        "id": 24,
+        "id": "cn_b4_02",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Cấu trúc chung của hệ thống điện quốc gia gồm ba thành phần chính là",
+        "question": "Hệ thống điện quốc gia thực hiện liên tục bốn khâu then chốt nào sau đây?",
         "options": [
-          "A. Trạm biến áp, công tơ điện và dây dẫn.",
-          "B. Nguồn điện, lưới điện và tải tiêu thụ.",
-          "C. Nhà máy nhiệt điện, nhà máy thủy điện và điện mặt trời.",
-          "D. Tủ tổng, tủ nhánh và tủ động lực."
+          "A. Sản xuất, truyền tải, phân phối và tiêu thụ điện năng.",
+          "B. Thiết kế, lắp ráp cơ khí, đóng tàu và thử nghiệm ô tô.",
+          "C. Đào tạo nhân lực, in ấn sách giáo khoa, bán hàng và bảo hành.",
+          "D. Chế tạo linh kiện điện tử, lập trình phần mềm và bảo dưỡng máy tính."
         ],
-        "correct": 1,
-        "explain": "Ba thành phần chính của hệ thống điện quốc gia là: Nguồn điện, Lưới điện và Tải tiêu thụ (Hình 4.2 và 4.3 SGK trang 22-23)."
+        "correct": 0,
+        "explain": "Hệ thống điện quốc gia thực hiện quá trình: Sản xuất điện năng (tại nhà máy điện) -> Truyền tải điện năng (lưới truyền tải) -> Phân phối điện năng (lưới phân phối) -> Tiêu thụ điện năng (tại các phụ tải) (SGK trang 22)."
       },
       {
-        "id": 25,
+        "id": "cn_b4_03",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Lưới điện truyền tải trong hệ thống điện quốc gia có cấp điện áp là",
+        "question": "Thành phần 'LƯỚI ĐIỆN TRUYỀN TẢI' trong hệ thống điện quốc gia có cấp điện áp là",
         "options": [
           "A. dưới 1 kV.",
           "B. từ 1 kV đến 35 kV.",
           "C. từ 110 kV trở xuống.",
-          "D. trên 110 kV."
+          "D. trên 110 kV (như 220 kV và 500 kV)."
         ],
         "correct": 3,
-        "explain": "Lưới điện truyền tải có điện áp trên 110 kV, làm nhiệm vụ truyền tải điện năng số lượng lớn từ các nhà máy điện/trạm nguồn đến các trạm phân phối chính (SGK trang 23)."
+        "explain": "Theo quy chuẩn phân loại SGK trang 23: Lưới điện truyền tải có cấp điện áp TRÊN 110 kV (ở Việt Nam phổ biến là 220 kV và siêu cao áp 500 kV), đảm nhận truyền tải công suất lớn từ nhà máy điện đến các trạm phân phối chính."
       },
       {
-        "id": 26,
+        "id": "cn_b4_04",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Lưới điện phân phối trong hệ thống điện quốc gia có cấp điện áp là",
+        "question": "Thành phần 'LƯỚI ĐIỆN PHÂN PHỐI' trong hệ thống điện quốc gia có cấp điện áp là",
         "options": [
-          "A. từ 110 kV trở xuống.",
+          "A. từ 110 kV trở xuống (110 kV, 35 kV, 22 kV, 10 kV, 6 kV, 0,4 kV).",
           "B. trên 110 kV đến 500 kV.",
           "C. trên 220 kV.",
-          "D. chỉ duy nhất cấp 220 V."
+          "D. chỉ duy nhất cấp điện áp sinh hoạt 220 V."
         ],
         "correct": 0,
-        "explain": "Lưới điện phân phối có điện áp từ 110 kV trở xuống, có nhiệm vụ truyền tải điện năng từ trạm điện phân phối chính đến các tải tiêu thụ (SGK trang 23)."
+        "explain": "Lưới điện phân phối có cấp điện áp TỪ 110 kV TRỞ XUỐNG (110 kV, 35 kV, 22 kV, 10 kV, 6 kV và hạ áp 0,4 kV/380/220V), làm nhiệm vụ đưa điện từ trạm phân phối chính đến các phụ tải tiêu thụ địa phương (SGK trang 23)."
       },
       {
-        "id": 27,
+        "id": "cn_b4_05",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Cấp điện áp siêu cao áp trong hệ thống lưới điện Việt Nam là",
+        "question": "Theo quy chuẩn kĩ thuật điện Việt Nam, bốn cấp điện áp tiêu chuẩn của hệ thống lưới điện gồm:",
         "options": [
-          "A. điện áp đến 1 kV.",
-          "B. điện áp trên 1 kV đến 35 kV.",
-          "C. điện áp từ trên 35 kV đến 220 kV.",
-          "D. điện áp trên 220 kV."
-        ],
-        "correct": 3,
-        "explain": "Phân cấp điện áp: Hạ áp (đến 1 kV); Trung áp (trên 1 kV đến 35 kV); Cao áp (từ trên 35 kV đến 220 kV); Siêu cao áp (trên 220 kV, ví dụ đường dây 500 kV) (SGK trang 23)."
-      }
-    ]
-  },
-  {
-    "id": "cn_all",
-    "title": "⚡ Marathon Toàn Bộ Công Nghệ 12 (Bài 2 - 7) (88 câu)",
-    "icon": "🏆",
-    "description": "Trọn bộ 88 câu hỏi chuẩn SGK Kết nối tri thức (Tập trung Bài 3)",
-    "questions": [
-      {
-        "id": 1,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Công việc nào sau đây thuộc nhóm công việc thiết kế điện?",
-        "options": [
-          "A. Lắp đặt đường dây và trạm biến áp ngoài hiện trường.",
-          "B. Nghiên cứu, ứng dụng kiến thức kĩ thuật điện để phân tích, lựa chọn vật liệu và thiết bị điện, lập bản vẽ sơ đồ mạch điện.",
-          "C. Đóng cắt và giám sát các chỉ số hoạt động của lưới điện tại phòng điều độ.",
-          "D. Thay thế dầu bôi trơn và bảo dưỡng định kì máy biến áp."
+          "A. Điện cực thấp, điện trung bình, điện mạnh và điện cực mạnh.",
+          "B. Hạ áp (≤ 1 kV), Trung áp (> 1 kV đến 35 kV), Cao áp (> 35 kV đến 220 kV), Siêu cao áp (> 220 kV).",
+          "C. 12 V, 24 V, 110 V và 220 V.",
+          "D. Điện dân dụng, điện công nghiệp, điện nông nghiệp và điện quốc phòng."
         ],
         "correct": 1,
-        "explain": "Thiết kế điện là việc nghiên cứu, ứng dụng các kiến thức về kĩ thuật điện và phương pháp tính toán để phân tích, thiết kế, lựa chọn vật liệu, thiết bị điện cho các hệ thống và thiết bị điện; tạo ra sản phẩm là bản vẽ sơ đồ mạch điện và tài liệu kĩ thuật."
+        "explain": "Bốn cấp điện áp tiêu chuẩn quy định rõ ràng trong SGK trang 23: 1. Hạ áp (đến 1 kV); 2. Trung áp (từ trên 1 kV đến 35 kV); 3. Cao áp (từ trên 35 kV đến 220 kV); 4. Siêu cao áp (trên 220 kV, tiêu biểu là 500 kV)."
       },
       {
-        "id": 2,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Sản phẩm chính của công việc thiết kế điện là gì?",
-        "options": [
-          "A. Các linh kiện điện tử và bóng đèn LED.",
-          "B. Bản vẽ sơ đồ mạch điện và tài liệu kĩ thuật mô tả hệ thống điện.",
-          "C. Hệ thống cột điện và đường dây truyền tải điện.",
-          "D. Điện năng cung cấp cho các hộ gia đình."
-        ],
-        "correct": 1,
-        "explain": "Theo SGK Công nghệ 12 (KNTT trang 11), sản phẩm của công việc thiết kế điện là các bản vẽ sơ đồ mạch điện và các tài liệu kĩ thuật mô tả hệ thống điện."
-      },
-      {
-        "id": 3,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Vị trí kĩ sư thiết kế điện đòi hỏi người lao động phải có trình độ đào tạo tối thiểu là",
-        "options": [
-          "A. sơ cấp nghề điện.",
-          "B. trung cấp nghề kĩ thuật điện.",
-          "C. cao đẳng nghề kĩ thuật điện.",
-          "D. đại học ngành kĩ thuật điện."
-        ],
-        "correct": 3,
-        "explain": "Người làm nghề thiết kế điện đối với vị trí kĩ sư phải có trình độ đại học ngành kĩ thuật điện (hoặc các chuyên ngành gần tương đương)."
-      },
-      {
-        "id": 4,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Trong ngành sản xuất, chế tạo thiết bị điện, công việc nào sau đây do thợ sản xuất, chế tạo thực hiện?",
-        "options": [
-          "A. Quản lí chất lượng và kiểm soát quy trình kiểm định xuất xưởng.",
-          "B. Tổ chức vận hành và tối ưu hóa dây chuyền công nghệ sản xuất.",
-          "C. Thao tác các công việc cụ thể như kiểm tra linh kiện đầu vào, lắp ráp, hàn linh kiện, đóng gói bao bì sản phẩm.",
-          "D. Nghiên cứu công nghệ vật liệu mới cho thiết bị điện."
-        ],
-        "correct": 2,
-        "explain": "Thợ sản xuất, chế tạo chịu trách nhiệm thao tác các công việc cụ thể trong dây chuyền như: kiểm tra linh kiện đầu vào, lắp ráp và hàn linh kiện, đóng gói bao bì sản phẩm đạt chất lượng (SGK trang 11)."
-      },
-      {
-        "id": 5,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Mô tả nào sau đây thể hiện đúng nhất công việc của người làm nghề lắp đặt điện?",
-        "options": [
-          "A. Theo dõi các thông số đồng hồ đo tại phòng điều khiển trung tâm nhà máy điện.",
-          "B. Thi công, lắp đặt, kết nối đường dây điện và thiết bị điện theo hồ sơ thiết kế, quy chuẩn kĩ thuật và an toàn điện.",
-          "C. Tính toán mô phỏng mạch điện tử bằng phần mềm chuyên dụng trên máy tính tính toán.",
-          "D. Kiểm tra định kì và vệ sinh, thay dầu máy biến thế đang vận hành."
-        ],
-        "correct": 1,
-        "explain": "Lắp đặt điện là việc thi công, lắp đặt, kết nối đường dây điện và thiết bị điện cho các hệ thống điện, công trình điện theo hồ sơ thiết kế, quy chuẩn kĩ thuật và an toàn điện (SGK trang 12)."
-      },
-      {
-        "id": 6,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Mục đích chính của công việc vận hành điện là gì?",
-        "options": [
-          "A. Xây dựng mới hoàn toàn các cột tháp truyền tải điện 500 kV.",
-          "B. Duy trì chế độ làm việc bình thường của hệ thống điện, đáp ứng các yêu cầu chất lượng, độ tin cậy và tính kinh tế.",
-          "C. Thay thế toàn bộ dây dẫn điện trong khu dân cư sau mỗi tháng.",
-          "D. Thiết kế các linh kiện vi mạch điện tử siêu nhỏ."
-        ],
-        "correct": 1,
-        "explain": "Vận hành thiết bị điện là các hoạt động nhằm duy trì chế độ làm việc bình thường của hệ thống điện đáp ứng các yêu cầu chất lượng, độ tin cậy và kinh tế (SGK trang 12)."
-      },
-      {
-        "id": 7,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Phát biểu nào sau đây phân biệt chính xác giữa hoạt động 'bảo dưỡng điện' và 'sửa chữa điện'?",
-        "options": [
-          "A. Bảo dưỡng tiến hành khi có sự cố hư hỏng, còn sửa chữa tiến hành định kì thường xuyên.",
-          "B. Bảo dưỡng là hoạt động thường kì nhằm duy trì hệ thống hoạt động bình thường và phòng ngừa hư hỏng; sửa chữa là hoạt động phục hồi khi xảy ra sự cố.",
-          "C. Bảo dưỡng do thợ điện làm, sửa chữa chỉ do kĩ sư điện làm.",
-          "D. Bảo dưỡng chỉ áp dụng cho đồ gia dụng, sửa chữa áp dụng cho lưới điện quốc gia."
-        ],
-        "correct": 1,
-        "explain": "Bảo dưỡng điện là hoạt động thường kì nhằm duy trì hệ thống điện, thiết bị điện hoạt động bình thường, tránh hỏng hóc. Sửa chữa điện là hoạt động thực hiện khi có sự cố nhằm phục hồi hệ thống trở lại trạng thái hoạt động bình thường (SGK trang 13)."
-      },
-      {
-        "id": 8,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Vị trí việc làm kĩ sư thi công điện trong nhóm công việc lắp đặt điện có nhiệm vụ chính là",
-        "options": [
-          "A. trực tiếp leo trèo lắp dây dẫn trên cột điện cao áp.",
-          "B. chỉ huy và giám sát thi công lắp đặt điện theo hồ sơ thiết kế.",
-          "C. sản xuất vỏ tủ điện tại phân xưởng gia công cơ khí.",
-          "D. sửa chữa các thiết bị gia dụng trong hộ gia đình."
-        ],
-        "correct": 1,
-        "explain": "Trong nhóm công việc lắp đặt điện: kĩ sư thi công điện có nhiệm vụ chỉ huy và giám sát thi công lắp đặt điện; kĩ thuật viên hỗ trợ thi công và lắp đặt; thợ điện trực tiếp thực hiện lắp đặt (SGK trang 12)."
-      },
-      {
-        "id": 9,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Nơi làm việc nào sau đây là môi trường làm việc đặc trưng của nghề vận hành điện?",
-        "options": [
-          "A. Phòng thiết kế đồ họa của công ty quảng cáo truyền thông.",
-          "B. Phòng điều hành, quản lí điện của công ty điện lực, trạm biến áp, nhà máy điện.",
-          "C. Xưởng dệt may xuất khẩu.",
-          "D. Cửa hàng kinh doanh thiết bị văn phòng."
-        ],
-        "correct": 1,
-        "explain": "Người làm nghề vận hành điện thường làm việc tại phòng điều hành, quản lí điện của các công ty điện lực, công ty chiếu sáng đô thị, bộ phận quản lí hệ thống điện trong tòa nhà, nhà máy, cơ quan (SGK trang 12)."
-      },
-      {
-        "id": 10,
-        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
-        "question": "Năng lực nào dưới đây đặc biệt quan trọng đối với người làm nghề bảo dưỡng và sửa chữa điện?",
-        "options": [
-          "A. Năng khiếu hội họa và sáng tác văn học.",
-          "B. Khả năng tư duy logic, chẩn đoán, phát hiện lỗi hư hỏng và sử dụng thành thạo dụng cụ đo kiểm tra điện an toàn.",
-          "C. Kĩ năng tiếp thị và bán hàng đa kênh.",
-          "D. Kĩ năng đàm phán hợp đồng kinh tế quốc tế."
-        ],
-        "correct": 1,
-        "explain": "Người làm nghề bảo dưỡng và sửa chữa điện cần có tư duy logic, khả năng suy luận, chẩn đoán lỗi; kĩ năng thành thạo trong sử dụng các thiết bị đo, thiết bị chẩn đoán lỗi và tuân thủ tuyệt đối quy chuẩn kĩ thuật, an toàn điện (SGK trang 13)."
-      },
-      {
-        "id": 11,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Dòng điện xoay chiều một pha có cường độ tức thời i = Im.sin(ωt + ψ). Đại lượng Im được gọi là",
-        "options": [
-          "A. giá trị hiệu dụng của dòng điện.",
-          "B. giá trị cực đại (biên độ) của dòng điện.",
-          "C. tần số góc của dòng điện.",
-          "D. pha ban đầu của dòng điện."
-        ],
-        "correct": 1,
-        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng: I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> (SGK Công nghệ 12 trang 18)."
-      },
-      {
-        "id": 12,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một dòng điện xoay chiều có biểu thức i = 4√2.sin(100πt) (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
-        "options": [
-          "A. I = 4 A; f = 50 Hz",
-          "B. I = 4√2 A; f = 100 Hz",
-          "C. I = 4 A; f = 100 Hz",
-          "D. I = 2√2 A; f = 50 Hz"
-        ],
-        "correct": 0,
-        "explain": "Từ biểu thức: Im = 4√2 A => I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = 4 A. Tần số góc ω = 100π rad/s => Tần số f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz."
-      },
-      {
-        "id": 13,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Công thức tính cảm kháng XL của cuộn cảm thuần có độ tự cảm L và dung kháng XC của tụ điện có điện dung C đối với dòng xoay chiều tần số f là:",
-        "options": [
-          "A. XL = 2πfL và XC = 2πfC",
-          "B. XL = 2πfL và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
-          "C. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfL</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
-          "D. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span>"
-        ],
-        "correct": 1,
-        "explain": "Cảm kháng cuộn cảm: XL = ωL = 2πfL; Dung kháng tụ điện: XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span> (SGK Công nghệ 12 trang 18)."
-      },
-      {
-        "id": 14,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Tổng trở z_t của tải điện một pha gồm điện trở R nối tiếp với cuộn cảm (XL) và tụ điện (XC) được tính theo công thức nào?",
-        "options": [
-          "A. z_t = R + XL - XC",
-          "B. z_t = √[R² + (XL - XC)²]",
-          "C. z_t = √[R² + (XL + XC)²]",
-          "D. z_t = √[R² - (XL - XC)²]"
-        ],
-        "correct": 1,
-        "explain": "Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) với X = XL - XC, do đó z_t = √[R² + (XL - XC)²], và tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
-      },
-      {
-        "id": 15,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Hiện tượng cộng hưởng điện trong mạch R-L-C nối tiếp xảy ra khi nào?",
-        "options": [
-          "A. Khi R = XL",
-          "B. Khi cảm kháng bằng dung kháng (XL = XC)",
-          "C. Khi tần số dòng điện f = 0",
-          "D. Khi tổng trở đạt giá trị vô cùng lớn"
-        ],
-        "correct": 1,
-        "explain": "Hiện tượng cộng hưởng xảy ra khi XL = XC (tức là 2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>). Khi đó điện kháng X = 0, tổng trở mạch đạt giá trị nhỏ nhất z_min = R và dòng điện trong mạch đạt giá trị cực đại."
-      },
-      {
-        "id": 16,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Dòng điện xoay chiều ba pha là hệ thống ba dòng điện xoay chiều có đặc điểm nào sau đây?",
-        "options": [
-          "A. Cùng tần số, cùng biên độ, cùng pha với nhau.",
-          "B. Cùng tần số, cùng biên độ nhưng lệch pha nhau góc 2π/3 (120°) lần lượt giữa các pha.",
-          "C. Tần số khác nhau, cùng biên độ, lệch pha nhau góc 90°.",
-          "D. Cùng pha ban đầu nhưng tần số gấp ba lần nhau."
-        ],
-        "correct": 1,
-        "explain": "Định nghĩa chuẩn SGK trang 18: Dòng điện xoay chiều ba pha sinh ra trong mạch điện ba pha là hệ thống ba dòng điện xoay chiều có cùng tần số, cùng biên độ và có góc pha lệch nhau 120° (2π/3 rad) lần lượt giữa các pha."
-      },
-      {
-        "id": 17,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cấu tạo phần tĩnh (Stator) của máy phát điện xoay chiều ba pha gồm",
-        "options": [
-          "A. một nam châm vĩnh cửu hình chữ U.",
-          "B. lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ giống hệt nhau về số vòng và tiết diện, đặt lệch nhau góc 120° trên đường tròn.",
-          "C. hai cuộn dây đặt vuông góc nhau.",
-          "D. vành trượt và chổi than tiếp điện."
-        ],
-        "correct": 1,
-        "explain": "Phần tĩnh (stator) là lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ có cùng số vòng và kích thước dây, đặt lệch nhau góc 120° trên không gian (SGK trang 19)."
-      },
-      {
-        "id": 18,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong máy phát điện xoay chiều ba pha, kí hiệu các đầu cuộn dây pha A, pha B, pha C lần lượt là",
-        "options": [
-          "A. Đầu đầu: A, B, C; Đầu cuối tương ứng: X, Y, Z.",
-          "B. Đầu đầu: X, Y, Z; Đầu cuối: A, B, C.",
-          "C. Đầu đầu: U, V, W; Đầu cuối: 1, 2, 3.",
-          "D. Đầu đầu: L1, L2, L3; Đầu cuối: N."
-        ],
-        "correct": 0,
-        "explain": "Theo quy ước SGK trang 19: Cuộn thứ nhất AX (pha A), cuộn thứ hai BY (pha B), cuộn thứ ba CZ (pha C). A, B, C là các điểm đầu; X, Y, Z là các điểm cuối của cuộn dây."
-      },
-      {
-        "id": 19,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Nếu chọn suất điện động pha A làm gốc eA = Em.sin(ωt), thì biểu thức suất điện động pha B (eB) và pha C (eC) lần lượt là",
-        "options": [
-          "A. eB = Em.sin(ωt - π/2) và eC = Em.sin(ωt + π/2)",
-          "B. eB = Em.sin(ωt - 2π/3) và eC = Em.sin(ωt + 2π/3) [hoặc eC = Em.sin(ωt - 4π/3)]",
-          "C. eB = Em.sin(ωt - π) và eC = Em.sin(ωt + π)",
-          "D. eB = Em.sin(2ωt) và eC = Em.sin(3ωt)"
-        ],
-        "correct": 1,
-        "explain": "Ba suất điện động cùng biên độ, cùng tần số và lần lượt lệch pha nhau góc 2π/3 rad (SGK trang 19, Luyện tập 1 trang 21)."
-      },
-      {
-        "id": 20,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cách nối nguồn điện hoặc tải ba pha hình sao (Y) có đặc điểm gì?",
-        "options": [
-          "A. Ba điểm cuối X, Y, Z của ba pha được nối chung với nhau tạo thành điểm trung tính (O).",
-          "B. Điểm đầu của pha này nối với điểm cuối của pha kia tạo mạch vòng kín.",
-          "C. Ba điểm đầu A, B, C chập lại với nhau, ba điểm cuối nối ra dây pha.",
-          "D. Mỗi cuộn dây nối với một cặp dây dẫn riêng biệt không nối chung điểm nào."
-        ],
-        "correct": 0,
-        "explain": "Nối hình sao (Y): Ba điểm cuối X, Y, Z của các pha được nối chung với nhau tạo thành điểm trung tính O (SGK trang 19)."
-      },
-      {
-        "id": 21,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cách nối nguồn điện hoặc tải ba pha hình tam giác (Δ) có đặc điểm gì?",
-        "options": [
-          "A. Ba điểm cuối X, Y, Z nối chụm lại thành điểm trung tính.",
-          "B. Điểm đầu của pha này được nối với điểm cuối của pha kia (A nối Z, B nối X, C nối Y) tạo thành hình tam giác khép kín.",
-          "C. Ba cuộn dây mắc song song với nhau.",
-          "D. Dùng dây trung tính nối qua tâm hình tam giác."
-        ],
-        "correct": 1,
-        "explain": "Nối hình tam giác (Δ): Điểm đầu của pha này được nối với điểm cuối của pha kia tạo thành hình tam giác khép kín (SGK trang 19)."
-      },
-      {
-        "id": 22,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Dây trung tính trong mạng điện ba pha bốn dây có tác dụng quan trọng nhất là gì?",
-        "options": [
-          "A. Làm tăng công suất phát của máy phát điện lên gấp đôi.",
-          "B. Giữ cho điện áp trên các pha tải luôn ổn định ở mức điện áp pha (Up), không bị thay đổi ngay cả khi phụ tải các pha không đối xứng.",
-          "C. Triệt tiêu toàn bộ dòng điện chạy trong ba dây pha.",
-          "D. Làm giảm điện trở của các dây dẫn truyền tải."
-        ],
-        "correct": 1,
-        "explain": "Dây trung tính nối giữa điểm trung tính của nguồn và tải có tác dụng cân bằng và duy trì điện áp pha trên mỗi pha tải luôn bằng điện áp pha của nguồn, bảo vệ các thiết bị điện 1 pha hoạt động bình thường kể cả khi tải các pha không đều."
-      },
-      {
-        "id": 23,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong mạch điện ba pha bốn dây đối xứng, cường độ dòng điện chạy trong dây trung tính (i0) có giá trị bằng",
-        "options": [
-          "A. i0 = iA + iB + iC = 0",
-          "B. i0 = 3.iA",
-          "C. i0 = √3.iA",
-          "D. i0 = <span class=\"math-frac\"><span class=\"math-frac-top\">i<sub>A</sub></span><span class=\"math-frac-bottom\">√3</span></span>"
-        ],
-        "correct": 0,
-        "explain": "Khi tải đối xứng: iA + iB + iC = 0 tại mọi thời điểm, do đó dòng điện tức thời và hiệu dụng chạy trong dây trung tính bằng 0 (i0 = 0)."
-      },
-      {
-        "id": 24,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Phát biểu nào sau đây định nghĩa chính xác về điện áp pha (Up) và điện áp dây (Ud)?",
-        "options": [
-          "A. Up là điện áp giữa hai dây pha; Ud là điện áp giữa dây pha và dây trung tính.",
-          "B. Up là điện áp giữa một dây pha và dây trung tính (hoặc giữa hai đầu một pha); Ud là điện áp giữa hai dây pha.",
-          "C. Up và Ud luôn có giá trị bằng nhau trong mọi trường hợp.",
-          "D. Ud là điện áp chịu đựng của dây cách điện; Up là điện áp sinh công."
-        ],
-        "correct": 1,
-        "explain": "Định nghĩa chuẩn SGK trang 20: Dòng điện chạy trong dây pha gọi là Id; dòng điện chạy trong mỗi pha gọi là Ip. Điện áp giữa hai dây pha gọi là Ud; điện áp giữa dây pha và dây trung tính (hoặc giữa điểm đầu và cuối mỗi pha) gọi là Up."
-      },
-      {
-        "id": 25,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Mạch điện ba pha được gọi là ĐỐI XỨNG khi thỏa mãn điều kiện nào sau đây?",
-        "options": [
-          "A. Chỉ cần nguồn điện ba pha đối xứng.",
-          "B. Chỉ cần tổng trở ba pha tải bằng nhau.",
-          "C. Có nguồn điện ba pha đối xứng và tải ba pha đối xứng (ZA = ZB = ZC).",
-          "D. Cả nguồn và tải đều nối hình tam giác."
-        ],
-        "correct": 2,
-        "explain": "Mạch điện ba pha được gọi là đối xứng nếu có nguồn đối xứng (cùng biên độ, tần số, lệch pha 120°) VÀ tải đối xứng (ZA = ZB = ZC) (SGK trang 20)."
-      },
-      {
-        "id": 26,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong mạch ba pha đối xứng khi tải nối hình sao (Y), mối quan hệ giữa các đại lượng là:",
-        "options": [
-          "A. Ud = Up và Id = √3.Ip",
-          "B. Ud = √3.Up và Id = Ip",
-          "C. Ud = √3.Up và Id = √3.Ip",
-          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span> và Id = Ip"
-        ],
-        "correct": 1,
-        "explain": "Khi tải nối hình sao (Y): Dòng điện dây bằng dòng điện pha (Id = Ip), Điện áp dây bằng căn 3 lần điện áp pha (Ud = √3.Up) (SGK trang 20)."
-      },
-      {
-        "id": 27,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong mạch ba pha đối xứng khi tải nối hình tam giác (Δ), mối quan hệ giữa các đại lượng là:",
-        "options": [
-          "A. Ud = Up và Id = √3.Ip",
-          "B. Ud = √3.Up và Id = Ip",
-          "C. Ud = Up và Id = Ip",
-          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span> và Id = √3.Ip"
-        ],
-        "correct": 0,
-        "explain": "Khi tải nối hình tam giác (Δ): Điện áp dây bằng điện áp pha (Ud = Up), Dòng điện dây bằng căn 3 lần dòng điện pha (Id = √3.Ip) (SGK trang 21)."
-      },
-      {
-        "id": 28,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Công suất tác dụng toàn phần của mạch điện ba pha đối xứng được tính theo công thức nào sau đây?",
-        "options": [
-          "A. P = 3.Ud.Id.cosφ",
-          "B. P = √3.Ud.Id.cosφ = 3.Up.Ip.cosφ",
-          "C. P = Ud.Id.cosφ",
-          "D. P = √3.Up.Ip.cosφ"
-        ],
-        "correct": 1,
-        "explain": "Công suất tác dụng ba pha đối xứng bằng 3 lần công suất một pha: P = 3.P1p = 3.Up.Ip.cosφ. Dù nối sao hay tam giác, thay Ud và Id vào đều rút ra công thức chung: P = √3.Ud.Id.cosφ."
-      },
-      {
-        "id": 29,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một nguồn điện xoay chiều ba pha đối xứng có điện áp pha Up = 220 V. Điện áp dây Ud của nguồn điện này có giá trị xấp xỉ bằng bao nhiêu?",
-        "options": [
-          "A. 127 V",
-          "B. 220 V",
-          "C. 380 V (hoặc 381 V)",
-          "D. 440 V"
-        ],
-        "correct": 2,
-        "explain": "Ta có: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế quy chuẩn là 380 V)."
-      },
-      {
-        "id": 30,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cho mạch điện ba pha tải đối xứng nối theo hình sao (Y) trong đó điện áp pha Up = 220 V và tải ba pha gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp dây Ud lần lượt là",
-        "options": [
-          "A. Ip = 4,4 A; Id = 4,4 A; Ud ≈ 381 V",
-          "B. Ip = 7,6 A; Id = 4,4 A; Ud = 220 V",
-          "C. Ip = 4,4 A; Id = 7,6 A; Ud = 380 V",
-          "D. Ip = 2,2 A; Id = 2,2 A; Ud = 127 V"
-        ],
-        "correct": 0,
-        "explain": "Vì tải nối hình sao: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">50</span></span> = 4,4 A. Dòng điện dây: Id = Ip = 4,4 A. Điện áp dây: Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
-      },
-      {
-        "id": 31,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cho mạch điện ba pha tải đối xứng nối theo hình tam giác (Δ), điện áp dây Ud = 380 V, tải ba pha gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp pha Up lần lượt là",
-        "options": [
-          "A. Up = 220 V; Ip = 4,4 A; Id = 4,4 A",
-          "B. Up = 380 V; Ip = 7,6 A; Id ≈ 13,16 A",
-          "C. Up = 380 V; Ip = 13,16 A; Id = 7,6 A",
-          "D. Up = 380 V; Ip = 7,6 A; Id = 7,6 A"
-        ],
-        "correct": 1,
-        "explain": "Vì tải nối hình tam giác: Up = Ud = 380 V. Dòng điện pha: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">50</span></span> = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Bài tập 3 SGK trang 21)."
-      },
-      {
-        "id": 32,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cho nguồn điện xoay chiều ba pha bốn dây có Ud/Up = 380/220 V. Có 6 bóng đèn sợi đốt loại 220 V - 60 W và một động cơ ba pha loại 380 V - 2,2 kW. Để các thiết bị hoạt động bình thường trong mạch ba pha đối xứng thì:",
-        "options": [
-          "A. Bóng đèn nối tam giác, động cơ nối sao.",
-          "B. Bóng đèn chia đều nối hình sao (mỗi pha 2 bóng song song), động cơ nối hình tam giác.",
-          "C. Cả bóng đèn và động cơ đều nối hình sao có dây trung tính.",
-          "D. Cả bóng đèn và động cơ đều nối hình tam giác."
-        ],
-        "correct": 1,
-        "explain": "Bóng đèn có Uđm = 220 V = Up của nguồn nên phải nối hình sao (Y) có dây trung tính (6 bóng chia đều mỗi pha 2 bóng song song). Động cơ có Uđm = 380 V = Ud của nguồn nên phải nối hình tam giác (Δ) vào 3 dây pha (Bài tập 5 SGK trang 21)."
-      },
-      {
-        "id": 33,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một động cơ không đồng bộ ba pha khi làm việc ở mạng điện có điện áp dây Ud = 380 V thì tiêu thụ dòng điện dây Id = 10 A với hệ số công suất cosφ = 0,85. Công suất tác dụng P tiêu thụ của động cơ là",
-        "options": [
-          "A. 3 230 W",
-          "B. 5 594 W",
-          "C. 9 690 W",
-          "D. 1 860 W"
-        ],
-        "correct": 1,
-        "explain": "Công suất tiêu thụ ba pha: P = √3.Ud.Id.cosφ = √3 × 380 × 10 × 0,85 ≈ 1,732 × 380 × 8,5 ≈ 5 594 W (≈ 5,6 kW)."
-      },
-      {
-        "id": 34,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Tải ba pha đối xứng gồm 3 cuộn dây, mỗi cuộn có điện trở R = 8 Ω và cảm kháng XL = 6 Ω. Nối tải theo hình tam giác (Δ) vào nguồn có điện áp dây Ud = 220 V. Dòng điện pha Ip và dòng điện dây Id là",
-        "options": [
-          "A. Ip = 22 A; Id ≈ 38,1 A",
-          "B. Ip = 15,7 A; Id = 15,7 A",
-          "C. Ip = 27,5 A; Id = 47,6 A",
-          "D. Ip = 22 A; Id = 22 A"
-        ],
-        "correct": 0,
-        "explain": "Tổng trở mỗi pha: zp = √(R² + XL²) = √(8² + 6²) = 10 Ω. Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">10</span></span> = 22 A. Dòng điện dây: Id = √3.Ip = √3 × 22 ≈ 38,1 A."
-      },
-      {
-        "id": 35,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "So với hệ thống điện một pha, hệ thống truyền tải dòng điện xoay chiều ba pha có ưu điểm vượt trội nào?",
-        "options": [
-          "A. Chỉ cần dùng 1 dây dẫn duy nhất.",
-          "B. Tiết kiệm tiết diện kim loại làm dây dẫn khi truyền tải công suất lớn đi xa, và tạo ra từ trường quay giúp chế tạo động cơ ba pha cấu tạo đơn giản, bền bỉ.",
-          "C. Không bao giờ xảy ra sự cố ngắn mạch hay quá tải.",
-          "D. Luôn có điện áp một chiều ổn định không đổi."
-        ],
-        "correct": 1,
-        "explain": "Ưu điểm của mạch 3 pha: Tiết kiệm dây dẫn kim loại (đồng, nhôm) so với 3 đường dây 1 pha độc lập; tạo ra từ trường quay để vận hành động cơ điện ba pha - thiết bị cốt lõi trong công nghiệp (SGK trang 21)."
-      },
-      {
-        "id": 23,
+        "id": "cn_b4_06",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Hệ thống điện quốc gia thực hiện quá trình nào sau đây?",
+        "question": "Đường dây truyền tải điện siêu cao áp 500 kV Bắc - Nam mạch 1 được khởi công và khánh thành đóng điện vào các mốc thời gian lịch sử nào?",
         "options": [
-          "A. Khai thác than, dầu mỏ và lọc dầu thành phẩm.",
-          "B. Sản xuất, truyền tải, phân phối và tiêu thụ điện năng trên quy mô toàn quốc.",
-          "C. Sản xuất và lắp ráp các loại ô tô điện và xe máy điện.",
-          "D. Quản lí dự báo thời tiết và thủy văn toàn quốc."
-        ],
-        "correct": 1,
-        "explain": "Hệ thống điện quốc gia gồm nguồn điện, lưới điện và tải tiêu thụ liên kết thành hệ thống thống nhất để thực hiện quá trình sản xuất, truyền tải, phân phối và tiêu thụ điện năng (SGK trang 23)."
-      },
-      {
-        "id": 24,
-        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Cấu trúc chung của hệ thống điện quốc gia gồm ba thành phần chính là",
-        "options": [
-          "A. Trạm biến áp, công tơ điện và dây dẫn.",
-          "B. Nguồn điện, lưới điện và tải tiêu thụ.",
-          "C. Nhà máy nhiệt điện, nhà máy thủy điện và điện mặt trời.",
-          "D. Tủ tổng, tủ nhánh và tủ động lực."
-        ],
-        "correct": 1,
-        "explain": "Ba thành phần chính của hệ thống điện quốc gia là: Nguồn điện, Lưới điện và Tải tiêu thụ (Hình 4.2 và 4.3 SGK trang 22-23)."
-      },
-      {
-        "id": 25,
-        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Lưới điện truyền tải trong hệ thống điện quốc gia có cấp điện áp là",
-        "options": [
-          "A. dưới 1 kV.",
-          "B. từ 1 kV đến 35 kV.",
-          "C. từ 110 kV trở xuống.",
-          "D. trên 110 kV."
-        ],
-        "correct": 3,
-        "explain": "Lưới điện truyền tải có điện áp trên 110 kV, làm nhiệm vụ truyền tải điện năng số lượng lớn từ các nhà máy điện/trạm nguồn đến các trạm phân phối chính (SGK trang 23)."
-      },
-      {
-        "id": 26,
-        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Lưới điện phân phối trong hệ thống điện quốc gia có cấp điện áp là",
-        "options": [
-          "A. từ 110 kV trở xuống.",
-          "B. trên 110 kV đến 500 kV.",
-          "C. trên 220 kV.",
-          "D. chỉ duy nhất cấp 220 V."
+          "A. Khởi công ngày 05/04/1992 và đóng điện ngày 27/05/1994.",
+          "B. Khởi công ngày 30/04/1975 và đóng điện ngày 02/09/1985.",
+          "C. Khởi công ngày 01/01/2000 và đóng điện ngày 10/10/2010.",
+          "D. Khởi công ngày 19/05/1990 và đóng điện ngày 27/07/1995."
         ],
         "correct": 0,
-        "explain": "Lưới điện phân phối có điện áp từ 110 kV trở xuống, có nhiệm vụ truyền tải điện năng từ trạm điện phân phối chính đến các tải tiêu thụ (SGK trang 23)."
+        "explain": "Đường dây truyền tải 500 kV Bắc - Nam mạch 1 là công trình thế kỉ: khởi công ngày 05/04/1992 và hoàn thành đóng điện vận hành chính thức ngày 27/05/1994 (SGK Công nghệ 12 trang 24)."
       },
       {
-        "id": 27,
+        "id": "cn_b4_10",
         "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Cấp điện áp siêu cao áp trong hệ thống lưới điện Việt Nam là",
+        "question": "Vì sao tại các nhà máy điện nguồn, người ta bắt buộc phải đặt trạm biến áp TĂNG ÁP trước khi đưa điện lên đường dây truyền tải?",
         "options": [
-          "A. điện áp đến 1 kV.",
-          "B. điện áp trên 1 kV đến 35 kV.",
-          "C. điện áp từ trên 35 kV đến 220 kV.",
-          "D. điện áp trên 220 kV."
-        ],
-        "correct": 3,
-        "explain": "Phân cấp điện áp: Hạ áp (đến 1 kV); Trung áp (trên 1 kV đến 35 kV); Cao áp (từ trên 35 kV đến 220 kV); Siêu cao áp (trên 220 kV, ví dụ đường dây 500 kV) (SGK trang 23)."
-      },
-      {
-        "id": 28,
-        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Đường dây truyền tải điện 500 kV Bắc - Nam mạch 1 được khánh thành và đóng điện vào thời gian nào?",
-        "options": [
-          "A. Ngày 5/4/1992",
-          "B. Ngày 27/5/1994",
-          "C. Ngày 30/4/1975",
-          "D. Ngày 1/1/2000"
+          "A. Để tăng tần số dòng điện xoay chiều lên hàng nghìn Hz.",
+          "B. Để tăng điện áp U, từ đó giảm cường độ dòng điện I, giúp giảm mạnh công suất hao phí toả nhiệt trên dây dẫn theo công thức ΔP = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup>.R</span><span class=\"math-frac-bottom\">U<sup>2</sup>.cos<sup>2</sup>φ</span></span>.",
+          "C. Để chuyển đổi dòng xoay chiều thành dòng điện một chiều.",
+          "D. Để biến điện năng thành cơ năng dự trữ trong cột tháp."
         ],
         "correct": 1,
-        "explain": "Đường dây truyền tải điện 500 kV Bắc Nam được khởi công ngày 5/4/1992 và hoàn thành ngày 27/5/1994, dài 1487 km từ Hòa Bình đến TP. Hồ Chí Minh (SGK trang 24)."
+        "explain": "Theo định luật Jun-Len-xơ, công suất hao phí nhiệt trên đường dây là: ΔP = I²R = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup>.R</span><span class=\"math-frac-bottom\">U<sup>2</sup>.cos<sup>2</sup>φ</span></span>. Khi tăng điện áp U lên n lần thì hao phí ΔP giảm đi n² lần, giúp tiết kiệm chi phí xây dựng đường dây và truyền tải được công suất cực lớn đi xa."
       },
       {
-        "id": 29,
-        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Vì sao tại các nhà máy điện người ta phải sử dụng máy biến áp tăng áp trước khi đưa điện lên đường dây truyền tải đi xa?",
-        "options": [
-          "A. Để tăng tần số dòng điện lên cao.",
-          "B. Để tăng điện áp, từ đó giảm dòng điện chạy trên dây, giúp giảm hao phí công suất toả nhiệt trên đường dây.",
-          "C. Để chuyển điện xoay chiều thành một chiều.",
-          "D. Để bảo vệ máy phát điện không bị sét đánh."
-        ],
-        "correct": 1,
-        "explain": "Theo định luật Jun-Len-xơ, công suất hao phí toả nhiệt ΔP = I²R = (P²/U²cos²φ)R. Tăng điện áp U lên n lần thì hao phí giảm n² lần, giúp truyền tải công suất lớn đi xa hiệu quả và tiết kiệm tiết diện dây dẫn."
-      },
-      {
-        "id": 30,
-        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Thiết bị nào trong lưới điện có chức năng chuyển đổi cấp điện áp từ thấp lên cao hoặc từ cao xuống thấp?",
-        "options": [
-          "A. Máy phát điện xoay chiều.",
-          "B. Máy biến áp.",
-          "C. Động cơ không đồng bộ ba pha.",
-          "D. Aptomat khối MCCB."
-        ],
-        "correct": 1,
-        "explain": "Trạm biến áp thực hiện chức năng chuyển đổi cấp điện áp từ điện áp thấp lên điện áp cao hoặc ngược lại thông qua các máy biến áp (SGK trang 24)."
-      },
-      {
-        "id": 31,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Quá trình sản xuất điện năng là quá trình",
-        "options": [
-          "A. biến đổi điện năng thành nhiệt năng và cơ năng.",
-          "B. chuyển đổi các dạng năng lượng khác trong tự nhiên thành năng lượng điện.",
-          "C. truyền tải điện năng từ nhà máy đến hộ gia đình.",
-          "D. lưu trữ điện năng trong tụ điện phẳng."
-        ],
-        "correct": 1,
-        "explain": "Sản xuất điện năng là quá trình chuyển đổi các dạng năng lượng khác nhau thành năng lượng điện (SGK trang 27)."
-      },
-      {
-        "id": 32,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Nguồn năng lượng nào sau đây là nguồn năng lượng tái tạo?",
-        "options": [
-          "A. Than đá",
-          "B. Dầu mỏ",
-          "C. Năng lượng dòng nước (thủy điện)",
-          "D. Khí thiên nhiên"
-        ],
-        "correct": 2,
-        "explain": "Năng lượng dòng nước, năng lượng gió, năng lượng mặt trời, sinh khối là các nguồn năng lượng tái tạo. Than đá, dầu mỏ, khí thiên nhiên là nhiên liệu hóa thạch không tái tạo (Hình 5.2 SGK trang 26)."
-      },
-      {
-        "id": 33,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Nguyên lí hoạt động của nhà máy thủy điện là",
-        "options": [
-          "A. sử dụng thế năng của nước trong hồ chứa chuyển thành động năng làm quay turbine của máy phát điện tạo ra điện.",
-          "B. đốt than để đun sôi nước tạo hơi nước đẩy cánh quạt.",
-          "C. sử dụng phản ứng nhiệt hạch giải phóng nhiệt lượng lớn.",
-          "D. dùng ánh sáng mặt trời chiếu vào tấm silic tạo dòng electron."
-        ],
-        "correct": 0,
-        "explain": "Nhà máy thủy điện sử dụng thế năng của nước trong hồ chứa để chuyển thành động năng làm quay turbine của máy phát điện tạo ra điện (SGK trang 27)."
-      },
-      {
-        "id": 34,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Một trong những nhược điểm lớn của nhà máy thủy điện là",
-        "options": [
-          "A. phát thải lượng lớn khí nhà kính CO2 trong quá trình vận hành.",
-          "B. công suất phát điện phụ thuộc nhiều vào lượng nước tích trữ trong hồ chứa (theo mùa) và tác động làm thay đổi chế độ thủy văn, hệ sinh thái.",
-          "C. chi phí vận hành hàng ngày rất cao.",
-          "D. tuổi thọ công trình rất ngắn dưới 5 năm."
-        ],
-        "correct": 1,
-        "explain": "Nhược điểm của thủy điện: Công suất phát phụ thuộc vào lưu lượng nước trong hồ chứa (hạn hán thì giảm mạnh), chi phí đầu tư ban đầu lớn, làm thay đổi cơ chế thủy văn và đa dạng sinh học (SGK trang 27)."
-      },
-      {
-        "id": 35,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Ưu điểm nổi bật của nhà máy nhiệt điện so với nhà máy thủy điện là",
-        "options": [
-          "A. hoàn toàn không gây ô nhiễm môi trường.",
-          "B. có thể vận hành liên tục, ổn định quanh năm mà không phụ thuộc vào điều kiện thời tiết hay mùa vụ.",
-          "C. sử dụng nguồn năng lượng tái tạo vô tận.",
-          "D. không tốn chi phí mua nhiên liệu vận hành."
-        ],
-        "correct": 1,
-        "explain": "Ưu điểm của nhiệt điện là công suất phát điện lớn, chi phí đầu tư ban đầu không quá cao, xây dựng nhanh và có thể vận hành liên tục, không phụ thuộc vào thời tiết (SGK trang 28)."
-      },
-      {
-        "id": 36,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Nhà máy điện hạt nhân chuyển hóa năng lượng từ đâu để sản xuất điện?",
-        "options": [
-          "A. Đốt cháy khí hidro trong bầu khí quyển.",
-          "B. Năng lượng nhiệt sinh ra từ các phản ứng phân hạch hạt nhân để đun nóng nước tạo hơi nước áp suất cao quay turbine.",
-          "C. Thế năng của các hạt nhân phóng xạ nặng.",
-          "D. Điện trường tĩnh điện xung quanh lò phản ứng."
-        ],
-        "correct": 1,
-        "explain": "Nhà máy điện hạt nhân sử dụng năng lượng từ phản ứng phân hạch (thường là Uranium) để đun nóng nước tạo ra hơi nước có áp suất cao làm quay turbine của máy phát điện tạo ra điện (SGK trang 28-29)."
-      },
-      {
-        "id": 37,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Bộ phận nào trong hệ thống điện mặt trời có chức năng chuyển đổi dòng điện một chiều (DC) từ các tấm pin mặt trời thành dòng xoay chiều (AC) để cấp cho tải và hòa vào lưới điện?",
-        "options": [
-          "A. Tấm pin mặt trời (PV)",
-          "B. Bộ biến tần (Inverter)",
-          "C. Pin lưu trữ (Battery)",
-          "D. Máy biến áp phân phối"
-        ],
-        "correct": 1,
-        "explain": "Nguồn điện do tấm pin mặt trời tạo ra là dòng điện một chiều (DC), cần qua bộ điều khiển sạc và biến tần (Inverter - biến đổi DC thành AC) trước khi hòa vào lưới điện hoặc cung cấp cho các thiết bị xoay chiều (Hình 5.7 SGK trang 30)."
-      },
-      {
-        "id": 38,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Tại sao các hệ thống điện mặt trời và điện gió thường cần có hệ thống lưu trữ năng lượng (pin tích năng / ắc quy)?",
-        "options": [
-          "A. Vì công suất của chúng rất lớn, lưới điện quốc gia không thể tiếp nhận hết.",
-          "B. Vì gió và ánh sáng mặt trời có tính gián đoạn, phụ thuộc vào thời tiết, ngày đêm nên cần tích trữ để cấp điện khi không đủ gió hoặc nắng.",
-          "C. Để làm mát cánh quạt turbine gió và các tấm pin.",
-          "D. Để tự động chuyển đổi điện áp từ cao xuống thấp."
-        ],
-        "correct": 1,
-        "explain": "Ánh sáng mặt trời không có vào ban đêm và suy giảm vào ngày mưa, gió cũng thay đổi thất thường theo thời gian. Do đó cần hệ thống pin tích năng để lưu trữ khi phát dư thừa và xả ra cung cấp khi thiếu hụt (SGK trang 29-30)."
-      },
-      {
-        "id": 39,
+        "id": "cn_b6_01",
         "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-        "question": "Mạng điện sản xuất quy mô nhỏ thường có công suất tiêu thụ điện năng trong khoảng",
+        "question": "Mạng điện sản xuất quy mô nhỏ là mạng điện có công suất tiêu thụ điện năng nằm trong khoảng nào sau đây?",
         "options": [
-          "A. dưới 1 kW.",
-          "B. từ vài chục đến vài trăm kW.",
-          "C. từ vài nghìn đến vài chục nghìn MW.",
-          "D. trên 1 000 000 kW."
+          "A. Dưới 1 kW.",
+          "B. Từ vài chục đến vài trăm kW.",
+          "C. Từ vài nghìn đến vài chục nghìn MW.",
+          "D. Trên 1 000 000 kW."
         ],
         "correct": 1,
-        "explain": "Mạng điện sản xuất quy mô nhỏ là mạng điện có công suất tiêu thụ điện năng từ vài chục đến vài trăm kW, lấy điện từ lưới phân phối cấp cho tải (SGK trang 31)."
+        "explain": "Theo định nghĩa chuẩn SGK Công nghệ 12 trang 31: Mạng điện sản xuất quy mô nhỏ là mạng điện có công suất tiêu thụ điện năng từ vài chục đến vài trăm kW, lấy điện từ lưới điện phân phối để cung cấp cho cơ sở sản xuất."
       },
       {
-        "id": 40,
+        "id": "cn_b6_02",
         "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-        "question": "Đặc điểm nào sau đây là đặc điểm của mạng điện sản xuất quy mô nhỏ?",
+        "question": "Ba đặc điểm quan trọng nhất của mạng điện sản xuất quy mô nhỏ bao gồm:",
         "options": [
-          "A. Tải phân bố rải rác trên phạm vi hàng trăm km vuông.",
-          "B. Tải phân bố tập trung, mạng điện dùng cho thiết bị sản xuất và mạng điện chiếu sáng hoạt động độc lập.",
-          "C. Toàn bộ thiết bị đều dùng điện áp 110 kV.",
-          "D. Không cần thiết bị đóng cắt và bảo vệ quá tải."
+          "A. Công suất nhỏ dưới 100 W; dùng nguồn pin năng lượng mặt trời; không có aptomat.",
+          "B. Công suất tiêu thụ từ vài chục đến vài trăm kW; phụ tải phân bố tập trung; mạng điện động lực và mạng điện chiếu sáng hoạt động độc lập.",
+          "C. Dùng cấp điện áp siêu cao áp 500 kV; phụ tải rải rác trên diện tích hàng nghìn km²; mạng động lực và chiếu sáng mắc chung trên một công tắc.",
+          "D. Toàn bộ thiết bị đều dùng dòng điện một chiều 24 V."
         ],
         "correct": 1,
-        "explain": "Mạng điện sản xuất quy mô nhỏ có các đặc điểm: tải phân bố tập trung; dùng máy biến áp riêng hoặc lấy điện từ đường hạ áp 380/220 V; mạng điện cho thiết bị sản xuất và mạng điện chiếu sáng hoạt động độc lập (SGK trang 31)."
+        "explain": "Ba đặc điểm cốt lõi học sinh bắt buộc phải ghi nhớ theo SGK trang 31: 1. Công suất tiêu thụ từ vài chục đến vài trăm kW; 2. Tải tiêu thụ phân bố tập trung trong phân xưởng; 3. Mạng điện động lực và mạng điện chiếu sáng hoạt động độc lập."
       },
       {
-        "id": 41,
+        "id": "cn_b6_04",
         "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-        "question": "Trạm biến áp hạ áp trong mạng điện sản xuất quy mô nhỏ có nhiệm vụ gì?",
+        "question": "Vì sao trong mạng điện sản xuất quy mô nhỏ, mạng điện ĐỘNG LỰC và mạng điện CHIẾU SÁNG bắt buộc phải hoạt động ĐỘC LẬP?",
         "options": [
-          "A. Tăng điện áp từ 380 V lên 500 kV để truyền tải đi xa.",
-          "B. Hạ áp từ lưới điện phân phối (thường là đường trung áp 22 kV hoặc 35 kV) xuống điện áp hạ áp 380/220 V.",
-          "C. Đo đếm trực tiếp công suất của từng bóng đèn trong xưởng.",
-          "D. Biến đổi dòng xoay chiều thành dòng một chiều cho toàn bộ nhà máy."
+          "A. Để tránh việc bóng đèn chiếu sáng làm nóng hỏng động cơ điện.",
+          "B. Để khi xảy ra sự cố quá tải hay ngắn mạch ở máy móc làm nhảy aptomat tủ động lực, hệ thống đèn chiếu sáng vẫn có điện bình thường, giúp công nhân không bị hoảng loạn, thuận tiện thoát hiểm và xử lí sự cố an toàn.",
+          "C. Để công ty điện lực dễ ghi số điện của từng bóng đèn.",
+          "D. Để tiết kiệm chi phí lắp đặt dây dẫn."
         ],
         "correct": 1,
-        "explain": "Trạm biến áp có vai trò hạ áp từ lưới điện phân phối (trung áp 22 kV hoặc 35 kV) xuống điện áp hạ áp (380/220 V) cấp cho cơ sở sản xuất (SGK trang 33)."
+        "explain": "Tải động lực (máy móc, động cơ) thường có dòng khởi động lớn và dễ xảy ra sự cố quá tải. Tách độc lập mạng chiếu sáng giúp hệ thống chiếu sáng không bị chập chờn hay mất điện đột ngột khi tải động lực gặp sự cố, đảm bảo an toàn lao động tối đa (SGK trang 31)."
       },
       {
-        "id": 42,
-        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-        "question": "Tủ điện nào sau đây nhận điện trực tiếp từ máy biến áp hạ áp để phân phối cho các tủ điện nhánh của các phân xưởng?",
-        "options": [
-          "A. Tủ điện chiếu sáng",
-          "B. Tủ điện động lực",
-          "C. Tủ điện phân phối tổng",
-          "D. Tủ điều khiển máy CNC"
-        ],
-        "correct": 2,
-        "explain": "Tủ điện phân phối tổng được đặt ở trạm biến áp, lấy điện từ đường hạ áp 380/220 V của máy biến áp để phân phối cho các tủ điện phân phối nhánh ở các phân xưởng sản xuất (SGK trang 33)."
-      },
-      {
-        "id": 43,
-        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-        "question": "Tủ điện động lực trong phân xưởng sản xuất có vai trò chính là",
-        "options": [
-          "A. cấp nguồn cho hệ thống chiếu sáng bảo vệ hành lang.",
-          "B. lấy nguồn từ tủ phân phối nhánh để cấp cho tải tiêu thụ là các máy sản xuất trong phân xưởng (động cơ điện, máy hàn, máy công cụ...).",
-          "C. tăng điện áp từ 220 V lên 22 kV.",
-          "D. lọc sóng hài và tích trữ điện năng."
-        ],
-        "correct": 1,
-        "explain": "Tủ điện động lực được đặt ở phân xưởng sản xuất, lấy nguồn từ tủ phân phối nhánh để cấp cho tải tiêu thụ là các máy sản xuất trong phân xưởng, chứa thiết bị đóng cắt và bảo vệ quá tải, ngắn mạch (SGK trang 33)."
-      },
-      {
-        "id": 44,
-        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-        "question": "Khi thực hiện thao tác ĐÓNG ĐIỆN cho một xưởng sản xuất, quy trình an toàn chuẩn là gì?",
-        "options": [
-          "A. Đóng từ thiết bị tiêu thụ trước, sau đó mới đóng ngược về tủ tổng và nguồn.",
-          "B. Đóng lần lượt từ nguồn đến tải (Trạm biến áp -> Tủ phân phối tổng -> Tủ phân phối nhánh -> Tủ động lực/chiếu sáng -> Bật thiết bị máy móc).",
-          "C. Bật tất cả các máy móc cùng lúc rồi mới đóng cầu dao nguồn.",
-          "D. Đóng ngẫu nhiên bất kì công tắc nào trước cũng được."
-        ],
-        "correct": 1,
-        "explain": "Quy trình đóng điện an toàn: Đóng lần lượt từ nguồn đến tải (Nguồn -> Tủ tổng -> Tủ nhánh -> Tủ động lực / chiếu sáng -> Tải máy móc). Mục đích là để các cấp bảo vệ sẵn sàng và tránh quá tải đột ngột (SGK trang 33)."
-      },
-      {
-        "id": 45,
-        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-        "question": "Vì sao khi CẮT ĐIỆN xưởng sản xuất, người ta phải thực hiện theo chiều ngược lại (cắt từ phía tải trước, sau đó mới cắt dần về tủ nhánh và tủ tổng)?",
-        "options": [
-          "A. Để tránh tiêu tốn nhiều điện năng không cần thiết.",
-          "B. Để ngắt dòng điện tải đang chạy lớn trước, tránh sinh ra hồ quang điện nguy hiểm gây cháy nổ, hư hỏng tiếp điểm tại cầu dao/aptomat phía nguồn.",
-          "C. Để làm nguội dây dẫn từ từ.",
-          "D. Vì tủ phân phối tổng không có khả năng ngắt dòng điện."
-        ],
-        "correct": 1,
-        "explain": "Cắt điện từ tải về nguồn nhằm giảm dòng điện trước khi ngắt các thiết bị phía nguồn. Nếu ngắt tủ tổng khi tải đang ăn dòng cực lớn sẽ phát sinh hồ quang điện rất mạnh, có thể gây nổ tiếp điểm, phóng điện nguy hiểm cho người vận hành (SGK trang 33)."
-      },
-      {
-        "id": 46,
-        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-        "question": "Mạng điện hạ áp dùng trong sinh hoạt thuộc loại lưới điện nào?",
-        "options": [
-          "A. Lưới điện siêu cao áp.",
-          "B. Lưới điện truyền tải.",
-          "C. Lưới điện phân phối.",
-          "D. Lưới điện cao áp trên 110 kV."
-        ],
-        "correct": 2,
-        "explain": "Mạng điện hạ áp dùng trong sinh hoạt thuộc lưới điện phân phối, có nhiệm vụ truyền tải năng lượng điện từ trạm biến áp phân phối đến công tơ điện của các hộ gia đình (SGK trang 34)."
-      },
-      {
-        "id": 47,
-        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-        "question": "Thông số kĩ thuật điện áp định mức và tần số của mạng điện hạ áp sinh hoạt tại Việt Nam là",
-        "options": [
-          "A. 110 V / 60 Hz",
-          "B. 380/220 V / 50 Hz",
-          "C. 220 V / 60 Hz",
-          "D. 500 kV / 50 Hz"
-        ],
-        "correct": 1,
-        "explain": "Thông số kĩ thuật định mức của mạng điện hạ áp dùng trong sinh hoạt ở nước ta là: Điện áp dây/pha: 380/220 V; Tần số điện lưới: 50 Hz (SGK trang 34 & 36)."
-      },
-      {
-        "id": 48,
-        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-        "question": "Sai số điện áp cho phép đối với mạng điện hạ áp dùng trong sinh hoạt là không quá",
-        "options": [
-          "A. ± 1%",
-          "B. ± 5%",
-          "C. ± 15%",
-          "D. ± 20%"
-        ],
-        "correct": 1,
-        "explain": "Theo SGK Công nghệ 12 trang 36: Mức sai số cho phép đối với điện áp là không quá ± 5%, tần số cũng không quá ± 5% so với giá trị định mức."
-      },
-      {
-        "id": 49,
-        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-        "question": "Công suất của lưới điện hạ áp sinh hoạt thường dao động trong khoảng nào tùy thuộc quy mô khu dân cư?",
-        "options": [
-          "A. Từ 1 kW đến 10 kW",
-          "B. Từ 50 kW đến 2 500 kW",
-          "C. Từ 10 000 kW đến 50 000 kW",
-          "D. Trên 100 000 kW"
-        ],
-        "correct": 1,
-        "explain": "Công suất của lưới điện hạ áp sinh hoạt từ 50 kW đến 2 500 kW, tuỳ thuộc vào công suất của máy biến áp cấp điện cho khu dân cư đó (SGK trang 36)."
-      },
-      {
-        "id": 50,
-        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-        "question": "Đường dây trục chính nối từ tủ điện phân phối tổng đến các tủ điện phân phối khu vực (nhánh) thường là đường dây",
-        "options": [
-          "A. một pha hai dây.",
-          "B. ba pha ba dây không có dây trung tính.",
-          "C. ba pha bốn dây.",
-          "D. một pha một dây."
-        ],
-        "correct": 2,
-        "explain": "Đường dây trục chính nối từ tủ điện phân phối tổng đến các tủ điện phân phối nhánh là ba pha bốn dây (gồm 3 dây pha và 1 dây trung tính) (SGK trang 36)."
-      },
-      {
-        "id": 51,
-        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-        "question": "Đường dây nhánh nối từ tủ điện phân phối khu vực vào công tơ điện của các hộ gia đình chủ yếu là",
-        "options": [
-          "A. đường dây một pha hai dây (dây pha và dây trung tính).",
-          "B. đường dây cáp quang.",
-          "C. đường dây cao áp 22 kV.",
-          "D. đường dây siêu dẫn nhiệt độ thấp."
-        ],
-        "correct": 0,
-        "explain": "Đường dây nhánh nối từ tủ điện khu vực đến các hộ gia đình chủ yếu là các đường một pha hai dây, một số ít trường hợp có nhu cầu lớn là ba pha bốn dây (SGK trang 36)."
-      },
-      {
-        "id": 52,
-        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-        "question": "Loại aptomat nào sau đây thường được sử dụng trong tủ điện phân phối tổng tại trạm biến áp hạ áp do có khả năng đóng cắt dòng điện rất lớn?",
-        "options": [
-          "A. MCB (Miniature Circuit Breaker - aptomat tép)",
-          "B. Cầu chì ống sứ nhỏ",
-          "C. ACB (Air Circuit Breaker - máy cắt không khí)",
-          "D. Công tắc xoay một cực"
-        ],
-        "correct": 2,
-        "explain": "Trong các tủ điện phân phối: ACB (máy cắt không khí) và MCCB (aptomat khối) thường dùng cho tủ tổng do dòng định mức lớn; còn MCB (aptomat tép) thường dùng cho tủ khu vực và hộ gia đình (Hình 7.3 SGK trang 35-36)."
-      },
-      {
-        "id": 53,
-        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
-        "question": "Để đảm bảo mạng điện ba pha không bị lệch pha nghiêm trọng khi cấp điện cho các hộ gia đình, các kĩ sư thiết kế mạng điện cần phải",
-        "options": [
-          "A. nối tất cả các hộ gia đình vào cùng một pha duy nhất.",
-          "B. phân chia các đường nhánh cấp điện cho các hộ gia đình rải đều để đảm bảo cân bằng tải giữa ba pha của nguồn.",
-          "C. bắt buộc mọi gia đình phải dùng động cơ ba pha.",
-          "D. không nối dây trung tính về nguồn."
-        ],
-        "correct": 1,
-        "explain": "Các đường rẽ nhánh một pha được thiết kế chia đều cho các pha nhằm đảm bảo cân bằng tải giữa các pha của nguồn điện, giảm dòng điện chạy trong dây trung tính và ổn định điện áp (SGK trang 36)."
-      },
-      {
-        "id": 54,
-        "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-        "question": "a. Khi lò sấy nối hình tam giác, điện áp đặt trên mỗi điện trở R bằng 380 V.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / TÌNH HUỐNG THỰC TẾ: Mạch điện ba pha xưởng cơ khí</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một xưởng cơ khí nhỏ sử dụng nguồn điện ba pha bốn dây với điện áp dây Ud = 380 V, điện áp pha Up = 220 V. Phân xưởng có một lò sấy điện trở ba pha đối xứng công suất lớn gồm 3 điện trở R = 38 Ω mắc hình tam giác (Δ), và một hệ thống đèn chiếu sáng gồm 12 bóng sợi đốt loại 220 V - 100 W được chia đều cho 3 pha mắc hình sao (Y) có dây trung tính.</div>\n    </div>",
+        "id": "cn_b4_18",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "a. Lưới điện truyền tải bao gồm các đường dây và trạm biến áp có cấp điện áp từ 110 kV trở xuống.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH VẬN HÀNH: Hệ thống truyền tải điện Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Tổng công ty Truyền tải điện Quốc gia (EVNNPT) quản lí vận hành hệ thống lưới điện truyền tải điện áp 220 kV và 500 kV liên kết các nhà máy điện nguồn với các trung tâm phụ tải lớn trên phạm vi cả nước.</div>\n    </div>",
         "options": [
           "A. Đúng",
           "B. Sai"
         ],
-        "correct": 0,
-        "explain": "ĐÚNG. Khi tải nối hình tam giác (Δ), điện áp pha trên tải bằng điện áp dây của nguồn: Up(tải) = Ud = 380 V.",
+        "correct": 1,
+        "explain": "SAI. Lưới điện truyền tải có cấp điện áp TRÊN 110 kV (ở nước ta là 220 kV và 500 kV); còn lưới điện từ 110 kV trở xuống thuộc về lưới điện phân phối (SGK trang 23).",
         "subLabel": "1a"
       },
       {
-        "id": 55,
-        "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-        "question": "b. Cường độ dòng điện chạy qua mỗi điện trở của lò sấy là Ip = 10 A.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / TÌNH HUỐNG THỰC TẾ: Mạch điện ba pha xưởng cơ khí</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một xưởng cơ khí nhỏ sử dụng nguồn điện ba pha bốn dây với điện áp dây Ud = 380 V, điện áp pha Up = 220 V. Phân xưởng có một lò sấy điện trở ba pha đối xứng công suất lớn gồm 3 điện trở R = 38 Ω mắc hình tam giác (Δ), và một hệ thống đèn chiếu sáng gồm 12 bóng sợi đốt loại 220 V - 100 W được chia đều cho 3 pha mắc hình sao (Y) có dây trung tính.</div>\n    </div>",
+        "id": "cn_b4_19",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "b. Đường dây 500 kV mạch 1 đóng vai trò lịch sử kết nối hệ thống điện ba miền thành một hệ thống điện quốc gia thống nhất.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH VẬN HÀNH: Hệ thống truyền tải điện Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Đường dây 500 kV mạch 1 được đóng điện năm 1994, truyền tải nguồn điện dôi dư từ miền Bắc (nhà máy thủy điện Hòa Bình) vào miền Trung và miền Nam.</div>\n    </div>",
         "options": [
           "A. Đúng",
           "B. Sai"
         ],
         "correct": 0,
-        "explain": "ĐÚNG. Dòng điện pha của lò sấy: I<sub>p</sub> = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = 380 / 38 = 10 A.",
+        "explain": "ĐÚNG. Đây là ý nghĩa lớn nhất của đường dây 500 kV Bắc - Nam mạch 1: liên kết lưới điện ba miền, xóa bỏ tình trạng chia cắt năng lượng và tạo tiền đề phát triển kinh tế toàn diện.",
         "subLabel": "1b"
       },
       {
-        "id": 56,
-        "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-        "question": "c. Dòng điện dây cấp cho lò sấy nối hình tam giác có độ lớn bằng dòng điện pha Ip = 10 A.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / TÌNH HUỐNG THỰC TẾ: Mạch điện ba pha xưởng cơ khí</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một xưởng cơ khí nhỏ sử dụng nguồn điện ba pha bốn dây với điện áp dây Ud = 380 V, điện áp pha Up = 220 V. Phân xưởng có một lò sấy điện trở ba pha đối xứng công suất lớn gồm 3 điện trở R = 38 Ω mắc hình tam giác (Δ), và một hệ thống đèn chiếu sáng gồm 12 bóng sợi đốt loại 220 V - 100 W được chia đều cho 3 pha mắc hình sao (Y) có dây trung tính.</div>\n    </div>",
+        "id": "cn_b4_20",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "c. Trong hệ thống điện quốc gia, điện năng có thể được lưu trữ dễ dàng với dung lượng không giới hạn vào các đường dây dẫn điện.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH VẬN HÀNH: Hệ thống truyền tải điện Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Điều độ viên hệ thống điện phải tính toán liên tục lượng điện phát ra và lượng điện tiêu thụ trong từng giây để cân bằng hệ thống.</div>\n    </div>",
         "options": [
           "A. Đúng",
           "B. Sai"
         ],
         "correct": 1,
-        "explain": "SAI. Đối với tải nối hình tam giác (Δ), dòng điện dây Id = √3.Ip = √3 × 10 ≈ 17,32 A, không bằng Ip.",
+        "explain": "SAI. Đặc thù của điện năng là sản xuất, truyền tải và tiêu thụ diễn ra hầu như đồng thời tại cùng một thời điểm, đường dây chỉ có chức năng dẫn điện chứ không tích trữ được năng lượng. Do đó hệ thống luôn phải đảm bảo công suất phát bằng công suất tiêu thụ cộng hao phí.",
         "subLabel": "1c"
       },
       {
-        "id": 57,
-        "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-        "question": "d. Để các bóng đèn 220V sáng bình thường, bắt buộc phải nối hệ thống đèn theo hình sao có dây trung tính vào nguồn 380/220V.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / TÌNH HUỐNG THỰC TẾ: Mạch điện ba pha xưởng cơ khí</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một xưởng cơ khí nhỏ sử dụng nguồn điện ba pha bốn dây với điện áp dây Ud = 380 V, điện áp pha Up = 220 V. Phân xưởng có một lò sấy điện trở ba pha đối xứng công suất lớn gồm 3 điện trở R = 38 Ω mắc hình tam giác (Δ), và một hệ thống đèn chiếu sáng gồm 12 bóng sợi đốt loại 220 V - 100 W được chia đều cho 3 pha mắc hình sao (Y) có dây trung tính.</div>\n    </div>",
+        "id": "cn_gk1_ds1d",
+        "topic": "HỆ THỐNG ĐIỆN QUỐC GIA (ĐÚNG/SAI)",
+        "question": "d. Đường dây 500 kV mạch 3 (Quảng Trạch - Phố Nối) khánh thành năm 2024 giúp tăng cường liên kết lưới truyền tải và an ninh năng lượng cho miền Bắc.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH VẬN HÀNH: Hệ thống truyền tải điện Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Tổng công ty Truyền tải điện Quốc gia (EVNNPT) quản lí vận hành hệ thống lưới điện truyền tải điện áp 220 kV và 500 kV liên kết các nhà máy điện nguồn với các trung tâm phụ tải lớn trên phạm vi cả nước.</div>\n    </div>",
         "options": [
           "A. Đúng",
           "B. Sai"
         ],
         "correct": 0,
-        "explain": "ĐÚNG. Nguồn có điện áp pha Up = 220 V phù hợp với điện áp định mức của bóng đèn (220 V). Nối hình sao có dây trung tính giữ cho điện áp mỗi pha luôn ổn định ở mức 220 V ngay cả khi tải các pha không hoàn toàn bằng nhau.",
+        "explain": "ĐÚNG. Dự án 500 kV mạch 3 Quảng Trạch - Phố Nối dài 519 km khánh thành tháng 8/2024 giúp truyền tải công suất điện từ miền Trung ra miền Bắc, giải tỏa nguy cơ thiếu điện vào cao điểm nắng nóng.",
         "subLabel": "1d"
       },
       {
-        "id": 58,
-        "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-        "question": "a. Đường dây 500 kV Bắc - Nam thuộc lưới điện truyền tải của hệ thống điện quốc gia.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / THÔNG TIN: Hệ thống điện quốc gia Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Hệ thống điện quốc gia Việt Nam gồm các nguồn điện (thủy điện Sơn La, Hòa Bình; nhiệt điện Phả Lại, Vĩnh Tân; điện mặt trời, điện gió Ninh Thuận...), liên kết với nhau qua lưới truyền tải siêu cao áp 500 kV Bắc - Nam và các cấp 220 kV, 110 kV để cấp điện cho các trung tâm phụ tải và hộ sinh hoạt trên toàn quốc.</div>\n    </div>",
+        "id": "cn_b6_16",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "a. Mạng điện sản xuất quy mô nhỏ có công suất tiêu thụ trong khoảng từ vài chục đến vài trăm kW.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH THỰC TẾ: Phân xưởng cơ khí chính xác An Phát</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Xưởng cơ khí An Phát có diện tích 800 m², trang bị 10 máy tiện CNC, 5 máy phay cơ và hệ thống đèn chiếu sáng LED phân xưởng. Nguồn điện lấy từ trạm biến áp hạ áp 22/0,4 kV riêng của công ty.</div>\n    </div>",
         "options": [
           "A. Đúng",
           "B. Sai"
         ],
         "correct": 0,
-        "explain": "ĐÚNG. Lưới truyền tải có điện áp trên 110 kV, đường dây 500 kV thuộc cấp siêu cao áp và là trục truyền tải điện năng chính kết nối hai miền Nam - Bắc.",
+        "explain": "ĐÚNG. Mạng điện sản xuất quy mô nhỏ có công suất tiêu thụ điển hình từ vài chục đến vài trăm kW (SGK trang 31).",
         "subLabel": "2a"
       },
       {
-        "id": 59,
-        "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-        "question": "b. Các nhà máy nhiệt điện than như Phả Lại, Vĩnh Tân có ưu điểm là không thải khí CO2 ra môi trường.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / THÔNG TIN: Hệ thống điện quốc gia Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Hệ thống điện quốc gia Việt Nam gồm các nguồn điện (thủy điện Sơn La, Hòa Bình; nhiệt điện Phả Lại, Vĩnh Tân; điện mặt trời, điện gió Ninh Thuận...), liên kết với nhau qua lưới truyền tải siêu cao áp 500 kV Bắc - Nam và các cấp 220 kV, 110 kV để cấp điện cho các trung tâm phụ tải và hộ sinh hoạt trên toàn quốc.</div>\n    </div>",
+        "id": "cn_b6_17",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "b. Mạng điện động lực cấp cho các máy tiện CNC và mạng điện chiếu sáng xưởng An Phát phải được cấp nguồn từ cùng một công tắc chung để tiết kiệm tủ điện.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH THỰC TẾ: Phân xưởng cơ khí chính xác An Phát</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Xưởng cơ khí An Phát có diện tích 800 m², trang bị 10 máy tiện CNC, 5 máy phay cơ và hệ thống đèn chiếu sáng LED phân xưởng. Nguồn điện lấy từ trạm biến áp hạ áp 22/0,4 kV riêng của công ty.</div>\n    </div>",
         "options": [
           "A. Đúng",
           "B. Sai"
         ],
         "correct": 1,
-        "explain": "SAI. Nhiệt điện than đốt nhiên liệu hóa thạch nên thải ra lượng khí nhà kính CO2, tro xỉ và khí SO2, NOx rất lớn gây ô nhiễm môi trường.",
+        "explain": "SAI. Mạng điện động lực và mạng điện chiếu sáng bắt buộc phải hoạt động độc lập để đảm bảo an toàn, khi máy móc bị sự cố nhảy aptomat thì đèn chiếu sáng vẫn sáng bình thường.",
         "subLabel": "2b"
       },
       {
-        "id": 60,
-        "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-        "question": "c. Điện mặt trời và điện gió là các nguồn năng lượng tái tạo sạch nhưng công suất phụ thuộc vào điều kiện tự nhiên.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / THÔNG TIN: Hệ thống điện quốc gia Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Hệ thống điện quốc gia Việt Nam gồm các nguồn điện (thủy điện Sơn La, Hòa Bình; nhiệt điện Phả Lại, Vĩnh Tân; điện mặt trời, điện gió Ninh Thuận...), liên kết với nhau qua lưới truyền tải siêu cao áp 500 kV Bắc - Nam và các cấp 220 kV, 110 kV để cấp điện cho các trung tâm phụ tải và hộ sinh hoạt trên toàn quốc.</div>\n    </div>",
+        "id": "cn_b6_18",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "c. Khi hết ca làm việc, thợ điện ngắt điện bằng cách cắt aptomat tổng ở trạm biến áp trước khi tắt các máy tiện CNC đang gia công.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH THỰC TẾ: Phân xưởng cơ khí chính xác An Phát</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Xưởng cơ khí An Phát có diện tích 800 m², trang bị 10 máy tiện CNC, 5 máy phay cơ và hệ thống đèn chiếu sáng LED phân xưởng. Nguồn điện lấy từ trạm biến áp hạ áp 22/0,4 kV riêng của công ty.</div>\n    </div>",
         "options": [
           "A. Đúng",
           "B. Sai"
         ],
-        "correct": 0,
-        "explain": "ĐÚNG. Năng lượng mặt trời và gió là nguồn năng lượng tái tạo, vô tận và sạch; tuy nhiên nhược điểm là công suất thấp hơn nhà máy lớn và thiếu ổn định (phụ thuộc cường độ nắng và sức gió).",
+        "correct": 1,
+        "explain": "SAI. Quy trình cắt điện an toàn bắt buộc phải cắt từ TẢI về NGUỒN: Tắt từng máy tiện CNC -> Cắt aptomat tủ động lực -> Cắt tủ nhánh -> Cắt tủ tổng để dập dòng phụ tải, tránh phát sinh hồ quang gây nổ và hỏng tiếp điểm ở tủ nguồn.",
         "subLabel": "2c"
       },
       {
-        "id": 61,
-        "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-        "question": "d. Các trạm biến áp trung gian 220/110 kV và 110/22 kV làm nhiệm vụ tăng điện áp để đưa vào các hộ sinh hoạt.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / THÔNG TIN: Hệ thống điện quốc gia Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Hệ thống điện quốc gia Việt Nam gồm các nguồn điện (thủy điện Sơn La, Hòa Bình; nhiệt điện Phả Lại, Vĩnh Tân; điện mặt trời, điện gió Ninh Thuận...), liên kết với nhau qua lưới truyền tải siêu cao áp 500 kV Bắc - Nam và các cấp 220 kV, 110 kV để cấp điện cho các trung tâm phụ tải và hộ sinh hoạt trên toàn quốc.</div>\n    </div>",
+        "id": "cn_gk1_ds2d",
+        "topic": "MẠNG ĐIỆN SẢN XUẤT NHỎ (ĐÚNG/SAI)",
+        "question": "d. Trong phân xưởng An Phát, tủ điện phân phối tổng (MSB) nhận điện trực tiếp từ máy biến áp hạ áp để cấp điện cho các tủ nhánh.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH THỰC TẾ: Phân xưởng cơ khí chính xác An Phát</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Xưởng cơ khí An Phát có diện tích 800 m², trang bị 10 máy tiện CNC, 5 máy phay cơ và hệ thống đèn chiếu sáng LED phân xưởng. Nguồn điện lấy từ trạm biến áp hạ áp 22/0,4 kV riêng của công ty.</div>\n    </div>",
         "options": [
           "A. Đúng",
           "B. Sai"
         ],
-        "correct": 1,
-        "explain": "SAI. Trạm 220/110 kV và 110/22 kV là các trạm biến áp hạ áp (hạ từ 220 kV xuống 110 kV, rồi hạ tiếp xuống 22 kV trung áp). Điện sinh hoạt dùng điện áp hạ áp 220 V nên phải qua tiếp trạm hạ áp 22/0,4 kV.",
+        "correct": 0,
+        "explain": "ĐÚNG. Theo sơ đồ cấu trúc phân cấp chuẩn, tủ phân phối tổng (MSB) đặt tại trạm biến áp, lấy điện từ đầu ra hạ áp của máy biến áp để chia nguồn cho các tủ nhánh.",
         "subLabel": "2d"
       },
       {
-        "id": 62,
-        "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-        "question": "a. Cơ sở chế biến này cần xây dựng một trạm biến áp hạ áp riêng để biến đổi điện áp từ 22 kV xuống 380/220 V.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / DỰ ÁN: Mạng điện cơ sở sản xuất 150 kW</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một cơ sở chế biến thực phẩm tư nhân chuẩn bị xây dựng mạng điện sản xuất quy mô nhỏ với công suất tính toán khoảng 150 kW, lấy nguồn từ đường dây trung áp 22 kV của điện lực địa phương đi ngang qua cổng xưởng.</div>\n    </div>",
+        "id": "cn_gk1_ds3a",
+        "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
+        "question": "a. Trong mạch điện ba pha đối xứng nối hình sao (Y), điện áp dây luôn bằng điện áp pha (Ud = Up).<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
         "options": [
           "A. Đúng",
           "B. Sai"
         ],
-        "correct": 0,
-        "explain": "ĐÚNG. Với công suất 150 kW và lấy nguồn trung áp 22 kV, xưởng sản xuất quy mô nhỏ cần lắp đặt một trạm biến áp hạ áp 22/0,4 kV riêng để cấp điện cho hệ thống thiết bị.",
+        "correct": 1,
+        "explain": "SAI. Khi nối hình sao (Y), điện áp dây bằng căn 3 lần điện áp pha: Ud = √3.Up ≈ 1,732.Up; chỉ khi nối tam giác (Δ) thì mới có Ud = Up.",
         "subLabel": "3a"
       },
       {
-        "id": 63,
-        "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-        "question": "b. Tủ điện phân phối tổng của cơ sở nên được đặt trực tiếp cạnh các máy trộn thực phẩm ẩm ướt trong phân xưởng.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / DỰ ÁN: Mạng điện cơ sở sản xuất 150 kW</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một cơ sở chế biến thực phẩm tư nhân chuẩn bị xây dựng mạng điện sản xuất quy mô nhỏ với công suất tính toán khoảng 150 kW, lấy nguồn từ đường dây trung áp 22 kV của điện lực địa phương đi ngang qua cổng xưởng.</div>\n    </div>",
+        "id": "cn_gk1_ds3b",
+        "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
+        "question": "b. Nếu đấu ba cụm lò sấy hình sao (Y) vào lưới 380/220 V thì điện áp đặt vào mỗi cụm lò sấy là 220 V.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
         "options": [
           "A. Đúng",
           "B. Sai"
         ],
-        "correct": 1,
-        "explain": "SAI. Tủ điện phân phối tổng thường được đặt ngay tại phòng điện của trạm biến áp, ở nơi khô ráo, an toàn, có khóa bảo vệ; không được đặt cạnh khu vực ẩm ướt dễ gây chập cháy nguy hiểm.",
+        "correct": 0,
+        "explain": "ĐÚNG. Khi tải nối sao, điện áp mỗi pha tải là điện áp pha Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V.",
         "subLabel": "3b"
       },
       {
-        "id": 64,
-        "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-        "question": "c. Mạng điện động lực và mạng điện chiếu sáng của phân xưởng phải được bố trí cấp nguồn độc lập từ tủ phân phối nhánh.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / DỰ ÁN: Mạng điện cơ sở sản xuất 150 kW</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một cơ sở chế biến thực phẩm tư nhân chuẩn bị xây dựng mạng điện sản xuất quy mô nhỏ với công suất tính toán khoảng 150 kW, lấy nguồn từ đường dây trung áp 22 kV của điện lực địa phương đi ngang qua cổng xưởng.</div>\n    </div>",
+        "id": "cn_gk1_ds3c",
+        "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
+        "question": "c. Nếu ba cụm lò sấy hoàn toàn đối xứng thì dòng điện hiệu dụng chạy trong dây trung tính Io bằng 0.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
         "options": [
           "A. Đúng",
           "B. Sai"
         ],
         "correct": 0,
-        "explain": "ĐÚNG. Theo đặc điểm của mạng điện sản xuất quy mô nhỏ (SGK trang 31): Mạng điện dùng cho các thiết bị sản xuất (động lực) và mạng điện chiếu sáng hoạt động độc lập nhằm tránh nhấp nháy đèn khi máy móc khởi động và đảm bảo ánh sáng khi sửa chữa máy.",
+        "explain": "ĐÚNG. Khi tải ba pha hoàn toàn đối xứng, tổng vectơ của 3 dòng điện pha bằng 0 (iA + iB + iC = 0), do đó dòng điện chạy trên dây trung tính Io = 0.",
         "subLabel": "3c"
       },
       {
-        "id": 65,
-        "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-        "question": "d. Để tiết kiệm thời gian, cuối ca làm việc công nhân chỉ cần ngắt aptomat tổng ở trạm biến áp mà không cần tắt các máy sản xuất.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / DỰ ÁN: Mạng điện cơ sở sản xuất 150 kW</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một cơ sở chế biến thực phẩm tư nhân chuẩn bị xây dựng mạng điện sản xuất quy mô nhỏ với công suất tính toán khoảng 150 kW, lấy nguồn từ đường dây trung áp 22 kV của điện lực địa phương đi ngang qua cổng xưởng.</div>\n    </div>",
+        "id": "cn_gk1_ds3d",
+        "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
+        "question": "d. Kĩ sư điện có thể lắp thêm một cầu chì ngắt mạch trên dây trung tính để bảo vệ an toàn cho hệ thống lò sấy.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
         "options": [
           "A. Đúng",
           "B. Sai"
         ],
         "correct": 1,
-        "explain": "SAI. Quy tắc an toàn nghiêm ngặt khi cắt điện là phải cắt từ tải trước (tắt máy móc -> ngắt tủ động lực/chiếu sáng -> ngắt tủ nhánh -> ngắt tủ tổng) để tránh hồ quang điện nguy hiểm và bảo vệ thiết bị.",
+        "explain": "SAI. Tuyệt đối KHÔNG ĐƯỢC đặt cầu chì hay thiết bị đóng ngắt đơn cực trên dây trung tính, vì nếu cầu chì đứt khi phụ tải mất cân bằng sẽ làm điểm trung tính bị trôi, gây quá điện áp nghiêm trọng cháy thiết bị.",
         "subLabel": "3d"
       },
       {
-        "id": 66,
-        "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-        "question": "a. Vị trí kĩ sư thiết kế điện của công ty yêu cầu người ứng tuyển phải có trình độ từ đại học trở lên chuyên ngành kĩ thuật điện.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / ĐỊNH HƯỚNG: Tuyển dụng ngành kĩ thuật điện</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Bạn An đang tìm hiểu về định hướng nghề nghiệp trong lĩnh vực kĩ thuật điện và khảo sát thông tin tuyển dụng của một công ty xây lắp cơ điện tại khu công nghiệp.</div>\n    </div>",
-        "options": [
-          "A. Đúng",
-          "B. Sai"
-        ],
-        "correct": 0,
-        "explain": "ĐÚNG. Theo yêu cầu chuẩn trình độ nghề nghiệp trong SGK trang 11, vị trí kĩ sư yêu cầu trình độ đại học chuyên ngành kĩ thuật điện.",
-        "subLabel": "4a"
-      },
-      {
-        "id": 67,
-        "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-        "question": "b. Thợ điện lắp đặt chỉ cần hiểu biết về an toàn điện mà không cần biết đọc hiểu sơ đồ bản vẽ kĩ thuật.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / ĐỊNH HƯỚNG: Tuyển dụng ngành kĩ thuật điện</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Bạn An đang tìm hiểu về định hướng nghề nghiệp trong lĩnh vực kĩ thuật điện và khảo sát thông tin tuyển dụng của một công ty xây lắp cơ điện tại khu công nghiệp.</div>\n    </div>",
-        "options": [
-          "A. Đúng",
-          "B. Sai"
-        ],
-        "correct": 1,
-        "explain": "SAI. Người làm nghề lắp đặt điện bắt buộc phải có kĩ năng đọc hiểu sơ đồ thiết kế điện để lắp đặt đúng vị trí, đúng sơ đồ và đảm bảo kĩ thuật (SGK trang 12).",
-        "subLabel": "4b"
-      },
-      {
-        "id": 68,
-        "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-        "question": "c. Kĩ thuật viên vận hành điện thường xuyên làm việc ngoài trời để trực tiếp đào hào chôn cáp ngầm.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / ĐỊNH HƯỚNG: Tuyển dụng ngành kĩ thuật điện</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Bạn An đang tìm hiểu về định hướng nghề nghiệp trong lĩnh vực kĩ thuật điện và khảo sát thông tin tuyển dụng của một công ty xây lắp cơ điện tại khu công nghiệp.</div>\n    </div>",
-        "options": [
-          "A. Đúng",
-          "B. Sai"
-        ],
-        "correct": 1,
-        "explain": "SAI. Nhóm công việc vận hành điện thường làm việc tại các phòng điều hành, trạm biến áp để theo dõi, điều khiển thông số; còn việc đào rãnh chôn cáp thuộc nhóm công việc lắp đặt điện.",
-        "subLabel": "4c"
-      },
-      {
-        "id": 69,
-        "topic": "TRẮC NGHIỆM ĐÚNG/SAI",
-        "question": "d. Sự phát triển mạnh mẽ của năng lượng tái tạo và lưới điện thông minh mở ra nhiều cơ hội việc làm mới cho ngành kĩ thuật điện.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH / ĐỊNH HƯỚNG: Tuyển dụng ngành kĩ thuật điện</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Bạn An đang tìm hiểu về định hướng nghề nghiệp trong lĩnh vực kĩ thuật điện và khảo sát thông tin tuyển dụng của một công ty xây lắp cơ điện tại khu công nghiệp.</div>\n    </div>",
-        "options": [
-          "A. Đúng",
-          "B. Sai"
-        ],
-        "correct": 0,
-        "explain": "ĐÚNG. Nhu cầu chuyển đổi xanh, phát triển điện gió, điện mặt trời, xe điện và lưới điện thông minh tạo ra nhu cầu nhân lực rất lớn cho ngành kĩ thuật điện trong tương lai.",
-        "subLabel": "4d"
-      },
-      {
-        "id": 70,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Một nguồn điện ba pha đối xứng có điện áp pha Up = 220 V. Giá trị của điện áp dây Ud xấp xỉ bằng bao nhiêu vôn?",
+        "id": "cn_b3_22",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một nguồn điện ba pha đối xứng có điện áp pha Up = 220 V. Giá trị điện áp dây Ud xấp xỉ bằng bao nhiêu vôn?",
         "options": [
           "A. 127 V",
           "B. 220 V",
@@ -3758,12 +3181,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 440 V"
         ],
         "correct": 2,
-        "explain": "Ta có công thức liên hệ giữa điện áp dây và điện áp pha của nguồn đối xứng: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế mạng điện quy ước là 380 V)."
+        "explain": "Nguồn điện ba pha đối xứng nối hình sao: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế mạng điện hạ áp tiêu chuẩn Việt Nam quy ước là 380 V)."
       },
       {
-        "id": 71,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Cho mạch điện xoay chiều một pha có R = 30 Ω, cảm kháng XL = 60 Ω, dung kháng XC = 20 Ω. Độ lớn tổng trở z_t của mạch điện là",
+        "id": "cn_b3_23",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cho mạch xoay chiều một pha có R = 30 Ω, cảm kháng XL = 60 Ω, dung kháng XC = 20 Ω. Độ lớn tổng trở z_t của mạch là",
         "options": [
           "A. 110 Ω",
           "B. 50 Ω",
@@ -3771,12 +3194,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 10 Ω"
         ],
         "correct": 1,
-        "explain": "Điện kháng của mạch: X = XL - XC = 60 - 20 = 40 Ω. Tổng trở: z_t = √(R² + X²) = √(30² + 40²) = 50 Ω."
+        "explain": "Điện kháng của mạch: X = XL - XC = 60 - 20 = 40 Ω. Tổng trở của mạch: z_t = √(R² + X²) = √(30² + 40²) = √(900 + 1600) = √2500 = 50 Ω."
       },
       {
-        "id": 72,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có điện trở R = 12 Ω và cảm kháng XL = 16 Ω mỗi pha nối hình sao (Y) vào nguồn có điện áp dây Ud = 380 V. Cường độ dòng điện pha Ip chạy qua mỗi cuộn dây là",
+        "id": "cn_b3_24",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có R = 12 Ω, XL = 16 Ω nối hình SAO (Y) vào nguồn điện có điện áp dây Ud = 380 V. Cường độ dòng điện pha Ip chạy qua mỗi cuộn dây là",
         "options": [
           "A. 11 A",
           "B. 19 A",
@@ -3784,12 +3207,12 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 22 A"
         ],
         "correct": 0,
-        "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = 20 Ω. Do tải nối sao: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Cường độ dòng điện pha: Ip = Up / z_p = 220 / 20 = 11 A."
+        "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = √400 = 20 Ω. Do tải nối sao, điện áp pha của tải: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Cường độ dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">20</span></span> = 11 A."
       },
       {
-        "id": 73,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Một động cơ điện ba pha nối hình tam giác (Δ) tiêu thụ dòng điện pha Ip = 15 A. Cường độ dòng điện dây Id chạy trên đường dây cấp điện cho động cơ là",
+        "id": "cn_b3_25",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một động cơ điện ba pha nối hình TAM GIÁC (Δ) tiêu thụ dòng điện pha Ip = 15 A. Cường độ dòng điện dây Id chạy trên đường dây cấp điện cho động cơ là",
         "options": [
           "A. 15 A",
           "B. 8,66 A",
@@ -3797,33 +3220,1433 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. 45 A"
         ],
         "correct": 2,
-        "explain": "Tải nối tam giác (Δ) đối xứng thì: Id = √3.Ip = √3 × 15 ≈ 25,98 A."
+        "explain": "Tải nối hình tam giác (Δ) đối xứng: Dòng điện dây liên hệ với dòng điện pha qua công thức: Id = √3.Ip = √3 × 15 ≈ 1,732 × 15 = 25,98 A."
       },
       {
-        "id": 74,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Một khu tập thể gồm 150 hộ gia đình, mỗi hộ tiêu thụ công suất trung bình vào giờ cao điểm là 4 kW. Cần chọn máy biến áp phân phối có công suất định mức tối thiểu là bao nhiêu kVA (giả sử hệ số công suất cosφ = 0,8)?",
+        "id": "cn_b3_26",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một nguồn điện ba pha có điện áp dây Ud = 380 V cấp cho một tải đối xứng nối hình SAO (Y) có tổng trở mỗi pha zp = 38 Ω. Dòng điện dây Id chạy trên dây pha có giá trị là",
         "options": [
-          "A. 150 kVA",
-          "B. 480 kVA",
-          "C. 750 kVA",
-          "D. 600 kVA"
-        ],
-        "correct": 2,
-        "explain": "Tổng công suất tác dụng: P = 150 × 4 = 600 kW. Công suất biểu kiến của máy biến áp: S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">600</span><span class=\"math-frac-bottom\">0,8</span></span> = 750 kVA."
-      },
-      {
-        "id": 75,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Điện áp danh định mạng điện hạ áp sinh hoạt là 220 V. Theo quy chuẩn sai số cho phép không quá ±5%, dải điện áp thực tế tại ổ cắm trong nhà chấp nhận được là",
-        "options": [
-          "A. từ 200 V đến 240 V",
-          "B. từ 209 V đến 231 V",
-          "C. từ 215 V đến 225 V",
-          "D. từ 180 V đến 260 V"
+          "A. 10 A",
+          "B. 5,79 A (khoảng 5,8 A)",
+          "C. 17,3 A",
+          "D. 3,34 A"
         ],
         "correct": 1,
-        "explain": "Độ lệch điện áp 5%: ΔU = 220 × 5% = 11 V. Dải điện áp cho phép: U_min = 220 - 11 = 209 V; U_max = 220 + 11 = 231 V."
+        "explain": "Do tải nối sao: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">38</span></span> ≈ 5,79 A. Do nối sao: Id = Ip ≈ 5,79 A."
+      },
+      {
+        "id": "cn_b3_27",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Tải ba pha đối xứng gồm ba điện trở thuần R = 22 Ω nối hình TAM GIÁC (Δ) vào mạng điện có Ud = 220 V. Dòng điện pha Ip và dòng điện dây Id lần lượt là",
+        "options": [
+          "A. Ip = 10 A; Id = 17,32 A",
+          "B. Ip = 10 A; Id = 10 A",
+          "C. Ip = 5,77 A; Id = 10 A",
+          "D. Ip = 17,32 A; Id = 10 A"
+        ],
+        "correct": 0,
+        "explain": "Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">22</span></span> = 10 A. Dòng điện dây: Id = √3.Ip = √3 × 10 ≈ 17,32 A."
+      },
+      {
+        "id": "cn_b6_14",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Một phân xưởng may công nghiệp có tổng công suất tác dụng tiêu thụ P = 160 kW, hệ số công suất cos φ = 0,8. Cần chọn máy biến áp phân phối có công suất biểu kiến định mức tối thiểu là bao nhiêu kVA?",
+        "options": [
+          "A. 128 kVA",
+          "B. 160 kVA",
+          "C. 200 kVA",
+          "D. 250 kVA"
+        ],
+        "correct": 2,
+        "explain": "Công suất biểu kiến của máy biến áp: S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">160</span><span class=\"math-frac-bottom\">0,8</span></span> = 200 kVA. Do đó cần chọn máy biến áp có công suất định mức tối thiểu là 200 kVA."
+      },
+      {
+        "id": "cn_b4_11",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Khi truyền tải một công suất điện P xác định trên cùng một đường dây có điện trở R, nếu tăng điện áp từ U1 = 110 kV lên U2 = 220 kV thì công suất hao phí toả nhiệt ΔP trên đường dây sẽ",
+        "options": [
+          "A. tăng lên gấp 2 lần.",
+          "B. giảm đi 2 lần.",
+          "C. giảm đi 4 lần.",
+          "D. không thay đổi."
+        ],
+        "correct": 2,
+        "explain": "Công suất hao phí tỉ lệ nghịch với bình phương điện áp: ΔP tỉ lệ với <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">U<sup>2</sup></span></span>. Khi tăng điện áp từ 110 kV lên 220 kV (tăng gấp <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">110</span></span> = 2 lần) thì hao phí giảm: 2² = 4 lần."
+      }
+    ]
+  },
+  {
+    "id": "cn_all",
+    "title": "⚡ Marathon Toàn Bộ Công Nghệ 12 (Bài 2 - 7) (106 câu)",
+    "icon": "🏆",
+    "description": "Trọn bộ 106 câu hỏi ôn tập bám sát 100% sách giáo khoa Kết nối tri thức",
+    "questions": [
+      {
+        "id": "cn_b3_01",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Dòng điện xoay chiều một pha có cường độ tức thời i = Im.sin(ωt + ψ). Đại lượng Im được gọi là gì?",
+        "options": [
+          "A. Giá trị hiệu dụng của dòng điện.",
+          "B. Giá trị cực đại (biên độ) của dòng điện.",
+          "C. Tần số góc của dòng điện.",
+          "D. Pha ban đầu của dòng điện."
+        ],
+        "correct": 1,
+        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), đại lượng Im là cường độ dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng I: I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> (SGK Công nghệ 12 trang 18)."
+      },
+      {
+        "id": "cn_b3_02",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một dòng điện xoay chiều có biểu thức i = 4√2.sin(100πt) (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
+        "options": [
+          "A. I = 4 A; f = 50 Hz",
+          "B. I = 4√2 A; f = 100 Hz",
+          "C. I = 4 A; f = 100 Hz",
+          "D. I = 2√2 A; f = 50 Hz"
+        ],
+        "correct": 0,
+        "explain": "Cường độ cực đại Im = 4√2 A nên giá trị hiệu dụng I = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>m</sub></span><span class=\"math-frac-bottom\">√2</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">4√2</span><span class=\"math-frac-bottom\">√2</span></span> = 4 A. Tần số góc ω = 100π rad/s nên tần số f = <span class=\"math-frac\"><span class=\"math-frac-top\">ω</span><span class=\"math-frac-bottom\">2π</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">100π</span><span class=\"math-frac-bottom\">2π</span></span> = 50 Hz."
+      },
+      {
+        "id": "cn_b3_03",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Công thức tính cảm kháng XL của cuộn cảm thuần và dung kháng XC của tụ điện đối với dòng điện xoay chiều tần số f là:",
+        "options": [
+          "A. XL = 2πfL và XC = 2πfC",
+          "B. XL = 2πfL và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
+          "C. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfL</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>",
+          "D. XL = <span class=\"math-frac\"><span class=\"math-frac-top\">L</span><span class=\"math-frac-bottom\">2πf</span></span> và XC = <span class=\"math-frac\"><span class=\"math-frac-top\">C</span><span class=\"math-frac-bottom\">2πf</span></span>"
+        ],
+        "correct": 1,
+        "explain": "Cảm kháng cuộn cảm thuần: XL = ωL = 2πfL (đơn vị Ω); Dung kháng tụ điện: XC = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">ωC</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span> (đơn vị Ω) (SGK Công nghệ 12 trang 18)."
+      },
+      {
+        "id": "cn_b3_04",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Tổng trở z_t của tải điện một pha gồm điện trở R mắc nối tiếp với cuộn cảm (XL) và tụ điện (XC) được tính theo công thức nào?",
+        "options": [
+          "A. z_t = R + XL - XC",
+          "B. z_t = √[R² + (XL - XC)²]",
+          "C. z_t = √[R² + (XL + XC)²]",
+          "D. z_t = √[R² - (XL - XC)²]"
+        ],
+        "correct": 1,
+        "explain": "Tổng trở của tải R-L-C nối tiếp đặc trưng bởi độ lớn: z_t = √(R² + X²) với điện kháng X = XL - XC, do đó z_t = √[R² + (XL - XC)²]. Hệ số góc tan φ = <span class=\"math-frac\"><span class=\"math-frac-top\">X</span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">X<sub>L</sub> - X<sub>C</sub></span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
+      },
+      {
+        "id": "cn_b3_05",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Hiện tượng cộng hưởng điện trong đoạn mạch R-L-C nối tiếp xảy ra khi nào?",
+        "options": [
+          "A. Khi R = XL",
+          "B. Khi cảm kháng bằng dung kháng (XL = XC)",
+          "C. Khi tần số f = 0",
+          "D. Khi tổng trở đạt giá trị lớn vô cùng"
+        ],
+        "correct": 1,
+        "explain": "Cộng hưởng điện xảy ra khi cảm kháng bằng dung kháng XL = XC (tức 2πfL = <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">2πfC</span></span>), khi đó điện kháng triệt tiêu X = 0, tổng trở z_t đạt cực tiểu z_t = R và dòng điện trong mạch đạt cực đại I = <span class=\"math-frac\"><span class=\"math-frac-top\">U</span><span class=\"math-frac-bottom\">R</span></span> (SGK trang 18)."
+      },
+      {
+        "id": "cn_b3_06",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Hệ thống dòng điện xoay chiều ba pha đối xứng là tập hợp của ba dòng điện xoay chiều hình sin có đặc điểm gì?",
+        "options": [
+          "A. Cùng biên độ, cùng tần số và cùng pha với nhau.",
+          "B. Cùng tần số, cùng biên độ nhưng lệch pha nhau góc <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> (120°) lần lượt giữa các pha.",
+          "C. Khác tần số, cùng biên độ và lệch pha nhau 90°.",
+          "D. Cùng biên độ nhưng tần số pha sau gấp đôi pha trước."
+        ],
+        "correct": 1,
+        "explain": "Theo định nghĩa SGK trang 18: Dòng điện ba pha đối xứng gồm 3 dòng điện xoay chiều hình sin có cùng tần số, cùng biên độ và lệch pha nhau góc <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> rad (tức 120°) lần lượt giữa các pha."
+      },
+      {
+        "id": "cn_b3_07",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cấu tạo phần tĩnh (stator) của máy phát điện xoay chiều ba pha gồm:",
+        "options": [
+          "A. Một nam châm điện có hai cực Bắc - Nam quay quanh trục.",
+          "B. Lõi thép có các rãnh đặt ba cuộn dây giống hệt nhau về số vòng và kích thước, bố trí lệch nhau 120° trên đường tròn stator.",
+          "C. Bộ góp và chổi than tiếp điện.",
+          "D. Ba cặp cực nam châm vĩnh cửu quay tròn liên tục."
+        ],
+        "correct": 1,
+        "explain": "Stator (phần tĩnh) là lõi thép hình trụ có rãnh đặt ba cuộn dây AX (pha A), BY (pha B), CZ (pha C) có số vòng và kích thước hoàn toàn giống nhau, bố trí lệch nhau góc 120° trên vòng tròn stator (SGK trang 18)."
+      },
+      {
+        "id": "cn_b3_08",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Nếu chọn suất điện động pha A làm gốc: eA = Em.sin(ωt), thì biểu thức suất điện động pha B và pha C của máy phát ba pha là",
+        "options": [
+          "A. eB = Em.sin(ωt - π) và eC = Em.sin(ωt + π)",
+          "B. eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) và eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) [hoặc eC = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">4π</span><span class=\"math-frac-bottom\">3</span></span>)]",
+          "C. eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>) và eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">π</span><span class=\"math-frac-bottom\">2</span></span>)",
+          "D. eB = Em.cos(ωt) và eC = Em.tan(ωt)"
+        ],
+        "correct": 1,
+        "explain": "Ba suất điện động cùng tần số, cùng biên độ và lệch pha nhau <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span> rad: eA = Em.sin(ωt); eB = Em.sin(ωt - <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>); eC = Em.sin(ωt + <span class=\"math-frac\"><span class=\"math-frac-top\">2π</span><span class=\"math-frac-bottom\">3</span></span>) (SGK trang 18)."
+      },
+      {
+        "id": "cn_b3_09",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Trong cách nối nguồn hoặc tải ba pha hình sao (Y), điểm trung tính O được tạo thành bằng cách nào?",
+        "options": [
+          "A. Nối ba điểm đầu A, B, C lại với nhau.",
+          "B. Nối ba điểm cuối X, Y, Z của ba pha lại với nhau.",
+          "C. Nối đầu pha này với cuối pha kia: A nối Z, B nối X, C nối Y.",
+          "D. Nối dây pha A trực tiếp với cọc tiếp địa bằng đồng."
+        ],
+        "correct": 1,
+        "explain": "Cách nối hình sao (Y): Ba điểm cuối X, Y, Z của các cuộn dây pha được nối chung với nhau tạo thành điểm trung tính O. Ba điểm đầu A, B, C đưa ra ba đường dây pha (SGK trang 19)."
+      },
+      {
+        "id": "cn_b3_10",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Mạch điện ba pha bốn dây gồm các dây dẫn nào sau đây?",
+        "options": [
+          "A. Bốn dây pha A, B, C, D.",
+          "B. Ba dây pha (A, B, C) và một dây trung tính (dây trung hòa O-O').",
+          "C. Hai dây pha và hai dây tiếp địa.",
+          "D. Ba dây trung tính và một dây pha mang điện."
+        ],
+        "correct": 1,
+        "explain": "Mạch điện ba pha bốn dây gồm ba dây dẫn nối từ các đầu pha A, B, C (gọi là ba dây pha) và một dây dẫn nối từ điểm trung tính O của nguồn đến điểm trung tính O' của tải (gọi là dây trung tính hay dây trung hòa) (SGK trang 19)."
+      },
+      {
+        "id": "cn_b3_11",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Trong cách nối tải ba pha hình tam giác (Δ), các pha được liên kết với nhau theo nguyên tắc nào?",
+        "options": [
+          "A. Ba đầu pha A, B, C nối chung với nhau.",
+          "B. Ba cuối pha X, Y, Z nối chung với nhau.",
+          "C. Điểm đầu pha này nối với điểm cuối pha kia khép kín: A nối Z, B nối X, C nối Y.",
+          "D. Nối song song cả ba cuộn dây vào một nguồn một pha."
+        ],
+        "correct": 2,
+        "explain": "Nối hình tam giác (Δ): Điểm đầu của pha này nối với điểm cuối của pha kia theo thứ tự vòng tròn khép kín: A nối với Z, B nối với X, C nối với Y (SGK trang 19)."
+      },
+      {
+        "id": "cn_b3_12",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Đại lượng 'Điện áp pha' (kí hiệu Up) trong mạch ba pha được định nghĩa là",
+        "options": [
+          "A. điện áp giữa hai dây pha bất kì trong ba dây pha A, B, C.",
+          "B. điện áp đo giữa một dây pha và dây trung tính (hoặc giữa điểm đầu và điểm cuối của một pha).",
+          "C. điện áp giữa dây trung tính và mặt đất.",
+          "D. điện áp một chiều nạp vào ắc quy dự phòng."
+        ],
+        "correct": 1,
+        "explain": "Điện áp pha (Up): Là điện áp giữa điểm đầu và điểm cuối của một pha nguồn hoặc tải, tương đương điện áp đo giữa một dây pha và dây trung tính (như UA, UB, UC) (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_13",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Đại lượng 'Điện áp dây' (kí hiệu Ud) trong mạch điện ba pha được định nghĩa là",
+        "options": [
+          "A. điện áp đo giữa dây pha và dây trung tính.",
+          "B. điện áp giữa hai dây pha bất kì (UAB, UBC, UCA).",
+          "C. điện áp rơi trên một bóng đèn chiếu sáng một pha.",
+          "D. điện áp danh định của lưới điện siêu cao áp."
+        ],
+        "correct": 1,
+        "explain": "Điện áp dây (Ud): Là điện áp đo giữa hai dây pha bất kì với nhau, ví dụ: UAB là điện áp giữa dây A và B, UBC giữa B và C, UCA giữa C và A (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_14",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Khi nguồn và tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa điện áp dây Ud và điện áp pha Up là:",
+        "options": [
+          "A. Ud = Up",
+          "B. Ud = √3.Up ≈ 1,732.Up",
+          "C. Ud = 3.Up",
+          "D. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>"
+        ],
+        "correct": 1,
+        "explain": "Mạch đối xứng nối hình sao (Y): Mối liên hệ điện áp là Ud = √3.Up ≈ 1,732.Up, suy ra Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span>. Ví dụ mạng hạ áp có Up = 220 V thì Ud = √3 × 220 ≈ 380 V (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_15",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình SAO (Y), mối quan hệ giữa cường độ dòng điện dây Id và dòng điện pha Ip là:",
+        "options": [
+          "A. Id = Ip",
+          "B. Id = √3.Ip",
+          "C. Id = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
+          "D. Id = 3.Ip"
+        ],
+        "correct": 0,
+        "explain": "Khi tải nối hình sao (Y), dòng điện từ dây pha chạy thẳng trực tiếp vào cuộn dây pha của tải không bị phân nhánh, do đó dòng điện dây bằng dòng điện pha: Id = Ip (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_16",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa điện áp dây Ud và điện áp pha Up là:",
+        "options": [
+          "A. Ud = Up",
+          "B. Ud = √3.Up",
+          "C. Ud = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
+          "D. Ud = 2.Up"
+        ],
+        "correct": 0,
+        "explain": "Khi tải nối hình tam giác (Δ), mỗi pha của tải được mắc trực tiếp giữa hai dây pha của nguồn điện, vì vậy điện áp pha của tải bằng chính điện áp dây của nguồn: Ud = Up (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_17",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Khi tải ba pha ĐỐI XỨNG nối hình TAM GIÁC (Δ), mối quan hệ giữa dòng điện dây Id và dòng điện pha Ip là:",
+        "options": [
+          "A. Id = Ip",
+          "B. Id = √3.Ip ≈ 1,732.Ip",
+          "C. Id = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>p</sub></span><span class=\"math-frac-bottom\">√3</span></span>",
+          "D. Id = 3.Ip"
+        ],
+        "correct": 1,
+        "explain": "Khi tải nối tam giác (Δ) đối xứng, dòng điện dây tại các nút rẽ nhánh thành hai dòng điện pha, biểu thức vectơ dòng điện cho ta: Id = √3.Ip ≈ 1,732.Ip, suy ra Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_18",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Ưu điểm vượt trội của mạch điện ba pha bốn dây (nối hình sao có dây trung tính) so với mạch ba dây là gì?",
+        "options": [
+          "A. Tạo ra được hai cấp điện áp khác nhau (điện áp dây Ud và điện áp pha Up), thuận tiện cấp điện đồng thời cho cả động cơ ba pha và thiết bị sinh hoạt một pha.",
+          "B. Không bao giờ xảy ra sự cố chập mạch hay quá tải.",
+          "C. Tiết kiệm 100% lượng dây nhôm và đồng truyền tải.",
+          "D. Điện áp trên đường dây tự động tăng lên gấp mười lần."
+        ],
+        "correct": 0,
+        "explain": "Mạch ba pha 4 dây cung cấp được hai cấp điện áp tiện lợi: điện áp dây 380 V (dùng cho động cơ ba pha công nghiệp) và điện áp pha 220 V (dùng cho các thiết bị sinh hoạt một pha gia đình) (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_19",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Khi phụ tải ba pha hoàn toàn ĐỐI XỨNG, cường độ dòng điện chạy trong dây trung tính Io có giá trị bằng bao nhiêu?",
+        "options": [
+          "A. Bằng 3 lần dòng điện pha (Io = 3.Ip).",
+          "B. Bằng không (Io = 0).",
+          "C. Bằng dòng điện cực đại Im.",
+          "D. Bằng dòng điện dây Id."
+        ],
+        "correct": 1,
+        "explain": "Trong tải ba pha đối xứng, tổng vectơ của ba dòng điện pha bằng 0: iA + iB + iC = 0, do đó dòng điện hiệu dụng trong dây trung tính Io = 0 (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_20",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Vì sao trên dây trung tính của mạng điện ba pha bốn dây TUYỆT ĐỐI KHÔNG ĐƯỢC đặt cầu chì hay công tắc đơn ngắt mạch?",
+        "options": [
+          "A. Vì dây trung tính không có dòng điện chạy qua nên cầu chì không thể đứt.",
+          "B. Vì nếu cầu chì trên dây trung tính bị đứt khi tải không đối xứng, điện áp pha các tải sẽ bị lệch nghiêm trọng, làm thiết bị điện pha non tải chịu điện áp cao dẫn đến cháy nổ.",
+          "C. Vì giá thành của cầu chì dây trung tính quá đắt đỏ.",
+          "D. Vì dây trung tính được chôn dưới lòng đất nên không chạm tới được."
+        ],
+        "correct": 1,
+        "explain": "Nếu đứt dây trung tính khi phụ tải ba pha không đối xứng, điểm trung tính O' của tải sẽ bị dịch chuyển, dẫn đến điện áp giữa các pha tải bị mất cân bằng trầm trọng: pha nào có tổng trở lớn sẽ chịu điện áp vượt quá 220 V gây cháy thiết bị (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_21",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Công thức tính công suất tác dụng toàn phần P của mạch điện xoay chiều ba pha đối xứng là:",
+        "options": [
+          "A. P = Ud.Id.cos φ",
+          "B. P = √3.Ud.Id.cos φ = 3.Up.Ip.cos φ",
+          "C. P = 3.Ud.Id.cos φ",
+          "D. P = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub>.I<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span>.cos φ"
+        ],
+        "correct": 1,
+        "explain": "Công suất tác dụng ba pha đối xứng tính theo thông số dây: P = √3.Ud.Id.cos φ; hoặc tính theo thông số pha: P = 3.Up.Ip.cos φ (trong đó cos φ là hệ số công suất của mỗi pha tải) (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_22",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một nguồn điện ba pha đối xứng có điện áp pha Up = 220 V. Giá trị điện áp dây Ud xấp xỉ bằng bao nhiêu vôn?",
+        "options": [
+          "A. 127 V",
+          "B. 220 V",
+          "C. 380 V (hoặc 381 V)",
+          "D. 440 V"
+        ],
+        "correct": 2,
+        "explain": "Nguồn điện ba pha đối xứng nối hình sao: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế mạng điện hạ áp tiêu chuẩn Việt Nam quy ước là 380 V)."
+      },
+      {
+        "id": "cn_b3_23",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cho mạch xoay chiều một pha có R = 30 Ω, cảm kháng XL = 60 Ω, dung kháng XC = 20 Ω. Độ lớn tổng trở z_t của mạch là",
+        "options": [
+          "A. 110 Ω",
+          "B. 50 Ω",
+          "C. 70 Ω",
+          "D. 10 Ω"
+        ],
+        "correct": 1,
+        "explain": "Điện kháng của mạch: X = XL - XC = 60 - 20 = 40 Ω. Tổng trở của mạch: z_t = √(R² + X²) = √(30² + 40²) = √(900 + 1600) = √2500 = 50 Ω."
+      },
+      {
+        "id": "cn_b3_24",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có R = 12 Ω, XL = 16 Ω nối hình SAO (Y) vào nguồn điện có điện áp dây Ud = 380 V. Cường độ dòng điện pha Ip chạy qua mỗi cuộn dây là",
+        "options": [
+          "A. 11 A",
+          "B. 19 A",
+          "C. 31,6 A",
+          "D. 22 A"
+        ],
+        "correct": 0,
+        "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = √400 = 20 Ω. Do tải nối sao, điện áp pha của tải: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Cường độ dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">20</span></span> = 11 A."
+      },
+      {
+        "id": "cn_b3_25",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một động cơ điện ba pha nối hình TAM GIÁC (Δ) tiêu thụ dòng điện pha Ip = 15 A. Cường độ dòng điện dây Id chạy trên đường dây cấp điện cho động cơ là",
+        "options": [
+          "A. 15 A",
+          "B. 8,66 A",
+          "C. 25,98 A",
+          "D. 45 A"
+        ],
+        "correct": 2,
+        "explain": "Tải nối hình tam giác (Δ) đối xứng: Dòng điện dây liên hệ với dòng điện pha qua công thức: Id = √3.Ip = √3 × 15 ≈ 1,732 × 15 = 25,98 A."
+      },
+      {
+        "id": "cn_b3_26",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một nguồn điện ba pha có điện áp dây Ud = 380 V cấp cho một tải đối xứng nối hình SAO (Y) có tổng trở mỗi pha zp = 38 Ω. Dòng điện dây Id chạy trên dây pha có giá trị là",
+        "options": [
+          "A. 10 A",
+          "B. 5,79 A (khoảng 5,8 A)",
+          "C. 17,3 A",
+          "D. 3,34 A"
+        ],
+        "correct": 1,
+        "explain": "Do tải nối sao: Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V. Dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">z<sub>p</sub></span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">38</span></span> ≈ 5,79 A. Do nối sao: Id = Ip ≈ 5,79 A."
+      },
+      {
+        "id": "cn_b3_27",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Tải ba pha đối xứng gồm ba điện trở thuần R = 22 Ω nối hình TAM GIÁC (Δ) vào mạng điện có Ud = 220 V. Dòng điện pha Ip và dòng điện dây Id lần lượt là",
+        "options": [
+          "A. Ip = 10 A; Id = 17,32 A",
+          "B. Ip = 10 A; Id = 10 A",
+          "C. Ip = 5,77 A; Id = 10 A",
+          "D. Ip = 17,32 A; Id = 10 A"
+        ],
+        "correct": 0,
+        "explain": "Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: Ip = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>p</sub></span><span class=\"math-frac-bottom\">R</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">22</span></span> = 10 A. Dòng điện dây: Id = √3.Ip = √3 × 10 ≈ 17,32 A."
+      },
+      {
+        "id": "cn_b3_28",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một tải điện ba pha tiêu thụ công suất P = 10 kW với điện áp dây Ud = 380 V và hệ số công suất cos φ = 0,8. Dòng điện dây Id chạy trong mạch xấp xỉ bằng",
+        "options": [
+          "A. 18,99 A",
+          "B. 32,89 A",
+          "C. 10,95 A",
+          "D. 15,20 A"
+        ],
+        "correct": 0,
+        "explain": "Từ công thức công suất ba pha: P = √3.Ud.Id.cos φ => Id = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">√3.U<sub>d</sub>.cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">√3 × 380 × 0,8</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">10000</span><span class=\"math-frac-bottom\">526,54</span></span> ≈ 18,99 A."
+      },
+      {
+        "id": "cn_b3_29",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Máy biến áp ba pha sử dụng trong trạm điện có chức năng cơ bản là gì?",
+        "options": [
+          "A. Biến đổi điện áp và dòng điện của hệ thống điện ba pha nhưng giữ nguyên tần số f = 50 Hz.",
+          "B. Biến đổi dòng xoay chiều thành dòng điện một chiều.",
+          "C. Tăng công suất tác dụng P của nguồn điện lên gấp đôi.",
+          "D. Tích trữ điện năng vào cuộn dây sơ cấp để phát điện khi mất lưới."
+        ],
+        "correct": 0,
+        "explain": "Máy biến áp ba pha làm việc dựa trên hiện tượng cảm ứng điện từ, có chức năng biến đổi điện áp và dòng điện xoay chiều ba pha từ cấp này sang cấp khác nhưng giữ nguyên tần số dòng điện (f = 50 Hz) (SGK trang 20)."
+      },
+      {
+        "id": "cn_b3_30",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Kí hiệu tổ đấu dây Y/Δ-11 của máy biến áp ba pha có ý nghĩa là",
+        "options": [
+          "A. Cuộn sơ cấp nối hình sao (Y), cuộn thứ cấp nối hình tam giác (Δ), góc lệch pha giữa điện áp sơ cấp và thứ cấp tương ứng góc 11 giờ (330°).",
+          "B. Máy biến áp có 11 cuộn dây độc lập.",
+          "C. Máy biến áp làm việc ở cấp điện áp 11 kV.",
+          "D. Máy biến áp sử dụng 11 kg lõi thép Silic."
+        ],
+        "correct": 0,
+        "explain": "Quy ước tổ đấu dây: Kí hiệu Y/Δ biểu thị cuộn sơ cấp nối sao, cuộn thứ cấp nối tam giác; con số 11 là chỉ số giờ lệch pha giữa vectơ điện áp dây thứ cấp so với sơ cấp (11 × 30° = 330°)."
+      },
+      {
+        "id": "cn_b3_31",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Khi một pha của tải hình sao (Y) bị đứt (hở mạch), dòng điện trong pha bị đứt đó sẽ",
+        "options": [
+          "A. tăng lên gấp √3 lần.",
+          "B. bằng 0, hai pha còn lại vẫn tiếp tục có dòng điện chạy qua.",
+          "C. đổi chiều liên tục không xác định.",
+          "D. truyền toàn bộ công suất vào cọc tiếp địa."
+        ],
+        "correct": 1,
+        "explain": "Khi bị đứt mạch một pha, dòng điện trong nhánh pha đó bị ngắt hoàn toàn (Ip = 0). Nếu mạng có dây trung tính thì hai pha còn lại vẫn hoạt động bình thường ở điện áp 220 V."
+      },
+      {
+        "id": "cn_b3_32",
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một xưởng thực hành có nguồn ba pha 4 dây 380/220 V. Muốn lắp một bóng đèn sợi đốt 220 V - 100 W vào mạng điện này, người ta phải đấu bóng đèn vào vị trí nào?",
+        "options": [
+          "A. Giữa hai dây pha bất kì (ví dụ dây pha A và dây pha B).",
+          "B. Giữa một dây pha bất kì và dây trung tính (ví dụ dây pha A và dây trung tính O).",
+          "C. Nối tiếp cả ba dây pha A, B, C vào một đầu bóng đèn.",
+          "D. Đấu trực tiếp hai cực của bóng đèn vào dây trung tính O."
+        ],
+        "correct": 1,
+        "explain": "Bóng đèn có điện áp định mức 220 V (bằng điện áp pha Up của lưới), do đó phải đấu một đầu vào dây pha và một đầu vào dây trung tính O để nhận đúng điện áp 220 V. Nếu đấu vào giữa hai dây pha (Ud = 380 V) thì đèn sẽ bị quá áp và nổ ngay lập tức."
+      },
+      {
+        "id": "cn_b4_01",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Hệ thống điện quốc gia là một hệ thống thống nhất gồm những thành phần cơ bản nào?",
+        "options": [
+          "A. Các công ty kinh doanh thiết bị điện gia dụng và các cửa hàng phân phối bán lẻ.",
+          "B. Nguồn điện, lưới điện và các tải tiêu thụ điện được liên kết chặt chẽ với nhau trên quy mô toàn quốc.",
+          "C. Các cơ quan quản lí tài nguyên nước và các hồ chứa thủy lợi.",
+          "D. Trạm phát sóng viễn thông và các vệ tinh địa tĩnh quân sự."
+        ],
+        "correct": 1,
+        "explain": "Theo SGK Công nghệ 12 trang 22-23: Hệ thống điện quốc gia gồm các nguồn điện (nhà máy điện), lưới điện (đường dây và trạm biến áp) và các hộ tiêu thụ điện trên toàn quốc được liên kết chặt chẽ thành một hệ thống thống nhất."
+      },
+      {
+        "id": "cn_b4_02",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Hệ thống điện quốc gia thực hiện liên tục bốn khâu then chốt nào sau đây?",
+        "options": [
+          "A. Sản xuất, truyền tải, phân phối và tiêu thụ điện năng.",
+          "B. Thiết kế, lắp ráp cơ khí, đóng tàu và thử nghiệm ô tô.",
+          "C. Đào tạo nhân lực, in ấn sách giáo khoa, bán hàng và bảo hành.",
+          "D. Chế tạo linh kiện điện tử, lập trình phần mềm và bảo dưỡng máy tính."
+        ],
+        "correct": 0,
+        "explain": "Hệ thống điện quốc gia thực hiện quá trình: Sản xuất điện năng (tại nhà máy điện) -> Truyền tải điện năng (lưới truyền tải) -> Phân phối điện năng (lưới phân phối) -> Tiêu thụ điện năng (tại các phụ tải) (SGK trang 22)."
+      },
+      {
+        "id": "cn_b4_03",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Thành phần 'LƯỚI ĐIỆN TRUYỀN TẢI' trong hệ thống điện quốc gia có cấp điện áp là",
+        "options": [
+          "A. dưới 1 kV.",
+          "B. từ 1 kV đến 35 kV.",
+          "C. từ 110 kV trở xuống.",
+          "D. trên 110 kV (như 220 kV và 500 kV)."
+        ],
+        "correct": 3,
+        "explain": "Theo quy chuẩn phân loại SGK trang 23: Lưới điện truyền tải có cấp điện áp TRÊN 110 kV (ở Việt Nam phổ biến là 220 kV và siêu cao áp 500 kV), đảm nhận truyền tải công suất lớn từ nhà máy điện đến các trạm phân phối chính."
+      },
+      {
+        "id": "cn_b4_04",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Thành phần 'LƯỚI ĐIỆN PHÂN PHỐI' trong hệ thống điện quốc gia có cấp điện áp là",
+        "options": [
+          "A. từ 110 kV trở xuống (110 kV, 35 kV, 22 kV, 10 kV, 6 kV, 0,4 kV).",
+          "B. trên 110 kV đến 500 kV.",
+          "C. trên 220 kV.",
+          "D. chỉ duy nhất cấp điện áp sinh hoạt 220 V."
+        ],
+        "correct": 0,
+        "explain": "Lưới điện phân phối có cấp điện áp TỪ 110 kV TRỞ XUỐNG (110 kV, 35 kV, 22 kV, 10 kV, 6 kV và hạ áp 0,4 kV/380/220V), làm nhiệm vụ đưa điện từ trạm phân phối chính đến các phụ tải tiêu thụ địa phương (SGK trang 23)."
+      },
+      {
+        "id": "cn_b4_05",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Theo quy chuẩn kĩ thuật điện Việt Nam, bốn cấp điện áp tiêu chuẩn của hệ thống lưới điện gồm:",
+        "options": [
+          "A. Điện cực thấp, điện trung bình, điện mạnh và điện cực mạnh.",
+          "B. Hạ áp (≤ 1 kV), Trung áp (> 1 kV đến 35 kV), Cao áp (> 35 kV đến 220 kV), Siêu cao áp (> 220 kV).",
+          "C. 12 V, 24 V, 110 V và 220 V.",
+          "D. Điện dân dụng, điện công nghiệp, điện nông nghiệp và điện quốc phòng."
+        ],
+        "correct": 1,
+        "explain": "Bốn cấp điện áp tiêu chuẩn quy định rõ ràng trong SGK trang 23: 1. Hạ áp (đến 1 kV); 2. Trung áp (từ trên 1 kV đến 35 kV); 3. Cao áp (từ trên 35 kV đến 220 kV); 4. Siêu cao áp (trên 220 kV, tiêu biểu là 500 kV)."
+      },
+      {
+        "id": "cn_b4_06",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Đường dây truyền tải điện siêu cao áp 500 kV Bắc - Nam mạch 1 được khởi công và khánh thành đóng điện vào các mốc thời gian lịch sử nào?",
+        "options": [
+          "A. Khởi công ngày 05/04/1992 và đóng điện ngày 27/05/1994.",
+          "B. Khởi công ngày 30/04/1975 và đóng điện ngày 02/09/1985.",
+          "C. Khởi công ngày 01/01/2000 và đóng điện ngày 10/10/2010.",
+          "D. Khởi công ngày 19/05/1990 và đóng điện ngày 27/07/1995."
+        ],
+        "correct": 0,
+        "explain": "Đường dây truyền tải 500 kV Bắc - Nam mạch 1 là công trình thế kỉ: khởi công ngày 05/04/1992 và hoàn thành đóng điện vận hành chính thức ngày 27/05/1994 (SGK Công nghệ 12 trang 24)."
+      },
+      {
+        "id": "cn_b4_07",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Quy mô kĩ thuật của đường dây siêu cao áp 500 kV Bắc - Nam mạch 1 là",
+        "options": [
+          "A. dài 500 km, gồm 1 000 cột tháp sắt, nối từ Hà Nội vào Đà Nẵng.",
+          "B. dài 1 487 km, gồm 3 437 cột tháp sắt, đi qua 14 tỉnh thành từ Trạm 500 kV Hoà Bình đến Trạm 500 kV Phú Lâm (TP. Hồ Chí Minh).",
+          "C. dài 2 500 km nối từ Móng Cái đến Mũi Cà Mau.",
+          "D. chạy ngầm dưới đáy biển dọc bờ biển miền Trung."
+        ],
+        "correct": 1,
+        "explain": "Đường dây 500 kV mạch 1 dài 1 487 km, xây dựng với 3 437 cột tháp sắt, băng qua rừng núi hiểm trở của 14 tỉnh thành từ Trạm 500 kV Hoà Bình tới Trạm 500 kV Phú Lâm (TP.HCM) (SGK trang 24)."
+      },
+      {
+        "id": "cn_b4_08",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Ý nghĩa chiến lược quan trọng nhất của việc xây dựng và đưa vào vận hành đường dây siêu cao áp 500 kV Bắc - Nam là gì?",
+        "options": [
+          "A. Hợp nhất hệ thống điện ba miền Bắc - Trung - Nam thành một hệ thống điện quốc gia thống nhất, giải quyết bài toán truyền tải nguồn điện dôi dư từ miền Bắc vào chi viện cho miền Nam đang thiếu điện nghiêm trọng.",
+          "B. Bỏ hẳn việc xây dựng các nhà máy nhiệt điện và thủy điện ở miền Nam.",
+          "C. Giúp giá điện sinh hoạt giảm về mức miễn phí cho toàn bộ người dân.",
+          "D. Thay thế hoàn toàn đường dây điện thoại và internet liên tỉnh."
+        ],
+        "correct": 0,
+        "explain": "Đường dây 500 kV Bắc - Nam đã liên kết lưới điện ba miền thành một khối thống nhất, chấm dứt tình trạng vận hành phân tán rời rạc, tối ưu hóa công suất phát điện của các nhà máy lớn như Thủy điện Hòa Bình để phục vụ phát triển kinh tế cả nước (SGK trang 24)."
+      },
+      {
+        "id": "cn_b4_09",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Đường dây siêu cao áp 500 kV mạch 3 vừa được khánh thành thần tốc năm 2024 nối từ địa phương nào đến địa phương nào?",
+        "options": [
+          "A. Từ Cà Mau đến TP. Hồ Chí Minh.",
+          "B. Từ Quảng Trạch (Quảng Bình) đến Phố Nối (Hưng Yên).",
+          "C. Từ Sơn La về Hà Nội.",
+          "D. Từ Pleiku sang Savannakhet (Lào)."
+        ],
+        "correct": 1,
+        "explain": "Đường dây 500 kV mạch 3 (cung đoạn Quảng Trạch - Phố Nối) dài hơn 519 km nối từ Trung tâm nhiệt điện Quảng Trạch (Quảng Bình) đến Trạm 500 kV Phố Nối (Hưng Yên), góp phần đảm bảo an ninh cấp điện trọng điểm cho miền Bắc."
+      },
+      {
+        "id": "cn_b4_10",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Vì sao tại các nhà máy điện nguồn, người ta bắt buộc phải đặt trạm biến áp TĂNG ÁP trước khi đưa điện lên đường dây truyền tải?",
+        "options": [
+          "A. Để tăng tần số dòng điện xoay chiều lên hàng nghìn Hz.",
+          "B. Để tăng điện áp U, từ đó giảm cường độ dòng điện I, giúp giảm mạnh công suất hao phí toả nhiệt trên dây dẫn theo công thức ΔP = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup>.R</span><span class=\"math-frac-bottom\">U<sup>2</sup>.cos<sup>2</sup>φ</span></span>.",
+          "C. Để chuyển đổi dòng xoay chiều thành dòng điện một chiều.",
+          "D. Để biến điện năng thành cơ năng dự trữ trong cột tháp."
+        ],
+        "correct": 1,
+        "explain": "Theo định luật Jun-Len-xơ, công suất hao phí nhiệt trên đường dây là: ΔP = I²R = <span class=\"math-frac\"><span class=\"math-frac-top\">P<sup>2</sup>.R</span><span class=\"math-frac-bottom\">U<sup>2</sup>.cos<sup>2</sup>φ</span></span>. Khi tăng điện áp U lên n lần thì hao phí ΔP giảm đi n² lần, giúp tiết kiệm chi phí xây dựng đường dây và truyền tải được công suất cực lớn đi xa."
+      },
+      {
+        "id": "cn_b4_11",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Khi truyền tải một công suất điện P xác định trên cùng một đường dây có điện trở R, nếu tăng điện áp từ U1 = 110 kV lên U2 = 220 kV thì công suất hao phí toả nhiệt ΔP trên đường dây sẽ",
+        "options": [
+          "A. tăng lên gấp 2 lần.",
+          "B. giảm đi 2 lần.",
+          "C. giảm đi 4 lần.",
+          "D. không thay đổi."
+        ],
+        "correct": 2,
+        "explain": "Công suất hao phí tỉ lệ nghịch với bình phương điện áp: ΔP tỉ lệ với <span class=\"math-frac\"><span class=\"math-frac-top\">1</span><span class=\"math-frac-bottom\">U<sup>2</sup></span></span>. Khi tăng điện áp từ 110 kV lên 220 kV (tăng gấp <span class=\"math-frac\"><span class=\"math-frac-top\">220</span><span class=\"math-frac-bottom\">110</span></span> = 2 lần) thì hao phí giảm: 2² = 4 lần."
+      },
+      {
+        "id": "cn_b4_12",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Vai trò chủ yếu của các trạm biến áp HẠ ÁP bố trí gần các khu dân cư và xí nghiệp công nghiệp là gì?",
+        "options": [
+          "A. Tăng điện áp lên 500 kV để trả ngược về nhà máy điện.",
+          "B. Giảm điện áp từ cấp truyền tải và trung áp xuống cấp điện áp hạ áp an toàn, phù hợp với các thiết bị tiêu thụ điện (380 V / 220 V).",
+          "C. Làm mát không khí và phát điện dự phòng khi trời mưa bão.",
+          "D. Khử từ trường xung quanh đường dây điện."
+        ],
+        "correct": 1,
+        "explain": "Trạm biến áp hạ áp có nhiệm vụ hạ cấp điện áp từ trung áp (22 kV, 35 kV) hoặc cao áp (110 kV) xuống điện áp hạ áp 380/220 V tương thích với mức điện áp làm việc an toàn của máy móc và đồ dùng gia đình (SGK trang 23)."
+      },
+      {
+        "id": "cn_b4_13",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Tần số danh định của dòng điện xoay chiều trong hệ thống điện quốc gia Việt Nam được chuẩn hóa là bao nhiêu?",
+        "options": [
+          "A. 60 Hz",
+          "B. 50 Hz",
+          "C. 100 Hz",
+          "D. 25 Hz"
+        ],
+        "correct": 1,
+        "explain": "Tần số công nghiệp danh định của hệ thống điện quốc gia Việt Nam là 50 Hz (SGK trang 22-23), sai số vận hành cho phép rất nghiêm ngặt (không quá ±5%)."
+      },
+      {
+        "id": "cn_b4_14",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Cơ quan đầu não chịu trách nhiệm chỉ huy điều độ, điều hòa công suất phát của các nhà máy điện và vận hành an toàn hệ thống điện quốc gia 24/7 tại Việt Nam là",
+        "options": [
+          "A. Trung tâm Điều độ Hệ thống điện Quốc gia (A0 - NSMO).",
+          "B. Viện Khoa học Thủy lợi Việt Nam.",
+          "C. Cục Quản lí Thị trường.",
+          "D. Tổng công ty Bưu chính Viễn thông."
+        ],
+        "correct": 0,
+        "explain": "Trung tâm Điều độ Hệ thống điện Quốc gia (A0) là đơn vị chỉ huy vận hành, theo dõi giám sát cung - cầu điện theo thời gian thực để duy trì ổn định tần số 50 Hz và điện áp trên toàn bộ lưới điện quốc gia."
+      },
+      {
+        "id": "cn_b4_15",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Cấp điện áp trung áp phổ biến nhất đang được sử dụng trong lưới điện phân phối tại các đô thị và khu dân cư ở Việt Nam hiện nay là:",
+        "options": [
+          "A. 0,4 kV",
+          "B. 22 kV",
+          "C. 110 kV",
+          "D. 500 kV"
+        ],
+        "correct": 1,
+        "explain": "Ở Việt Nam, cấp điện áp 22 kV là cấp điện áp trung áp tiêu chuẩn phổ biến nhất trong lưới phân phối hiện đại để cấp điện từ các trạm 110 kV về các trạm biến áp phân phối phụ tải (SGK trang 23)."
+      },
+      {
+        "id": "cn_b4_16",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Các chỉ tiêu chất lượng điện năng quan trọng hàng đầu trong hệ thống điện quốc gia gồm có:",
+        "options": [
+          "A. Độ ổn định tần số (50 Hz), độ ổn định điện áp (độ lệch trong ngưỡng ±5%) và độ tin cậy cung cấp điện liên tục.",
+          "B. Màu sắc của lớp vỏ cách điện cáp ngầm.",
+          "C. Tốc độ gió thổi qua đường dây và nhiệt độ cột tháp sắt.",
+          "D. Số lượng nhân viên trực ca tại các trạm biến áp."
+        ],
+        "correct": 0,
+        "explain": "Chất lượng điện năng được đo bằng: tần số ổn định quanh mức 50 Hz, độ lệch điện áp nằm trong tiêu chuẩn cho phép (±5%), sóng hài thấp và chỉ số cấp điện liên tục (SAIDI, SAIFI)."
+      },
+      {
+        "id": "cn_b4_17",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "Thiết bị nào sau đây thường được lắp đặt tại các trạm biến áp phân phối để nâng cao hệ số công suất cos φ và giảm tổn thất điện năng trên lưới điện?",
+        "options": [
+          "A. Tụ bù công suất phản kháng (bộ tụ điện).",
+          "B. Đèn LED chiếu sáng công suất lớn.",
+          "C. Cột thu lôi chống sét.",
+          "D. Máy hàn điện hồ quang."
+        ],
+        "correct": 0,
+        "explain": "Tụ bù công suất phản kháng phát ra công suất phản kháng Q bù cho các phụ tải cảm (động cơ điện), giúp nâng cao hệ số công suất cos φ của lưới lên gần bằng 1, làm giảm dòng điện trên dây dẫn và giảm hao phí truyền tải."
+      },
+      {
+        "id": "cn_b4_18",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "a. Lưới điện truyền tải bao gồm các đường dây và trạm biến áp có cấp điện áp từ 110 kV trở xuống.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH VẬN HÀNH: Hệ thống truyền tải điện Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Tổng công ty Truyền tải điện Quốc gia (EVNNPT) quản lí vận hành hệ thống lưới điện truyền tải điện áp 220 kV và 500 kV liên kết các nhà máy điện nguồn với các trung tâm phụ tải lớn trên phạm vi cả nước.</div>\n    </div>",
+        "options": [
+          "A. Đúng",
+          "B. Sai"
+        ],
+        "correct": 1,
+        "explain": "SAI. Lưới điện truyền tải có cấp điện áp TRÊN 110 kV (ở nước ta là 220 kV và 500 kV); còn lưới điện từ 110 kV trở xuống thuộc về lưới điện phân phối (SGK trang 23).",
+        "subLabel": "1a"
+      },
+      {
+        "id": "cn_b4_19",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "b. Đường dây 500 kV mạch 1 đóng vai trò lịch sử kết nối hệ thống điện ba miền thành một hệ thống điện quốc gia thống nhất.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH VẬN HÀNH: Hệ thống truyền tải điện Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Đường dây 500 kV mạch 1 được đóng điện năm 1994, truyền tải nguồn điện dôi dư từ miền Bắc (nhà máy thủy điện Hòa Bình) vào miền Trung và miền Nam.</div>\n    </div>",
+        "options": [
+          "A. Đúng",
+          "B. Sai"
+        ],
+        "correct": 0,
+        "explain": "ĐÚNG. Đây là ý nghĩa lớn nhất của đường dây 500 kV Bắc - Nam mạch 1: liên kết lưới điện ba miền, xóa bỏ tình trạng chia cắt năng lượng và tạo tiền đề phát triển kinh tế toàn diện.",
+        "subLabel": "1b"
+      },
+      {
+        "id": "cn_b4_20",
+        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
+        "question": "c. Trong hệ thống điện quốc gia, điện năng có thể được lưu trữ dễ dàng với dung lượng không giới hạn vào các đường dây dẫn điện.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH VẬN HÀNH: Hệ thống truyền tải điện Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Điều độ viên hệ thống điện phải tính toán liên tục lượng điện phát ra và lượng điện tiêu thụ trong từng giây để cân bằng hệ thống.</div>\n    </div>",
+        "options": [
+          "A. Đúng",
+          "B. Sai"
+        ],
+        "correct": 1,
+        "explain": "SAI. Đặc thù của điện năng là sản xuất, truyền tải và tiêu thụ diễn ra hầu như đồng thời tại cùng một thời điểm, đường dây chỉ có chức năng dẫn điện chứ không tích trữ được năng lượng. Do đó hệ thống luôn phải đảm bảo công suất phát bằng công suất tiêu thụ cộng hao phí.",
+        "subLabel": "1c"
+      },
+      {
+        "id": "cn_b6_01",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Mạng điện sản xuất quy mô nhỏ là mạng điện có công suất tiêu thụ điện năng nằm trong khoảng nào sau đây?",
+        "options": [
+          "A. Dưới 1 kW.",
+          "B. Từ vài chục đến vài trăm kW.",
+          "C. Từ vài nghìn đến vài chục nghìn MW.",
+          "D. Trên 1 000 000 kW."
+        ],
+        "correct": 1,
+        "explain": "Theo định nghĩa chuẩn SGK Công nghệ 12 trang 31: Mạng điện sản xuất quy mô nhỏ là mạng điện có công suất tiêu thụ điện năng từ vài chục đến vài trăm kW, lấy điện từ lưới điện phân phối để cung cấp cho cơ sở sản xuất."
+      },
+      {
+        "id": "cn_b6_02",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Ba đặc điểm quan trọng nhất của mạng điện sản xuất quy mô nhỏ bao gồm:",
+        "options": [
+          "A. Công suất nhỏ dưới 100 W; dùng nguồn pin năng lượng mặt trời; không có aptomat.",
+          "B. Công suất tiêu thụ từ vài chục đến vài trăm kW; phụ tải phân bố tập trung; mạng điện động lực và mạng điện chiếu sáng hoạt động độc lập.",
+          "C. Dùng cấp điện áp siêu cao áp 500 kV; phụ tải rải rác trên diện tích hàng nghìn km²; mạng động lực và chiếu sáng mắc chung trên một công tắc.",
+          "D. Toàn bộ thiết bị đều dùng dòng điện một chiều 24 V."
+        ],
+        "correct": 1,
+        "explain": "Ba đặc điểm cốt lõi học sinh bắt buộc phải ghi nhớ theo SGK trang 31: 1. Công suất tiêu thụ từ vài chục đến vài trăm kW; 2. Tải tiêu thụ phân bố tập trung trong phân xưởng; 3. Mạng điện động lực và mạng điện chiếu sáng hoạt động độc lập."
+      },
+      {
+        "id": "cn_b6_03",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Đặc điểm 'phụ tải phân bố tập trung' trong mạng điện sản xuất quy mô nhỏ có ý nghĩa thực tế là gì?",
+        "options": [
+          "A. Các thiết bị tiêu thụ điện (động cơ điện, máy hàn, máy cơ khí, lò sấy...) được bố trí tập trung trong một phạm vi không gian nhà xưởng hẹp của cơ sở sản xuất.",
+          "B. Các phụ tải nằm rải rác ở nhiều huyện và tỉnh thành khác nhau.",
+          "C. Tất cả máy móc đều cắm chung vào một ổ điện đơn duy nhất.",
+          "D. Thiết bị điện chỉ hoạt động tập trung vào đúng một giờ trong ngày."
+        ],
+        "correct": 0,
+        "explain": "Trong cơ sở sản xuất nhỏ (như xưởng may, xưởng cơ khí, xưởng chế biến nông sản), các phụ tải là máy móc thiết bị sản xuất được bố trí tập trung trong phạm vi các phân xưởng có diện tích vừa và nhỏ (SGK trang 31)."
+      },
+      {
+        "id": "cn_b6_04",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Vì sao trong mạng điện sản xuất quy mô nhỏ, mạng điện ĐỘNG LỰC và mạng điện CHIẾU SÁNG bắt buộc phải hoạt động ĐỘC LẬP?",
+        "options": [
+          "A. Để tránh việc bóng đèn chiếu sáng làm nóng hỏng động cơ điện.",
+          "B. Để khi xảy ra sự cố quá tải hay ngắn mạch ở máy móc làm nhảy aptomat tủ động lực, hệ thống đèn chiếu sáng vẫn có điện bình thường, giúp công nhân không bị hoảng loạn, thuận tiện thoát hiểm và xử lí sự cố an toàn.",
+          "C. Để công ty điện lực dễ ghi số điện của từng bóng đèn.",
+          "D. Để tiết kiệm chi phí lắp đặt dây dẫn."
+        ],
+        "correct": 1,
+        "explain": "Tải động lực (máy móc, động cơ) thường có dòng khởi động lớn và dễ xảy ra sự cố quá tải. Tách độc lập mạng chiếu sáng giúp hệ thống chiếu sáng không bị chập chờn hay mất điện đột ngột khi tải động lực gặp sự cố, đảm bảo an toàn lao động tối đa (SGK trang 31)."
+      },
+      {
+        "id": "cn_b6_05",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Nguồn cấp điện cho mạng điện sản xuất quy mô nhỏ thường được lấy từ đâu?",
+        "options": [
+          "A. Lấy trực tiếp từ đường dây siêu cao áp 500 kV đi ngang qua cổng xưởng.",
+          "B. Lấy từ lưới điện phân phối (trung áp 22 kV hoặc 35 kV) qua máy biến áp hạ áp riêng hoặc chung để hạ xuống cấp 380/220 V.",
+          "C. Hoàn toàn chạy bằng máy phát điện xăng mini xách tay.",
+          "D. Lấy từ mạng điện 110 V của pin quang điện đồ chơi."
+        ],
+        "correct": 1,
+        "explain": "Nguồn điện cấp cho cơ sở sản xuất quy mô nhỏ thường lấy từ đường dây trung áp 22 kV hoặc 35 kV của lưới phân phối công cộng qua trạm biến áp hạ áp (380/220 V) (SGK trang 31)."
+      },
+      {
+        "id": "cn_b6_06",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Sơ đồ cấu trúc phân cấp chuẩn của mạng điện sản xuất quy mô nhỏ theo đúng thứ tự là:",
+        "options": [
+          "A. Phụ tải -> Tủ chiếu sáng -> Tủ động lực -> Trạm biến áp -> Lưới phân phối.",
+          "B. Lưới điện phân phối -> Trạm biến áp hạ áp -> Tủ điện phân phối tổng (MSB) -> Tủ điện phân phối nhánh -> Tủ điện động lực / Tủ điện chiếu sáng -> Phụ tải tiêu thụ.",
+          "C. Trạm biến áp -> Tủ chiếu sáng -> Tủ tổng -> Máy sản xuất.",
+          "D. Tủ tổng -> Tủ động lực -> Trạm biến áp -> Phụ tải."
+        ],
+        "correct": 1,
+        "explain": "Cấu trúc phân cấp chuẩn SGK trang 32-33: Nguồn từ lưới phân phối -> Trạm biến áp hạ áp -> Tủ phân phối tổng (MSB) -> Tủ phân phối nhánh từng phân xưởng -> Tủ động lực & Tủ chiếu sáng -> Máy móc thiết bị."
+      },
+      {
+        "id": "cn_b6_07",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Tủ điện phân phối TỔNG (MSB) trong mạng điện sản xuất quy mô nhỏ có vai trò chính là",
+        "options": [
+          "A. điều khiển tốc độ quay của từng quạt thông gió.",
+          "B. nhận điện hạ áp (380/220 V) trực tiếp từ máy biến áp để phân chia và cấp nguồn cho các tủ điện phân phối nhánh, trang bị thiết bị đóng cắt bảo vệ tổng.",
+          "C. nắn dòng xoay chiều thành một chiều nạp cho bình ắc quy.",
+          "D. nâng điện áp lên 110 kV để bán lại cho lưới điện."
+        ],
+        "correct": 1,
+        "explain": "Tủ phân phối tổng (MSB) đặt ngay sau máy biến áp hạ áp, chứa aptomat tổng dòng lớn (MCCB hoặc ACB) để bảo vệ toàn bộ mạng điện và cấp nguồn cho các tủ nhánh (SGK trang 33)."
+      },
+      {
+        "id": "cn_b6_08",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Tủ điện phân phối NHÁNH có nhiệm vụ gì trong sơ đồ mạng điện cơ sở sản xuất?",
+        "options": [
+          "A. Nhận điện từ tủ tổng để phân phối tiếp đến các tủ điện động lực và tủ điện chiếu sáng trong từng phân xưởng riêng biệt.",
+          "B. Hạ áp từ 22 kV xuống 380 V.",
+          "C. Thay thế hoàn toàn động cơ của máy sản xuất.",
+          "D. Thu sét bảo vệ mái nhà xưởng."
+        ],
+        "correct": 0,
+        "explain": "Tủ phân phối nhánh được đặt tại từng phân xưởng sản xuất, nhận điện từ tủ tổng và chia thành các nhánh cấp riêng cho tủ động lực và tủ chiếu sáng của phân xưởng đó (SGK trang 33)."
+      },
+      {
+        "id": "cn_b6_09",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Tủ điện ĐỘNG LỰC trong phân xưởng sản xuất cấp nguồn trực tiếp cho đối tượng nào?",
+        "options": [
+          "A. Các bóng đèn tuýp chiếu sáng hành lang và bảng hiệu quảng cáo.",
+          "B. Các máy móc, thiết bị sản xuất như động cơ điện ba pha, máy gia công kim loại, máy may, máy ép, máy nén khí...",
+          "C. Máy tính xách tay của nhân viên kế toán.",
+          "D. Đồng hồ đeo tay của công nhân."
+        ],
+        "correct": 1,
+        "explain": "Tủ động lực chuyên dùng cấp điện cho các máy công tác trong dây chuyền sản xuất (chủ yếu là động cơ ba pha, lò nhiệt, máy công cụ), chứa aptomat, khởi động từ và rơ le nhiệt bảo vệ (SGK trang 33)."
+      },
+      {
+        "id": "cn_b6_10",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Quy trình an toàn bắt buộc khi thao tác ĐÓNG ĐIỆN cho một mạng điện phân xưởng sản xuất là:",
+        "options": [
+          "A. Đóng lần lượt TỪ NGUỒN ĐẾN TẢI: Trạm biến áp -> Tủ phân phối tổng -> Tủ phân phối nhánh -> Tủ động lực / chiếu sáng -> Khởi động máy sản xuất.",
+          "B. Đóng lần lượt từ tải về nguồn: Bật tất cả các máy móc trước rồi mới đóng tủ tổng.",
+          "C. Đóng ngẫu nhiên bất kì aptomat nào trong xưởng trước cũng được.",
+          "D. Vừa đóng aptomat tổng vừa bật máy sản xuất cùng lúc."
+        ],
+        "correct": 0,
+        "explain": "Quy trình ĐÓNG ĐIỆN chuẩn: Đóng từ NGUỒN đến TẢI (Trạm -> Tủ tổng -> Tủ nhánh -> Tủ động lực/chiếu sáng -> Bật máy). Giúp các cấp bảo vệ sẵn sàng và kiểm soát thông số điện áp trước khi tải làm việc (SGK trang 33)."
+      },
+      {
+        "id": "cn_b6_11",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Quy trình an toàn bắt buộc khi thao tác CẮT ĐIỆN để bảo dưỡng hoặc hết ca sản xuất là:",
+        "options": [
+          "A. Cắt trực tiếp cầu dao/aptomat tại tủ tổng trước tiên trong khi các máy vẫn đang chạy.",
+          "B. Cắt lần lượt TỪ TẢI VỀ NGUỒN: Tắt các máy sản xuất -> Cắt tủ động lực / chiếu sáng -> Cắt tủ phân phối nhánh -> Cắt tủ phân phối tổng.",
+          "C. Cắt ngẫu nhiên bất kì aptomat nào.",
+          "D. Dùng kìm bấm đứt dây cáp nguồn."
+        ],
+        "correct": 1,
+        "explain": "Quy trình CẮT ĐIỆN chuẩn: Cắt từ TẢI về NGUỒN (Tắt máy -> Cắt tủ động lực/chiếu sáng -> Cắt tủ nhánh -> Cắt tủ tổng) (SGK trang 33)."
+      },
+      {
+        "id": "cn_b6_12",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Về mặt kĩ thuật và an toàn, VÌ SAO KHI CẮT ĐIỆN BẮT BUỘC PHẢI CẮT TỪ TẢI VỀ NGUỒN?",
+        "options": [
+          "A. Vì công tắc ở tải nhỏ hơn nên bấm nhẹ tay hơn.",
+          "B. Vì khi các máy sản xuất đang hoạt động, dòng điện phụ tải rất lớn. Cắt tải trước để dập tắt dòng điện, tránh phát sinh HỒ QUANG ĐIỆN nguy hiểm gây nổ thiết bị, cháy tiếp điểm và gây bỏng cho người thao tác ở các tủ điện nguồn phía trên.",
+          "C. Để bóng đèn chiếu sáng kịp nguội bớt.",
+          "D. Vì quy định này chỉ áp dụng cho mạng điện sinh hoạt gia đình."
+        ],
+        "correct": 1,
+        "explain": "Lí do sống còn: Khi mang tải lớn, việc mở tiếp điểm đóng cắt nguồn sẽ làm bùng phát hồ quang điện cực kì mạnh có thể làm nổ buồng dập hồ quang, cháy mặt và gây bỏng nghiêm trọng cho công nhân điện. Cắt tải trước giúp dập dòng không tải an toàn (SGK trang 33)."
+      },
+      {
+        "id": "cn_b6_13",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Thiết bị bảo vệ quá tải và ngắn mạch được sử dụng phổ biến nhất cho động cơ ba pha trong tủ điện động lực là:",
+        "options": [
+          "A. Aptomat (MCB, MCCB) kết hợp với Rơ le nhiệt.",
+          "B. Dây đồng quấn quanh đinh ốc.",
+          "C. Công tơ điện một pha.",
+          "D. Biến trở con chạy thủ công."
+        ],
+        "correct": 0,
+        "explain": "Aptomat (MCB, MCCB) bảo vệ ngắn mạch và quá tải tức thời, còn rơ le nhiệt gắn sau khởi động từ chuyên bảo vệ quá tải lâu dài chống cháy cuộn dây động cơ (SGK trang 33)."
+      },
+      {
+        "id": "cn_b6_14",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Một phân xưởng may công nghiệp có tổng công suất tác dụng tiêu thụ P = 160 kW, hệ số công suất cos φ = 0,8. Cần chọn máy biến áp phân phối có công suất biểu kiến định mức tối thiểu là bao nhiêu kVA?",
+        "options": [
+          "A. 128 kVA",
+          "B. 160 kVA",
+          "C. 200 kVA",
+          "D. 250 kVA"
+        ],
+        "correct": 2,
+        "explain": "Công suất biểu kiến của máy biến áp: S = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">160</span><span class=\"math-frac-bottom\">0,8</span></span> = 200 kVA. Do đó cần chọn máy biến áp có công suất định mức tối thiểu là 200 kVA."
+      },
+      {
+        "id": "cn_b6_15",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "Một xưởng chế biến gỗ có công suất tiêu thụ P = 80 kW, cos φ = 0,8. Nếu lắp đặt tụ bù để nâng hệ số công suất lên cos φ' = 1,0 thì công suất biểu kiến S tiêu thụ từ lưới điện giảm đi bao nhiêu kVA?",
+        "options": [
+          "A. Giảm 20 kVA",
+          "B. Giảm 80 kVA",
+          "C. Giảm 100 kVA",
+          "D. Giảm 0 kVA"
+        ],
+        "correct": 0,
+        "explain": "Ban đầu: S1 = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">0,8</span></span> = 100 kVA. Khi nâng cos φ' = 1,0: S2 = <span class=\"math-frac\"><span class=\"math-frac-top\">P</span><span class=\"math-frac-bottom\">cos φ'</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">80</span><span class=\"math-frac-bottom\">1,0</span></span> = 80 kVA. Công suất biểu kiến giảm: ΔS = 100 - 80 = 20 kVA (giảm dòng điện trên dây cáp nguồn)."
+      },
+      {
+        "id": "cn_b6_16",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "a. Mạng điện sản xuất quy mô nhỏ có công suất tiêu thụ trong khoảng từ vài chục đến vài trăm kW.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH THỰC TẾ: Phân xưởng cơ khí chính xác An Phát</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Xưởng cơ khí An Phát có diện tích 800 m², trang bị 10 máy tiện CNC, 5 máy phay cơ và hệ thống đèn chiếu sáng LED phân xưởng. Nguồn điện lấy từ trạm biến áp hạ áp 22/0,4 kV riêng của công ty.</div>\n    </div>",
+        "options": [
+          "A. Đúng",
+          "B. Sai"
+        ],
+        "correct": 0,
+        "explain": "ĐÚNG. Mạng điện sản xuất quy mô nhỏ có công suất tiêu thụ điển hình từ vài chục đến vài trăm kW (SGK trang 31).",
+        "subLabel": "2a"
+      },
+      {
+        "id": "cn_b6_17",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "b. Mạng điện động lực cấp cho các máy tiện CNC và mạng điện chiếu sáng xưởng An Phát phải được cấp nguồn từ cùng một công tắc chung để tiết kiệm tủ điện.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH THỰC TẾ: Phân xưởng cơ khí chính xác An Phát</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Xưởng cơ khí An Phát có diện tích 800 m², trang bị 10 máy tiện CNC, 5 máy phay cơ và hệ thống đèn chiếu sáng LED phân xưởng. Nguồn điện lấy từ trạm biến áp hạ áp 22/0,4 kV riêng của công ty.</div>\n    </div>",
+        "options": [
+          "A. Đúng",
+          "B. Sai"
+        ],
+        "correct": 1,
+        "explain": "SAI. Mạng điện động lực và mạng điện chiếu sáng bắt buộc phải hoạt động độc lập để đảm bảo an toàn, khi máy móc bị sự cố nhảy aptomat thì đèn chiếu sáng vẫn sáng bình thường.",
+        "subLabel": "2b"
+      },
+      {
+        "id": "cn_b6_18",
+        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
+        "question": "c. Khi hết ca làm việc, thợ điện ngắt điện bằng cách cắt aptomat tổng ở trạm biến áp trước khi tắt các máy tiện CNC đang gia công.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH THỰC TẾ: Phân xưởng cơ khí chính xác An Phát</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Xưởng cơ khí An Phát có diện tích 800 m², trang bị 10 máy tiện CNC, 5 máy phay cơ và hệ thống đèn chiếu sáng LED phân xưởng. Nguồn điện lấy từ trạm biến áp hạ áp 22/0,4 kV riêng của công ty.</div>\n    </div>",
+        "options": [
+          "A. Đúng",
+          "B. Sai"
+        ],
+        "correct": 1,
+        "explain": "SAI. Quy trình cắt điện an toàn bắt buộc phải cắt từ TẢI về NGUỒN: Tắt từng máy tiện CNC -> Cắt aptomat tủ động lực -> Cắt tủ nhánh -> Cắt tủ tổng để dập dòng phụ tải, tránh phát sinh hồ quang gây nổ và hỏng tiếp điểm ở tủ nguồn.",
+        "subLabel": "2c"
+      },
+      {
+        "id": "cn_b5_01",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Nhà máy thủy điện sử dụng dạng năng lượng đầu vào nào để biến đổi thành điện năng?",
+        "options": [
+          "A. Nhiệt năng của than đá.",
+          "B. Cơ năng (thế năng và động năng) của dòng nước chảy từ trên cao.",
+          "C. Năng lượng phản ứng phân hạch hạt nhân.",
+          "D. Năng lượng bức xạ mặt trời."
+        ],
+        "correct": 1,
+        "explain": "Nhà máy thủy điện sử dụng thế năng của nước tích trữ ở hồ chứa trên cao, qua ống áp lực tạo dòng nước có động năng lớn làm quay tuabin nước, kéo máy phát điện quay để phát ra điện (SGK trang 26)."
+      },
+      {
+        "id": "cn_b5_02",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Ưu điểm nổi bật nhất của nhà máy nhiệt điện sử dụng nhiên liệu hóa thạch (than đá, khí đốt) là gì?",
+        "options": [
+          "A. Hoàn toàn không phát thải khí nhà kính.",
+          "B. Công suất phát điện lớn và khả năng vận hành liên tục, ổn định, không phụ thuộc vào mùa mưa hay mùa khô như thủy điện.",
+          "C. Chi phí xây dựng và nhiên liệu bằng 0.",
+          "D. Sử dụng nguồn tài nguyên vĩnh cửu không bao giờ cạn kiệt."
+        ],
+        "correct": 1,
+        "explain": "Nhà máy nhiệt điện có ưu điểm lớn là công suất phát rất cao, vận hành liên tục 24/7 ổn định quanh năm, đảm bảo cấp điện nền cho hệ thống mà không bị ảnh hưởng bởi thời tiết hay hạn hán (SGK trang 27)."
+      },
+      {
+        "id": "cn_b5_03",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Nhược điểm lớn nhất về mặt môi trường của các nhà máy nhiệt điện than là:",
+        "options": [
+          "A. Phát thải lượng lớn khí nhà kính (CO2, SO2, NOx), bụi mịn và khối lượng tro xỉ khổng lồ gây ô nhiễm đất, nước và không khí.",
+          "B. Làm khô cạn các dòng sông lớn.",
+          "C. Gây ra các vụ rò rỉ phóng xạ nguy hiểm.",
+          "D. Tiêu diệt chim và dơi do cánh quạt quay."
+        ],
+        "correct": 0,
+        "explain": "Đốt than phát thải lượng khí CO2 lớn gây hiệu ứng nhà kính và biến đổi khí hậu toàn cầu, kèm theo khí SO2 gây mưa axit và bãi thải tro xỉ chiếm nhiều diện tích đất (SGK trang 27)."
+      },
+      {
+        "id": "cn_b5_04",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Trong nhà máy điện hạt nhân, năng lượng dùng để đun sôi nước tạo hơi áp suất cao quay tuabin xuất phát từ đâu?",
+        "options": [
+          "A. Phản ứng phân hạch hạt nhân của nhiên liệu phóng xạ (chủ yếu là Uranium-235) trong lò phản ứng.",
+          "B. Đốt cháy khí hydro hóa lỏng.",
+          "C. Bức xạ nhiệt của tia vũ trụ.",
+          "D. Phản ứng hóa học giữa axit và bazo."
+        ],
+        "correct": 0,
+        "explain": "Nhà máy điện hạt nhân giải phóng nhiệt năng cực lớn từ phản ứng phân hạch dây chuyền của hạt nhân Uranium trong lò phản ứng hạt nhân để tạo hơi nước quay tuabin máy phát (SGK trang 28)."
+      },
+      {
+        "id": "cn_b5_05",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Thiết bị biến tần (Inverter) trong hệ thống điện mặt trời nối lưới có nhiệm vụ gì?",
+        "options": [
+          "A. Tích trữ điện năng vào pin dự phòng.",
+          "B. Chuyển đổi dòng điện một chiều (DC) do các tấm pin quang điện tạo ra thành dòng điện xoay chiều (AC) đồng bộ về tần số và điện áp để cấp cho tải và hòa vào lưới điện quốc gia.",
+          "C. Làm mát các tấm pin mặt trời khi trời quá nắng.",
+          "D. Tự động xoay tấm pin theo hướng gió."
+        ],
+        "correct": 1,
+        "explain": "Pin mặt trời tạo ra dòng điện một chiều (DC). Muốn cấp điện cho thiết bị xoay chiều 220V hoặc đưa lên lưới điện 50 Hz thì bắt buộc phải qua bộ biến tần (Inverter) chuyển DC thành AC (SGK trang 29)."
+      },
+      {
+        "id": "cn_b5_06",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Hạn chế chung lớn nhất của hai nguồn năng lượng tái tạo là điện gió và điện mặt trời là gì?",
+        "options": [
+          "A. Phát thải quá nhiều khí CO2 độc hại.",
+          "B. Phụ thuộc hoàn toàn vào điều kiện thời tiết (nắng, gió), tính bất định cao, không phát được điện vào ban đêm (điện mặt trời) hoặc lúc lặng gió.",
+          "C. Giá thành thiết bị tăng gấp 100 lần mỗi năm.",
+          "D. Không thể kết nối vào hệ thống lưới điện."
+        ],
+        "correct": 1,
+        "explain": "Năng lượng gió và mặt trời có nhược điểm lớn là tính chập chờn, bất định, phụ thuộc vào thời tiết. Khi thời tiết xấu hoặc đêm xuống, công suất phát sụt giảm mạnh đòi hỏi hệ thống điện phải có nguồn điện nền bù đắp (SGK trang 29-30)."
+      },
+      {
+        "id": "cn_b5_07",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Nhà máy thủy điện lớn nhất Việt Nam và khu vực Đông Nam Á hiện nay là",
+        "options": [
+          "A. Thủy điện Hòa Bình",
+          "B. Thủy điện Sơn La (công suất 2 400 MW)",
+          "C. Thủy điện Yaly",
+          "D. Thủy điện Trị An"
+        ],
+        "correct": 1,
+        "explain": "Thủy điện Sơn La trên sông Đà với 6 tổ máy có tổng công suất 2 400 MW là nhà máy thủy điện có quy mô lớn nhất Việt Nam và Đông Nam Á."
+      },
+      {
+        "id": "cn_b5_08",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Nguồn năng lượng sinh khối (Biomass) dùng để sản xuất điện năng bao gồm các nguồn vật liệu nào?",
+        "options": [
+          "A. Quặng sắt, bauxit và đất hiếm.",
+          "B. Phụ phẩm nông nghiệp và lâm nghiệp như bã mía, trấu, rơm rạ, mùn cưa, dăm gỗ và chất thải hữu cơ.",
+          "C. Dầu mỏ thô dưới đáy biển sâu.",
+          "D. Than đá antraxit."
+        ],
+        "correct": 1,
+        "explain": "Năng lượng sinh khối tận dụng các phế phụ phẩm nông nghiệp (bã mía ở các nhà máy đường, trấu, dăm gỗ) để đốt lò hơi phát điện, giúp giảm thiểu rác thải nông nghiệp và bảo vệ môi trường (SGK trang 30)."
+      },
+      {
+        "id": "cn_b5_09",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Hiệu suất chuyển đổi quang năng thành điện năng của các tấm pin quang điện (Silicon tinh thể) thương mại phổ biến hiện nay đạt khoảng",
+        "options": [
+          "A. từ 15% đến 22%",
+          "B. từ 85% đến 98%",
+          "C. 100%",
+          "D. dưới 2%"
+        ],
+        "correct": 0,
+        "explain": "Các tấm pin mặt trời silicon thương dụng hiện nay có hiệu suất chuyển đổi quang điện trung bình trong khoảng 15% - 22%."
+      },
+      {
+        "id": "cn_b5_10",
+        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
+        "question": "Xu hướng chuyển dịch năng lượng hiện nay tại Việt Nam và trên thế giới hướng tới mục tiêu Net Zero là",
+        "options": [
+          "A. Xây dựng thêm thật nhiều nhà máy nhiệt điện đốt than.",
+          "B. Giảm dần nhiệt điện than, tăng nhanh tỉ trọng năng lượng tái tạo (điện gió ngoài khơi, điện mặt trời, sinh khối) kết hợp hệ thống pin tích năng (BESS) và lưới điện thông minh.",
+          "C. Ngừng hoàn toàn việc sử dụng điện năng.",
+          "D. Chỉ sử dụng máy phát điện chạy xăng dầu tại từng hộ gia đình."
+        ],
+        "correct": 1,
+        "explain": "Chuyển dịch năng lượng xanh: cắt giảm điện than ô nhiễm, phát triển năng lượng tái tạo sạch (gió, mặt trời, thủy điện tích năng) hướng tới mục tiêu phát thải ròng bằng 0 (Net Zero) vào năm 2050 theo cam kết của Việt Nam tại COP26."
+      },
+      {
+        "id": "cn_b7_01",
+        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+        "question": "Mạng điện hạ áp dùng trong sinh hoạt thuộc thành phần nào của hệ thống điện quốc gia?",
+        "options": [
+          "A. Lưới điện truyền tải siêu cao áp.",
+          "B. Lưới điện phân phối.",
+          "C. Nhà máy nhiệt điện nguồn.",
+          "D. Hệ thống đập tràn thủy điện."
+        ],
+        "correct": 1,
+        "explain": "Mạng điện hạ áp sinh hoạt là khâu cuối cùng của lưới điện phân phối, nhận điện từ trạm biến áp hạ áp để cấp điện trực tiếp cho các hộ gia đình (SGK trang 35)."
+      },
+      {
+        "id": "cn_b7_02",
+        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+        "question": "Các thông số kĩ thuật định mức tiêu chuẩn của mạng điện hạ áp sinh hoạt tại Việt Nam là:",
+        "options": [
+          "A. Điện áp dây Ud = 380 V; Điện áp pha Up = 220 V; Tần số f = 50 Hz.",
+          "B. Điện áp dây Ud = 220 V; Điện áp pha Up = 110 V; Tần số f = 60 Hz.",
+          "C. Điện áp dây Ud = 500 V; Điện áp pha Up = 220 V; Tần số f = 25 Hz.",
+          "D. Điện áp một chiều 12 V."
+        ],
+        "correct": 0,
+        "explain": "Quy chuẩn Việt Nam: Mạng hạ áp sinh hoạt 3 pha 4 dây có điện áp dây Ud = 380 V, điện áp pha Up = 220 V và tần số công nghiệp f = 50 Hz (SGK trang 36)."
+      },
+      {
+        "id": "cn_b7_03",
+        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+        "question": "Theo quy chuẩn kĩ thuật, mức sai số điện áp cho phép đối với mạng điện hạ áp sinh hoạt không vượt quá ngưỡng nào?",
+        "options": [
+          "A. ±5% so với điện áp danh định 220 V (tương ứng dải điện áp an toàn từ 209 V đến 231 V).",
+          "B. ±50% (tương ứng dải từ 110 V đến 330 V).",
+          "C. ±1% (chỉ dao động không quá 2 V).",
+          "D. Không có quy định sai số."
+        ],
+        "correct": 0,
+        "explain": "Mức lệch điện áp cho phép trong điều kiện vận hành bình thường là ±5% của 220 V: ΔU = 220 × 5% = 11 V, tức điện áp tại ổ cắm dao động trong ngưỡng từ 209 V đến 231 V là đạt chuẩn (SGK trang 36)."
+      },
+      {
+        "id": "cn_b7_04",
+        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+        "question": "Sơ đồ cấu trúc điển hình của mạng điện hạ áp sinh hoạt từ trạm điện đến các hộ gia đình gồm:",
+        "options": [
+          "A. Trạm biến áp hạ áp -> Tủ phân phối tổng -> Tủ phân phối khu vực (nhánh) -> Đường cáp trục chính ba pha -> Đường cáp rẽ nhánh một pha -> Công tơ điện hộ gia đình.",
+          "B. Công tơ điện -> Trạm biến áp -> Nhà máy nhiệt điện.",
+          "C. Đường dây 500 kV nối thẳng vào ổ cắm gia đình.",
+          "D. Tủ tổng -> Bình ắc quy -> Bóng đèn."
+        ],
+        "correct": 0,
+        "explain": "Cấu trúc mạng hạ áp sinh hoạt: Trạm biến áp hạ áp (380/220V) -> Tủ phân phối tổng -> Tủ phân phối nhánh cụm dân cư -> Dây trục chính 3 pha 4 dây -> Dây rẽ nhánh 1 pha 2 dây -> Công tơ điện và bảng điện trong nhà (SGK trang 35-36)."
+      },
+      {
+        "id": "cn_b7_05",
+        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+        "question": "Mục đích quan trọng nhất của việc phân chia các hộ gia đình rẽ nhánh đồng đều từ ba pha A, B, C của đường trục chính là gì?",
+        "options": [
+          "A. Để cân bằng phụ tải giữa các pha, tránh hiện tượng lệch pha gây quá tải một pha và sụt áp trên dây trung tính.",
+          "B. Để các hộ gia đình dùng chung một công tơ điện.",
+          "C. Để làm đẹp cảnh quan đường phố.",
+          "D. Để dòng điện pha tăng lên gấp 10 lần."
+        ],
+        "correct": 0,
+        "explain": "Phụ tải sinh hoạt là phụ tải một pha. Phải phân bổ đều các hộ vào pha A, pha B, pha C để phụ tải ba pha cân bằng, giảm thiểu dòng điện chạy trên dây trung tính và tránh sụt áp cục bộ (SGK trang 36)."
+      },
+      {
+        "id": "cn_b7_06",
+        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+        "question": "Thiết bị nào sau đây dùng để đo đếm điện năng tiêu thụ (tính bằng kilowatt giờ - kWh) của từng hộ gia đình để thanh toán tiền điện?",
+        "options": [
+          "A. Công tơ điện (đồng hồ điện).",
+          "B. Vôn kế.",
+          "C. Ampe kế kẹp.",
+          "D. Tụ điện chống sét."
+        ],
+        "correct": 0,
+        "explain": "Công tơ điện (điện tử hoặc cơ) là thiết bị đo đếm điện năng tiêu thụ A = P.t (đơn vị kWh hay 'số điện') của từng khách hàng dùng điện (SGK trang 36)."
+      },
+      {
+        "id": "cn_b7_07",
+        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+        "question": "Thiết bị chống giật và chống rò điện (RCBO hoặc ELCB) trong bảng điện gia đình hoạt động dựa trên nguyên lí nào?",
+        "options": [
+          "A. Tự động so sánh dòng điện chạy trên dây pha và dòng điện hồi về trên dây trung tính, nếu có sự chênh lệch (dòng rò ra vỏ chạm vào người) vượt ngưỡng an toàn (thường là 30 mA) thì ngắt điện tức thì trong tích tắc.",
+          "B. Đo nhiệt độ nóng lên của bóng đèn.",
+          "C. Đếm số lần bật tắt công tắc trong ngày.",
+          "D. Ngắt điện khi có tiếng động lớn."
+        ],
+        "correct": 0,
+        "explain": "Aptomat chống giật (RCBO/ELCB) đo dòng rò: bình thường dòng đi trên dây pha bằng dòng về trên dây trung tính (Ipha = Itrungtinh). Khi có người bị giật hoặc rò điện ra vỏ máy xuống đất, dòng bị lệch, rơ le cảm biến từ sẽ tác động cắt mạch ngay lập tức (dưới 0,03 giây) để cứu sống người."
+      },
+      {
+        "id": "cn_b7_08",
+        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+        "question": "Dây tiếp địa bảo vệ (PE - màu vàng sọc xanh lá) trong hệ thống điện gia đình có vai trò gì?",
+        "options": [
+          "A. Dẫn dòng điện rò từ vỏ kim loại của thiết bị (máy giặt, tủ lạnh, bình nóng lạnh) xuống cọc đất, ngăn ngừa nguy cơ điện giật cho người sử dụng.",
+          "B. Làm cho tủ lạnh làm đá nhanh hơn.",
+          "C. Tăng độ sáng cho bóng đèn phòng khách.",
+          "D. Dẫn sóng wifi vào trong nhà."
+        ],
+        "correct": 0,
+        "explain": "Nối đất vỏ thiết bị kim loại (dây PE) giúp triệt tiêu điện áp rò nguy hiểm trên vỏ máy: khi có chạm vỏ, dòng rò theo dây tiếp địa có điện trở rất nhỏ truyền xuống đất làm nhảy aptomat và bảo vệ người chạm vào không bị giật."
+      },
+      {
+        "id": "cn_b7_09",
+        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+        "question": "Một hộ gia đình trong 30 ngày sử dụng bình nóng lạnh công suất 2 500 W mỗi ngày bật 1,5 giờ. Lượng điện năng tiêu thụ riêng của bình nóng lạnh trong tháng đó là",
+        "options": [
+          "A. 112,5 kWh",
+          "B. 37,5 kWh",
+          "C. 75 kWh",
+          "D. 150 kWh"
+        ],
+        "correct": 0,
+        "explain": "Đổi công suất P = 2 500 W = 2,5 kW. Tổng thời gian sử dụng trong 30 ngày: t = 30 × 1,5 = 45 giờ. Điện năng tiêu thụ: A = P × t = 2,5 × 45 = 112,5 kWh (số điện)."
+      },
+      {
+        "id": "cn_b7_10",
+        "topic": "BÀI 7: MẠNG ĐIỆN HẠ ÁP SINH HOẠT",
+        "question": "Hành vi nào sau đây vi phạm nghiêm trọng quy tắc an toàn khi sử dụng mạng điện hạ áp sinh hoạt?",
+        "options": [
+          "A. Rút phích cắm bình siêu tốc khi tay còn đang ướt hoặc dùng dây đồng thay thế cho dây chì của cầu chì.",
+          "B. Lắp đặt aptomat chống rò 30 mA cho bình nước nóng.",
+          "C. Tắt bớt các bóng đèn khi rời khỏi phòng.",
+          "D. Nối dây tiếp địa cho vỏ máy giặt."
+        ],
+        "correct": 0,
+        "explain": "Nước dẫn điện tốt nên tay ướt chạm vào phích cắm dễ bị phóng điện gây giật chết người; thay dây đồng vào cầu chì làm mất tác dụng bảo vệ quá tải, khi chập mạch dây dẫn sẽ bốc cháy gây hỏa hoạn."
+      },
+      {
+        "id": "cn_b2_01",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Nghiên cứu, tính toán lựa chọn thiết bị điện và lập hồ sơ bản vẽ thiết kế sơ đồ mạch điện thuộc nhóm nghề nào?",
+        "options": [
+          "A. Lắp đặt điện.",
+          "B. Thiết kế điện.",
+          "C. Vận hành điện.",
+          "D. Bảo dưỡng và sửa chữa điện."
+        ],
+        "correct": 1,
+        "explain": "Nhóm nghề thiết kế điện có nhiệm vụ nghiên cứu, ứng dụng kiến thức kĩ thuật điện để tính toán lựa chọn khí cụ, thiết bị điện và lập hồ sơ bản vẽ thiết kế hệ thống điện (SGK trang 9-10)."
+      },
+      {
+        "id": "cn_b2_02",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Chế tạo các thiết bị như máy biến áp, động cơ điện, dây cáp điện và khí cụ đóng cắt trên dây chuyền công nghiệp thuộc nhóm nghề nào?",
+        "options": [
+          "A. Sản xuất, chế tạo thiết bị điện.",
+          "B. Vận hành điện.",
+          "C. Thiết kế thời trang.",
+          "D. Kinh doanh bất động sản."
+        ],
+        "correct": 0,
+        "explain": "Nhóm nghề sản xuất, chế tạo thiết bị điện làm việc tại các nhà máy, xí nghiệp cơ điện để sản xuất các thiết bị, máy móc điện và linh kiện đạt chuẩn kiểm định (SGK trang 11)."
+      },
+      {
+        "id": "cn_b2_03",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Thi công kéo dây, lắp đặt tủ điện và kết nối các thiết bị điện tại hiện trường công trình xây dựng theo bản vẽ thiết kế thuộc nhóm nghề nào?",
+        "options": [
+          "A. Lắp đặt điện.",
+          "B. Nghiên cứu lí thuyết vật lí.",
+          "C. Thiết kế vi mạch máy tính.",
+          "D. Vận hành tổng đài điện thoại."
+        ],
+        "correct": 0,
+        "explain": "Nhóm nghề lắp đặt điện trực tiếp làm việc tại hiện trường các công trình dân dụng và công nghiệp để thi công mạng điện và lắp đặt thiết bị đúng quy chuẩn kĩ thuật (SGK trang 12)."
+      },
+      {
+        "id": "cn_b2_04",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Theo dõi các thông số điện áp, dòng điện, tần số và thao tác đóng cắt các thiết bị điện tại phòng điều khiển trung tâm thuộc nhóm nghề nào?",
+        "options": [
+          "A. Vận hành điện.",
+          "B. Thiết kế điện.",
+          "C. Sản xuất thiết bị.",
+          "D. Môi giới việc làm."
+        ],
+        "correct": 0,
+        "explain": "Nhóm nghề vận hành điện làm việc tại phòng điều độ, trung tâm điều khiển nhà máy điện và trạm biến áp để giám sát và duy trì mạng điện hoạt động liên tục, an toàn (SGK trang 13)."
+      },
+      {
+        "id": "cn_b2_05",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Kiểm tra định kì, tra dầu mỡ, siết chặt các điểm tiếp xúc và phục hồi các chi tiết bị hỏng hóc thuộc nhóm nghề nào?",
+        "options": [
+          "A. Bảo dưỡng và sửa chữa điện.",
+          "B. Thiết kế điện.",
+          "C. Xây dựng cầu đường.",
+          "D. Khảo sát địa chất."
+        ],
+        "correct": 0,
+        "explain": "Bảo dưỡng nhằm ngăn ngừa nguy cơ sự cố hỏng hóc; sửa chữa nhằm phục hồi hoạt động bình thường của thiết bị khi xảy ra sự cố hư hỏng (SGK trang 14)."
+      },
+      {
+        "id": "cn_b2_06",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Yêu cầu về phẩm chất đạo đức và kĩ năng cốt lõi của người làm việc trong ngành kĩ thuật điện là:",
+        "options": [
+          "A. Tuân thủ nghiêm ngặt quy trình an toàn điện, cẩn thận, tỉ mỉ, có tinh thần trách nhiệm cao và khả năng làm việc nhóm.",
+          "B. Làm việc tùy tiện, tự ý thay đổi quy trình khi thấy tiện.",
+          "C. Không cần trang bị đồ bảo hộ lao động.",
+          "D. Chỉ cần thể lực mà không cần kiến thức chuyên môn."
+        ],
+        "correct": 0,
+        "explain": "Ngành điện tiềm ẩn nguy hiểm cao về điện giật và cháy nổ, do đó đòi hỏi tính kỉ luật an toàn tuyệt đối, sự cẩn trọng và kiến thức kĩ thuật vững vàng (SGK trang 15)."
+      },
+      {
+        "id": "cn_b2_07",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Để trở thành một Kĩ sư thiết kế hệ thống điện, người học cần tốt nghiệp trình độ đào tạo nào?",
+        "options": [
+          "A. Đại học chuyên ngành Kĩ thuật điện / Hệ thống điện.",
+          "B. Sơ cấp nghề 3 tháng.",
+          "C. Chỉ cần tốt nghiệp Trung học cơ sở.",
+          "D. Bằng lái xe hạng C."
+        ],
+        "correct": 0,
+        "explain": "Vị trí kĩ sư thiết kế đòi hỏi nền tảng kiến thức chuyên sâu về tính toán giải tích mạch điện, tiêu chuẩn kĩ thuật và phần mềm đồ họa chuyên dụng, yêu cầu tốt nghiệp đại học chuyên ngành (SGK trang 10)."
+      },
+      {
+        "id": "cn_b2_08",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Sự phát triển mạnh mẽ của xe điện, hệ thống điện mặt trời mái nhà và lưới điện thông minh mang lại cơ hội gì cho nhân lực ngành kĩ thuật điện?",
+        "options": [
+          "A. Làm giảm nhu cầu việc làm của ngành điện.",
+          "B. Mở ra rất nhiều cơ hội việc làm mới, thu nhập cao và triển vọng phát triển nghề nghiệp lâu dài.",
+          "C. Khiến ngành kĩ thuật điện bị xóa bỏ hoàn toàn.",
+          "D. Không có tác động gì."
+        ],
+        "correct": 1,
+        "explain": "Xu thế chuyển đổi xanh và tự động hóa công nghiệp đòi hỏi nguồn nhân lực kĩ thuật điện chất lượng cao lớn hơn bao giờ hết (SGK trang 16)."
+      },
+      {
+        "id": "cn_b2_09",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Dụng cụ bảo hộ lao động cá nhân bắt buộc khi kiểm tra, thao tác trên lưới điện hạ áp đang mang điện gồm:",
+        "options": [
+          "A. Găng tay cách điện hạ áp, ủng cách điện, mũ bảo hộ, kính bảo vệ mắt và bút thử điện đạt chuẩn kiểm định.",
+          "B. Đi chân đất để tiếp đất tốt hơn.",
+          "C. Đeo găng tay len ướt.",
+          "D. Sử dụng tuốc nơ vít kim loại không bọc cán cách điện."
+        ],
+        "correct": 0,
+        "explain": "Quy tắc an toàn điện đòi hỏi thợ điện phải sử dụng đầy đủ đồ cách điện chuyên dụng đã qua kiểm định định kì (găng tay cách điện, ủng, bút thử điện...) để ngăn chặn dòng điện giật truyền qua cơ thể."
+      },
+      {
+        "id": "cn_b2_10",
+        "topic": "BÀI 2: NGÀNH NGHỀ KĨ THUẬT ĐIỆN",
+        "question": "Khẩu hiệu an toàn hàng đầu được áp dụng trong mọi công việc kĩ thuật điện là gì?",
+        "options": [
+          "A. 'An toàn là trên hết - Cắt điện, kiểm tra không còn điện và tiếp đất trước khi thao tác'.",
+          "B. 'Càng nhanh càng tốt, bỏ qua kiểm tra an toàn'.",
+          "C. 'Chạm tay thử xem có giật không'.",
+          "D. 'Cứ đóng điện rồi tính sau'."
+        ],
+        "correct": 0,
+        "explain": "Nguyên tắc vàng của an toàn điện: Trước khi sửa chữa phải cắt điện, khóa aptomat gắn biển cảnh báo, dùng bút thử điện kiểm tra chắc chắn hết điện rồi mới được phép thao tác."
+      },
+      {
+        "id": "cn_gk1_ds1d",
+        "topic": "HỆ THỐNG ĐIỆN QUỐC GIA (ĐÚNG/SAI)",
+        "question": "d. Đường dây 500 kV mạch 3 (Quảng Trạch - Phố Nối) khánh thành năm 2024 giúp tăng cường liên kết lưới truyền tải và an ninh năng lượng cho miền Bắc.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH VẬN HÀNH: Hệ thống truyền tải điện Việt Nam</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Tổng công ty Truyền tải điện Quốc gia (EVNNPT) quản lí vận hành hệ thống lưới điện truyền tải điện áp 220 kV và 500 kV liên kết các nhà máy điện nguồn với các trung tâm phụ tải lớn trên phạm vi cả nước.</div>\n    </div>",
+        "options": [
+          "A. Đúng",
+          "B. Sai"
+        ],
+        "correct": 0,
+        "explain": "ĐÚNG. Dự án 500 kV mạch 3 Quảng Trạch - Phố Nối dài 519 km khánh thành tháng 8/2024 giúp truyền tải công suất điện từ miền Trung ra miền Bắc, giải tỏa nguy cơ thiếu điện vào cao điểm nắng nóng.",
+        "subLabel": "1d"
+      },
+      {
+        "id": "cn_gk1_ds2d",
+        "topic": "MẠNG ĐIỆN SẢN XUẤT NHỎ (ĐÚNG/SAI)",
+        "question": "d. Trong phân xưởng An Phát, tủ điện phân phối tổng (MSB) nhận điện trực tiếp từ máy biến áp hạ áp để cấp điện cho các tủ nhánh.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH THỰC TẾ: Phân xưởng cơ khí chính xác An Phát</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Xưởng cơ khí An Phát có diện tích 800 m², trang bị 10 máy tiện CNC, 5 máy phay cơ và hệ thống đèn chiếu sáng LED phân xưởng. Nguồn điện lấy từ trạm biến áp hạ áp 22/0,4 kV riêng của công ty.</div>\n    </div>",
+        "options": [
+          "A. Đúng",
+          "B. Sai"
+        ],
+        "correct": 0,
+        "explain": "ĐÚNG. Theo sơ đồ cấu trúc phân cấp chuẩn, tủ phân phối tổng (MSB) đặt tại trạm biến áp, lấy điện từ đầu ra hạ áp của máy biến áp để chia nguồn cho các tủ nhánh.",
+        "subLabel": "2d"
+      },
+      {
+        "id": "cn_gk1_ds3a",
+        "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
+        "question": "a. Trong mạch điện ba pha đối xứng nối hình sao (Y), điện áp dây luôn bằng điện áp pha (Ud = Up).<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
+        "options": [
+          "A. Đúng",
+          "B. Sai"
+        ],
+        "correct": 1,
+        "explain": "SAI. Khi nối hình sao (Y), điện áp dây bằng căn 3 lần điện áp pha: Ud = √3.Up ≈ 1,732.Up; chỉ khi nối tam giác (Δ) thì mới có Ud = Up.",
+        "subLabel": "3a"
+      },
+      {
+        "id": "cn_gk1_ds3b",
+        "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
+        "question": "b. Nếu đấu ba cụm lò sấy hình sao (Y) vào lưới 380/220 V thì điện áp đặt vào mỗi cụm lò sấy là 220 V.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
+        "options": [
+          "A. Đúng",
+          "B. Sai"
+        ],
+        "correct": 0,
+        "explain": "ĐÚNG. Khi tải nối sao, điện áp mỗi pha tải là điện áp pha Up = <span class=\"math-frac\"><span class=\"math-frac-top\">U<sub>d</sub></span><span class=\"math-frac-bottom\">√3</span></span> = <span class=\"math-frac\"><span class=\"math-frac-top\">380</span><span class=\"math-frac-bottom\">√3</span></span> ≈ 220 V.",
+        "subLabel": "3b"
+      },
+      {
+        "id": "cn_gk1_ds3c",
+        "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
+        "question": "c. Nếu ba cụm lò sấy hoàn toàn đối xứng thì dòng điện hiệu dụng chạy trong dây trung tính Io bằng 0.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
+        "options": [
+          "A. Đúng",
+          "B. Sai"
+        ],
+        "correct": 0,
+        "explain": "ĐÚNG. Khi tải ba pha hoàn toàn đối xứng, tổng vectơ của 3 dòng điện pha bằng 0 (iA + iB + iC = 0), do đó dòng điện chạy trên dây trung tính Io = 0.",
+        "subLabel": "3c"
+      },
+      {
+        "id": "cn_gk1_ds3d",
+        "topic": "MẠCH ĐIỆN 3 PHA (ĐÚNG/SAI)",
+        "question": "d. Kĩ sư điện có thể lắp thêm một cầu chì ngắt mạch trên dây trung tính để bảo vệ an toàn cho hệ thống lò sấy.<br>\n    <div class=\"geo-table-card geo-passage-card\" style=\"margin: 12px 0; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.35); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 12px;\">\n      <div style=\"font-weight: 700; color: #60a5fa; font-size: 13px; margin-bottom: 4px;\">📄 BỐI CẢNH KĨ THUẬT: Đấu nối phụ tải ba pha</div>\n      <div style=\"font-size: 13px; line-height: 1.65; color: #e2e8f0;\">Một kĩ sư điện đang thực hiện đấu nối nguồn ba pha bốn dây 380/220 V cho ba cụm lò sấy điện trở đối xứng của nhà máy chế biến thực phẩm.</div>\n    </div>",
+        "options": [
+          "A. Đúng",
+          "B. Sai"
+        ],
+        "correct": 1,
+        "explain": "SAI. Tuyệt đối KHÔNG ĐƯỢC đặt cầu chì hay thiết bị đóng ngắt đơn cực trên dây trung tính, vì nếu cầu chì đứt khi phụ tải mất cân bằng sẽ làm điểm trung tính bị trôi, gây quá điện áp nghiêm trọng cháy thiết bị.",
+        "subLabel": "3d"
       }
     ]
   }

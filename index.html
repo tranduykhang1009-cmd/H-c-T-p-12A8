@@ -4157,7 +4157,7 @@ const firebaseConfig = {
       const sdLessons = document.getElementById('sdLessonsText');
       if (sdLessons) {
         if (subject === 'technology') {
-          sdLessons.textContent = 'CHỌN BÀI CÔNG NGHỆ 12 (ĐẶC BIỆT TRỌNG TÂM BÀI 3)';
+          sdLessons.textContent = 'CHỌN BÀI HỌC CÔNG NGHỆ 12 (XEM KĨ BÀI 3, BÀI 4 & BÀI 6)';
         } else if (subject === 'history') {
           sdLessons.textContent = 'HOẶC CHỌN TỪNG BÀI LỊCH SỬ ĐỂ ÔN TẬP';
         } else if (subject === 'physics') {
@@ -4417,7 +4417,7 @@ const firebaseConfig = {
           } else if (id === 'cn_all') {
             const allT = cnDb.find(t => t.id === 'cn_all');
             currentTopicTitle = allT ? allT.title : 'Trọn Bộ Công Nghệ 12 (Bài 2 - 7)';
-            totalQuestions = allT && allT.questions ? allT.questions.length : 88;
+            totalQuestions = allT && allT.questions ? allT.questions.length : 106;
           } else {
             const found = cnDb.find(t => t.id === id);
             if (found) {
@@ -4659,7 +4659,7 @@ const firebaseConfig = {
             title: '⚡ Marathon Toàn Bộ Câu Hỏi Công Nghệ 12 (Bài 2 - 7)',
             icon: '🏆',
             sub: 'Toàn bộ ngân hàng câu hỏi chuẩn SGK Kết nối tri thức',
-            count: allT && allT.questions ? allT.questions.length : 88
+            count: allT && allT.questions ? allT.questions.length : 106
           });
         }
       } else if (currentSubject === 'physics') {
@@ -5534,7 +5534,7 @@ const firebaseConfig = {
         q.options.forEach((optText, optIdx) => {
         const btn = document.createElement('button');
         btn.className = 'quiz-opt-btn';
-        btn.textContent = optText;
+        btn.innerHTML = optText;
 
         if (answered !== undefined) {
           btn.classList.add('locked');
