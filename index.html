@@ -32,7 +32,7 @@
   <script src="tienganh.js?v=20261027_2205"></script>
   <script src="vatli.js?v=20261027_2205"></script>
   <script src="dialy.js?v=20261027_2205"></script>
-  <script src="congnghe.js?v=20261028_1945"></script>
+  <script src="congnghe.js?v=20261028_1955"></script>
   <script>
     // Tự động nạp dự phòng từ data/ nếu mở file offline mà dữ liệu nằm trong thư mục con data/
     if (typeof ALL_TOPICS_DATABASE === 'undefined' && !window.ALL_TOPICS_DATABASE) {
@@ -4105,7 +4105,12 @@ const firebaseConfig = {
 
       const pillBar = document.getElementById('catPillBar');
 
-      if (subject === 'physics') {
+      if (subject === 'technology') {
+        selectedTopicIds = ['cn_bai3'];
+        currentTopicId = 'cn_bai3';
+        currentTopicTitle = '🌀 BÀI 3 TRỌNG TÂM: Mạch điện xoay chiều ba pha';
+        if (pillBar) pillBar.style.display = 'flex';
+      } else if (subject === 'physics') {
         selectedTopicIds = ['phys_chuyen_the'];
         currentTopicId = 'phys_chuyen_the';
         currentTopicTitle = 'Chủ đề 1: Sự Chuyển Thể (41 câu)';
@@ -4114,11 +4119,6 @@ const firebaseConfig = {
         selectedTopicIds = ['bai1'];
         currentTopicId = 'bai1';
         currentTopicTitle = 'Bài 1: Liên Hợp Quốc (28 câu)';
-        if (pillBar) pillBar.style.display = 'flex';
-      } else if (subject === 'technology') {
-        selectedTopicIds = ['cn_all'];
-        currentTopicId = 'cn_all';
-        currentTopicTitle = '⚡ Trọn Bộ Lý Thuyết & Bài Tập Công Nghệ 12 (75 câu)';
         if (pillBar) pillBar.style.display = 'flex';
       } else if (subject === 'geography') {
         selectedTopicIds = ['geo_phan1'];
@@ -4134,12 +4134,12 @@ const firebaseConfig = {
 
       const sdLessons = document.getElementById('sdLessonsText');
       if (sdLessons) {
-        if (subject === 'history') {
+        if (subject === 'technology') {
+          sdLessons.textContent = 'CHỌN BÀI CÔNG NGHỆ 12 (ĐẶC BIỆT TRỌNG TÂM BÀI 3)';
+        } else if (subject === 'history') {
           sdLessons.textContent = 'HOẶC CHỌN TỪNG BÀI LỊCH SỬ ĐỂ ÔN TẬP';
         } else if (subject === 'physics') {
           sdLessons.textContent = 'HOẶC CHỌN TỪNG CHỦ ĐỀ VẬT LÍ ĐỂ ÔN TẬP';
-        } else if (subject === 'technology') {
-          sdLessons.textContent = 'HOẶC CHỌN TỪNG BÀI CÔNG NGHỆ (BÀI 2 - 7) ĐỂ ÔN TẬP';
         } else if (subject === 'geography') {
           sdLessons.textContent = 'HOẶC CHỌN TỪNG CHỦ ĐỀ ĐỊA LÍ ĐỂ ÔN TẬP';
         } else {
@@ -4203,7 +4203,23 @@ const firebaseConfig = {
 
       let html = '';
 
-      if (currentSubject === 'physics') {
+      if (currentSubject === 'technology') {
+        const cnDb = window.CONGNGHE_TOPICS_DATABASE || [];
+        html += `<optgroup label="-- BÀI HỌC CÔNG NGHỆ 12 (TRỌNG TÂM BÀI 3) --">`;
+        cnDb.forEach(t => {
+          if (t.id !== 'cn_all' && t.id !== 'cn_gk1') {
+            const count = t.questions ? t.questions.length : 0;
+            html += `<option value="${t.id}">${t.icon || '⚡'} ${t.title} (${count} câu)</option>`;
+          }
+        });
+        html += `</optgroup>`;
+        html += `
+          <optgroup label="-- ĐỀ THI TỔNG HỢP CÔNG NGHỆ 12 --">
+            <option value="cn_gk1">🎯 Đề Thi Thử Giữa Kì 1 (40 câu chuẩn ma trận)</option>
+            <option value="cn_all">⚡ Trọn Bộ Lý Thuyết & Bài Tập (Bài 2 - Bài 7)</option>
+          </optgroup>
+        `;
+      } else if (currentSubject === 'physics') {
         html += `
           <optgroup label="-- CÁC CHỦ ĐỀ VẬT LÍ 12 --">
             <option value="phys_chuyen_the">💧 Chủ đề 1: Sự Chuyển Thể (41 câu)</option>
@@ -4340,7 +4356,9 @@ const firebaseConfig = {
     // Reset selection to default first lesson (Nút 'Đặt lại')
     function resetTopicSelection() {
       try { sound.playClick(); } catch(e) {}
-      if (currentSubject === 'history') {
+      if (currentSubject === 'technology') {
+        selectedTopicIds = ['cn_bai3'];
+      } else if (currentSubject === 'history') {
         selectedTopicIds = ['bai1'];
       } else if (currentSubject === 'physics') {
         selectedTopicIds = ['phys_chuyen_the'];
@@ -4366,7 +4384,39 @@ const firebaseConfig = {
       let totalQuestions = 0;
       let shortTitles = [];
 
-      if (currentSubject === 'history') {
+      if (currentSubject === 'technology') {
+        const cnDb = window.CONGNGHE_TOPICS_DATABASE || [];
+        if (selectedTopicIds.length === 1) {
+          const id = selectedTopicIds[0];
+          currentTopicId = id;
+          if (id === 'cn_gk1') {
+            currentTopicTitle = 'Đề Thi Thử Giữa Kì 1 Công Nghệ 12 (40 câu)';
+            totalQuestions = 40;
+          } else if (id === 'cn_all') {
+            const allT = cnDb.find(t => t.id === 'cn_all');
+            currentTopicTitle = allT ? allT.title : 'Trọn Bộ Công Nghệ 12 (Bài 2 - 7)';
+            totalQuestions = allT && allT.questions ? allT.questions.length : 88;
+          } else {
+            const found = cnDb.find(t => t.id === id);
+            if (found) {
+              currentTopicTitle = found.title;
+              totalQuestions = found.questions ? found.questions.length : 0;
+            }
+          }
+        } else {
+          currentTopicId = 'technology_combo';
+          selectedTopicIds.forEach(id => {
+            const found = cnDb.find(t => t.id === id);
+            if (found) {
+              totalQuestions += (found.questions ? found.questions.length : 0);
+              const m = found.title.match(/Bài\s*(\d+)/i);
+              if (m) shortTitles.push('Bài ' + m[1]);
+              else shortTitles.push(found.title);
+            }
+          });
+          currentTopicTitle = `Gộp ${selectedTopicIds.length} bài: ${shortTitles.join(', ')} (${totalQuestions} câu)`;
+        }
+      } else if (currentSubject === 'history') {
         const histDb = window.ALL_TOPICS_DATABASE || [];
         if (selectedTopicIds.length === 1) {
           const id = selectedTopicIds[0];
@@ -4545,7 +4595,52 @@ const firebaseConfig = {
 
       let items = [];
 
-      if (currentSubject === 'physics') {
+      if (currentSubject === 'technology') {
+        const cnDb = window.CONGNGHE_TOPICS_DATABASE || [];
+        cnDb.forEach(t => {
+          if (t.id !== 'cn_all' && t.id !== 'cn_gk1') {
+            let match = true;
+            if (currentCatFilter !== 'all') {
+              if (currentCatFilter === 'bai3' && t.id !== 'cn_bai3') match = false;
+              else if (currentCatFilter === 'bai2' && t.id !== 'cn_bai2') match = false;
+              else if (currentCatFilter === 'bai4' && t.id !== 'cn_bai4') match = false;
+              else if (currentCatFilter === 'bai5' && t.id !== 'cn_bai5') match = false;
+              else if (currentCatFilter === 'bai6' && t.id !== 'cn_bai6') match = false;
+              else if (currentCatFilter === 'bai7' && t.id !== 'cn_bai7') match = false;
+              else if (currentCatFilter === 'gk1') match = false;
+            }
+            if (match) {
+              items.push({
+                id: t.id,
+                title: t.title,
+                icon: t.icon || '⚡',
+                sub: t.description || 'Bài học Công nghệ 12',
+                count: t.questions ? t.questions.length : 0
+              });
+            }
+          }
+        });
+
+        if (currentCatFilter === 'all' || currentCatFilter === 'gk1') {
+          items.push({
+            id: 'cn_gk1',
+            title: '🎯 Đề Thi Thử Giữa Kì 1 Công Nghệ 12 (40 câu)',
+            icon: '🎯',
+            sub: 'Chuẩn cấu trúc 2025: Trắc nghiệm 4 lựa chọn + Đúng/Sai có ngữ liệu + Tính toán',
+            count: 40
+          });
+        }
+        if (currentCatFilter === 'all') {
+          const allT = cnDb.find(t => t.id === 'cn_all');
+          items.push({
+            id: 'cn_all',
+            title: '⚡ Marathon Toàn Bộ Câu Hỏi Công Nghệ 12 (Bài 2 - 7)',
+            icon: '🏆',
+            sub: 'Toàn bộ ngân hàng câu hỏi chuẩn SGK Kết nối tri thức',
+            count: allT && allT.questions ? allT.questions.length : 88
+          });
+        }
+      } else if (currentSubject === 'physics') {
         items = [
           {
             id: 'phys_chuyen_the',
@@ -4898,6 +4993,28 @@ const firebaseConfig = {
             }
           });
           if (combinedPool.length === 0) combinedPool = allPhysQ;
+          examList = isShuffle ? shuffle(combinedPool) : combinedPool;
+        }
+      } else if (currentSubject === 'technology') {
+        const cnDb = window.CONGNGHE_TOPICS_DATABASE || [];
+        const allCnTopic = cnDb.find(t => t.id === 'cn_all') || cnDb[0];
+        const allCnQ = allCnTopic ? allCnTopic.questions : [];
+
+        if (selectedTopicIds.length === 1 && selectedTopicIds[0] === 'cn_all') {
+          examList = isShuffle ? shuffle(allCnQ) : [...allCnQ];
+        } else if (selectedTopicIds.length === 1 && selectedTopicIds[0] === 'cn_gk1') {
+          const gkTopic = cnDb.find(t => t.id === 'cn_gk1');
+          const gkQ = gkTopic ? gkTopic.questions : allCnQ.slice(0, 40);
+          examList = isShuffle ? shuffle(gkQ) : [...gkQ];
+        } else {
+          let combinedPool = [];
+          selectedTopicIds.forEach(id => {
+            const found = cnDb.find(t => t.id === id);
+            if (found && Array.isArray(found.questions)) {
+              combinedPool.push(...found.questions);
+            }
+          });
+          if (combinedPool.length === 0) combinedPool = allCnQ;
           examList = isShuffle ? shuffle(combinedPool) : combinedPool;
         }
       } else if (currentSubject === 'geography') {

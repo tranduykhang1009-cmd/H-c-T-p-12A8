@@ -1,7 +1,6 @@
 // =========================================================================
 // DỮ LIỆU CÔNG NGHỆ 12 - PHÂN MÔN CÔNG NGHỆ ĐIỆN - ĐIỆN TỬ (BÀI 2 ĐẾN BÀI 7)
-// Bộ sách Kết nối tri thức với cuộc sống (NXB Giáo Dục Việt Nam)
-// Chuẩn cấu trúc đề thi Giữa Kì 1 (GK1) theo định dạng mới Bộ GD&ĐT 2025
+// BỘ SÁCH KẾT NỐI TRI THỨC VỚI CUỘC SỐNG - TẬP TRUNG CAO ĐỘ VÀO BÀI 3
 // =========================================================================
 
 const CONGNGHE_CATEGORIES = [
@@ -11,14 +10,14 @@ const CONGNGHE_CATEGORIES = [
     "icon": "⚡"
   },
   {
+    "id": "bai3",
+    "name": "⭐ BÀI 3 TRỌNG TÂM: Mạch 3 Pha",
+    "icon": "🌀"
+  },
+  {
     "id": "bai2",
     "name": "Bài 2: Ngành nghề kĩ thuật điện",
     "icon": "👷"
-  },
-  {
-    "id": "bai3",
-    "name": "Bài 3: Mạch xoay chiều ba pha",
-    "icon": "🌀"
   },
   {
     "id": "bai4",
@@ -189,90 +188,194 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. pha ban đầu của dòng điện."
     ],
     "correct": 1,
-    "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị ampe (A). Giá trị hiệu dụng là I = Im / √2 (SGK trang 18)."
+    "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng: I = Im / √2 (SGK Công nghệ 12 trang 18)."
   },
   {
     "id": 12,
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Tổng trở z_t của tải điện một pha gồm điện trở R nối tiếp với điện kháng X được tính theo công thức nào?",
+    "question": "Một dòng điện xoay chiều có biểu thức i = 4√2.sin(100πt) (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
     "options": [
-      "A. z_t = R + X",
-      "B. z_t = √(R² + X²)",
-      "C. z_t = √(R² - X²)",
-      "D. z_t = R² + X²"
+      "A. I = 4 A; f = 50 Hz",
+      "B. I = 4√2 A; f = 100 Hz",
+      "C. I = 4 A; f = 100 Hz",
+      "D. I = 2√2 A; f = 50 Hz"
     ],
-    "correct": 1,
-    "explain": "Theo SGK Công nghệ 12 trang 18: Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) và góc pha φ với tan φ = X/R."
+    "correct": 0,
+    "explain": "Từ biểu thức: Im = 4√2 A => I = Im / √2 = 4 A. Tần số góc ω = 100π rad/s => Tần số f = ω / (2π) = 100π / (2π) = 50 Hz."
   },
   {
     "id": 13,
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Dòng điện xoay chiều ba pha là hệ thống ba dòng điện xoay chiều có đặc điểm nào sau đây?",
+    "question": "Công thức tính cảm kháng XL của cuộn cảm thuần có độ tự cảm L và dung kháng XC của tụ điện có điện dung C đối với dòng xoay chiều tần số f là:",
     "options": [
-      "A. Khác tần số, cùng biên độ, cùng pha với nhau.",
-      "B. Cùng tần số, cùng biên độ nhưng lệch pha nhau góc 2π/3 (120°) giữa các pha.",
-      "C. Cùng tần số, biên độ khác nhau, lệch pha nhau góc 90°.",
-      "D. Cùng biên độ nhưng tần số gấp ba lần nhau."
+      "A. XL = 2πfL và XC = 2πfC",
+      "B. XL = 2πfL và XC = 1 / (2πfC)",
+      "C. XL = 1 / (2πfL) và XC = 1 / (2πfC)",
+      "D. XL = L / (2πf) và XC = C / (2πf)"
     ],
     "correct": 1,
-    "explain": "Dòng điện xoay chiều ba pha là hệ thống ba dòng điện xoay chiều có cùng tần số, cùng biên độ và có góc pha lệch nhau 120° (2π/3 rad) lần lượt giữa các pha (SGK trang 18)."
+    "explain": "Cảm kháng cuộn cảm: XL = ωL = 2πfL; Dung kháng tụ điện: XC = 1/(ωC) = 1/(2πfC) (SGK Công nghệ 12 trang 18)."
   },
   {
     "id": 14,
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Phần tĩnh (Stator) của máy phát điện xoay chiều ba pha gồm",
+    "question": "Tổng trở z_t của tải điện một pha gồm điện trở R nối tiếp với cuộn cảm (XL) và tụ điện (XC) được tính theo công thức nào?",
     "options": [
-      "A. một nam châm điện quay tròn quanh trục.",
-      "B. ba cuộn dây giống hệt nhau đặt lệch nhau một góc 120° trên lõi thép có rãnh.",
-      "C. bốn cuộn dây đặt vuông góc nhau.",
-      "D. cổ góp điện và chổi than."
+      "A. z_t = R + XL - XC",
+      "B. z_t = √[R² + (XL - XC)²]",
+      "C. z_t = √[R² + (XL + XC)²]",
+      "D. z_t = √[R² - (XL - XC)²]"
     ],
     "correct": 1,
-    "explain": "Phần tĩnh (stator) là lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ có cùng số vòng và kích thước dây, đặt lệch nhau góc 120° trên đường tròn không gian (SGK trang 19)."
+    "explain": "Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) với X = XL - XC, do đó z_t = √[R² + (XL - XC)²], và tan φ = X/R = (XL - XC)/R (SGK trang 18)."
   },
   {
     "id": 15,
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Cách nối nguồn điện hoặc tải ba pha hình sao (Y) có đặc điểm là",
+    "question": "Hiện tượng cộng hưởng điện trong mạch R-L-C nối tiếp xảy ra khi nào?",
     "options": [
-      "A. đầu pha này nối với cuối pha kia tạo thành mạch vòng kín.",
-      "B. ba điểm cuối X, Y, Z của ba pha nối chung với nhau tạo thành điểm trung tính O.",
-      "C. ba điểm đầu A, B, C nối chung với nhau, ba điểm cuối để tự do.",
-      "D. chỉ có 2 dây pha đi ra tải tiêu thụ."
+      "A. Khi R = XL",
+      "B. Khi cảm kháng bằng dung kháng (XL = XC)",
+      "C. Khi tần số dòng điện f = 0",
+      "D. Khi tổng trở đạt giá trị vô cùng lớn"
     ],
     "correct": 1,
-    "explain": "Nối hình sao (Y): Ba điểm cuối X, Y, Z của các pha được nối với nhau tạo thành điểm trung tính O (SGK trang 19)."
+    "explain": "Hiện tượng cộng hưởng xảy ra khi XL = XC (tức là 2πfL = 1/(2πfC)). Khi đó điện kháng X = 0, tổng trở mạch đạt giá trị nhỏ nhất z_min = R và dòng điện trong mạch đạt giá trị cực đại."
   },
   {
     "id": 16,
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Cách nối nguồn hoặc tải ba pha hình tam giác (Δ) được thực hiện như thế nào?",
+    "question": "Dòng điện xoay chiều ba pha là hệ thống ba dòng điện xoay chiều có đặc điểm nào sau đây?",
     "options": [
-      "A. Điểm đầu của pha này nối với điểm cuối của pha kia (A nối Z, B nối X, C nối Y) tạo thành hình tam giác khép kín.",
-      "B. Ba điểm cuối nối với nhau tạo điểm trung tính O.",
-      "C. Cả ba điểm đầu và ba điểm cuối đều nối chập lại.",
-      "D. Nối từng pha độc lập với 6 dây dẫn riêng biệt."
+      "A. Cùng tần số, cùng biên độ, cùng pha với nhau.",
+      "B. Cùng tần số, cùng biên độ nhưng lệch pha nhau góc 2π/3 (120°) lần lượt giữa các pha.",
+      "C. Tần số khác nhau, cùng biên độ, lệch pha nhau góc 90°.",
+      "D. Cùng pha ban đầu nhưng tần số gấp ba lần nhau."
     ],
-    "correct": 0,
-    "explain": "Nối hình tam giác (Δ): Điểm đầu của pha này được nối với điểm cuối của pha kia tạo thành hình tam giác khép kín (SGK trang 19)."
+    "correct": 1,
+    "explain": "Định nghĩa chuẩn SGK trang 18: Dòng điện xoay chiều ba pha sinh ra trong mạch điện ba pha là hệ thống ba dòng điện xoay chiều có cùng tần số, cùng biên độ và có góc pha lệch nhau 120° (2π/3 rad) lần lượt giữa các pha."
   },
   {
     "id": 17,
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Điện áp giữa hai dây pha trong mạch điện xoay chiều ba pha được gọi là",
+    "question": "Cấu tạo phần tĩnh (Stator) của máy phát điện xoay chiều ba pha gồm",
     "options": [
-      "A. điện áp pha (Up).",
-      "B. điện áp dây (Ud).",
-      "C. điện áp cực đại (Um).",
-      "D. điện áp định mức của tải."
+      "A. một nam châm vĩnh cửu hình chữ U.",
+      "B. lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ giống hệt nhau về số vòng và tiết diện, đặt lệch nhau góc 120° trên đường tròn.",
+      "C. hai cuộn dây đặt vuông góc nhau.",
+      "D. vành trượt và chổi than tiếp điện."
     ],
     "correct": 1,
-    "explain": "Điện áp giữa hai dây pha gọi là điện áp dây, kí hiệu là Ud. Điện áp giữa dây pha và dây trung tính (hoặc giữa điểm đầu và cuối của một pha) gọi là điện áp pha, kí hiệu là Up (SGK trang 20)."
+    "explain": "Phần tĩnh (stator) là lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ có cùng số vòng và kích thước dây, đặt lệch nhau góc 120° trên không gian (SGK trang 19)."
   },
   {
     "id": 18,
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Trong mạch điện ba pha đối xứng khi tải nối hình sao (Y), mối quan hệ giữa điện áp dây Ud và điện áp pha Up, dòng điện dây Id và dòng điện pha Ip là:",
+    "question": "Trong máy phát điện xoay chiều ba pha, kí hiệu các đầu cuộn dây pha A, pha B, pha C lần lượt là",
+    "options": [
+      "A. Đầu đầu: A, B, C; Đầu cuối tương ứng: X, Y, Z.",
+      "B. Đầu đầu: X, Y, Z; Đầu cuối: A, B, C.",
+      "C. Đầu đầu: U, V, W; Đầu cuối: 1, 2, 3.",
+      "D. Đầu đầu: L1, L2, L3; Đầu cuối: N."
+    ],
+    "correct": 0,
+    "explain": "Theo quy ước SGK trang 19: Cuộn thứ nhất AX (pha A), cuộn thứ hai BY (pha B), cuộn thứ ba CZ (pha C). A, B, C là các điểm đầu; X, Y, Z là các điểm cuối của cuộn dây."
+  },
+  {
+    "id": 19,
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Nếu chọn suất điện động pha A làm gốc eA = Em.sin(ωt), thì biểu thức suất điện động pha B (eB) và pha C (eC) lần lượt là",
+    "options": [
+      "A. eB = Em.sin(ωt - π/2) và eC = Em.sin(ωt + π/2)",
+      "B. eB = Em.sin(ωt - 2π/3) và eC = Em.sin(ωt + 2π/3) [hoặc eC = Em.sin(ωt - 4π/3)]",
+      "C. eB = Em.sin(ωt - π) và eC = Em.sin(ωt + π)",
+      "D. eB = Em.sin(2ωt) và eC = Em.sin(3ωt)"
+    ],
+    "correct": 1,
+    "explain": "Ba suất điện động cùng biên độ, cùng tần số và lần lượt lệch pha nhau góc 2π/3 rad (SGK trang 19, Luyện tập 1 trang 21)."
+  },
+  {
+    "id": 20,
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Cách nối nguồn điện hoặc tải ba pha hình sao (Y) có đặc điểm gì?",
+    "options": [
+      "A. Ba điểm cuối X, Y, Z của ba pha được nối chung với nhau tạo thành điểm trung tính (O).",
+      "B. Điểm đầu của pha này nối với điểm cuối của pha kia tạo mạch vòng kín.",
+      "C. Ba điểm đầu A, B, C chập lại với nhau, ba điểm cuối nối ra dây pha.",
+      "D. Mỗi cuộn dây nối với một cặp dây dẫn riêng biệt không nối chung điểm nào."
+    ],
+    "correct": 0,
+    "explain": "Nối hình sao (Y): Ba điểm cuối X, Y, Z của các pha được nối chung với nhau tạo thành điểm trung tính O (SGK trang 19)."
+  },
+  {
+    "id": 21,
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Cách nối nguồn điện hoặc tải ba pha hình tam giác (Δ) có đặc điểm gì?",
+    "options": [
+      "A. Ba điểm cuối X, Y, Z nối chụm lại thành điểm trung tính.",
+      "B. Điểm đầu của pha này được nối với điểm cuối của pha kia (A nối Z, B nối X, C nối Y) tạo thành hình tam giác khép kín.",
+      "C. Ba cuộn dây mắc song song với nhau.",
+      "D. Dùng dây trung tính nối qua tâm hình tam giác."
+    ],
+    "correct": 1,
+    "explain": "Nối hình tam giác (Δ): Điểm đầu của pha này được nối với điểm cuối của pha kia tạo thành hình tam giác khép kín (SGK trang 19)."
+  },
+  {
+    "id": 22,
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Dây trung tính trong mạng điện ba pha bốn dây có tác dụng quan trọng nhất là gì?",
+    "options": [
+      "A. Làm tăng công suất phát của máy phát điện lên gấp đôi.",
+      "B. Giữ cho điện áp trên các pha tải luôn ổn định ở mức điện áp pha (Up), không bị thay đổi ngay cả khi phụ tải các pha không đối xứng.",
+      "C. Triệt tiêu toàn bộ dòng điện chạy trong ba dây pha.",
+      "D. Làm giảm điện trở của các dây dẫn truyền tải."
+    ],
+    "correct": 1,
+    "explain": "Dây trung tính nối giữa điểm trung tính của nguồn và tải có tác dụng cân bằng và duy trì điện áp pha trên mỗi pha tải luôn bằng điện áp pha của nguồn, bảo vệ các thiết bị điện 1 pha hoạt động bình thường kể cả khi tải các pha không đều."
+  },
+  {
+    "id": 23,
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Trong mạch điện ba pha bốn dây đối xứng, cường độ dòng điện chạy trong dây trung tính (i0) có giá trị bằng",
+    "options": [
+      "A. i0 = iA + iB + iC = 0",
+      "B. i0 = 3.iA",
+      "C. i0 = √3.iA",
+      "D. i0 = iA / √3"
+    ],
+    "correct": 0,
+    "explain": "Khi tải đối xứng: iA + iB + iC = 0 tại mọi thời điểm, do đó dòng điện tức thời và hiệu dụng chạy trong dây trung tính bằng 0 (i0 = 0)."
+  },
+  {
+    "id": 24,
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Phát biểu nào sau đây định nghĩa chính xác về điện áp pha (Up) và điện áp dây (Ud)?",
+    "options": [
+      "A. Up là điện áp giữa hai dây pha; Ud là điện áp giữa dây pha và dây trung tính.",
+      "B. Up là điện áp giữa một dây pha và dây trung tính (hoặc giữa hai đầu một pha); Ud là điện áp giữa hai dây pha.",
+      "C. Up và Ud luôn có giá trị bằng nhau trong mọi trường hợp.",
+      "D. Ud là điện áp chịu đựng của dây cách điện; Up là điện áp sinh công."
+    ],
+    "correct": 1,
+    "explain": "Định nghĩa chuẩn SGK trang 20: Dòng điện chạy trong dây pha gọi là Id; dòng điện chạy trong mỗi pha gọi là Ip. Điện áp giữa hai dây pha gọi là Ud; điện áp giữa dây pha và dây trung tính (hoặc giữa điểm đầu và cuối mỗi pha) gọi là Up."
+  },
+  {
+    "id": 25,
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Mạch điện ba pha được gọi là ĐỐI XỨNG khi thỏa mãn điều kiện nào sau đây?",
+    "options": [
+      "A. Chỉ cần nguồn điện ba pha đối xứng.",
+      "B. Chỉ cần tổng trở ba pha tải bằng nhau.",
+      "C. Có nguồn điện ba pha đối xứng và tải ba pha đối xứng (ZA = ZB = ZC).",
+      "D. Cả nguồn và tải đều nối hình tam giác."
+    ],
+    "correct": 2,
+    "explain": "Mạch điện ba pha được gọi là đối xứng nếu có nguồn đối xứng (cùng biên độ, tần số, lệch pha 120°) VÀ tải đối xứng (ZA = ZB = ZC) (SGK trang 20)."
+  },
+  {
+    "id": 26,
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Trong mạch ba pha đối xứng khi tải nối hình sao (Y), mối quan hệ giữa các đại lượng là:",
     "options": [
       "A. Ud = Up và Id = √3.Ip",
       "B. Ud = √3.Up và Id = Ip",
@@ -280,38 +383,51 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. Ud = Up/√3 và Id = Ip"
     ],
     "correct": 1,
-    "explain": "Khi tải nối hình sao (Y) trong mạch ba pha đối xứng: Id = Ip và Ud = √3.Up (SGK trang 20)."
+    "explain": "Khi tải nối hình sao (Y): Dòng điện dây bằng dòng điện pha (Id = Ip), Điện áp dây bằng căn 3 lần điện áp pha (Ud = √3.Up) (SGK trang 20)."
   },
   {
-    "id": 19,
+    "id": 27,
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Trong mạch điện ba pha đối xứng khi tải nối hình tam giác (Δ), mối quan hệ giữa các đại lượng dây và pha là:",
+    "question": "Trong mạch ba pha đối xứng khi tải nối hình tam giác (Δ), mối quan hệ giữa các đại lượng là:",
     "options": [
-      "A. Ud = Up và Id = Ip",
+      "A. Ud = Up và Id = √3.Ip",
       "B. Ud = √3.Up và Id = Ip",
-      "C. Ud = Up và Id = √3.Ip",
+      "C. Ud = Up và Id = Ip",
       "D. Ud = Up/√3 và Id = √3.Ip"
     ],
-    "correct": 2,
-    "explain": "Khi tải nối hình tam giác (Δ) trong mạch ba pha đối xứng: Ud = Up và Id = √3.Ip (SGK trang 21)."
+    "correct": 0,
+    "explain": "Khi tải nối hình tam giác (Δ): Điện áp dây bằng điện áp pha (Ud = Up), Dòng điện dây bằng căn 3 lần dòng điện pha (Id = √3.Ip) (SGK trang 21)."
   },
   {
-    "id": 20,
+    "id": 28,
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Một tải ba pha đối xứng gồm 3 điện trở R = 50 Ω nối hình tam giác (Δ) vào nguồn ba pha có điện áp dây Ud = 380 V. Dòng điện pha Ip và dòng điện dây Id của mạch có giá trị lần lượt là",
+    "question": "Công suất tác dụng toàn phần của mạch điện ba pha đối xứng được tính theo công thức nào sau đây?",
     "options": [
-      "A. Ip = 4,4 A; Id = 4,4 A",
-      "B. Ip = 7,6 A; Id = 13,16 A",
-      "C. Ip = 13,16 A; Id = 7,6 A",
-      "D. Ip = 7,6 A; Id = 7,6 A"
+      "A. P = 3.Ud.Id.cosφ",
+      "B. P = √3.Ud.Id.cosφ = 3.Up.Ip.cosφ",
+      "C. P = Ud.Id.cosφ",
+      "D. P = √3.Up.Ip.cosφ"
     ],
     "correct": 1,
-    "explain": "Tải nối tam giác nên Up = Ud = 380 V. Dòng điện pha: Ip = Up / R = 380 / 50 = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Ví dụ SGK trang 21)."
+    "explain": "Công suất tác dụng ba pha đối xứng bằng 3 lần công suất một pha: P = 3.P1p = 3.Up.Ip.cosφ. Dù nối sao hay tam giác, thay Ud và Id vào đều rút ra công thức chung: P = √3.Ud.Id.cosφ."
   },
   {
-    "id": 21,
+    "id": 29,
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Cho mạch ba pha tải đối xứng nối hình sao (Y) có điện áp pha Up = 220 V, tải gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp dây Ud lần lượt là",
+    "question": "Một nguồn điện xoay chiều ba pha đối xứng có điện áp pha Up = 220 V. Điện áp dây Ud của nguồn điện này có giá trị xấp xỉ bằng bao nhiêu?",
+    "options": [
+      "A. 127 V",
+      "B. 220 V",
+      "C. 380 V (hoặc 381 V)",
+      "D. 440 V"
+    ],
+    "correct": 2,
+    "explain": "Ta có: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế quy chuẩn là 380 V)."
+  },
+  {
+    "id": 30,
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Cho mạch điện ba pha tải đối xứng nối theo hình sao (Y) trong đó điện áp pha Up = 220 V và tải ba pha gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp dây Ud lần lượt là",
     "options": [
       "A. Ip = 4,4 A; Id = 4,4 A; Ud ≈ 381 V",
       "B. Ip = 7,6 A; Id = 4,4 A; Ud = 220 V",
@@ -319,20 +435,72 @@ const CONGNGHE_ALL_QUESTIONS = [
       "D. Ip = 2,2 A; Id = 2,2 A; Ud = 127 V"
     ],
     "correct": 0,
-    "explain": "Tải nối hình sao nên: Ip = Up / R = 220 / 50 = 4,4 A. Dòng điện dây Id = Ip = 4,4 A. Điện áp dây Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
+    "explain": "Vì tải nối hình sao: Ip = Up / R = 220 / 50 = 4,4 A. Dòng điện dây: Id = Ip = 4,4 A. Điện áp dây: Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
   },
   {
-    "id": 22,
+    "id": 31,
     "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-    "question": "Một động cơ điện ba pha có ghi 220V/380V - Δ/Y. Nếu lưới điện có điện áp dây Ud = 380 V thì phải đấu dây động cơ theo kiểu nào để hoạt động bình thường?",
+    "question": "Cho mạch điện ba pha tải đối xứng nối theo hình tam giác (Δ), điện áp dây Ud = 380 V, tải ba pha gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp pha Up lần lượt là",
     "options": [
-      "A. Đấu hình tam giác (Δ).",
-      "B. Đấu hình sao (Y).",
-      "C. Đấu hình sao có nối đất.",
-      "D. Đấu kiểu nào cũng được."
+      "A. Up = 220 V; Ip = 4,4 A; Id = 4,4 A",
+      "B. Up = 380 V; Ip = 7,6 A; Id ≈ 13,16 A",
+      "C. Up = 380 V; Ip = 13,16 A; Id = 7,6 A",
+      "D. Up = 380 V; Ip = 7,6 A; Id = 7,6 A"
     ],
     "correct": 1,
-    "explain": "Thông số ghi 220V/380V tương ứng với cách nối Δ/Y nghĩa là: điện áp đặt vào mỗi cuộn dây của động cơ chịu tối đa 220 V. Khi lưới có Ud = 380 V, nếu nối sao (Y) thì Up = Ud/√3 = 380/√3 = 220 V (vừa đúng định mức của cuộn dây)."
+    "explain": "Vì tải nối hình tam giác: Up = Ud = 380 V. Dòng điện pha: Ip = Up / R = 380 / 50 = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Bài tập 3 SGK trang 21)."
+  },
+  {
+    "id": 32,
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Cho nguồn điện xoay chiều ba pha bốn dây có Ud/Up = 380/220 V. Có 6 bóng đèn sợi đốt loại 220 V - 60 W và một động cơ ba pha loại 380 V - 2,2 kW. Để các thiết bị hoạt động bình thường trong mạch ba pha đối xứng thì:",
+    "options": [
+      "A. Bóng đèn nối tam giác, động cơ nối sao.",
+      "B. Bóng đèn chia đều nối hình sao (mỗi pha 2 bóng song song), động cơ nối hình tam giác.",
+      "C. Cả bóng đèn và động cơ đều nối hình sao có dây trung tính.",
+      "D. Cả bóng đèn và động cơ đều nối hình tam giác."
+    ],
+    "correct": 1,
+    "explain": "Bóng đèn có Uđm = 220 V = Up của nguồn nên phải nối hình sao (Y) có dây trung tính (6 bóng chia đều mỗi pha 2 bóng song song). Động cơ có Uđm = 380 V = Ud của nguồn nên phải nối hình tam giác (Δ) vào 3 dây pha (Bài tập 5 SGK trang 21)."
+  },
+  {
+    "id": 33,
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Một động cơ không đồng bộ ba pha khi làm việc ở mạng điện có điện áp dây Ud = 380 V thì tiêu thụ dòng điện dây Id = 10 A với hệ số công suất cosφ = 0,85. Công suất tác dụng P tiêu thụ của động cơ là",
+    "options": [
+      "A. 3 230 W",
+      "B. 5 594 W",
+      "C. 9 690 W",
+      "D. 1 860 W"
+    ],
+    "correct": 1,
+    "explain": "Công suất tiêu thụ ba pha: P = √3.Ud.Id.cosφ = √3 × 380 × 10 × 0,85 ≈ 1,732 × 380 × 8,5 ≈ 5 594 W (≈ 5,6 kW)."
+  },
+  {
+    "id": 34,
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "Tải ba pha đối xứng gồm 3 cuộn dây, mỗi cuộn có điện trở R = 8 Ω và cảm kháng XL = 6 Ω. Nối tải theo hình tam giác (Δ) vào nguồn có điện áp dây Ud = 220 V. Dòng điện pha Ip và dòng điện dây Id là",
+    "options": [
+      "A. Ip = 22 A; Id ≈ 38,1 A",
+      "B. Ip = 15,7 A; Id = 15,7 A",
+      "C. Ip = 27,5 A; Id = 47,6 A",
+      "D. Ip = 22 A; Id = 22 A"
+    ],
+    "correct": 0,
+    "explain": "Tổng trở mỗi pha: zp = √(R² + XL²) = √(8² + 6²) = 10 Ω. Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: Ip = Up / zp = 220 / 10 = 22 A. Dòng điện dây: Id = √3.Ip = √3 × 22 ≈ 38,1 A."
+  },
+  {
+    "id": 35,
+    "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+    "question": "So với hệ thống điện một pha, hệ thống truyền tải dòng điện xoay chiều ba pha có ưu điểm vượt trội nào?",
+    "options": [
+      "A. Chỉ cần dùng 1 dây dẫn duy nhất.",
+      "B. Tiết kiệm tiết diện kim loại làm dây dẫn khi truyền tải công suất lớn đi xa, và tạo ra từ trường quay giúp chế tạo động cơ ba pha cấu tạo đơn giản, bền bỉ.",
+      "C. Không bao giờ xảy ra sự cố ngắn mạch hay quá tải.",
+      "D. Luôn có điện áp một chiều ổn định không đổi."
+    ],
+    "correct": 1,
+    "explain": "Ưu điểm của mạch 3 pha: Tiết kiệm dây dẫn kim loại (đồng, nhôm) so với 3 đường dây 1 pha độc lập; tạo ra từ trường quay để vận hành động cơ điện ba pha - thiết bị cốt lõi trong công nghiệp (SGK trang 21)."
   },
   {
     "id": 23,
@@ -1011,10 +1179,421 @@ const CONGNGHE_ALL_QUESTIONS = [
 
 const CONGNGHE_TOPICS_DATABASE = [
   {
+    "id": "cn_bai3",
+    "title": "🌀 BÀI 3 TRỌNG TÂM: Mạch điện xoay chiều ba pha",
+    "icon": "🌀",
+    "description": "Nguồn 3 pha, nối Y, Δ; Công thức Ud, Up, Id, Ip, tính toán tổng trở & tải đối xứng",
+    "questions": [
+      {
+        "id": 11,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Dòng điện xoay chiều một pha có cường độ tức thời i = Im.sin(ωt + ψ). Đại lượng Im được gọi là",
+        "options": [
+          "A. giá trị hiệu dụng của dòng điện.",
+          "B. giá trị cực đại (biên độ) của dòng điện.",
+          "C. tần số góc của dòng điện.",
+          "D. pha ban đầu của dòng điện."
+        ],
+        "correct": 1,
+        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng: I = Im / √2 (SGK Công nghệ 12 trang 18)."
+      },
+      {
+        "id": 12,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một dòng điện xoay chiều có biểu thức i = 4√2.sin(100πt) (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
+        "options": [
+          "A. I = 4 A; f = 50 Hz",
+          "B. I = 4√2 A; f = 100 Hz",
+          "C. I = 4 A; f = 100 Hz",
+          "D. I = 2√2 A; f = 50 Hz"
+        ],
+        "correct": 0,
+        "explain": "Từ biểu thức: Im = 4√2 A => I = Im / √2 = 4 A. Tần số góc ω = 100π rad/s => Tần số f = ω / (2π) = 100π / (2π) = 50 Hz."
+      },
+      {
+        "id": 13,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Công thức tính cảm kháng XL của cuộn cảm thuần có độ tự cảm L và dung kháng XC của tụ điện có điện dung C đối với dòng xoay chiều tần số f là:",
+        "options": [
+          "A. XL = 2πfL và XC = 2πfC",
+          "B. XL = 2πfL và XC = 1 / (2πfC)",
+          "C. XL = 1 / (2πfL) và XC = 1 / (2πfC)",
+          "D. XL = L / (2πf) và XC = C / (2πf)"
+        ],
+        "correct": 1,
+        "explain": "Cảm kháng cuộn cảm: XL = ωL = 2πfL; Dung kháng tụ điện: XC = 1/(ωC) = 1/(2πfC) (SGK Công nghệ 12 trang 18)."
+      },
+      {
+        "id": 14,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Tổng trở z_t của tải điện một pha gồm điện trở R nối tiếp với cuộn cảm (XL) và tụ điện (XC) được tính theo công thức nào?",
+        "options": [
+          "A. z_t = R + XL - XC",
+          "B. z_t = √[R² + (XL - XC)²]",
+          "C. z_t = √[R² + (XL + XC)²]",
+          "D. z_t = √[R² - (XL - XC)²]"
+        ],
+        "correct": 1,
+        "explain": "Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) với X = XL - XC, do đó z_t = √[R² + (XL - XC)²], và tan φ = X/R = (XL - XC)/R (SGK trang 18)."
+      },
+      {
+        "id": 15,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Hiện tượng cộng hưởng điện trong mạch R-L-C nối tiếp xảy ra khi nào?",
+        "options": [
+          "A. Khi R = XL",
+          "B. Khi cảm kháng bằng dung kháng (XL = XC)",
+          "C. Khi tần số dòng điện f = 0",
+          "D. Khi tổng trở đạt giá trị vô cùng lớn"
+        ],
+        "correct": 1,
+        "explain": "Hiện tượng cộng hưởng xảy ra khi XL = XC (tức là 2πfL = 1/(2πfC)). Khi đó điện kháng X = 0, tổng trở mạch đạt giá trị nhỏ nhất z_min = R và dòng điện trong mạch đạt giá trị cực đại."
+      },
+      {
+        "id": 16,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Dòng điện xoay chiều ba pha là hệ thống ba dòng điện xoay chiều có đặc điểm nào sau đây?",
+        "options": [
+          "A. Cùng tần số, cùng biên độ, cùng pha với nhau.",
+          "B. Cùng tần số, cùng biên độ nhưng lệch pha nhau góc 2π/3 (120°) lần lượt giữa các pha.",
+          "C. Tần số khác nhau, cùng biên độ, lệch pha nhau góc 90°.",
+          "D. Cùng pha ban đầu nhưng tần số gấp ba lần nhau."
+        ],
+        "correct": 1,
+        "explain": "Định nghĩa chuẩn SGK trang 18: Dòng điện xoay chiều ba pha sinh ra trong mạch điện ba pha là hệ thống ba dòng điện xoay chiều có cùng tần số, cùng biên độ và có góc pha lệch nhau 120° (2π/3 rad) lần lượt giữa các pha."
+      },
+      {
+        "id": 17,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cấu tạo phần tĩnh (Stator) của máy phát điện xoay chiều ba pha gồm",
+        "options": [
+          "A. một nam châm vĩnh cửu hình chữ U.",
+          "B. lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ giống hệt nhau về số vòng và tiết diện, đặt lệch nhau góc 120° trên đường tròn.",
+          "C. hai cuộn dây đặt vuông góc nhau.",
+          "D. vành trượt và chổi than tiếp điện."
+        ],
+        "correct": 1,
+        "explain": "Phần tĩnh (stator) là lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ có cùng số vòng và kích thước dây, đặt lệch nhau góc 120° trên không gian (SGK trang 19)."
+      },
+      {
+        "id": 18,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Trong máy phát điện xoay chiều ba pha, kí hiệu các đầu cuộn dây pha A, pha B, pha C lần lượt là",
+        "options": [
+          "A. Đầu đầu: A, B, C; Đầu cuối tương ứng: X, Y, Z.",
+          "B. Đầu đầu: X, Y, Z; Đầu cuối: A, B, C.",
+          "C. Đầu đầu: U, V, W; Đầu cuối: 1, 2, 3.",
+          "D. Đầu đầu: L1, L2, L3; Đầu cuối: N."
+        ],
+        "correct": 0,
+        "explain": "Theo quy ước SGK trang 19: Cuộn thứ nhất AX (pha A), cuộn thứ hai BY (pha B), cuộn thứ ba CZ (pha C). A, B, C là các điểm đầu; X, Y, Z là các điểm cuối của cuộn dây."
+      },
+      {
+        "id": 19,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Nếu chọn suất điện động pha A làm gốc eA = Em.sin(ωt), thì biểu thức suất điện động pha B (eB) và pha C (eC) lần lượt là",
+        "options": [
+          "A. eB = Em.sin(ωt - π/2) và eC = Em.sin(ωt + π/2)",
+          "B. eB = Em.sin(ωt - 2π/3) và eC = Em.sin(ωt + 2π/3) [hoặc eC = Em.sin(ωt - 4π/3)]",
+          "C. eB = Em.sin(ωt - π) và eC = Em.sin(ωt + π)",
+          "D. eB = Em.sin(2ωt) và eC = Em.sin(3ωt)"
+        ],
+        "correct": 1,
+        "explain": "Ba suất điện động cùng biên độ, cùng tần số và lần lượt lệch pha nhau góc 2π/3 rad (SGK trang 19, Luyện tập 1 trang 21)."
+      },
+      {
+        "id": 20,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cách nối nguồn điện hoặc tải ba pha hình sao (Y) có đặc điểm gì?",
+        "options": [
+          "A. Ba điểm cuối X, Y, Z của ba pha được nối chung với nhau tạo thành điểm trung tính (O).",
+          "B. Điểm đầu của pha này nối với điểm cuối của pha kia tạo mạch vòng kín.",
+          "C. Ba điểm đầu A, B, C chập lại với nhau, ba điểm cuối nối ra dây pha.",
+          "D. Mỗi cuộn dây nối với một cặp dây dẫn riêng biệt không nối chung điểm nào."
+        ],
+        "correct": 0,
+        "explain": "Nối hình sao (Y): Ba điểm cuối X, Y, Z của các pha được nối chung với nhau tạo thành điểm trung tính O (SGK trang 19)."
+      },
+      {
+        "id": 21,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cách nối nguồn điện hoặc tải ba pha hình tam giác (Δ) có đặc điểm gì?",
+        "options": [
+          "A. Ba điểm cuối X, Y, Z nối chụm lại thành điểm trung tính.",
+          "B. Điểm đầu của pha này được nối với điểm cuối của pha kia (A nối Z, B nối X, C nối Y) tạo thành hình tam giác khép kín.",
+          "C. Ba cuộn dây mắc song song với nhau.",
+          "D. Dùng dây trung tính nối qua tâm hình tam giác."
+        ],
+        "correct": 1,
+        "explain": "Nối hình tam giác (Δ): Điểm đầu của pha này được nối với điểm cuối của pha kia tạo thành hình tam giác khép kín (SGK trang 19)."
+      },
+      {
+        "id": 22,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Dây trung tính trong mạng điện ba pha bốn dây có tác dụng quan trọng nhất là gì?",
+        "options": [
+          "A. Làm tăng công suất phát của máy phát điện lên gấp đôi.",
+          "B. Giữ cho điện áp trên các pha tải luôn ổn định ở mức điện áp pha (Up), không bị thay đổi ngay cả khi phụ tải các pha không đối xứng.",
+          "C. Triệt tiêu toàn bộ dòng điện chạy trong ba dây pha.",
+          "D. Làm giảm điện trở của các dây dẫn truyền tải."
+        ],
+        "correct": 1,
+        "explain": "Dây trung tính nối giữa điểm trung tính của nguồn và tải có tác dụng cân bằng và duy trì điện áp pha trên mỗi pha tải luôn bằng điện áp pha của nguồn, bảo vệ các thiết bị điện 1 pha hoạt động bình thường kể cả khi tải các pha không đều."
+      },
+      {
+        "id": 23,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Trong mạch điện ba pha bốn dây đối xứng, cường độ dòng điện chạy trong dây trung tính (i0) có giá trị bằng",
+        "options": [
+          "A. i0 = iA + iB + iC = 0",
+          "B. i0 = 3.iA",
+          "C. i0 = √3.iA",
+          "D. i0 = iA / √3"
+        ],
+        "correct": 0,
+        "explain": "Khi tải đối xứng: iA + iB + iC = 0 tại mọi thời điểm, do đó dòng điện tức thời và hiệu dụng chạy trong dây trung tính bằng 0 (i0 = 0)."
+      },
+      {
+        "id": 24,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Phát biểu nào sau đây định nghĩa chính xác về điện áp pha (Up) và điện áp dây (Ud)?",
+        "options": [
+          "A. Up là điện áp giữa hai dây pha; Ud là điện áp giữa dây pha và dây trung tính.",
+          "B. Up là điện áp giữa một dây pha và dây trung tính (hoặc giữa hai đầu một pha); Ud là điện áp giữa hai dây pha.",
+          "C. Up và Ud luôn có giá trị bằng nhau trong mọi trường hợp.",
+          "D. Ud là điện áp chịu đựng của dây cách điện; Up là điện áp sinh công."
+        ],
+        "correct": 1,
+        "explain": "Định nghĩa chuẩn SGK trang 20: Dòng điện chạy trong dây pha gọi là Id; dòng điện chạy trong mỗi pha gọi là Ip. Điện áp giữa hai dây pha gọi là Ud; điện áp giữa dây pha và dây trung tính (hoặc giữa điểm đầu và cuối mỗi pha) gọi là Up."
+      },
+      {
+        "id": 25,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Mạch điện ba pha được gọi là ĐỐI XỨNG khi thỏa mãn điều kiện nào sau đây?",
+        "options": [
+          "A. Chỉ cần nguồn điện ba pha đối xứng.",
+          "B. Chỉ cần tổng trở ba pha tải bằng nhau.",
+          "C. Có nguồn điện ba pha đối xứng và tải ba pha đối xứng (ZA = ZB = ZC).",
+          "D. Cả nguồn và tải đều nối hình tam giác."
+        ],
+        "correct": 2,
+        "explain": "Mạch điện ba pha được gọi là đối xứng nếu có nguồn đối xứng (cùng biên độ, tần số, lệch pha 120°) VÀ tải đối xứng (ZA = ZB = ZC) (SGK trang 20)."
+      },
+      {
+        "id": 26,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Trong mạch ba pha đối xứng khi tải nối hình sao (Y), mối quan hệ giữa các đại lượng là:",
+        "options": [
+          "A. Ud = Up và Id = √3.Ip",
+          "B. Ud = √3.Up và Id = Ip",
+          "C. Ud = √3.Up và Id = √3.Ip",
+          "D. Ud = Up/√3 và Id = Ip"
+        ],
+        "correct": 1,
+        "explain": "Khi tải nối hình sao (Y): Dòng điện dây bằng dòng điện pha (Id = Ip), Điện áp dây bằng căn 3 lần điện áp pha (Ud = √3.Up) (SGK trang 20)."
+      },
+      {
+        "id": 27,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Trong mạch ba pha đối xứng khi tải nối hình tam giác (Δ), mối quan hệ giữa các đại lượng là:",
+        "options": [
+          "A. Ud = Up và Id = √3.Ip",
+          "B. Ud = √3.Up và Id = Ip",
+          "C. Ud = Up và Id = Ip",
+          "D. Ud = Up/√3 và Id = √3.Ip"
+        ],
+        "correct": 0,
+        "explain": "Khi tải nối hình tam giác (Δ): Điện áp dây bằng điện áp pha (Ud = Up), Dòng điện dây bằng căn 3 lần dòng điện pha (Id = √3.Ip) (SGK trang 21)."
+      },
+      {
+        "id": 28,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Công suất tác dụng toàn phần của mạch điện ba pha đối xứng được tính theo công thức nào sau đây?",
+        "options": [
+          "A. P = 3.Ud.Id.cosφ",
+          "B. P = √3.Ud.Id.cosφ = 3.Up.Ip.cosφ",
+          "C. P = Ud.Id.cosφ",
+          "D. P = √3.Up.Ip.cosφ"
+        ],
+        "correct": 1,
+        "explain": "Công suất tác dụng ba pha đối xứng bằng 3 lần công suất một pha: P = 3.P1p = 3.Up.Ip.cosφ. Dù nối sao hay tam giác, thay Ud và Id vào đều rút ra công thức chung: P = √3.Ud.Id.cosφ."
+      },
+      {
+        "id": 29,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một nguồn điện xoay chiều ba pha đối xứng có điện áp pha Up = 220 V. Điện áp dây Ud của nguồn điện này có giá trị xấp xỉ bằng bao nhiêu?",
+        "options": [
+          "A. 127 V",
+          "B. 220 V",
+          "C. 380 V (hoặc 381 V)",
+          "D. 440 V"
+        ],
+        "correct": 2,
+        "explain": "Ta có: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế quy chuẩn là 380 V)."
+      },
+      {
+        "id": 30,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cho mạch điện ba pha tải đối xứng nối theo hình sao (Y) trong đó điện áp pha Up = 220 V và tải ba pha gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp dây Ud lần lượt là",
+        "options": [
+          "A. Ip = 4,4 A; Id = 4,4 A; Ud ≈ 381 V",
+          "B. Ip = 7,6 A; Id = 4,4 A; Ud = 220 V",
+          "C. Ip = 4,4 A; Id = 7,6 A; Ud = 380 V",
+          "D. Ip = 2,2 A; Id = 2,2 A; Ud = 127 V"
+        ],
+        "correct": 0,
+        "explain": "Vì tải nối hình sao: Ip = Up / R = 220 / 50 = 4,4 A. Dòng điện dây: Id = Ip = 4,4 A. Điện áp dây: Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
+      },
+      {
+        "id": 31,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cho mạch điện ba pha tải đối xứng nối theo hình tam giác (Δ), điện áp dây Ud = 380 V, tải ba pha gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp pha Up lần lượt là",
+        "options": [
+          "A. Up = 220 V; Ip = 4,4 A; Id = 4,4 A",
+          "B. Up = 380 V; Ip = 7,6 A; Id ≈ 13,16 A",
+          "C. Up = 380 V; Ip = 13,16 A; Id = 7,6 A",
+          "D. Up = 380 V; Ip = 7,6 A; Id = 7,6 A"
+        ],
+        "correct": 1,
+        "explain": "Vì tải nối hình tam giác: Up = Ud = 380 V. Dòng điện pha: Ip = Up / R = 380 / 50 = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Bài tập 3 SGK trang 21)."
+      },
+      {
+        "id": 32,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cho nguồn điện xoay chiều ba pha bốn dây có Ud/Up = 380/220 V. Có 6 bóng đèn sợi đốt loại 220 V - 60 W và một động cơ ba pha loại 380 V - 2,2 kW. Để các thiết bị hoạt động bình thường trong mạch ba pha đối xứng thì:",
+        "options": [
+          "A. Bóng đèn nối tam giác, động cơ nối sao.",
+          "B. Bóng đèn chia đều nối hình sao (mỗi pha 2 bóng song song), động cơ nối hình tam giác.",
+          "C. Cả bóng đèn và động cơ đều nối hình sao có dây trung tính.",
+          "D. Cả bóng đèn và động cơ đều nối hình tam giác."
+        ],
+        "correct": 1,
+        "explain": "Bóng đèn có Uđm = 220 V = Up của nguồn nên phải nối hình sao (Y) có dây trung tính (6 bóng chia đều mỗi pha 2 bóng song song). Động cơ có Uđm = 380 V = Ud của nguồn nên phải nối hình tam giác (Δ) vào 3 dây pha (Bài tập 5 SGK trang 21)."
+      },
+      {
+        "id": 33,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một động cơ không đồng bộ ba pha khi làm việc ở mạng điện có điện áp dây Ud = 380 V thì tiêu thụ dòng điện dây Id = 10 A với hệ số công suất cosφ = 0,85. Công suất tác dụng P tiêu thụ của động cơ là",
+        "options": [
+          "A. 3 230 W",
+          "B. 5 594 W",
+          "C. 9 690 W",
+          "D. 1 860 W"
+        ],
+        "correct": 1,
+        "explain": "Công suất tiêu thụ ba pha: P = √3.Ud.Id.cosφ = √3 × 380 × 10 × 0,85 ≈ 1,732 × 380 × 8,5 ≈ 5 594 W (≈ 5,6 kW)."
+      },
+      {
+        "id": 34,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Tải ba pha đối xứng gồm 3 cuộn dây, mỗi cuộn có điện trở R = 8 Ω và cảm kháng XL = 6 Ω. Nối tải theo hình tam giác (Δ) vào nguồn có điện áp dây Ud = 220 V. Dòng điện pha Ip và dòng điện dây Id là",
+        "options": [
+          "A. Ip = 22 A; Id ≈ 38,1 A",
+          "B. Ip = 15,7 A; Id = 15,7 A",
+          "C. Ip = 27,5 A; Id = 47,6 A",
+          "D. Ip = 22 A; Id = 22 A"
+        ],
+        "correct": 0,
+        "explain": "Tổng trở mỗi pha: zp = √(R² + XL²) = √(8² + 6²) = 10 Ω. Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: Ip = Up / zp = 220 / 10 = 22 A. Dòng điện dây: Id = √3.Ip = √3 × 22 ≈ 38,1 A."
+      },
+      {
+        "id": 35,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "So với hệ thống điện một pha, hệ thống truyền tải dòng điện xoay chiều ba pha có ưu điểm vượt trội nào?",
+        "options": [
+          "A. Chỉ cần dùng 1 dây dẫn duy nhất.",
+          "B. Tiết kiệm tiết diện kim loại làm dây dẫn khi truyền tải công suất lớn đi xa, và tạo ra từ trường quay giúp chế tạo động cơ ba pha cấu tạo đơn giản, bền bỉ.",
+          "C. Không bao giờ xảy ra sự cố ngắn mạch hay quá tải.",
+          "D. Luôn có điện áp một chiều ổn định không đổi."
+        ],
+        "correct": 1,
+        "explain": "Ưu điểm của mạch 3 pha: Tiết kiệm dây dẫn kim loại (đồng, nhôm) so với 3 đường dây 1 pha độc lập; tạo ra từ trường quay để vận hành động cơ điện ba pha - thiết bị cốt lõi trong công nghiệp (SGK trang 21)."
+      },
+      {
+        "id": 70,
+        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
+        "question": "Một nguồn điện ba pha đối xứng có điện áp pha Up = 220 V. Giá trị của điện áp dây Ud xấp xỉ bằng bao nhiêu vôn?",
+        "options": [
+          "A. 127 V",
+          "B. 220 V",
+          "C. 380 V (hoặc 381 V)",
+          "D. 440 V"
+        ],
+        "correct": 2,
+        "explain": "Ta có công thức liên hệ giữa điện áp dây và điện áp pha của nguồn đối xứng: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế mạng điện quy ước là 380 V)."
+      },
+      {
+        "id": 71,
+        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
+        "question": "Cho mạch điện xoay chiều một pha có R = 30 Ω, cảm kháng XL = 60 Ω, dung kháng XC = 20 Ω. Độ lớn tổng trở z_t của mạch điện là",
+        "options": [
+          "A. 110 Ω",
+          "B. 50 Ω",
+          "C. 70 Ω",
+          "D. 10 Ω"
+        ],
+        "correct": 1,
+        "explain": "Điện kháng của mạch: X = XL - XC = 60 - 20 = 40 Ω. Tổng trở: z_t = √(R² + X²) = √(30² + 40²) = 50 Ω."
+      },
+      {
+        "id": 72,
+        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
+        "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có điện trở R = 12 Ω và cảm kháng XL = 16 Ω mỗi pha nối hình sao (Y) vào nguồn có điện áp dây Ud = 380 V. Cường độ dòng điện pha Ip chạy qua mỗi cuộn dây là",
+        "options": [
+          "A. 11 A",
+          "B. 19 A",
+          "C. 31,6 A",
+          "D. 22 A"
+        ],
+        "correct": 0,
+        "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = 20 Ω. Do tải nối sao: Up = Ud / √3 = 380 / √3 ≈ 220 V. Cường độ dòng điện pha: Ip = Up / z_p = 220 / 20 = 11 A."
+      },
+      {
+        "id": 73,
+        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
+        "question": "Một động cơ điện ba pha nối hình tam giác (Δ) tiêu thụ dòng điện pha Ip = 15 A. Cường độ dòng điện dây Id chạy trên đường dây cấp điện cho động cơ là",
+        "options": [
+          "A. 15 A",
+          "B. 8,66 A",
+          "C. 25,98 A",
+          "D. 45 A"
+        ],
+        "correct": 2,
+        "explain": "Tải nối tam giác (Δ) đối xứng thì: Id = √3.Ip = √3 × 15 ≈ 25,98 A."
+      },
+      {
+        "id": 74,
+        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
+        "question": "Một khu tập thể gồm 150 hộ gia đình, mỗi hộ tiêu thụ công suất trung bình vào giờ cao điểm là 4 kW. Cần chọn máy biến áp phân phối có công suất định mức tối thiểu là bao nhiêu kVA (giả sử hệ số công suất cosφ = 0,8)?",
+        "options": [
+          "A. 150 kVA",
+          "B. 480 kVA",
+          "C. 750 kVA",
+          "D. 600 kVA"
+        ],
+        "correct": 2,
+        "explain": "Tổng công suất tác dụng: P = 150 × 4 = 600 kW. Công suất biểu kiến của máy biến áp: S = P / cosφ = 600 / 0,8 = 750 kVA."
+      },
+      {
+        "id": 75,
+        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
+        "question": "Điện áp danh định mạng điện hạ áp sinh hoạt là 220 V. Theo quy chuẩn sai số cho phép không quá ±5%, dải điện áp thực tế tại ổ cắm trong nhà chấp nhận được là",
+        "options": [
+          "A. từ 200 V đến 240 V",
+          "B. từ 209 V đến 231 V",
+          "C. từ 215 V đến 225 V",
+          "D. từ 180 V đến 260 V"
+        ],
+        "correct": 1,
+        "explain": "Độ lệch điện áp 5%: ΔU = 220 × 5% = 11 V. Dải điện áp cho phép: U_min = 220 - 11 = 209 V; U_max = 220 + 11 = 231 V."
+      }
+    ]
+  },
+  {
     "id": "cn_bai2",
     "title": "Bài 2: Ngành nghề trong lĩnh vực kĩ thuật điện",
     "icon": "👷",
-    "description": "5 nhóm nghề cốt lõi: Thiết kế, chế tạo, lắp đặt, vận hành, bảo dưỡng & sửa chữa",
+    "description": "5 nhóm nghề: Thiết kế, chế tạo, lắp đặt, vận hành, bảo dưỡng & sửa chữa",
     "questions": [
       {
         "id": 1,
@@ -1145,248 +1724,6 @@ const CONGNGHE_TOPICS_DATABASE = [
         ],
         "correct": 1,
         "explain": "Người làm nghề bảo dưỡng và sửa chữa điện cần có tư duy logic, khả năng suy luận, chẩn đoán lỗi; kĩ năng thành thạo trong sử dụng các thiết bị đo, thiết bị chẩn đoán lỗi và tuân thủ tuyệt đối quy chuẩn kĩ thuật, an toàn điện (SGK trang 13)."
-      }
-    ]
-  },
-  {
-    "id": "cn_bai3",
-    "title": "Bài 3: Mạch điện xoay chiều ba pha",
-    "icon": "🌀",
-    "description": "Cấu tạo máy phát 3 pha, nối sao (Y), tam giác (Δ), công thức tính Ud, Up, Id, Ip, z_t",
-    "questions": [
-      {
-        "id": 11,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Dòng điện xoay chiều một pha có cường độ tức thời i = Im.sin(ωt + ψ). Đại lượng Im được gọi là",
-        "options": [
-          "A. giá trị hiệu dụng của dòng điện.",
-          "B. giá trị cực đại (biên độ) của dòng điện.",
-          "C. tần số góc của dòng điện.",
-          "D. pha ban đầu của dòng điện."
-        ],
-        "correct": 1,
-        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị ampe (A). Giá trị hiệu dụng là I = Im / √2 (SGK trang 18)."
-      },
-      {
-        "id": 12,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Tổng trở z_t của tải điện một pha gồm điện trở R nối tiếp với điện kháng X được tính theo công thức nào?",
-        "options": [
-          "A. z_t = R + X",
-          "B. z_t = √(R² + X²)",
-          "C. z_t = √(R² - X²)",
-          "D. z_t = R² + X²"
-        ],
-        "correct": 1,
-        "explain": "Theo SGK Công nghệ 12 trang 18: Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) và góc pha φ với tan φ = X/R."
-      },
-      {
-        "id": 13,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Dòng điện xoay chiều ba pha là hệ thống ba dòng điện xoay chiều có đặc điểm nào sau đây?",
-        "options": [
-          "A. Khác tần số, cùng biên độ, cùng pha với nhau.",
-          "B. Cùng tần số, cùng biên độ nhưng lệch pha nhau góc 2π/3 (120°) giữa các pha.",
-          "C. Cùng tần số, biên độ khác nhau, lệch pha nhau góc 90°.",
-          "D. Cùng biên độ nhưng tần số gấp ba lần nhau."
-        ],
-        "correct": 1,
-        "explain": "Dòng điện xoay chiều ba pha là hệ thống ba dòng điện xoay chiều có cùng tần số, cùng biên độ và có góc pha lệch nhau 120° (2π/3 rad) lần lượt giữa các pha (SGK trang 18)."
-      },
-      {
-        "id": 14,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Phần tĩnh (Stator) của máy phát điện xoay chiều ba pha gồm",
-        "options": [
-          "A. một nam châm điện quay tròn quanh trục.",
-          "B. ba cuộn dây giống hệt nhau đặt lệch nhau một góc 120° trên lõi thép có rãnh.",
-          "C. bốn cuộn dây đặt vuông góc nhau.",
-          "D. cổ góp điện và chổi than."
-        ],
-        "correct": 1,
-        "explain": "Phần tĩnh (stator) là lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ có cùng số vòng và kích thước dây, đặt lệch nhau góc 120° trên đường tròn không gian (SGK trang 19)."
-      },
-      {
-        "id": 15,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cách nối nguồn điện hoặc tải ba pha hình sao (Y) có đặc điểm là",
-        "options": [
-          "A. đầu pha này nối với cuối pha kia tạo thành mạch vòng kín.",
-          "B. ba điểm cuối X, Y, Z của ba pha nối chung với nhau tạo thành điểm trung tính O.",
-          "C. ba điểm đầu A, B, C nối chung với nhau, ba điểm cuối để tự do.",
-          "D. chỉ có 2 dây pha đi ra tải tiêu thụ."
-        ],
-        "correct": 1,
-        "explain": "Nối hình sao (Y): Ba điểm cuối X, Y, Z của các pha được nối với nhau tạo thành điểm trung tính O (SGK trang 19)."
-      },
-      {
-        "id": 16,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cách nối nguồn hoặc tải ba pha hình tam giác (Δ) được thực hiện như thế nào?",
-        "options": [
-          "A. Điểm đầu của pha này nối với điểm cuối của pha kia (A nối Z, B nối X, C nối Y) tạo thành hình tam giác khép kín.",
-          "B. Ba điểm cuối nối với nhau tạo điểm trung tính O.",
-          "C. Cả ba điểm đầu và ba điểm cuối đều nối chập lại.",
-          "D. Nối từng pha độc lập với 6 dây dẫn riêng biệt."
-        ],
-        "correct": 0,
-        "explain": "Nối hình tam giác (Δ): Điểm đầu của pha này được nối với điểm cuối của pha kia tạo thành hình tam giác khép kín (SGK trang 19)."
-      },
-      {
-        "id": 17,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Điện áp giữa hai dây pha trong mạch điện xoay chiều ba pha được gọi là",
-        "options": [
-          "A. điện áp pha (Up).",
-          "B. điện áp dây (Ud).",
-          "C. điện áp cực đại (Um).",
-          "D. điện áp định mức của tải."
-        ],
-        "correct": 1,
-        "explain": "Điện áp giữa hai dây pha gọi là điện áp dây, kí hiệu là Ud. Điện áp giữa dây pha và dây trung tính (hoặc giữa điểm đầu và cuối của một pha) gọi là điện áp pha, kí hiệu là Up (SGK trang 20)."
-      },
-      {
-        "id": 18,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong mạch điện ba pha đối xứng khi tải nối hình sao (Y), mối quan hệ giữa điện áp dây Ud và điện áp pha Up, dòng điện dây Id và dòng điện pha Ip là:",
-        "options": [
-          "A. Ud = Up và Id = √3.Ip",
-          "B. Ud = √3.Up và Id = Ip",
-          "C. Ud = √3.Up và Id = √3.Ip",
-          "D. Ud = Up/√3 và Id = Ip"
-        ],
-        "correct": 1,
-        "explain": "Khi tải nối hình sao (Y) trong mạch ba pha đối xứng: Id = Ip và Ud = √3.Up (SGK trang 20)."
-      },
-      {
-        "id": 19,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong mạch điện ba pha đối xứng khi tải nối hình tam giác (Δ), mối quan hệ giữa các đại lượng dây và pha là:",
-        "options": [
-          "A. Ud = Up và Id = Ip",
-          "B. Ud = √3.Up và Id = Ip",
-          "C. Ud = Up và Id = √3.Ip",
-          "D. Ud = Up/√3 và Id = √3.Ip"
-        ],
-        "correct": 2,
-        "explain": "Khi tải nối hình tam giác (Δ) trong mạch ba pha đối xứng: Ud = Up và Id = √3.Ip (SGK trang 21)."
-      },
-      {
-        "id": 20,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một tải ba pha đối xứng gồm 3 điện trở R = 50 Ω nối hình tam giác (Δ) vào nguồn ba pha có điện áp dây Ud = 380 V. Dòng điện pha Ip và dòng điện dây Id của mạch có giá trị lần lượt là",
-        "options": [
-          "A. Ip = 4,4 A; Id = 4,4 A",
-          "B. Ip = 7,6 A; Id = 13,16 A",
-          "C. Ip = 13,16 A; Id = 7,6 A",
-          "D. Ip = 7,6 A; Id = 7,6 A"
-        ],
-        "correct": 1,
-        "explain": "Tải nối tam giác nên Up = Ud = 380 V. Dòng điện pha: Ip = Up / R = 380 / 50 = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Ví dụ SGK trang 21)."
-      },
-      {
-        "id": 21,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cho mạch ba pha tải đối xứng nối hình sao (Y) có điện áp pha Up = 220 V, tải gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp dây Ud lần lượt là",
-        "options": [
-          "A. Ip = 4,4 A; Id = 4,4 A; Ud ≈ 381 V",
-          "B. Ip = 7,6 A; Id = 4,4 A; Ud = 220 V",
-          "C. Ip = 4,4 A; Id = 7,6 A; Ud = 380 V",
-          "D. Ip = 2,2 A; Id = 2,2 A; Ud = 127 V"
-        ],
-        "correct": 0,
-        "explain": "Tải nối hình sao nên: Ip = Up / R = 220 / 50 = 4,4 A. Dòng điện dây Id = Ip = 4,4 A. Điện áp dây Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
-      },
-      {
-        "id": 22,
-        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một động cơ điện ba pha có ghi 220V/380V - Δ/Y. Nếu lưới điện có điện áp dây Ud = 380 V thì phải đấu dây động cơ theo kiểu nào để hoạt động bình thường?",
-        "options": [
-          "A. Đấu hình tam giác (Δ).",
-          "B. Đấu hình sao (Y).",
-          "C. Đấu hình sao có nối đất.",
-          "D. Đấu kiểu nào cũng được."
-        ],
-        "correct": 1,
-        "explain": "Thông số ghi 220V/380V tương ứng với cách nối Δ/Y nghĩa là: điện áp đặt vào mỗi cuộn dây của động cơ chịu tối đa 220 V. Khi lưới có Ud = 380 V, nếu nối sao (Y) thì Up = Ud/√3 = 380/√3 = 220 V (vừa đúng định mức của cuộn dây)."
-      },
-      {
-        "id": 70,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Một nguồn điện ba pha đối xứng có điện áp pha Up = 220 V. Giá trị của điện áp dây Ud xấp xỉ bằng bao nhiêu vôn?",
-        "options": [
-          "A. 127 V",
-          "B. 220 V",
-          "C. 380 V (hoặc 381 V)",
-          "D. 440 V"
-        ],
-        "correct": 2,
-        "explain": "Ta có công thức liên hệ giữa điện áp dây và điện áp pha của nguồn đối xứng: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế mạng điện quy ước là 380 V)."
-      },
-      {
-        "id": 71,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Cho mạch điện xoay chiều một pha có R = 30 Ω, cảm kháng XL = 60 Ω, dung kháng XC = 20 Ω. Độ lớn tổng trở z_t của mạch điện là",
-        "options": [
-          "A. 110 Ω",
-          "B. 50 Ω",
-          "C. 70 Ω",
-          "D. 10 Ω"
-        ],
-        "correct": 1,
-        "explain": "Điện kháng của mạch: X = XL - XC = 60 - 20 = 40 Ω. Tổng trở: z_t = √(R² + X²) = √(30² + 40²) = 50 Ω."
-      },
-      {
-        "id": 72,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Một tải ba pha gồm 3 cuộn dây đối xứng có điện trở R = 12 Ω và cảm kháng XL = 16 Ω mỗi pha nối hình sao (Y) vào nguồn có điện áp dây Ud = 380 V. Cường độ dòng điện pha Ip chạy qua mỗi cuộn dây là",
-        "options": [
-          "A. 11 A",
-          "B. 19 A",
-          "C. 31,6 A",
-          "D. 22 A"
-        ],
-        "correct": 0,
-        "explain": "Tổng trở mỗi pha của tải: z_p = √(R² + XL²) = √(12² + 16²) = 20 Ω. Do tải nối sao: Up = Ud / √3 = 380 / √3 ≈ 220 V. Cường độ dòng điện pha: Ip = Up / z_p = 220 / 20 = 11 A."
-      },
-      {
-        "id": 73,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Một động cơ điện ba pha nối hình tam giác (Δ) tiêu thụ dòng điện pha Ip = 15 A. Cường độ dòng điện dây Id chạy trên đường dây cấp điện cho động cơ là",
-        "options": [
-          "A. 15 A",
-          "B. 8,66 A",
-          "C. 25,98 A",
-          "D. 45 A"
-        ],
-        "correct": 2,
-        "explain": "Tải nối tam giác (Δ) đối xứng thì: Id = √3.Ip = √3 × 15 ≈ 25,98 A."
-      },
-      {
-        "id": 74,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Một khu tập thể gồm 150 hộ gia đình, mỗi hộ tiêu thụ công suất trung bình vào giờ cao điểm là 4 kW. Cần chọn máy biến áp phân phối có công suất định mức tối thiểu là bao nhiêu kVA (giả sử hệ số công suất cosφ = 0,8)?",
-        "options": [
-          "A. 150 kVA",
-          "B. 480 kVA",
-          "C. 750 kVA",
-          "D. 600 kVA"
-        ],
-        "correct": 2,
-        "explain": "Tổng công suất tác dụng: P = 150 × 4 = 600 kW. Công suất biểu kiến của máy biến áp: S = P / cosφ = 600 / 0,8 = 750 kVA."
-      },
-      {
-        "id": 75,
-        "topic": "BÀI TẬP TÍNH TOÁN MẠCH 3 PHA",
-        "question": "Điện áp danh định mạng điện hạ áp sinh hoạt là 220 V. Theo quy chuẩn sai số cho phép không quá ±5%, dải điện áp thực tế tại ổ cắm trong nhà chấp nhận được là",
-        "options": [
-          "A. từ 200 V đến 240 V",
-          "B. từ 209 V đến 231 V",
-          "C. từ 215 V đến 225 V",
-          "D. từ 180 V đến 260 V"
-        ],
-        "correct": 1,
-        "explain": "Độ lệch điện áp 5%: ΔU = 220 × 5% = 11 V. Dải điện áp cho phép: U_min = 220 - 11 = 209 V; U_max = 220 + 11 = 231 V."
       }
     ]
   },
@@ -1829,7 +2166,7 @@ const CONGNGHE_TOPICS_DATABASE = [
     "id": "cn_gk1",
     "title": "🎯 Đề Thi Thử Giữa Kì 1 Công Nghệ 12 (Chuẩn Ma Trận)",
     "icon": "🎯",
-    "description": "Trắc nghiệm nhiều lựa chọn + Trắc nghiệm Đúng/Sai 4 ý có ngữ liệu + Tính toán mạch điện",
+    "description": "Trắc nghiệm 4 lựa chọn + Trắc nghiệm Đúng/Sai 4 ý có ngữ liệu + Tính toán mạch 3 pha",
     "questions": [
       {
         "id": 1,
@@ -1972,90 +2309,194 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. pha ban đầu của dòng điện."
         ],
         "correct": 1,
-        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị ampe (A). Giá trị hiệu dụng là I = Im / √2 (SGK trang 18)."
+        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng: I = Im / √2 (SGK Công nghệ 12 trang 18)."
       },
       {
         "id": 12,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Tổng trở z_t của tải điện một pha gồm điện trở R nối tiếp với điện kháng X được tính theo công thức nào?",
+        "question": "Một dòng điện xoay chiều có biểu thức i = 4√2.sin(100πt) (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
         "options": [
-          "A. z_t = R + X",
-          "B. z_t = √(R² + X²)",
-          "C. z_t = √(R² - X²)",
-          "D. z_t = R² + X²"
+          "A. I = 4 A; f = 50 Hz",
+          "B. I = 4√2 A; f = 100 Hz",
+          "C. I = 4 A; f = 100 Hz",
+          "D. I = 2√2 A; f = 50 Hz"
         ],
-        "correct": 1,
-        "explain": "Theo SGK Công nghệ 12 trang 18: Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) và góc pha φ với tan φ = X/R."
+        "correct": 0,
+        "explain": "Từ biểu thức: Im = 4√2 A => I = Im / √2 = 4 A. Tần số góc ω = 100π rad/s => Tần số f = ω / (2π) = 100π / (2π) = 50 Hz."
       },
       {
         "id": 13,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Dòng điện xoay chiều ba pha là hệ thống ba dòng điện xoay chiều có đặc điểm nào sau đây?",
+        "question": "Công thức tính cảm kháng XL của cuộn cảm thuần có độ tự cảm L và dung kháng XC của tụ điện có điện dung C đối với dòng xoay chiều tần số f là:",
         "options": [
-          "A. Khác tần số, cùng biên độ, cùng pha với nhau.",
-          "B. Cùng tần số, cùng biên độ nhưng lệch pha nhau góc 2π/3 (120°) giữa các pha.",
-          "C. Cùng tần số, biên độ khác nhau, lệch pha nhau góc 90°.",
-          "D. Cùng biên độ nhưng tần số gấp ba lần nhau."
+          "A. XL = 2πfL và XC = 2πfC",
+          "B. XL = 2πfL và XC = 1 / (2πfC)",
+          "C. XL = 1 / (2πfL) và XC = 1 / (2πfC)",
+          "D. XL = L / (2πf) và XC = C / (2πf)"
         ],
         "correct": 1,
-        "explain": "Dòng điện xoay chiều ba pha là hệ thống ba dòng điện xoay chiều có cùng tần số, cùng biên độ và có góc pha lệch nhau 120° (2π/3 rad) lần lượt giữa các pha (SGK trang 18)."
+        "explain": "Cảm kháng cuộn cảm: XL = ωL = 2πfL; Dung kháng tụ điện: XC = 1/(ωC) = 1/(2πfC) (SGK Công nghệ 12 trang 18)."
       },
       {
         "id": 14,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Phần tĩnh (Stator) của máy phát điện xoay chiều ba pha gồm",
+        "question": "Tổng trở z_t của tải điện một pha gồm điện trở R nối tiếp với cuộn cảm (XL) và tụ điện (XC) được tính theo công thức nào?",
         "options": [
-          "A. một nam châm điện quay tròn quanh trục.",
-          "B. ba cuộn dây giống hệt nhau đặt lệch nhau một góc 120° trên lõi thép có rãnh.",
-          "C. bốn cuộn dây đặt vuông góc nhau.",
-          "D. cổ góp điện và chổi than."
+          "A. z_t = R + XL - XC",
+          "B. z_t = √[R² + (XL - XC)²]",
+          "C. z_t = √[R² + (XL + XC)²]",
+          "D. z_t = √[R² - (XL - XC)²]"
         ],
         "correct": 1,
-        "explain": "Phần tĩnh (stator) là lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ có cùng số vòng và kích thước dây, đặt lệch nhau góc 120° trên đường tròn không gian (SGK trang 19)."
+        "explain": "Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) với X = XL - XC, do đó z_t = √[R² + (XL - XC)²], và tan φ = X/R = (XL - XC)/R (SGK trang 18)."
       },
       {
         "id": 15,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cách nối nguồn điện hoặc tải ba pha hình sao (Y) có đặc điểm là",
+        "question": "Hiện tượng cộng hưởng điện trong mạch R-L-C nối tiếp xảy ra khi nào?",
         "options": [
-          "A. đầu pha này nối với cuối pha kia tạo thành mạch vòng kín.",
-          "B. ba điểm cuối X, Y, Z của ba pha nối chung với nhau tạo thành điểm trung tính O.",
-          "C. ba điểm đầu A, B, C nối chung với nhau, ba điểm cuối để tự do.",
-          "D. chỉ có 2 dây pha đi ra tải tiêu thụ."
+          "A. Khi R = XL",
+          "B. Khi cảm kháng bằng dung kháng (XL = XC)",
+          "C. Khi tần số dòng điện f = 0",
+          "D. Khi tổng trở đạt giá trị vô cùng lớn"
         ],
         "correct": 1,
-        "explain": "Nối hình sao (Y): Ba điểm cuối X, Y, Z của các pha được nối với nhau tạo thành điểm trung tính O (SGK trang 19)."
+        "explain": "Hiện tượng cộng hưởng xảy ra khi XL = XC (tức là 2πfL = 1/(2πfC)). Khi đó điện kháng X = 0, tổng trở mạch đạt giá trị nhỏ nhất z_min = R và dòng điện trong mạch đạt giá trị cực đại."
       },
       {
         "id": 16,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cách nối nguồn hoặc tải ba pha hình tam giác (Δ) được thực hiện như thế nào?",
+        "question": "Dòng điện xoay chiều ba pha là hệ thống ba dòng điện xoay chiều có đặc điểm nào sau đây?",
         "options": [
-          "A. Điểm đầu của pha này nối với điểm cuối của pha kia (A nối Z, B nối X, C nối Y) tạo thành hình tam giác khép kín.",
-          "B. Ba điểm cuối nối với nhau tạo điểm trung tính O.",
-          "C. Cả ba điểm đầu và ba điểm cuối đều nối chập lại.",
-          "D. Nối từng pha độc lập với 6 dây dẫn riêng biệt."
+          "A. Cùng tần số, cùng biên độ, cùng pha với nhau.",
+          "B. Cùng tần số, cùng biên độ nhưng lệch pha nhau góc 2π/3 (120°) lần lượt giữa các pha.",
+          "C. Tần số khác nhau, cùng biên độ, lệch pha nhau góc 90°.",
+          "D. Cùng pha ban đầu nhưng tần số gấp ba lần nhau."
         ],
-        "correct": 0,
-        "explain": "Nối hình tam giác (Δ): Điểm đầu của pha này được nối với điểm cuối của pha kia tạo thành hình tam giác khép kín (SGK trang 19)."
+        "correct": 1,
+        "explain": "Định nghĩa chuẩn SGK trang 18: Dòng điện xoay chiều ba pha sinh ra trong mạch điện ba pha là hệ thống ba dòng điện xoay chiều có cùng tần số, cùng biên độ và có góc pha lệch nhau 120° (2π/3 rad) lần lượt giữa các pha."
       },
       {
         "id": 17,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Điện áp giữa hai dây pha trong mạch điện xoay chiều ba pha được gọi là",
+        "question": "Cấu tạo phần tĩnh (Stator) của máy phát điện xoay chiều ba pha gồm",
         "options": [
-          "A. điện áp pha (Up).",
-          "B. điện áp dây (Ud).",
-          "C. điện áp cực đại (Um).",
-          "D. điện áp định mức của tải."
+          "A. một nam châm vĩnh cửu hình chữ U.",
+          "B. lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ giống hệt nhau về số vòng và tiết diện, đặt lệch nhau góc 120° trên đường tròn.",
+          "C. hai cuộn dây đặt vuông góc nhau.",
+          "D. vành trượt và chổi than tiếp điện."
         ],
         "correct": 1,
-        "explain": "Điện áp giữa hai dây pha gọi là điện áp dây, kí hiệu là Ud. Điện áp giữa dây pha và dây trung tính (hoặc giữa điểm đầu và cuối của một pha) gọi là điện áp pha, kí hiệu là Up (SGK trang 20)."
+        "explain": "Phần tĩnh (stator) là lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ có cùng số vòng và kích thước dây, đặt lệch nhau góc 120° trên không gian (SGK trang 19)."
       },
       {
         "id": 18,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong mạch điện ba pha đối xứng khi tải nối hình sao (Y), mối quan hệ giữa điện áp dây Ud và điện áp pha Up, dòng điện dây Id và dòng điện pha Ip là:",
+        "question": "Trong máy phát điện xoay chiều ba pha, kí hiệu các đầu cuộn dây pha A, pha B, pha C lần lượt là",
+        "options": [
+          "A. Đầu đầu: A, B, C; Đầu cuối tương ứng: X, Y, Z.",
+          "B. Đầu đầu: X, Y, Z; Đầu cuối: A, B, C.",
+          "C. Đầu đầu: U, V, W; Đầu cuối: 1, 2, 3.",
+          "D. Đầu đầu: L1, L2, L3; Đầu cuối: N."
+        ],
+        "correct": 0,
+        "explain": "Theo quy ước SGK trang 19: Cuộn thứ nhất AX (pha A), cuộn thứ hai BY (pha B), cuộn thứ ba CZ (pha C). A, B, C là các điểm đầu; X, Y, Z là các điểm cuối của cuộn dây."
+      },
+      {
+        "id": 19,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Nếu chọn suất điện động pha A làm gốc eA = Em.sin(ωt), thì biểu thức suất điện động pha B (eB) và pha C (eC) lần lượt là",
+        "options": [
+          "A. eB = Em.sin(ωt - π/2) và eC = Em.sin(ωt + π/2)",
+          "B. eB = Em.sin(ωt - 2π/3) và eC = Em.sin(ωt + 2π/3) [hoặc eC = Em.sin(ωt - 4π/3)]",
+          "C. eB = Em.sin(ωt - π) và eC = Em.sin(ωt + π)",
+          "D. eB = Em.sin(2ωt) và eC = Em.sin(3ωt)"
+        ],
+        "correct": 1,
+        "explain": "Ba suất điện động cùng biên độ, cùng tần số và lần lượt lệch pha nhau góc 2π/3 rad (SGK trang 19, Luyện tập 1 trang 21)."
+      },
+      {
+        "id": 20,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cách nối nguồn điện hoặc tải ba pha hình sao (Y) có đặc điểm gì?",
+        "options": [
+          "A. Ba điểm cuối X, Y, Z của ba pha được nối chung với nhau tạo thành điểm trung tính (O).",
+          "B. Điểm đầu của pha này nối với điểm cuối của pha kia tạo mạch vòng kín.",
+          "C. Ba điểm đầu A, B, C chập lại với nhau, ba điểm cuối nối ra dây pha.",
+          "D. Mỗi cuộn dây nối với một cặp dây dẫn riêng biệt không nối chung điểm nào."
+        ],
+        "correct": 0,
+        "explain": "Nối hình sao (Y): Ba điểm cuối X, Y, Z của các pha được nối chung với nhau tạo thành điểm trung tính O (SGK trang 19)."
+      },
+      {
+        "id": 21,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cách nối nguồn điện hoặc tải ba pha hình tam giác (Δ) có đặc điểm gì?",
+        "options": [
+          "A. Ba điểm cuối X, Y, Z nối chụm lại thành điểm trung tính.",
+          "B. Điểm đầu của pha này được nối với điểm cuối của pha kia (A nối Z, B nối X, C nối Y) tạo thành hình tam giác khép kín.",
+          "C. Ba cuộn dây mắc song song với nhau.",
+          "D. Dùng dây trung tính nối qua tâm hình tam giác."
+        ],
+        "correct": 1,
+        "explain": "Nối hình tam giác (Δ): Điểm đầu của pha này được nối với điểm cuối của pha kia tạo thành hình tam giác khép kín (SGK trang 19)."
+      },
+      {
+        "id": 22,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Dây trung tính trong mạng điện ba pha bốn dây có tác dụng quan trọng nhất là gì?",
+        "options": [
+          "A. Làm tăng công suất phát của máy phát điện lên gấp đôi.",
+          "B. Giữ cho điện áp trên các pha tải luôn ổn định ở mức điện áp pha (Up), không bị thay đổi ngay cả khi phụ tải các pha không đối xứng.",
+          "C. Triệt tiêu toàn bộ dòng điện chạy trong ba dây pha.",
+          "D. Làm giảm điện trở của các dây dẫn truyền tải."
+        ],
+        "correct": 1,
+        "explain": "Dây trung tính nối giữa điểm trung tính của nguồn và tải có tác dụng cân bằng và duy trì điện áp pha trên mỗi pha tải luôn bằng điện áp pha của nguồn, bảo vệ các thiết bị điện 1 pha hoạt động bình thường kể cả khi tải các pha không đều."
+      },
+      {
+        "id": 23,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Trong mạch điện ba pha bốn dây đối xứng, cường độ dòng điện chạy trong dây trung tính (i0) có giá trị bằng",
+        "options": [
+          "A. i0 = iA + iB + iC = 0",
+          "B. i0 = 3.iA",
+          "C. i0 = √3.iA",
+          "D. i0 = iA / √3"
+        ],
+        "correct": 0,
+        "explain": "Khi tải đối xứng: iA + iB + iC = 0 tại mọi thời điểm, do đó dòng điện tức thời và hiệu dụng chạy trong dây trung tính bằng 0 (i0 = 0)."
+      },
+      {
+        "id": 24,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Phát biểu nào sau đây định nghĩa chính xác về điện áp pha (Up) và điện áp dây (Ud)?",
+        "options": [
+          "A. Up là điện áp giữa hai dây pha; Ud là điện áp giữa dây pha và dây trung tính.",
+          "B. Up là điện áp giữa một dây pha và dây trung tính (hoặc giữa hai đầu một pha); Ud là điện áp giữa hai dây pha.",
+          "C. Up và Ud luôn có giá trị bằng nhau trong mọi trường hợp.",
+          "D. Ud là điện áp chịu đựng của dây cách điện; Up là điện áp sinh công."
+        ],
+        "correct": 1,
+        "explain": "Định nghĩa chuẩn SGK trang 20: Dòng điện chạy trong dây pha gọi là Id; dòng điện chạy trong mỗi pha gọi là Ip. Điện áp giữa hai dây pha gọi là Ud; điện áp giữa dây pha và dây trung tính (hoặc giữa điểm đầu và cuối mỗi pha) gọi là Up."
+      },
+      {
+        "id": 25,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Mạch điện ba pha được gọi là ĐỐI XỨNG khi thỏa mãn điều kiện nào sau đây?",
+        "options": [
+          "A. Chỉ cần nguồn điện ba pha đối xứng.",
+          "B. Chỉ cần tổng trở ba pha tải bằng nhau.",
+          "C. Có nguồn điện ba pha đối xứng và tải ba pha đối xứng (ZA = ZB = ZC).",
+          "D. Cả nguồn và tải đều nối hình tam giác."
+        ],
+        "correct": 2,
+        "explain": "Mạch điện ba pha được gọi là đối xứng nếu có nguồn đối xứng (cùng biên độ, tần số, lệch pha 120°) VÀ tải đối xứng (ZA = ZB = ZC) (SGK trang 20)."
+      },
+      {
+        "id": 26,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Trong mạch ba pha đối xứng khi tải nối hình sao (Y), mối quan hệ giữa các đại lượng là:",
         "options": [
           "A. Ud = Up và Id = √3.Ip",
           "B. Ud = √3.Up và Id = Ip",
@@ -2063,38 +2504,51 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Ud = Up/√3 và Id = Ip"
         ],
         "correct": 1,
-        "explain": "Khi tải nối hình sao (Y) trong mạch ba pha đối xứng: Id = Ip và Ud = √3.Up (SGK trang 20)."
+        "explain": "Khi tải nối hình sao (Y): Dòng điện dây bằng dòng điện pha (Id = Ip), Điện áp dây bằng căn 3 lần điện áp pha (Ud = √3.Up) (SGK trang 20)."
       },
       {
-        "id": 19,
+        "id": 27,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong mạch điện ba pha đối xứng khi tải nối hình tam giác (Δ), mối quan hệ giữa các đại lượng dây và pha là:",
+        "question": "Trong mạch ba pha đối xứng khi tải nối hình tam giác (Δ), mối quan hệ giữa các đại lượng là:",
         "options": [
-          "A. Ud = Up và Id = Ip",
+          "A. Ud = Up và Id = √3.Ip",
           "B. Ud = √3.Up và Id = Ip",
-          "C. Ud = Up và Id = √3.Ip",
+          "C. Ud = Up và Id = Ip",
           "D. Ud = Up/√3 và Id = √3.Ip"
         ],
-        "correct": 2,
-        "explain": "Khi tải nối hình tam giác (Δ) trong mạch ba pha đối xứng: Ud = Up và Id = √3.Ip (SGK trang 21)."
+        "correct": 0,
+        "explain": "Khi tải nối hình tam giác (Δ): Điện áp dây bằng điện áp pha (Ud = Up), Dòng điện dây bằng căn 3 lần dòng điện pha (Id = √3.Ip) (SGK trang 21)."
       },
       {
-        "id": 20,
+        "id": 28,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một tải ba pha đối xứng gồm 3 điện trở R = 50 Ω nối hình tam giác (Δ) vào nguồn ba pha có điện áp dây Ud = 380 V. Dòng điện pha Ip và dòng điện dây Id của mạch có giá trị lần lượt là",
+        "question": "Công suất tác dụng toàn phần của mạch điện ba pha đối xứng được tính theo công thức nào sau đây?",
         "options": [
-          "A. Ip = 4,4 A; Id = 4,4 A",
-          "B. Ip = 7,6 A; Id = 13,16 A",
-          "C. Ip = 13,16 A; Id = 7,6 A",
-          "D. Ip = 7,6 A; Id = 7,6 A"
+          "A. P = 3.Ud.Id.cosφ",
+          "B. P = √3.Ud.Id.cosφ = 3.Up.Ip.cosφ",
+          "C. P = Ud.Id.cosφ",
+          "D. P = √3.Up.Ip.cosφ"
         ],
         "correct": 1,
-        "explain": "Tải nối tam giác nên Up = Ud = 380 V. Dòng điện pha: Ip = Up / R = 380 / 50 = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Ví dụ SGK trang 21)."
+        "explain": "Công suất tác dụng ba pha đối xứng bằng 3 lần công suất một pha: P = 3.P1p = 3.Up.Ip.cosφ. Dù nối sao hay tam giác, thay Ud và Id vào đều rút ra công thức chung: P = √3.Ud.Id.cosφ."
       },
       {
-        "id": 21,
+        "id": 29,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cho mạch ba pha tải đối xứng nối hình sao (Y) có điện áp pha Up = 220 V, tải gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp dây Ud lần lượt là",
+        "question": "Một nguồn điện xoay chiều ba pha đối xứng có điện áp pha Up = 220 V. Điện áp dây Ud của nguồn điện này có giá trị xấp xỉ bằng bao nhiêu?",
+        "options": [
+          "A. 127 V",
+          "B. 220 V",
+          "C. 380 V (hoặc 381 V)",
+          "D. 440 V"
+        ],
+        "correct": 2,
+        "explain": "Ta có: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế quy chuẩn là 380 V)."
+      },
+      {
+        "id": 30,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cho mạch điện ba pha tải đối xứng nối theo hình sao (Y) trong đó điện áp pha Up = 220 V và tải ba pha gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp dây Ud lần lượt là",
         "options": [
           "A. Ip = 4,4 A; Id = 4,4 A; Ud ≈ 381 V",
           "B. Ip = 7,6 A; Id = 4,4 A; Ud = 220 V",
@@ -2102,20 +2556,72 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Ip = 2,2 A; Id = 2,2 A; Ud = 127 V"
         ],
         "correct": 0,
-        "explain": "Tải nối hình sao nên: Ip = Up / R = 220 / 50 = 4,4 A. Dòng điện dây Id = Ip = 4,4 A. Điện áp dây Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
+        "explain": "Vì tải nối hình sao: Ip = Up / R = 220 / 50 = 4,4 A. Dòng điện dây: Id = Ip = 4,4 A. Điện áp dây: Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
       },
       {
-        "id": 22,
+        "id": 31,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một động cơ điện ba pha có ghi 220V/380V - Δ/Y. Nếu lưới điện có điện áp dây Ud = 380 V thì phải đấu dây động cơ theo kiểu nào để hoạt động bình thường?",
+        "question": "Cho mạch điện ba pha tải đối xứng nối theo hình tam giác (Δ), điện áp dây Ud = 380 V, tải ba pha gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp pha Up lần lượt là",
         "options": [
-          "A. Đấu hình tam giác (Δ).",
-          "B. Đấu hình sao (Y).",
-          "C. Đấu hình sao có nối đất.",
-          "D. Đấu kiểu nào cũng được."
+          "A. Up = 220 V; Ip = 4,4 A; Id = 4,4 A",
+          "B. Up = 380 V; Ip = 7,6 A; Id ≈ 13,16 A",
+          "C. Up = 380 V; Ip = 13,16 A; Id = 7,6 A",
+          "D. Up = 380 V; Ip = 7,6 A; Id = 7,6 A"
         ],
         "correct": 1,
-        "explain": "Thông số ghi 220V/380V tương ứng với cách nối Δ/Y nghĩa là: điện áp đặt vào mỗi cuộn dây của động cơ chịu tối đa 220 V. Khi lưới có Ud = 380 V, nếu nối sao (Y) thì Up = Ud/√3 = 380/√3 = 220 V (vừa đúng định mức của cuộn dây)."
+        "explain": "Vì tải nối hình tam giác: Up = Ud = 380 V. Dòng điện pha: Ip = Up / R = 380 / 50 = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Bài tập 3 SGK trang 21)."
+      },
+      {
+        "id": 32,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cho nguồn điện xoay chiều ba pha bốn dây có Ud/Up = 380/220 V. Có 6 bóng đèn sợi đốt loại 220 V - 60 W và một động cơ ba pha loại 380 V - 2,2 kW. Để các thiết bị hoạt động bình thường trong mạch ba pha đối xứng thì:",
+        "options": [
+          "A. Bóng đèn nối tam giác, động cơ nối sao.",
+          "B. Bóng đèn chia đều nối hình sao (mỗi pha 2 bóng song song), động cơ nối hình tam giác.",
+          "C. Cả bóng đèn và động cơ đều nối hình sao có dây trung tính.",
+          "D. Cả bóng đèn và động cơ đều nối hình tam giác."
+        ],
+        "correct": 1,
+        "explain": "Bóng đèn có Uđm = 220 V = Up của nguồn nên phải nối hình sao (Y) có dây trung tính (6 bóng chia đều mỗi pha 2 bóng song song). Động cơ có Uđm = 380 V = Ud của nguồn nên phải nối hình tam giác (Δ) vào 3 dây pha (Bài tập 5 SGK trang 21)."
+      },
+      {
+        "id": 33,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một động cơ không đồng bộ ba pha khi làm việc ở mạng điện có điện áp dây Ud = 380 V thì tiêu thụ dòng điện dây Id = 10 A với hệ số công suất cosφ = 0,85. Công suất tác dụng P tiêu thụ của động cơ là",
+        "options": [
+          "A. 3 230 W",
+          "B. 5 594 W",
+          "C. 9 690 W",
+          "D. 1 860 W"
+        ],
+        "correct": 1,
+        "explain": "Công suất tiêu thụ ba pha: P = √3.Ud.Id.cosφ = √3 × 380 × 10 × 0,85 ≈ 1,732 × 380 × 8,5 ≈ 5 594 W (≈ 5,6 kW)."
+      },
+      {
+        "id": 34,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Tải ba pha đối xứng gồm 3 cuộn dây, mỗi cuộn có điện trở R = 8 Ω và cảm kháng XL = 6 Ω. Nối tải theo hình tam giác (Δ) vào nguồn có điện áp dây Ud = 220 V. Dòng điện pha Ip và dòng điện dây Id là",
+        "options": [
+          "A. Ip = 22 A; Id ≈ 38,1 A",
+          "B. Ip = 15,7 A; Id = 15,7 A",
+          "C. Ip = 27,5 A; Id = 47,6 A",
+          "D. Ip = 22 A; Id = 22 A"
+        ],
+        "correct": 0,
+        "explain": "Tổng trở mỗi pha: zp = √(R² + XL²) = √(8² + 6²) = 10 Ω. Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: Ip = Up / zp = 220 / 10 = 22 A. Dòng điện dây: Id = √3.Ip = √3 × 22 ≈ 38,1 A."
+      },
+      {
+        "id": 35,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "So với hệ thống điện một pha, hệ thống truyền tải dòng điện xoay chiều ba pha có ưu điểm vượt trội nào?",
+        "options": [
+          "A. Chỉ cần dùng 1 dây dẫn duy nhất.",
+          "B. Tiết kiệm tiết diện kim loại làm dây dẫn khi truyền tải công suất lớn đi xa, và tạo ra từ trường quay giúp chế tạo động cơ ba pha cấu tạo đơn giản, bền bỉ.",
+          "C. Không bao giờ xảy ra sự cố ngắn mạch hay quá tải.",
+          "D. Luôn có điện áp một chiều ổn định không đổi."
+        ],
+        "correct": 1,
+        "explain": "Ưu điểm của mạch 3 pha: Tiết kiệm dây dẫn kim loại (đồng, nhôm) so với 3 đường dây 1 pha độc lập; tạo ra từ trường quay để vận hành động cơ điện ba pha - thiết bị cốt lõi trong công nghiệp (SGK trang 21)."
       },
       {
         "id": 23,
@@ -2181,183 +2687,14 @@ const CONGNGHE_TOPICS_DATABASE = [
         ],
         "correct": 3,
         "explain": "Phân cấp điện áp: Hạ áp (đến 1 kV); Trung áp (trên 1 kV đến 35 kV); Cao áp (từ trên 35 kV đến 220 kV); Siêu cao áp (trên 220 kV, ví dụ đường dây 500 kV) (SGK trang 23)."
-      },
-      {
-        "id": 28,
-        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Đường dây truyền tải điện 500 kV Bắc - Nam mạch 1 được khánh thành và đóng điện vào thời gian nào?",
-        "options": [
-          "A. Ngày 5/4/1992",
-          "B. Ngày 27/5/1994",
-          "C. Ngày 30/4/1975",
-          "D. Ngày 1/1/2000"
-        ],
-        "correct": 1,
-        "explain": "Đường dây truyền tải điện 500 kV Bắc Nam được khởi công ngày 5/4/1992 và hoàn thành ngày 27/5/1994, dài 1487 km từ Hòa Bình đến TP. Hồ Chí Minh (SGK trang 24)."
-      },
-      {
-        "id": 29,
-        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Vì sao tại các nhà máy điện người ta phải sử dụng máy biến áp tăng áp trước khi đưa điện lên đường dây truyền tải đi xa?",
-        "options": [
-          "A. Để tăng tần số dòng điện lên cao.",
-          "B. Để tăng điện áp, từ đó giảm dòng điện chạy trên dây, giúp giảm hao phí công suất toả nhiệt trên đường dây.",
-          "C. Để chuyển điện xoay chiều thành một chiều.",
-          "D. Để bảo vệ máy phát điện không bị sét đánh."
-        ],
-        "correct": 1,
-        "explain": "Theo định luật Jun-Len-xơ, công suất hao phí toả nhiệt ΔP = I²R = (P²/U²cos²φ)R. Tăng điện áp U lên n lần thì hao phí giảm n² lần, giúp truyền tải công suất lớn đi xa hiệu quả và tiết kiệm tiết diện dây dẫn."
-      },
-      {
-        "id": 30,
-        "topic": "BÀI 4: HỆ THỐNG ĐIỆN QUỐC GIA",
-        "question": "Thiết bị nào trong lưới điện có chức năng chuyển đổi cấp điện áp từ thấp lên cao hoặc từ cao xuống thấp?",
-        "options": [
-          "A. Máy phát điện xoay chiều.",
-          "B. Máy biến áp.",
-          "C. Động cơ không đồng bộ ba pha.",
-          "D. Aptomat khối MCCB."
-        ],
-        "correct": 1,
-        "explain": "Trạm biến áp thực hiện chức năng chuyển đổi cấp điện áp từ điện áp thấp lên điện áp cao hoặc ngược lại thông qua các máy biến áp (SGK trang 24)."
-      },
-      {
-        "id": 31,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Quá trình sản xuất điện năng là quá trình",
-        "options": [
-          "A. biến đổi điện năng thành nhiệt năng và cơ năng.",
-          "B. chuyển đổi các dạng năng lượng khác trong tự nhiên thành năng lượng điện.",
-          "C. truyền tải điện năng từ nhà máy đến hộ gia đình.",
-          "D. lưu trữ điện năng trong tụ điện phẳng."
-        ],
-        "correct": 1,
-        "explain": "Sản xuất điện năng là quá trình chuyển đổi các dạng năng lượng khác nhau thành năng lượng điện (SGK trang 27)."
-      },
-      {
-        "id": 32,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Nguồn năng lượng nào sau đây là nguồn năng lượng tái tạo?",
-        "options": [
-          "A. Than đá",
-          "B. Dầu mỏ",
-          "C. Năng lượng dòng nước (thủy điện)",
-          "D. Khí thiên nhiên"
-        ],
-        "correct": 2,
-        "explain": "Năng lượng dòng nước, năng lượng gió, năng lượng mặt trời, sinh khối là các nguồn năng lượng tái tạo. Than đá, dầu mỏ, khí thiên nhiên là nhiên liệu hóa thạch không tái tạo (Hình 5.2 SGK trang 26)."
-      },
-      {
-        "id": 33,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Nguyên lí hoạt động của nhà máy thủy điện là",
-        "options": [
-          "A. sử dụng thế năng của nước trong hồ chứa chuyển thành động năng làm quay turbine của máy phát điện tạo ra điện.",
-          "B. đốt than để đun sôi nước tạo hơi nước đẩy cánh quạt.",
-          "C. sử dụng phản ứng nhiệt hạch giải phóng nhiệt lượng lớn.",
-          "D. dùng ánh sáng mặt trời chiếu vào tấm silic tạo dòng electron."
-        ],
-        "correct": 0,
-        "explain": "Nhà máy thủy điện sử dụng thế năng của nước trong hồ chứa để chuyển thành động năng làm quay turbine của máy phát điện tạo ra điện (SGK trang 27)."
-      },
-      {
-        "id": 34,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Một trong những nhược điểm lớn của nhà máy thủy điện là",
-        "options": [
-          "A. phát thải lượng lớn khí nhà kính CO2 trong quá trình vận hành.",
-          "B. công suất phát điện phụ thuộc nhiều vào lượng nước tích trữ trong hồ chứa (theo mùa) và tác động làm thay đổi chế độ thủy văn, hệ sinh thái.",
-          "C. chi phí vận hành hàng ngày rất cao.",
-          "D. tuổi thọ công trình rất ngắn dưới 5 năm."
-        ],
-        "correct": 1,
-        "explain": "Nhược điểm của thủy điện: Công suất phát phụ thuộc vào lưu lượng nước trong hồ chứa (hạn hán thì giảm mạnh), chi phí đầu tư ban đầu lớn, làm thay đổi cơ chế thủy văn và đa dạng sinh học (SGK trang 27)."
-      },
-      {
-        "id": 35,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Ưu điểm nổi bật của nhà máy nhiệt điện so với nhà máy thủy điện là",
-        "options": [
-          "A. hoàn toàn không gây ô nhiễm môi trường.",
-          "B. có thể vận hành liên tục, ổn định quanh năm mà không phụ thuộc vào điều kiện thời tiết hay mùa vụ.",
-          "C. sử dụng nguồn năng lượng tái tạo vô tận.",
-          "D. không tốn chi phí mua nhiên liệu vận hành."
-        ],
-        "correct": 1,
-        "explain": "Ưu điểm của nhiệt điện là công suất phát điện lớn, chi phí đầu tư ban đầu không quá cao, xây dựng nhanh và có thể vận hành liên tục, không phụ thuộc vào thời tiết (SGK trang 28)."
-      },
-      {
-        "id": 36,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Nhà máy điện hạt nhân chuyển hóa năng lượng từ đâu để sản xuất điện?",
-        "options": [
-          "A. Đốt cháy khí hidro trong bầu khí quyển.",
-          "B. Năng lượng nhiệt sinh ra từ các phản ứng phân hạch hạt nhân để đun nóng nước tạo hơi nước áp suất cao quay turbine.",
-          "C. Thế năng của các hạt nhân phóng xạ nặng.",
-          "D. Điện trường tĩnh điện xung quanh lò phản ứng."
-        ],
-        "correct": 1,
-        "explain": "Nhà máy điện hạt nhân sử dụng năng lượng từ phản ứng phân hạch (thường là Uranium) để đun nóng nước tạo ra hơi nước có áp suất cao làm quay turbine của máy phát điện tạo ra điện (SGK trang 28-29)."
-      },
-      {
-        "id": 37,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Bộ phận nào trong hệ thống điện mặt trời có chức năng chuyển đổi dòng điện một chiều (DC) từ các tấm pin mặt trời thành dòng xoay chiều (AC) để cấp cho tải và hòa vào lưới điện?",
-        "options": [
-          "A. Tấm pin mặt trời (PV)",
-          "B. Bộ biến tần (Inverter)",
-          "C. Pin lưu trữ (Battery)",
-          "D. Máy biến áp phân phối"
-        ],
-        "correct": 1,
-        "explain": "Nguồn điện do tấm pin mặt trời tạo ra là dòng điện một chiều (DC), cần qua bộ điều khiển sạc và biến tần (Inverter - biến đổi DC thành AC) trước khi hòa vào lưới điện hoặc cung cấp cho các thiết bị xoay chiều (Hình 5.7 SGK trang 30)."
-      },
-      {
-        "id": 38,
-        "topic": "BÀI 5: SẢN XUẤT ĐIỆN NĂNG",
-        "question": "Tại sao các hệ thống điện mặt trời và điện gió thường cần có hệ thống lưu trữ năng lượng (pin tích năng / ắc quy)?",
-        "options": [
-          "A. Vì công suất của chúng rất lớn, lưới điện quốc gia không thể tiếp nhận hết.",
-          "B. Vì gió và ánh sáng mặt trời có tính gián đoạn, phụ thuộc vào thời tiết, ngày đêm nên cần tích trữ để cấp điện khi không đủ gió hoặc nắng.",
-          "C. Để làm mát cánh quạt turbine gió và các tấm pin.",
-          "D. Để tự động chuyển đổi điện áp từ cao xuống thấp."
-        ],
-        "correct": 1,
-        "explain": "Ánh sáng mặt trời không có vào ban đêm và suy giảm vào ngày mưa, gió cũng thay đổi thất thường theo thời gian. Do đó cần hệ thống pin tích năng để lưu trữ khi phát dư thừa và xả ra cung cấp khi thiếu hụt (SGK trang 29-30)."
-      },
-      {
-        "id": 39,
-        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-        "question": "Mạng điện sản xuất quy mô nhỏ thường có công suất tiêu thụ điện năng trong khoảng",
-        "options": [
-          "A. dưới 1 kW.",
-          "B. từ vài chục đến vài trăm kW.",
-          "C. từ vài nghìn đến vài chục nghìn MW.",
-          "D. trên 1 000 000 kW."
-        ],
-        "correct": 1,
-        "explain": "Mạng điện sản xuất quy mô nhỏ là mạng điện có công suất tiêu thụ điện năng từ vài chục đến vài trăm kW, lấy điện từ lưới phân phối cấp cho tải (SGK trang 31)."
-      },
-      {
-        "id": 40,
-        "topic": "BÀI 6: MẠNG ĐIỆN SẢN XUẤT QUY MÔ NHỎ",
-        "question": "Đặc điểm nào sau đây là đặc điểm của mạng điện sản xuất quy mô nhỏ?",
-        "options": [
-          "A. Tải phân bố rải rác trên phạm vi hàng trăm km vuông.",
-          "B. Tải phân bố tập trung, mạng điện dùng cho thiết bị sản xuất và mạng điện chiếu sáng hoạt động độc lập.",
-          "C. Toàn bộ thiết bị đều dùng điện áp 110 kV.",
-          "D. Không cần thiết bị đóng cắt và bảo vệ quá tải."
-        ],
-        "correct": 1,
-        "explain": "Mạng điện sản xuất quy mô nhỏ có các đặc điểm: tải phân bố tập trung; dùng máy biến áp riêng hoặc lấy điện từ đường hạ áp 380/220 V; mạng điện cho thiết bị sản xuất và mạng điện chiếu sáng hoạt động độc lập (SGK trang 31)."
       }
     ]
   },
   {
     "id": "cn_all",
-    "title": "⚡ Trọn Bộ Lý Thuyết & Bài Tập Công Nghệ 12 (Bài 2 - Bài 7)",
+    "title": "⚡ Marathon Toàn Bộ Công Nghệ 12 (Bài 2 - 7) (88 câu)",
     "icon": "🏆",
-    "description": "Toàn bộ ngân hàng 75 câu hỏi trắc nghiệm & bài tập chuẩn SGK Kết nối tri thức",
+    "description": "Trọn bộ 88 câu hỏi chuẩn SGK Kết nối tri thức (Tập trung Bài 3)",
     "questions": [
       {
         "id": 1,
@@ -2500,90 +2837,194 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. pha ban đầu của dòng điện."
         ],
         "correct": 1,
-        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị ampe (A). Giá trị hiệu dụng là I = Im / √2 (SGK trang 18)."
+        "explain": "Trong biểu thức i = Im.sin(ωt + ψ), Im là giá trị dòng điện cực đại (biên độ), đơn vị là ampe (A). Mối liên hệ với giá trị hiệu dụng: I = Im / √2 (SGK Công nghệ 12 trang 18)."
       },
       {
         "id": 12,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Tổng trở z_t của tải điện một pha gồm điện trở R nối tiếp với điện kháng X được tính theo công thức nào?",
+        "question": "Một dòng điện xoay chiều có biểu thức i = 4√2.sin(100πt) (A). Giá trị hiệu dụng I và tần số f của dòng điện này lần lượt là",
         "options": [
-          "A. z_t = R + X",
-          "B. z_t = √(R² + X²)",
-          "C. z_t = √(R² - X²)",
-          "D. z_t = R² + X²"
+          "A. I = 4 A; f = 50 Hz",
+          "B. I = 4√2 A; f = 100 Hz",
+          "C. I = 4 A; f = 100 Hz",
+          "D. I = 2√2 A; f = 50 Hz"
         ],
-        "correct": 1,
-        "explain": "Theo SGK Công nghệ 12 trang 18: Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) và góc pha φ với tan φ = X/R."
+        "correct": 0,
+        "explain": "Từ biểu thức: Im = 4√2 A => I = Im / √2 = 4 A. Tần số góc ω = 100π rad/s => Tần số f = ω / (2π) = 100π / (2π) = 50 Hz."
       },
       {
         "id": 13,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Dòng điện xoay chiều ba pha là hệ thống ba dòng điện xoay chiều có đặc điểm nào sau đây?",
+        "question": "Công thức tính cảm kháng XL của cuộn cảm thuần có độ tự cảm L và dung kháng XC của tụ điện có điện dung C đối với dòng xoay chiều tần số f là:",
         "options": [
-          "A. Khác tần số, cùng biên độ, cùng pha với nhau.",
-          "B. Cùng tần số, cùng biên độ nhưng lệch pha nhau góc 2π/3 (120°) giữa các pha.",
-          "C. Cùng tần số, biên độ khác nhau, lệch pha nhau góc 90°.",
-          "D. Cùng biên độ nhưng tần số gấp ba lần nhau."
+          "A. XL = 2πfL và XC = 2πfC",
+          "B. XL = 2πfL và XC = 1 / (2πfC)",
+          "C. XL = 1 / (2πfL) và XC = 1 / (2πfC)",
+          "D. XL = L / (2πf) và XC = C / (2πf)"
         ],
         "correct": 1,
-        "explain": "Dòng điện xoay chiều ba pha là hệ thống ba dòng điện xoay chiều có cùng tần số, cùng biên độ và có góc pha lệch nhau 120° (2π/3 rad) lần lượt giữa các pha (SGK trang 18)."
+        "explain": "Cảm kháng cuộn cảm: XL = ωL = 2πfL; Dung kháng tụ điện: XC = 1/(ωC) = 1/(2πfC) (SGK Công nghệ 12 trang 18)."
       },
       {
         "id": 14,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Phần tĩnh (Stator) của máy phát điện xoay chiều ba pha gồm",
+        "question": "Tổng trở z_t của tải điện một pha gồm điện trở R nối tiếp với cuộn cảm (XL) và tụ điện (XC) được tính theo công thức nào?",
         "options": [
-          "A. một nam châm điện quay tròn quanh trục.",
-          "B. ba cuộn dây giống hệt nhau đặt lệch nhau một góc 120° trên lõi thép có rãnh.",
-          "C. bốn cuộn dây đặt vuông góc nhau.",
-          "D. cổ góp điện và chổi than."
+          "A. z_t = R + XL - XC",
+          "B. z_t = √[R² + (XL - XC)²]",
+          "C. z_t = √[R² + (XL + XC)²]",
+          "D. z_t = √[R² - (XL - XC)²]"
         ],
         "correct": 1,
-        "explain": "Phần tĩnh (stator) là lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ có cùng số vòng và kích thước dây, đặt lệch nhau góc 120° trên đường tròn không gian (SGK trang 19)."
+        "explain": "Tổng trở z_t đặc trưng bởi độ lớn z_t = √(R² + X²) với X = XL - XC, do đó z_t = √[R² + (XL - XC)²], và tan φ = X/R = (XL - XC)/R (SGK trang 18)."
       },
       {
         "id": 15,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cách nối nguồn điện hoặc tải ba pha hình sao (Y) có đặc điểm là",
+        "question": "Hiện tượng cộng hưởng điện trong mạch R-L-C nối tiếp xảy ra khi nào?",
         "options": [
-          "A. đầu pha này nối với cuối pha kia tạo thành mạch vòng kín.",
-          "B. ba điểm cuối X, Y, Z của ba pha nối chung với nhau tạo thành điểm trung tính O.",
-          "C. ba điểm đầu A, B, C nối chung với nhau, ba điểm cuối để tự do.",
-          "D. chỉ có 2 dây pha đi ra tải tiêu thụ."
+          "A. Khi R = XL",
+          "B. Khi cảm kháng bằng dung kháng (XL = XC)",
+          "C. Khi tần số dòng điện f = 0",
+          "D. Khi tổng trở đạt giá trị vô cùng lớn"
         ],
         "correct": 1,
-        "explain": "Nối hình sao (Y): Ba điểm cuối X, Y, Z của các pha được nối với nhau tạo thành điểm trung tính O (SGK trang 19)."
+        "explain": "Hiện tượng cộng hưởng xảy ra khi XL = XC (tức là 2πfL = 1/(2πfC)). Khi đó điện kháng X = 0, tổng trở mạch đạt giá trị nhỏ nhất z_min = R và dòng điện trong mạch đạt giá trị cực đại."
       },
       {
         "id": 16,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cách nối nguồn hoặc tải ba pha hình tam giác (Δ) được thực hiện như thế nào?",
+        "question": "Dòng điện xoay chiều ba pha là hệ thống ba dòng điện xoay chiều có đặc điểm nào sau đây?",
         "options": [
-          "A. Điểm đầu của pha này nối với điểm cuối của pha kia (A nối Z, B nối X, C nối Y) tạo thành hình tam giác khép kín.",
-          "B. Ba điểm cuối nối với nhau tạo điểm trung tính O.",
-          "C. Cả ba điểm đầu và ba điểm cuối đều nối chập lại.",
-          "D. Nối từng pha độc lập với 6 dây dẫn riêng biệt."
+          "A. Cùng tần số, cùng biên độ, cùng pha với nhau.",
+          "B. Cùng tần số, cùng biên độ nhưng lệch pha nhau góc 2π/3 (120°) lần lượt giữa các pha.",
+          "C. Tần số khác nhau, cùng biên độ, lệch pha nhau góc 90°.",
+          "D. Cùng pha ban đầu nhưng tần số gấp ba lần nhau."
         ],
-        "correct": 0,
-        "explain": "Nối hình tam giác (Δ): Điểm đầu của pha này được nối với điểm cuối của pha kia tạo thành hình tam giác khép kín (SGK trang 19)."
+        "correct": 1,
+        "explain": "Định nghĩa chuẩn SGK trang 18: Dòng điện xoay chiều ba pha sinh ra trong mạch điện ba pha là hệ thống ba dòng điện xoay chiều có cùng tần số, cùng biên độ và có góc pha lệch nhau 120° (2π/3 rad) lần lượt giữa các pha."
       },
       {
         "id": 17,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Điện áp giữa hai dây pha trong mạch điện xoay chiều ba pha được gọi là",
+        "question": "Cấu tạo phần tĩnh (Stator) của máy phát điện xoay chiều ba pha gồm",
         "options": [
-          "A. điện áp pha (Up).",
-          "B. điện áp dây (Ud).",
-          "C. điện áp cực đại (Um).",
-          "D. điện áp định mức của tải."
+          "A. một nam châm vĩnh cửu hình chữ U.",
+          "B. lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ giống hệt nhau về số vòng và tiết diện, đặt lệch nhau góc 120° trên đường tròn.",
+          "C. hai cuộn dây đặt vuông góc nhau.",
+          "D. vành trượt và chổi than tiếp điện."
         ],
         "correct": 1,
-        "explain": "Điện áp giữa hai dây pha gọi là điện áp dây, kí hiệu là Ud. Điện áp giữa dây pha và dây trung tính (hoặc giữa điểm đầu và cuối của một pha) gọi là điện áp pha, kí hiệu là Up (SGK trang 20)."
+        "explain": "Phần tĩnh (stator) là lõi thép có rãnh, đặt 3 cuộn dây AX, BY, CZ có cùng số vòng và kích thước dây, đặt lệch nhau góc 120° trên không gian (SGK trang 19)."
       },
       {
         "id": 18,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong mạch điện ba pha đối xứng khi tải nối hình sao (Y), mối quan hệ giữa điện áp dây Ud và điện áp pha Up, dòng điện dây Id và dòng điện pha Ip là:",
+        "question": "Trong máy phát điện xoay chiều ba pha, kí hiệu các đầu cuộn dây pha A, pha B, pha C lần lượt là",
+        "options": [
+          "A. Đầu đầu: A, B, C; Đầu cuối tương ứng: X, Y, Z.",
+          "B. Đầu đầu: X, Y, Z; Đầu cuối: A, B, C.",
+          "C. Đầu đầu: U, V, W; Đầu cuối: 1, 2, 3.",
+          "D. Đầu đầu: L1, L2, L3; Đầu cuối: N."
+        ],
+        "correct": 0,
+        "explain": "Theo quy ước SGK trang 19: Cuộn thứ nhất AX (pha A), cuộn thứ hai BY (pha B), cuộn thứ ba CZ (pha C). A, B, C là các điểm đầu; X, Y, Z là các điểm cuối của cuộn dây."
+      },
+      {
+        "id": 19,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Nếu chọn suất điện động pha A làm gốc eA = Em.sin(ωt), thì biểu thức suất điện động pha B (eB) và pha C (eC) lần lượt là",
+        "options": [
+          "A. eB = Em.sin(ωt - π/2) và eC = Em.sin(ωt + π/2)",
+          "B. eB = Em.sin(ωt - 2π/3) và eC = Em.sin(ωt + 2π/3) [hoặc eC = Em.sin(ωt - 4π/3)]",
+          "C. eB = Em.sin(ωt - π) và eC = Em.sin(ωt + π)",
+          "D. eB = Em.sin(2ωt) và eC = Em.sin(3ωt)"
+        ],
+        "correct": 1,
+        "explain": "Ba suất điện động cùng biên độ, cùng tần số và lần lượt lệch pha nhau góc 2π/3 rad (SGK trang 19, Luyện tập 1 trang 21)."
+      },
+      {
+        "id": 20,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cách nối nguồn điện hoặc tải ba pha hình sao (Y) có đặc điểm gì?",
+        "options": [
+          "A. Ba điểm cuối X, Y, Z của ba pha được nối chung với nhau tạo thành điểm trung tính (O).",
+          "B. Điểm đầu của pha này nối với điểm cuối của pha kia tạo mạch vòng kín.",
+          "C. Ba điểm đầu A, B, C chập lại với nhau, ba điểm cuối nối ra dây pha.",
+          "D. Mỗi cuộn dây nối với một cặp dây dẫn riêng biệt không nối chung điểm nào."
+        ],
+        "correct": 0,
+        "explain": "Nối hình sao (Y): Ba điểm cuối X, Y, Z của các pha được nối chung với nhau tạo thành điểm trung tính O (SGK trang 19)."
+      },
+      {
+        "id": 21,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cách nối nguồn điện hoặc tải ba pha hình tam giác (Δ) có đặc điểm gì?",
+        "options": [
+          "A. Ba điểm cuối X, Y, Z nối chụm lại thành điểm trung tính.",
+          "B. Điểm đầu của pha này được nối với điểm cuối của pha kia (A nối Z, B nối X, C nối Y) tạo thành hình tam giác khép kín.",
+          "C. Ba cuộn dây mắc song song với nhau.",
+          "D. Dùng dây trung tính nối qua tâm hình tam giác."
+        ],
+        "correct": 1,
+        "explain": "Nối hình tam giác (Δ): Điểm đầu của pha này được nối với điểm cuối của pha kia tạo thành hình tam giác khép kín (SGK trang 19)."
+      },
+      {
+        "id": 22,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Dây trung tính trong mạng điện ba pha bốn dây có tác dụng quan trọng nhất là gì?",
+        "options": [
+          "A. Làm tăng công suất phát của máy phát điện lên gấp đôi.",
+          "B. Giữ cho điện áp trên các pha tải luôn ổn định ở mức điện áp pha (Up), không bị thay đổi ngay cả khi phụ tải các pha không đối xứng.",
+          "C. Triệt tiêu toàn bộ dòng điện chạy trong ba dây pha.",
+          "D. Làm giảm điện trở của các dây dẫn truyền tải."
+        ],
+        "correct": 1,
+        "explain": "Dây trung tính nối giữa điểm trung tính của nguồn và tải có tác dụng cân bằng và duy trì điện áp pha trên mỗi pha tải luôn bằng điện áp pha của nguồn, bảo vệ các thiết bị điện 1 pha hoạt động bình thường kể cả khi tải các pha không đều."
+      },
+      {
+        "id": 23,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Trong mạch điện ba pha bốn dây đối xứng, cường độ dòng điện chạy trong dây trung tính (i0) có giá trị bằng",
+        "options": [
+          "A. i0 = iA + iB + iC = 0",
+          "B. i0 = 3.iA",
+          "C. i0 = √3.iA",
+          "D. i0 = iA / √3"
+        ],
+        "correct": 0,
+        "explain": "Khi tải đối xứng: iA + iB + iC = 0 tại mọi thời điểm, do đó dòng điện tức thời và hiệu dụng chạy trong dây trung tính bằng 0 (i0 = 0)."
+      },
+      {
+        "id": 24,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Phát biểu nào sau đây định nghĩa chính xác về điện áp pha (Up) và điện áp dây (Ud)?",
+        "options": [
+          "A. Up là điện áp giữa hai dây pha; Ud là điện áp giữa dây pha và dây trung tính.",
+          "B. Up là điện áp giữa một dây pha và dây trung tính (hoặc giữa hai đầu một pha); Ud là điện áp giữa hai dây pha.",
+          "C. Up và Ud luôn có giá trị bằng nhau trong mọi trường hợp.",
+          "D. Ud là điện áp chịu đựng của dây cách điện; Up là điện áp sinh công."
+        ],
+        "correct": 1,
+        "explain": "Định nghĩa chuẩn SGK trang 20: Dòng điện chạy trong dây pha gọi là Id; dòng điện chạy trong mỗi pha gọi là Ip. Điện áp giữa hai dây pha gọi là Ud; điện áp giữa dây pha và dây trung tính (hoặc giữa điểm đầu và cuối mỗi pha) gọi là Up."
+      },
+      {
+        "id": 25,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Mạch điện ba pha được gọi là ĐỐI XỨNG khi thỏa mãn điều kiện nào sau đây?",
+        "options": [
+          "A. Chỉ cần nguồn điện ba pha đối xứng.",
+          "B. Chỉ cần tổng trở ba pha tải bằng nhau.",
+          "C. Có nguồn điện ba pha đối xứng và tải ba pha đối xứng (ZA = ZB = ZC).",
+          "D. Cả nguồn và tải đều nối hình tam giác."
+        ],
+        "correct": 2,
+        "explain": "Mạch điện ba pha được gọi là đối xứng nếu có nguồn đối xứng (cùng biên độ, tần số, lệch pha 120°) VÀ tải đối xứng (ZA = ZB = ZC) (SGK trang 20)."
+      },
+      {
+        "id": 26,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Trong mạch ba pha đối xứng khi tải nối hình sao (Y), mối quan hệ giữa các đại lượng là:",
         "options": [
           "A. Ud = Up và Id = √3.Ip",
           "B. Ud = √3.Up và Id = Ip",
@@ -2591,38 +3032,51 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Ud = Up/√3 và Id = Ip"
         ],
         "correct": 1,
-        "explain": "Khi tải nối hình sao (Y) trong mạch ba pha đối xứng: Id = Ip và Ud = √3.Up (SGK trang 20)."
+        "explain": "Khi tải nối hình sao (Y): Dòng điện dây bằng dòng điện pha (Id = Ip), Điện áp dây bằng căn 3 lần điện áp pha (Ud = √3.Up) (SGK trang 20)."
       },
       {
-        "id": 19,
+        "id": 27,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Trong mạch điện ba pha đối xứng khi tải nối hình tam giác (Δ), mối quan hệ giữa các đại lượng dây và pha là:",
+        "question": "Trong mạch ba pha đối xứng khi tải nối hình tam giác (Δ), mối quan hệ giữa các đại lượng là:",
         "options": [
-          "A. Ud = Up và Id = Ip",
+          "A. Ud = Up và Id = √3.Ip",
           "B. Ud = √3.Up và Id = Ip",
-          "C. Ud = Up và Id = √3.Ip",
+          "C. Ud = Up và Id = Ip",
           "D. Ud = Up/√3 và Id = √3.Ip"
         ],
-        "correct": 2,
-        "explain": "Khi tải nối hình tam giác (Δ) trong mạch ba pha đối xứng: Ud = Up và Id = √3.Ip (SGK trang 21)."
+        "correct": 0,
+        "explain": "Khi tải nối hình tam giác (Δ): Điện áp dây bằng điện áp pha (Ud = Up), Dòng điện dây bằng căn 3 lần dòng điện pha (Id = √3.Ip) (SGK trang 21)."
       },
       {
-        "id": 20,
+        "id": 28,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một tải ba pha đối xứng gồm 3 điện trở R = 50 Ω nối hình tam giác (Δ) vào nguồn ba pha có điện áp dây Ud = 380 V. Dòng điện pha Ip và dòng điện dây Id của mạch có giá trị lần lượt là",
+        "question": "Công suất tác dụng toàn phần của mạch điện ba pha đối xứng được tính theo công thức nào sau đây?",
         "options": [
-          "A. Ip = 4,4 A; Id = 4,4 A",
-          "B. Ip = 7,6 A; Id = 13,16 A",
-          "C. Ip = 13,16 A; Id = 7,6 A",
-          "D. Ip = 7,6 A; Id = 7,6 A"
+          "A. P = 3.Ud.Id.cosφ",
+          "B. P = √3.Ud.Id.cosφ = 3.Up.Ip.cosφ",
+          "C. P = Ud.Id.cosφ",
+          "D. P = √3.Up.Ip.cosφ"
         ],
         "correct": 1,
-        "explain": "Tải nối tam giác nên Up = Ud = 380 V. Dòng điện pha: Ip = Up / R = 380 / 50 = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Ví dụ SGK trang 21)."
+        "explain": "Công suất tác dụng ba pha đối xứng bằng 3 lần công suất một pha: P = 3.P1p = 3.Up.Ip.cosφ. Dù nối sao hay tam giác, thay Ud và Id vào đều rút ra công thức chung: P = √3.Ud.Id.cosφ."
       },
       {
-        "id": 21,
+        "id": 29,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Cho mạch ba pha tải đối xứng nối hình sao (Y) có điện áp pha Up = 220 V, tải gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp dây Ud lần lượt là",
+        "question": "Một nguồn điện xoay chiều ba pha đối xứng có điện áp pha Up = 220 V. Điện áp dây Ud của nguồn điện này có giá trị xấp xỉ bằng bao nhiêu?",
+        "options": [
+          "A. 127 V",
+          "B. 220 V",
+          "C. 380 V (hoặc 381 V)",
+          "D. 440 V"
+        ],
+        "correct": 2,
+        "explain": "Ta có: Ud = √3.Up = √3 × 220 ≈ 381 V (trong thực tế quy chuẩn là 380 V)."
+      },
+      {
+        "id": 30,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cho mạch điện ba pha tải đối xứng nối theo hình sao (Y) trong đó điện áp pha Up = 220 V và tải ba pha gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp dây Ud lần lượt là",
         "options": [
           "A. Ip = 4,4 A; Id = 4,4 A; Ud ≈ 381 V",
           "B. Ip = 7,6 A; Id = 4,4 A; Ud = 220 V",
@@ -2630,20 +3084,72 @@ const CONGNGHE_TOPICS_DATABASE = [
           "D. Ip = 2,2 A; Id = 2,2 A; Ud = 127 V"
         ],
         "correct": 0,
-        "explain": "Tải nối hình sao nên: Ip = Up / R = 220 / 50 = 4,4 A. Dòng điện dây Id = Ip = 4,4 A. Điện áp dây Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
+        "explain": "Vì tải nối hình sao: Ip = Up / R = 220 / 50 = 4,4 A. Dòng điện dây: Id = Ip = 4,4 A. Điện áp dây: Ud = √3.Up = √3 × 220 ≈ 381 V (Bài tập 2 SGK trang 21)."
       },
       {
-        "id": 22,
+        "id": 31,
         "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
-        "question": "Một động cơ điện ba pha có ghi 220V/380V - Δ/Y. Nếu lưới điện có điện áp dây Ud = 380 V thì phải đấu dây động cơ theo kiểu nào để hoạt động bình thường?",
+        "question": "Cho mạch điện ba pha tải đối xứng nối theo hình tam giác (Δ), điện áp dây Ud = 380 V, tải ba pha gồm 3 điện trở R = 50 Ω. Dòng điện pha Ip, dòng điện dây Id và điện áp pha Up lần lượt là",
         "options": [
-          "A. Đấu hình tam giác (Δ).",
-          "B. Đấu hình sao (Y).",
-          "C. Đấu hình sao có nối đất.",
-          "D. Đấu kiểu nào cũng được."
+          "A. Up = 220 V; Ip = 4,4 A; Id = 4,4 A",
+          "B. Up = 380 V; Ip = 7,6 A; Id ≈ 13,16 A",
+          "C. Up = 380 V; Ip = 13,16 A; Id = 7,6 A",
+          "D. Up = 380 V; Ip = 7,6 A; Id = 7,6 A"
         ],
         "correct": 1,
-        "explain": "Thông số ghi 220V/380V tương ứng với cách nối Δ/Y nghĩa là: điện áp đặt vào mỗi cuộn dây của động cơ chịu tối đa 220 V. Khi lưới có Ud = 380 V, nếu nối sao (Y) thì Up = Ud/√3 = 380/√3 = 220 V (vừa đúng định mức của cuộn dây)."
+        "explain": "Vì tải nối hình tam giác: Up = Ud = 380 V. Dòng điện pha: Ip = Up / R = 380 / 50 = 7,6 A. Dòng điện dây: Id = √3.Ip = √3 × 7,6 ≈ 13,16 A (Bài tập 3 SGK trang 21)."
+      },
+      {
+        "id": 32,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Cho nguồn điện xoay chiều ba pha bốn dây có Ud/Up = 380/220 V. Có 6 bóng đèn sợi đốt loại 220 V - 60 W và một động cơ ba pha loại 380 V - 2,2 kW. Để các thiết bị hoạt động bình thường trong mạch ba pha đối xứng thì:",
+        "options": [
+          "A. Bóng đèn nối tam giác, động cơ nối sao.",
+          "B. Bóng đèn chia đều nối hình sao (mỗi pha 2 bóng song song), động cơ nối hình tam giác.",
+          "C. Cả bóng đèn và động cơ đều nối hình sao có dây trung tính.",
+          "D. Cả bóng đèn và động cơ đều nối hình tam giác."
+        ],
+        "correct": 1,
+        "explain": "Bóng đèn có Uđm = 220 V = Up của nguồn nên phải nối hình sao (Y) có dây trung tính (6 bóng chia đều mỗi pha 2 bóng song song). Động cơ có Uđm = 380 V = Ud của nguồn nên phải nối hình tam giác (Δ) vào 3 dây pha (Bài tập 5 SGK trang 21)."
+      },
+      {
+        "id": 33,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Một động cơ không đồng bộ ba pha khi làm việc ở mạng điện có điện áp dây Ud = 380 V thì tiêu thụ dòng điện dây Id = 10 A với hệ số công suất cosφ = 0,85. Công suất tác dụng P tiêu thụ của động cơ là",
+        "options": [
+          "A. 3 230 W",
+          "B. 5 594 W",
+          "C. 9 690 W",
+          "D. 1 860 W"
+        ],
+        "correct": 1,
+        "explain": "Công suất tiêu thụ ba pha: P = √3.Ud.Id.cosφ = √3 × 380 × 10 × 0,85 ≈ 1,732 × 380 × 8,5 ≈ 5 594 W (≈ 5,6 kW)."
+      },
+      {
+        "id": 34,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "Tải ba pha đối xứng gồm 3 cuộn dây, mỗi cuộn có điện trở R = 8 Ω và cảm kháng XL = 6 Ω. Nối tải theo hình tam giác (Δ) vào nguồn có điện áp dây Ud = 220 V. Dòng điện pha Ip và dòng điện dây Id là",
+        "options": [
+          "A. Ip = 22 A; Id ≈ 38,1 A",
+          "B. Ip = 15,7 A; Id = 15,7 A",
+          "C. Ip = 27,5 A; Id = 47,6 A",
+          "D. Ip = 22 A; Id = 22 A"
+        ],
+        "correct": 0,
+        "explain": "Tổng trở mỗi pha: zp = √(R² + XL²) = √(8² + 6²) = 10 Ω. Do tải nối tam giác: Up = Ud = 220 V. Dòng điện pha: Ip = Up / zp = 220 / 10 = 22 A. Dòng điện dây: Id = √3.Ip = √3 × 22 ≈ 38,1 A."
+      },
+      {
+        "id": 35,
+        "topic": "BÀI 3: MẠCH ĐIỆN XOAY CHIỀU 3 PHA",
+        "question": "So với hệ thống điện một pha, hệ thống truyền tải dòng điện xoay chiều ba pha có ưu điểm vượt trội nào?",
+        "options": [
+          "A. Chỉ cần dùng 1 dây dẫn duy nhất.",
+          "B. Tiết kiệm tiết diện kim loại làm dây dẫn khi truyền tải công suất lớn đi xa, và tạo ra từ trường quay giúp chế tạo động cơ ba pha cấu tạo đơn giản, bền bỉ.",
+          "C. Không bao giờ xảy ra sự cố ngắn mạch hay quá tải.",
+          "D. Luôn có điện áp một chiều ổn định không đổi."
+        ],
+        "correct": 1,
+        "explain": "Ưu điểm của mạch 3 pha: Tiết kiệm dây dẫn kim loại (đồng, nhôm) so với 3 đường dây 1 pha độc lập; tạo ra từ trường quay để vận hành động cơ điện ba pha - thiết bị cốt lõi trong công nghiệp (SGK trang 21)."
       },
       {
         "id": 23,
