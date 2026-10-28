@@ -32,6 +32,7 @@
   <script src="tienganh.js?v=20261027_2205"></script>
   <script src="vatli.js?v=20261027_2205"></script>
   <script src="dialy.js?v=20261027_2205"></script>
+  <script src="congnghe.js?v=20261028_1945"></script>
   <script>
     // Tự động nạp dự phòng từ data/ nếu mở file offline mà dữ liệu nằm trong thư mục con data/
     if (typeof ALL_TOPICS_DATABASE === 'undefined' && !window.ALL_TOPICS_DATABASE) {
@@ -45,6 +46,9 @@
     }
     if (typeof GEOGRAPHY_TOPICS_DATABASE === 'undefined' && !window.GEOGRAPHY_TOPICS_DATABASE) {
       const s4 = document.createElement('script'); s4.src = 'data/dialy.js'; document.head.appendChild(s4);
+    }
+    if (typeof CONGNGHE_TOPICS_DATABASE === 'undefined' && !window.CONGNGHE_TOPICS_DATABASE) {
+      const s5 = document.createElement('script'); s5.src = 'data/congnghe.js'; document.head.appendChild(s5);
     }
   </script>
 
@@ -3473,6 +3477,7 @@
               <option value="math">📐 Toán Học 12 (Sắp có)</option>
               <option value="chemistry">🧪 Hóa Học 12 (Sắp có)</option>
               <option value="biology">🧬 Sinh Học 12 (Sắp có)</option>
+              <option value="technology">⚡ Công Nghệ 12 (75 câu - Bài 2 đến Bài 7)</option>
               <option value="geography">🌍 Địa Lí 12 (159 câu)</option>
               <option value="civics">⚖️ GDCD 12 (Sắp có)</option>
               <option value="literature">📖 Ngữ Văn 12 (Sắp có)</option>
@@ -4110,6 +4115,11 @@ const firebaseConfig = {
         currentTopicId = 'bai1';
         currentTopicTitle = 'Bài 1: Liên Hợp Quốc (28 câu)';
         if (pillBar) pillBar.style.display = 'flex';
+      } else if (subject === 'technology') {
+        selectedTopicIds = ['cn_all'];
+        currentTopicId = 'cn_all';
+        currentTopicTitle = '⚡ Trọn Bộ Lý Thuyết & Bài Tập Công Nghệ 12 (75 câu)';
+        if (pillBar) pillBar.style.display = 'flex';
       } else if (subject === 'geography') {
         selectedTopicIds = ['geo_phan1'];
         currentTopicId = 'geo_phan1';
@@ -4128,6 +4138,8 @@ const firebaseConfig = {
           sdLessons.textContent = 'HOẶC CHỌN TỪNG BÀI LỊCH SỬ ĐỂ ÔN TẬP';
         } else if (subject === 'physics') {
           sdLessons.textContent = 'HOẶC CHỌN TỪNG CHỦ ĐỀ VẬT LÍ ĐỂ ÔN TẬP';
+        } else if (subject === 'technology') {
+          sdLessons.textContent = 'HOẶC CHỌN TỪNG BÀI CÔNG NGHỆ (BÀI 2 - 7) ĐỂ ÔN TẬP';
         } else if (subject === 'geography') {
           sdLessons.textContent = 'HOẶC CHỌN TỪNG CHỦ ĐỀ ĐỊA LÍ ĐỂ ÔN TẬP';
         } else {
@@ -4153,6 +4165,8 @@ const firebaseConfig = {
       let cats = [];
       if (currentSubject === 'history') {
         cats = window.HISTORY_CATEGORIES || TOPIC_CATEGORIES || [];
+      } else if (currentSubject === 'technology') {
+        cats = window.CONGNGHE_CATEGORIES || [];
       } else if (currentSubject === 'geography') {
         cats = window.GEOGRAPHY_CATEGORIES || [];
       } else if (currentSubject === 'english') {
@@ -4306,6 +4320,8 @@ const firebaseConfig = {
         });
       } else if (currentSubject === 'physics') {
         lessonIds = ['phys_chuyen_the', 'phys_thang_nhiet', 'phys_noi_nang'];
+      } else if (currentSubject === 'technology') {
+        lessonIds = ['cn_bai2', 'cn_bai3', 'cn_bai4', 'cn_bai5', 'cn_bai6', 'cn_bai7'];
       } else if (currentSubject === 'geography') {
         lessonIds = ['geo_phan1', 'geo_phan2', 'geo_phan3'];
       } else {
@@ -5808,7 +5824,7 @@ const firebaseConfig = {
         total: total,
         timeSec: timeSec,
         subject: currentSubject,
-        subjectName: currentSubject === 'history' ? 'Lịch Sử' : (currentSubject === 'physics' ? 'Vật Lí' : (currentSubject === 'geography' ? 'Địa Lí' : 'Tiếng Anh')),
+        subjectName: currentSubject === 'history' ? 'Lịch Sử' : (currentSubject === 'physics' ? 'Vật Lí' : (currentSubject === 'technology' ? 'Công Nghệ' : (currentSubject === 'geography' ? 'Địa Lí' : 'Tiếng Anh'))),
         topicId: currentTopicId,
         topicTitle: currentTopicTitle,
         attemptNumber: myAttemptCount,
