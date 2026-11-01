@@ -33,6 +33,7 @@
   <script src="vatli.js?v=20261027_2205"></script>
   <script src="dialy.js?v=20261027_2205"></script>
   <script src="congnghe.js?v=20261028_1955"></script>
+  <script src="tinhoc.js?v=20261101_2050"></script>
   <script>
     // Tự động nạp dự phòng từ data/ nếu mở file offline mà dữ liệu nằm trong thư mục con data/
     if (typeof ALL_TOPICS_DATABASE === 'undefined' && !window.ALL_TOPICS_DATABASE) {
@@ -49,6 +50,9 @@
     }
     if (typeof CONGNGHE_TOPICS_DATABASE === 'undefined' && !window.CONGNGHE_TOPICS_DATABASE) {
       const s5 = document.createElement('script'); s5.src = 'data/congnghe.js'; document.head.appendChild(s5);
+    }
+    if (typeof INFORMATICS_TOPICS_DATABASE === 'undefined' && !window.INFORMATICS_TOPICS_DATABASE) {
+      const s6 = document.createElement('script'); s6.src = 'data/tinhoc.js'; document.head.appendChild(s6);
     }
   </script>
 
@@ -1780,6 +1784,11 @@
       color: #fde047;
       border: 1px solid rgba(234, 179, 8, 0.35);
     }
+    .badge-subj-informatics {
+      background: rgba(2, 132, 199, 0.2);
+      color: #38bdf8;
+      border: 1px solid rgba(2, 132, 199, 0.4);
+    }
     .math-frac {
       display: inline-flex;
       flex-direction: column;
@@ -3500,6 +3509,7 @@
             </label>
             <select id="selectSubject" class="setup-select setup-select-subj" onchange="onSubjectDropdownChange(this.value)">
               <optgroup label="⭐ CÁC MÔN ĐÃ CÓ NGÂN HÀNG CÂU HỎI">
+                <option value="informatics">💻 Tin Học 12 (40 câu GK1)</option>
                 <option value="technology">⚡ Công Nghệ 12 (106 câu)</option>
                 <option value="history">🏛️ Lịch Sử 12 (440 câu)</option>
                 <option value="geography">🌍 Địa Lí 12 (159 câu)</option>
@@ -3512,7 +3522,6 @@
                 <option value="biology">🧬 Sinh Học 12 (Sắp có)</option>
                 <option value="civics">⚖️ GDCD 12 (Sắp có)</option>
                 <option value="literature">📖 Ngữ Văn 12 (Sắp có)</option>
-                <option value="informatics">💻 Tin Học 12 (Sắp có)</option>
               </optgroup>
             </select>
           </div>
@@ -3798,6 +3807,9 @@
         <div class="lb-subject-filter-bar">
           <button class="lb-sub-btn active" id="btnLbSubAll" onclick="filterLbBySubject('all')">
             <span>🌐 Tất cả môn</span>
+          </button>
+          <button class="lb-sub-btn" id="btnLbSubInformatics" onclick="filterLbBySubject('informatics')">
+            <span>💻 Tin Học</span>
           </button>
           <button class="lb-sub-btn" id="btnLbSubTechnology" onclick="filterLbBySubject('technology')">
             <span>⚡ Công Nghệ</span>
@@ -4141,7 +4153,12 @@ const firebaseConfig = {
 
       const pillBar = document.getElementById('catPillBar');
 
-      if (subject === 'technology') {
+      if (subject === 'informatics') {
+        selectedTopicIds = ['info_gk1'];
+        currentTopicId = 'info_gk1';
+        currentTopicTitle = '🎯 ĐỀ ÔN TẬP GIỮA KỲ 1: TIN HỌC 12 (40 câu chuẩn 10/10)';
+        if (pillBar) pillBar.style.display = 'flex';
+      } else if (subject === 'technology') {
         selectedTopicIds = ['cn_bai3'];
         currentTopicId = 'cn_bai3';
         currentTopicTitle = '🌀 BÀI 3 TRỌNG TÂM: Mạch điện xoay chiều ba pha';
@@ -4170,7 +4187,9 @@ const firebaseConfig = {
 
       const sdLessons = document.getElementById('sdLessonsText');
       if (sdLessons) {
-        if (subject === 'technology') {
+        if (subject === 'informatics') {
+          sdLessons.textContent = 'CHỌN CHUYÊN ĐỀ ÔN TẬP TIN HỌC 12 (TRÍ TUỆ NHÂN TẠO & HTML)';
+        } else if (subject === 'technology') {
           sdLessons.textContent = 'CHỌN BÀI HỌC CÔNG NGHỆ 12 (XEM KĨ BÀI 3, BÀI 4 & BÀI 6)';
         } else if (subject === 'history') {
           sdLessons.textContent = 'HOẶC CHỌN TỪNG BÀI LỊCH SỬ ĐỂ ÔN TẬP';
@@ -4199,7 +4218,9 @@ const firebaseConfig = {
       pillBar.style.display = 'flex';
 
       let cats = [];
-      if (currentSubject === 'history') {
+      if (currentSubject === 'informatics') {
+        cats = window.INFORMATICS_CATEGORIES || [];
+      } else if (currentSubject === 'history') {
         cats = window.HISTORY_CATEGORIES || TOPIC_CATEGORIES || [];
       } else if (currentSubject === 'technology') {
         cats = window.CONGNGHE_CATEGORIES || [];
@@ -4239,7 +4260,20 @@ const firebaseConfig = {
 
       let html = '';
 
-      if (currentSubject === 'technology') {
+      if (currentSubject === 'informatics') {
+        const infoDb = window.INFORMATICS_TOPICS_DATABASE || [];
+        html += `<optgroup label="-- ĐỀ ÔN TẬP GIỮA KÌ 1 TIN HỌC 12 --">`;
+        html += `<option value="info_gk1">🎯 Đề Ôn Tập Giữa Kì 1 (40 câu chuẩn 10/10)</option>`;
+        html += `</optgroup>`;
+        html += `<optgroup label="-- CÁC CHUYÊN ĐỀ TIN HỌC 12 --">`;
+        infoDb.forEach(t => {
+          if (t.id !== 'info_gk1') {
+            const count = t.questions ? t.questions.length : 0;
+            html += `<option value="${t.id}">${t.icon || '💻'} ${t.title} (${count} câu)</option>`;
+          }
+        });
+        html += `</optgroup>`;
+      } else if (currentSubject === 'technology') {
         const cnDb = window.CONGNGHE_TOPICS_DATABASE || [];
         html += `<optgroup label="-- BÀI HỌC CÔNG NGHỆ 12 (TRỌNG TÂM BÀI 3) --">`;
         cnDb.forEach(t => {
@@ -4362,7 +4396,9 @@ const firebaseConfig = {
       try { sound.playClick(); } catch(e) {}
       let lessonIds = [];
 
-      if (currentSubject === 'history') {
+      if (currentSubject === 'informatics') {
+        lessonIds = ['info_gk1', 'info_ai', 'info_html', 'info_tf', 'info_mcq'];
+      } else if (currentSubject === 'history') {
         const histDb = window.ALL_TOPICS_DATABASE || [];
         histDb.forEach(t => {
           const cat = getTopicCategory(t.id);
@@ -4392,7 +4428,9 @@ const firebaseConfig = {
     // Reset selection to default first lesson (Nút 'Đặt lại')
     function resetTopicSelection() {
       try { sound.playClick(); } catch(e) {}
-      if (currentSubject === 'technology') {
+      if (currentSubject === 'informatics') {
+        selectedTopicIds = ['info_gk1'];
+      } else if (currentSubject === 'technology') {
         selectedTopicIds = ['cn_bai3'];
       } else if (currentSubject === 'history') {
         selectedTopicIds = ['bai1'];
@@ -4420,7 +4458,31 @@ const firebaseConfig = {
       let totalQuestions = 0;
       let shortTitles = [];
 
-      if (currentSubject === 'technology') {
+      if (currentSubject === 'informatics') {
+        const infoDb = window.INFORMATICS_TOPICS_DATABASE || [];
+        if (selectedTopicIds.length === 1) {
+          const id = selectedTopicIds[0];
+          currentTopicId = id;
+          const found = infoDb.find(t => t.id === id);
+          if (found) {
+            currentTopicTitle = found.title;
+            totalQuestions = found.questions ? found.questions.length : 0;
+          } else {
+            currentTopicTitle = '🎯 Đề Ôn Tập Giữa Kì 1: Tin Học 12 (40 câu)';
+            totalQuestions = 40;
+          }
+        } else {
+          currentTopicId = 'informatics_combo';
+          selectedTopicIds.forEach(id => {
+            const found = infoDb.find(t => t.id === id);
+            if (found) {
+              totalQuestions += (found.questions ? found.questions.length : 0);
+              shortTitles.push(found.title.split(':')[0].replace(/^[^\w\s]+/g, '').trim());
+            }
+          });
+          currentTopicTitle = `Gộp ${selectedTopicIds.length} chuyên đề Tin Học: ${shortTitles.join(', ')} (${totalQuestions} câu)`;
+        }
+      } else if (currentSubject === 'technology') {
         const cnDb = window.CONGNGHE_TOPICS_DATABASE || [];
         if (selectedTopicIds.length === 1) {
           const id = selectedTopicIds[0];
@@ -4631,7 +4693,26 @@ const firebaseConfig = {
 
       let items = [];
 
-      if (currentSubject === 'technology') {
+      if (currentSubject === 'informatics') {
+        const infoDb = window.INFORMATICS_TOPICS_DATABASE || [];
+        infoDb.forEach(t => {
+          let match = true;
+          if (currentCatFilter !== 'all') {
+            if (t.category !== currentCatFilter && t.catId !== currentCatFilter) {
+              match = false;
+            }
+          }
+          if (match) {
+            items.push({
+              id: t.id,
+              title: t.title,
+              icon: t.icon || '💻',
+              sub: t.description || t.sub || 'Chuyên đề ôn tập Tin học 12',
+              count: t.questions ? t.questions.length : 0
+            });
+          }
+        });
+      } else if (currentSubject === 'technology') {
         const cnDb = window.CONGNGHE_TOPICS_DATABASE || [];
         cnDb.forEach(t => {
           if (t.id !== 'cn_all' && t.id !== 'cn_gk1') {
@@ -4985,6 +5066,24 @@ const firebaseConfig = {
 
       if (onlyWrongList && onlyWrongList.length > 0) {
         examList = onlyWrongList;
+      } else if (currentSubject === 'informatics') {
+        const infoDb = window.INFORMATICS_TOPICS_DATABASE || [];
+        const allInfoTopic = infoDb.find(t => t.id === 'info_gk1') || infoDb.find(t => t.id === 'info_all') || infoDb[0];
+        const allInfoQ = allInfoTopic ? allInfoTopic.questions : [];
+
+        if (selectedTopicIds.length === 1 && (selectedTopicIds[0] === 'info_gk1' || selectedTopicIds[0] === 'info_all')) {
+          examList = isShuffle ? shuffle(allInfoQ) : [...allInfoQ];
+        } else {
+          let combinedPool = [];
+          selectedTopicIds.forEach(id => {
+            const found = infoDb.find(t => t.id === id);
+            if (found && Array.isArray(found.questions)) {
+              combinedPool.push(...found.questions);
+            }
+          });
+          if (combinedPool.length === 0) combinedPool = allInfoQ;
+          examList = isShuffle ? shuffle(combinedPool) : combinedPool;
+        }
       } else if (currentSubject === 'history') {
         const histDb = window.ALL_TOPICS_DATABASE || [];
         if (selectedTopicIds.length === 1 && selectedTopicIds[0] === 'thpt_random40') {
@@ -5977,7 +6076,7 @@ const firebaseConfig = {
         total: total,
         timeSec: timeSec,
         subject: currentSubject,
-        subjectName: currentSubject === 'history' ? 'Lịch Sử' : (currentSubject === 'physics' ? 'Vật Lí' : (currentSubject === 'technology' ? 'Công Nghệ' : (currentSubject === 'geography' ? 'Địa Lí' : 'Tiếng Anh'))),
+        subjectName: currentSubject === 'history' ? 'Lịch Sử' : (currentSubject === 'physics' ? 'Vật Lí' : (currentSubject === 'technology' ? 'Công Nghệ' : (currentSubject === 'geography' ? 'Địa Lí' : (currentSubject === 'informatics' ? 'Tin Học' : 'Tiếng Anh')))),
         topicId: currentTopicId,
         topicTitle: currentTopicTitle,
         attemptNumber: myAttemptCount,
@@ -6036,12 +6135,14 @@ const firebaseConfig = {
       try { sound.playClick(); } catch(e) {}
       currentLbSubjectFilter = subj;
       const btnAll = document.getElementById('btnLbSubAll');
+      const btnInfo = document.getElementById('btnLbSubInformatics');
       const btnTech = document.getElementById('btnLbSubTechnology');
       const btnHist = document.getElementById('btnLbSubHistory');
       const btnEng = document.getElementById('btnLbSubEnglish');
       const btnPhys = document.getElementById('btnLbSubPhysics');
       const btnGeo = document.getElementById('btnLbSubGeography');
       if (btnAll) btnAll.classList.toggle('active', subj === 'all');
+      if (btnInfo) btnInfo.classList.toggle('active', subj === 'informatics');
       if (btnTech) btnTech.classList.toggle('active', subj === 'technology');
       if (btnHist) btnHist.classList.toggle('active', subj === 'history');
       if (btnEng) btnEng.classList.toggle('active', subj === 'english');
@@ -6155,10 +6256,12 @@ const firebaseConfig = {
       let subj = item.subject;
       const tid = String(item.topicId || '');
       if (!subj) {
-        if (tid.startsWith('cn_')) subj = 'technology';
+        if (tid.startsWith('info_')) subj = 'informatics';
+        else if (tid.startsWith('cn_')) subj = 'technology';
         else if (tid.startsWith('phys_')) subj = 'physics';
         else if (tid.startsWith('geo_')) subj = 'geography';
         else if (tid.startsWith('eng_')) subj = 'english';
+        else if (item.subjectName === 'Tin Học') subj = 'informatics';
         else if (item.subjectName === 'Công Nghệ') subj = 'technology';
         else if (item.subjectName === 'Vật Lí') subj = 'physics';
         else if (item.subjectName === 'Địa Lí') subj = 'geography';
@@ -6166,11 +6269,12 @@ const firebaseConfig = {
         else subj = 'history';
       }
       const map = {
-        technology: { id: 'technology', name: 'Công Nghệ', icon: '⚡', badgeClass: 'badge-subj-technology' },
-        history:    { id: 'history',    name: 'Lịch Sử',   icon: '🏛️', badgeClass: 'badge-subj-history' },
-        geography:  { id: 'geography',  name: 'Địa Lí',    icon: '🌍', badgeClass: 'badge-subj-geography' },
-        physics:    { id: 'physics',    name: 'Vật Lí',    icon: '⚛️', badgeClass: 'badge-subj-physics' },
-        english:    { id: 'english',    name: 'Tiếng Anh', icon: '🇬🇧', badgeClass: 'badge-subj-english' }
+        informatics: { id: 'informatics', name: 'Tin Học',   icon: '💻', badgeClass: 'badge-subj-informatics' },
+        technology:  { id: 'technology',  name: 'Công Nghệ', icon: '⚡', badgeClass: 'badge-subj-technology' },
+        history:     { id: 'history',     name: 'Lịch Sử',   icon: '🏛️', badgeClass: 'badge-subj-history' },
+        geography:   { id: 'geography',   name: 'Địa Lí',    icon: '🌍', badgeClass: 'badge-subj-geography' },
+        physics:     { id: 'physics',     name: 'Vật Lí',    icon: '⚛️', badgeClass: 'badge-subj-physics' },
+        english:     { id: 'english',     name: 'Tiếng Anh', icon: '🇬🇧', badgeClass: 'badge-subj-english' }
       };
       return map[subj] || { id: subj || 'other', name: item.subjectName || 'Môn học', icon: '📚', badgeClass: 'badge-subj-physics' };
     }
