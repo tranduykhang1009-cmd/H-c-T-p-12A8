@@ -33,7 +33,7 @@
   <script src="vatli.js?v=20261027_2205"></script>
   <script src="dialy.js?v=20261027_2205"></script>
   <script src="congnghe.js?v=20261028_1955"></script>
-  <script src="tinhoc.js?v=20261101_2050"></script>
+  <script src="tinhoc.js?v=20261101_2115"></script>
   <script>
     // Tự động nạp dự phòng từ data/ nếu mở file offline mà dữ liệu nằm trong thư mục con data/
     if (typeof ALL_TOPICS_DATABASE === 'undefined' && !window.ALL_TOPICS_DATABASE) {
@@ -4130,12 +4130,12 @@ const firebaseConfig = {
 
     function onSubjectDropdownChange(subjectVal) {
       try { sound.playClick(); } catch(e) {}
-      if (['math', 'chemistry', 'biology', 'civics', 'literature', 'informatics'].includes(subjectVal)) {
+      if (['math', 'chemistry', 'biology', 'civics', 'literature'].includes(subjectVal)) {
         const names = {
           math: 'Toán Học 12', chemistry: 'Hóa Học 12', biology: 'Sinh Học 12',
-          civics: 'GDCD 12', literature: 'Ngữ Văn 12', informatics: 'Tin Học 12'
+          civics: 'GDCD 12', literature: 'Ngữ Văn 12'
         };
-        alert("📚 Môn " + (names[subjectVal] || subjectVal) + " đang được cập nhật câu hỏi.\n\nHiện tại bạn có thể ôn luyện ngay: Công Nghệ 12 (106 câu), Lịch Sử 12 (440 câu), Địa Lí 12 (159 câu), Vật Lí 12 (106 câu) hoặc Tiếng Anh 12 (32 câu) nhé!");
+        alert("📚 Môn " + (names[subjectVal] || subjectVal) + " đang được cập nhật câu hỏi.\n\nHiện tại bạn có thể ôn luyện ngay: Tin Học 12 (40 câu), Công Nghệ 12 (106 câu), Lịch Sử 12 (440 câu), Địa Lí 12 (159 câu), Vật Lí 12 (106 câu) hoặc Tiếng Anh 12 (32 câu) nhé!");
         // Trả lại môn hiện tại
         document.getElementById('selectSubject').value = currentSubject;
         return;
@@ -4450,7 +4450,10 @@ const firebaseConfig = {
     // Compute title, count, and summary for the current selection
     function updateTopicSelectionSummary() {
       if (!selectedTopicIds || selectedTopicIds.length === 0) {
-        if (currentSubject === 'history') selectedTopicIds = ['bai1'];
+        if (currentSubject === 'informatics') selectedTopicIds = ['info_gk1'];
+        else if (currentSubject === 'technology') selectedTopicIds = ['cn_bai3'];
+        else if (currentSubject === 'geography') selectedTopicIds = ['geo_phan1'];
+        else if (currentSubject === 'history') selectedTopicIds = ['bai1'];
         else if (currentSubject === 'physics') selectedTopicIds = ['phys_chuyen_the'];
         else selectedTopicIds = ['eng_unit1_all'];
       }
@@ -6678,7 +6681,7 @@ const firebaseConfig = {
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('sw.js?v=20261101_2105')
+      navigator.serviceWorker.register('sw.js?v=20261101_2115')
         .then(reg => {
           console.log('PWA Service Worker đã kích hoạt thành công!', reg.scope);
           reg.update(); // Tự động cập nhật ngay khi có phiên bản mới
