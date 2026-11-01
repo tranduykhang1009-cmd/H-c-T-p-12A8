@@ -1,4 +1,4 @@
-const CACHE_NAME = 'on-thi-thpt-v1.5_tinhoc';
+const CACHE_NAME = 'on-thi-thpt-v1.6_tinhoc';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

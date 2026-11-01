@@ -33,7 +33,7 @@
   <script src="vatli.js?v=20261027_2205"></script>
   <script src="dialy.js?v=20261027_2205"></script>
   <script src="congnghe.js?v=20261028_1955"></script>
-  <script src="tinhoc.js?v=20261101_2115"></script>
+  <script src="tinhoc.js?v=20261101_2120"></script>
   <script>
     // Tự động nạp dự phòng từ data/ nếu mở file offline mà dữ liệu nằm trong thư mục con data/
     if (typeof ALL_TOPICS_DATABASE === 'undefined' && !window.ALL_TOPICS_DATABASE) {
@@ -4237,9 +4237,13 @@ const firebaseConfig = {
       let htmlPills = '';
       cats.forEach(cat => {
         const isActive = currentCatFilter === cat.id;
+        let displayName = cat.name || '';
+        if (cat.icon && displayName.startsWith(cat.icon)) {
+          displayName = displayName.substring(cat.icon.length).trim();
+        }
         htmlPills += `
           <button class="cat-pill ${isActive ? 'active' : ''}" onclick="filterByCategory('${cat.id}')">
-            ${cat.icon ? cat.icon + ' ' : ''}${cat.name}
+            ${cat.icon ? cat.icon + ' ' : ''}${displayName}
           </button>
         `;
       });
@@ -4710,7 +4714,7 @@ const firebaseConfig = {
               id: t.id,
               title: t.title,
               icon: t.icon || '💻',
-              sub: t.description || t.sub || 'Chuyên đề ôn tập Tin học 12',
+              sub: t.sub || t.description || 'Chuyên đề ôn tập Tin học 12',
               count: t.questions ? t.questions.length : 0
             });
           }
@@ -4939,7 +4943,7 @@ const firebaseConfig = {
                 <div class="tic-title">
                   <span>${item.title}</span>
                 </div>
-                <div class="tic-sub">${item.sub || ''}</div>
+                <div class="tic-sub">${typeof escapeHtml === 'function' ? escapeHtml(item.sub || '') : (item.sub || '')}</div>
                 ${progressBadgeHtml}
               </div>
             </div>
@@ -6681,7 +6685,7 @@ const firebaseConfig = {
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('sw.js?v=20261101_2115')
+      navigator.serviceWorker.register('sw.js?v=20261101_2120')
         .then(reg => {
           console.log('PWA Service Worker đã kích hoạt thành công!', reg.scope);
           reg.update(); // Tự động cập nhật ngay khi có phiên bản mới
