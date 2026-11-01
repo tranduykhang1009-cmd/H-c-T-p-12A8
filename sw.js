@@ -1,4 +1,4 @@
-const CACHE_NAME = 'on-thi-thpt-v1.2';
+const CACHE_NAME = 'on-thi-thpt-v1.4_tinhoc';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -6,6 +6,9 @@ const ASSETS_TO_CACHE = [
   './lichsu.js',
   './vatli.js',
   './tienganh.js',
+  './dialy.js',
+  './congnghe.js',
+  './tinhoc.js',
   './bg.jpg',
   './manifest.json',
   'https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js'

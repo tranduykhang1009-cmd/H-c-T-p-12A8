@@ -6678,8 +6678,11 @@ const firebaseConfig = {
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('sw.js')
-        .then(reg => console.log('PWA Service Worker đã kích hoạt thành công!', reg.scope))
+      navigator.serviceWorker.register('sw.js?v=20261101_2105')
+        .then(reg => {
+          console.log('PWA Service Worker đã kích hoạt thành công!', reg.scope);
+          reg.update(); // Tự động cập nhật ngay khi có phiên bản mới
+        })
         .catch(err => console.log('PWA Service Worker lỗi kích hoạt:', err));
     });
   }
